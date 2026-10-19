@@ -16,7 +16,7 @@ from typing import Any, Callable, Dict, List, Optional
 from ..engine import get_engine
 from . import FrameContext, TaskStatus, Waypoint
 from .frame_sampler import FrameSampler
-from .prompts import build_messages_with_images, build_navigation_prompt
+from .prompts import build_messages_with_images, build_navigation_prompt, get_prompt_profile
 from .task_manager import get_task_manager
 from .waypoint_parser import WaypointParser
 
@@ -288,10 +288,15 @@ class InferencePipeline:
                 })
 
             # 构建消息
+            prompt_profile = get_prompt_profile()
             messages = build_messages_with_images(
                 prompt=prompt,
                 image_base64_list=[request.image_base64],
+                prompt_profile=prompt_profile,
             )
+            if os.environ.get("PROJECT2_DIAGNOSTICS") == "1":
+                diagnostic["prompt_profile"] = prompt_profile
+                diagnostic["system_prompt_sha256"] = hashlib.sha256(messages[0]["content"].encode("utf-8")).hexdigest()
 
             # 调用 VLM（在线程池中执行同步调用）
             loop = asyncio.get_event_loop()

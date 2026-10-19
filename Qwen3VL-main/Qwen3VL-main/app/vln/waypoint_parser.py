@@ -6,6 +6,7 @@
 
 import json
 import logging
+import math
 import re
 from typing import Dict, List, Optional, Tuple
 
@@ -16,26 +17,6 @@ logger = logging.getLogger(__name__)
 
 class WaypointParser:
     """航点解析器"""
-
-    # 离散动作到航点的映射
-    DISCRETE_ACTION_MAP = {
-        "forward": Waypoint(dx=0.5, dy=0.0, dtheta=0.0),
-        "前进": Waypoint(dx=0.5, dy=0.0, dtheta=0.0),
-        "backward": Waypoint(dx=-0.3, dy=0.0, dtheta=0.0),
-        "后退": Waypoint(dx=-0.3, dy=0.0, dtheta=0.0),
-        "left": Waypoint(dx=0.0, dy=0.0, dtheta=0.523),  # 30度
-        "turn_left": Waypoint(dx=0.0, dy=0.0, dtheta=0.523),
-        "左转": Waypoint(dx=0.0, dy=0.0, dtheta=0.523),
-        "right": Waypoint(dx=0.0, dy=0.0, dtheta=-0.523),
-        "turn_right": Waypoint(dx=0.0, dy=0.0, dtheta=-0.523),
-        "右转": Waypoint(dx=0.0, dy=0.0, dtheta=-0.523),
-        "stop": Waypoint(dx=0.0, dy=0.0, dtheta=0.0),
-        "停止": Waypoint(dx=0.0, dy=0.0, dtheta=0.0),
-        "slight_left": Waypoint(dx=0.3, dy=0.1, dtheta=0.1),
-        "左前": Waypoint(dx=0.3, dy=0.1, dtheta=0.1),
-        "slight_right": Waypoint(dx=0.3, dy=-0.1, dtheta=-0.1),
-        "右前": Waypoint(dx=0.3, dy=-0.1, dtheta=-0.1),
-    }
 
     def __init__(
         self,
@@ -71,6 +52,7 @@ class WaypointParser:
             - progress: 进度
             - reached_goal: 是否到达目标
             - raw_output: 原始输出
+            - parse_status/parse_error: 结构校验结果（供诊断区分停止与解析失败）
         """
         result = {
             "waypoints": [],
@@ -82,12 +64,16 @@ class WaypointParser:
             "raw_output": vlm_output,
         }
 
-        # 尝试解析 JSON
+        # 只接受结构有效的JSON；不从自然语言或否定句里猜测运动/到达。
         json_data = self._extract_json(vlm_output)
-        if json_data:
-            result.update(self._parse_json_response(json_data))
+        if isinstance(json_data, dict):
+            try:
+                result.update(self._parse_json_response(json_data))
+                result.update(parse_status="valid_json", parse_error="")
+            except (ValueError, TypeError, OverflowError) as error:
+                result.update(self._parse_text_response(vlm_output))
+                result["parse_error"] = str(error)
         else:
-            # 回退到文本解析
             result.update(self._parse_text_response(vlm_output))
 
         # 验证和限制航点
@@ -123,75 +109,57 @@ class WaypointParser:
 
     def _parse_json_response(self, data: dict) -> Dict:
         """解析 JSON 格式的响应"""
+        if type(data.get("reached_goal")) is not bool:
+            raise ValueError("reached_goal must be a JSON boolean")
+        if not isinstance(data.get("waypoints"), list):
+            raise ValueError("waypoints must be a JSON array")
+        progress = self._finite_number(data.get("progress", 0.0), "progress")
+        if not 0.0 <= progress <= 1.0:
+            raise ValueError("progress must be in [0, 1]")
         result = {
             "environment": str(data.get("environment", "")),
             "action": str(data.get("action", "")),
             "reasoning": str(data.get("reasoning", "")),
-            "progress": float(data.get("progress", 0.0)),
-            "reached_goal": bool(data.get("reached_goal", False)),
+            "progress": progress,
+            "reached_goal": data["reached_goal"],
             "waypoints": [],
         }
 
         # 解析航点
-        waypoints_data = data.get("waypoints", [])
-        if isinstance(waypoints_data, list):
-            for wp in waypoints_data:
-                if isinstance(wp, dict):
-                    waypoint = Waypoint(
-                        dx=float(wp.get("dx", 0.0)),
-                        dy=float(wp.get("dy", 0.0)),
-                        dtheta=float(wp.get("dtheta", 0.0)),
-                        confidence=float(wp.get("confidence", 1.0)),
-                    )
-                    result["waypoints"].append(waypoint)
+        for wp in data["waypoints"]:
+            if not isinstance(wp, dict) or not all(key in wp for key in ("dx", "dy", "dtheta")):
+                raise ValueError("Each waypoint must contain dx, dy and dtheta")
+            result["waypoints"].append(Waypoint(
+                dx=self._finite_number(wp["dx"], "dx"),
+                dy=self._finite_number(wp["dy"], "dy"),
+                dtheta=self._finite_number(wp["dtheta"], "dtheta"),
+                confidence=self._finite_number(wp.get("confidence", 1.0), "confidence"),
+            ))
+        if result["reached_goal"] and any(
+            wp.dx != 0 or wp.dy != 0 or wp.dtheta != 0 for wp in result["waypoints"]
+        ):
+            raise ValueError("reached_goal=true conflicts with nonzero waypoints")
 
         return result
 
+    @staticmethod
+    def _finite_number(value, name: str) -> float:
+        if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value):
+            raise ValueError(f"{name} must be a finite JSON number")
+        return float(value)
+
     def _parse_text_response(self, text: str) -> Dict:
-        """解析纯文本响应（回退方案）"""
-        result = {
+        """无有效结构化结果时保持停止；原始文本由parse的raw_output完整保留。"""
+        return {
             "environment": "",
-            "action": "",
-            "reasoning": text[:200],
+            "action": "停止",
+            "reasoning": "未获得有效的结构化导航结果，保持停止；原始回答保留在诊断中。",
             "progress": 0.0,
             "reached_goal": False,
             "waypoints": [],
+            "parse_status": "fallback_stop",
+            "parse_error": "Expected a valid navigation JSON object",
         }
-
-        text_lower = text.lower()
-
-        # 检测是否到达目标
-        goal_keywords = ["到达", "完成", "reached", "arrived", "goal"]
-        if any(kw in text_lower for kw in goal_keywords):
-            result["reached_goal"] = True
-            result["waypoints"] = [Waypoint(dx=0.0, dy=0.0, dtheta=0.0)]
-            return result
-
-        # 尝试匹配离散动作
-        for action, waypoint in self.DISCRETE_ACTION_MAP.items():
-            if action in text_lower:
-                result["waypoints"] = [waypoint]
-                result["action"] = action
-                break
-
-        # 如果没有匹配到动作，默认前进
-        if not result["waypoints"]:
-            result["waypoints"] = [Waypoint(dx=0.3, dy=0.0, dtheta=0.0)]
-            result["action"] = "默认前进"
-
-        # 提取环境描述（简单启发式）
-        env_patterns = [
-            r"环境[：:]\s*(.+?)(?:\n|$)",
-            r"environment[：:]\s*(.+?)(?:\n|$)",
-            r"看到(.+?)(?:\n|。|$)",
-        ]
-        for pattern in env_patterns:
-            match = re.search(pattern, text, re.IGNORECASE)
-            if match:
-                result["environment"] = match.group(1).strip()[:100]
-                break
-
-        return result
 
     def _validate_waypoints(self, waypoints: List[Waypoint]) -> List[Waypoint]:
         """验证和限制航点"""

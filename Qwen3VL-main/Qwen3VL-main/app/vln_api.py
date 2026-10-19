@@ -182,9 +182,8 @@ async def process_frame(request: FrameRequest):
 
         # 如果没有历史结果，返回默认值（首帧场景）
         if not result:
-            # 首帧：返回默认前进动作
-            from .vln import Waypoint
-            default_waypoints = [Waypoint(dx=0.3, dy=0.0, dtheta=0.0)]
+            # 尚无模型结果时保持停止，不合成前进指令。
+            default_waypoints = []
             v, w = _waypoint_parser.waypoints_to_velocity(default_waypoints)
 
             # 生成可视化帧（带默认信息）
@@ -196,7 +195,7 @@ async def process_frame(request: FrameRequest):
                         frame=frame,
                         waypoints=default_waypoints,
                         environment="正在分析环境...",
-                        action="等待推理",
+                        action="等待推理（保持停止）",
                         linear_vel=v,
                         angular_vel=w,
                         progress=0.0,
@@ -206,11 +205,9 @@ async def process_frame(request: FrameRequest):
             return FrameResponse(
                 task_id=request.task_id,
                 frame_id=task.frame_count,
-                waypoints=[
-                    WaypointResponse(dx=0.3, dy=0.0, dtheta=0.0, confidence=0.5)
-                ],
+                waypoints=[],
                 environment="正在分析环境...",
-                action="等待推理",
+                action="等待推理（保持停止）",
                 linear_vel=v,
                 angular_vel=w,
                 progress=0.0,

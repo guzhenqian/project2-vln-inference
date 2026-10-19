@@ -1,0 +1,3270 @@
+{
+  "schema_version": 1,
+  "purpose": "fixed_five_image_repeated_latency_and_local_output_review_not_formal_navigation_evaluation",
+  "date": "2026-10-19",
+  "source_record": "logs/repeated_latency_20261019T105629469754Z.json",
+  "source_record_sha256": "ed02125210ee025606bcad9764937ef5c4239c303b70cb5e78c2524dc8d09365",
+  "model": {
+    "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision": "89644892e4d85e24eaac8bacfd4f463576704203"
+  },
+  "configuration": {
+    "concurrency": 1,
+    "fresh_task_per_request": true,
+    "visualization": false,
+    "repeats_per_image": 10,
+    "planned_measured_count": 50,
+    "order": "one warm-up on first image, then manifest order in each round",
+    "generation": {
+      "max_tokens": 512,
+      "temperature": 0.3
+    },
+    "random_seed": null,
+    "diagnostic_logging": "expected enabled; checked against actual traces"
+  },
+  "instruction": "观察当前桌面场景，寻找键盘。如果画面不能确认机器人可通行的地面路径，请保持停止并说明原因。",
+  "manifest_sha256": "d7a41f9f15d01b21f84f8c8284bdd1a4742190589dcd660d24684729dbd19893",
+  "source_sha256": {
+    "app/engine.py": "1816263c394c5fb247f324020e7a37d2ae6f1d5a34f60a360573f3bd13b9a724",
+    "app/vln/__init__.py": "67ead94ddb625a9384b31640cf45587b1548fb2de68e26c6313a997c07b43c72",
+    "app/vln/inference_pipeline.py": "a63b0d97bba868b8d07a8ac27be017935f888742d9f6459c6b22c64cd88764c3",
+    "app/vln/prompts.py": "6f474c6da9be0fbc8d9de824883f089f7930b058f7e9c6bb3df936b22337a07d",
+    "app/vln/waypoint_parser.py": "a3a4684f7077e98b3cd0ac060cd3140671767b5edc881ee18b2e874b4bd987ae"
+  },
+  "stats_delta": {
+    "total_requests": 51,
+    "processed": 51,
+    "dropped": 0,
+    "errors": 0
+  },
+  "summary": {
+    "measured_count": 50,
+    "client_elapsed_s": {
+      "count": 50,
+      "median": 1.4702044170044246,
+      "min": 1.2995171079965075,
+      "max": 2.7170751450030366,
+      "sample_stdev": 0.23209148218523462
+    },
+    "service_processing_s": {
+      "count": 50,
+      "median": 1.464433193206787,
+      "min": 1.2945823669433594,
+      "max": 2.7106969356536865,
+      "sample_stdev": 0.23199931858174105
+    },
+    "completion_tokens": {
+      "count": 50,
+      "median": 142.0,
+      "min": 127,
+      "max": 277,
+      "sample_stdev": 24.24618631909786
+    },
+    "normal_finish_count": 50,
+    "valid_original_json_count": 50,
+    "warmup_count": 1
+  },
+  "per_case_summary": {
+    "tum_desk_000": {
+      "measured_count": 10,
+      "client_elapsed_s": {
+        "count": 10,
+        "median": 1.4835856655045063,
+        "min": 1.2995171079965075,
+        "max": 1.665109276000294,
+        "sample_stdev": 0.11721010262058337
+      },
+      "service_processing_s": {
+        "count": 10,
+        "median": 1.4785406589508057,
+        "min": 1.2945823669433594,
+        "max": 1.6599559783935547,
+        "sample_stdev": 0.11712449856756348
+      },
+      "completion_tokens": {
+        "count": 10,
+        "median": 139.5,
+        "min": 127,
+        "max": 159,
+        "sample_stdev": 9.926955446885236
+      },
+      "normal_finish_count": 10,
+      "valid_original_json_count": 10
+    },
+    "tum_desk_030": {
+      "measured_count": 10,
+      "client_elapsed_s": {
+        "count": 10,
+        "median": 1.4435742654968635,
+        "min": 1.3567734559910605,
+        "max": 1.573505540000042,
+        "sample_stdev": 0.06804590914032747
+      },
+      "service_processing_s": {
+        "count": 10,
+        "median": 1.437738299369812,
+        "min": 1.351477861404419,
+        "max": 1.56813383102417,
+        "sample_stdev": 0.06808703924702335
+      },
+      "completion_tokens": {
+        "count": 10,
+        "median": 137.0,
+        "min": 132,
+        "max": 154,
+        "sample_stdev": 7.171703656268386
+      },
+      "normal_finish_count": 10,
+      "valid_original_json_count": 10
+    },
+    "tum_desk_060": {
+      "measured_count": 10,
+      "client_elapsed_s": {
+        "count": 10,
+        "median": 1.5343736730064848,
+        "min": 1.4243396370002301,
+        "max": 2.7170751450030366,
+        "sample_stdev": 0.43296550347853796
+      },
+      "service_processing_s": {
+        "count": 10,
+        "median": 1.52816641330719,
+        "min": 1.4183440208435059,
+        "max": 2.7106969356536865,
+        "sample_stdev": 0.432930054828919
+      },
+      "completion_tokens": {
+        "count": 10,
+        "median": 146.5,
+        "min": 140,
+        "max": 277,
+        "sample_stdev": 45.7825779576079
+      },
+      "normal_finish_count": 10,
+      "valid_original_json_count": 10
+    },
+    "tum_desk_090": {
+      "measured_count": 10,
+      "client_elapsed_s": {
+        "count": 10,
+        "median": 1.4871249455027282,
+        "min": 1.3557803799922112,
+        "max": 1.8242506649985444,
+        "sample_stdev": 0.13609181752491284
+      },
+      "service_processing_s": {
+        "count": 10,
+        "median": 1.4806158542633057,
+        "min": 1.348947286605835,
+        "max": 1.8174867630004883,
+        "sample_stdev": 0.13610886671353647
+      },
+      "completion_tokens": {
+        "count": 10,
+        "median": 141.0,
+        "min": 135,
+        "max": 179,
+        "sample_stdev": 12.976902558006667
+      },
+      "normal_finish_count": 10,
+      "valid_original_json_count": 10
+    },
+    "tum_desk_120": {
+      "measured_count": 10,
+      "client_elapsed_s": {
+        "count": 10,
+        "median": 1.4445232124999166,
+        "min": 1.3812576920026913,
+        "max": 1.6588020799972583,
+        "sample_stdev": 0.08696369496802525
+      },
+      "service_processing_s": {
+        "count": 10,
+        "median": 1.4370087385177612,
+        "min": 1.374610185623169,
+        "max": 1.6522631645202637,
+        "sample_stdev": 0.08700413950565201
+      },
+      "completion_tokens": {
+        "count": 10,
+        "median": 142.5,
+        "min": 132,
+        "max": 152,
+        "sample_stdev": 6.363087999461338
+      },
+      "normal_finish_count": 10,
+      "valid_original_json_count": 10
+    }
+  },
+  "per_round_summary": {
+    "1": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.428717210990726,
+        "min": 1.3489046070026234,
+        "max": 1.536783112998819,
+        "sample_stdev": 0.08685837898782581
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.4222192764282227,
+        "min": 1.3441224098205566,
+        "max": 1.531069278717041,
+        "sample_stdev": 0.08662865704924846
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 135,
+        "min": 132,
+        "max": 145,
+        "sample_stdev": 5.630275304103699
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "2": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.5912552239897195,
+        "min": 1.4094986920099473,
+        "max": 2.186062540000421,
+        "sample_stdev": 0.3009406619682877
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.5846478939056396,
+        "min": 1.403653860092163,
+        "max": 2.1796059608459473,
+        "sample_stdev": 0.30067388318080873
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 143,
+        "min": 135,
+        "max": 212,
+        "sample_stdev": 31.995312156626944
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "3": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.6038015419908334,
+        "min": 1.481722381999134,
+        "max": 1.665109276000294,
+        "sample_stdev": 0.07525362280806107
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.597496747970581,
+        "min": 1.4755675792694092,
+        "max": 1.6599559783935547,
+        "sample_stdev": 0.07546769945477023
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 146,
+        "min": 133,
+        "max": 152,
+        "sample_stdev": 9.20326029187483
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "4": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.4735524959978648,
+        "min": 1.3749877920054132,
+        "max": 1.610684779996518,
+        "sample_stdev": 0.08921338222283356
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.4670464992523193,
+        "min": 1.3687913417816162,
+        "max": 1.6056225299835205,
+        "sample_stdev": 0.08966599804558012
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 144,
+        "min": 133,
+        "max": 159,
+        "sample_stdev": 9.60728889958036
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "5": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.4556580990029033,
+        "min": 1.4102891910006292,
+        "max": 2.7170751450030366,
+        "sample_stdev": 0.5710946881598055
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.4489717483520508,
+        "min": 1.4045779705047607,
+        "max": 2.7106969356536865,
+        "sample_stdev": 0.5709413584793707
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 144,
+        "min": 133,
+        "max": 277,
+        "sample_stdev": 60.93274981485736
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "6": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.4490904870035592,
+        "min": 1.4208106329897419,
+        "max": 1.573505540000042,
+        "sample_stdev": 0.06454149153264122
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.4431061744689941,
+        "min": 1.415889024734497,
+        "max": 1.56813383102417,
+        "sample_stdev": 0.06448618629725587
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 141,
+        "min": 138,
+        "max": 154,
+        "sample_stdev": 6.220932405998316
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "7": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.5006973950075917,
+        "min": 1.4254009029973531,
+        "max": 1.5390258879924659,
+        "sample_stdev": 0.04567504599019868
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.494185209274292,
+        "min": 1.4191186428070068,
+        "max": 1.5314610004425049,
+        "sample_stdev": 0.045481844588575175
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 147,
+        "min": 139,
+        "max": 150,
+        "sample_stdev": 4.560701700396552
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "8": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.4298857769899769,
+        "min": 1.2995171079965075,
+        "max": 1.4346810700080823,
+        "sample_stdev": 0.05869115500849569
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.4231302738189697,
+        "min": 1.2945823669433594,
+        "max": 1.4276273250579834,
+        "sample_stdev": 0.05808348652943826
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 141,
+        "min": 127,
+        "max": 144,
+        "sample_stdev": 6.685805860178712
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "9": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.4543653549917508,
+        "min": 1.3509448900003918,
+        "max": 2.0242381729913177,
+        "sample_stdev": 0.28182381155438163
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.446390151977539,
+        "min": 1.3459010124206543,
+        "max": 2.018264055252075,
+        "sample_stdev": 0.2818984636634465
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 138,
+        "min": 134,
+        "max": 203,
+        "sample_stdev": 29.439769020833026
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "10": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.5003149929980282,
+        "min": 1.3567734559910605,
+        "max": 1.8242506649985444,
+        "sample_stdev": 0.17291763226257384
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.4952614307403564,
+        "min": 1.351477861404419,
+        "max": 1.8174867630004883,
+        "sample_stdev": 0.17243403291471704
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 147,
+        "min": 132,
+        "max": 179,
+        "sample_stdev": 17.714400921284355
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    }
+  },
+  "output_review": {
+    "method": "Assistant read all 50 original answers; event counts mechanically checked. No official navigation labels or success rate.",
+    "nonzero_raw_waypoint_count": 2,
+    "reached_goal_true_count": 9,
+    "business_completed_count": 9,
+    "latency_over_2s_count": 3,
+    "raw_parsed_waypoint_match_count": 50,
+    "raw_parsed_reached_goal_match_count": 50
+  },
+  "descriptive_latency_token_correlation": 0.9622342848846872,
+  "limitations": [
+    "Five related desk images, ten repetitions each; no formal navigation labels or closed-loop robot.",
+    "No controlled optimization comparison, stable P95, continuous-video decision frequency, or GPU stage profiling.",
+    "Generated output length varies; correlation does not establish the sole cause of latency.",
+    "Velocity is a converted command; it is not actual measured robot motion.",
+    "Movement/completed counts describe this local sample, not navigation success or population error rates."
+  ],
+  "measured_cases": [
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 1,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.3489046070026234,
+      "service_processing_s": 1.3441224098205566,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌子上的键盘，但没有显示机器人可以通行的地面路径。因此，我需要确认机器人是否可以移动到键盘的位置。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 132,
+        "total_tokens": 778
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌子上的键盘，但没有显示机器人可以通行的地面路径。因此，我需要确认机器人是否可以移动到键盘的位置。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像显示了桌子上的键盘，但没有显示机器人可以通行的地面路径。因此，我需要确认机器人是否可以移动到键盘的位置。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 139,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。",
+        "文字承认未显示可通行地面路径，但action仍为寻找并确认位置，不判完整质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 1,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.536783112998819,
+      "service_processing_s": 1.531069278717041,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像中显示了键盘，位于桌子的左侧。机器人可以安全地接近并操作键盘。由于目标是寻找键盘，而键盘在图像中是可见的，因此下一步是移动到键盘附近。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 145,
+        "total_tokens": 791
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像中显示了键盘，位于桌子的左侧。机器人可以安全地接近并操作键盘。由于目标是寻找键盘，而键盘在图像中是可见的，因此下一步是移动到键盘附近。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像中显示了键盘，位于桌子的左侧。机器人可以安全地接近并操作键盘。由于目标是寻找键盘，而键盘在图像中是可见的，因此下一步是移动到键盘附近。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 147,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 1,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.5355458200065186,
+      "service_processing_s": 1.5291080474853516,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"在桌面上寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌面的右侧，靠近显示器。由于桌面是可通行的，机器人可以移动到键盘的位置。因此，我将导航到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 140,
+        "total_tokens": 786
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "在桌面上寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌面的右侧，靠近显示器。由于桌面是可通行的，机器人可以移动到键盘的位置。因此，我将导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "在桌面上寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌面的右侧，靠近显示器。由于桌面是可通行的，机器人可以移动到键盘的位置。因此，我将导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 155,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 1,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.428717210990726,
+      "service_processing_s": 1.4222192764282227,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面有障碍物，机器人需要小心移动，避免碰撞。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 135,
+        "total_tokens": 781
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面有障碍物，机器人需要小心移动，避免碰撞。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面有障碍物，机器人需要小心移动，避免碰撞。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 163,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 1,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.3812576920026913,
+      "service_processing_s": 1.374610185623169,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面有障碍物，机器人需要小心移动。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 132,
+        "total_tokens": 778
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面有障碍物，机器人需要小心移动。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面有障碍物，机器人需要小心移动。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 171,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 2,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.5232623439951567,
+      "service_processing_s": 1.5179963111877441,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的左侧，靠近显示器。机器人需要移动到键盘的位置。由于图像中没有显示任何障碍物，机器人可以安全地移动到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 138,
+        "total_tokens": 784
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的左侧，靠近显示器。机器人需要移动到键盘的位置。由于图像中没有显示任何障碍物，机器人可以安全地移动到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌子的左侧，靠近显示器。机器人需要移动到键盘的位置。由于图像中没有显示任何障碍物，机器人可以安全地移动到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 179,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 2,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.4094986920099473,
+      "service_processing_s": 1.403653860092163,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公室或工作区，有桌子、显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"寻找并定位键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于左下角的桌面上，可以清晰地看到。机器人可以安全地移动到键盘的位置，因此可以直接导航到键盘。\",\n    \"progress\": 1.0,\n    \"reached_goal\": true\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 135,
+        "total_tokens": 781
+      },
+      "original_json": {
+        "environment": "一个办公室或工作区，有桌子、显示器、键盘、文件和一些电子设备。",
+        "action": "寻找并定位键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于左下角的桌面上，可以清晰地看到。机器人可以安全地移动到键盘的位置，因此可以直接导航到键盘。",
+        "progress": 1.0,
+        "reached_goal": true
+      },
+      "parsed": {
+        "environment": "一个办公室或工作区，有桌子、显示器、键盘、文件和一些电子设备。",
+        "action": "寻找并定位键盘。",
+        "reasoning": "根据图像，键盘位于左下角的桌面上，可以清晰地看到。机器人可以安全地移动到键盘的位置，因此可以直接导航到键盘。",
+        "progress": 1.0,
+        "reached_goal": true,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "completed",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 187,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "原始JSON将可见键盘标记为到达，业务状态变为completed；无实际到达证据。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 2,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 2.186062540000421,
+      "service_processing_s": 2.1796059608459473,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公室桌面，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"寻找并定位键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.5,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        },\n        {\n            \"dx\": 0.5,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        },\n        {\n            \"dx\": 0.5,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"键盘位于桌面的右侧，从当前视角可以清晰地看到。为了准确地定位键盘，需要向右移动并进行微调。由于键盘在视野中是可见的，因此可以确定其位置，并规划路径。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 212,
+        "total_tokens": 858
+      },
+      "original_json": {
+        "environment": "一个办公室桌面，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "寻找并定位键盘。",
+        "waypoints": [
+          {
+            "dx": 0.5,
+            "dy": 0.0,
+            "dtheta": 0.0
+          },
+          {
+            "dx": 0.5,
+            "dy": 0.0,
+            "dtheta": 0.0
+          },
+          {
+            "dx": 0.5,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "键盘位于桌面的右侧，从当前视角可以清晰地看到。为了准确地定位键盘，需要向右移动并进行微调。由于键盘在视野中是可见的，因此可以确定其位置，并规划路径。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公室桌面，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "寻找并定位键盘。",
+        "reasoning": "键盘位于桌面的右侧，从当前视角可以清晰地看到。为了准确地定位键盘，需要向右移动并进行微调。由于键盘在视野中是可见的，因此可以确定其位置，并规划路径。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.5,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          },
+          {
+            "dx": 0.5,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          },
+          {
+            "dx": 0.5,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 1.5,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 196,
+      "nonzero_raw_waypoints": true,
+      "review_notes": [
+        "原始JSON输出非零航点；未由图像确认通向键盘的地面路径，违反停止条件。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 2,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.6507532200048445,
+      "service_processing_s": 1.6441071033477783,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面是平坦的，机器人可以安全地移动到键盘。因此，我将导航到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 143,
+        "total_tokens": 789
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面是平坦的，机器人可以安全地移动到键盘。因此，我将导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面是平坦的，机器人可以安全地移动到键盘。因此，我将导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 204,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 2,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.5912552239897195,
+      "service_processing_s": 1.5846478939056396,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌面上的键盘，位于右上角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，且没有障碍物，可以确定其位置。因此，导航路径应直接指向键盘。\",\n    \"progress\": 1.0,\n    \"reached_goal\": true\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 151,
+        "total_tokens": 797
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌面上的键盘，位于右上角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，且没有障碍物，可以确定其位置。因此，导航路径应直接指向键盘。",
+        "progress": 1.0,
+        "reached_goal": true
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像显示了桌面上的键盘，位于右上角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，且没有障碍物，可以确定其位置。因此，导航路径应直接指向键盘。",
+        "progress": 1.0,
+        "reached_goal": true,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "completed",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 212,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "原始JSON将可见键盘标记为到达，业务状态变为completed；无实际到达证据。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 3,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.665109276000294,
+      "service_processing_s": 1.6599559783935547,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的左侧，靠近显示器。机器人需要移动到键盘的位置，以完成任务。由于图像清晰，可以确认路径。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 133,
+        "total_tokens": 779
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的左侧，靠近显示器。机器人需要移动到键盘的位置，以完成任务。由于图像清晰，可以确认路径。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌子的左侧，靠近显示器。机器人需要移动到键盘的位置，以完成任务。由于图像清晰，可以确认路径。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 221,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 3,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.481722381999134,
+      "service_processing_s": 1.4755675792694092,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、文件和一些杂物。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了键盘在左下角的桌面上，可以确认其位置。机器人可以安全地在桌面上移动，因此可以继续前进。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 133,
+        "total_tokens": 779
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些杂物。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了键盘在左下角的桌面上，可以确认其位置。机器人可以安全地在桌面上移动，因此可以继续前进。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些杂物。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像显示了键盘在左下角的桌面上，可以确认其位置。机器人可以安全地在桌面上移动，因此可以继续前进。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 229,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 3,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.5674708199949237,
+      "service_processing_s": 1.560617446899414,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"在桌面上寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌面上的键盘，它位于右下角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。因此，直接导航到键盘即可。\",\n    \"progress\": 1.0,\n    \"reached_goal\": true\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 146,
+        "total_tokens": 792
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "在桌面上寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌面上的键盘，它位于右下角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。因此，直接导航到键盘即可。",
+        "progress": 1.0,
+        "reached_goal": true
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "在桌面上寻找键盘。",
+        "reasoning": "图像显示了桌面上的键盘，它位于右下角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。因此，直接导航到键盘即可。",
+        "progress": 1.0,
+        "reached_goal": true,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "completed",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 237,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "原始JSON将可见键盘标记为到达，业务状态变为completed；无实际到达证据。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 3,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.6038015419908334,
+      "service_processing_s": 1.597496747970581,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面有障碍物，机器人需要小心移动，以避免碰撞。因此，我需要先确认键盘的位置，然后规划移动路径。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 150,
+        "total_tokens": 796
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面有障碍物，机器人需要小心移动，以避免碰撞。因此，我需要先确认键盘的位置，然后规划移动路径。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面有障碍物，机器人需要小心移动，以避免碰撞。因此，我需要先确认键盘的位置，然后规划移动路径。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 246,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 3,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.6588020799972583,
+      "service_processing_s": 1.6522631645202637,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌面上的键盘，它位于右上角。根据任务要求，需要寻找键盘。当前的观察结果表明，键盘是可见的，因此可以确定其位置。接下来的步骤是导航到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 152,
+        "total_tokens": 798
+      },
+      "original_json": {
+        "environment": "一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌面上的键盘，它位于右上角。根据任务要求，需要寻找键盘。当前的观察结果表明，键盘是可见的，因此可以确定其位置。接下来的步骤是导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像显示了桌面上的键盘，它位于右上角。根据任务要求，需要寻找键盘。当前的观察结果表明，键盘是可见的，因此可以确定其位置。接下来的步骤是导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 254,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 4,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.610684779996518,
+      "service_processing_s": 1.6056225299835205,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"在桌面上寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌面上的键盘，位于显示器的前方。根据任务要求，机器人需要在可通行的路径上移动，因此我需要确认键盘是否在可通行区域。由于键盘在桌面上，且没有障碍物，机器人可以安全地移动到键盘附近。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 159,
+        "total_tokens": 805
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "在桌面上寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌面上的键盘，位于显示器的前方。根据任务要求，机器人需要在可通行的路径上移动，因此我需要确认键盘是否在可通行区域。由于键盘在桌面上，且没有障碍物，机器人可以安全地移动到键盘附近。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "在桌面上寻找键盘。",
+        "reasoning": "图像显示了桌面上的键盘，位于显示器的前方。根据任务要求，机器人需要在可通行的路径上移动，因此我需要确认键盘是否在可通行区域。由于键盘在桌面上，且没有障碍物，机器人可以安全地移动到键盘附近。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 262,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 4,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.3749877920054132,
+      "service_processing_s": 1.3687913417816162,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、文件和一些杂物。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的左下角，可以清晰地看到。机器人可以安全地移动到键盘的位置，因此可以执行导航指令。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 133,
+        "total_tokens": 779
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些杂物。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的左下角，可以清晰地看到。机器人可以安全地移动到键盘的位置，因此可以执行导航指令。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些杂物。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌子的左下角，可以清晰地看到。机器人可以安全地移动到键盘的位置，因此可以执行导航指令。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 270,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 4,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.5050033439911203,
+      "service_processing_s": 1.4984848499298096,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"在桌面上寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌面上的键盘，它位于右下角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。因此，导航指令应直接指向键盘。\",\n    \"progress\": 1.0,\n    \"reached_goal\": true\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 147,
+        "total_tokens": 793
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "在桌面上寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌面上的键盘，它位于右下角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。因此，导航指令应直接指向键盘。",
+        "progress": 1.0,
+        "reached_goal": true
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "在桌面上寻找键盘。",
+        "reasoning": "图像显示了桌面上的键盘，它位于右下角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。因此，导航指令应直接指向键盘。",
+        "progress": 1.0,
+        "reached_goal": true,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "completed",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 278,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "原始JSON将可见键盘标记为到达，业务状态变为completed；无实际到达证据。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 4,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.4735524959978648,
+      "service_processing_s": 1.4670464992523193,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找并定位键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"键盘位于桌面的右侧，从当前视角可以清晰地看到。根据任务要求，需要导航到键盘。由于键盘在视野中，且没有障碍物，可以直接移动到键盘位置。\",\n    \"progress\": 1.0,\n    \"reached_goal\": true\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 140,
+        "total_tokens": 786
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找并定位键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "键盘位于桌面的右侧，从当前视角可以清晰地看到。根据任务要求，需要导航到键盘。由于键盘在视野中，且没有障碍物，可以直接移动到键盘位置。",
+        "progress": 1.0,
+        "reached_goal": true
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找并定位键盘。",
+        "reasoning": "键盘位于桌面的右侧，从当前视角可以清晰地看到。根据任务要求，需要导航到键盘。由于键盘在视野中，且没有障碍物，可以直接移动到键盘位置。",
+        "progress": 1.0,
+        "reached_goal": true,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "completed",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 287,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "原始JSON将可见键盘标记为到达，业务状态变为completed；无实际到达证据。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 4,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.424420632989495,
+      "service_processing_s": 1.4178898334503174,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌面上的键盘，它位于右上角。根据任务要求，我需要导航到键盘。由于桌面是可通行的，我将直接移动到键盘位置。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 144,
+        "total_tokens": 790
+      },
+      "original_json": {
+        "environment": "一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌面上的键盘，它位于右上角。根据任务要求，我需要导航到键盘。由于桌面是可通行的，我将直接移动到键盘位置。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像显示了桌面上的键盘，它位于右上角。根据任务要求，我需要导航到键盘。由于桌面是可通行的，我将直接移动到键盘位置。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 296,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 5,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.4668563380109845,
+      "service_processing_s": 1.4618198871612549,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像中显示了键盘，位于左侧的桌面上。根据任务要求，需要寻找键盘。由于键盘在图像中清晰可见，可以确定其位置。机器人可以安全地通过桌面，因此可以继续前进。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 147,
+        "total_tokens": 793
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像中显示了键盘，位于左侧的桌面上。根据任务要求，需要寻找键盘。由于键盘在图像中清晰可见，可以确定其位置。机器人可以安全地通过桌面，因此可以继续前进。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像中显示了键盘，位于左侧的桌面上。根据任务要求，需要寻找键盘。由于键盘在图像中清晰可见，可以确定其位置。机器人可以安全地通过桌面，因此可以继续前进。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 304,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 5,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.4102891910006292,
+      "service_processing_s": 1.4045779705047607,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、文件和一些杂物。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌面上，靠近显示器。机器人可以安全地接近并操作键盘。因此，直接移动到键盘位置是可行的。\",\n    \"progress\": 1.0,\n    \"reached_goal\": true\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 133,
+        "total_tokens": 779
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些杂物。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌面上，靠近显示器。机器人可以安全地接近并操作键盘。因此，直接移动到键盘位置是可行的。",
+        "progress": 1.0,
+        "reached_goal": true
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些杂物。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌面上，靠近显示器。机器人可以安全地接近并操作键盘。因此，直接移动到键盘位置是可行的。",
+        "progress": 1.0,
+        "reached_goal": true,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "completed",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 312,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "原始JSON将可见键盘标记为到达，业务状态变为completed；无实际到达证据。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 5,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 2.7170751450030366,
+      "service_processing_s": 2.7106969356536865,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"在桌面上寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        },\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        },\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        },\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        },\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌面的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面是平坦的，且没有明显的障碍物，机器人可以安全地移动到键盘。因此，我将导航到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 277,
+        "total_tokens": 923
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "在桌面上寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          },
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          },
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          },
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          },
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌面的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面是平坦的，且没有明显的障碍物，机器人可以安全地移动到键盘。因此，我将导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "在桌面上寻找键盘。",
+        "reasoning": "根据图像，键盘位于桌面的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面是平坦的，且没有明显的障碍物，机器人可以安全地移动到键盘。因此，我将导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          },
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          },
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          },
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          },
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 321,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 5,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.4556580990029033,
+      "service_processing_s": 1.4489717483520508,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面是平坦的，且没有明显的障碍物，机器人可以安全地移动到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 141,
+        "total_tokens": 787
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面是平坦的，且没有明显的障碍物，机器人可以安全地移动到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面是平坦的，且没有明显的障碍物，机器人可以安全地移动到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 329,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 5,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.431234718998894,
+      "service_processing_s": 1.4245805740356445,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌面的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面有障碍物，机器人需要小心移动，以避免碰撞。因此，我将导航到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 144,
+        "total_tokens": 790
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌面的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面有障碍物，机器人需要小心移动，以避免碰撞。因此，我将导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌面的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面有障碍物，机器人需要小心移动，以避免碰撞。因此，我将导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 337,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 6,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.4208106329897419,
+      "service_processing_s": 1.415889024734497,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示一个办公桌，上面有键盘。根据任务要求，需要寻找键盘。键盘位于图像的左下角，是可见的。因此，下一步是移动到键盘的位置。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 141,
+        "total_tokens": 787
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示一个办公桌，上面有键盘。根据任务要求，需要寻找键盘。键盘位于图像的左下角，是可见的。因此，下一步是移动到键盘的位置。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像显示一个办公桌，上面有键盘。根据任务要求，需要寻找键盘。键盘位于图像的左下角，是可见的。因此，下一步是移动到键盘的位置。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 345,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 6,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.573505540000042,
+      "service_processing_s": 1.56813383102417,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌面上的键盘，它位于左下角。根据任务要求，需要寻找键盘。当前位置的键盘是可见的，因此可以确定其位置。接下来，机器人需要移动到键盘附近，以确认其是否可通行。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 154,
+        "total_tokens": 800
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌面上的键盘，它位于左下角。根据任务要求，需要寻找键盘。当前位置的键盘是可见的，因此可以确定其位置。接下来，机器人需要移动到键盘附近，以确认其是否可通行。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像显示了桌面上的键盘，它位于左下角。根据任务要求，需要寻找键盘。当前位置的键盘是可见的，因此可以确定其位置。接下来，机器人需要移动到键盘附近，以确认其是否可通行。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 353,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 6,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.4490904870035592,
+      "service_processing_s": 1.4431061744689941,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌面上的键盘，它位于右侧。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，且没有障碍物阻挡，可以安全地导航到它。\",\n    \"progress\": 1.0,\n    \"reached_goal\": true\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 145,
+        "total_tokens": 791
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌面上的键盘，它位于右侧。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，且没有障碍物阻挡，可以安全地导航到它。",
+        "progress": 1.0,
+        "reached_goal": true
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像显示了桌面上的键盘，它位于右侧。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，且没有障碍物阻挡，可以安全地导航到它。",
+        "progress": 1.0,
+        "reached_goal": true,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "completed",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 361,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "原始JSON将可见键盘标记为到达，业务状态变为completed；无实际到达证据。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 6,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.5134063040022738,
+      "service_processing_s": 1.5059518814086914,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找并定位键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于键盘在视野中，且没有障碍物，机器人可以安全地移动到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 138,
+        "total_tokens": 784
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找并定位键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于键盘在视野中，且没有障碍物，机器人可以安全地移动到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找并定位键盘。",
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于键盘在视野中，且没有障碍物，机器人可以安全地移动到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 370,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 6,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.4312898490024963,
+      "service_processing_s": 1.4244887828826904,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌面上的键盘，它位于右上角。机器人需要移动到键盘附近。由于桌面是平坦的，机器人可以安全地移动到键盘位置。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 141,
+        "total_tokens": 787
+      },
+      "original_json": {
+        "environment": "一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌面上的键盘，它位于右上角。机器人需要移动到键盘附近。由于桌面是平坦的，机器人可以安全地移动到键盘位置。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像显示了桌面上的键盘，它位于右上角。机器人需要移动到键盘附近。由于桌面是平坦的，机器人可以安全地移动到键盘位置。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 378,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 7,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.5111901979980757,
+      "service_processing_s": 1.506194829940796,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"在桌面上寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌面的左下角，但当前视角可能无法完全看清。由于桌面有障碍物，机器人需要谨慎移动，避免碰撞。因此，我将采取最小步长的移动，以确保安全。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 149,
+        "total_tokens": 795
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "在桌面上寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌面的左下角，但当前视角可能无法完全看清。由于桌面有障碍物，机器人需要谨慎移动，避免碰撞。因此，我将采取最小步长的移动，以确保安全。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "在桌面上寻找键盘。",
+        "reasoning": "根据图像，键盘位于桌面的左下角，但当前视角可能无法完全看清。由于桌面有障碍物，机器人需要谨慎移动，避免碰撞。因此，我将采取最小步长的移动，以确保安全。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 386,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 7,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.4542141489946516,
+      "service_processing_s": 1.4478673934936523,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"在桌面上寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌面上的键盘，它位于左下角。根据任务要求，我需要导航到键盘。由于键盘是可见的，我将直接移动到它。\",\n    \"progress\": 1.0,\n    \"reached_goal\": true\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 139,
+        "total_tokens": 785
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。",
+        "action": "在桌面上寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌面上的键盘，它位于左下角。根据任务要求，我需要导航到键盘。由于键盘是可见的，我将直接移动到它。",
+        "progress": 1.0,
+        "reached_goal": true
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。",
+        "action": "在桌面上寻找键盘。",
+        "reasoning": "图像显示了桌面上的键盘，它位于左下角。根据任务要求，我需要导航到键盘。由于键盘是可见的，我将直接移动到它。",
+        "progress": 1.0,
+        "reached_goal": true,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "completed",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 394,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "原始JSON将可见键盘标记为到达，业务状态变为completed；无实际到达证据。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 7,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.4254009029973531,
+      "service_processing_s": 1.4191186428070068,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"在桌面上寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌面上的键盘，它位于右侧。根据任务要求，我需要导航到键盘。由于键盘在桌面上，且没有障碍物，我将直接移动到键盘的位置。\",\n    \"progress\": 1.0,\n    \"reached_goal\": true\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 143,
+        "total_tokens": 789
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "在桌面上寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌面上的键盘，它位于右侧。根据任务要求，我需要导航到键盘。由于键盘在桌面上，且没有障碍物，我将直接移动到键盘的位置。",
+        "progress": 1.0,
+        "reached_goal": true
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "在桌面上寻找键盘。",
+        "reasoning": "图像显示了桌面上的键盘，它位于右侧。根据任务要求，我需要导航到键盘。由于键盘在桌面上，且没有障碍物，我将直接移动到键盘的位置。",
+        "progress": 1.0,
+        "reached_goal": true,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "completed",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 403,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "原始JSON将可见键盘标记为到达，业务状态变为completed；无实际到达证据。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 7,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.5006973950075917,
+      "service_processing_s": 1.494185209274292,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌子表面有障碍物，机器人需要小心移动，避免碰撞。因此，我需要先确认键盘的位置，然后规划移动路径。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 150,
+        "total_tokens": 796
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌子表面有障碍物，机器人需要小心移动，避免碰撞。因此，我需要先确认键盘的位置，然后规划移动路径。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌子表面有障碍物，机器人需要小心移动，避免碰撞。因此，我需要先确认键盘的位置，然后规划移动路径。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 412,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 7,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.5390258879924659,
+      "service_processing_s": 1.5314610004425049,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌面上的键盘，它位于右上角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。下一步是导航到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 147,
+        "total_tokens": 793
+      },
+      "original_json": {
+        "environment": "一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌面上的键盘，它位于右上角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。下一步是导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像显示了桌面上的键盘，它位于右上角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。下一步是导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 420,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 8,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.2995171079965075,
+      "service_processing_s": 1.2945823669433594,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像中显示了键盘，位于左侧的桌面上。机器人可以安全地移动到键盘附近，以完成任务。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 127,
+        "total_tokens": 773
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像中显示了键盘，位于左侧的桌面上。机器人可以安全地移动到键盘附近，以完成任务。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像中显示了键盘，位于左侧的桌面上。机器人可以安全地移动到键盘附近，以完成任务。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 428,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 8,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.4329343819990754,
+      "service_processing_s": 1.4276092052459717,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的左下角。机器人可以安全地移动到键盘的位置，因为地面是平坦的，没有障碍物。因此，我将导航到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 141,
+        "total_tokens": 787
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的左下角。机器人可以安全地移动到键盘的位置，因为地面是平坦的，没有障碍物。因此，我将导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌子的左下角。机器人可以安全地移动到键盘的位置，因为地面是平坦的，没有障碍物。因此，我将导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 436,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 8,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.4243396370002301,
+      "service_processing_s": 1.4183440208435059,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌面上的键盘，位于右下角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。下一步是移动到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 144,
+        "total_tokens": 790
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌面上的键盘，位于右下角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。下一步是移动到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像显示了桌面上的键盘，位于右下角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。下一步是移动到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 444,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 8,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.4298857769899769,
+      "service_processing_s": 1.4231302738189697,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找并定位键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面是平坦的，机器人可以平稳地移动到键盘。因此，我将导航到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 141,
+        "total_tokens": 787
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找并定位键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面是平坦的，机器人可以平稳地移动到键盘。因此，我将导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找并定位键盘。",
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面是平坦的，机器人可以平稳地移动到键盘。因此，我将导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 452,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 8,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.4346810700080823,
+      "service_processing_s": 1.4276273250579834,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找并定位键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌面的右侧，靠近显示器。机器人需要移动到键盘位置。由于桌面有障碍物，机器人需要小心移动，避免碰撞。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 136,
+        "total_tokens": 782
+      },
+      "original_json": {
+        "environment": "一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找并定位键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌面的右侧，靠近显示器。机器人需要移动到键盘位置。由于桌面有障碍物，机器人需要小心移动，避免碰撞。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找并定位键盘。",
+        "reasoning": "根据图像，键盘位于桌面的右侧，靠近显示器。机器人需要移动到键盘位置。由于桌面有障碍物，机器人需要小心移动，避免碰撞。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 460,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 9,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.3509448900003918,
+      "service_processing_s": 1.3459010124206543,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的左侧，靠近显示器。机器人需要移动到键盘位置，但当前路径上没有明显的障碍物，可以安全通过。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 134,
+        "total_tokens": 780
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的左侧，靠近显示器。机器人需要移动到键盘位置，但当前路径上没有明显的障碍物，可以安全通过。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌子的左侧，靠近显示器。机器人需要移动到键盘位置，但当前路径上没有明显的障碍物，可以安全通过。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 468,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 9,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.4571664380055154,
+      "service_processing_s": 1.451897144317627,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"寻找并定位键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌子上的键盘，它位于左下角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。接下来的行动是移动到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 144,
+        "total_tokens": 790
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。",
+        "action": "寻找并定位键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌子上的键盘，它位于左下角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。接下来的行动是移动到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。",
+        "action": "寻找并定位键盘。",
+        "reasoning": "图像显示了桌子上的键盘，它位于左下角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。接下来的行动是移动到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 476,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 9,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 2.0242381729913177,
+      "service_processing_s": 2.018264055252075,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"寻找并定位键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.5,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        },\n        {\n            \"dx\": 0.5,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        },\n        {\n            \"dx\": 0.5,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"键盘在图像的右下角，位于桌子的右侧。机器人需要向右移动，以接近键盘。由于键盘在桌面上，机器人可以平稳地移动到键盘的位置。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 203,
+        "total_tokens": 849
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "寻找并定位键盘。",
+        "waypoints": [
+          {
+            "dx": 0.5,
+            "dy": 0.0,
+            "dtheta": 0.0
+          },
+          {
+            "dx": 0.5,
+            "dy": 0.0,
+            "dtheta": 0.0
+          },
+          {
+            "dx": 0.5,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "键盘在图像的右下角，位于桌子的右侧。机器人需要向右移动，以接近键盘。由于键盘在桌面上，机器人可以平稳地移动到键盘的位置。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "寻找并定位键盘。",
+        "reasoning": "键盘在图像的右下角，位于桌子的右侧。机器人需要向右移动，以接近键盘。由于键盘在桌面上，机器人可以平稳地移动到键盘的位置。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.5,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          },
+          {
+            "dx": 0.5,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          },
+          {
+            "dx": 0.5,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 1.5,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 484,
+      "nonzero_raw_waypoints": true,
+      "review_notes": [
+        "原始JSON输出非零航点；未由图像确认通向键盘的地面路径，违反停止条件。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 9,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.3557803799922112,
+      "service_processing_s": 1.348947286605835,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面有障碍物，机器人需要小心移动，避免碰撞。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 135,
+        "total_tokens": 781
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面有障碍物，机器人需要小心移动，避免碰撞。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置。由于桌面有障碍物，机器人需要小心移动，避免碰撞。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 492,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 9,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.4543653549917508,
+      "service_processing_s": 1.446390151977539,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌面的右侧，靠近显示器。机器人需要移动到键盘位置。由于桌面有障碍物，机器人需要小心移动，避免碰撞。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 138,
+        "total_tokens": 784
+      },
+      "original_json": {
+        "environment": "一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌面的右侧，靠近显示器。机器人需要移动到键盘位置。由于桌面有障碍物，机器人需要小心移动，避免碰撞。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌面的右侧，靠近显示器。机器人需要移动到键盘位置。由于桌面有障碍物，机器人需要小心移动，避免碰撞。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 500,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 10,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.5003149929980282,
+      "service_processing_s": 1.4952614307403564,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌子上的键盘，它位于左下角。机器人需要移动到键盘附近，但当前的路径可能被障碍物阻挡。因此，我需要检查是否有障碍物，如果有的话，需要调整路径。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 149,
+        "total_tokens": 795
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌子上的键盘，它位于左下角。机器人需要移动到键盘附近，但当前的路径可能被障碍物阻挡。因此，我需要检查是否有障碍物，如果有的话，需要调整路径。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像显示了桌子上的键盘，它位于左下角。机器人需要移动到键盘附近，但当前的路径可能被障碍物阻挡。因此，我需要检查是否有障碍物，如果有的话，需要调整路径。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 508,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 10,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.3567734559910605,
+      "service_processing_s": 1.351477861404419,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的左下角，可以清晰地看到。机器人可以安全地移动到键盘的位置，因此可以执行导航。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 132,
+        "total_tokens": 778
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的左下角，可以清晰地看到。机器人可以安全地移动到键盘的位置，因此可以执行导航。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌子的左下角，可以清晰地看到。机器人可以安全地移动到键盘的位置，因此可以执行导航。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 516,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 10,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.5332015260064509,
+      "service_processing_s": 1.5272247791290283,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌面上的键盘，它位于右下角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。因此，下一步是移动到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 147,
+        "total_tokens": 793
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "图像显示了桌面上的键盘，它位于右下角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。因此，下一步是移动到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "图像显示了桌面上的键盘，它位于右下角。根据任务要求，需要导航到键盘。由于键盘在视野中清晰可见，可以确定其位置。因此，下一步是移动到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 524,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 10,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.8242506649985444,
+      "service_processing_s": 1.8174867630004883,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置，但首先需要确认是否可以安全地通过桌子表面。由于桌子表面有障碍物（如书籍、文件等），机器人可能需要绕行或调整路径以避免碰撞。然而，由于图像中没有显示机器人可以移动的地面路径，因此需要停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 179,
+        "total_tokens": 825
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置，但首先需要确认是否可以安全地通过桌子表面。由于桌子表面有障碍物（如书籍、文件等），机器人可能需要绕行或调整路径以避免碰撞。然而，由于图像中没有显示机器人可以移动的地面路径，因此需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌子的右侧，靠近显示器。机器人需要移动到键盘的位置，但首先需要确认是否可以安全地通过桌子表面。由于桌子表面有障碍物（如书籍、文件等），机器人可能需要绕行或调整路径以避免碰撞。然而，由于图像中没有显示机器人可以移动的地面路径，因此需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 532,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。",
+        "文字最后明确要求停止，但前文仍讨论桌面绕行，不能据单句判整体质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 10,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.4798603800009005,
+      "service_processing_s": 1.4730544090270996,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的右侧，可以清晰地看到。机器人可以安全地移动到键盘的前方，以进行操作。因此，我将导航到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 646,
+        "completion_tokens": 141,
+        "total_tokens": 787
+      },
+      "original_json": {
+        "environment": "一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的右侧，可以清晰地看到。机器人可以安全地移动到键盘的前方，以进行操作。因此，我将导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个杂乱的办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌子的右侧，可以清晰地看到。机器人可以安全地移动到键盘的前方，以进行操作。因此，我将导航到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status": "running",
+      "diagnostic_log": "business_api_20261019T083251Z_9005.log",
+      "diagnostic_line": 540,
+      "nonzero_raw_waypoints": false,
+      "review_notes": [
+        "零航点且未完成；仍需结合文字理由判断约束遵守，不能据此判质量通过。"
+      ]
+    }
+  ]
+}

@@ -21,6 +21,11 @@ export LMDEPLOY_BASE_URL="http://127.0.0.1:23333"
 export HOST="127.0.0.1"
 export PORT=20000
 export PROJECT2_DIAGNOSTICS=1
+export PROJECT2_NAV_PROMPT_PROFILE="${PROJECT2_NAV_PROMPT_PROFILE:-baseline_v1}"
+case "${PROJECT2_NAV_PROMPT_PROFILE}" in
+  baseline_v1|grounded_stop_v2) ;;
+  *) printf 'Unknown PROJECT2_NAV_PROMPT_PROFILE: %s\n' "${PROJECT2_NAV_PROMPT_PROFILE}" >&2; exit 1 ;;
+esac
 
 mkdir -p -- "${project_root}/logs"
 run_id="$(date -u +%Y%m%dT%H%M%SZ)"
@@ -37,6 +42,7 @@ launch_command=(
   printf 'Backend URL: %s\n' "${LMDEPLOY_BASE_URL}"
   printf 'Business URL: http://%s:%s\n' "${HOST}" "${PORT}"
   printf 'Navigation diagnostics: enabled (raw model text and parsed result in this log)\n'
+  printf 'Navigation prompt profile: %s\n' "${PROJECT2_NAV_PROMPT_PROFILE}"
   printf 'Log file: %s\n' "${log_path}"
   printf 'Keep this terminal open while the business service is running.\n'
 

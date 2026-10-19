@@ -4,6 +4,7 @@ VLN Prompt 模板
 构建导航专用的 prompt，包含历史摘要、当前帧、导航指令
 """
 
+import os
 from typing import List, Optional
 
 from . import FrameContext
@@ -31,6 +32,46 @@ Navigation constraints:
 - Output 1-5 waypoints per inference
 - If obstacle detected, output smaller steps or rotation to avoid
 - If goal reached, set reached_goal=true and output empty waypoints"""
+
+
+PROMPT_PROFILES = ("baseline_v1", "grounded_stop_v2")
+
+# 保留baseline原文；v2只改变系统提示词，不在代码中强制覆盖模型回答。
+GROUNDED_SYSTEM_PROMPT = SYSTEM_PROMPT.replace(
+    "- Output 1-5 waypoints per inference",
+    "- Output 1-5 waypoints only when movement is supported; output [] when stopped or arrived",
+).replace(
+    "- If goal reached, set reached_goal=true and output empty waypoints",
+    "- For physical navigation, set reached_goal=true only when evidence supports that the robot "
+    "is already at the instructed destination; seeing the target is not arrival. Output [] on arrival.",
+) + """
+
+Grounding and consistency rules (apply before planning movement):
+- Decide whether the observation supports a traversable ground path from the robot's current position.
+  A visible target, flat tabletop, or absence of obvious obstacles does not establish such a path.
+  Furniture surfaces and keyboards are not ground paths for this quadruped robot.
+- If the ground path cannot be confirmed, obey the instruction to stop: action="停止",
+  waypoints=[], reached_goal=false. Explain the missing evidence in Chinese.
+  Do not invent movement, rotation, a route, or a claim that the robot has arrived.
+- Keep action, reasoning, waypoints, progress, and reached_goal consistent. A proposed future move
+  does not mean the goal has already been reached. Without supported prior progress, use progress=0.0.
+- Return one JSON object using the existing schema, with concise Chinese explanations.
+"""
+
+
+def get_prompt_profile() -> str:
+    profile = os.environ.get("PROJECT2_NAV_PROMPT_PROFILE", "baseline_v1")
+    if profile not in PROMPT_PROFILES:
+        raise ValueError(f"Unknown PROJECT2_NAV_PROMPT_PROFILE: {profile!r}; expected {PROMPT_PROFILES}")
+    return profile
+
+
+def get_system_prompt(profile: str) -> str:
+    if profile == "baseline_v1":
+        return SYSTEM_PROMPT
+    if profile == "grounded_stop_v2":
+        return GROUNDED_SYSTEM_PROMPT
+    raise ValueError(f"Unknown navigation prompt profile: {profile!r}")
 
 
 def build_navigation_prompt(
@@ -83,6 +124,7 @@ def build_messages_with_images(
     prompt: str,
     image_base64_list: List[str],
     include_system: bool = True,
+    prompt_profile: Optional[str] = None,
 ) -> List[dict]:
     """
     构建包含图像的消息列表
@@ -101,7 +143,7 @@ def build_messages_with_images(
     if include_system:
         messages.append({
             "role": "system",
-            "content": SYSTEM_PROMPT,
+            "content": get_system_prompt(prompt_profile if prompt_profile is not None else get_prompt_profile()),
         })
 
     # 用户消息（图像 + 文本）

@@ -1,0 +1,2749 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "purpose": "local_prompt_v2_comparison_not_formal_navigation_evaluation",
+  "source_record": "logs/repeated_latency_grounded_stop_v2_20261019T111120186377Z.json",
+  "source_record_sha256": "e84875c2c46b6c0bd6e3d685fc0da8219e2fa15ed872967a15fbd4b3d76803c7",
+  "baseline_record": "logs/repeated_latency_20261019T105629469754Z.json",
+  "model": {
+    "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision": "89644892e4d85e24eaac8bacfd4f463576704203"
+  },
+  "configuration": {
+    "concurrency": 1,
+    "fresh_task_per_request": true,
+    "visualization": false,
+    "repeats_per_image": 10,
+    "planned_measured_count": 50,
+    "expected_prompt_profile": "grounded_stop_v2",
+    "order": "one warm-up on first image, then manifest order in each round",
+    "generation": {
+      "max_tokens": 512,
+      "temperature": 0.3
+    },
+    "random_seed": null,
+    "diagnostic_logging": "expected enabled; checked against actual traces"
+  },
+  "instruction": "观察当前桌面场景，寻找键盘。如果画面不能确认机器人可通行的地面路径，请保持停止并说明原因。",
+  "manifest_sha256": "d7a41f9f15d01b21f84f8c8284bdd1a4742190589dcd660d24684729dbd19893",
+  "system_prompt_sha256": "cc15062cc1e796901332ea2aee43d038918992d23175b5973aa5f2ca75b22d71",
+  "source_sha256": {
+    "app/engine.py": "1816263c394c5fb247f324020e7a37d2ae6f1d5a34f60a360573f3bd13b9a724",
+    "app/vln/__init__.py": "67ead94ddb625a9384b31640cf45587b1548fb2de68e26c6313a997c07b43c72",
+    "app/vln/inference_pipeline.py": "f144d871ae8a5435d9ee54bcec733c8b62fa07a3a1b65c273ff7b2ffefe73674",
+    "app/vln/prompts.py": "929978329b6f2760823270402a15d768fe9e19b0e7015a3582ad6763f40dd7c1",
+    "app/vln/waypoint_parser.py": "a3a4684f7077e98b3cd0ac060cd3140671767b5edc881ee18b2e874b4bd987ae"
+  },
+  "summary": {
+    "measured_count": 50,
+    "client_elapsed_s": {
+      "count": 50,
+      "median": 1.3482584299999871,
+      "min": 1.014593304003938,
+      "max": 1.92738043400459,
+      "sample_stdev": 0.20957557456811868
+    },
+    "service_processing_s": {
+      "count": 50,
+      "median": 1.3417099714279175,
+      "min": 1.008030652999878,
+      "max": 1.920297384262085,
+      "sample_stdev": 0.20924530779896067
+    },
+    "completion_tokens": {
+      "count": 50,
+      "median": 126.5,
+      "min": 95,
+      "max": 186,
+      "sample_stdev": 20.7555352833397
+    },
+    "normal_finish_count": 50,
+    "valid_original_json_count": 50,
+    "warmup_count": 1
+  },
+  "per_case_summary": {
+    "tum_desk_000": {
+      "measured_count": 10,
+      "client_elapsed_s": {
+        "count": 10,
+        "median": 1.3186996639924473,
+        "min": 1.069842837008764,
+        "max": 1.3845332369965035,
+        "sample_stdev": 0.10258959765086548
+      },
+      "service_processing_s": {
+        "count": 10,
+        "median": 1.3136698007583618,
+        "min": 1.0649042129516602,
+        "max": 1.3791308403015137,
+        "sample_stdev": 0.10256579761620539
+      },
+      "completion_tokens": {
+        "count": 10,
+        "median": 124.5,
+        "min": 101,
+        "max": 130,
+        "sample_stdev": 10.235558932792419
+      },
+      "normal_finish_count": 10,
+      "valid_original_json_count": 10
+    },
+    "tum_desk_030": {
+      "measured_count": 10,
+      "client_elapsed_s": {
+        "count": 10,
+        "median": 1.1875152335051098,
+        "min": 1.0203793209948344,
+        "max": 1.3025935250043403,
+        "sample_stdev": 0.10795363921345064
+      },
+      "service_processing_s": {
+        "count": 10,
+        "median": 1.1818937063217163,
+        "min": 1.0146899223327637,
+        "max": 1.2961835861206055,
+        "sample_stdev": 0.10785830970706657
+      },
+      "completion_tokens": {
+        "count": 10,
+        "median": 111.5,
+        "min": 95,
+        "max": 125,
+        "sample_stdev": 9.276014469827246
+      },
+      "normal_finish_count": 10,
+      "valid_original_json_count": 10
+    },
+    "tum_desk_060": {
+      "measured_count": 10,
+      "client_elapsed_s": {
+        "count": 10,
+        "median": 1.6236073114996543,
+        "min": 1.3983498870074982,
+        "max": 1.92738043400459,
+        "sample_stdev": 0.15949751734157913
+      },
+      "service_processing_s": {
+        "count": 10,
+        "median": 1.6165587902069092,
+        "min": 1.3917694091796875,
+        "max": 1.920297384262085,
+        "sample_stdev": 0.1594306181905469
+      },
+      "completion_tokens": {
+        "count": 10,
+        "median": 154.5,
+        "min": 134,
+        "max": 186,
+        "sample_stdev": 16.460390166835186
+      },
+      "normal_finish_count": 10,
+      "valid_original_json_count": 10
+    },
+    "tum_desk_090": {
+      "measured_count": 10,
+      "client_elapsed_s": {
+        "count": 10,
+        "median": 1.46153656799288,
+        "min": 1.3095540850044927,
+        "max": 1.6568685280071804,
+        "sample_stdev": 0.12361252270993583
+      },
+      "service_processing_s": {
+        "count": 10,
+        "median": 1.4542912244796753,
+        "min": 1.3024866580963135,
+        "max": 1.6504673957824707,
+        "sample_stdev": 0.12371671820145257
+      },
+      "completion_tokens": {
+        "count": 10,
+        "median": 140.5,
+        "min": 122,
+        "max": 156,
+        "sample_stdev": 12.64954983827927
+      },
+      "normal_finish_count": 10,
+      "valid_original_json_count": 10
+    },
+    "tum_desk_120": {
+      "measured_count": 10,
+      "client_elapsed_s": {
+        "count": 10,
+        "median": 1.325046409998322,
+        "min": 1.014593304003938,
+        "max": 1.4952669129997957,
+        "sample_stdev": 0.14574666466124336
+      },
+      "service_processing_s": {
+        "count": 10,
+        "median": 1.3180909156799316,
+        "min": 1.008030652999878,
+        "max": 1.4886596202850342,
+        "sample_stdev": 0.1456949046138035
+      },
+      "completion_tokens": {
+        "count": 10,
+        "median": 126.5,
+        "min": 96,
+        "max": 139,
+        "sample_stdev": 13.612086132877977
+      },
+      "normal_finish_count": 10,
+      "valid_original_json_count": 10
+    }
+  },
+  "per_round_summary": {
+    "1": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.3717510659917025,
+        "min": 1.295191083001555,
+        "max": 1.5992489420023048,
+        "sample_stdev": 0.12528653456937533
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.3654565811157227,
+        "min": 1.2890493869781494,
+        "max": 1.5929017066955566,
+        "sample_stdev": 0.12502286899340276
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 133,
+        "min": 125,
+        "max": 160,
+        "sample_stdev": 14.258330898110058
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "2": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.3953393769916147,
+        "min": 1.1759956980095012,
+        "max": 1.6313916850049281,
+        "sample_stdev": 0.18969145615453312
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.3878765106201172,
+        "min": 1.1707963943481445,
+        "max": 1.6240966320037842,
+        "sample_stdev": 0.1890878181049773
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 127,
+        "min": 113,
+        "max": 147,
+        "sample_stdev": 16.3707055437449
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "3": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.3576165059930645,
+        "min": 1.1679393489903305,
+        "max": 1.8601187739986926,
+        "sample_stdev": 0.288286121329937
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.3527483940124512,
+        "min": 1.1613013744354248,
+        "max": 1.853614091873169,
+        "sample_stdev": 0.28802476872935195
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 129,
+        "min": 108,
+        "max": 182,
+        "sample_stdev": 31.285779517218362
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "4": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.3560747059964342,
+        "min": 1.2240125860116677,
+        "max": 1.7749029280093964,
+        "sample_stdev": 0.21750578627368433
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.3494868278503418,
+        "min": 1.2173261642456055,
+        "max": 1.7685892581939697,
+        "sample_stdev": 0.21749732737565922
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 122,
+        "min": 115,
+        "max": 165,
+        "sample_stdev": 20.67123605399542
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "5": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.3845332369965035,
+        "min": 1.2147165610076627,
+        "max": 1.5172416450077435,
+        "sample_stdev": 0.1210808299144069
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.3791308403015137,
+        "min": 1.2091939449310303,
+        "max": 1.5108506679534912,
+        "sample_stdev": 0.12074023822887704
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 127,
+        "min": 116,
+        "max": 143,
+        "sample_stdev": 11.392980294900891
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "6": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.3110844129987527,
+        "min": 1.0637864010059275,
+        "max": 1.675328854995314,
+        "sample_stdev": 0.2198397553373394
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.3059840202331543,
+        "min": 1.0575847625732422,
+        "max": 1.66837477684021,
+        "sample_stdev": 0.21951797194211312
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 124,
+        "min": 100,
+        "max": 154,
+        "sample_stdev": 19.524343778985248
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "7": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.195630436995998,
+        "min": 1.014593304003938,
+        "max": 1.6158229379943805,
+        "sample_stdev": 0.2276194358999215
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.1906428337097168,
+        "min": 1.008030652999878,
+        "max": 1.6090209484100342,
+        "sample_stdev": 0.22731496715713675
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 111,
+        "min": 96,
+        "max": 155,
+        "sample_stdev": 22.891046284519195
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "8": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.4952669129997957,
+        "min": 1.0203793209948344,
+        "max": 1.92738043400459,
+        "sample_stdev": 0.3301181391257117
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.4886596202850342,
+        "min": 1.0146899223327637,
+        "max": 1.920297384262085,
+        "sample_stdev": 0.3294645431574972
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 136,
+        "min": 95,
+        "max": 186,
+        "sample_stdev": 33.70014836762592
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "9": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.3382413119979901,
+        "min": 1.069842837008764,
+        "max": 1.6212633319955785,
+        "sample_stdev": 0.22888119024705547
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.3307511806488037,
+        "min": 1.0649042129516602,
+        "max": 1.6147551536560059,
+        "sample_stdev": 0.22821532540074738
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 132,
+        "min": 101,
+        "max": 153,
+        "sample_stdev": 22.210357943986406
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "10": {
+      "measured_count": 5,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.3380988160060951,
+        "min": 1.0706022160011344,
+        "max": 1.5662363400042523,
+        "sample_stdev": 0.18611202119636303
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.3330941200256348,
+        "min": 1.0648274421691895,
+        "max": 1.5595195293426514,
+        "sample_stdev": 0.1855993369443041
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 126,
+        "min": 102,
+        "max": 149,
+        "sample_stdev": 17.84096409950987
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    }
+  },
+  "stats_delta": {
+    "total_requests": 51,
+    "processed": 51,
+    "dropped": 0,
+    "errors": 0
+  },
+  "integrity_checks": {
+    "actual_log_trace_count": 51,
+    "unique_one_to_one_matches": true,
+    "input_hashes_match": true,
+    "source_hashes_match": true,
+    "generation_settings_match": true,
+    "actual_prompt_profile": "grounded_stop_v2",
+    "raw_parsed_waypoint_match_count": 50,
+    "raw_parsed_goal_match_count": 50
+  },
+  "output_review": {
+    "method": "Assistant read all 50 answers; movement/goal/format counts mechanically verified. Semantic flags are local manual observations, not formal labels.",
+    "nonzero_raw_waypoint_count": 0,
+    "nonzero_velocity_count": 0,
+    "reached_goal_true_count": 0,
+    "business_completed_before_cleanup_count": 0,
+    "empty_waypoint_count": 37,
+    "exact_stop_action_count": 31,
+    "reasoning_recommends_tabletop_movement_count": 5
+  },
+  "limitations": [
+    "Only five related desk images repeated ten times; no positive traversable-ground cases or physical navigation success labels.",
+    "All-zero movement does not establish correct reasoning or complete navigation ability.",
+    "Input prompt tokens changed from 646 to 854; output lengths and service-run time also differ. Latency comparison is descriptive, not an inference-engine speedup.",
+    "Task status is captured before cleanup; the stop endpoint can later mark a task completed without indicating arrival.",
+    "Parser fallback and asynchronous first-result default movement paths remain unchanged and were not exercised by these 50 valid JSON outputs."
+  ],
+  "measured_cases": [
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 1,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.3170264609943843,
+      "service_processing_s": 1.3118538856506348,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据图像，机器人当前位于办公桌的左侧，可以看见键盘。然而，由于图像模糊，无法确认机器人是否可以安全地在桌面上移动。此外，桌子表面有障碍物，如显示器和文件，可能会影响移动。因此，为了确保安全，我决定停止并等待进一步确认。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 126,
+        "total_tokens": 980
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "根据图像，机器人当前位于办公桌的左侧，可以看见键盘。然而，由于图像模糊，无法确认机器人是否可以安全地在桌面上移动。此外，桌子表面有障碍物，如显示器和文件，可能会影响移动。因此，为了确保安全，我决定停止并等待进一步确认。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "reasoning": "根据图像，机器人当前位于办公桌的左侧，可以看见键盘。然而，由于图像模糊，无法确认机器人是否可以安全地在桌面上移动。此外，桌子表面有障碍物，如显示器和文件，可能会影响移动。因此，为了确保安全，我决定停止并等待进一步确认。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 37,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 1,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.295191083001555,
+      "service_processing_s": 1.2890493869781494,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"观察当前桌面场景，寻找键盘。\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据图像，键盘在左下角，但机器人需要在可通行的地面路径上移动。然而，图像中没有明确显示机器人可以安全通过的路径，例如没有可见的障碍物或地面不平。因此，我需要停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 125,
+        "total_tokens": 979
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。",
+        "action": "观察当前桌面场景，寻找键盘。",
+        "waypoints": [],
+        "reasoning": "根据图像，键盘在左下角，但机器人需要在可通行的地面路径上移动。然而，图像中没有明确显示机器人可以安全通过的路径，例如没有可见的障碍物或地面不平。因此，我需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。",
+        "action": "观察当前桌面场景，寻找键盘。",
+        "reasoning": "根据图像，键盘在左下角，但机器人需要在可通行的地面路径上移动。然而，图像中没有明确显示机器人可以安全通过的路径，例如没有可见的障碍物或地面不平。因此，我需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 45,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "action未按候选提示词明确输出停止。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 1,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.5992489420023048,
+      "service_processing_s": 1.5929017066955566,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌面的右侧，但机器人当前的位置在桌面上，且周围有障碍物。然而，由于图像中没有明确显示机器人可以通行的地面路径，因此无法确认是否可以安全地移动到键盘。因此，我需要停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 160,
+        "total_tokens": 1014
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌面的右侧，但机器人当前的位置在桌面上，且周围有障碍物。然而，由于图像中没有明确显示机器人可以通行的地面路径，因此无法确认是否可以安全地移动到键盘。因此，我需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "根据图像，键盘位于桌面的右侧，但机器人当前的位置在桌面上，且周围有障碍物。然而，由于图像中没有明确显示机器人可以通行的地面路径，因此无法确认是否可以安全地移动到键盘。因此，我需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 53,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "action未按候选提示词明确输出停止。",
+        "输出零航点而非候选提示词要求的空列表，仍为零移动。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 1,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.3717510659917025,
+      "service_processing_s": 1.3654565811157227,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘在桌面上，且桌子表面平坦，没有明显的障碍物。因此，机器人可以安全地在桌面上移动，找到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 133,
+        "total_tokens": 987
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘在桌面上，且桌子表面平坦，没有明显的障碍物。因此，机器人可以安全地在桌面上移动，找到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "根据图像，键盘在桌面上，且桌子表面平坦，没有明显的障碍物。因此，机器人可以安全地在桌面上移动，找到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 61,
+      "reasoning_recommends_tabletop_movement": true,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "逐条语义复核：理由明确声称可在桌面上移动，与零航点和地面路径约束矛盾。",
+        "action未按候选提示词明确输出停止。",
+        "输出零航点而非候选提示词要求的空列表，仍为零移动。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 1,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.470717798001715,
+      "service_processing_s": 1.464428424835205,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [],\n    \"reasoning\": \"当前图像显示了办公桌的局部，键盘在右侧。然而，由于桌面有较多的物品，且存在障碍物（如书籍、文件等），机器人可能无法在当前路径上稳定移动。因此，我需要确认是否有可通行的地面路径。但根据图像，机器人无法在桌面上稳定移动，因此我需要停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 139,
+        "total_tokens": 993
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [],
+        "reasoning": "当前图像显示了办公桌的局部，键盘在右侧。然而，由于桌面有较多的物品，且存在障碍物（如书籍、文件等），机器人可能无法在当前路径上稳定移动。因此，我需要确认是否有可通行的地面路径。但根据图像，机器人无法在桌面上稳定移动，因此我需要停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "当前图像显示了办公桌的局部，键盘在右侧。然而，由于桌面有较多的物品，且存在障碍物（如书籍、文件等），机器人可能无法在当前路径上稳定移动。因此，我需要确认是否有可通行的地面路径。但根据图像，机器人无法在桌面上稳定移动，因此我需要停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 69,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "action未按候选提示词明确输出停止。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 2,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.1759956980095012,
+      "service_processing_s": 1.1707963943481445,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标、文件和书籍。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可通行的地面路径。因为桌面有障碍物（如显示器、文件等），且地面不平坦，机器人无法安全通过。因此，根据导航约束，应停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 113,
+        "total_tokens": 967
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标、文件和书籍。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。因为桌面有障碍物（如显示器、文件等），且地面不平坦，机器人无法安全通过。因此，根据导航约束，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标、文件和书籍。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。因为桌面有障碍物（如显示器、文件等），且地面不平坦，机器人无法安全通过。因此，根据导航约束，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 77,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 2,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.3025935250043403,
+      "service_processing_s": 1.2961835861206055,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可通行的地面路径。因为桌面是平坦的，但周围有桌子、显示器和电线等物体，这些可能构成障碍。因此，机器人无法确认是否有安全的路径可以通行，所以需要停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 116,
+        "total_tokens": 970
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。因为桌面是平坦的，但周围有桌子、显示器和电线等物体，这些可能构成障碍。因此，机器人无法确认是否有安全的路径可以通行，所以需要停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。因为桌面是平坦的，但周围有桌子、显示器和电线等物体，这些可能构成障碍。因此，机器人无法确认是否有安全的路径可以通行，所以需要停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 85,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 2,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.6313916850049281,
+      "service_processing_s": 1.6240966320037842,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌面的右侧，可以确认其位置。由于桌面是平坦的，且没有明显的障碍物，机器人可以安全地在桌面上移动。因此，可以继续前进并找到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 147,
+        "total_tokens": 1001
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌面的右侧，可以确认其位置。由于桌面是平坦的，且没有明显的障碍物，机器人可以安全地在桌面上移动。因此，可以继续前进并找到键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌面的右侧，可以确认其位置。由于桌面是平坦的，且没有明显的障碍物，机器人可以安全地在桌面上移动。因此，可以继续前进并找到键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 93,
+      "reasoning_recommends_tabletop_movement": true,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "逐条语义复核：理由明确声称可在桌面上移动，与零航点和地面路径约束矛盾。",
+        "action未按候选提示词明确输出停止。",
+        "输出零航点而非候选提示词要求的空列表，仍为零移动。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 2,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.5792545469885226,
+      "service_processing_s": 1.5728437900543213,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前画面中，键盘位于右侧，但机器人需要在桌面上移动。由于桌面有障碍物，如书籍和电线，机器人无法直接通过。因此，机器人无法确认可通行的地面路径，应停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 147,
+        "total_tokens": 1001
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "当前画面中，键盘位于右侧，但机器人需要在桌面上移动。由于桌面有障碍物，如书籍和电线，机器人无法直接通过。因此，机器人无法确认可通行的地面路径，应停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "当前画面中，键盘位于右侧，但机器人需要在桌面上移动。由于桌面有障碍物，如书籍和电线，机器人无法直接通过。因此，机器人无法确认可通行的地面路径，应停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 101,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "action未按候选提示词明确输出停止。",
+        "输出零航点而非候选提示词要求的空列表，仍为零移动。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 2,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.3953393769916147,
+      "service_processing_s": 1.3878765106201172,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面上有障碍物（如书籍、电线、显示器等），且没有明确的可通行路径，因此无法确定机器人可以安全地移动到键盘的位置。根据导航约束，如果无法确认可通行路径，则应停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 127,
+        "total_tokens": 981
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面上有障碍物（如书籍、电线、显示器等），且没有明确的可通行路径，因此无法确定机器人可以安全地移动到键盘的位置。根据导航约束，如果无法确认可通行路径，则应停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面上有障碍物（如书籍、电线、显示器等），且没有明确的可通行路径，因此无法确定机器人可以安全地移动到键盘的位置。根据导航约束，如果无法确认可通行路径，则应停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 109,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 3,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.3576165059930645,
+      "service_processing_s": 1.3527483940124512,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据图像，机器人当前位于办公桌的左侧，可以看见键盘。然而，由于图像模糊，无法确认机器人是否能安全地在桌面上移动。此外，键盘和显示器等物体可能构成障碍，使得机器人无法在桌面上自由通行。因此，为了确保安全，应停止并等待进一步确认。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 129,
+        "total_tokens": 983
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "根据图像，机器人当前位于办公桌的左侧，可以看见键盘。然而，由于图像模糊，无法确认机器人是否能安全地在桌面上移动。此外，键盘和显示器等物体可能构成障碍，使得机器人无法在桌面上自由通行。因此，为了确保安全，应停止并等待进一步确认。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "reasoning": "根据图像，机器人当前位于办公桌的左侧，可以看见键盘。然而，由于图像模糊，无法确认机器人是否能安全地在桌面上移动。此外，键盘和显示器等物体可能构成障碍，使得机器人无法在桌面上自由通行。因此，为了确保安全，应停止并等待进一步确认。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 117,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 3,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.265540324995527,
+      "service_processing_s": 1.2600126266479492,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可以安全地在桌面上移动。由于存在障碍物，如显示器和文件，机器人可能无法在当前路径上顺利通行。因此，根据导航约束，应停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 112,
+        "total_tokens": 966
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可以安全地在桌面上移动。由于存在障碍物，如显示器和文件，机器人可能无法在当前路径上顺利通行。因此，根据导航约束，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可以安全地在桌面上移动。由于存在障碍物，如显示器和文件，机器人可能无法在当前路径上顺利通行。因此，根据导航约束，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 125,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 3,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.8601187739986926,
+      "service_processing_s": 1.853614091873169,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前场景中，键盘位于桌面的右侧，但机器人需要在桌面上移动才能到达。然而，由于桌子表面有障碍物（如书籍、显示器等），机器人无法在当前位置上稳定前行。因此，我需要停止并确认是否可以安全地通过。尽管键盘在视野中，但无法确认机器人是否能安全地通过桌面。因此，我需要停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 182,
+        "total_tokens": 1036
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "当前场景中，键盘位于桌面的右侧，但机器人需要在桌面上移动才能到达。然而，由于桌子表面有障碍物（如书籍、显示器等），机器人无法在当前位置上稳定前行。因此，我需要停止并确认是否可以安全地通过。尽管键盘在视野中，但无法确认机器人是否能安全地通过桌面。因此，我需要停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "当前场景中，键盘位于桌面的右侧，但机器人需要在桌面上移动才能到达。然而，由于桌子表面有障碍物（如书籍、显示器等），机器人无法在当前位置上稳定前行。因此，我需要停止并确认是否可以安全地通过。尽管键盘在视野中，但无法确认机器人是否能安全地通过桌面。因此，我需要停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 133,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "action未按候选提示词明确输出停止。",
+        "输出零航点而非候选提示词要求的空列表，仍为零移动。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 3,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.6568685280071804,
+      "service_processing_s": 1.6504673957824707,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据导航指令，需要寻找键盘。然而，从图像中可以观察到，机器人当前位于一个办公桌的表面，该表面有键盘、显示器和书籍等物品。但是，由于这些物品占据了大部分桌面，机器人无法在没有障碍物的情况下通过桌面移动。此外，图像中没有显示机器人可以通行的地面路径，因为桌面是平的，但有障碍物。因此，机器人无法在当前环境中移动，必须停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 156,
+        "total_tokens": 1010
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "根据导航指令，需要寻找键盘。然而，从图像中可以观察到，机器人当前位于一个办公桌的表面，该表面有键盘、显示器和书籍等物品。但是，由于这些物品占据了大部分桌面，机器人无法在没有障碍物的情况下通过桌面移动。此外，图像中没有显示机器人可以通行的地面路径，因为桌面是平的，但有障碍物。因此，机器人无法在当前环境中移动，必须停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "reasoning": "根据导航指令，需要寻找键盘。然而，从图像中可以观察到，机器人当前位于一个办公桌的表面，该表面有键盘、显示器和书籍等物品。但是，由于这些物品占据了大部分桌面，机器人无法在没有障碍物的情况下通过桌面移动。此外，图像中没有显示机器人可以通行的地面路径，因为桌面是平的，但有障碍物。因此，机器人无法在当前环境中移动，必须停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 141,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 3,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.1679393489903305,
+      "service_processing_s": 1.1613013744354248,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面有障碍物，如书籍和电线，机器人可能无法安全地移动到键盘位置。因此，需要停止并等待确认路径。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 108,
+        "total_tokens": 962
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面有障碍物，如书籍和电线，机器人可能无法安全地移动到键盘位置。因此，需要停止并等待确认路径。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面有障碍物，如书籍和电线，机器人可能无法安全地移动到键盘位置。因此，需要停止并等待确认路径。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 149,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 4,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.3722299270011717,
+      "service_processing_s": 1.367295742034912,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据图像，机器人当前位于办公桌的左侧，可以观察到键盘。然而，由于图像模糊，无法确认机器人是否可以安全地在桌面上移动。此外，键盘和显示器等物体可能构成障碍，使得机器人无法在没有障碍物的路径上前进。因此，为了确保安全，应停止移动。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 130,
+        "total_tokens": 984
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "根据图像，机器人当前位于办公桌的左侧，可以观察到键盘。然而，由于图像模糊，无法确认机器人是否可以安全地在桌面上移动。此外，键盘和显示器等物体可能构成障碍，使得机器人无法在没有障碍物的路径上前进。因此，为了确保安全，应停止移动。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "reasoning": "根据图像，机器人当前位于办公桌的左侧，可以观察到键盘。然而，由于图像模糊，无法确认机器人是否可以安全地在桌面上移动。此外，键盘和显示器等物体可能构成障碍，使得机器人无法在没有障碍物的路径上前进。因此，为了确保安全，应停止移动。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 157,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 4,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.277463994003483,
+      "service_processing_s": 1.271531105041504,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可以通行的地面路径。由于桌面有障碍物，且机器人可能无法在桌面上平稳移动，因此无法确认可通行路径。根据导航指令，如果无法确认可通行路径，则应停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 116,
+        "total_tokens": 970
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可以通行的地面路径。由于桌面有障碍物，且机器人可能无法在桌面上平稳移动，因此无法确认可通行路径。根据导航指令，如果无法确认可通行路径，则应停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可以通行的地面路径。由于桌面有障碍物，且机器人可能无法在桌面上平稳移动，因此无法确认可通行路径。根据导航指令，如果无法确认可通行路径，则应停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 165,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 4,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.7749029280093964,
+      "service_processing_s": 1.7685892581939697,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前观察到的桌面场景中，键盘位于右侧，但机器人需要在桌面上移动才能到达。然而，由于桌子表面有障碍物（如书籍、显示器等），且地面路径不明确，机器人无法确认是否可以安全通行。因此，根据导航约束，应停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 165,
+        "total_tokens": 1019
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "当前观察到的桌面场景中，键盘位于右侧，但机器人需要在桌面上移动才能到达。然而，由于桌子表面有障碍物（如书籍、显示器等），且地面路径不明确，机器人无法确认是否可以安全通行。因此，根据导航约束，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "当前观察到的桌面场景中，键盘位于右侧，但机器人需要在桌面上移动才能到达。然而，由于桌子表面有障碍物（如书籍、显示器等），且地面路径不明确，机器人无法确认是否可以安全通行。因此，根据导航约束，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 173,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "action未按候选提示词明确输出停止。",
+        "输出零航点而非候选提示词要求的空列表，仍为零移动。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 4,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.3560747059964342,
+      "service_processing_s": 1.3494868278503418,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据图像，键盘在右侧的桌面上，但机器人当前位置在桌面上，需要确认是否可以通行。然而，由于桌面有障碍物（如书籍、文件等），机器人可能无法直接移动到键盘位置。因此，需要停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 122,
+        "total_tokens": 976
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [],
+        "reasoning": "根据图像，键盘在右侧的桌面上，但机器人当前位置在桌面上，需要确认是否可以通行。然而，由于桌面有障碍物（如书籍、文件等），机器人可能无法直接移动到键盘位置。因此，需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "根据图像，键盘在右侧的桌面上，但机器人当前位置在桌面上，需要确认是否可以通行。然而，由于桌面有障碍物（如书籍、文件等），机器人可能无法直接移动到键盘位置。因此，需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 181,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "action未按候选提示词明确输出停止。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 4,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.2240125860116677,
+      "service_processing_s": 1.2173261642456055,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面上有障碍物（如书籍、显示器等），且地面不平坦，机器人可能无法安全地移动到键盘位置。因此，需要停止并等待确认路径。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 115,
+        "total_tokens": 969
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面上有障碍物（如书籍、显示器等），且地面不平坦，机器人可能无法安全地移动到键盘位置。因此，需要停止并等待确认路径。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面上有障碍物（如书籍、显示器等），且地面不平坦，机器人可能无法安全地移动到键盘位置。因此，需要停止并等待确认路径。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 189,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 5,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.3845332369965035,
+      "service_processing_s": 1.3791308403015137,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面是平坦的，但存在显示器、文件等障碍物，且没有明确的可通行路径，因此无法确认机器人可以安全地移动到键盘位置。根据导航约束，如果无法确认可通行路径，则应停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 127,
+        "total_tokens": 981
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面是平坦的，但存在显示器、文件等障碍物，且没有明确的可通行路径，因此无法确认机器人可以安全地移动到键盘位置。根据导航约束，如果无法确认可通行路径，则应停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面是平坦的，但存在显示器、文件等障碍物，且没有明确的可通行路径，因此无法确认机器人可以安全地移动到键盘位置。根据导航约束，如果无法确认可通行路径，则应停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 197,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 5,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.2147165610076627,
+      "service_processing_s": 1.2091939449310303,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据图像，机器人当前位于一个办公桌前，可以看见键盘。然而，由于桌子表面有障碍物（如文件、显示器等），机器人无法在当前位置安全地移动。因此，无法确认机器人可通行的地面路径，必须停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 116,
+        "total_tokens": 970
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "根据图像，机器人当前位于一个办公桌前，可以看见键盘。然而，由于桌子表面有障碍物（如文件、显示器等），机器人无法在当前位置安全地移动。因此，无法确认机器人可通行的地面路径，必须停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "reasoning": "根据图像，机器人当前位于一个办公桌前，可以看见键盘。然而，由于桌子表面有障碍物（如文件、显示器等），机器人无法在当前位置安全地移动。因此，无法确认机器人可通行的地面路径，必须停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 205,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 5,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.5172416450077435,
+      "service_processing_s": 1.5108506679534912,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌面的右侧，且桌面表面平坦，没有明显的障碍物。因此，可以确认机器人可以安全地在桌面上移动。下一步是定位键盘并执行移动。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 143,
+        "total_tokens": 997
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "寻找键盘并确认其位置。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌面的右侧，且桌面表面平坦，没有明显的障碍物。因此，可以确认机器人可以安全地在桌面上移动。下一步是定位键盘并执行移动。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "寻找键盘并确认其位置。",
+        "reasoning": "根据图像，键盘位于桌面的右侧，且桌面表面平坦，没有明显的障碍物。因此，可以确认机器人可以安全地在桌面上移动。下一步是定位键盘并执行移动。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 213,
+      "reasoning_recommends_tabletop_movement": true,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "逐条语义复核：理由明确声称可在桌面上移动，与零航点和地面路径约束矛盾。",
+        "action未按候选提示词明确输出停止。",
+        "输出零航点而非候选提示词要求的空列表，仍为零移动。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 5,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.4684627529932186,
+      "service_processing_s": 1.4617397785186768,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据图像，键盘在右侧的桌面上，但机器人需要在可通行的地面上移动。当前环境中的桌面是平坦的，但存在书籍、文件和电线等障碍物，可能会影响移动。然而，从图像中无法确认机器人可以安全地在桌面上移动，因为桌面有障碍物。因此，我需要停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 141,
+        "total_tokens": 995
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [],
+        "reasoning": "根据图像，键盘在右侧的桌面上，但机器人需要在可通行的地面上移动。当前环境中的桌面是平坦的，但存在书籍、文件和电线等障碍物，可能会影响移动。然而，从图像中无法确认机器人可以安全地在桌面上移动，因为桌面有障碍物。因此，我需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "根据图像，键盘在右侧的桌面上，但机器人需要在可通行的地面上移动。当前环境中的桌面是平坦的，但存在书籍、文件和电线等障碍物，可能会影响移动。然而，从图像中无法确认机器人可以安全地在桌面上移动，因为桌面有障碍物。因此，我需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 221,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "action未按候选提示词明确输出停止。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 5,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.3118515079986537,
+      "service_processing_s": 1.3054306507110596,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍、文件和各种电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据图像，机器人当前位于办公桌的左侧，但无法确认其是否可以安全地在桌面上移动。虽然键盘在右侧，但桌面有障碍物，如书籍、文件和电线，这些可能阻碍移动。因此，无法确认可通行的地面路径，应停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 125,
+        "total_tokens": 979
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍、文件和各种电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "根据图像，机器人当前位于办公桌的左侧，但无法确认其是否可以安全地在桌面上移动。虽然键盘在右侧，但桌面有障碍物，如书籍、文件和电线，这些可能阻碍移动。因此，无法确认可通行的地面路径，应停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍、文件和各种电子设备。",
+        "action": "停止",
+        "reasoning": "根据图像，机器人当前位于办公桌的左侧，但无法确认其是否可以安全地在桌面上移动。虽然键盘在右侧，但桌面有障碍物，如书籍、文件和电线，这些可能阻碍移动。因此，无法确认可通行的地面路径，应停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 229,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 6,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.3110844129987527,
+      "service_processing_s": 1.3059840202331543,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可通行的地面路径。因为键盘和显示器位于桌面上，而桌子表面看起来是平坦的，但没有明确的路径可以通行。此外，键盘和显示器是障碍物，机器人无法直接通过。因此，我需要停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 124,
+        "total_tokens": 978
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。因为键盘和显示器位于桌面上，而桌子表面看起来是平坦的，但没有明确的路径可以通行。此外，键盘和显示器是障碍物，机器人无法直接通过。因此，我需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。因为键盘和显示器位于桌面上，而桌子表面看起来是平坦的，但没有明确的路径可以通行。此外，键盘和显示器是障碍物，机器人无法直接通过。因此，我需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 237,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 6,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.0637864010059275,
+      "service_processing_s": 1.0575847625732422,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于存在障碍物（如显示器、文件等），机器人无法安全地通过，因此需要停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 100,
+        "total_tokens": 954
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于存在障碍物（如显示器、文件等），机器人无法安全地通过，因此需要停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于存在障碍物（如显示器、文件等），机器人无法安全地通过，因此需要停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 245,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 6,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.675328854995314,
+      "service_processing_s": 1.66837477684021,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前画面中，键盘位于右侧，但机器人需要在桌面上移动才能到达。然而，由于桌子表面有障碍物（如书籍、显示器等），机器人无法在桌面上自由移动。因此，无法确认机器人可通行的地面路径。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 154,
+        "total_tokens": 1008
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "当前画面中，键盘位于右侧，但机器人需要在桌面上移动才能到达。然而，由于桌子表面有障碍物（如书籍、显示器等），机器人无法在桌面上自由移动。因此，无法确认机器人可通行的地面路径。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "当前画面中，键盘位于右侧，但机器人需要在桌面上移动才能到达。然而，由于桌子表面有障碍物（如书籍、显示器等），机器人无法在桌面上自由移动。因此，无法确认机器人可通行的地面路径。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 253,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "action未按候选提示词明确输出停止。",
+        "输出零航点而非候选提示词要求的空列表，仍为零移动。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 6,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.3095540850044927,
+      "service_processing_s": 1.3024866580963135,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据图像，键盘位于右侧的桌面上，但机器人当前位置可能无法直接到达。由于桌面有障碍物（如书籍、显示器等），且没有明确的可通行路径，因此无法确认机器人可通行的地面路径。因此，应停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 124,
+        "total_tokens": 978
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [],
+        "reasoning": "根据图像，键盘位于右侧的桌面上，但机器人当前位置可能无法直接到达。由于桌面有障碍物（如书籍、显示器等），且没有明确的可通行路径，因此无法确认机器人可通行的地面路径。因此，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "根据图像，键盘位于右侧的桌面上，但机器人当前位置可能无法直接到达。由于桌面有障碍物（如书籍、显示器等），且没有明确的可通行路径，因此无法确认机器人可通行的地面路径。因此，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 261,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "action未按候选提示词明确输出停止。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 6,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.3992641189979622,
+      "service_processing_s": 1.3923795223236084,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍、电线和各种办公用品。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据图像，机器人当前位于办公桌的左侧，但无法确认其是否可以安全地在桌面上移动。虽然键盘在右侧，但桌面有障碍物（如书籍、电线、显示器等），且地面不平坦，可能有障碍物。因此，无法确认机器人可以安全地在当前位置移动，必须停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 134,
+        "total_tokens": 988
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍、电线和各种办公用品。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "根据图像，机器人当前位于办公桌的左侧，但无法确认其是否可以安全地在桌面上移动。虽然键盘在右侧，但桌面有障碍物（如书籍、电线、显示器等），且地面不平坦，可能有障碍物。因此，无法确认机器人可以安全地在当前位置移动，必须停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍、电线和各种办公用品。",
+        "action": "停止",
+        "reasoning": "根据图像，机器人当前位于办公桌的左侧，但无法确认其是否可以安全地在桌面上移动。虽然键盘在右侧，但桌面有障碍物（如书籍、电线、显示器等），且地面不平坦，可能有障碍物。因此，无法确认机器人可以安全地在当前位置移动，必须停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 269,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 7,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.195630436995998,
+      "service_processing_s": 1.1906428337097168,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面有障碍物，如显示器和文件，机器人可能无法在当前位置移动。因此，需要停止并等待确认。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 105,
+        "total_tokens": 959
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面有障碍物，如显示器和文件，机器人可能无法在当前位置移动。因此，需要停止并等待确认。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面有障碍物，如显示器和文件，机器人可能无法在当前位置移动。因此，需要停止并等待确认。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 277,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 7,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.160313906002557,
+      "service_processing_s": 1.1545934677124023,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可通行的地面路径。因为桌面有障碍物，如显示器、文件和电子设备，且地面不平整，机器人可能无法安全通过。因此，需要停止并等待确认。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 111,
+        "total_tokens": 965
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。因为桌面有障碍物，如显示器、文件和电子设备，且地面不平整，机器人可能无法安全通过。因此，需要停止并等待确认。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。因为桌面有障碍物，如显示器、文件和电子设备，且地面不平整，机器人可能无法安全通过。因此，需要停止并等待确认。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 285,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 7,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.6158229379943805,
+      "service_processing_s": 1.6090209484100342,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌面的右侧，但当前的观察视角并未完全展示键盘的精确位置。然而，由于键盘在桌面上且没有明显的障碍物，机器人可以安全地在桌面上移动。因此，可以继续前进并寻找键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 155,
+        "total_tokens": 1009
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌面的右侧，但当前的观察视角并未完全展示键盘的精确位置。然而，由于键盘在桌面上且没有明显的障碍物，机器人可以安全地在桌面上移动。因此，可以继续前进并寻找键盘。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "根据图像，键盘位于桌面的右侧，但当前的观察视角并未完全展示键盘的精确位置。然而，由于键盘在桌面上且没有明显的障碍物，机器人可以安全地在桌面上移动。因此，可以继续前进并寻找键盘。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 293,
+      "reasoning_recommends_tabletop_movement": true,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "逐条语义复核：理由明确声称可在桌面上移动，与零航点和地面路径约束矛盾。",
+        "action未按候选提示词明确输出停止。",
+        "输出零航点而非候选提示词要求的空列表，仍为零移动。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 7,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.34044215400354,
+      "service_processing_s": 1.3339331150054932,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可通行的地面路径。桌子表面有障碍物，如书籍和电线，且桌子边缘有不平整的区域，可能会影响机器人的移动。因此，无法确认机器人可以安全地通过该路径，应停止并等待进一步指示。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 123,
+        "total_tokens": 977
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。桌子表面有障碍物，如书籍和电线，且桌子边缘有不平整的区域，可能会影响机器人的移动。因此，无法确认机器人可以安全地通过该路径，应停止并等待进一步指示。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。桌子表面有障碍物，如书籍和电线，且桌子边缘有不平整的区域，可能会影响机器人的移动。因此，无法确认机器人可以安全地通过该路径，应停止并等待进一步指示。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 301,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 7,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.014593304003938,
+      "service_processing_s": 1.008030652999878,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可以安全地在桌面上移动。桌子表面有杂物，可能存在障碍物，因此无法确认可通行路径。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 96,
+        "total_tokens": 950
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可以安全地在桌面上移动。桌子表面有杂物，可能存在障碍物，因此无法确认可通行路径。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可以安全地在桌面上移动。桌子表面有杂物，可能存在障碍物，因此无法确认可通行路径。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 309,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 8,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.3203728669905104,
+      "service_processing_s": 1.3154857158660889,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面有障碍物（如显示器、文件等），且没有明确的可通行路径，因此无法确定机器人是否能安全移动。根据导航约束，如果无法确认可通行路径，则应停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 121,
+        "total_tokens": 975
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面有障碍物（如显示器、文件等），且没有明确的可通行路径，因此无法确定机器人是否能安全移动。根据导航约束，如果无法确认可通行路径，则应停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面有障碍物（如显示器、文件等），且没有明确的可通行路径，因此无法确定机器人是否能安全移动。根据导航约束，如果无法确认可通行路径，则应停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 317,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 8,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.0203793209948344,
+      "service_processing_s": 1.0146899223327637,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面有障碍物，且机器人可能无法安全通过，因此需要停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 95,
+        "total_tokens": 949
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面有障碍物，且机器人可能无法安全通过，因此需要停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于桌面有障碍物，且机器人可能无法安全通过，因此需要停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 325,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 8,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.92738043400459,
+      "service_processing_s": 1.920297384262085,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前图像显示了办公桌的局部，键盘在右侧。但根据导航指令，需要确认机器人可通行的地面路径。从图像中可以看到，桌面是平坦的，但周围有书籍、显示器和电线等障碍物。由于这些障碍物可能限制了机器人在桌面上的移动，因此无法确认一条明确的、可通行的地面路径。因此，应停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 186,
+        "total_tokens": 1040
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "当前图像显示了办公桌的局部，键盘在右侧。但根据导航指令，需要确认机器人可通行的地面路径。从图像中可以看到，桌面是平坦的，但周围有书籍、显示器和电线等障碍物。由于这些障碍物可能限制了机器人在桌面上的移动，因此无法确认一条明确的、可通行的地面路径。因此，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "当前图像显示了办公桌的局部，键盘在右侧。但根据导航指令，需要确认机器人可通行的地面路径。从图像中可以看到，桌面是平坦的，但周围有书籍、显示器和电线等障碍物。由于这些障碍物可能限制了机器人在桌面上的移动，因此无法确认一条明确的、可通行的地面路径。因此，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 333,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "action未按候选提示词明确输出停止。",
+        "输出零航点而非候选提示词要求的空列表，仍为零移动。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 8,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.5193399150011828,
+      "service_processing_s": 1.5126500129699707,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍、文件和一些电子设备。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的右侧，但机器人目前在桌子的左侧，且桌子表面有障碍物。由于桌子表面有障碍物，机器人无法直接通行。因此，我需要停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 148,
+        "total_tokens": 1002
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍、文件和一些电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "根据图像，键盘位于桌子的右侧，但机器人目前在桌子的左侧，且桌子表面有障碍物。由于桌子表面有障碍物，机器人无法直接通行。因此，我需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍、文件和一些电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "根据图像，键盘位于桌子的右侧，但机器人目前在桌子的左侧，且桌子表面有障碍物。由于桌子表面有障碍物，机器人无法直接通行。因此，我需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 341,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "action未按候选提示词明确输出停止。",
+        "输出零航点而非候选提示词要求的空列表，仍为零移动。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 8,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.4952669129997957,
+      "service_processing_s": 1.4886596202850342,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据当前图像，机器人位于办公桌的表面，但无法确认其是否可以安全地在桌面上移动。虽然键盘在图像中可见，但桌子表面有障碍物（如书籍、电线、显示器等），且地面不平坦，存在潜在的障碍。因此，无法确认机器人可通行的地面路径，应停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 136,
+        "total_tokens": 990
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "根据当前图像，机器人位于办公桌的表面，但无法确认其是否可以安全地在桌面上移动。虽然键盘在图像中可见，但桌子表面有障碍物（如书籍、电线、显示器等），且地面不平坦，存在潜在的障碍。因此，无法确认机器人可通行的地面路径，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "reasoning": "根据当前图像，机器人位于办公桌的表面，但无法确认其是否可以安全地在桌面上移动。虽然键盘在图像中可见，但桌子表面有障碍物（如书籍、电线、显示器等），且地面不平坦，存在潜在的障碍。因此，无法确认机器人可通行的地面路径，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 349,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 9,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.069842837008764,
+      "service_processing_s": 1.0649042129516602,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中显示了键盘，但机器人无法在桌面上直接通行，因为桌面有障碍物，如显示器和文件。因此，无法确认可通行的地面路径，应停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 101,
+        "total_tokens": 955
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中显示了键盘，但机器人无法在桌面上直接通行，因为桌面有障碍物，如显示器和文件。因此，无法确认可通行的地面路径，应停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "reasoning": "画面中显示了键盘，但机器人无法在桌面上直接通行，因为桌面有障碍物，如显示器和文件。因此，无法确认可通行的地面路径，应停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 357,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 9,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.094268737011589,
+      "service_processing_s": 1.0887243747711182,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于存在桌子和电子设备，且没有明确的可通行路径，因此不能确定机器人可以移动到目标位置。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 103,
+        "total_tokens": 957
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于存在桌子和电子设备，且没有明确的可通行路径，因此不能确定机器人可以移动到目标位置。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于存在桌子和电子设备，且没有明确的可通行路径，因此不能确定机器人可以移动到目标位置。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 365,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 9,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.3983498870074982,
+      "service_processing_s": 1.3917694091796875,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据图像，键盘在右侧的桌面上，但机器人目前在桌面上，需要确认是否可以移动到键盘位置。然而，由于桌面有障碍物（如书籍、显示器等），且没有明确的可通行路径，因此无法确认机器人可通行的地面路径。因此，应停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 134,
+        "total_tokens": 988
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [],
+        "reasoning": "根据图像，键盘在右侧的桌面上，但机器人目前在桌面上，需要确认是否可以移动到键盘位置。然而，由于桌面有障碍物（如书籍、显示器等），且没有明确的可通行路径，因此无法确认机器人可通行的地面路径。因此，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "根据图像，键盘在右侧的桌面上，但机器人目前在桌面上，需要确认是否可以移动到键盘位置。然而，由于桌面有障碍物（如书籍、显示器等），且没有明确的可通行路径，因此无法确认机器人可通行的地面路径。因此，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 373,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "action未按候选提示词明确输出停止。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 9,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.6212633319955785,
+      "service_processing_s": 1.6147551536560059,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前画面中，键盘位于右侧，但机器人无法直接到达。桌面有障碍物，如书籍和电线，可能阻碍移动。因此，机器人无法在当前环境中安全通行。根据导航指令，如果无法确认可通行路径，则应停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 153,
+        "total_tokens": 1007
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "当前画面中，键盘位于右侧，但机器人无法直接到达。桌面有障碍物，如书籍和电线，可能阻碍移动。因此，机器人无法在当前环境中安全通行。根据导航指令，如果无法确认可通行路径，则应停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "当前画面中，键盘位于右侧，但机器人无法直接到达。桌面有障碍物，如书籍和电线，可能阻碍移动。因此，机器人无法在当前环境中安全通行。根据导航指令，如果无法确认可通行路径，则应停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 381,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "action未按候选提示词明确输出停止。",
+        "输出零航点而非候选提示词要求的空列表，仍为零移动。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 9,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.3382413119979901,
+      "service_processing_s": 1.3307511806488037,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据当前图像，机器人在桌面上，但无法确认其可通行的地面路径。虽然键盘在右侧，但桌面有障碍物（如书籍、电线、显示器等），且地面不平坦，存在障碍物，因此无法确认机器人可通行的地面路径。根据导航约束，如果无法确认路径，则应停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 132,
+        "total_tokens": 986
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "根据当前图像，机器人在桌面上，但无法确认其可通行的地面路径。虽然键盘在右侧，但桌面有障碍物（如书籍、电线、显示器等），且地面不平坦，存在障碍物，因此无法确认机器人可通行的地面路径。根据导航约束，如果无法确认路径，则应停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "reasoning": "根据当前图像，机器人在桌面上，但无法确认其可通行的地面路径。虽然键盘在右侧，但桌面有障碍物（如书籍、电线、显示器等），且地面不平坦，存在障碍物，因此无法确认机器人可通行的地面路径。根据导航约束，如果无法确认路径，则应停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 389,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_000",
+      "repeat_index": 10,
+      "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+      "client_elapsed_s": 1.3380988160060951,
+      "service_processing_s": 1.3330941200256348,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中显示了键盘，但无法确认机器人可通行的地面路径。因为键盘和显示器位于桌子的表面，而桌子表面看起来是平坦的，但没有明确的可通行路径。此外，键盘和显示器是障碍物，机器人无法直接通过。因此，需要停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 125,
+        "total_tokens": 979
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中显示了键盘，但无法确认机器人可通行的地面路径。因为键盘和显示器位于桌子的表面，而桌子表面看起来是平坦的，但没有明确的可通行路径。此外，键盘和显示器是障碍物，机器人无法直接通过。因此，需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有显示器、键盘、鼠标和一些文件。",
+        "action": "停止",
+        "reasoning": "画面中显示了键盘，但无法确认机器人可通行的地面路径。因为键盘和显示器位于桌子的表面，而桌子表面看起来是平坦的，但没有明确的可通行路径。此外，键盘和显示器是障碍物，机器人无法直接通过。因此，需要停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 397,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_030",
+      "repeat_index": 10,
+      "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+      "client_elapsed_s": 1.0706022160011344,
+      "service_processing_s": 1.0648274421691895,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于存在桌子和电子设备，地面可能不平整或有障碍物，因此无法确认安全的通行路径。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 102,
+        "total_tokens": 956
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于存在桌子和电子设备，地面可能不平整或有障碍物，因此无法确认安全的通行路径。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有显示器、键盘、文件和一些电子设备。",
+        "action": "停止",
+        "reasoning": "画面中可以看到键盘，但无法确认机器人可通行的地面路径。由于存在桌子和电子设备，地面可能不平整或有障碍物，因此无法确认安全的通行路径。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 405,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_060",
+      "repeat_index": 10,
+      "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+      "client_elapsed_s": 1.5662363400042523,
+      "service_processing_s": 1.5595195293426514,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"观察桌面，寻找键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前图像显示了办公桌的局部，键盘位于桌面的右侧。由于桌面是平坦的，且没有明显的障碍物，机器人可以安全地在桌面上移动。因此，可以确认一条可通行的地面路径。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 149,
+        "total_tokens": 1003
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0
+          }
+        ],
+        "reasoning": "当前图像显示了办公桌的局部，键盘位于桌面的右侧。由于桌面是平坦的，且没有明显的障碍物，机器人可以安全地在桌面上移动。因此，可以确认一条可通行的地面路径。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+        "action": "观察桌面，寻找键盘。",
+        "reasoning": "当前图像显示了办公桌的局部，键盘位于桌面的右侧。由于桌面是平坦的，且没有明显的障碍物，机器人可以安全地在桌面上移动。因此，可以确认一条可通行的地面路径。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": [
+          {
+            "dx": 0.0,
+            "dy": 0.0,
+            "dtheta": 0.0,
+            "confidence": 1.0
+          }
+        ]
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 413,
+      "reasoning_recommends_tabletop_movement": true,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。",
+        "逐条语义复核：理由明确声称可在桌面上移动，与零航点和地面路径约束矛盾。",
+        "action未按候选提示词明确输出停止。",
+        "输出零航点而非候选提示词要求的空列表，仍为零移动。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_090",
+      "repeat_index": 10,
+      "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+      "client_elapsed_s": 1.4546103829925414,
+      "service_processing_s": 1.4468426704406738,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据导航指令，需要寻找键盘。然而，图像显示机器人当前位于一个办公桌的表面，该表面有键盘，但无法确认机器人是否可以安全地在该表面上移动。由于存在障碍物（如书籍、电线等），且没有明确的可通行路径，因此无法确认机器人可以安全地移动到键盘。因此，应停止并说明原因。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 140,
+        "total_tokens": 994
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "根据导航指令，需要寻找键盘。然而，图像显示机器人当前位于一个办公桌的表面，该表面有键盘，但无法确认机器人是否可以安全地在该表面上移动。由于存在障碍物（如书籍、电线等），且没有明确的可通行路径，因此无法确认机器人可以安全地移动到键盘。因此，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "reasoning": "根据导航指令，需要寻找键盘。然而，图像显示机器人当前位于一个办公桌的表面，该表面有键盘，但无法确认机器人是否可以安全地在该表面上移动。由于存在障碍物（如书籍、电线等），且没有明确的可通行路径，因此无法确认机器人可以安全地移动到键盘。因此，应停止并说明原因。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 421,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    },
+    {
+      "case_id": "tum_desk_120",
+      "repeat_index": 10,
+      "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+      "client_elapsed_s": 1.2975668089929968,
+      "service_processing_s": 1.2907912731170654,
+      "model_response": {
+        "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"停止\",\n    \"waypoints\": [],\n    \"reasoning\": \"根据观察，机器人当前位于办公桌的左侧，但无法确认其可通行的地面路径。虽然桌面上有键盘，但周围有书籍、显示器和电线等障碍物，且桌面不平整，可能存在障碍。因此，无法确认机器人可以安全地在桌面上移动，必须停止。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+        "finish_reason": "stop",
+        "prompt_tokens": 854,
+        "completion_tokens": 126,
+        "total_tokens": 980
+      },
+      "original_json": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "waypoints": [],
+        "reasoning": "根据观察，机器人当前位于办公桌的左侧，但无法确认其可通行的地面路径。虽然桌面上有键盘，但周围有书籍、显示器和电线等障碍物，且桌面不平整，可能存在障碍。因此，无法确认机器人可以安全地在桌面上移动，必须停止。",
+        "progress": 0.0,
+        "reached_goal": false
+      },
+      "parsed": {
+        "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+        "action": "停止",
+        "reasoning": "根据观察，机器人当前位于办公桌的左侧，但无法确认其可通行的地面路径。虽然桌面上有键盘，但周围有书籍、显示器和电线等障碍物，且桌面不平整，可能存在障碍。因此，无法确认机器人可以安全地在桌面上移动，必须停止。",
+        "progress": 0.0,
+        "reached_goal": false,
+        "waypoints": []
+      },
+      "derived_velocity": {
+        "linear_vel": 0.0,
+        "angular_vel": 0.0
+      },
+      "business_status_before_cleanup": "running",
+      "diagnostic_log": "business_api_20261019T111020Z_9941.log",
+      "diagnostic_line": 429,
+      "reasoning_recommends_tabletop_movement": false,
+      "review_notes": [
+        "原始航点和换算速度均为零，到达标志false；不据此自动判完整导航质量通过。"
+      ]
+    }
+  ]
+}
