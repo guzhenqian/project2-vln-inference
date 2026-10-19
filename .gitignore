@@ -1,0 +1,36 @@
+# Local model/data/runtime artifacts (regenerate with the provided scripts)
+/models/
+/data/
+/logs/
+/tmp/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.venvs/
+
+# Environment files and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Original delivery package and personal working notes
+/*.zip
+/*.pdf
+/项目2_起步记录.md
+/项目2_续接说明.md
+/.codex-remote-attachments/
+# Original machine-specific SSH connection notes
+/Qwen3VL-main/Qwen3VL-main/server.md
+
+# Local assistant/editor settings
+.codex/
+.agents/
+.claude/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "purpose": "Initial five-image serial latency and total-device memory sampling; not a stable benchmark or navigation quality pass",
+  "date": "2026-10-19",
+  "gpu_name": "NVIDIA GeForce RTX 4070 Ti",
+  "gpu_total_mib": 12282.0,
+  "model": {
+    "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision": "89644892e4d85e24eaac8bacfd4f463576704203"
+  },
+  "configuration": {
+    "concurrency": 1,
+    "fresh_task_per_request": true,
+    "visualization": false,
+    "generation": {
+      "max_tokens": 512,
+      "temperature": 0.3
+    },
+    "random_seed": null,
+    "diagnostic_logging": "expected enabled; checked against actual traces"
+  },
+  "instruction": "观察当前桌面场景，寻找键盘。如果画面不能确认机器人可通行的地面路径，请保持停止并说明原因。",
+  "input_manifest_sha256": "d7a41f9f15d01b21f84f8c8284bdd1a4742190589dcd660d24684729dbd19893",
+  "source_video_sha256": "064e17b018836fd1e59fa52150d5bc000b400385b9ab0ba7ea8d1d1aafa64863",
+  "source_archive_url": "https://cvg.cit.tum.de/rgbd/dataset/freiburg1/rgbd_dataset_freiburg1_desk.tgz",
+  "image_encoding": "PNG decoded from an existing lossy MJPG AVI; not original RGB PNG bytes",
+  "source_sha256": {
+    "app/engine.py": "1816263c394c5fb247f324020e7a37d2ae6f1d5a34f60a360573f3bd13b9a724",
+    "app/vln/__init__.py": "67ead94ddb625a9384b31640cf45587b1548fb2de68e26c6313a997c07b43c72",
+    "app/vln/inference_pipeline.py": "a63b0d97bba868b8d07a8ac27be017935f888742d9f6459c6b22c64cd88764c3",
+    "app/vln/prompts.py": "6f474c6da9be0fbc8d9de824883f089f7930b058f7e9c6bb3df936b22337a07d",
+    "app/vln/waypoint_parser.py": "a3a4684f7077e98b3cd0ac060cd3140671767b5edc881ee18b2e874b4bd987ae"
+  },
+  "latency": {
+    "started_at_utc": "2026-10-19T16:52:54.530037+08:00",
+    "source_record_sha256": "c350822b4105b5385afb86c503641275105c4599e509cd53786a38fd8398309e",
+    "client_time_definition": "synchronous frame HTTP round trip; excludes image encoding, task creation and task stop",
+    "service_time_definition": "original inference_time: prompt/model HTTP call/parsing; excludes queue waiting and is not pure GPU time",
+    "stats_delta": {
+      "total_requests": 6,
+      "processed": 6,
+      "dropped": 0,
+      "errors": 0
+    },
+    "summary": {
+      "measured_count": 5,
+      "warmup_count": 1,
+      "client_elapsed_s": {
+        "median": 1.6109098409942817,
+        "min": 1.4935888839972904,
+        "max": 1.8475223489949713
+      },
+      "service_processing_s": {
+        "median": 1.6042413711547852,
+        "min": 1.487593650817871,
+        "max": 1.8403565883636475
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    },
+    "measured_cases": [
+      {
+        "case_id": "tum_desk_000",
+        "image_sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+        "client_elapsed_s": 1.5709375780133996,
+        "service_processing_s": 1.5655007362365723,
+        "completion_tokens": 143,
+        "finish_reason": "stop",
+        "original_json_valid": true,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的左侧，靠近显示器。机器人需要移动到键盘附近。由于图像清晰，可以确定键盘的位置。机器人可以安全地移动到键盘附近，以完成任务。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 646,
+          "completion_tokens": 143,
+          "total_tokens": 789
+        },
+        "parsed": {
+          "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+          "action": "寻找键盘并确认其位置。",
+          "reasoning": "根据图像，键盘位于桌子的左侧，靠近显示器。机器人需要移动到键盘附近。由于图像清晰，可以确定键盘的位置。机器人可以安全地移动到键盘附近，以完成任务。",
+          "progress": 0.0,
+          "reached_goal": false,
+          "waypoints": [
+            {
+              "dx": 0.0,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 0.0,
+          "angular_vel": 0.0
+        }
+      },
+      {
+        "case_id": "tum_desk_030",
+        "image_sha256": "ea22b8351040c946f8c7b5ab8b4c4ebe314100cb3e690c3b028c666f1fc7eedb",
+        "client_elapsed_s": 1.4935888839972904,
+        "service_processing_s": 1.487593650817871,
+        "completion_tokens": 134,
+        "finish_reason": "stop",
+        "original_json_valid": true,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌子的左下角，可以清晰地看到。由于键盘是可通行的地面路径的一部分，因此可以继续前进。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 646,
+          "completion_tokens": 134,
+          "total_tokens": 780
+        },
+        "parsed": {
+          "environment": "一个办公桌，上面有电脑显示器、键盘、文件和一些电子设备。",
+          "action": "寻找键盘并确认其位置。",
+          "reasoning": "根据图像，键盘位于桌子的左下角，可以清晰地看到。由于键盘是可通行的地面路径的一部分，因此可以继续前进。",
+          "progress": 0.0,
+          "reached_goal": false,
+          "waypoints": [
+            {
+              "dx": 0.0,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 0.0,
+          "angular_vel": 0.0
+        }
+      },
+      {
+        "case_id": "tum_desk_060",
+        "image_sha256": "2a94c2e3a9d448d807e161f047202e61306928559e84e3002875af75d14384f6",
+        "client_elapsed_s": 1.8475223489949713,
+        "service_processing_s": 1.8403565883636475,
+        "completion_tokens": 167,
+        "finish_reason": "stop",
+        "original_json_valid": true,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。\",\n    \"action\": \"寻找并定位键盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了桌子的局部，键盘位于桌子的右侧。根据当前视角，键盘在画面中是可见的，但需要确认其位置和是否可通行。由于键盘在画面中是清晰可见的，且没有明显的障碍物阻挡，因此可以确定机器人可以安全地接近并移动到键盘上。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 646,
+          "completion_tokens": 167,
+          "total_tokens": 813
+        },
+        "parsed": {
+          "environment": "一个办公桌，上面有电脑显示器、键盘、书籍和各种办公用品。",
+          "action": "寻找并定位键盘。",
+          "reasoning": "图像显示了桌子的局部，键盘位于桌子的右侧。根据当前视角，键盘在画面中是可见的，但需要确认其位置和是否可通行。由于键盘在画面中是清晰可见的，且没有明显的障碍物阻挡，因此可以确定机器人可以安全地接近并移动到键盘上。",
+          "progress": 0.0,
+          "reached_goal": false,
+          "waypoints": [
+            {
+              "dx": 0.0,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 0.0,
+          "angular_vel": 0.0
+        }
+      },
+      {
+        "case_id": "tum_desk_090",
+        "image_sha256": "856b1e5ccf75e4546b787909789ddb359e4bf266d6553b5d3484d5fd958e9db9",
+        "client_elapsed_s": 1.6109098409942817,
+        "service_processing_s": 1.6042413711547852,
+        "completion_tokens": 136,
+        "finish_reason": "stop",
+        "original_json_valid": true,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有键盘、显示器、书籍和各种电子设备。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"根据图像，键盘位于桌面的右侧，靠近显示器。机器人需要移动到键盘位置。由于桌面是可通行的，机器人可以安全地移动到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 646,
+          "completion_tokens": 136,
+          "total_tokens": 782
+        },
+        "parsed": {
+          "environment": "一个办公桌，上面有键盘、显示器、书籍和各种电子设备。",
+          "action": "寻找键盘并确认其位置。",
+          "reasoning": "根据图像，键盘位于桌面的右侧，靠近显示器。机器人需要移动到键盘位置。由于桌面是可通行的，机器人可以安全地移动到键盘。",
+          "progress": 0.0,
+          "reached_goal": false,
+          "waypoints": [
+            {
+              "dx": 0.0,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 0.0,
+          "angular_vel": 0.0
+        }
+      },
+      {
+        "case_id": "tum_desk_120",
+        "image_sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+        "client_elapsed_s": 1.6551449180115014,
+        "service_processing_s": 1.6486525535583496,
+        "completion_tokens": 150,
+        "finish_reason": "stop",
+        "original_json_valid": true,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个杂乱的办公桌，上面有键盘、显示器、书籍、电线和各种办公用品。\",\n    \"action\": \"寻找键盘并确认其位置。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.0,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"图像显示了办公桌的局部，其中包含一个键盘。根据任务要求，需要寻找键盘。在当前图像中，键盘位于右侧，可以确认其位置。因此，下一步是导航到键盘。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 646,
+          "completion_tokens": 150,
+          "total_tokens": 796
+        },
+        "parsed": {
+          "environment": "一个杂乱的办公桌，上面有键盘、显示器、书籍、电线和各种办公用品。",
+          "action": "寻找键盘并确认其位置。",
+          "reasoning": "图像显示了办公桌的局部，其中包含一个键盘。根据任务要求，需要寻找键盘。在当前图像中，键盘位于右侧，可以确认其位置。因此，下一步是导航到键盘。",
+          "progress": 0.0,
+          "reached_goal": false,
+          "waypoints": [
+            {
+              "dx": 0.0,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 0.0,
+          "angular_vel": 0.0
+        }
+      }
+    ]
+  },
+  "gpu_memory": {
+    "started_at_utc": "2026-10-19T17:11:35.132377+08:00",
+    "source_record_sha256": "6f8798635f1ecb3cbf05725b847096babc674e025e0ddbe50fca268905c08428",
+    "requested_sample_interval_ms": 200,
+    "definition": "GPU 0 total used memory reported by nvidia-smi; includes the model service, caches, desktop and other GPU processes",
+    "limitations": "sampled maximum is not an exact transient peak, per-model allocation, or torch max_memory_allocated",
+    "workload_window": "one warm-up plus five serial fresh-task frame requests, including client setup/cleanup overhead",
+    "timing_comparison": "this run includes concurrent NVIDIA telemetry; do not claim a speed change from the prior run",
+    "summary": {
+      "loaded_idle_before": {
+        "sample_count": 10,
+        "used_mib_median": 7634.0,
+        "used_mib_min": 7629.0,
+        "used_mib_sampled_max": 7636.0,
+        "observed_sample_gap_s_median": 0.20020302500051912,
+        "observed_sample_gap_s_max": 0.2002406469982816
+      },
+      "request_run_including_warmup_and_overhead": {
+        "sample_count": 56,
+        "used_mib_median": 7643.5,
+        "used_mib_min": 7628.0,
+        "used_mib_sampled_max": 7710.0,
+        "observed_sample_gap_s_median": 0.2002061459934339,
+        "observed_sample_gap_s_max": 0.20038121099059936
+      },
+      "loaded_idle_after": {
+        "sample_count": 10,
+        "used_mib_median": 7644.0,
+        "used_mib_min": 7642.0,
+        "used_mib_sampled_max": 7666.0,
+        "observed_sample_gap_s_median": 0.20021582300250884,
+        "observed_sample_gap_s_max": 0.20028752699727193
+      }
+    },
+    "sampler_errors": [],
+    "linked_latency_source_record_sha256": "cd3d02db8a848e1337386466f04055d3b9f646c3672ce93f455199bd301a141d",
+    "linked_latency_summary": {
+      "measured_count": 5,
+      "warmup_count": 1,
+      "client_elapsed_s": {
+        "median": 1.6610636110126507,
+        "min": 1.608594699006062,
+        "max": 2.501395926999976
+      },
+      "service_processing_s": {
+        "median": 1.6540861129760742,
+        "min": 1.6033473014831543,
+        "max": 2.4922046661376953
+      },
+      "normal_finish_count": 5,
+      "valid_original_json_count": 5
+    }
+  },
+  "limitations": [
+    "Five distinct images measured once after one warm-up; no stable P95, continuous-video new-result frequency or speedup comparison.",
+    "Model output may describe unsafe movement on a desk despite zero waypoints; navigation quality has not passed.",
+    "Memory is total GPU 0 sampled usage including desktop/other processes, not exact transient peak or model-only allocation.",
+    "Original local logs contain machine paths and are excluded; this export retains measurements, original model responses and source record hashes."
+  ]
+}

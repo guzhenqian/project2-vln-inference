@@ -1,0 +1,10 @@
+# 项目2：沿用老师的推理依赖版本，固定已通过 GPU 检查的核心包。
+# 前提：第二步已从 PyTorch 官方 CUDA 源安装 torch 和 torchvision。
+# 本步保留这些已安装的版本；新增依赖从 PyPI 获取。
+--index-url https://pypi.org/simple
+
+torch==2.5.1+cu121
+torchvision==0.20.1+cu121
+triton==3.1.0
+lmdeploy==0.11.1
+transformers==4.57.6

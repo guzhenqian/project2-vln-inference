@@ -1,0 +1,5 @@
+# 项目2：老师原 Gradio 页面的独立环境，不安装模型推理依赖。
+--index-url https://pypi.org/simple
+gradio==5.49.1
+opencv-python-headless==5.0.0.93
+requests==2.34.2

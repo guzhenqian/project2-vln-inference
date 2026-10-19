@@ -1,0 +1,20 @@
+{
+  "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "source": "https://huggingface.co/api/models/Qwen/Qwen3-VL-2B-Instruct?blobs=true",
+  "model_type": "qwen3_vl",
+  "architecture": "Qwen3VLForConditionalGeneration",
+  "required_files": {
+    "chat_template.json": 5502,
+    "config.json": 1505,
+    "generation_config.json": 269,
+    "merges.txt": 1671839,
+    "model.safetensors": 4255140312,
+    "preprocessor_config.json": 390,
+    "tokenizer.json": 7032403,
+    "tokenizer_config.json": 10868,
+    "video_preprocessor_config.json": 385,
+    "vocab.json": 2776833
+  },
+  "weight_sha256": "7de1838c87a5349b016c26a1c3f7d2bc400a3d485f95ef39a7059ffd734977a0"
+}
