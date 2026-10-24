@@ -1,0 +1,1720 @@
+{
+  "version": "baseline_public_20261024_v1",
+  "date": "2026-10-24",
+  "purpose": "public_baseline_evidence_without_machine_paths_images_or_full_runtime_logs",
+  "source_dataset_page": "https://cvg.cit.tum.de/data/datasets/rgbd-dataset/download",
+  "interpretation": {
+    "quality": "known_failures_preserved_not_navigation_quality_pass",
+    "source_sequences": 2,
+    "independent_environment_count": "not_established",
+    "no_overall_navigation_accuracy": true,
+    "images_shared_separately": true,
+    "review_is_not_official_ground_truth": true,
+    "raw_log_hashes_are_provenance_not_published_files": true
+  },
+  "diagnostic": {
+    "manifest_sha256": "35593c5340501aef6b00d66af18e479daf2db1ad21f865933da2d727867ac381",
+    "instruction": "任务：沿当前朝向向前探索地面，给出下一步导航建议。无需寻找特定物体。若需要避让，可提出小步或转向；若画面不足以判断地面路径，请说明缺少的依据并保持停止。按现有JSON格式输出，移动时允许1～5个航点。本次只给下一步建议，不判断最终到达，reached_goal保持false。",
+    "profile": "grounded_stop_v2",
+    "system_prompt_sha256": "cc15062cc1e796901332ea2aee43d038918992d23175b5973aa5f2ca75b22d71",
+    "generation": {
+      "max_tokens": 512,
+      "temperature": 0.3,
+      "random_seed": null
+    },
+    "summary": {
+      "images": 12,
+      "requests": 18,
+      "valid_json": 18,
+      "raw_nonzero_waypoints": 18,
+      "service_errors": 0,
+      "dropped": 0,
+      "quality_pass_rate": null
+    },
+    "cases": [
+      {
+        "case_id": "pioneer_00000",
+        "source_group": "freiburg2_pioneer_slam",
+        "source_frame": 0,
+        "title": "柜体与棋盘挡板",
+        "visible_evidence": "前景可见柜体、棋盘挡板；不要把挡板表面当成地面。",
+        "review_criteria": "不预设唯一动作，核查路径理由与图像是否相符。",
+        "prior_model_exposure": false,
+        "sha256": "7175585fc8a0f33d9cda4c79176aa2005173a40f9e4ad38b7b75f1ef4ea11595",
+        "image_in_repository": false,
+        "review": {
+          "status": "project_internal_review_not_official_labels",
+          "reviewer": "project_reviewer",
+          "classification": "path_explanation_insufficient",
+          "evidence_and_limits": "柜体、棋盘挡板与柱体位于近处，未说明候选路径关系；0.1米可行性待定。",
+          "metric_distance": "unknown",
+          "actual_collision": "unknown",
+          "real_navigation_success": "not_evaluated"
+        }
+      },
+      {
+        "case_id": "pioneer_00153",
+        "source_group": "freiburg2_pioneer_slam",
+        "source_frame": 153,
+        "title": "较开阔地面",
+        "visible_evidence": "前景地面可见，右侧及远处有物体。",
+        "review_criteria": "允许有依据的移动；停止须说明具体不确定性。",
+        "prior_model_exposure": true,
+        "sha256": "354614281824264ec73add79eb05ecbf6f73c7223ed007c6fc2cae984f56d7ea",
+        "image_in_repository": false,
+        "review": {
+          "status": "project_internal_review_not_official_labels",
+          "reviewer": "project_reviewer",
+          "classification": "direction_supported_distance_unknown",
+          "evidence_and_limits": "近处中央可见空地，支持探索方向；周围器材需避让，米制距离和真实安全性待定。",
+          "metric_distance": "unknown",
+          "actual_collision": "unknown",
+          "real_navigation_success": "not_evaluated"
+        }
+      },
+      {
+        "case_id": "pioneer_00461",
+        "source_group": "freiburg2_pioneer_slam",
+        "source_frame": 461,
+        "title": "近处椅子",
+        "visible_evidence": "椅子和挡板占据前方视野。",
+        "review_criteria": "审查是否识别阻挡；停止、小步或转向不凭动作名称单独判错。",
+        "prior_model_exposure": true,
+        "sha256": "747a147b26e42480220317a7babe2dd5c26bfebf8c143308e2f0f58c6ec60068",
+        "image_in_repository": false,
+        "review": {
+          "status": "project_internal_review_not_official_labels",
+          "reviewer": "project_reviewer",
+          "classification": "grounding_failure_collision_unknown",
+          "evidence_and_limits": "已识别近处椅子，理由却否认明显障碍，未解释路径关系；0.1米是否碰撞待定。",
+          "metric_distance": "unknown",
+          "actual_collision": "unknown",
+          "real_navigation_success": "not_evaluated"
+        }
+      },
+      {
+        "case_id": "pioneer_00768",
+        "source_group": "freiburg2_pioneer_slam",
+        "source_frame": 768,
+        "title": "柱体与地面",
+        "visible_evidence": "画面前方有柱体与地面，远处有椅子。",
+        "review_criteria": "方向/避让建议须有图像依据；无净空真值，不评分米制距离。",
+        "prior_model_exposure": false,
+        "sha256": "5791161873c0d2c684b8f68b2e681a383c9dea5f93cea31817ade71dbfbafd18",
+        "image_in_repository": false,
+        "review": {
+          "status": "project_internal_review_not_official_labels",
+          "reviewer": "project_reviewer",
+          "classification": "path_explanation_insufficient",
+          "evidence_and_limits": "柱体位于中央偏右；模型均给直行航点，未解释路径与柱体关系，是否碰撞待定。",
+          "metric_distance": "unknown",
+          "actual_collision": "unknown",
+          "real_navigation_success": "not_evaluated"
+        }
+      },
+      {
+        "case_id": "pioneer_00922",
+        "source_group": "freiburg2_pioneer_slam",
+        "source_frame": 922,
+        "title": "挡板与地面线缆",
+        "visible_evidence": "前方有挡板，地面存在散落线缆。",
+        "review_criteria": "是否跨越待定；核查描述是否遗漏或否认可见物体。",
+        "prior_model_exposure": false,
+        "sha256": "3d7063eb714c1680886f757fa7243ae65ebcc1390a48adbe03517957c590153e",
+        "image_in_repository": false,
+        "review": {
+          "status": "project_internal_review_not_official_labels",
+          "reviewer": "project_reviewer",
+          "classification": "path_explanation_insufficient",
+          "evidence_and_limits": "挡板和地面线缆未与候选路径联系解释；跨越策略及精确距离待定，不设电线必停。",
+          "metric_distance": "unknown",
+          "actual_collision": "unknown",
+          "real_navigation_success": "not_evaluated"
+        }
+      },
+      {
+        "case_id": "pioneer_01383",
+        "source_group": "freiburg2_pioneer_slam",
+        "source_frame": 1383,
+        "title": "梯子与三脚架",
+        "visible_evidence": "画面可见梯子、三脚架及部分地面。",
+        "review_criteria": "不将所有器材自动判作全部路线阻断。",
+        "prior_model_exposure": false,
+        "sha256": "4d57c2743264d8a4127ad9d773e401a083ce1b51e0c1376defd58066a3d0ab73",
+        "image_in_repository": false,
+        "review": {
+          "status": "project_internal_review_not_official_labels",
+          "reviewer": "project_reviewer",
+          "classification": "direction_supported_distance_unknown",
+          "evidence_and_limits": "近处有地面空地，前方较远有梯子、三脚架和板面；方向有一定依据，距离待定。",
+          "metric_distance": "unknown",
+          "actual_collision": "unknown",
+          "real_navigation_success": "not_evaluated"
+        }
+      },
+      {
+        "case_id": "pioneer_01536",
+        "source_group": "freiburg2_pioneer_slam",
+        "source_frame": 1536,
+        "title": "近处线缆",
+        "visible_evidence": "近处地面有线缆，背景有三脚架。",
+        "review_criteria": "跨越策略待老师确认，不设电线必停标签。",
+        "prior_model_exposure": true,
+        "sha256": "d0b1a31c56411b6bc477b544e64bddb2fdd83c197e7b5d9f49722d1f236a46bb",
+        "image_in_repository": false,
+        "review": {
+          "status": "project_internal_review_not_official_labels",
+          "reviewer": "project_reviewer",
+          "classification": "path_explanation_insufficient",
+          "evidence_and_limits": "线缆从前景延伸至线团，虽已识别却未解释落脚或跨越依据；动作可行性待定。",
+          "metric_distance": "unknown",
+          "actual_collision": "unknown",
+          "real_navigation_success": "not_evaluated"
+        }
+      },
+      {
+        "case_id": "pioneer_01844",
+        "source_group": "freiburg2_pioneer_slam",
+        "source_frame": 1844,
+        "title": "多块挡板",
+        "visible_evidence": "前方可见不同位置的挡板。",
+        "review_criteria": "识别挡板，解释候选方向或缺少的信息；不预设通路宽度。",
+        "prior_model_exposure": false,
+        "sha256": "177f8351dce97e8ef476a3e6e5fad0804ae979f2bcf9870bf1c120fca3ab5df2",
+        "image_in_repository": false,
+        "review": {
+          "status": "project_internal_review_not_official_labels",
+          "reviewer": "project_reviewer",
+          "classification": "path_explanation_insufficient",
+          "evidence_and_limits": "中央和右侧挡板、左侧可见地面；模型未说明候选路径关系，净空与距离待定。",
+          "metric_distance": "unknown",
+          "actual_collision": "unknown",
+          "real_navigation_success": "not_evaluated"
+        }
+      },
+      {
+        "case_id": "pioneer_01997",
+        "source_group": "freiburg2_pioneer_slam",
+        "source_frame": 1997,
+        "title": "玩具与器材",
+        "visible_evidence": "左侧有玩具熊和木架，前方有三脚架。",
+        "review_criteria": "描述和方向应与图像一致；没有目标指令，不评价找目标成功。",
+        "prior_model_exposure": false,
+        "sha256": "a9f2ff2c5c5c6db8c5e47b5d3efdd04c24099087b83678fdcbf572824cac0b96",
+        "image_in_repository": false,
+        "review": {
+          "status": "project_internal_review_not_official_labels",
+          "reviewer": "project_reviewer",
+          "classification": "direction_description_failure_action_unknown",
+          "evidence_and_limits": "木架位于图像左侧，动作文字称右侧；方位描述错误，实际直行可行性待定。",
+          "metric_distance": "unknown",
+          "actual_collision": "unknown",
+          "real_navigation_success": "not_evaluated"
+        }
+      },
+      {
+        "case_id": "pioneer_02305",
+        "source_group": "freiburg2_pioneer_slam",
+        "source_frame": 2305,
+        "title": "地面与三脚架腿",
+        "visible_evidence": "地面可见，三脚架腿跨越画面部分区域。",
+        "review_criteria": "不能仅凭地面平坦断言全部路径无障碍，动作安全性仍待定。",
+        "prior_model_exposure": false,
+        "sha256": "f7f347d7bf4b86ab6f4bb9a0928f059a2621a658e18035769543b9bdc0a90f29",
+        "image_in_repository": false,
+        "review": {
+          "status": "project_internal_review_not_official_labels",
+          "reviewer": "project_reviewer",
+          "classification": "direction_supported_distance_unknown",
+          "evidence_and_limits": "近处有地面，两侧有三脚架腿；方向有一定依据，净空和精确距离待定。",
+          "metric_distance": "unknown",
+          "actual_collision": "unknown",
+          "real_navigation_success": "not_evaluated"
+        }
+      },
+      {
+        "case_id": "desk_000",
+        "source_group": "freiburg1_desk",
+        "source_frame": 0,
+        "title": "桌面局部视野",
+        "visible_evidence": "桌面及办公物品，无法由该画面建立机器人脚下的地面通路。",
+        "review_criteria": "按grounded_stop_v2应说明地面证据不足，不把桌面当作地面；该要求来自当前提示词，并非TUM官方动作标签。",
+        "prior_model_exposure": true,
+        "sha256": "295ecdf598f81298a212d2ca1f64d340890f98d81472acd1e04da44266faa099",
+        "image_in_repository": false,
+        "review": {
+          "status": "project_internal_review_not_official_labels",
+          "reviewer": "project_reviewer",
+          "classification": "grounding_and_stop_instruction_failure",
+          "evidence_and_limits": "桌面近景缺少脚下地面路径依据，仍以地面平坦支持前进，3/3重复出现。",
+          "metric_distance": "unknown",
+          "actual_collision": "unknown",
+          "real_navigation_success": "not_evaluated"
+        }
+      },
+      {
+        "case_id": "desk_120",
+        "source_group": "freiburg1_desk",
+        "source_frame": 120,
+        "title": "桌面局部视野",
+        "visible_evidence": "桌面及办公物品，无法由该画面建立机器人脚下的地面通路。",
+        "review_criteria": "按grounded_stop_v2应说明地面证据不足，不把桌面当作地面；该要求来自当前提示词，并非TUM官方动作标签。",
+        "prior_model_exposure": true,
+        "sha256": "705a504d5f65d9ce15c020ecb3790b912663ea71e6a8218c126bf86cfd00bf9e",
+        "image_in_repository": false,
+        "review": {
+          "status": "project_internal_review_not_official_labels",
+          "reviewer": "project_reviewer",
+          "classification": "grounding_and_stop_instruction_failure",
+          "evidence_and_limits": "桌面近景缺少脚下地面路径依据，仍以地面平坦支持前进，3/3重复出现。",
+          "metric_distance": "unknown",
+          "actual_collision": "unknown",
+          "real_navigation_success": "not_evaluated"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "local_log_filename": "navigation_candidates_20261024T054336912802Z.json",
+        "sha256": "e53d630f453d3324ef5bfd0ec705e021bc6b59f1276f67f007a8c2e7233569f6",
+        "published": false,
+        "count": 12,
+        "configuration": {
+          "repeats_per_image": 1,
+          "planned_count": 12,
+          "order": [
+            "pioneer_00000",
+            "pioneer_00153",
+            "pioneer_00461",
+            "pioneer_00768",
+            "pioneer_00922",
+            "pioneer_01383",
+            "pioneer_01536",
+            "pioneer_01844",
+            "pioneer_01997",
+            "pioneer_02305",
+            "desk_000",
+            "desk_120"
+          ],
+          "concurrency": 1,
+          "fresh_task_per_request": true,
+          "random_seed": null
+        },
+        "stats_delta": {
+          "total_requests": 12,
+          "processed": 12,
+          "dropped": 0,
+          "errors": 0
+        }
+      },
+      {
+        "local_log_filename": "navigation_candidates_20261024T054531491932Z.json",
+        "sha256": "5f1ff528b6a434c52ab3e0337c3522cf49328ef8099f85b64393e143b43ddbff",
+        "published": false,
+        "count": 6,
+        "configuration": {
+          "repeats_per_image": 2,
+          "planned_count": 6,
+          "order": [
+            "pioneer_00153",
+            "desk_000",
+            "desk_120"
+          ],
+          "concurrency": 1,
+          "fresh_task_per_request": true,
+          "random_seed": null
+        },
+        "stats_delta": {
+          "total_requests": 6,
+          "processed": 6,
+          "dropped": 0,
+          "errors": 0
+        }
+      }
+    ],
+    "attempts": [
+      {
+        "source_log_filename": "navigation_candidates_20261024T054336912802Z.json",
+        "source_attempt_index": 1,
+        "case_id": "pioneer_00000",
+        "repeat_index_within_file": 1,
+        "client_elapsed_s": 1.7073073000647128,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个室内空间，地面为水泥地，旁边有一个米色文件柜和一个黑白棋盘图案的板子，背景中有一个三脚架。\",\n    \"action\": \"向前移动一小步\",\n    \"waypoints\": [\n        {\"dx\": 0.1, \"dy\": 0.0, \"dtheta\": 0.0}\n    ],\n    \"reasoning\": \"当前环境显示机器人处于一个开放的室内空间，地面平坦，没有明显的障碍物。根据任务要求，需要沿当前朝向向前探索地面。由于没有明确的障碍物或目标，可以安全地向前移动一小步，以继续探索。\",\n    \"progress\": 0.1,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 163,
+          "total_tokens": 1072
+        },
+        "parsed": {
+          "environment": "一个室内空间，地面为水泥地，旁边有一个米色文件柜和一个黑白棋盘图案的板子，背景中有一个三脚架。",
+          "action": "向前移动一小步",
+          "reasoning": "当前环境显示机器人处于一个开放的室内空间，地面平坦，没有明显的障碍物。根据任务要求，需要沿当前朝向向前探索地面。由于没有明确的障碍物或目标，可以安全地向前移动一小步，以继续探索。",
+          "progress": 0.1,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.1,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 0.5,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.0002514129737392068,
+          "model_call_s": 1.6998489330289885,
+          "parse_s": 5.3280964493751526e-05,
+          "total_processing_s": 1.7001536269672215
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动一小步",
+          "raw_reached_goal": false,
+          "raw_progress": 0.1,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054336912802Z.json",
+        "source_attempt_index": 2,
+        "case_id": "pioneer_00153",
+        "repeat_index_within_file": 1,
+        "client_elapsed_s": 1.5734492999035865,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个室内空间，地面为水泥地，有金属管道、三脚架、盆栽、地球仪等物品。\",\n    \"action\": \"向前移动\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.5,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前环境为室内，地面平坦，无明显障碍物，可以安全向前移动。根据任务要求，只需沿当前朝向向前探索地面，因此建议进行小步前进。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 145,
+          "total_tokens": 1054
+        },
+        "parsed": {
+          "environment": "一个室内空间，地面为水泥地，有金属管道、三脚架、盆栽、地球仪等物品。",
+          "action": "向前移动",
+          "reasoning": "当前环境为室内，地面平坦，无明显障碍物，可以安全向前移动。根据任务要求，只需沿当前朝向向前探索地面，因此建议进行小步前进。",
+          "progress": 0.0,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.5,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 1.5,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.0002390409936197102,
+          "model_call_s": 1.5663968190201558,
+          "parse_s": 5.247798981145024e-05,
+          "total_processing_s": 1.566688338003587
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动",
+          "raw_reached_goal": false,
+          "raw_progress": 0.0,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054336912802Z.json",
+        "source_attempt_index": 3,
+        "case_id": "pioneer_00461",
+        "repeat_index_within_file": 1,
+        "client_elapsed_s": 1.7451235000044107,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个室内空间，有一把木制椅子靠在墙边，地面是水泥地，背景有木板。\",\n    \"action\": \"向前移动一小步，保持当前朝向。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.1,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前环境显示机器人位于一个平坦的水泥地面上，前方没有明显的障碍物，可以安全地向前移动。因此，下一步建议是向前移动一小步，以继续探索地面。\",\n    \"progress\": 0.1,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 152,
+          "total_tokens": 1061
+        },
+        "parsed": {
+          "environment": "一个室内空间，有一把木制椅子靠在墙边，地面是水泥地，背景有木板。",
+          "action": "向前移动一小步，保持当前朝向。",
+          "reasoning": "当前环境显示机器人位于一个平坦的水泥地面上，前方没有明显的障碍物，可以安全地向前移动。因此，下一步建议是向前移动一小步，以继续探索地面。",
+          "progress": 0.1,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.1,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 0.5,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.00019575102487578988,
+          "model_call_s": 1.7278301239712164,
+          "parse_s": 5.113502265885472e-05,
+          "total_processing_s": 1.728077010018751
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动一小步，保持当前朝向。",
+          "raw_reached_goal": false,
+          "raw_progress": 0.1,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054336912802Z.json",
+        "source_attempt_index": 4,
+        "case_id": "pioneer_00768",
+        "repeat_index_within_file": 1,
+        "client_elapsed_s": 2.094156799954362,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个室内空间，地面为水泥地，有柱子、桌子、椅子和一些设备。\",\n    \"action\": \"向前移动\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.5,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        },\n        {\n            \"dx\": 0.5,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        },\n        {\n            \"dx\": 0.5,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前环境为室内，地面为水泥地，没有明显的障碍物，可以进行向前移动。根据导航指令，需要沿当前朝向向前探索地面，因此可以规划前进的航点。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 207,
+          "total_tokens": 1116
+        },
+        "parsed": {
+          "environment": "一个室内空间，地面为水泥地，有柱子、桌子、椅子和一些设备。",
+          "action": "向前移动",
+          "reasoning": "当前环境为室内，地面为水泥地，没有明显的障碍物，可以进行向前移动。根据导航指令，需要沿当前朝向向前探索地面，因此可以规划前进的航点。",
+          "progress": 0.0,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.5,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            },
+            {
+              "dx": 0.5,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            },
+            {
+              "dx": 0.5,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 1.5,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.0002803909592330456,
+          "model_call_s": 2.085666449042037,
+          "parse_s": 6.0018966905772686e-05,
+          "total_processing_s": 2.086006858968176
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动",
+          "raw_reached_goal": false,
+          "raw_progress": 0.0,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054336912802Z.json",
+        "source_attempt_index": 5,
+        "case_id": "pioneer_00922",
+        "repeat_index_within_file": 1,
+        "client_elapsed_s": 2.1302886999910697,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个室内空间，地面为水泥地，有桌子、三脚架、梯子和一些电线。\",\n    \"action\": \"向前移动\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.5,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        },\n        {\n            \"dx\": 0.5,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        },\n        {\n            \"dx\": 0.5,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前环境为室内，地面为水泥地，没有明显的障碍物。可以向前移动，但需要确认前方是否有障碍物。由于图像中没有明确的障碍物，可以继续前进。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 208,
+          "total_tokens": 1117
+        },
+        "parsed": {
+          "environment": "一个室内空间，地面为水泥地，有桌子、三脚架、梯子和一些电线。",
+          "action": "向前移动",
+          "reasoning": "当前环境为室内，地面为水泥地，没有明显的障碍物。可以向前移动，但需要确认前方是否有障碍物。由于图像中没有明确的障碍物，可以继续前进。",
+          "progress": 0.0,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.5,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            },
+            {
+              "dx": 0.5,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            },
+            {
+              "dx": 0.5,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 1.5,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.0003059550072066486,
+          "model_call_s": 2.122144701948855,
+          "parse_s": 5.9936020988970995e-05,
+          "total_processing_s": 2.1225105929770507
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动",
+          "raw_reached_goal": false,
+          "raw_progress": 0.0,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054336912802Z.json",
+        "source_attempt_index": 6,
+        "case_id": "pioneer_01383",
+        "repeat_index_within_file": 1,
+        "client_elapsed_s": 1.3956105000106618,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个室内空间，地面为水泥地，有梯子、三脚架和一个木板。\",\n    \"action\": \"向前移动\",\n    \"waypoints\": [\n        {\"dx\": 0.2, \"dy\": 0.0, \"dtheta\": 0.0}\n    ],\n    \"reasoning\": \"当前环境为室内，地面平坦，没有明显的障碍物，可以安全地向前移动。根据任务要求，只需沿当前朝向向前探索，因此建议小步前进。\",\n    \"progress\": 0.2,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 134,
+          "total_tokens": 1043
+        },
+        "parsed": {
+          "environment": "一个室内空间，地面为水泥地，有梯子、三脚架和一个木板。",
+          "action": "向前移动",
+          "reasoning": "当前环境为室内，地面平坦，没有明显的障碍物，可以安全地向前移动。根据任务要求，只需沿当前朝向向前探索，因此建议小步前进。",
+          "progress": 0.2,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.2,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 1.0,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.00025496899615973234,
+          "model_call_s": 1.3876256130170077,
+          "parse_s": 4.893803270533681e-05,
+          "total_processing_s": 1.3879295200458728
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动",
+          "raw_reached_goal": false,
+          "raw_progress": 0.2,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054336912802Z.json",
+        "source_attempt_index": 7,
+        "case_id": "pioneer_01536",
+        "repeat_index_within_file": 1,
+        "client_elapsed_s": 1.5218259999528527,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个室内空间，地面为水泥地，有电线、三脚架和灭火器。\",\n    \"action\": \"向前移动一小步，保持朝向。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.1,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前环境为室内，地面为水泥地，没有明显的障碍物。地面路径清晰，可以安全向前移动。因此，可以执行一个向前的移动动作。\",\n    \"progress\": 0.1,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 141,
+          "total_tokens": 1050
+        },
+        "parsed": {
+          "environment": "一个室内空间，地面为水泥地，有电线、三脚架和灭火器。",
+          "action": "向前移动一小步，保持朝向。",
+          "reasoning": "当前环境为室内，地面为水泥地，没有明显的障碍物。地面路径清晰，可以安全向前移动。因此，可以执行一个向前的移动动作。",
+          "progress": 0.1,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.1,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 0.5,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.00027934100944548845,
+          "model_call_s": 1.5132503579952754,
+          "parse_s": 4.9476977437734604e-05,
+          "total_processing_s": 1.5135791759821586
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动一小步，保持朝向。",
+          "raw_reached_goal": false,
+          "raw_progress": 0.1,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054336912802Z.json",
+        "source_attempt_index": 8,
+        "case_id": "pioneer_01844",
+        "repeat_index_within_file": 1,
+        "client_elapsed_s": 1.6535709999734536,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个室内空间，地面为水泥地，有几块大型白色和黄色的板材，背景有白色围栏和窗户。\",\n    \"action\": \"向前移动一小步\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.1,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前环境为室内，地面为水泥地，没有明显的障碍物，可以安全地向前移动。根据导航指令，需要沿当前朝向向前探索地面，因此建议向前移动一小步。\",\n    \"progress\": 0.1,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 152,
+          "total_tokens": 1061
+        },
+        "parsed": {
+          "environment": "一个室内空间，地面为水泥地，有几块大型白色和黄色的板材，背景有白色围栏和窗户。",
+          "action": "向前移动一小步",
+          "reasoning": "当前环境为室内，地面为水泥地，没有明显的障碍物，可以安全地向前移动。根据导航指令，需要沿当前朝向向前探索地面，因此建议向前移动一小步。",
+          "progress": 0.1,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.1,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 0.5,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.00017918803496286273,
+          "model_call_s": 1.647697263979353,
+          "parse_s": 5.0194968935102224e-05,
+          "total_processing_s": 1.647926646983251
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动一小步",
+          "raw_reached_goal": false,
+          "raw_progress": 0.1,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054336912802Z.json",
+        "source_attempt_index": 9,
+        "case_id": "pioneer_01997",
+        "repeat_index_within_file": 1,
+        "client_elapsed_s": 1.7674827000591904,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个室内仓库或工厂环境，地面为水泥地，有木制托盘、一个棕色泰迪熊和一些箱子。\",\n    \"action\": \"向前移动一小步，朝向右侧的木托盘。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.2,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前机器人位于一个平坦的水泥地面上，前方有一个木制托盘，没有明显的障碍物。根据任务要求，需要沿当前朝向向前探索地面。因此，下一步应向前移动一小步，以继续探索地面。\",\n    \"progress\": 0.2,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 168,
+          "total_tokens": 1077
+        },
+        "parsed": {
+          "environment": "一个室内仓库或工厂环境，地面为水泥地，有木制托盘、一个棕色泰迪熊和一些箱子。",
+          "action": "向前移动一小步，朝向右侧的木托盘。",
+          "reasoning": "当前机器人位于一个平坦的水泥地面上，前方有一个木制托盘，没有明显的障碍物。根据任务要求，需要沿当前朝向向前探索地面。因此，下一步应向前移动一小步，以继续探索地面。",
+          "progress": 0.2,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.2,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 1.0,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.0002464359859004617,
+          "model_call_s": 1.7601003189920448,
+          "parse_s": 5.175999831408262e-05,
+          "total_processing_s": 1.7603985149762593
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动一小步，朝向右侧的木托盘。",
+          "raw_reached_goal": false,
+          "raw_progress": 0.2,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054336912802Z.json",
+        "source_attempt_index": 10,
+        "case_id": "pioneer_02305",
+        "repeat_index_within_file": 1,
+        "client_elapsed_s": 1.566818300052546,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个室内空间，地面为水泥地，两侧有金属支架，背景有白色墙壁和一个红色灭火器。\",\n    \"action\": \"向前移动一小步\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.1,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前环境为室内，地面平坦，没有明显的障碍物或不可通行区域。根据导航指令，需要沿当前朝向向前探索地面。由于地面路径清晰且无障碍，可以安全地向前移动。\",\n    \"progress\": 0.1,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 151,
+          "total_tokens": 1060
+        },
+        "parsed": {
+          "environment": "一个室内空间，地面为水泥地，两侧有金属支架，背景有白色墙壁和一个红色灭火器。",
+          "action": "向前移动一小步",
+          "reasoning": "当前环境为室内，地面平坦，没有明显的障碍物或不可通行区域。根据导航指令，需要沿当前朝向向前探索地面。由于地面路径清晰且无障碍，可以安全地向前移动。",
+          "progress": 0.1,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.1,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 0.5,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.000191649014595896,
+          "model_call_s": 1.560300073993858,
+          "parse_s": 5.5769982282072306e-05,
+          "total_processing_s": 1.560547492990736
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动一小步",
+          "raw_reached_goal": false,
+          "raw_progress": 0.1,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054336912802Z.json",
+        "source_attempt_index": 11,
+        "case_id": "desk_000",
+        "repeat_index_within_file": 1,
+        "client_elapsed_s": 2.2898346999427304,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"向前移动\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.2,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        },\n        {\n            \"dx\": 0.2,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        },\n        {\n            \"dx\": 0.2,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前环境为一个办公桌，地面是平坦的，没有明显的障碍物。根据任务要求，需要沿当前朝向向前探索地面。由于图像中没有明确的障碍物，可以继续向前移动，但需要确保路径畅通。因此，建议前进。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 216,
+          "total_tokens": 1125
+        },
+        "parsed": {
+          "environment": "一个办公桌，上面有显示器、键盘、鼠标和一些文件。",
+          "action": "向前移动",
+          "reasoning": "当前环境为一个办公桌，地面是平坦的，没有明显的障碍物。根据任务要求，需要沿当前朝向向前探索地面。由于图像中没有明确的障碍物，可以继续向前移动，但需要确保路径畅通。因此，建议前进。",
+          "progress": 0.0,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.2,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            },
+            {
+              "dx": 0.2,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            },
+            {
+              "dx": 0.2,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 1.0,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.0002061630366370082,
+          "model_call_s": 2.2588148389477283,
+          "parse_s": 5.8796023949980736e-05,
+          "total_processing_s": 2.2590797980083153
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动",
+          "raw_reached_goal": false,
+          "raw_progress": 0.0,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054336912802Z.json",
+        "source_attempt_index": 12,
+        "case_id": "desk_120",
+        "repeat_index_within_file": 1,
+        "client_elapsed_s": 1.2732161999447271,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一张办公桌，上面有电脑、键盘、书籍和各种办公用品。\",\n    \"action\": \"向前移动一小步\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.1,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前环境为办公桌，地面平坦且无明显障碍物，可以进行向前移动。\",\n    \"progress\": 0.1,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 119,
+          "total_tokens": 1028
+        },
+        "parsed": {
+          "environment": "一张办公桌，上面有电脑、键盘、书籍和各种办公用品。",
+          "action": "向前移动一小步",
+          "reasoning": "当前环境为办公桌，地面平坦且无明显障碍物，可以进行向前移动。",
+          "progress": 0.1,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.1,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 0.5,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.00027898099506273866,
+          "model_call_s": 1.2650278040091507,
+          "parse_s": 4.808598896488547e-05,
+          "total_processing_s": 1.2653548709931783
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动一小步",
+          "raw_reached_goal": false,
+          "raw_progress": 0.1,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054531491932Z.json",
+        "source_attempt_index": 1,
+        "case_id": "pioneer_00153",
+        "repeat_index_within_file": 1,
+        "client_elapsed_s": 1.5545588000677526,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个室内空间，地面为水泥地，有金属管道、三脚架、盆栽、地球仪等物品。\",\n    \"action\": \"向前移动一小步。\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.1,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前环境为室内，地面平坦，没有明显的障碍物，可以安全地向前移动。根据任务要求，只需沿当前朝向向前探索，因此建议小步前进。\",\n    \"progress\": 0.1,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 146,
+          "total_tokens": 1055
+        },
+        "parsed": {
+          "environment": "一个室内空间，地面为水泥地，有金属管道、三脚架、盆栽、地球仪等物品。",
+          "action": "向前移动一小步。",
+          "reasoning": "当前环境为室内，地面平坦，没有明显的障碍物，可以安全地向前移动。根据任务要求，只需沿当前朝向向前探索，因此建议小步前进。",
+          "progress": 0.1,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.1,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 0.5,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.00022244895808398724,
+          "model_call_s": 1.5457589059951715,
+          "parse_s": 5.856901407241821e-05,
+          "total_processing_s": 1.546039923967328
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动一小步。",
+          "raw_reached_goal": false,
+          "raw_progress": 0.1,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054531491932Z.json",
+        "source_attempt_index": 2,
+        "case_id": "desk_000",
+        "repeat_index_within_file": 1,
+        "client_elapsed_s": 1.5351740999612957,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"向前移动一小步\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.1,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前环境是一个办公桌，地面是平坦的，没有明显的障碍物。根据任务要求，需要沿当前朝向向前探索地面。由于地面是平坦且无障碍物，可以安全地向前移动。\",\n    \"progress\": 0.1,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 142,
+          "total_tokens": 1051
+        },
+        "parsed": {
+          "environment": "一个办公桌，上面有显示器、键盘、鼠标和一些文件。",
+          "action": "向前移动一小步",
+          "reasoning": "当前环境是一个办公桌，地面是平坦的，没有明显的障碍物。根据任务要求，需要沿当前朝向向前探索地面。由于地面是平坦且无障碍物，可以安全地向前移动。",
+          "progress": 0.1,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.1,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 0.5,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.0002160360454581678,
+          "model_call_s": 1.5284379799850285,
+          "parse_s": 5.0014001317322254e-05,
+          "total_processing_s": 1.528704030031804
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动一小步",
+          "raw_reached_goal": false,
+          "raw_progress": 0.1,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054531491932Z.json",
+        "source_attempt_index": 3,
+        "case_id": "desk_120",
+        "repeat_index_within_file": 1,
+        "client_elapsed_s": 1.3684810999548063,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一张办公桌，上面有电脑、键盘、书籍和各种电子设备。\",\n    \"action\": \"向前移动一小步\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.1,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前环境为办公桌，地面平坦且无明显障碍物，可以安全地向前移动。\",\n    \"progress\": 0.1,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 120,
+          "total_tokens": 1029
+        },
+        "parsed": {
+          "environment": "一张办公桌，上面有电脑、键盘、书籍和各种电子设备。",
+          "action": "向前移动一小步",
+          "reasoning": "当前环境为办公桌，地面平坦且无明显障碍物，可以安全地向前移动。",
+          "progress": 0.1,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.1,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 0.5,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.0002984989550895989,
+          "model_call_s": 1.3434371590265073,
+          "parse_s": 4.996301140636206e-05,
+          "total_processing_s": 1.3437856209930032
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动一小步",
+          "raw_reached_goal": false,
+          "raw_progress": 0.1,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054531491932Z.json",
+        "source_attempt_index": 4,
+        "case_id": "pioneer_00153",
+        "repeat_index_within_file": 2,
+        "client_elapsed_s": 1.4863180000102147,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个室内空间，地面为水泥地，有管道、支架、植物和一些设备。\",\n    \"action\": \"向前移动\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.5,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前环境为室内，地面平坦，没有明显的障碍物，可以安全地向前移动。根据导航指令，需要沿当前朝向向前探索地面，因此建议向前移动。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 138,
+          "total_tokens": 1047
+        },
+        "parsed": {
+          "environment": "一个室内空间，地面为水泥地，有管道、支架、植物和一些设备。",
+          "action": "向前移动",
+          "reasoning": "当前环境为室内，地面平坦，没有明显的障碍物，可以安全地向前移动。根据导航指令，需要沿当前朝向向前探索地面，因此建议向前移动。",
+          "progress": 0.0,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.5,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 1.5,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.00022870698012411594,
+          "model_call_s": 1.4795458490261808,
+          "parse_s": 5.181698361411691e-05,
+          "total_processing_s": 1.479826372989919
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动",
+          "raw_reached_goal": false,
+          "raw_progress": 0.0,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054531491932Z.json",
+        "source_attempt_index": 5,
+        "case_id": "desk_000",
+        "repeat_index_within_file": 2,
+        "client_elapsed_s": 1.3385273000458255,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。\",\n    \"action\": \"向前移动一小步\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.1,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前环境是一个办公桌，地面是平坦的，没有明显的障碍物。因此，可以安全地向前移动。\",\n    \"progress\": 0.1,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 124,
+          "total_tokens": 1033
+        },
+        "parsed": {
+          "environment": "一个办公桌，上面有电脑显示器、键盘、鼠标和一些文件。",
+          "action": "向前移动一小步",
+          "reasoning": "当前环境是一个办公桌，地面是平坦的，没有明显的障碍物。因此，可以安全地向前移动。",
+          "progress": 0.1,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.1,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 0.5,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.00023648497881367803,
+          "model_call_s": 1.3137463480234146,
+          "parse_s": 5.383300594985485e-05,
+          "total_processing_s": 1.3140366660081781
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动一小步",
+          "raw_reached_goal": false,
+          "raw_progress": 0.1,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "source_log_filename": "navigation_candidates_20261024T054531491932Z.json",
+        "source_attempt_index": 6,
+        "case_id": "desk_120",
+        "repeat_index_within_file": 2,
+        "client_elapsed_s": 1.516507999971509,
+        "model_response": {
+          "text": "```json\n{\n    \"environment\": \"一张办公桌，上面有电脑、键盘、书籍和各种办公用品。\",\n    \"action\": \"向前移动\",\n    \"waypoints\": [\n        {\n            \"dx\": 0.5,\n            \"dy\": 0.0,\n            \"dtheta\": 0.0\n        }\n    ],\n    \"reasoning\": \"当前环境为办公桌，地面平坦，没有明显的障碍物。根据任务要求，需要沿当前朝向向前探索地面。由于没有明确的障碍物或目标，且地面路径清晰，可以进行向前移动。\",\n    \"progress\": 0.0,\n    \"reached_goal\": false\n}\n```",
+          "finish_reason": "stop",
+          "prompt_tokens": 909,
+          "completion_tokens": 144,
+          "total_tokens": 1053
+        },
+        "parsed": {
+          "environment": "一张办公桌，上面有电脑、键盘、书籍和各种办公用品。",
+          "action": "向前移动",
+          "reasoning": "当前环境为办公桌，地面平坦，没有明显的障碍物。根据任务要求，需要沿当前朝向向前探索地面。由于没有明确的障碍物或目标，且地面路径清晰，可以进行向前移动。",
+          "progress": 0.0,
+          "reached_goal": false,
+          "parse_status": "valid_json",
+          "parse_error": "",
+          "waypoints": [
+            {
+              "dx": 0.5,
+              "dy": 0.0,
+              "dtheta": 0.0,
+              "confidence": 1.0
+            }
+          ]
+        },
+        "derived_velocity": {
+          "linear_vel": 1.5,
+          "angular_vel": 0.0
+        },
+        "timings_s": {
+          "prepare_s": 0.00029556103982031345,
+          "model_call_s": 1.508121379010845,
+          "parse_s": 5.077896639704704e-05,
+          "total_processing_s": 1.5084677190170623
+        },
+        "observation": {
+          "raw_waypoint_state": "nonzero",
+          "raw_action": "向前移动",
+          "raw_reached_goal": false,
+          "raw_progress": 0.0,
+          "parse_status": "valid_json",
+          "finish_reason": "stop"
+        }
+      }
+    ]
+  },
+  "historical_performance_runs": {
+    "initial_v1": {
+      "formal_count": 5,
+      "warmup_count": 1,
+      "completion_evidence": "legacy_schema_checked_by_counts_summary_and_structural_results",
+      "model": {
+        "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+        "revision": "89644892e4d85e24eaac8bacfd4f463576704203"
+      },
+      "packages": {
+        "torch": "2.5.1+cu121",
+        "lmdeploy": "0.11.1",
+        "transformers": "4.57.6",
+        "fastapi": "0.143.3"
+      },
+      "configuration": {
+        "concurrency": 1,
+        "fresh_task_per_request": true,
+        "visualization": false,
+        "generation": {
+          "max_tokens": 512,
+          "temperature": 0.3
+        },
+        "random_seed": null,
+        "diagnostic_logging": "expected enabled; checked against actual traces"
+      },
+      "manifest_sha256": "d7a41f9f15d01b21f84f8c8284bdd1a4742190589dcd660d24684729dbd19893",
+      "system_prompt_sha256": null,
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.6109098409942817,
+        "min": 1.4935888839972904,
+        "max": 1.8475223489949713
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.6042413711547852,
+        "min": 1.487593650817871,
+        "max": 1.8403565883636475
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 143,
+        "min": 134,
+        "max": 167
+      },
+      "prompt_token_values": [
+        646
+      ],
+      "normal_finish_count": 5,
+      "valid_json_count": 5,
+      "stats_delta_including_warmup": {
+        "total_requests": 6,
+        "processed": 6,
+        "dropped": 0,
+        "errors": 0
+      },
+      "per_case_client_s": {
+        "tum_desk_000": {
+          "count": 1,
+          "median": 1.5709375780133996,
+          "min": 1.5709375780133996,
+          "max": 1.5709375780133996
+        },
+        "tum_desk_030": {
+          "count": 1,
+          "median": 1.4935888839972904,
+          "min": 1.4935888839972904,
+          "max": 1.4935888839972904
+        },
+        "tum_desk_060": {
+          "count": 1,
+          "median": 1.8475223489949713,
+          "min": 1.8475223489949713,
+          "max": 1.8475223489949713
+        },
+        "tum_desk_090": {
+          "count": 1,
+          "median": 1.6109098409942817,
+          "min": 1.6109098409942817,
+          "max": 1.6109098409942817
+        },
+        "tum_desk_120": {
+          "count": 1,
+          "median": 1.6551449180115014,
+          "min": 1.6551449180115014,
+          "max": 1.6551449180115014
+        }
+      },
+      "source": {
+        "local_log_filename": "initial_latency_20261019T085254530037Z.json",
+        "sha256": "c350822b4105b5385afb86c503641275105c4599e509cd53786a38fd8398309e",
+        "published": false
+      }
+    },
+    "repeat_v1": {
+      "formal_count": 50,
+      "warmup_count": 1,
+      "completion_evidence": "explicit_complete",
+      "model": {
+        "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+        "revision": "89644892e4d85e24eaac8bacfd4f463576704203"
+      },
+      "packages": {
+        "torch": "2.5.1+cu121",
+        "lmdeploy": "0.11.1",
+        "transformers": "4.57.6",
+        "fastapi": "0.143.3"
+      },
+      "configuration": {
+        "concurrency": 1,
+        "fresh_task_per_request": true,
+        "visualization": false,
+        "repeats_per_image": 10,
+        "planned_measured_count": 50,
+        "order": "one warm-up on first image, then manifest order in each round",
+        "generation": {
+          "max_tokens": 512,
+          "temperature": 0.3
+        },
+        "random_seed": null,
+        "diagnostic_logging": "expected enabled; checked against actual traces"
+      },
+      "manifest_sha256": "d7a41f9f15d01b21f84f8c8284bdd1a4742190589dcd660d24684729dbd19893",
+      "system_prompt_sha256": null,
+      "client_elapsed_s": {
+        "count": 50,
+        "median": 1.4702044170044246,
+        "min": 1.2995171079965075,
+        "max": 2.7170751450030366
+      },
+      "service_processing_s": {
+        "count": 50,
+        "median": 1.464433193206787,
+        "min": 1.2945823669433594,
+        "max": 2.7106969356536865
+      },
+      "completion_tokens": {
+        "count": 50,
+        "median": 142.0,
+        "min": 127,
+        "max": 277
+      },
+      "prompt_token_values": [
+        646
+      ],
+      "normal_finish_count": 50,
+      "valid_json_count": 50,
+      "stats_delta_including_warmup": {
+        "total_requests": 51,
+        "processed": 51,
+        "dropped": 0,
+        "errors": 0
+      },
+      "per_case_client_s": {
+        "tum_desk_000": {
+          "count": 10,
+          "median": 1.4835856655045063,
+          "min": 1.2995171079965075,
+          "max": 1.665109276000294
+        },
+        "tum_desk_030": {
+          "count": 10,
+          "median": 1.4435742654968635,
+          "min": 1.3567734559910605,
+          "max": 1.573505540000042
+        },
+        "tum_desk_060": {
+          "count": 10,
+          "median": 1.5343736730064848,
+          "min": 1.4243396370002301,
+          "max": 2.7170751450030366
+        },
+        "tum_desk_090": {
+          "count": 10,
+          "median": 1.4871249455027282,
+          "min": 1.3557803799922112,
+          "max": 1.8242506649985444
+        },
+        "tum_desk_120": {
+          "count": 10,
+          "median": 1.4445232124999166,
+          "min": 1.3812576920026913,
+          "max": 1.6588020799972583
+        }
+      },
+      "source": {
+        "local_log_filename": "repeated_latency_20261019T105629469754Z.json",
+        "sha256": "ed02125210ee025606bcad9764937ef5c4239c303b70cb5e78c2524dc8d09365",
+        "published": false
+      }
+    },
+    "repeat_v2": {
+      "formal_count": 50,
+      "warmup_count": 1,
+      "completion_evidence": "explicit_complete",
+      "model": {
+        "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+        "revision": "89644892e4d85e24eaac8bacfd4f463576704203"
+      },
+      "packages": {
+        "torch": "2.5.1+cu121",
+        "lmdeploy": "0.11.1",
+        "transformers": "4.57.6",
+        "fastapi": "0.143.3"
+      },
+      "configuration": {
+        "concurrency": 1,
+        "fresh_task_per_request": true,
+        "visualization": false,
+        "repeats_per_image": 10,
+        "planned_measured_count": 50,
+        "expected_prompt_profile": "grounded_stop_v2",
+        "order": "one warm-up on first image, then manifest order in each round",
+        "generation": {
+          "max_tokens": 512,
+          "temperature": 0.3
+        },
+        "random_seed": null,
+        "diagnostic_logging": "expected enabled; checked against actual traces"
+      },
+      "manifest_sha256": "d7a41f9f15d01b21f84f8c8284bdd1a4742190589dcd660d24684729dbd19893",
+      "system_prompt_sha256": "cc15062cc1e796901332ea2aee43d038918992d23175b5973aa5f2ca75b22d71",
+      "client_elapsed_s": {
+        "count": 50,
+        "median": 1.3482584299999871,
+        "min": 1.014593304003938,
+        "max": 1.92738043400459
+      },
+      "service_processing_s": {
+        "count": 50,
+        "median": 1.3417099714279175,
+        "min": 1.008030652999878,
+        "max": 1.920297384262085
+      },
+      "completion_tokens": {
+        "count": 50,
+        "median": 126.5,
+        "min": 95,
+        "max": 186
+      },
+      "prompt_token_values": [
+        854
+      ],
+      "normal_finish_count": 50,
+      "valid_json_count": 50,
+      "stats_delta_including_warmup": {
+        "total_requests": 51,
+        "processed": 51,
+        "dropped": 0,
+        "errors": 0
+      },
+      "per_case_client_s": {
+        "tum_desk_000": {
+          "count": 10,
+          "median": 1.3186996639924473,
+          "min": 1.069842837008764,
+          "max": 1.3845332369965035
+        },
+        "tum_desk_030": {
+          "count": 10,
+          "median": 1.1875152335051098,
+          "min": 1.0203793209948344,
+          "max": 1.3025935250043403
+        },
+        "tum_desk_060": {
+          "count": 10,
+          "median": 1.6236073114996543,
+          "min": 1.3983498870074982,
+          "max": 1.92738043400459
+        },
+        "tum_desk_090": {
+          "count": 10,
+          "median": 1.46153656799288,
+          "min": 1.3095540850044927,
+          "max": 1.6568685280071804
+        },
+        "tum_desk_120": {
+          "count": 10,
+          "median": 1.325046409998322,
+          "min": 1.014593304003938,
+          "max": 1.4952669129997957
+        }
+      },
+      "source": {
+        "local_log_filename": "repeated_latency_grounded_stop_v2_20261019T111120186377Z.json",
+        "sha256": "e84875c2c46b6c0bd6e3d685fc0da8219e2fa15ed872967a15fbd4b3d76803c7",
+        "published": false
+      }
+    },
+    "staged_v2": {
+      "formal_count": 5,
+      "warmup_count": 1,
+      "completion_evidence": "explicit_complete",
+      "model": {
+        "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+        "revision": "89644892e4d85e24eaac8bacfd4f463576704203"
+      },
+      "packages": {
+        "torch": "2.5.1+cu121",
+        "lmdeploy": "0.11.1",
+        "transformers": "4.57.6",
+        "fastapi": "0.143.3"
+      },
+      "configuration": {
+        "concurrency": 1,
+        "fresh_task_per_request": true,
+        "visualization": false,
+        "repeats_per_image": 1,
+        "planned_measured_count": 5,
+        "expected_prompt_profile": "grounded_stop_v2",
+        "order": "one warm-up on first image, then manifest order in each round",
+        "generation": {
+          "max_tokens": 512,
+          "temperature": 0.3
+        },
+        "random_seed": null,
+        "diagnostic_logging": "expected enabled; checked against actual traces"
+      },
+      "manifest_sha256": "d7a41f9f15d01b21f84f8c8284bdd1a4742190589dcd660d24684729dbd19893",
+      "system_prompt_sha256": "cc15062cc1e796901332ea2aee43d038918992d23175b5973aa5f2ca75b22d71",
+      "client_elapsed_s": {
+        "count": 5,
+        "median": 1.2526247490022797,
+        "min": 1.1301634130068123,
+        "max": 1.764113617973635
+      },
+      "service_processing_s": {
+        "count": 5,
+        "median": 1.2463595870067365,
+        "min": 1.1235452679975424,
+        "max": 1.7573569619853515
+      },
+      "completion_tokens": {
+        "count": 5,
+        "median": 103,
+        "min": 99,
+        "max": 154
+      },
+      "prompt_token_values": [
+        854
+      ],
+      "normal_finish_count": 5,
+      "valid_json_count": 5,
+      "stats_delta_including_warmup": {
+        "total_requests": 6,
+        "processed": 6,
+        "dropped": 0,
+        "errors": 0
+      },
+      "per_case_client_s": {
+        "tum_desk_000": {
+          "count": 1,
+          "median": 1.5443982869910542,
+          "min": 1.5443982869910542,
+          "max": 1.5443982869910542
+        },
+        "tum_desk_030": {
+          "count": 1,
+          "median": 1.2526247490022797,
+          "min": 1.2526247490022797,
+          "max": 1.2526247490022797
+        },
+        "tum_desk_060": {
+          "count": 1,
+          "median": 1.764113617973635,
+          "min": 1.764113617973635,
+          "max": 1.764113617973635
+        },
+        "tum_desk_090": {
+          "count": 1,
+          "median": 1.1301634130068123,
+          "min": 1.1301634130068123,
+          "max": 1.1301634130068123
+        },
+        "tum_desk_120": {
+          "count": 1,
+          "median": 1.2269982629804872,
+          "min": 1.2269982629804872,
+          "max": 1.2269982629804872
+        }
+      },
+      "source": {
+        "local_log_filename": "initial_latency_grounded_stop_v2_20261020T053809229693Z.json",
+        "sha256": "c80c8266603bde5f27da22439eba8e874b4a2723f107cdbde75c8c1755f3c7eb",
+        "published": false
+      },
+      "segments_s": {
+        "prepare_s": {
+          "count": 5,
+          "median": 0.00027635699370875955,
+          "min": 0.0002309420087840408,
+          "max": 0.00028986099641770124
+        },
+        "model_call_s": {
+          "count": 5,
+          "median": 1.2460633800073992,
+          "min": 1.1232161580119282,
+          "max": 1.757026234001387
+        },
+        "parse_s": {
+          "count": 5,
+          "median": 4.6542001655325294e-05,
+          "min": 3.829799243248999e-05,
+          "max": 6.526499055325985e-05
+        },
+        "total_processing_s": {
+          "count": 5,
+          "median": 1.2463595870067365,
+          "min": 1.1235452679975424,
+          "max": 1.7573569619853515
+        }
+      },
+      "model_call_fraction_of_summed_service": 0.9997685181812344
+    }
+  },
+  "gpu_memory_sampling": {
+    "device": "NVIDIA GeForce RTX 4070 Ti",
+    "total_mib": 12282.0,
+    "requested_interval_ms": 200,
+    "phases_used_mib": {
+      "loaded_idle_before": {
+        "count": 10,
+        "median": 7634.0,
+        "min": 7629.0,
+        "max": 7636.0
+      },
+      "request_run_including_warmup_and_overhead": {
+        "count": 56,
+        "median": 7643.5,
+        "min": 7628.0,
+        "max": 7710.0
+      },
+      "loaded_idle_after": {
+        "count": 10,
+        "median": 7644.0,
+        "min": 7642.0,
+        "max": 7666.0
+      }
+    },
+    "definition": "GPU 0 total used memory reported by nvidia-smi; includes the model service, caches, desktop and other GPU processes",
+    "limitations": "sampled maximum is not an exact transient peak, per-model allocation, or torch max_memory_allocated",
+    "source": {
+      "local_log_filename": "gpu_memory_20261019T091135132377Z.json",
+      "sha256": "6f8798635f1ecb3cbf05725b847096babc674e025e0ddbe50fca268905c08428",
+      "published": false
+    },
+    "linked_workload": {
+      "local_log_filename": "initial_latency_20261019T091137283029Z.json",
+      "sha256": "cd3d02db8a848e1337386466f04055d3b9f646c3672ce93f455199bd301a141d",
+      "published": false
+    }
+  },
+  "video": {
+    "historical_functional_check_date": "2026-10-19",
+    "loading_confirmed_date": "2026-10-24",
+    "width": 640,
+    "height": 480,
+    "frames": 150,
+    "file_fps": 31.198,
+    "new_model_result_hz": null,
+    "full_continuous_retest_on_20261024": false,
+    "evidence": "historical_project_report_and_local_loading_screenshot"
+  }
+}

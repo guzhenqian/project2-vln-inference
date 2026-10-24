@@ -256,10 +256,11 @@ class InferencePipeline:
         engine: Any,
     ) -> InferenceResult:
         """处理单个推理请求"""
-        start_time = time.time()
+        start_time = time.perf_counter()
         diagnostic = {"task_id": request.task_id, "frame_id": request.frame_id,
                       "timestamp": request.timestamp}
         parsed = None
+        timings = {}
 
         try:
             # 获取任务上下文
@@ -300,20 +301,30 @@ class InferencePipeline:
 
             # 调用 VLM（在线程池中执行同步调用）
             loop = asyncio.get_event_loop()
-            response = await loop.run_in_executor(
-                None,
-                lambda: engine.generate_from_messages(
-                    messages=messages,
-                    max_tokens=512,
-                    temperature=0.3,
-                ),
-            )
+            model_start = time.perf_counter()
+            timings["prepare_s"] = model_start - start_time
+            try:
+                response = await loop.run_in_executor(
+                    None,
+                    lambda: engine.generate_from_messages(
+                        messages=messages,
+                        max_tokens=512,
+                        temperature=0.3,
+                    ),
+                )
+            finally:
+                model_end = time.perf_counter()
+                # 包含线程池调度、模型HTTP往返及后端处理，不是GPU内核时间。
+                timings["model_call_s"] = model_end - model_start
             diagnostic["model_response"] = response
 
             # 解析结果
             parsed = self._waypoint_parser.parse(response.get("text", ""))
 
-            inference_time = time.time() - start_time
+            parse_end = time.perf_counter()
+            timings["parse_s"] = parse_end - model_end
+            inference_time = parse_end - start_time
+            timings["total_processing_s"] = inference_time
 
             # 更新平均推理时间
             n = self._stats["processed"]
@@ -346,13 +357,19 @@ class InferencePipeline:
                 reasoning="",
                 progress=0.0,
                 reached_goal=False,
-                inference_time=time.time() - start_time,
+                inference_time=time.perf_counter() - start_time,
                 error=str(e),
             )
         finally:
             # 仅用于当前业务排障；不记录图片正文，不改变解析和任务结束判据。
             if os.environ.get("PROJECT2_DIAGNOSTICS") == "1":
                 try:
+                    diagnostic["timings_s"] = timings
+                    diagnostic["timing_scope"] = (
+                        "prepare + model_call + parse; excludes pipeline queue and diagnostic log write; "
+                        "model_call includes executor scheduling and backend HTTP round trip, not pure GPU time; "
+                        "failed requests may have partial stage timings"
+                    )
                     if parsed is not None:
                         diagnostic["parsed"] = {
                             key: value for key, value in parsed.items() if key not in ("waypoints", "raw_output")

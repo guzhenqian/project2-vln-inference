@@ -3,6 +3,7 @@
 import asyncio
 import base64
 import json
+import math
 import os
 import sys
 import time
@@ -39,7 +40,9 @@ async def check():
     fake.generate_from_messages.return_value = response
     try:
         with patch.dict(os.environ, {"PROJECT2_DIAGNOSTICS": "1"}):
-            with patch.object(module.logger, "info") as log:
+            with patch.object(module.logger, "info") as log, patch.object(
+                module.time, "perf_counter", side_effect=[100.0, 100.01, 101.01, 101.03]
+            ):
                 result = await pipeline._process_request(request, fake)
         assert not result.error and result.reached_goal is False and result.waypoints[0].dx == 0.2
         diagnostic = json.loads(log.call_args.args[1])
@@ -48,6 +51,13 @@ async def check():
         assert diagnostic["parsed"]["reached_goal"] is False
         assert diagnostic["derived_velocity"]["linear_vel"] == 1.0
         assert diagnostic["frame_id"] == 1 and "image_base64" not in diagnostic
+        timings = diagnostic["timings_s"]
+        for key, expected in {"prepare_s": 0.01, "model_call_s": 1.0,
+                              "parse_s": 0.02, "total_processing_s": 1.03}.items():
+            assert math.isclose(timings[key], expected, abs_tol=1e-9), (key, timings)
+        assert math.isclose(result.inference_time, 1.03, abs_tol=1e-9)
+        assert "not pure GPU time" in diagnostic["timing_scope"]
+        print("PASS: monotonic stage timings match controlled elapsed intervals and API total")
         print("PASS: one record links raw output, termination reason, parsed waypoints and speed")
         fake.generate_from_messages.side_effect = RuntimeError("simulated backend failure")
         with patch.dict(os.environ, {"PROJECT2_DIAGNOSTICS": "1"}):
@@ -55,6 +65,8 @@ async def check():
                 result = await pipeline._process_request(request, fake)
         assert result.error == "simulated backend failure"
         assert json.loads(log.call_args.args[1])["error"] == result.error
+        failed_timings = json.loads(log.call_args.args[1])["timings_s"]
+        assert failed_timings["model_call_s"] >= 0 and "parse_s" not in failed_timings
         print("PASS: model error remains visible in diagnostic record")
         fake.generate_from_messages.side_effect = None
         with patch.dict(os.environ, {"PROJECT2_DIAGNOSTICS": "0"}):
