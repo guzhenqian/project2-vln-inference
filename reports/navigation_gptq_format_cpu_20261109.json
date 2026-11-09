@@ -1,0 +1,79 @@
+{
+  "status": "passed_cpu_format_only",
+  "created_utc": "2026-11-09T10:30:32.561539+00:00",
+  "scope": "Synthetic CPU Linear GPTQ -> compressed-tensors -> AWQ GEMM integer layout",
+  "model_loaded": false,
+  "calibration_dataset_loaded": false,
+  "cuda_initialized": false,
+  "real_model_quantized": false,
+  "lmdeploy_kernel_executed": false,
+  "formal_experiment_started": false,
+  "versions": {
+    "torch": "2.8.0",
+    "llmcompressor": "0.9.0",
+    "compressed-tensors": "0.13.0",
+    "transformers": "4.57.3"
+  },
+  "quantization": {
+    "num_bits": 4,
+    "type": "int",
+    "symmetric": false,
+    "group_size": 128,
+    "strategy": "group",
+    "block_structure": null,
+    "dynamic": false,
+    "actorder": "static",
+    "scale_dtype": null,
+    "zp_dtype": "torch.int8",
+    "observer": "minmax",
+    "observer_kwargs": {}
+  },
+  "seed": 7,
+  "warnings": [],
+  "checks": [
+    {
+      "shape": [
+        32,
+        256
+      ],
+      "synthetic_batches": 1,
+      "g_idx_absent": true,
+      "gptq_loss": 29.01449966430664,
+      "integer_roundtrip_exact": true,
+      "float32_dequantization_exact": true,
+      "compressed_roundtrip_max_abs": 0.0,
+      "fp16_scale_max_abs": 3.5604462027549744e-06,
+      "fp16_scale_weight_max_abs": 2.8483569622039795e-05,
+      "fp16_scale_weight_error_bound": 5.350669304132462e-05
+    },
+    {
+      "shape": [
+        16,
+        512
+      ],
+      "synthetic_batches": 1,
+      "g_idx_absent": true,
+      "gptq_loss": 29.455446243286133,
+      "integer_roundtrip_exact": true,
+      "float32_dequantization_exact": true,
+      "compressed_roundtrip_max_abs": 0.0,
+      "fp16_scale_max_abs": 1.7802231013774872e-06,
+      "fp16_scale_weight_max_abs": 1.4241784811019897e-05,
+      "fp16_scale_weight_error_bound": 2.6803346520662307e-05
+    }
+  ],
+  "unsafe_mappings_rejected": [
+    "dynamic_actorder",
+    "group_actorder",
+    "non_contiguous_g_idx",
+    "wrong_g_idx_dtype",
+    "wrong_g_idx_shape"
+  ],
+  "source_sha256": {
+    "llmcompressor/modifiers/quantization/gptq/gptq_quantize.py": "b986b6b5431063a53a98d1398a4f1e3d70f07bcdc9a538434d4b92df884a01bf",
+    "compressed_tensors/compressors/quantized_compressors/pack_quantized.py": "96f100e34deade6ce924bcfe6053fde0c1d9cd0087d27364800d2ef06ce8757b",
+    "compressed_tensors/quantization/quant_args.py": "eb43b800b906393d913e06ec16ea8aa4694ec34912205c41c09b11da5f47d937",
+    "checks/check_navigation_gptq_format_cpu.py": "3b6e01feb1ff9d5ec0f3351e5df45da9f28192744a8ba8bfe2c3923cef30a8e0"
+  },
+  "next_gate": "Real checkpoint conversion, native CUDA operators and Qwen3-VL requests remain unvalidated"
+}

@@ -1,0 +1,118 @@
+{
+  "status": "passed",
+  "model": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_learning_20261104",
+  "model_sha256": "31d1c12dba3cbaace283cccf5be23337555f0383a3c4390e6270d2a9230414db",
+  "scope": "9 sampled projections x 2 input row counts; compares AWQ kernel with unpacked quantized weights, not source-model quality",
+  "tolerance_relative_l2": 0.01,
+  "checks": [
+    {
+      "layer": "model.language_model.layers.0.self_attn.q_proj",
+      "batch": 1,
+      "relative_l2": 5.1040475227637216e-05,
+      "max_abs": 0.0001220703125
+    },
+    {
+      "layer": "model.language_model.layers.0.self_attn.q_proj",
+      "batch": 16,
+      "relative_l2": 0.0,
+      "max_abs": 0.0
+    },
+    {
+      "layer": "model.language_model.layers.0.self_attn.o_proj",
+      "batch": 1,
+      "relative_l2": 5.491167394211516e-05,
+      "max_abs": 0.0001220703125
+    },
+    {
+      "layer": "model.language_model.layers.0.self_attn.o_proj",
+      "batch": 16,
+      "relative_l2": 4.369231828604825e-05,
+      "max_abs": 0.000244140625
+    },
+    {
+      "layer": "model.language_model.layers.0.mlp.down_proj",
+      "batch": 1,
+      "relative_l2": 0.0003509184462018311,
+      "max_abs": 0.00048828125
+    },
+    {
+      "layer": "model.language_model.layers.0.mlp.down_proj",
+      "batch": 16,
+      "relative_l2": 0.00035470386501401663,
+      "max_abs": 0.00048828125
+    },
+    {
+      "layer": "model.language_model.layers.18.self_attn.q_proj",
+      "batch": 1,
+      "relative_l2": 5.274998693494126e-05,
+      "max_abs": 0.0001220703125
+    },
+    {
+      "layer": "model.language_model.layers.18.self_attn.q_proj",
+      "batch": 16,
+      "relative_l2": 0.0,
+      "max_abs": 0.0
+    },
+    {
+      "layer": "model.language_model.layers.18.self_attn.o_proj",
+      "batch": 1,
+      "relative_l2": 6.310801836661994e-05,
+      "max_abs": 0.000244140625
+    },
+    {
+      "layer": "model.language_model.layers.18.self_attn.o_proj",
+      "batch": 16,
+      "relative_l2": 4.621217158273794e-05,
+      "max_abs": 0.000244140625
+    },
+    {
+      "layer": "model.language_model.layers.18.mlp.down_proj",
+      "batch": 1,
+      "relative_l2": 0.0003465383779257536,
+      "max_abs": 0.000244140625
+    },
+    {
+      "layer": "model.language_model.layers.18.mlp.down_proj",
+      "batch": 16,
+      "relative_l2": 0.00035516201751306653,
+      "max_abs": 0.00048828125
+    },
+    {
+      "layer": "model.language_model.layers.35.self_attn.q_proj",
+      "batch": 1,
+      "relative_l2": 4.1704839532030746e-05,
+      "max_abs": 6.103515625e-05
+    },
+    {
+      "layer": "model.language_model.layers.35.self_attn.q_proj",
+      "batch": 16,
+      "relative_l2": 0.0,
+      "max_abs": 0.0
+    },
+    {
+      "layer": "model.language_model.layers.35.self_attn.o_proj",
+      "batch": 1,
+      "relative_l2": 4.971800808561966e-05,
+      "max_abs": 0.000244140625
+    },
+    {
+      "layer": "model.language_model.layers.35.self_attn.o_proj",
+      "batch": 16,
+      "relative_l2": 4.266800169716589e-05,
+      "max_abs": 0.000244140625
+    },
+    {
+      "layer": "model.language_model.layers.35.mlp.down_proj",
+      "batch": 1,
+      "relative_l2": 0.00034022697946056724,
+      "max_abs": 0.000244140625
+    },
+    {
+      "layer": "model.language_model.layers.35.mlp.down_proj",
+      "batch": 16,
+      "relative_l2": 0.0003505280474200845,
+      "max_abs": 0.00048828125
+    }
+  ],
+  "max_relative_l2": 0.00035516201751306653
+}

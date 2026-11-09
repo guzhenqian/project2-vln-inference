@@ -1,0 +1,673 @@
+{
+  "version": "navigation_stage2_execution_20261109",
+  "status": "authorized_validation_in_progress",
+  "scope": "Nine single-method configurations; seven new runs plus two reused DART results",
+  "execution_enabled": true,
+  "model": {
+    "source": "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy",
+    "repo": "honglyhly/SimpleVLN_Qwen3VL_4B_RL",
+    "revision": "4078dab77f3c93a0711b57549ac54a59c1c1e1ea",
+    "architecture": "Qwen3VLForConditionalGeneration",
+    "language_model_type": "dense",
+    "unquantized_runtime_dtype": "float16",
+    "source_weight_storage_dtype": "float32; runtime dtype explicitly overridden to float16",
+    "source_weights_sha256": "b72a10c2b89a78f43c3c8bb05c4495b7d76dee85ec79f7125d9d795302aaa54b",
+    "source_weights_hash_provenance": "Previously verified source manifest; not rehashed in this configuration-only step",
+    "processor_and_chat_template": "Identical pinned source assets for every group"
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 4070 Ti 12 GB",
+    "gpu_count": 1,
+    "execution": "Sequential groups and one active request; no concurrent GPU benchmark"
+  },
+  "inference_versions": {
+    "lmdeploy": "0.11.1",
+    "torch": "2.5.1+cu121",
+    "transformers": "4.57.6",
+    "triton": "3.1.0"
+  },
+  "engine": {
+    "backend": "pytorch",
+    "dtype": "float16",
+    "tp": 1,
+    "dp": 1,
+    "eager_mode": true,
+    "max_batch_size": 1,
+    "max_concurrent_requests": 1,
+    "session_len": 4096,
+    "max_prefill_token_num": 3072,
+    "complete_prefill_required": true,
+    "num_gpu_blocks": 64,
+    "block_size": 64,
+    "cache_max_entry_count": 0.35,
+    "cache_note": "Fixed blocks govern allocation; cache fraction is not the comparison control",
+    "enable_prefix_caching": false,
+    "enable_microbatch": false,
+    "enable_metrics": false,
+    "quant_policy": 0,
+    "distributed_executor_backend": "mp",
+    "enable_mp_engine": true,
+    "mp_engine_backend": "mp",
+    "overflow_policy": "Reject and report; no silent input truncation or per-method cache resizing"
+  },
+  "inputs": {
+    "rgb_hw": [
+      480,
+      640
+    ],
+    "camera_height_m": 1.25,
+    "hfov_deg": 90,
+    "encoding": "Original JPEG encoding and pinned processor/chat template",
+    "policy": "Original author prompt, RGB history sampling and action parser unchanged",
+    "history_window_observations": 200,
+    "maximum_historical_images": 8,
+    "request_image_count_range": [
+      2,
+      9
+    ],
+    "first_observation": "Preserve author behavior: the current image also fills the history slot",
+    "additional_inputs": "No action-text feedback, target coordinates or self-written memory"
+  },
+  "generation": {
+    "temperature": 0.3,
+    "top_p": 0.95,
+    "max_tokens": 512,
+    "seed": 7
+  },
+  "navigation": {
+    "dataset": "R2R_VLNCE_v1-3",
+    "habitat_version": "0.1.7",
+    "renderer": "Mesa llvmpipe software",
+    "seed": 7,
+    "max_episode_steps": 400,
+    "step_size_m": 0.25,
+    "turn_deg": 15,
+    "success_rule": "Model-origin STOP and geodesic distance strictly less than 3m",
+    "collision_early_stop": false,
+    "all_frozen_failures_in_denominator": true,
+    "errors": "Record request/parser errors and fallback STOP explicitly; never count fallback as model success"
+  },
+  "quantization_common": {
+    "candidate_algorithms": [
+      "AWQ",
+      "GPTQ"
+    ],
+    "scheme": "W4A16_ASYM",
+    "bits": 4,
+    "group_size": 128,
+    "symmetric": false,
+    "targets": "252 language projections: q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj",
+    "keep_float16": [
+      "vision tower",
+      "merger and DeepStack projections",
+      "embeddings",
+      "lm_head",
+      "activations",
+      "KV"
+    ],
+    "calibration_manifest": "data/calibration/navigation_awq_learning_20261104/processed/manifest.json",
+    "calibration_input_count": 32,
+    "calibration_count_unit": "model input samples, not trajectories",
+    "calibration_seed": 7,
+    "calibration_batch_size": 1,
+    "calibration_math": "FP32 arithmetic from the same FP16-rounded source weights",
+    "quantization_versions": {
+      "llmcompressor": "0.9.0",
+      "compressed-tensors": "0.13.0",
+      "torch": "2.8.0",
+      "transformers": "4.57.3"
+    },
+    "calibration_change_rule": "If samples/source/toolchain change, rebuild both algorithms as a new round",
+    "deployment_format": "Must preserve quantized numerical values and use the common backend; GPTQ compatibility pending"
+  },
+  "visual_token_budget": {
+    "keep_ratios": [
+      0.75,
+      0.5
+    ],
+    "no_compression_control": 1.0,
+    "original_tokens_per_image_for_fixed_grid": 300,
+    "total_budget": "N images: 225*N or 150*N effective visual tokens after the final reduction stage",
+    "counting": "Count retained original tokens plus merged tokens; preserve text and special tokens",
+    "per_image_allocation": "Method-specific allocation is deferred; do not silently impose uniform per-image quotas",
+    "record": [
+      "actual tokens at every reduction layer",
+      "per-image/history-frame allocation",
+      "retained versus merged tokens",
+      "selection/merge and transfer time"
+    ],
+    "prune_layers_and_merge": "Method-specific recipes must be fixed separately before any experiment"
+  },
+  "measurement": {
+    "quality": [
+      "SR",
+      "SPL",
+      "collisions",
+      "abnormal stops",
+      "output/request errors"
+    ],
+    "request_latency": "P50/P95 of model_called=true HTTP requests only; exclude queued-action zeroes and all warmups",
+    "warmups_per_fresh_batch": 2,
+    "memory": "Whole-card sampling every200ms with equal sampling boundaries; includes desktop/cache, not model-exclusive",
+    "two_workloads": [
+      "fixed identical input requests",
+      "closed-loop navigation"
+    ],
+    "audit_mode": "Preserve phase1 detailed runtime instrumentation and original HTTP statistics; no lightweight-mode migration",
+    "performance_mode": "Original measurement protocol; report method-specific instrumentation and algorithm costs",
+    "mode_switch_gate": "No mode switch authorized for this screening round",
+    "timing_status": "Reuse original DART per-case HTTP timings; all new runs use the frozen evaluator and original sampling boundaries"
+  },
+  "data_policy": {
+    "existing150_role": "Shared development pool; 50/100 nested subsets reused exactly across algorithms",
+    "screening_roster": "Original batch_01 (50)",
+    "confirmation_roster": "Development re-screen: original batch_01+batch_02 (100 cumulative); not independent final confirmation",
+    "separation": "Calibration train separated from evaluation; final confirmation excludes all previously used trajectories and their instructions",
+    "claims": "New trajectories in known scenes are not new-scene evaluation"
+  },
+  "remaining_gates": [
+    "GPTQ export/repacking and native numerical/runtime validation",
+    "FastV/SparseVLM exact versions, layer schedules, allocation and merge semantics",
+    "Frozen task/request rosters and pre-registered selection criteria",
+    "Recheck source weights, processed calibration inputs and runtime versions before execution"
+  ],
+  "historical_results_policy": "Preserve phase1. Reuse weights/code when identical; changed engine/instrumentation requires new performance measurements",
+  "reference_files_sha256": {
+    "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy/config.json": "8c129761080666a7970e3bf3612c88e5ec64936a1fa8e92c821acc4e32c6c061",
+    "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy/chat_template.jinja": "3636d0f0bd6bef02654cdffdc447b79cb2cef8ab02cc75267345946291a489e4",
+    "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy/generation_config.json": "88d1a620250c81ef75d65e3a9dd24c85c55850f29ea759eb0b54d37ae7fdd6e2",
+    "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy/preprocessor_config.json": "693bb2d8e644879fef41b4ce4f9b2b4f4a14e4c1009c33dfb443920ac6121e32",
+    "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy/processor_config.json": "14932921ca485d458a04dafd8069fbb0a4505622a48208d19ed247115801385b",
+    "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy/tokenizer.json": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+    "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy/tokenizer_config.json": "c0aad1f4af9a493b90202deac47a0a734a52a7d47424ef2b77427d2214504111",
+    "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy/source_manifest.json": "a3779ce0d672fe2d6eacc32111b2acf3596e6a8ace59cfd317db0fdda01327b6",
+    "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy/serving_adapter.json": "ea8db31b544f3814ebde8ab3335100a432302c0622aecb2b73be2511b8c12184",
+    "data/calibration/navigation_awq_learning_20261104/processed/manifest.json": "5e0593295549518fcf1d09a278dffb27af607c95a4ecc6570bc97b97d6123e17",
+    "setup/navigation-awq-learning-20261104.json": "29f6eb58e28d79be8bbb8123266cc7f83eed55e598b590ef0ecc31bb13d36a4c",
+    "setup/navigation-quant-lock.txt": "a3189fea1d6a83d48727bab5d146aaea96d985ab70004dbb6561b2aec250d2cc",
+    "setup/inference-requirements.txt": "78e34667e0a3bca3dd0967c7fc552cf9573f60dd9ed360672d30e8613ed1dc20",
+    "checks/simplevln_policy.py": "e73eb87dfa0946a42fc9b8efb4e1911ac41e382478a0ace24e5e5e19cd8132bc",
+    "checks/simplevln_env.py": "7d6fc47cc03c3aace6b7e9687798913c316a5269efbd7463e6797f116b454183",
+    "checks/run_simplevln_diagnostic.py": "a7388b2d2b2e94d5f4a5f798bf90f5e898176867d060b5534e84a96335bc4dd8",
+    "checks/run_closed_loop_baseline.py": "fca113731e8f7e4da21a1f5ce8f8ce586b45443f1d5a5c5f5f355633a870d385",
+    "tmp/habitat_setup/navigation_source_review/eval/vln/eval.py": "72efa80174a832cec519eb7bb73ba2f635848b47af4dcaafaa03078e0d8d3a1f"
+  },
+  "calibration_inputs": [
+    {
+      "id": "train_515_step_0",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/00.pt",
+      "sequence_length": 701,
+      "images": 2,
+      "sha256": "5686a362f99fd3f41747d040b3542dca71267a783496769478f25c9d6945b0f3"
+    },
+    {
+      "id": "train_515_step_14",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/01.pt",
+      "sequence_length": 2815,
+      "images": 9,
+      "sha256": "cacfdba5014ce4faad294a41a0a85149d16a9150d34d00da8854a95541d1bf02"
+    },
+    {
+      "id": "train_515_step_27",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/02.pt",
+      "sequence_length": 2815,
+      "images": 9,
+      "sha256": "136d2aa12d7bfacbede1466cade25926c3e106ed9357a49badc8beaf790d349d"
+    },
+    {
+      "id": "train_515_step_41",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/03.pt",
+      "sequence_length": 2815,
+      "images": 9,
+      "sha256": "dfe0c530ed0bca57fe890e72560ce6ad9bfc2e22ec8c3898a6d4e0bf97f38992"
+    },
+    {
+      "id": "train_575_step_0",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/04.pt",
+      "sequence_length": 714,
+      "images": 2,
+      "sha256": "7217a76ee0811d0f4f9b5af5af4c53f15b7872b7fb85de30d63b5b49e9170c92"
+    },
+    {
+      "id": "train_575_step_17",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/05.pt",
+      "sequence_length": 2828,
+      "images": 9,
+      "sha256": "7f43e842ab2f2ed1db3888f44e467c75361dba9fc123842484f0f5442c9d5bda"
+    },
+    {
+      "id": "train_575_step_35",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/06.pt",
+      "sequence_length": 2828,
+      "images": 9,
+      "sha256": "8fb800f16ecb08347ae8cc42be1a7c17737c41f437d539b7886baddd7b9294a4"
+    },
+    {
+      "id": "train_575_step_52",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/07.pt",
+      "sequence_length": 2828,
+      "images": 9,
+      "sha256": "4aed24e37c67d892fa7eed3d5ce7cd97803e5f796d75973ce73f789efabfca8a"
+    },
+    {
+      "id": "train_85_step_0",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/08.pt",
+      "sequence_length": 726,
+      "images": 2,
+      "sha256": "3d8eb3a61daf178753b2ccc33e1271dfd31b8f33e629a29eb73cb2e78d014203"
+    },
+    {
+      "id": "train_85_step_17",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/09.pt",
+      "sequence_length": 2840,
+      "images": 9,
+      "sha256": "55b1741f90c8701c7df7b669e5bd25c5a02ca76d354867f29ea312430e31a14c"
+    },
+    {
+      "id": "train_85_step_34",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/10.pt",
+      "sequence_length": 2840,
+      "images": 9,
+      "sha256": "122db6fde789f9955c1f61a899b1aa83d2f706dd876c146aaac11ac1b182738f"
+    },
+    {
+      "id": "train_85_step_51",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/11.pt",
+      "sequence_length": 2840,
+      "images": 9,
+      "sha256": "8c80400fb12d9d2a19f1af48e1c889a1329d4765f312fc8c98b769ca31dcd8ee"
+    },
+    {
+      "id": "train_97_step_0",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/12.pt",
+      "sequence_length": 716,
+      "images": 2,
+      "sha256": "0aa7e0e261bc6b35469a41927e58c50d50ba1838b55a546a6774853c911119bb"
+    },
+    {
+      "id": "train_97_step_14",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/13.pt",
+      "sequence_length": 2830,
+      "images": 9,
+      "sha256": "aaf8ceb694d8a6a52a387435c8248ac41f98fcff5609f383fc5666208d0fc7c4"
+    },
+    {
+      "id": "train_97_step_27",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/14.pt",
+      "sequence_length": 2830,
+      "images": 9,
+      "sha256": "e6582b124265d625ff7e0c944fb29ab12e7f00dd14ea12b5eae781fffe8138b0"
+    },
+    {
+      "id": "train_97_step_41",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/15.pt",
+      "sequence_length": 2830,
+      "images": 9,
+      "sha256": "fd6d82e221b1e21a0ef34b1c9df37e773ae6bceea86c02000368380c27b36a20"
+    },
+    {
+      "id": "train_184_step_0",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/16.pt",
+      "sequence_length": 719,
+      "images": 2,
+      "sha256": "6a52e7c0c79dcc9a9b0b722d52a2069ec575595df1058164ec34261314388fcb"
+    },
+    {
+      "id": "train_184_step_27",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/17.pt",
+      "sequence_length": 2833,
+      "images": 9,
+      "sha256": "ffc15af555cc3138acdb57bbd577328fea339fb2f62c8824b8dede2bbc307378"
+    },
+    {
+      "id": "train_184_step_54",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/18.pt",
+      "sequence_length": 2833,
+      "images": 9,
+      "sha256": "b7752463f9d3095a7077c0a45be19777dba0a211653fc5a13d8d064a09dbd50b"
+    },
+    {
+      "id": "train_184_step_81",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/19.pt",
+      "sequence_length": 2833,
+      "images": 9,
+      "sha256": "7085a7649ace145570ee7057135853a7af8c97b1173f38b2391306d1cd61050f"
+    },
+    {
+      "id": "train_214_step_0",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/20.pt",
+      "sequence_length": 706,
+      "images": 2,
+      "sha256": "1617c8921a1e8743293da64234d518472faacd6cdef6a8b9845c4a61d9a3ef83"
+    },
+    {
+      "id": "train_214_step_20",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/21.pt",
+      "sequence_length": 2820,
+      "images": 9,
+      "sha256": "fcaae3652aa18c73b8ca4aacbca100b9f9a04007db86798d8cf4659d924024bc"
+    },
+    {
+      "id": "train_214_step_40",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/22.pt",
+      "sequence_length": 2820,
+      "images": 9,
+      "sha256": "336c2bb6e570de6d8cfde0009d7067ff2303418e093de4ac7cf9d2ae4e8f0a13"
+    },
+    {
+      "id": "train_214_step_60",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/23.pt",
+      "sequence_length": 2820,
+      "images": 9,
+      "sha256": "566edd04dd9ad8560a58bb245117f547b6f0ea70a96d88b23052e9ea381af70b"
+    },
+    {
+      "id": "train_160_step_0",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/24.pt",
+      "sequence_length": 704,
+      "images": 2,
+      "sha256": "4567b769f257fa7c330d0e60252bb533560ed03d7713a0513f5128bb1813d3c3"
+    },
+    {
+      "id": "train_160_step_13",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/25.pt",
+      "sequence_length": 2818,
+      "images": 9,
+      "sha256": "1386c1bf2880aea0273ca9739ad9a3485c5c554f52cfdbc1da1d7b97c6f3d52b"
+    },
+    {
+      "id": "train_160_step_27",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/26.pt",
+      "sequence_length": 2818,
+      "images": 9,
+      "sha256": "61ffedc602887e17ddf8c247ec458a5ec938f01e57a94c6f40014233cdae903a"
+    },
+    {
+      "id": "train_160_step_40",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/27.pt",
+      "sequence_length": 2818,
+      "images": 9,
+      "sha256": "3429c2a10066bd7eb8b1c69cab9f18d4344c279554c94f9788671e11f0a298c0"
+    },
+    {
+      "id": "train_208_step_0",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/28.pt",
+      "sequence_length": 714,
+      "images": 2,
+      "sha256": "d631229bba428d206b544a20ecec8aba6ab5287d2c27a20e16c6d5eecbf9c779"
+    },
+    {
+      "id": "train_208_step_16",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/29.pt",
+      "sequence_length": 2828,
+      "images": 9,
+      "sha256": "73c15157390ea4e0cf64e30a1acc2648410bba933418196ef7c9c673c3a7a096"
+    },
+    {
+      "id": "train_208_step_33",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/30.pt",
+      "sequence_length": 2828,
+      "images": 9,
+      "sha256": "6baf221391213b3fc52a3ce52fdf40f2637e764f7275dc69395386f724f8fdc5"
+    },
+    {
+      "id": "train_208_step_49",
+      "path": "data/calibration/navigation_awq_learning_20261104/processed/31.pt",
+      "sequence_length": 2828,
+      "images": 9,
+      "sha256": "89a7f86c798916c5adf8ad206b780daa93b15b81d4370b2d84f45bc7338d693a"
+    }
+  ],
+  "screening": {
+    "initial_count": 50,
+    "cumulative_rescreen_count": 100,
+    "reserve_count": 150,
+    "nested": true,
+    "reuse_completed_cases": true,
+    "new_groups": [
+      "fp16",
+      "awq",
+      "gptq",
+      "fastv75",
+      "fastv50",
+      "sparsevlm75",
+      "sparsevlm50"
+    ],
+    "reuse_groups": [
+      "dart75",
+      "dart50"
+    ],
+    "validation_order": "Checkpoint/format, native CUDA, two/nine-image requests, full single1250, then formal screening",
+    "launch_gate": "All planned methods validated or a specific integration blocker explicitly reported; never silently substitute an algorithm",
+    "selection_policy": "After all50: preserve stability failures, compare paired SR/SPL and P95/memory; small differences do not eliminate candidates. Re-screen viable or uncertain candidates to cumulative100.",
+    "execution": "Single GPU sequential; no concurrent calibration and inference",
+    "overnight_priority": "Finish initial50 for all technically accepted groups; no promised completion deadline"
+  },
+  "rosters": [
+    {
+      "batch": 1,
+      "episode_ids": [
+        "1250",
+        "159",
+        "1413",
+        "558",
+        "1123",
+        "384",
+        "1542",
+        "746",
+        "1444",
+        "1550",
+        "758",
+        "1319",
+        "953",
+        "709",
+        "607",
+        "436",
+        "1194",
+        "958",
+        "1164",
+        "307",
+        "499",
+        "591",
+        "1191",
+        "1253",
+        "419",
+        "1546",
+        "1716",
+        "1726",
+        "1724",
+        "1353",
+        "870",
+        "517",
+        "1145",
+        "720",
+        "1582",
+        "963",
+        "561",
+        "754",
+        "313",
+        "1638",
+        "735",
+        "387",
+        "502",
+        "1506",
+        "1523",
+        "1718",
+        "1378",
+        "919",
+        "897",
+        "1408"
+      ],
+      "scene_counts": {
+        "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb": 4,
+        "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb": 7,
+        "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb": 5,
+        "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb": 3,
+        "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb": 7,
+        "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb": 4,
+        "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb": 8,
+        "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb": 7,
+        "mp3d/x8F5xyUWy9e/x8F5xyUWy9e.glb": 3,
+        "mp3d/pLe4wQe7qrG/pLe4wQe7qrG.glb": 1,
+        "mp3d/8194nk5LbLH/8194nk5LbLH.glb": 1
+      },
+      "length_bin_counts": {
+        "1": 18,
+        "0": 16,
+        "2": 16
+      },
+      "source": "data/baseline/overnight200_fp16_20261031/batch_01.json",
+      "source_sha256": "4a19f330cc99f436a13d15bf33ed26a785395c0b9eb6c687dd2f453a9befc0ac"
+    },
+    {
+      "batch": 2,
+      "episode_ids": [
+        "1109",
+        "1803",
+        "662",
+        "184",
+        "1778",
+        "1022",
+        "142",
+        "233",
+        "1066",
+        "180",
+        "917",
+        "579",
+        "657",
+        "356",
+        "888",
+        "1128",
+        "948",
+        "116",
+        "150",
+        "814",
+        "528",
+        "1595",
+        "241",
+        "1362",
+        "858",
+        "1755",
+        "1476",
+        "1447",
+        "1593",
+        "721",
+        "587",
+        "1381",
+        "1807",
+        "275",
+        "1466",
+        "439",
+        "1337",
+        "1405",
+        "1525",
+        "994",
+        "1132",
+        "575",
+        "1010",
+        "1051",
+        "950",
+        "1262",
+        "833",
+        "444",
+        "1740",
+        "1131"
+      ],
+      "scene_counts": {
+        "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb": 8,
+        "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb": 7,
+        "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb": 5,
+        "mp3d/pLe4wQe7qrG/pLe4wQe7qrG.glb": 1,
+        "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb": 7,
+        "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb": 4,
+        "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb": 7,
+        "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb": 3,
+        "mp3d/x8F5xyUWy9e/x8F5xyUWy9e.glb": 3,
+        "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb": 4,
+        "mp3d/8194nk5LbLH/8194nk5LbLH.glb": 1
+      },
+      "length_bin_counts": {
+        "2": 15,
+        "1": 17,
+        "0": 18
+      },
+      "source": "data/baseline/overnight200_fp16_20261031/batch_02.json",
+      "source_sha256": "d46d5beff6bc52e32ade644e1223b562d8041bd3e1384cb5c205d1b892c01834"
+    },
+    {
+      "batch": 3,
+      "episode_ids": [
+        "937",
+        "976",
+        "1060",
+        "1457",
+        "447",
+        "1167",
+        "1285",
+        "1819",
+        "643",
+        "292",
+        "801",
+        "862",
+        "83",
+        "621",
+        "1437",
+        "991",
+        "1143",
+        "160",
+        "349",
+        "1486",
+        "1657",
+        "1072",
+        "1428",
+        "272",
+        "873",
+        "925",
+        "997",
+        "990",
+        "2",
+        "835",
+        "1624",
+        "1575",
+        "1569",
+        "1516",
+        "33",
+        "140",
+        "852",
+        "1314",
+        "1605",
+        "1279",
+        "1293",
+        "1013",
+        "826",
+        "531",
+        "1796",
+        "562",
+        "1534",
+        "78",
+        "1309",
+        "1329"
+      ],
+      "scene_counts": {
+        "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb": 5,
+        "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb": 7,
+        "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb": 8,
+        "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb": 4,
+        "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb": 7,
+        "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb": 3,
+        "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb": 7,
+        "mp3d/8194nk5LbLH/8194nk5LbLH.glb": 1,
+        "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb": 4,
+        "mp3d/pLe4wQe7qrG/pLe4wQe7qrG.glb": 1,
+        "mp3d/x8F5xyUWy9e/x8F5xyUWy9e.glb": 3
+      },
+      "length_bin_counts": {
+        "0": 16,
+        "1": 15,
+        "2": 19
+      },
+      "source": "data/baseline/overnight200_fp16_20261031/batch_03.json",
+      "source_sha256": "f0ac1d1879af1ab510fcec33f67ee801e39422e53b6265bfc4a35b744a1352fb"
+    }
+  ]
+}

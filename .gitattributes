@@ -4,3 +4,11 @@
 *.md text eol=lf
 *.json text eol=lf
 *.txt text eol=lf
+
+# Preserve frozen experiment bytes for SHA256 verification.
+setup/navigation-stage2-execution-20261109.json -text
+setup/navigation-gptq-stage2-20261109.json -text
+checks/convert_navigation_gptq_stage2.py -text
+checks/quantize_navigation_gptq_stage2.py -text
+checks/navigation_stage2_runtime.py -text
+checks/navigation_stage2_module_map.py -text

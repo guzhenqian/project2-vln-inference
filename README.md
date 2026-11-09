@@ -2,7 +2,9 @@
 
 在 RTX 4070 Ti 12 GB 上完成视觉语言模型部署、业务联调和导航压缩实验。早期使用 Qwen3-VL-2B-Instruct 验证 LMDeploy、FastAPI、Gradio 图片问答与视频功能；当前导航实验使用 SimpleVLN Qwen3-VL 4B RL，在 Habitat 中评测 FP16、AWQ、DART 及组合方案。
 
-**当前状态（2026-11-09）：A/B/C/D 四组均完成同一冻结清单的 150 条导航任务，另完成 DART 保留 50% 的同清单消融。AWQ＋DART 75% 的真实 GPU 验证、三批运行审计和最终结果复核全部通过。** 四组无请求或解析错误；失败任务全部保留。完整进展与方法见[项目进展报告](reports/project_progress_20261109.md)。
+**当前状态（2026-11-10）：第二阶段九组50条初筛全部完成，累计100条复筛已启动、尚未完成。** 七个新配置完成真实接入验收和同50条导航；DART75/50复用相同子集。九组均无请求/解析错误，450条结果及新运行13,857对执行记录独立复核通过。统一采用eager、3072完整prefill与原统计方式，新增GPTQ、FastV及SparseVLM-v1单层无合并适配。见[最新进展与九组结果](reports/project_progress_20261110.md)、[算法适配问题台账](reports/navigation_algorithm_adaptation_log.md)。
+
+第一阶段A/B/C/D已完成同一冻结清单的150条导航任务，另完成DART50%消融；下表保留第一阶段结果，其执行环境差异见表后说明。第二阶段原始基线/AWQ重新运行，不能用下表旧A/B直接代替本轮对照。[第一阶段进展](reports/project_progress_20261109.md)。
 
 | 同一批 150 条 | A：FP16 | B：AWQ | C：DART 75% | D：AWQ＋DART 75% |
 | --- | ---: | ---: | ---: | ---: |

@@ -1,0 +1,387 @@
+{
+  "status": "all_seven_passed",
+  "created_utc": "2026-11-09T11:51:32.451662+00:00",
+  "groups": {
+    "fp16": {
+      "passed": true,
+      "recipe": {
+        "method": "fp16",
+        "keep": 1.0,
+        "model": "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy",
+        "prune_layer": null
+      },
+      "smoke_traces": [
+        {
+          "trace_id": "c9d4ef24d4964406804776b41874af66",
+          "image_count": 2,
+          "original_length": 701,
+          "retained_length": 701,
+          "prefill_sha256": "04040e5838906da4f72a7a2a5f427a1136cab49454a8f0ffc941783319b526da",
+          "first_decode_sha256": "3fdf82d1d34535e67bdc7ae61b9ece728666f01b9aff75ea17a9ed861f946fbf"
+        },
+        {
+          "trace_id": "b66de1e79740422ca477b4a281c845e6",
+          "image_count": 9,
+          "original_length": 2815,
+          "retained_length": 2815,
+          "prefill_sha256": "098581a5bbabf6e1fc2c973ba2ec590dfca1ed81b5325ec4d9aca2ff4efd7f13",
+          "first_decode_sha256": "067500e743ad358d87b9d991c531f437ee3b4cfcf938fd9960747f0db46ed9da"
+        }
+      ],
+      "single_episode": {
+        "episode_id": "1250",
+        "steps": 400,
+        "model_calls": 128,
+        "errors": 0,
+        "stop_source": "step_limit",
+        "success": 0.0,
+        "distance_to_goal": 8.249958038330078,
+        "spl": 0.0
+      },
+      "trace_pairs": 130,
+      "warmups_excluded": 2,
+      "launch_sha256": "28f074bbbeee3de62084f6f55f2b174eb1b60aed8d4a0ab42f6e08943c8951e7",
+      "single_audit_sha256": "dee3b02c0caa84c94dbd1724398a2d9207186c0b6593554d3d7d74c3135e60e2",
+      "runtime_sources_sha256": {
+        "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+        "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+        "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+        "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+        "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+        "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+        "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+        "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+        "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1"
+      }
+    },
+    "awq": {
+      "passed": true,
+      "recipe": {
+        "method": "awq",
+        "keep": 1.0,
+        "model": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_learning_20261104",
+        "prune_layer": null
+      },
+      "smoke_traces": [
+        {
+          "trace_id": "2c8c099642814059b2489ab22bd56d50",
+          "image_count": 2,
+          "original_length": 701,
+          "retained_length": 701,
+          "prefill_sha256": "718033edf9103820c239cf3e6c3c1d9c08f3b10b9394013ad496ad2a542ccb0d",
+          "first_decode_sha256": "982d338a6e0ea910d64fea99878b2cb9fd1c7123d0cb654fcab7c585b9864e3e"
+        },
+        {
+          "trace_id": "02289025950246bd903eacff53e3e1d0",
+          "image_count": 9,
+          "original_length": 2815,
+          "retained_length": 2815,
+          "prefill_sha256": "f04ac1fb74289bfbe012cc6522ec8fc3215de9d252ba8572a0b943892c625e3b",
+          "first_decode_sha256": "c054a65ddba0db400c2d891f14d967db07e3db43d2eb65e80736ecf79551c8f5"
+        }
+      ],
+      "single_episode": {
+        "episode_id": "1250",
+        "steps": 28,
+        "model_calls": 10,
+        "errors": 0,
+        "stop_source": "model",
+        "success": 0.0,
+        "distance_to_goal": 12.752898216247559,
+        "spl": 0.0
+      },
+      "trace_pairs": 12,
+      "warmups_excluded": 2,
+      "launch_sha256": "8287056506557f10df7903fc69f8125ee037a3bdb5d4a689d1c4a6237b5760ee",
+      "single_audit_sha256": "d70fd188fbaa48955361564b274829111c406d7a0d7dd86fc696242f1b3840fd",
+      "runtime_sources_sha256": {
+        "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+        "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+        "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+        "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+        "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+        "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+        "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+        "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+        "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1"
+      }
+    },
+    "gptq": {
+      "passed": true,
+      "recipe": {
+        "method": "gptq",
+        "keep": 1.0,
+        "model": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_stage2_20261109",
+        "prune_layer": null
+      },
+      "smoke_traces": [
+        {
+          "trace_id": "3b7a28d44683478697255d6825d360b6",
+          "image_count": 2,
+          "original_length": 701,
+          "retained_length": 701,
+          "prefill_sha256": "9bce53da23d915255047a6d5e391423089346f586e938e9529d784afdfb6bc13",
+          "first_decode_sha256": "b10909612d2556be16a857cea7b4f83e79bc125749d4c1d4c411879936551ee7"
+        },
+        {
+          "trace_id": "3800e140bf3040dfa8597e8be3e53dbf",
+          "image_count": 9,
+          "original_length": 2815,
+          "retained_length": 2815,
+          "prefill_sha256": "1ddfa515fd919b555f9601bf7704659ac8926b070b0f3e145d2e6722aaa16f7d",
+          "first_decode_sha256": "a2110903dccfe3f0d3fce1bde962247017280433965bae8b80a06312f3ba2cbd"
+        }
+      ],
+      "single_episode": {
+        "episode_id": "1250",
+        "steps": 81,
+        "model_calls": 24,
+        "errors": 0,
+        "stop_source": "model",
+        "success": 1.0,
+        "distance_to_goal": 0.8648130297660828,
+        "spl": 0.9158611897548733
+      },
+      "trace_pairs": 26,
+      "warmups_excluded": 2,
+      "launch_sha256": "a216ad6ff8f2874af1cc7dde266c7eab9d4b338c5b38b9942aad8bc21f7d1521",
+      "single_audit_sha256": "ac7e7e30b69f6c4572b6b8f3cb2944182e2c7b7023927147a7c68344c769b20a",
+      "runtime_sources_sha256": {
+        "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+        "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+        "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+        "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+        "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+        "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+        "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+        "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+        "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1"
+      }
+    },
+    "fastv75": {
+      "passed": true,
+      "recipe": {
+        "method": "fastv",
+        "keep": 0.75,
+        "model": "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy",
+        "prune_layer": 2
+      },
+      "smoke_traces": [
+        {
+          "trace_id": "9d4854f73e504019a8de78463eb8bca5",
+          "image_count": 2,
+          "original_length": 701,
+          "retained_length": 551,
+          "prefill_sha256": "dd4f559195765a8c2a39609e3256907f655d40189e4c0e06d63542b0c63df699",
+          "first_decode_sha256": "d0095ab6ed603d7f8c6e68bc61431ab81caddb07984889e6c7436e719c028566"
+        },
+        {
+          "trace_id": "4601297c58b447859d13455011b89a6a",
+          "image_count": 9,
+          "original_length": 2815,
+          "retained_length": 2140,
+          "prefill_sha256": "57ed1e30cc120f017dbaa02c51f00ff8ff05b2994a68d9a70b6b7547eeffa2c5",
+          "first_decode_sha256": "27f9f7036c5860599156b9ff0a2ad14206967e2650a3361f0d84853551e6e66e"
+        }
+      ],
+      "single_episode": {
+        "episode_id": "1250",
+        "steps": 400,
+        "model_calls": 125,
+        "errors": 0,
+        "stop_source": "step_limit",
+        "success": 0.0,
+        "distance_to_goal": 7.3948211669921875,
+        "spl": 0.0
+      },
+      "trace_pairs": 127,
+      "warmups_excluded": 2,
+      "launch_sha256": "e6bcda63de7445ca606a5bb90e8655f12e0b780e2da620d876ff5197c65ee162",
+      "single_audit_sha256": "fb5f9f6035f9a708e9bd3c46b7b081bc10bbd445e2b4c2dc0a69622511a9a75e",
+      "runtime_sources_sha256": {
+        "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+        "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+        "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+        "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+        "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+        "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+        "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+        "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+        "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1"
+      }
+    },
+    "fastv50": {
+      "passed": true,
+      "recipe": {
+        "method": "fastv",
+        "keep": 0.5,
+        "model": "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy",
+        "prune_layer": 2
+      },
+      "smoke_traces": [
+        {
+          "trace_id": "2c0349016476436489cf7db05752857b",
+          "image_count": 2,
+          "original_length": 701,
+          "retained_length": 401,
+          "prefill_sha256": "1011b1e4ceefd737c468f69835fa237b1164c66310b5ad8711cc7210b50a4217",
+          "first_decode_sha256": "3b35fed495057957d3736c5bcaef27e0d35668b951de1ff967d1cbc5bd3e2b2a"
+        },
+        {
+          "trace_id": "4caa708a60fa4e25b16e1d05aec6f07a",
+          "image_count": 9,
+          "original_length": 2815,
+          "retained_length": 1465,
+          "prefill_sha256": "cf7e9c79b98166c43ce82c040f577d167ad3975fd2ded62bfa0bf485f349f1ba",
+          "first_decode_sha256": "0dd4bb447d3644ba4a3a50dd812c82f8abdd5a9789cd984ed2606c85b51d6eba"
+        }
+      ],
+      "single_episode": {
+        "episode_id": "1250",
+        "steps": 400,
+        "model_calls": 134,
+        "errors": 0,
+        "stop_source": "step_limit",
+        "success": 0.0,
+        "distance_to_goal": 6.352458953857422,
+        "spl": 0.0
+      },
+      "trace_pairs": 136,
+      "warmups_excluded": 2,
+      "launch_sha256": "f54f74a918ede7aafb9898c5688e94670ce49f7695646b79c74beb2b5dbd475c",
+      "single_audit_sha256": "889bbf20c4d605940a8b110696139a1c2123f8e3651fa5147751ddccd4fa6c6c",
+      "runtime_sources_sha256": {
+        "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+        "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+        "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+        "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+        "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+        "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+        "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+        "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+        "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1"
+      }
+    },
+    "sparsevlm75": {
+      "passed": true,
+      "recipe": {
+        "method": "sparsevlm",
+        "keep": 0.75,
+        "model": "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy",
+        "prune_layer": 3
+      },
+      "smoke_traces": [
+        {
+          "trace_id": "8d212153676849ffa6a7aa1e2a4a6fda",
+          "image_count": 2,
+          "original_length": 701,
+          "retained_length": 551,
+          "prefill_sha256": "9878b725174a7a4dbb850bea736fa1acc272219a12b2ce4346cb8b0f0d9e912a",
+          "first_decode_sha256": "8adc49733541079125d6288318b211eb2d426b5450b62561bb7fca72836ce13e"
+        },
+        {
+          "trace_id": "1e756e83b4234e8bb7bf0f319ba831f5",
+          "image_count": 9,
+          "original_length": 2815,
+          "retained_length": 2140,
+          "prefill_sha256": "e7764702eb862340b6b2c6ed87bfadc20e5446ee81be161769db521f6fdaef4d",
+          "first_decode_sha256": "31edebbfec54bd45ff368bba9044ca2ec561090f270cfb0351218b4c0de38305"
+        }
+      ],
+      "single_episode": {
+        "episode_id": "1250",
+        "steps": 54,
+        "model_calls": 15,
+        "errors": 0,
+        "stop_source": "model",
+        "success": 1.0,
+        "distance_to_goal": 1.143430471420288,
+        "spl": 1.0
+      },
+      "trace_pairs": 17,
+      "warmups_excluded": 2,
+      "launch_sha256": "bcc12ae98380f54bb9929c446ec8e8ea10baec83f74102064783696fbb0df88a",
+      "single_audit_sha256": "371b0f2acb6fa89208c0acd0dfc6279370b68c61eae7ff4da270a16a176a5593",
+      "runtime_sources_sha256": {
+        "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+        "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+        "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+        "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+        "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+        "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+        "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+        "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+        "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1"
+      }
+    },
+    "sparsevlm50": {
+      "passed": true,
+      "recipe": {
+        "method": "sparsevlm",
+        "keep": 0.5,
+        "model": "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy",
+        "prune_layer": 3
+      },
+      "smoke_traces": [
+        {
+          "trace_id": "8aa14d600463438d988377062e4a1f8a",
+          "image_count": 2,
+          "original_length": 701,
+          "retained_length": 401,
+          "prefill_sha256": "adb57559d706dab17c7d435e02259b922aa399c4b0239b5027a93bc176538920",
+          "first_decode_sha256": "d8ff5ec2f9aafca3fa0e2664486999d90edb62370f979eab5242d4295a62cb56"
+        },
+        {
+          "trace_id": "f4cc49d78efd41aeb6fc9ded24aa2205",
+          "image_count": 9,
+          "original_length": 2815,
+          "retained_length": 1465,
+          "prefill_sha256": "63e6293c6273d9cdc579830a3eab014185ba082b150b5e4ca322eee3b7b08619",
+          "first_decode_sha256": "319ffc82204b0d9efb32881fcd52f2f121dabd25eb6bdb79e265d34fb4621ed6"
+        }
+      ],
+      "single_episode": {
+        "episode_id": "1250",
+        "steps": 59,
+        "model_calls": 17,
+        "errors": 0,
+        "stop_source": "model",
+        "success": 1.0,
+        "distance_to_goal": 0.8875399231910706,
+        "spl": 1.0
+      },
+      "trace_pairs": 19,
+      "warmups_excluded": 2,
+      "launch_sha256": "9a4167914dec4d9f0ad363e8f56454d8d4be9ae2e30fca1440b55db2056e353a",
+      "single_audit_sha256": "b43fc96b625c56d1b86f7988d4bfaa392d3ebd2638daf14075b45266b08977cc",
+      "runtime_sources_sha256": {
+        "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+        "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+        "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+        "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+        "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+        "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+        "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+        "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+        "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1"
+      }
+    }
+  },
+  "gptq": {
+    "calibration_inputs": 32,
+    "quantized_layers": 252,
+    "calibration_seconds": 916.3618297576904,
+    "fallback_events": [],
+    "native_cuda_checks": 18,
+    "max_relative_l2": 0.0003631158033385873,
+    "model_sha256": "2479144ad32b5209cfb7f3b0927d863492e2894cc742603a2567c2802e99260f"
+  },
+  "input_integrity_sha256": "887c526557167ec4d7fc9738cbbc90b6fb7ea550f2eff10324c4ffe2e2b5567e",
+  "reused_dart_verification_sha256": "4a699798a4a0e24544374163ecdc28ce0e83e18c89778c8bfa95fce02ba06358",
+  "limitations": [
+    "Acceptance means correct runtime/format/cache handling, not navigation-quality superiority.",
+    "SparseVLM is pinned PriorTR v1.0 single-layer no-merge adaptation, not SparseVLM+ or full multistage paper reproduction.",
+    "DART75/50 are reused with original statistics and recovery limitations; no new DART inference.",
+    "Fifty/one-hundred development-case experiments are separate from these single-case acceptance results."
+  ]
+}

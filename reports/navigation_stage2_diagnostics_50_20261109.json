@@ -1,0 +1,148 @@
+{
+  "status": "complete",
+  "case_count": 50,
+  "source_report_sha256": "af19a144a3fe600f128c0082badcdc557965d4576a22a38e9acd7cd6f9a3d10b",
+  "exporter_sha256": "85ae7ad3768c1d173921eb27b404d25afdab564aea69ae6f89fb64ebafa6684f",
+  "groups": {
+    "fp16": {
+      "actual_calls": 1873,
+      "token_budget_histogram": {
+        "1200->1200": 4,
+        "1500->1500": 5,
+        "1800->1800": 4,
+        "2100->2100": 39,
+        "2400->2400": 3,
+        "2700->2700": 1766,
+        "600->600": 50,
+        "900->900": 2
+      },
+      "selector_interval_status": "not_applicable"
+    },
+    "awq": {
+      "actual_calls": 1921,
+      "token_budget_histogram": {
+        "1200->1200": 3,
+        "1500->1500": 6,
+        "1800->1800": 6,
+        "2100->2100": 38,
+        "2400->2400": 4,
+        "2700->2700": 1812,
+        "600->600": 50,
+        "900->900": 2
+      },
+      "selector_interval_status": "not_applicable"
+    },
+    "gptq": {
+      "actual_calls": 1648,
+      "token_budget_histogram": {
+        "1200->1200": 5,
+        "1500->1500": 5,
+        "1800->1800": 6,
+        "2100->2100": 39,
+        "2400->2400": 2,
+        "2700->2700": 1540,
+        "600->600": 50,
+        "900->900": 1
+      },
+      "selector_interval_status": "not_applicable"
+    },
+    "fastv75": {
+      "actual_calls": 2180,
+      "token_budget_histogram": {
+        "1200->900": 4,
+        "1500->1125": 5,
+        "1800->1350": 5,
+        "2100->1575": 40,
+        "2400->1800": 4,
+        "2700->2025": 2071,
+        "600->450": 50,
+        "900->675": 1
+      },
+      "selector_interval_status": "recorded_partial_wall_clock",
+      "prepare_median_s": 1.4318968169391155e-05,
+      "selection_median_s": 0.022645721561275423,
+      "combined_median_s": 0.02265965158585459,
+      "combined_p95_s": 0.02957910076947882,
+      "combined_total_s": 50.58370192255825,
+      "uniform_score_fallback_requests": 0,
+      "scope": "prepare_s + selection_including_transfer_s: includes CPU scoring, copies and synchronization waits; excludes other gather/scatter/KV/DeepStack bookkeeping and is not pure GPU or complete compression time."
+    },
+    "fastv50": {
+      "actual_calls": 2349,
+      "token_budget_histogram": {
+        "1200->600": 3,
+        "1500->750": 4,
+        "1800->900": 3,
+        "2100->1050": 42,
+        "2400->1200": 3,
+        "2700->1350": 2243,
+        "600->300": 50,
+        "900->450": 1
+      },
+      "selector_interval_status": "recorded_partial_wall_clock",
+      "prepare_median_s": 1.4456920325756073e-05,
+      "selection_median_s": 0.017721913987770677,
+      "combined_median_s": 0.017734776018187404,
+      "combined_p95_s": 0.02106811492703855,
+      "combined_total_s": 41.14892966975458,
+      "uniform_score_fallback_requests": 0,
+      "scope": "prepare_s + selection_including_transfer_s: includes CPU scoring, copies and synchronization waits; excludes other gather/scatter/KV/DeepStack bookkeeping and is not pure GPU or complete compression time."
+    },
+    "sparsevlm75": {
+      "actual_calls": 1869,
+      "token_budget_histogram": {
+        "1200->900": 4,
+        "1500->1125": 4,
+        "1800->1350": 5,
+        "2100->1575": 40,
+        "2400->1800": 3,
+        "2700->2025": 1762,
+        "600->450": 50,
+        "900->675": 1
+      },
+      "selector_interval_status": "recorded_partial_wall_clock",
+      "prepare_median_s": 0.16243604593910277,
+      "selection_median_s": 0.018583840923383832,
+      "combined_median_s": 0.18123718397691846,
+      "combined_p95_s": 0.20923142293468117,
+      "combined_total_s": 338.1972972101066,
+      "uniform_score_fallback_requests": 0,
+      "scope": "prepare_s + selection_including_transfer_s: includes CPU scoring, copies and synchronization waits; excludes other gather/scatter/KV/DeepStack bookkeeping and is not pure GPU or complete compression time."
+    },
+    "sparsevlm50": {
+      "actual_calls": 2003,
+      "token_budget_histogram": {
+        "1200->600": 4,
+        "1500->750": 5,
+        "1800->900": 5,
+        "2100->1050": 38,
+        "2400->1200": 6,
+        "2700->1350": 1894,
+        "600->300": 50,
+        "900->450": 1
+      },
+      "selector_interval_status": "recorded_partial_wall_clock",
+      "prepare_median_s": 0.15730588417500257,
+      "selection_median_s": 0.016990117030218244,
+      "combined_median_s": 0.17352696298621595,
+      "combined_p95_s": 0.21069843852892517,
+      "combined_total_s": 355.06949236174114,
+      "uniform_score_fallback_requests": 0,
+      "scope": "prepare_s + selection_including_transfer_s: includes CPU scoring, copies and synchronization waits; excludes other gather/scatter/KV/DeepStack bookkeeping and is not pure GPU or complete compression time."
+    },
+    "dart75": {
+      "source": "retained historical runtime audit",
+      "visual_tokens_per_image_before": 300,
+      "visual_tokens_per_image_after": 225,
+      "selector_interval_status": "not_recorded_separately_in_historical_run",
+      "note": "DART standalone selector time cannot be reconstructed. Its overhead remains in the original HTTP timings."
+    },
+    "dart50": {
+      "source": "retained historical runtime audit",
+      "visual_tokens_per_image_before": 300,
+      "visual_tokens_per_image_after": 150,
+      "selector_interval_status": "not_recorded_separately_in_historical_run",
+      "note": "DART standalone selector time cannot be reconstructed. Its overhead remains in the original HTTP timings."
+    }
+  }
+}
