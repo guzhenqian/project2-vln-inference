@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "verified_utc": "2026-11-09T09:00:20.249380+00:00",
+  "comparison_sha256": "7309c2d8012912081c8494670c5b5e177a5f3a4bbdff2e649ffeb9f8028e24bf",
+  "recounts": {
+    "A": {
+      "episodes_recounted": 150,
+      "successes": 81,
+      "real_calls_recounted": 8338,
+      "saved_step_hashes_match": true,
+      "quality_and_request_statistics_match": true
+    },
+    "B": {
+      "episodes_recounted": 150,
+      "successes": 60,
+      "real_calls_recounted": 10558,
+      "saved_step_hashes_match": true,
+      "quality_and_request_statistics_match": true
+    },
+    "C": {
+      "episodes_recounted": 150,
+      "successes": 104,
+      "real_calls_recounted": 6178,
+      "saved_step_hashes_match": true,
+      "quality_and_request_statistics_match": true
+    },
+    "D": {
+      "episodes_recounted": 150,
+      "successes": 90,
+      "real_calls_recounted": 7653,
+      "saved_step_hashes_match": true,
+      "quality_and_request_statistics_match": true,
+      "frozen_inputs_verified": 612,
+      "runtime_trace_pairs_verified": 7659
+    }
+  },
+  "scope": "Source-report hashes, all600 saved episodes, identities, step hashes, SR/SPL, real request count/median/P95/total, paired changes; D frozen inputs and all prefill/decode trace hashes. No new inference."
+}

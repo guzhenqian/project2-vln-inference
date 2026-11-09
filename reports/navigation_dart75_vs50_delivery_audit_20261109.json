@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "verified_utc": "2026-11-09T00:28:12.704064+00:00",
+  "comparison_sha256": "ac90a58523e3809cbce3f442df0313b123c9a6320000a5fa427314bfe2b89941",
+  "recounts": {
+    "FP16_DART75": {
+      "unique_episodes": 150,
+      "original_trajectory_ids_match": true,
+      "saved_step_hashes_match": true,
+      "success_count": 104,
+      "real_calls_recounted": 6178,
+      "real_request_total_s": 11925.566940298071,
+      "frozen_code_files_verified": 12,
+      "all_three_runtime_audits_passed": true
+    },
+    "FP16_DART50": {
+      "unique_episodes": 150,
+      "original_trajectory_ids_match": true,
+      "saved_step_hashes_match": true,
+      "success_count": 86,
+      "real_calls_recounted": 7462,
+      "real_request_total_s": 13596.501353363274,
+      "frozen_code_files_verified": 13,
+      "all_three_runtime_audits_passed": true
+    }
+  },
+  "scope": "Existing source-report hashes, exact150 identities, saved steps, quality, request totals/median, frozen code. No new model inference."
+}

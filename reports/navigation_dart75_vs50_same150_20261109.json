@@ -1,0 +1,1949 @@
+{
+  "created_utc": "2026-11-09T00:26:59.585268+00:00",
+  "status": "complete",
+  "same_task_count": 150,
+  "metrics": {
+    "FP16": {
+      "completed": 150,
+      "success_count": 81,
+      "sr": 0.54,
+      "spl": 0.4535492158765656,
+      "actual_model_calls": 8338,
+      "request_median_s": 2.055287398979999,
+      "request_p95_s": 2.2397606592974624,
+      "request_total_s": 16953.061154254247,
+      "whole_card_peak_mib": 11655.0
+    },
+    "FP16_DART75": {
+      "completed": 150,
+      "success_count": 104,
+      "sr": 0.6933333333333334,
+      "spl": 0.5813670796670434,
+      "actual_model_calls": 6178,
+      "request_median_s": 1.9715424594469368,
+      "request_p95_s": 2.146890504064504,
+      "request_total_s": 11925.566940298071,
+      "whole_card_peak_mib": 11775.0
+    },
+    "FP16_DART50": {
+      "completed": 150,
+      "success_count": 86,
+      "sr": 0.5733333333333334,
+      "spl": 0.4833869945838634,
+      "actual_model_calls": 7462,
+      "request_median_s": 1.8625345740001649,
+      "request_p95_s": 1.9702734674909153,
+      "request_total_s": 13596.501353363274,
+      "whole_card_peak_mib": 11681.0
+    }
+  },
+  "keep50_vs_keep75": {
+    "gained_success": [
+      "1128",
+      "1405",
+      "994",
+      "833",
+      "272",
+      "873"
+    ],
+    "lost_success": [
+      "1542",
+      "1550",
+      "953",
+      "307",
+      "1253",
+      "1716",
+      "1353",
+      "517",
+      "735",
+      "897",
+      "184",
+      "233",
+      "150",
+      "1362",
+      "721",
+      "1466",
+      "1525",
+      "1457",
+      "1437",
+      "990",
+      "33",
+      "140",
+      "1279",
+      "1329"
+    ],
+    "sr_change_percentage_points": -12.0,
+    "spl_change": -0.09798008508317996,
+    "request_median_reduction_percent": 5.529066083484258,
+    "request_total_increase_percent": 14.011362490607414
+  },
+  "episodes": [
+    {
+      "episode_id": "1250",
+      "trajectory_id": "4940",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "159",
+      "trajectory_id": "654",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.7462942778840187,
+      "FP16_DART75_spl": 0.7462943520216797,
+      "FP16_DART50_spl": 0.7621728940800264
+    },
+    {
+      "episode_id": "1413",
+      "trajectory_id": "5601",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.7673316924745242,
+      "FP16_DART75_spl": 0.8852407062668665,
+      "FP16_DART50_spl": 0.7482111720086886
+    },
+    {
+      "episode_id": "558",
+      "trajectory_id": "2258",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1123",
+      "trajectory_id": "4502",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.8585968497919703,
+      "FP16_DART75_spl": 0.925378071947817,
+      "FP16_DART50_spl": 0.890954830927543
+    },
+    {
+      "episode_id": "384",
+      "trajectory_id": "1539",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1542",
+      "trajectory_id": "6056",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0.8744496562393043,
+      "FP16_DART75_spl": 0.9024168188273602,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "746",
+      "trajectory_id": "3053",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 0.9827666584617065,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "1444",
+      "trajectory_id": "5704",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1550",
+      "trajectory_id": "6077",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0.8644688584617886,
+      "FP16_DART75_spl": 0.9957094771175111,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "758",
+      "trajectory_id": "3121",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.7380743925910035,
+      "FP16_DART50_spl": 0.9240577798817703
+    },
+    {
+      "episode_id": "1319",
+      "trajectory_id": "5148",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.9222481550255291,
+      "FP16_DART75_spl": 0.9508691131943563,
+      "FP16_DART50_spl": 0.9398714134660194
+    },
+    {
+      "episode_id": "953",
+      "trajectory_id": "3914",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.45811112929316333,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "709",
+      "trajectory_id": "2866",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.997317608312099,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "607",
+      "trajectory_id": "2527",
+      "FP16_success": 1,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0.6465550577013249,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "436",
+      "trajectory_id": "1716",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1194",
+      "trajectory_id": "4728",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.7691265499077706,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "958",
+      "trajectory_id": "3949",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.9111612136701249,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "1164",
+      "trajectory_id": "4633",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "307",
+      "trajectory_id": "1189",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0.7311605060159453,
+      "FP16_DART75_spl": 0.8715920940379601,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "499",
+      "trajectory_id": "1998",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.9852962597398804,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "591",
+      "trajectory_id": "2380",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.987506295304967,
+      "FP16_DART75_spl": 0.9947582882195903,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "1191",
+      "trajectory_id": "4721",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1253",
+      "trajectory_id": "4941",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "419",
+      "trajectory_id": "1665",
+      "FP16_success": 1,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1546",
+      "trajectory_id": "6068",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.8183234468095819,
+      "FP16_DART75_spl": 0.8536462976686754,
+      "FP16_DART50_spl": 0.7988110454016375
+    },
+    {
+      "episode_id": "1716",
+      "trajectory_id": "6822",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.7183026163459741,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1726",
+      "trajectory_id": "6850",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.3408439698600336,
+      "FP16_DART75_spl": 0.5018204931357447,
+      "FP16_DART50_spl": 0.355242717579078
+    },
+    {
+      "episode_id": "1724",
+      "trajectory_id": "6843",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 0.4736046390222783,
+      "FP16_DART50_spl": 0.4971143967031063
+    },
+    {
+      "episode_id": "1353",
+      "trajectory_id": "5286",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "870",
+      "trajectory_id": "3529",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "517",
+      "trajectory_id": "2131",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0.8580834693983196,
+      "FP16_DART75_spl": 0.8129274452886206,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1145",
+      "trajectory_id": "4592",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "720",
+      "trajectory_id": "2905",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.9375344911013074,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "1582",
+      "trajectory_id": "6306",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "963",
+      "trajectory_id": "3952",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.9957471156056075,
+      "FP16_DART75_spl": 0.9957471156056075,
+      "FP16_DART50_spl": 0.9655729755204198
+    },
+    {
+      "episode_id": "561",
+      "trajectory_id": "2282",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "754",
+      "trajectory_id": "3116",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "313",
+      "trajectory_id": "1194",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.7334575418341556,
+      "FP16_DART75_spl": 0.7689243371311105,
+      "FP16_DART50_spl": 0.7681690247354592
+    },
+    {
+      "episode_id": "1638",
+      "trajectory_id": "6570",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.855327616048933,
+      "FP16_DART75_spl": 0.9211250200930134,
+      "FP16_DART50_spl": 0.963217438320047
+    },
+    {
+      "episode_id": "735",
+      "trajectory_id": "2988",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.5468701766963181,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "387",
+      "trajectory_id": "1549",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "502",
+      "trajectory_id": "2012",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "1506",
+      "trajectory_id": "5904",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "1523",
+      "trajectory_id": "5971",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.759329546068787,
+      "FP16_DART50_spl": 0.6233137199474397
+    },
+    {
+      "episode_id": "1718",
+      "trajectory_id": "6828",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.9680657825123299,
+      "FP16_DART75_spl": 0.9056854130336986,
+      "FP16_DART50_spl": 0.9462975788414889
+    },
+    {
+      "episode_id": "1378",
+      "trajectory_id": "5434",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "919",
+      "trajectory_id": "3785",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 0.6878197148529612,
+      "FP16_DART50_spl": 0.5976138798291653
+    },
+    {
+      "episode_id": "897",
+      "trajectory_id": "3627",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1408",
+      "trajectory_id": "5594",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.6970826857460852,
+      "FP16_DART75_spl": 0.9082421180555277,
+      "FP16_DART50_spl": 0.9063737978284335
+    },
+    {
+      "episode_id": "1109",
+      "trajectory_id": "4471",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "1803",
+      "trajectory_id": "7170",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.9902824890882942,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 0.9905785043934908
+    },
+    {
+      "episode_id": "662",
+      "trajectory_id": "2745",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.8310533708633964,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "184",
+      "trajectory_id": "772",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0.8182825197461407,
+      "FP16_DART75_spl": 0.7673101737187614,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1778",
+      "trajectory_id": "7042",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1022",
+      "trajectory_id": "4152",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 0.9013342352749791
+    },
+    {
+      "episode_id": "142",
+      "trajectory_id": "573",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "233",
+      "trajectory_id": "961",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.5705334523541986,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1066",
+      "trajectory_id": "4284",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.7857451623795927,
+      "FP16_DART75_spl": 0.8814631563450013,
+      "FP16_DART50_spl": 0.8037302024338315
+    },
+    {
+      "episode_id": "180",
+      "trajectory_id": "721",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "917",
+      "trajectory_id": "3769",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.1130327618766448,
+      "FP16_DART75_spl": 0.11693665636979703,
+      "FP16_DART50_spl": 0.1174119850166889
+    },
+    {
+      "episode_id": "579",
+      "trajectory_id": "2365",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "657",
+      "trajectory_id": "2695",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.3061210402241609,
+      "FP16_DART75_spl": 0.47985048192472485,
+      "FP16_DART50_spl": 0.3132936779131539
+    },
+    {
+      "episode_id": "356",
+      "trajectory_id": "1397",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.9400005582180123,
+      "FP16_DART75_spl": 0.8915504823206442,
+      "FP16_DART50_spl": 0.9185827022746823
+    },
+    {
+      "episode_id": "888",
+      "trajectory_id": "3562",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1128",
+      "trajectory_id": "4504",
+      "FP16_success": 1,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.7903936553133423,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0.8038776262465951
+    },
+    {
+      "episode_id": "948",
+      "trajectory_id": "3903",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.8148135637631987,
+      "FP16_DART50_spl": 0.8633833504046914
+    },
+    {
+      "episode_id": "116",
+      "trajectory_id": "412",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.2142509381337164,
+      "FP16_DART50_spl": 0.225354804145447
+    },
+    {
+      "episode_id": "150",
+      "trajectory_id": "601",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.9176842641241421,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "814",
+      "trajectory_id": "3356",
+      "FP16_success": 1,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0.4776780387594576,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "528",
+      "trajectory_id": "2144",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1595",
+      "trajectory_id": "6357",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "241",
+      "trajectory_id": "973",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.9345691147183145,
+      "FP16_DART75_spl": 0.9465291984462674,
+      "FP16_DART50_spl": 0.9418652515697598
+    },
+    {
+      "episode_id": "1362",
+      "trajectory_id": "5333",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.6071291153669356,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "858",
+      "trajectory_id": "3492",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.8902938739631647,
+      "FP16_DART50_spl": 0.7933471898810033
+    },
+    {
+      "episode_id": "1755",
+      "trajectory_id": "6940",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.9132461412122783,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "1476",
+      "trajectory_id": "5840",
+      "FP16_success": 1,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0.2925917751572916,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1447",
+      "trajectory_id": "5731",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.9407576228453534,
+      "FP16_DART50_spl": 0.9388627880214555
+    },
+    {
+      "episode_id": "1593",
+      "trajectory_id": "6339",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "721",
+      "trajectory_id": "2909",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.2389495141888443,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "587",
+      "trajectory_id": "2375",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.20541840496028366,
+      "FP16_DART75_spl": 0.8510010395776397,
+      "FP16_DART50_spl": 0.9245345427271177
+    },
+    {
+      "episode_id": "1381",
+      "trajectory_id": "5455",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.9824904250184412,
+      "FP16_DART75_spl": 0.5208179715698399,
+      "FP16_DART50_spl": 0.5370934759456206
+    },
+    {
+      "episode_id": "1807",
+      "trajectory_id": "7192",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 0.969127147504759,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "275",
+      "trajectory_id": "1090",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.955022546222937,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "1466",
+      "trajectory_id": "5822",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.5291835093738397,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "439",
+      "trajectory_id": "1720",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "1337",
+      "trajectory_id": "5201",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "1405",
+      "trajectory_id": "5562",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0.9029653741128253
+    },
+    {
+      "episode_id": "1525",
+      "trajectory_id": "5972",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.6189570325484105,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "994",
+      "trajectory_id": "4070",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0.9331062346630532
+    },
+    {
+      "episode_id": "1132",
+      "trajectory_id": "4534",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "575",
+      "trajectory_id": "2342",
+      "FP16_success": 1,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0.1789414303212382,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1010",
+      "trajectory_id": "4094",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.7382698202128125,
+      "FP16_DART75_spl": 0.927492702311125,
+      "FP16_DART50_spl": 0.8707834480375867
+    },
+    {
+      "episode_id": "1051",
+      "trajectory_id": "4235",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "950",
+      "trajectory_id": "3908",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "1262",
+      "trajectory_id": "4951",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.6062449058585732,
+      "FP16_DART50_spl": 0.5714690581339713
+    },
+    {
+      "episode_id": "833",
+      "trajectory_id": "3411",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0.9415491652523774
+    },
+    {
+      "episode_id": "444",
+      "trajectory_id": "1775",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.679259066194972,
+      "FP16_DART75_spl": 0.6909458927461352,
+      "FP16_DART50_spl": 0.6828210688700681
+    },
+    {
+      "episode_id": "1740",
+      "trajectory_id": "6893",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1131",
+      "trajectory_id": "4510",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.5203323979357553,
+      "FP16_DART50_spl": 0.31296300997369225
+    },
+    {
+      "episode_id": "937",
+      "trajectory_id": "3875",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "976",
+      "trajectory_id": "4009",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1060",
+      "trajectory_id": "4268",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.785316064089888,
+      "FP16_DART75_spl": 0.9101274025696731,
+      "FP16_DART50_spl": 0.9346800410148576
+    },
+    {
+      "episode_id": "1457",
+      "trajectory_id": "5795",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.19405748454458313,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "447",
+      "trajectory_id": "1793",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1167",
+      "trajectory_id": "4634",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "1285",
+      "trajectory_id": "5026",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1819",
+      "trajectory_id": "7225",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.7818932850032967,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 0.8303897388884305
+    },
+    {
+      "episode_id": "643",
+      "trajectory_id": "2665",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.9949117289459516,
+      "FP16_DART75_spl": 0.9661837259351536,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "292",
+      "trajectory_id": "1144",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "801",
+      "trajectory_id": "3284",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "862",
+      "trajectory_id": "3521",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "83",
+      "trajectory_id": "277",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 0.9750159687680987
+    },
+    {
+      "episode_id": "621",
+      "trajectory_id": "2599",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.831852626636532,
+      "FP16_DART75_spl": 0.8031874042792315,
+      "FP16_DART50_spl": 0.6597229932703937
+    },
+    {
+      "episode_id": "1437",
+      "trajectory_id": "5671",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.4254546898169573,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "991",
+      "trajectory_id": "4063",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.8169736072738136,
+      "FP16_DART75_spl": 0.8354002244141481,
+      "FP16_DART50_spl": 0.8361201927347038
+    },
+    {
+      "episode_id": "1143",
+      "trajectory_id": "4590",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "160",
+      "trajectory_id": "657",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "349",
+      "trajectory_id": "1382",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "1486",
+      "trajectory_id": "5876",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "1657",
+      "trajectory_id": "6623",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.9668674136175381,
+      "FP16_DART50_spl": 0.8624359222754137
+    },
+    {
+      "episode_id": "1072",
+      "trajectory_id": "4300",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 0.8634040852983911
+    },
+    {
+      "episode_id": "1428",
+      "trajectory_id": "5644",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "272",
+      "trajectory_id": "1070",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0.20595539432544094
+    },
+    {
+      "episode_id": "873",
+      "trajectory_id": "3530",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0.47615459476694044
+    },
+    {
+      "episode_id": "925",
+      "trajectory_id": "3840",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.8863663602510802,
+      "FP16_DART75_spl": 0.923423687616984,
+      "FP16_DART50_spl": 0.8523910141898517
+    },
+    {
+      "episode_id": "997",
+      "trajectory_id": "4079",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.8639642610227813,
+      "FP16_DART75_spl": 0.8857614768093129,
+      "FP16_DART50_spl": 0.8886299394971355
+    },
+    {
+      "episode_id": "990",
+      "trajectory_id": "4051",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0.6592080207102288,
+      "FP16_DART75_spl": 0.8374885799145643,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "2",
+      "trajectory_id": "15",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.8164945843672076,
+      "FP16_DART75_spl": 0.8862072695272415,
+      "FP16_DART50_spl": 0.8141641164398292
+    },
+    {
+      "episode_id": "835",
+      "trajectory_id": "3417",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.9134292140911671,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 0.9149819914147046
+    },
+    {
+      "episode_id": "1624",
+      "trajectory_id": "6523",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1575",
+      "trajectory_id": "6292",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.18088717724583356,
+      "FP16_DART50_spl": 0.7844991954628825
+    },
+    {
+      "episode_id": "1569",
+      "trajectory_id": "6169",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1516",
+      "trajectory_id": "5956",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "33",
+      "trajectory_id": "129",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "140",
+      "trajectory_id": "552",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "852",
+      "trajectory_id": "3484",
+      "FP16_success": 1,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0.7505348853278049,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1314",
+      "trajectory_id": "5138",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.9922607940352516,
+      "FP16_DART75_spl": 0.8422052342818463,
+      "FP16_DART50_spl": 0.9647715550658393
+    },
+    {
+      "episode_id": "1605",
+      "trajectory_id": "6396",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.7833063173364654,
+      "FP16_DART75_spl": 0.9655654165712785,
+      "FP16_DART50_spl": 0.9760933431829492
+    },
+    {
+      "episode_id": "1279",
+      "trajectory_id": "4993",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0.8882748517784299,
+      "FP16_DART75_spl": 0.9466049841322355,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1293",
+      "trajectory_id": "5038",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.8282548235621582,
+      "FP16_DART75_spl": 0.8929312918894831,
+      "FP16_DART50_spl": 0.847207222980637
+    },
+    {
+      "episode_id": "1013",
+      "trajectory_id": "4099",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.2505576225406148,
+      "FP16_DART75_spl": 1.0,
+      "FP16_DART50_spl": 0.47906323221801933
+    },
+    {
+      "episode_id": "826",
+      "trajectory_id": "3391",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.9689967686578204,
+      "FP16_DART50_spl": 1.0
+    },
+    {
+      "episode_id": "531",
+      "trajectory_id": "2154",
+      "FP16_success": 0,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0.1822606137217309,
+      "FP16_DART50_spl": 0.4205664863328732
+    },
+    {
+      "episode_id": "1796",
+      "trajectory_id": "7158",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "562",
+      "trajectory_id": "2288",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 1,
+      "FP16_spl": 0.9904059145789539,
+      "FP16_DART75_spl": 0.924252935494443,
+      "FP16_DART50_spl": 0.945899799089713
+    },
+    {
+      "episode_id": "1534",
+      "trajectory_id": "6014",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "78",
+      "trajectory_id": "264",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1309",
+      "trajectory_id": "5134",
+      "FP16_success": 0,
+      "FP16_DART75_success": 0,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 0,
+      "FP16_DART75_spl": 0,
+      "FP16_DART50_spl": 0
+    },
+    {
+      "episode_id": "1329",
+      "trajectory_id": "5167",
+      "FP16_success": 1,
+      "FP16_DART75_success": 1,
+      "FP16_DART50_success": 0,
+      "FP16_spl": 1.0,
+      "FP16_DART75_spl": 0.8497870407482788,
+      "FP16_DART50_spl": 0
+    }
+  ],
+  "source_timing_context": {
+    "FP16": {
+      "notes": [
+        "One instruction per distinct route; excludes old12 routes; development subset, not official full1839 score.",
+        "FP16 unquantized; policy/parser/400step/STOP<3m rules unchanged; no collision early stopping.",
+        "Each50 batch has2 warmup requests excluded. Request latency only model_called rows.",
+        "Whole-card sampled memory includes desktop. Episode loops exclude reset/warmup/model startup.",
+        "Partial batch episodes remain visible and are not silently dropped to achieve a round number.",
+        "2cm diagnostic threshold is observational only, not a new termination or success rule.",
+        "Habitat GROUP_BY_SCENE=true deterministically regroups each frozen batch; no task membership changes.",
+        "Batch1 was interrupted during controller maintenance. Exact saved action prefix is replayed with pixel/pose checks; completed outcomes retained. Timings span sessions; partial-prefix loop IO not measured. See timing_note per episode."
+      ],
+      "recovery": null,
+      "warmup_requests_excluded": null,
+      "episode_timing_notes": [
+        {
+          "episode_id": "1250",
+          "prefix_reused_steps": 400,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "159",
+          "prefix_reused_steps": 53,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1413",
+          "prefix_reused_steps": 52,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1542",
+          "prefix_reused_steps": 56,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "758",
+          "prefix_reused_steps": 132,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "436",
+          "prefix_reused_steps": 400,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1194",
+          "prefix_reused_steps": 58,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "958",
+          "prefix_reused_steps": 48,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1164",
+          "prefix_reused_steps": 400,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1191",
+          "prefix_reused_steps": 400,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1546",
+          "prefix_reused_steps": 63,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1716",
+          "prefix_reused_steps": 400,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "720",
+          "prefix_reused_steps": 41,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "561",
+          "prefix_reused_steps": 400,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "313",
+          "prefix_reused_steps": 104,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "735",
+          "prefix_reused_steps": 73,
+          "timing_note": "Interrupted episode: original prefix decision+sim times plus continuation; excludes original prefix image/log IO and downtime; lower-bound loop time"
+        }
+      ]
+    },
+    "FP16_DART75": {
+      "notes": [
+        "steps.jsonl model_called is True only; warmups are not written to steps, so do not discard first two real calls",
+        "Whole-card memory.used sampled every200ms; includes desktop, engine cache and activations; not model-exclusive",
+        "Manifest listing/order unchanged; unchanged Habitat GROUP_BY_SCENE deterministically groups execution by scene",
+        "Old batch1 was resumed; episode735 loop timing omits prefix IO; no exact total-time comparison",
+        "Old FP16 used CUDA graphs and max-prefill/chunk 1024; this run uses eager execution and complete prefill up to 3072. Closed-loop inputs and trajectories can differ. Timing differences are not a pure DART speedup measurement.",
+        "Partial quality comparisons use only the same completed episode IDs; unfinished tasks remain listed.",
+        "A model label or API Usage alone does not prove pruning; runtime traces are audited independently.",
+        "Old prefix model_called=true rows are counted exactly once; no prefix model replay requests.",
+        "Eight warmups for a complete run: old batch1 two, recovery batch1 two, batches2/3 two each.",
+        "Original 31 completed elapsed times are retained. Episode1550 elapsed is a lower-bound loop time: original decision+sim plus continuation, excluding original prefix image/log IO and downtime.",
+        "Whole-card peak combines original batch1 and all resumed batches; recovery/replay intervals are not pure inference measurements."
+      ],
+      "recovery": {
+        "created_utc": "2026-11-08T13:56:23.648924+00:00",
+        "original_plan_sha256": "146c22b3c8fbc02bafaf3389c540f2e2255a0bbe7efafdf83b9830d110beca9c",
+        "prefix_run": "logs/navigation_dart150_keep75_20261108T100921887552Z_0ad70d02",
+        "prefix_batch": "logs/navigation_dart150_keep75_20261108T100921887552Z_0ad70d02/batch_01",
+        "prefix_audit_path": "reports/recovery_prefix_audit_20261108T112639Z_01a86a49.json",
+        "prefix_audit_sha256": "d059b83d022913d6924802df9fe578cb8649aedc6a8b0b4afb0907863bd9ed6e",
+        "completed_prefix_episode_ids": [
+          "1123",
+          "1164",
+          "1191",
+          "1194",
+          "1250",
+          "1253",
+          "1319",
+          "1408",
+          "1413",
+          "1444",
+          "1542",
+          "1546",
+          "159",
+          "1716",
+          "307",
+          "313",
+          "384",
+          "436",
+          "502",
+          "517",
+          "558",
+          "561",
+          "591",
+          "709",
+          "720",
+          "735",
+          "746",
+          "754",
+          "758",
+          "897",
+          "958"
+        ],
+        "partial_prefix_episode_id": "1550",
+        "partial_prefix_steps": 8,
+        "warmup_requests_by_batch": {
+          "1": 4,
+          "2": 2,
+          "3": 2
+        },
+        "model": "SimpleVLN-Qwen3VL-4B-RL-FP16-DART-keep75-navigation-20261108",
+        "endpoint": "http://127.0.0.1:23333/v1",
+        "recovery_source_checks": {
+          "checks/resume_navigation_dart150.py": "12e73e45a78c3fdb85d4786b63d62fc68d95d85f127997b83ac78df99b611e25",
+          "checks/resume_overnight_batch.py": "afaf32d7ae685fa2067975d130b55c668c5d23655a3cb2044a4109cfee846174",
+          "checks/audit_navigation_dart_recovery.py": "b63ff9003db535961d9aab10f0732213abf840e75a3b7f59d184e2b6a946fe14"
+        },
+        "recovery_semantics": "Replay original actions with exact pixel/pose checks; reuse old request rows once; restore RGB history and queued actions before continuation",
+        "automatic_retry": false,
+        "reused_steps_in_saved_rows": 3639,
+        "reused_calls_in_saved_rows": 1014
+      },
+      "warmup_requests_excluded": 8,
+      "episode_timing_notes": [
+        {
+          "episode_id": "1250",
+          "prefix_reused_steps": 25,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "159",
+          "prefix_reused_steps": 53,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1413",
+          "prefix_reused_steps": 47,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "558",
+          "prefix_reused_steps": 400,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1123",
+          "prefix_reused_steps": 51,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "384",
+          "prefix_reused_steps": 39,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1542",
+          "prefix_reused_steps": 64,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "746",
+          "prefix_reused_steps": 38,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1444",
+          "prefix_reused_steps": 400,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1550",
+          "prefix_reused_steps": 8,
+          "timing_note": "Interrupted episode: original prefix decision+sim times plus continuation; excludes original prefix image/log IO and downtime; lower-bound loop time"
+        },
+        {
+          "episode_id": "758",
+          "prefix_reused_steps": 71,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1319",
+          "prefix_reused_steps": 62,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "709",
+          "prefix_reused_steps": 35,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "436",
+          "prefix_reused_steps": 400,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1194",
+          "prefix_reused_steps": 26,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "958",
+          "prefix_reused_steps": 40,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1164",
+          "prefix_reused_steps": 400,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "307",
+          "prefix_reused_steps": 85,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "591",
+          "prefix_reused_steps": 49,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1191",
+          "prefix_reused_steps": 138,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1253",
+          "prefix_reused_steps": 66,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1546",
+          "prefix_reused_steps": 60,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1716",
+          "prefix_reused_steps": 65,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "517",
+          "prefix_reused_steps": 74,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "720",
+          "prefix_reused_steps": 33,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "561",
+          "prefix_reused_steps": 119,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "754",
+          "prefix_reused_steps": 400,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "313",
+          "prefix_reused_steps": 77,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "735",
+          "prefix_reused_steps": 155,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "502",
+          "prefix_reused_steps": 29,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "897",
+          "prefix_reused_steps": 89,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        },
+        {
+          "episode_id": "1408",
+          "prefix_reused_steps": 41,
+          "timing_note": "Completed original episode retained; replay verification time excluded"
+        }
+      ]
+    },
+    "FP16_DART50": {
+      "notes": [
+        "steps.jsonl model_called is True only; warmups are not written to steps, so do not discard first two real calls",
+        "Whole-card memory.used sampled every200ms; includes desktop, engine cache and activations; not model-exclusive",
+        "Manifest listing/order unchanged; unchanged Habitat GROUP_BY_SCENE deterministically groups execution by scene",
+        "Old batch1 was resumed; episode735 loop timing omits prefix IO; no exact total-time comparison",
+        "Old FP16 used CUDA graphs and max-prefill/chunk 1024; this run uses eager execution and complete prefill up to 3072. Closed-loop inputs and trajectories can differ. Timing differences are not a pure DART speedup measurement.",
+        "Partial quality comparisons use only the same completed episode IDs; unfinished tasks remain listed.",
+        "A model label or API Usage alone does not prove pruning; runtime traces are audited independently."
+      ],
+      "recovery": null,
+      "warmup_requests_excluded": null,
+      "episode_timing_notes": []
+    }
+  },
+  "sources": {
+    "reports/benchmark_overnight200_20261031.json": "372f3944412c41e5c54bd6ce7c3d123a54ac985c7c51c28b36ad4e0ce76b52d1",
+    "logs/navigation_dart150_keep75_resumed_20261108T135623640378Z_99f2e6a6/report.json": "a4cc1893d9d6a6a8d6764a0cb5621a3c9b78b2e2817bc4370532d41d844efb19",
+    "logs/navigation_dart150_keep50_20261108T182759405011Z_7a8081e1/report.json": "563afb0bfcdbc4529393beb229d528edf5352c065ee1d59c90780ce397898c75"
+  },
+  "notes": [
+    "Same frozen150 episodes, seed7, max400 primitive actions, unchanged author policy/parser.",
+    "Model STOP and distance<3m defines success; all failures remain in denominator.",
+    "Only model_called=true request latencies; queue0s and all warmups, including additional recovery warmups, excluded.",
+    "C75/C50 use eager, complete prefill3072, batch1, fixed64x64 KV blocks and FP16 with noAWQ.",
+    "Original FP16 uses graph/1024 prefill; it is not a configuration-matched latency control.",
+    "Closed-loop paths, prompts, output lengths and request counts can differ; latency ratios are not pure kernel/algorithm speedups.",
+    "Request total is the sum of real HTTP request latencies, not end-to-end navigation wall-clock time; excludes simulation, image/log IO and downtime.",
+    "Memory is200ms whole-card sampling including desktop/cache; not model-exclusive and may miss instantaneous peaks.",
+    "Original FP16 and C75 had interrupted recovery; preserve their timing limitations and original evidence.",
+    "Fixed KV allocation is not reduced by token pruning; no claim of allocated cache savings.",
+    "One run per setting; no statistical-significance claim."
+  ]
+}
