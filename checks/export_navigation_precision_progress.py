@@ -1,6 +1,6 @@
 """Publish audited complete rows and completion counts; never extrapolate partial SR."""
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from navigation_precision_common import ROOT, RUN, GROUPS, read, digest
 from export_navigation_precision_results import verify_result
 
@@ -12,7 +12,8 @@ def main():
     state = read(RUN/'status.json')
     rows = []
     keys = ('case_count','success_count','sr','spl','actual_model_calls','request_median_s',
-            'request_p95_s','sampled_whole_card_peak_mib','error_count','collisions','request_total_s')
+            'request_p95_s','sampled_whole_card_peak_mib','error_count','collisions','request_total_s',
+            'quality_error_counts')
     for algorithm in ('awq','gptq'):
         for precision in ('w4a16','w4a4','w4a8','w8a16'):
             group = algorithm+'_'+precision
@@ -49,12 +50,15 @@ def main():
         active_group=state.get('active_group'), rows=rows,
         completed_new_cases=sum(r['completed_cases'] for r in rows if not r['reused']), new_cases_planned=600,
         all_completed_metrics_independently_recomputed=True,
+        exporter_sources_sha256={name:digest(ROOT/'checks'/name) for name in (
+            'export_navigation_precision_progress.py','export_navigation_precision_results.py')},
         precision_config_sha256=digest(ROOT/'setup/navigation-precision-20261110.json'),
         scope='Same100 per group; experimental kernels; only completed audited groups receive performance numbers')
+    data['updated_shanghai'] = datetime.fromisoformat(data['updated_utc']).astimezone(timezone(timedelta(hours=8))).isoformat()
     output = ROOT/'reports/navigation_precision_progress_20261110'
     output.with_suffix('.json').write_bytes((json.dumps(data,ensure_ascii=False,indent=2,allow_nan=False)+'\n').encode('utf-8'))
     lines = ['# 八组精度比较进度', '',
-        f"快照时间：{data['updated_utc']}；新运行已完成{data['completed_new_cases']}/600条逐配置案例。此页是人工导出的进度快照，不是实时监控。", '',
+        f"快照时间（北京时间）：{data['updated_shanghai']}；新运行已完成{data['completed_new_cases']}/600条逐配置案例。此页是人工导出的进度快照，不是实时监控。", '',
         '两种W4A16沿用原同100条；六种新配置通过技术执行验收后逐组运行。只为完成100条并通过审计的组填写统计，未完成组不按部分案例推算成功率。', '',
         '| 配置 | 完成案例 | 状态 | 成功/100 | SPL | P95/s | 整卡峰值/MiB | 格式/截断错误 |',
         '|---|---:|---|---:|---:|---:|---:|---:|']
@@ -63,6 +67,12 @@ def main():
         prefix = f"| {row['group'].upper()} | {row['completed_cases']}/100 | {labels[row['status']]} |"
         m = row['metrics']
         lines.append(prefix+(f" {m['success_count']} | {m['spl']:.4f} | {m['request_p95_s']:.3f} | {m['sampled_whole_card_peak_mib']:.0f} | {m['error_count']} |" if m else ' — | — | — | — | — |'))
+    for row in rows:
+        m = row['metrics']
+        if m and m['error_count']:
+            labels = {'truncated_model_output':'输出截断', 'invalid_action_random_fallback_rejected':'动作格式错误'}
+            breakdown = '、'.join(f"{labels[key]}{value}条" for key,value in m['quality_error_counts'].items())
+            lines += ['', f"{row['group'].upper()}：成功{m['success_count']}/100，{breakdown}。这是本次激活方案和实现的结果，不能推广为所有同位宽方法的结论。"]
     lines += ['',
         '六组新配置采用项目实验算子，旧W4A16采用原生算子；这里比较实际配置，不能归因为纯位宽效应。W4A4激活打包四位后扩展到INT8 MMA，不代表原生INT4算力。A4/A8仅作用于语言投影输入，其余部分保留FP16。', '',
         '格式错误与输出截断保留在100条分母中，错误触发的STOP不计成功；两次预热与动作队列0秒不计请求延迟。基础设施错误不能通过审计。开发子集单次运行不能证明统计优越性。', '',

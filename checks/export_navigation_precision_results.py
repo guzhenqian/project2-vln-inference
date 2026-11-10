@@ -4,6 +4,7 @@ import hashlib
 import json
 import math
 import statistics
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -24,6 +25,7 @@ def verify_result(path, episode_ids, expected_trajectories):
     assert [r['episode_id'] for r in result['episodes']]==episode_ids
     latencies=[]
     success=collisions=errors=0
+    error_types=Counter()
     spls=[]
     for row in result['episodes']:
         eid=row['episode_id']
@@ -52,6 +54,7 @@ def verify_result(path, episode_ids, expected_trajectories):
         spls.append(spl)
         collisions+=sum(bool(s['metrics']['collisions']['is_collision']) for s in steps)
         errors+=sum(bool(s.get('error')) for s in steps)
+        error_types.update(s['error'] for s in steps if s.get('error'))
     memory=[]
     for name,sha in result['memory_source_files'].items():
         assert digest(ROOT/name)==sha
@@ -66,6 +69,8 @@ def verify_result(path, episode_ids, expected_trajectories):
         request_p95_s=percentile(latencies,.95),request_total_s=sum(latencies),
         collisions=collisions,error_count=errors,sampled_whole_card_peak_mib=max(memory)).items():
         assert math.isclose(result[key],value,rel_tol=1.e-9,abs_tol=1.e-5),(path,key,result[key],value)
+    assert sum(error_types.values()) == result['error_count']
+    result['quality_error_counts'] = dict(error_types)
     return result
 
 
@@ -95,6 +100,7 @@ def main():
             for name,sha in rows[group]['source_hashes'].items():
                 assert digest(ROOT/'checks'/name)==sha
     report=dict(status='complete',created_utc=datetime.now(timezone.utc).isoformat(),
+        exporter_source_sha256=digest(Path(__file__)),
         validation=dict(passed=True,groups=8,cases_per_group=100,new_case_records=600,reused_case_records=200,
                         independently_recomputed_from_steps=True,source_files_and_memory_hashes_verified=True),
         selection_sha256=digest(ROOT/'datasets/navigation_20261110/selection.json'),

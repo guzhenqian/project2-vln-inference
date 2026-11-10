@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-10T14:54:22.315107+00:00",
+  "updated_utc": "2026-11-10T16:13:23.985819+00:00",
   "status": "running100",
-  "active_group": "awq_w4a4",
+  "active_group": "awq_w4a8",
   "rows": [
     {
       "group": "awq_w4a16",
@@ -19,7 +19,8 @@
         "sampled_whole_card_peak_mib": 6863.0,
         "error_count": 0,
         "collisions": 2147,
-        "request_total_s": 8064.365175584331
+        "request_total_s": 8064.365175584331,
+        "quality_error_counts": {}
       },
       "result_source": "logs/navigation_stage2_sequence_20261109/results/awq_100.json",
       "result_sha256": "f649ff7222e6088cb6fbdb5d7c68f4c6967cd89531b5dbf8974dc0f9f9872bc1"
@@ -27,16 +28,33 @@
     {
       "group": "awq_w4a4",
       "reused": false,
-      "completed_cases": 0,
-      "status": "running",
-      "metrics": null,
-      "technical_execution_validated": true
+      "completed_cases": 100,
+      "status": "complete",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 0,
+        "sr": 0.0,
+        "spl": 0.0,
+        "actual_model_calls": 134,
+        "request_median_s": 45.48044054640923,
+        "request_p95_s": 46.93654844679404,
+        "sampled_whole_card_peak_mib": 6467.0,
+        "error_count": 100,
+        "collisions": 2,
+        "request_total_s": 4294.986421681941,
+        "quality_error_counts": {
+          "truncated_model_output": 86,
+          "invalid_action_random_fallback_rejected": 14
+        }
+      },
+      "result_source": "logs/navigation_precision_sequence_20261110/results/awq_w4a4_100.json",
+      "result_sha256": "a3cce837c1b80a3e7dc1d7fa333c4f5d6f8b8bc8ab59bf8e9c8a6cc9216128ef"
     },
     {
       "group": "awq_w4a8",
       "reused": false,
       "completed_cases": 0,
-      "status": "pending",
+      "status": "running",
       "metrics": null,
       "technical_execution_validated": true
     },
@@ -64,7 +82,8 @@
         "sampled_whole_card_peak_mib": 7160.0,
         "error_count": 0,
         "collisions": 2028,
-        "request_total_s": 7094.410712147364
+        "request_total_s": 7094.410712147364,
+        "quality_error_counts": {}
       },
       "result_source": "logs/navigation_stage2_sequence_20261109/results/gptq_100.json",
       "result_sha256": "170cbbed8c039fae3a341b6e2276d09ea37a37e9cc14da2ecb23be830ccad8a0"
@@ -94,9 +113,14 @@
       "technical_execution_validated": true
     }
   ],
-  "completed_new_cases": 0,
+  "completed_new_cases": 100,
   "new_cases_planned": 600,
   "all_completed_metrics_independently_recomputed": true,
+  "exporter_sources_sha256": {
+    "export_navigation_precision_progress.py": "22d38724f463cdb6b282e7cb8d83bf4f1ce438ec8548983a0d6841267e46d969",
+    "export_navigation_precision_results.py": "5a32f1f9f696347f16f3517abc4f701ed5339268d95cd984357ee4ba4a5079c2"
+  },
   "precision_config_sha256": "43b47a3860f2761f134005ec9e16abfaa194abc7246ed517d9fd4cf12b109f22",
-  "scope": "Same100 per group; experimental kernels; only completed audited groups receive performance numbers"
+  "scope": "Same100 per group; experimental kernels; only completed audited groups receive performance numbers",
+  "updated_shanghai": "2026-11-11T00:13:23.985819+08:00"
 }
