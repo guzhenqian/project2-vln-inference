@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10T16:13:23.985819+00:00",
+  "updated_utc": "2026-11-10T20:41:30.133382+00:00",
   "status": "running100",
   "active_group": "awq_w4a8",
   "rows": [
@@ -53,7 +53,7 @@
     {
       "group": "awq_w4a8",
       "reused": false,
-      "completed_cases": 0,
+      "completed_cases": 51,
       "status": "running",
       "metrics": null,
       "technical_execution_validated": true
@@ -113,7 +113,7 @@
       "technical_execution_validated": true
     }
   ],
-  "completed_new_cases": 100,
+  "completed_new_cases": 151,
   "new_cases_planned": 600,
   "all_completed_metrics_independently_recomputed": true,
   "exporter_sources_sha256": {
@@ -122,5 +122,5 @@
   },
   "precision_config_sha256": "43b47a3860f2761f134005ec9e16abfaa194abc7246ed517d9fd4cf12b109f22",
   "scope": "Same100 per group; experimental kernels; only completed audited groups receive performance numbers",
-  "updated_shanghai": "2026-11-11T00:13:23.985819+08:00"
+  "updated_shanghai": "2026-11-11T04:41:30.133382+08:00"
 }
