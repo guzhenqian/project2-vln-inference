@@ -1,0 +1,72 @@
+{
+  "version": "precision_20261110",
+  "scope": "Experimental project-specific kernels; not stock LMDeploy support; no Token compression",
+  "w4_reuse": "Reuse frozen AWQ/GPTQ W4 weights; add identical dynamic activation quantization at runtime",
+  "w8_calibration": "Same32 inputs, same group128 asymmetric weights and algorithms; change only weight bits",
+  "retained_precision": "FP16 vision, merger, embeddings, norms, attention/KV, output head and inter-projection tensors",
+  "w4a4_caveat": "4-bit packed activation operands widened to INT8 MMA; no native INT4 MMA speed claim",
+  "comparison_caveat": "Old W4A16 uses stock kernel; new groups use custom kernels. Results compare deployable configurations, not isolated bitwidth causality.",
+  "frozen_cases": "datasets/navigation_20261110/selection.json",
+  "groups": {
+    "awq_w4a4": {
+      "algorithm": "awq",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "model": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_learning_20261104",
+      "keep_ratio": 1.0,
+      "activation_recipe": "dynamic_per_token_symmetric_maxabs_narrow_range",
+      "compute": "int8_mma",
+      "activation_storage": "packed_int4"
+    },
+    "awq_w4a8": {
+      "algorithm": "awq",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "model": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_learning_20261104",
+      "keep_ratio": 1.0,
+      "activation_recipe": "dynamic_per_token_symmetric_maxabs_narrow_range",
+      "compute": "int8_mma",
+      "activation_storage": "int8"
+    },
+    "awq_w8a16": {
+      "algorithm": "awq",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "model": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_W8_20261110_retry1",
+      "keep_ratio": 1.0,
+      "activation_recipe": "none",
+      "compute": "fp16_mma",
+      "activation_storage": "fp16"
+    },
+    "gptq_w4a4": {
+      "algorithm": "gptq",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "model": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_stage2_20261109",
+      "keep_ratio": 1.0,
+      "activation_recipe": "dynamic_per_token_symmetric_maxabs_narrow_range",
+      "compute": "int8_mma",
+      "activation_storage": "packed_int4"
+    },
+    "gptq_w4a8": {
+      "algorithm": "gptq",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "model": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_stage2_20261109",
+      "keep_ratio": 1.0,
+      "activation_recipe": "dynamic_per_token_symmetric_maxabs_narrow_range",
+      "compute": "int8_mma",
+      "activation_storage": "int8"
+    },
+    "gptq_w8a16": {
+      "algorithm": "gptq",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "model": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_W8_20261110",
+      "keep_ratio": 1.0,
+      "activation_recipe": "none",
+      "compute": "fp16_mma",
+      "activation_storage": "fp16"
+    }
+  }
+}

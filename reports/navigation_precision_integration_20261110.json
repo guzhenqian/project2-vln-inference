@@ -1,0 +1,711 @@
+{
+  "status": "complete",
+  "created_utc": "2026-11-10T14:51:14.444401+00:00",
+  "groups": {
+    "awq_w4a4": {
+      "recipe": {
+        "algorithm": "awq",
+        "weight_bits": 4,
+        "activation_bits": 4,
+        "model": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_learning_20261104",
+        "keep_ratio": 1.0,
+        "activation_recipe": "dynamic_per_token_symmetric_maxabs_narrow_range",
+        "compute": "int8_mma",
+        "activation_storage": "packed_int4",
+        "method": "awq",
+        "keep": 1.0
+      },
+      "technical_execution_passed": true,
+      "evidence_sha256": "ecf3a8315ee77349cde6f24934e7fc92b85c8c538f25a1b6393a7fc9927c94ea",
+      "launch_sha256": "a59a12e3e950ea671447cad84f008315c1a9fe83834d812ef7e5d89541721bde",
+      "model_weights_sha256": "31d1c12dba3cbaace283cccf5be23337555f0383a3c4390e6270d2a9230414db",
+      "model_bytes": 3496772056,
+      "sources_sha256": {
+        "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+        "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+        "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+        "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+        "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+        "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+        "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+        "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+        "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1",
+        "navigation_precision_runtime.py": "0fb3e2c3802243ff30496263f40026a212fc615879bb59fb1dfedaa03a624698",
+        "navigation_precision_module_map.py": "4f535c9257e88c17e2a26825f4685c6fcfa8bf9b9fd5aafc44a068e4510be7b2",
+        "navigation_precision_common.py": "2a4725f103b40f8459c92a4c15c2db0bfc4e34500a95a16041cee132bd77211b",
+        "navigation_precision_guard.py": "4b88b8d57acbb12f05daeca007c5306ffa3f58e130eaf78dd65fa42a929a4707",
+        "navigation_precision_kernels.py": "48cb79fcd0243e07434f7fd67859a91be658364682f51512bd39563ec20aac65",
+        "serve_navigation_precision.py": "3e2109ee8e0b4f459d4455e2ca492d5929aa7cc9f4b0b3f895531764f8c21909"
+      },
+      "smokes": [
+        {
+          "image_count": 2,
+          "prompt_tokens": 701,
+          "finish_reason": "length",
+          "completion_tokens": 512,
+          "input_images_sha256": [
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9"
+          ],
+          "request_sha256": "b9772a36634a47f1ee6bb63499b39ba141dbd6080e82b6317b1c6b494acb6d9e",
+          "response_record_sha256": "4eab07869216893c885a3ececdf527eee14603e6e6f5f884fbf1abd97a9f79df",
+          "trace": {
+            "trace_id": "7be21dca8f9b4f8d87d99d7958daffa2",
+            "image_count": 2,
+            "original_length": 701,
+            "retained_length": 701,
+            "prefill_sha256": "a9ff807b2425978b3af7b8e65185e1d3334f21759d84447677883268e8e28b7e",
+            "first_decode_sha256": "baff636b1ec4394ef314f171c3cbd7c4c464c2e18094ea1de7ba2ad3222bb2dc",
+            "finish_reason": "length",
+            "truncated_model_output": true,
+            "scope": "Technical execution gate; output quality is retained, not an acceptance criterion"
+          }
+        },
+        {
+          "image_count": 9,
+          "prompt_tokens": 2815,
+          "finish_reason": "stop",
+          "completion_tokens": 7,
+          "input_images_sha256": [
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+            "3b72c3fdd8766b9630168af035252e75298493df0f64ddd5559f97cb2dfc0f00",
+            "26cc6f25fb3b3970502275f96b343a4ba4c79c6d7d91004ccc851e54f9d3f4a2",
+            "a6a3d29d3592271700e284b716779e341091786c8eb923b449a136692a87bca2",
+            "dc265d087e333583cb69495bb6850d1b01d06519387eaee8b93e14ddb8a8644b",
+            "c2bf057993294ea5b8d92bf96d34b77710de9e4565109b0009d99da48e7d53b9",
+            "0efd8a1f782ab3e530531260269837384ee15a95bff3e33cf0562d77fa5bebb7",
+            "8687a750843eaa268829e581df3c46119ada20b752da312811cb62fc8b0a676e",
+            "f5c3fab416476f3e18acd411d0ab9454c6e023a777e84e3f67c65d1a7dd075e2"
+          ],
+          "request_sha256": "c52be207d73aba5e746eef0e10b09aca15fa5cc46a5f2563294de1d9c50c9b08",
+          "response_record_sha256": "8ad33b0239940ccdb4132ec3d7e46a9996aa35b3350c142ab438c5a7760bf3d2",
+          "trace": {
+            "trace_id": "b49435570faf4ca4a4c081f7c861de94",
+            "image_count": 9,
+            "original_length": 2815,
+            "retained_length": 2815,
+            "prefill_sha256": "0b8c9479464acb9dd133dbbb6d648d7583928287bf95e8eab4b0e0d67f2a7339",
+            "first_decode_sha256": "cef19449cfce7f17b2785691f41f42665afa6272d799e2738e547bdb9890df89",
+            "finish_reason": "stop",
+            "truncated_model_output": false,
+            "scope": "Technical execution gate; output quality is retained, not an acceptance criterion"
+          }
+        }
+      ],
+      "single_episode": {
+        "episode_id": "1250",
+        "trajectory_id": "4940",
+        "steps": 1,
+        "start_distance_m": 10.696831703186035,
+        "path_length_m": 0.0,
+        "stop_called": true,
+        "time_limit_reached": false,
+        "error_count": 1,
+        "metrics": {
+          "distance_to_goal": 10.696831703186035,
+          "success": 0.0,
+          "spl": 0.0,
+          "collisions": {
+            "count": 0,
+            "is_collision": false
+          }
+        },
+        "terminal_stop_source": "error_fallback",
+        "elapsed_s": 45.76423532306217
+      },
+      "quality_errors": {
+        "truncated_model_output": 1
+      },
+      "infrastructure_errors": 0,
+      "actual_calls": 1,
+      "warmups_sha256": "b5c4a26ddd1f633d00e450e2fc4d3b83e9848169d2c0c548805c4e650839ffaf"
+    },
+    "awq_w4a8": {
+      "recipe": {
+        "algorithm": "awq",
+        "weight_bits": 4,
+        "activation_bits": 8,
+        "model": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_learning_20261104",
+        "keep_ratio": 1.0,
+        "activation_recipe": "dynamic_per_token_symmetric_maxabs_narrow_range",
+        "compute": "int8_mma",
+        "activation_storage": "int8",
+        "method": "awq",
+        "keep": 1.0
+      },
+      "technical_execution_passed": true,
+      "evidence_sha256": "080451b5364c3febebfbdaab5aed3053222495a67e1310c88cef413153a00817",
+      "launch_sha256": "40b49ac7a491f68becb83f07c7be909ffde6695a033487aabe5f3b1cfff40f97",
+      "model_weights_sha256": "31d1c12dba3cbaace283cccf5be23337555f0383a3c4390e6270d2a9230414db",
+      "model_bytes": 3496772056,
+      "sources_sha256": {
+        "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+        "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+        "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+        "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+        "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+        "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+        "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+        "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+        "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1",
+        "navigation_precision_runtime.py": "0fb3e2c3802243ff30496263f40026a212fc615879bb59fb1dfedaa03a624698",
+        "navigation_precision_module_map.py": "4f535c9257e88c17e2a26825f4685c6fcfa8bf9b9fd5aafc44a068e4510be7b2",
+        "navigation_precision_common.py": "2a4725f103b40f8459c92a4c15c2db0bfc4e34500a95a16041cee132bd77211b",
+        "navigation_precision_guard.py": "4b88b8d57acbb12f05daeca007c5306ffa3f58e130eaf78dd65fa42a929a4707",
+        "navigation_precision_kernels.py": "48cb79fcd0243e07434f7fd67859a91be658364682f51512bd39563ec20aac65",
+        "serve_navigation_precision.py": "3e2109ee8e0b4f459d4455e2ca492d5929aa7cc9f4b0b3f895531764f8c21909"
+      },
+      "smokes": [
+        {
+          "image_count": 2,
+          "prompt_tokens": 701,
+          "finish_reason": "stop",
+          "completion_tokens": 18,
+          "input_images_sha256": [
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9"
+          ],
+          "request_sha256": "a88cba46b61f2fba2cd4a3a4b26daab082dee99f412a8ecb3fd23da93bc6caa4",
+          "response_record_sha256": "673949fb5ddd3cdc1b499609b7dbe85770cc14679719bbad4b106be0e387eefc",
+          "trace": {
+            "trace_id": "8b732db819d54fb39e68fb13d31d95bd",
+            "image_count": 2,
+            "original_length": 701,
+            "retained_length": 701,
+            "prefill_sha256": "c4c7e21ad184193d6d668bcb925e9cdd7004b985b338b37f4c2e1e4784d487c7",
+            "first_decode_sha256": "c46859b983102b3e31b83c0d9d8793c9b8fa8b18315f31568705f723a100b1b3",
+            "finish_reason": "stop",
+            "truncated_model_output": false,
+            "scope": "Technical execution gate; output quality is retained, not an acceptance criterion"
+          }
+        },
+        {
+          "image_count": 9,
+          "prompt_tokens": 2815,
+          "finish_reason": "stop",
+          "completion_tokens": 19,
+          "input_images_sha256": [
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+            "3b72c3fdd8766b9630168af035252e75298493df0f64ddd5559f97cb2dfc0f00",
+            "26cc6f25fb3b3970502275f96b343a4ba4c79c6d7d91004ccc851e54f9d3f4a2",
+            "a6a3d29d3592271700e284b716779e341091786c8eb923b449a136692a87bca2",
+            "dc265d087e333583cb69495bb6850d1b01d06519387eaee8b93e14ddb8a8644b",
+            "c2bf057993294ea5b8d92bf96d34b77710de9e4565109b0009d99da48e7d53b9",
+            "0efd8a1f782ab3e530531260269837384ee15a95bff3e33cf0562d77fa5bebb7",
+            "8687a750843eaa268829e581df3c46119ada20b752da312811cb62fc8b0a676e",
+            "f5c3fab416476f3e18acd411d0ab9454c6e023a777e84e3f67c65d1a7dd075e2"
+          ],
+          "request_sha256": "2f7c7a58aef2230175eb0bde472abb430d90e60df52e986c5b2dc327a5c4bcb8",
+          "response_record_sha256": "55d41716b0a4feece6505a289e64e45834cc41caed94ace3514cabdbc236db46",
+          "trace": {
+            "trace_id": "1fc8d981a6324dc1a0f16cea608a19fe",
+            "image_count": 9,
+            "original_length": 2815,
+            "retained_length": 2815,
+            "prefill_sha256": "c3d4cc696b28840ff28e3b46e916caba10624f3a80ba625d2ba546f35ffdc01b",
+            "first_decode_sha256": "a8dac1f8c222d3eb192b2e5197071f2585ad6b5a0d741a4326a2e0283d418e7f",
+            "finish_reason": "stop",
+            "truncated_model_output": false,
+            "scope": "Technical execution gate; output quality is retained, not an acceptance criterion"
+          }
+        }
+      ],
+      "single_episode": {
+        "episode_id": "1250",
+        "trajectory_id": "4940",
+        "steps": 25,
+        "start_distance_m": 10.696831703186035,
+        "path_length_m": 2.2755074400589903,
+        "stop_called": true,
+        "time_limit_reached": false,
+        "error_count": 0,
+        "metrics": {
+          "distance_to_goal": 12.809627532958984,
+          "success": 0.0,
+          "spl": 0.0,
+          "collisions": {
+            "count": 0,
+            "is_collision": false
+          }
+        },
+        "terminal_stop_source": "model",
+        "elapsed_s": 59.55381256202236
+      },
+      "quality_errors": {},
+      "infrastructure_errors": 0,
+      "actual_calls": 8,
+      "warmups_sha256": "0b07ba9ca15ed0bd7991be88e0e4c4458541361e8cd6c6ae3d2c70a1b339f3f2"
+    },
+    "awq_w8a16": {
+      "recipe": {
+        "algorithm": "awq",
+        "weight_bits": 8,
+        "activation_bits": 16,
+        "model": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_W8_20261110_retry1",
+        "keep_ratio": 1.0,
+        "activation_recipe": "none",
+        "compute": "fp16_mma",
+        "activation_storage": "fp16",
+        "method": "awq",
+        "keep": 1.0
+      },
+      "technical_execution_passed": true,
+      "evidence_sha256": "6f3a165c4345ce14191da8b412fd283c8cfeccd670f1463b4ffa3103e5c8c897",
+      "launch_sha256": "eb26a7778d2efbce177ba0ba0d9badec4a0db1a2942bf327aa253f51ca638b9d",
+      "model_weights_sha256": "630461c6e4c23b54987467d5c415e38f9a26e4f943383fecb3d5b08461c8093a",
+      "model_bytes": 5327622984,
+      "sources_sha256": {
+        "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+        "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+        "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+        "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+        "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+        "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+        "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+        "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+        "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1",
+        "navigation_precision_runtime.py": "0fb3e2c3802243ff30496263f40026a212fc615879bb59fb1dfedaa03a624698",
+        "navigation_precision_module_map.py": "4f535c9257e88c17e2a26825f4685c6fcfa8bf9b9fd5aafc44a068e4510be7b2",
+        "navigation_precision_common.py": "2a4725f103b40f8459c92a4c15c2db0bfc4e34500a95a16041cee132bd77211b",
+        "navigation_precision_guard.py": "4b88b8d57acbb12f05daeca007c5306ffa3f58e130eaf78dd65fa42a929a4707",
+        "navigation_precision_kernels.py": "48cb79fcd0243e07434f7fd67859a91be658364682f51512bd39563ec20aac65",
+        "serve_navigation_precision.py": "3e2109ee8e0b4f459d4455e2ca492d5929aa7cc9f4b0b3f895531764f8c21909"
+      },
+      "smokes": [
+        {
+          "image_count": 2,
+          "prompt_tokens": 701,
+          "finish_reason": "stop",
+          "completion_tokens": 18,
+          "input_images_sha256": [
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9"
+          ],
+          "request_sha256": "5169ed95bbb9b7e75859079209eb2c883bf1d4cf11c5cab459d0e2f8846b71a3",
+          "response_record_sha256": "431cd2b9643ef960ad0037d8d3b61a79b5b1d370dfcbf3ff6fbd5bce3fdb6abe",
+          "trace": {
+            "trace_id": "f22da9c081c44a3ba65e95ece8b8216b",
+            "image_count": 2,
+            "original_length": 701,
+            "retained_length": 701,
+            "prefill_sha256": "402a1855393588de4fc38796fda4c6266094f8366dab5f1e0dba8cc513b27a35",
+            "first_decode_sha256": "8eb06af250c0f7ef6938384e1a8546f5c3c0acc202e24c150ac99a8d4faf83b2",
+            "finish_reason": "stop",
+            "truncated_model_output": false,
+            "scope": "Technical execution gate; output quality is retained, not an acceptance criterion"
+          }
+        },
+        {
+          "image_count": 9,
+          "prompt_tokens": 2815,
+          "finish_reason": "stop",
+          "completion_tokens": 18,
+          "input_images_sha256": [
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+            "3b72c3fdd8766b9630168af035252e75298493df0f64ddd5559f97cb2dfc0f00",
+            "26cc6f25fb3b3970502275f96b343a4ba4c79c6d7d91004ccc851e54f9d3f4a2",
+            "a6a3d29d3592271700e284b716779e341091786c8eb923b449a136692a87bca2",
+            "dc265d087e333583cb69495bb6850d1b01d06519387eaee8b93e14ddb8a8644b",
+            "c2bf057993294ea5b8d92bf96d34b77710de9e4565109b0009d99da48e7d53b9",
+            "0efd8a1f782ab3e530531260269837384ee15a95bff3e33cf0562d77fa5bebb7",
+            "8687a750843eaa268829e581df3c46119ada20b752da312811cb62fc8b0a676e",
+            "f5c3fab416476f3e18acd411d0ab9454c6e023a777e84e3f67c65d1a7dd075e2"
+          ],
+          "request_sha256": "49a86c8380b58d2a594f0b0e9421b0b165403d7a1bab59f23662c9c64c9f20ba",
+          "response_record_sha256": "000630cf92ce91a3bb7e374dc81f251797163506b1d515b97d113a1d27a73bff",
+          "trace": {
+            "trace_id": "2b084a5f31c74ef08e8a5ee4d2263375",
+            "image_count": 9,
+            "original_length": 2815,
+            "retained_length": 2815,
+            "prefill_sha256": "a06d06b938eb13f69021db7d6f8067b58abd580d5d3a6162221b79f1853f3036",
+            "first_decode_sha256": "1d2e3dfd2781ca9cb977c039488cbd3ffdaa1edf73f72429a3fc40aa4006c3d8",
+            "finish_reason": "stop",
+            "truncated_model_output": false,
+            "scope": "Technical execution gate; output quality is retained, not an acceptance criterion"
+          }
+        }
+      ],
+      "single_episode": {
+        "episode_id": "1250",
+        "trajectory_id": "4940",
+        "steps": 400,
+        "start_distance_m": 10.696831703186035,
+        "path_length_m": 68.22503933114847,
+        "stop_called": false,
+        "time_limit_reached": true,
+        "error_count": 0,
+        "metrics": {
+          "distance_to_goal": 5.840507984161377,
+          "success": 0.0,
+          "spl": 0.0,
+          "collisions": {
+            "count": 2,
+            "is_collision": false
+          }
+        },
+        "terminal_stop_source": "step_limit",
+        "elapsed_s": 1218.369543116074
+      },
+      "quality_errors": {},
+      "infrastructure_errors": 0,
+      "actual_calls": 132,
+      "warmups_sha256": "d697eae12b321160e861573dea47a0d24447a63691fe0319de711d1a3eb07264"
+    },
+    "gptq_w4a4": {
+      "recipe": {
+        "algorithm": "gptq",
+        "weight_bits": 4,
+        "activation_bits": 4,
+        "model": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_stage2_20261109",
+        "keep_ratio": 1.0,
+        "activation_recipe": "dynamic_per_token_symmetric_maxabs_narrow_range",
+        "compute": "int8_mma",
+        "activation_storage": "packed_int4",
+        "method": "gptq",
+        "keep": 1.0
+      },
+      "technical_execution_passed": true,
+      "evidence_sha256": "f1d4f64f2e1a0de6b5de2d6b225860a73625149c1804e7dba6d9cd0f34b65c39",
+      "launch_sha256": "9576a84e1322ca788d30ec189c4d943f032847b96ef45023ffe4498204e549ce",
+      "model_weights_sha256": "2479144ad32b5209cfb7f3b0927d863492e2894cc742603a2567c2802e99260f",
+      "model_bytes": 3496772056,
+      "sources_sha256": {
+        "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+        "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+        "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+        "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+        "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+        "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+        "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+        "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+        "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1",
+        "navigation_precision_runtime.py": "0fb3e2c3802243ff30496263f40026a212fc615879bb59fb1dfedaa03a624698",
+        "navigation_precision_module_map.py": "4f535c9257e88c17e2a26825f4685c6fcfa8bf9b9fd5aafc44a068e4510be7b2",
+        "navigation_precision_common.py": "2a4725f103b40f8459c92a4c15c2db0bfc4e34500a95a16041cee132bd77211b",
+        "navigation_precision_guard.py": "4b88b8d57acbb12f05daeca007c5306ffa3f58e130eaf78dd65fa42a929a4707",
+        "navigation_precision_kernels.py": "48cb79fcd0243e07434f7fd67859a91be658364682f51512bd39563ec20aac65",
+        "serve_navigation_precision.py": "3e2109ee8e0b4f459d4455e2ca492d5929aa7cc9f4b0b3f895531764f8c21909"
+      },
+      "smokes": [
+        {
+          "image_count": 2,
+          "prompt_tokens": 701,
+          "finish_reason": "length",
+          "completion_tokens": 512,
+          "input_images_sha256": [
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9"
+          ],
+          "request_sha256": "18d10f04f448a14cfd2c30a651a149d25c026d85e048eb6afbc41cb723756830",
+          "response_record_sha256": "b4accbae309cd87d078eb4af498e06703f6d543d7fadae0c40f1a3aeab415ceb",
+          "trace": {
+            "trace_id": "58bd31e3d52f44069b4ca8c75df71ffc",
+            "image_count": 2,
+            "original_length": 701,
+            "retained_length": 701,
+            "prefill_sha256": "028f711f9eb4a2bdc3206585087e521794e93822ac2774d0930018a4adc53a17",
+            "first_decode_sha256": "63202b33c9b08d16e55fcc9da4e4dc3281a31fe65b506b2b01eb5ebf4a10a5b0",
+            "finish_reason": "length",
+            "truncated_model_output": true,
+            "scope": "Technical execution gate; output quality is retained, not an acceptance criterion"
+          }
+        },
+        {
+          "image_count": 9,
+          "prompt_tokens": 2815,
+          "finish_reason": "length",
+          "completion_tokens": 512,
+          "input_images_sha256": [
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+            "3b72c3fdd8766b9630168af035252e75298493df0f64ddd5559f97cb2dfc0f00",
+            "26cc6f25fb3b3970502275f96b343a4ba4c79c6d7d91004ccc851e54f9d3f4a2",
+            "a6a3d29d3592271700e284b716779e341091786c8eb923b449a136692a87bca2",
+            "dc265d087e333583cb69495bb6850d1b01d06519387eaee8b93e14ddb8a8644b",
+            "c2bf057993294ea5b8d92bf96d34b77710de9e4565109b0009d99da48e7d53b9",
+            "0efd8a1f782ab3e530531260269837384ee15a95bff3e33cf0562d77fa5bebb7",
+            "8687a750843eaa268829e581df3c46119ada20b752da312811cb62fc8b0a676e",
+            "f5c3fab416476f3e18acd411d0ab9454c6e023a777e84e3f67c65d1a7dd075e2"
+          ],
+          "request_sha256": "53e3cb565d6707d9db7444e1a03b35fc9d0c44115eb13796e2b6bc87da8b0270",
+          "response_record_sha256": "6cb715c8248c55610a39929b14eeb1d42616f6a337b9245dd54d032a2f2eab9f",
+          "trace": {
+            "trace_id": "8dd7a1f8b88d4c1b9dffeaf92839b8ad",
+            "image_count": 9,
+            "original_length": 2815,
+            "retained_length": 2815,
+            "prefill_sha256": "35fbb375392349b7508734ad0d976d06ff5b5c382a6fb8382b6a74fb9542af49",
+            "first_decode_sha256": "3ca4a71bb6282048e1fd01e6a219940e51503f68926b2a05f37579f49f85d8c9",
+            "finish_reason": "length",
+            "truncated_model_output": true,
+            "scope": "Technical execution gate; output quality is retained, not an acceptance criterion"
+          }
+        }
+      ],
+      "single_episode": {
+        "episode_id": "1250",
+        "trajectory_id": "4940",
+        "steps": 1,
+        "start_distance_m": 10.696831703186035,
+        "path_length_m": 0.0,
+        "stop_called": true,
+        "time_limit_reached": false,
+        "error_count": 1,
+        "metrics": {
+          "distance_to_goal": 10.696831703186035,
+          "success": 0.0,
+          "spl": 0.0,
+          "collisions": {
+            "count": 0,
+            "is_collision": false
+          }
+        },
+        "terminal_stop_source": "error_fallback",
+        "elapsed_s": 45.810766191920266
+      },
+      "quality_errors": {
+        "truncated_model_output": 1
+      },
+      "infrastructure_errors": 0,
+      "actual_calls": 1,
+      "warmups_sha256": "9d6f75cb40fe6f970f86c899dd9f8351b667ad61c484b09d92801a86d6e66cef"
+    },
+    "gptq_w4a8": {
+      "recipe": {
+        "algorithm": "gptq",
+        "weight_bits": 4,
+        "activation_bits": 8,
+        "model": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_stage2_20261109",
+        "keep_ratio": 1.0,
+        "activation_recipe": "dynamic_per_token_symmetric_maxabs_narrow_range",
+        "compute": "int8_mma",
+        "activation_storage": "int8",
+        "method": "gptq",
+        "keep": 1.0
+      },
+      "technical_execution_passed": true,
+      "evidence_sha256": "76598d5f7ec40c6c731d7b571f45cdb6b82446a3685ab1c6d220858ad34fdb2a",
+      "launch_sha256": "b1f37f61b06b2e71c4907cba726a727a645ab986e273d2800c950a719d30cb70",
+      "model_weights_sha256": "2479144ad32b5209cfb7f3b0927d863492e2894cc742603a2567c2802e99260f",
+      "model_bytes": 3496772056,
+      "sources_sha256": {
+        "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+        "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+        "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+        "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+        "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+        "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+        "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+        "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+        "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1",
+        "navigation_precision_runtime.py": "0fb3e2c3802243ff30496263f40026a212fc615879bb59fb1dfedaa03a624698",
+        "navigation_precision_module_map.py": "4f535c9257e88c17e2a26825f4685c6fcfa8bf9b9fd5aafc44a068e4510be7b2",
+        "navigation_precision_common.py": "2a4725f103b40f8459c92a4c15c2db0bfc4e34500a95a16041cee132bd77211b",
+        "navigation_precision_guard.py": "4b88b8d57acbb12f05daeca007c5306ffa3f58e130eaf78dd65fa42a929a4707",
+        "navigation_precision_kernels.py": "48cb79fcd0243e07434f7fd67859a91be658364682f51512bd39563ec20aac65",
+        "serve_navigation_precision.py": "3e2109ee8e0b4f459d4455e2ca492d5929aa7cc9f4b0b3f895531764f8c21909"
+      },
+      "smokes": [
+        {
+          "image_count": 2,
+          "prompt_tokens": 701,
+          "finish_reason": "stop",
+          "completion_tokens": 18,
+          "input_images_sha256": [
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9"
+          ],
+          "request_sha256": "2338896d2b0c2e916faa21c4738fced3e7af1772fd7761339b3f6c76b71e29b7",
+          "response_record_sha256": "f9858c4cce8f878e91b93959a6c3d48d8294ad55e94b44794880bd7c51cb6b49",
+          "trace": {
+            "trace_id": "651aa1c8e20f4a6fbba8fa9cc51e8f4b",
+            "image_count": 2,
+            "original_length": 701,
+            "retained_length": 701,
+            "prefill_sha256": "fce5f86a2efff26e5ab091b1c828552a5364e05bb7766e48d30a5b95e23456c4",
+            "first_decode_sha256": "27350027a525c1751aae22a730ea00233dcd8f12e1b0f8389cb1234422f6c3ad",
+            "finish_reason": "stop",
+            "truncated_model_output": false,
+            "scope": "Technical execution gate; output quality is retained, not an acceptance criterion"
+          }
+        },
+        {
+          "image_count": 9,
+          "prompt_tokens": 2815,
+          "finish_reason": "stop",
+          "completion_tokens": 18,
+          "input_images_sha256": [
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+            "3b72c3fdd8766b9630168af035252e75298493df0f64ddd5559f97cb2dfc0f00",
+            "26cc6f25fb3b3970502275f96b343a4ba4c79c6d7d91004ccc851e54f9d3f4a2",
+            "a6a3d29d3592271700e284b716779e341091786c8eb923b449a136692a87bca2",
+            "dc265d087e333583cb69495bb6850d1b01d06519387eaee8b93e14ddb8a8644b",
+            "c2bf057993294ea5b8d92bf96d34b77710de9e4565109b0009d99da48e7d53b9",
+            "0efd8a1f782ab3e530531260269837384ee15a95bff3e33cf0562d77fa5bebb7",
+            "8687a750843eaa268829e581df3c46119ada20b752da312811cb62fc8b0a676e",
+            "f5c3fab416476f3e18acd411d0ab9454c6e023a777e84e3f67c65d1a7dd075e2"
+          ],
+          "request_sha256": "8ad5a782a23ed64ee156eaa5ecba747bba0445823ec031720d19e90f7118c481",
+          "response_record_sha256": "c1c52f2eb88d946a7bf9188df3a35843fe747447bebf976a0b2ca8b2f5807f3b",
+          "trace": {
+            "trace_id": "ba669828e5e348e4b056ce40eaff9c2d",
+            "image_count": 9,
+            "original_length": 2815,
+            "retained_length": 2815,
+            "prefill_sha256": "c60795918d3542a021404ce3fdc4522471fd5e63f218c702c121adfab8ad4f69",
+            "first_decode_sha256": "86d3c22252471fa187b4beaebc4d708bbc026f14808920c540212163522229ba",
+            "finish_reason": "stop",
+            "truncated_model_output": false,
+            "scope": "Technical execution gate; output quality is retained, not an acceptance criterion"
+          }
+        }
+      ],
+      "single_episode": {
+        "episode_id": "1250",
+        "trajectory_id": "4940",
+        "steps": 73,
+        "start_distance_m": 10.696831703186035,
+        "path_length_m": 11.088635077921557,
+        "stop_called": true,
+        "time_limit_reached": false,
+        "error_count": 0,
+        "metrics": {
+          "distance_to_goal": 0.7761421203613281,
+          "success": 1.0,
+          "spl": 0.964666223389677,
+          "collisions": {
+            "count": 0,
+            "is_collision": false
+          }
+        },
+        "terminal_stop_source": "model",
+        "elapsed_s": 180.89160490385257
+      },
+      "quality_errors": {},
+      "infrastructure_errors": 0,
+      "actual_calls": 22,
+      "warmups_sha256": "aea9503817061ff27fd90d0c41337cc40190dfde356771c8adf9701172fad1c6"
+    },
+    "gptq_w8a16": {
+      "recipe": {
+        "algorithm": "gptq",
+        "weight_bits": 8,
+        "activation_bits": 16,
+        "model": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_W8_20261110",
+        "keep_ratio": 1.0,
+        "activation_recipe": "none",
+        "compute": "fp16_mma",
+        "activation_storage": "fp16",
+        "method": "gptq",
+        "keep": 1.0
+      },
+      "technical_execution_passed": true,
+      "evidence_sha256": "f4ee81ca2b3af57a01988982eb17857f040e48d1951add81c73f7c0871267675",
+      "launch_sha256": "f33cd0d1f4a0f1627f3071ccb18b662b755ffa4b885e0c494ed30990c0816ab6",
+      "model_weights_sha256": "1bd5b9762f0d742f2119608caa050761b3315fceee3f85c86472d17be20194c9",
+      "model_bytes": 5327622984,
+      "sources_sha256": {
+        "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+        "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+        "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+        "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+        "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+        "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+        "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+        "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+        "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1",
+        "navigation_precision_runtime.py": "0fb3e2c3802243ff30496263f40026a212fc615879bb59fb1dfedaa03a624698",
+        "navigation_precision_module_map.py": "4f535c9257e88c17e2a26825f4685c6fcfa8bf9b9fd5aafc44a068e4510be7b2",
+        "navigation_precision_common.py": "2a4725f103b40f8459c92a4c15c2db0bfc4e34500a95a16041cee132bd77211b",
+        "navigation_precision_guard.py": "4b88b8d57acbb12f05daeca007c5306ffa3f58e130eaf78dd65fa42a929a4707",
+        "navigation_precision_kernels.py": "48cb79fcd0243e07434f7fd67859a91be658364682f51512bd39563ec20aac65",
+        "serve_navigation_precision.py": "3e2109ee8e0b4f459d4455e2ca492d5929aa7cc9f4b0b3f895531764f8c21909"
+      },
+      "smokes": [
+        {
+          "image_count": 2,
+          "prompt_tokens": 701,
+          "finish_reason": "stop",
+          "completion_tokens": 18,
+          "input_images_sha256": [
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9"
+          ],
+          "request_sha256": "296823130ff83115645b1f9fca5bff8282e553964e7c81b25eb37f276240c06d",
+          "response_record_sha256": "dd62852506901665637cf8d3471d3631ad0e132afb3bbd32d9af29bc774cf1fe",
+          "trace": {
+            "trace_id": "451a9369205e4ea48675c3f15b302fa7",
+            "image_count": 2,
+            "original_length": 701,
+            "retained_length": 701,
+            "prefill_sha256": "9725e4839534d1bbd6e867fc6ce552473d795061b45b843c1b9b017039bb9fb2",
+            "first_decode_sha256": "325a3a55743459c444d726e0044688bb15b8130706ca878c601c61444371ecc0",
+            "finish_reason": "stop",
+            "truncated_model_output": false,
+            "scope": "Technical execution gate; output quality is retained, not an acceptance criterion"
+          }
+        },
+        {
+          "image_count": 9,
+          "prompt_tokens": 2815,
+          "finish_reason": "stop",
+          "completion_tokens": 18,
+          "input_images_sha256": [
+            "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+            "3b72c3fdd8766b9630168af035252e75298493df0f64ddd5559f97cb2dfc0f00",
+            "26cc6f25fb3b3970502275f96b343a4ba4c79c6d7d91004ccc851e54f9d3f4a2",
+            "a6a3d29d3592271700e284b716779e341091786c8eb923b449a136692a87bca2",
+            "dc265d087e333583cb69495bb6850d1b01d06519387eaee8b93e14ddb8a8644b",
+            "c2bf057993294ea5b8d92bf96d34b77710de9e4565109b0009d99da48e7d53b9",
+            "0efd8a1f782ab3e530531260269837384ee15a95bff3e33cf0562d77fa5bebb7",
+            "8687a750843eaa268829e581df3c46119ada20b752da312811cb62fc8b0a676e",
+            "f5c3fab416476f3e18acd411d0ab9454c6e023a777e84e3f67c65d1a7dd075e2"
+          ],
+          "request_sha256": "e71cf9792689a0f9094f816beff81bf6c2f95e0852c2bec23be4566a8dfa22cc",
+          "response_record_sha256": "492e97e6bcf185091631939371be36100e9650e248cc775d3ab6ac09a62e50ed",
+          "trace": {
+            "trace_id": "f1e1986c566548a29fb0cc112139fc3a",
+            "image_count": 9,
+            "original_length": 2815,
+            "retained_length": 2815,
+            "prefill_sha256": "94732029eead01b373d1a81345a37da19985cd8700b06d6f585116621c5f1578",
+            "first_decode_sha256": "bc69f45c718c796c5d4abd45ff83e5967e13d520a6c584c009d542efcb7e2a62",
+            "finish_reason": "stop",
+            "truncated_model_output": false,
+            "scope": "Technical execution gate; output quality is retained, not an acceptance criterion"
+          }
+        }
+      ],
+      "single_episode": {
+        "episode_id": "1250",
+        "trajectory_id": "4940",
+        "steps": 400,
+        "start_distance_m": 10.696831703186035,
+        "path_length_m": 68.62920034142684,
+        "stop_called": false,
+        "time_limit_reached": true,
+        "error_count": 0,
+        "metrics": {
+          "distance_to_goal": 6.4673051834106445,
+          "success": 0.0,
+          "spl": 0.0,
+          "collisions": {
+            "count": 1,
+            "is_collision": false
+          }
+        },
+        "terminal_stop_source": "step_limit",
+        "elapsed_s": 1201.491551592946
+      },
+      "quality_errors": {},
+      "infrastructure_errors": 0,
+      "actual_calls": 130,
+      "warmups_sha256": "c1761488a0878d7b70bcf6dcf03a28b3aa039c1ba8a8c754e988cc0f864ce204"
+    }
+  },
+  "scope": "Execution and input/cache integrity only; not navigation quality qualification or latency benchmark",
+  "output_quality_failures_retained": true,
+  "formal_cases_per_group": 100,
+  "old_w4a16_groups_reused": 2,
+  "new_groups": 6
+}

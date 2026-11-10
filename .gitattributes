@@ -12,3 +12,8 @@ checks/convert_navigation_gptq_stage2.py -text
 checks/quantize_navigation_gptq_stage2.py -text
 checks/navigation_stage2_runtime.py -text
 checks/navigation_stage2_module_map.py -text
+checks/run_navigation_precision_diagnostic.py -text
+checks/run_simplevln_diagnostic.py -text
+checks/simplevln_env.py -text
+setup/navigation-precision-20261110.json -text
+reports/navigation_precision_kernel_gate_linked_20261110.json -text

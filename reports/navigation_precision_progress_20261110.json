@@ -1,0 +1,102 @@
+{
+  "updated_utc": "2026-11-10T14:54:22.315107+00:00",
+  "status": "running100",
+  "active_group": "awq_w4a4",
+  "rows": [
+    {
+      "group": "awq_w4a16",
+      "reused": true,
+      "completed_cases": 100,
+      "status": "complete_reused",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 66,
+        "sr": 0.66,
+        "spl": 0.5671283387752304,
+        "actual_model_calls": 4195,
+        "request_median_s": 1.9276922610588372,
+        "request_p95_s": 2.21349537265487,
+        "sampled_whole_card_peak_mib": 6863.0,
+        "error_count": 0,
+        "collisions": 2147,
+        "request_total_s": 8064.365175584331
+      },
+      "result_source": "logs/navigation_stage2_sequence_20261109/results/awq_100.json",
+      "result_sha256": "f649ff7222e6088cb6fbdb5d7c68f4c6967cd89531b5dbf8974dc0f9f9872bc1"
+    },
+    {
+      "group": "awq_w4a4",
+      "reused": false,
+      "completed_cases": 0,
+      "status": "running",
+      "metrics": null,
+      "technical_execution_validated": true
+    },
+    {
+      "group": "awq_w4a8",
+      "reused": false,
+      "completed_cases": 0,
+      "status": "pending",
+      "metrics": null,
+      "technical_execution_validated": true
+    },
+    {
+      "group": "awq_w8a16",
+      "reused": false,
+      "completed_cases": 0,
+      "status": "pending",
+      "metrics": null,
+      "technical_execution_validated": true
+    },
+    {
+      "group": "gptq_w4a16",
+      "reused": true,
+      "completed_cases": 100,
+      "status": "complete_reused",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 68,
+        "sr": 0.68,
+        "spl": 0.5797803401472085,
+        "actual_model_calls": 3733,
+        "request_median_s": 1.920911249006167,
+        "request_p95_s": 2.2175426490139216,
+        "sampled_whole_card_peak_mib": 7160.0,
+        "error_count": 0,
+        "collisions": 2028,
+        "request_total_s": 7094.410712147364
+      },
+      "result_source": "logs/navigation_stage2_sequence_20261109/results/gptq_100.json",
+      "result_sha256": "170cbbed8c039fae3a341b6e2276d09ea37a37e9cc14da2ecb23be830ccad8a0"
+    },
+    {
+      "group": "gptq_w4a4",
+      "reused": false,
+      "completed_cases": 0,
+      "status": "pending",
+      "metrics": null,
+      "technical_execution_validated": true
+    },
+    {
+      "group": "gptq_w4a8",
+      "reused": false,
+      "completed_cases": 0,
+      "status": "pending",
+      "metrics": null,
+      "technical_execution_validated": true
+    },
+    {
+      "group": "gptq_w8a16",
+      "reused": false,
+      "completed_cases": 0,
+      "status": "pending",
+      "metrics": null,
+      "technical_execution_validated": true
+    }
+  ],
+  "completed_new_cases": 0,
+  "new_cases_planned": 600,
+  "all_completed_metrics_independently_recomputed": true,
+  "precision_config_sha256": "43b47a3860f2761f134005ec9e16abfaa194abc7246ed517d9fd4cf12b109f22",
+  "scope": "Same100 per group; experimental kernels; only completed audited groups receive performance numbers"
+}

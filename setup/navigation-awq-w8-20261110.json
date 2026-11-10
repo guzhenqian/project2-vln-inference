@@ -1,0 +1,28 @@
+{
+  "version": "navigation_awq_w8_20261110",
+  "source": "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy",
+  "calibration_manifest": "data/calibration/navigation_awq_learning_20261104/processed/manifest.json",
+  "output": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_W8_CT_20261110",
+  "log_dir": "logs/navigation_awq_w8_calibration_20261110",
+  "algorithm": "AWQ",
+  "scheme": "W8A16_ASYM_GROUP128_CUSTOM",
+  "bits": 8,
+  "group_size": 128,
+  "symmetric": false,
+  "targets": [
+    "re:.*language_model.layers.*(q_proj|k_proj|v_proj|o_proj|gate_proj|up_proj|down_proj)$"
+  ],
+  "ignore": [
+    "lm_head",
+    "re:.*visual.*"
+  ],
+  "calibration_samples": 32,
+  "seed": 7,
+  "batch_size": 1,
+  "max_seq_length": 4096,
+  "reserved_output_tokens": 512,
+  "calibration_math": "FP32 from FP16-rounded source weights",
+  "deployment_dtype": "float16",
+  "export_format": "compressed-tensors; requires verified conversion for LMDeploy",
+  "note": "Same32 training inputs and group128 asymmetric weights; only weight bits change to8."
+}

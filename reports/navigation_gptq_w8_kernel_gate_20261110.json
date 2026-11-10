@@ -1,0 +1,397 @@
+{
+  "status": "passed",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "checks": [
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 17,
+      "relative_l2": 0.00020328247046563774,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 65,
+      "relative_l2": 0.00020492097246460617,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 17,
+      "relative_l2": 0.00020081126422155648,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 65,
+      "relative_l2": 0.00020991098426748067,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 17,
+      "relative_l2": 0.00020912667969241738,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 65,
+      "relative_l2": 0.0002039872924797237,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 17,
+      "relative_l2": 0.00021093327086418867,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 65,
+      "relative_l2": 0.00020549223700072616,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 17,
+      "relative_l2": 0.00020596783724613488,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 65,
+      "relative_l2": 0.0002082487044390291,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 17,
+      "relative_l2": 0.00020999622938688844,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 65,
+      "relative_l2": 0.00020455043704714626,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 17,
+      "relative_l2": 0.0002138074196409434,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 65,
+      "relative_l2": 0.0002038013335550204,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 17,
+      "relative_l2": 0.00020982814021408558,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 65,
+      "relative_l2": 0.00021317139908205718,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 17,
+      "relative_l2": 0.00021292534074746072,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 65,
+      "relative_l2": 0.00020984963339287788,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "w8:model.language_model.layers.0.self_attn.q_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 1,
+      "relative_l2": 0.00020691771351266652,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.0.self_attn.q_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 701,
+      "relative_l2": 0.0002073755458695814,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.0.self_attn.q_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 2815,
+      "relative_l2": 0.00020729578682221472,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.0.mlp.down_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 1,
+      "relative_l2": 0.00021149407257325947,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.0.mlp.down_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 701,
+      "relative_l2": 0.00020787057292181998,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.0.mlp.down_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 2815,
+      "relative_l2": 0.00020782557839993387,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.18.self_attn.q_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 1,
+      "relative_l2": 0.00020842731464654207,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.18.self_attn.q_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 701,
+      "relative_l2": 0.00020736639271490276,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.18.self_attn.q_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 2815,
+      "relative_l2": 0.00020749120449181646,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.18.mlp.down_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 1,
+      "relative_l2": 0.0002119678829330951,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.18.mlp.down_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 701,
+      "relative_l2": 0.00020778103498741984,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.18.mlp.down_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 2815,
+      "relative_l2": 0.00020768663671333343,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.35.self_attn.q_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 1,
+      "relative_l2": 0.0002080759877571836,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.35.self_attn.q_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 701,
+      "relative_l2": 0.00020729612151626498,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.35.self_attn.q_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 2815,
+      "relative_l2": 0.00020738813327625394,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.35.mlp.down_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 1,
+      "relative_l2": 0.00020397418120410293,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.35.mlp.down_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 701,
+      "relative_l2": 0.00020760760526172817,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "w8:model.language_model.layers.35.mlp.down_proj",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 2815,
+      "relative_l2": 0.00020759511971846223,
+      "activation_packing_verified": false
+    }
+  ],
+  "kernel_source_sha256": "48cb79fcd0243e07434f7fd67859a91be658364682f51512bd39563ec20aac65",
+  "ptx_integer_variants": 12,
+  "ptx_float_variants": 10,
+  "ptx_sha256": [
+    "541efde00677b54981f6dca63760b697ed20c4f14d2c5112ddfdbc6bf5e8e689",
+    "c48e39dab96620f389f94ab582faa1e6ac38204be88a51019f2de505c47e7d0e",
+    "8feb211a387d829fff6c6322e5551d9d5d685b2265a4ed388431a39787f83eb8",
+    "db4699b11f5e7bd8639d3dd7ec8452f30ea9a562dfbc893b33906eeb96acaea4",
+    "12bf412e1905b740d4b541f48c13fcbd2f53001ca070132f5e934c0751fdb4ae",
+    "27a7b8e7f0c1c92f3a09489fe693618de7753271313f4f57f89e411526e82aa3",
+    "d6772a438bfc5dd2c442b7b679d94119e00f519ed3df3a72598aaa8db6edc599",
+    "b73b4e09be237ab1d8931cd7f75d9bdf22f001940d77e40e0d5d122ecd52afb6",
+    "c997c870e9539c01d2c25fbc71d1ad4dc50560bf3f1c1d5dd9be07215857f29d",
+    "b7aa1b2ae40bedee37822a8f25217afebdcddbd3a62fafdef5cea10bbd7120d7",
+    "56164ec31c43561d5b5dbbd028b985a5785eb33c8ff65f60678a1e36bb967729",
+    "42378a1a98392e5dc27fad2a4b27c2393b6248237f39059f4fa5ec4cb3a165c3",
+    "de501ffe1a2222b22a042ae9fef82297e2b3286b73f87144d4de0ea9b5b8e710",
+    "cd304ce6268ef34d7159c9ed23b818be7ebc6250dbdc7096f7f84bcf964b1200",
+    "ed1b9776868f0a7b5305038723e3bd11f3d1020a25c5a7235cc9b4584413d7b6",
+    "99b8a924f4bf5cc0435d5ef388c7d94096df6a09eb4756454ab5202988f490b8",
+    "b820e66a6679200f99314179ed0a466f8bc59a849c082243ab1ea73b888e5d88",
+    "7d9f25d1cd23c638348247aeb739ffca71f80044ce6da7b1d98eeac18c51d6e0",
+    "7dd1c600ac3cffdc4e5b809fd30460a1532eeed01ddf4e840379d95790558bdf",
+    "e0b8ab52a30f543de11bb687382c9653aea1e7996d5f69208f82cfd22ddfae3d",
+    "457d8813ad2ad8f9d3a877f2d90fc30521ff2c7f453957e5a95f709d359df76e",
+    "d5066b9e09a20cfaf857c201cd4a0473230a5533a005315f6d1b79912d522ad0"
+  ],
+  "w4a4_implementation": "packed INT4 activation storage, widening to INT8 integer MMA; not native INT4 MMA",
+  "activation_recipe": "dynamic per-token symmetric maxabs; signed narrow range [-7,7]/[-127,127]",
+  "tolerance_relative_l2": 0.005,
+  "max_relative_l2": 0.0002138074196409434
+}

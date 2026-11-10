@@ -1,0 +1,832 @@
+{
+  "status": "passed",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "checks": [
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 17,
+      "relative_l2": 0.00020328247046563774,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 65,
+      "relative_l2": 0.00020492097246460617,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 17,
+      "relative_l2": 0.00020081126422155648,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 65,
+      "relative_l2": 0.00020991098426748067,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 17,
+      "relative_l2": 0.00020912667969241738,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 8,
+      "activation_bits": 16,
+      "rows": 65,
+      "relative_l2": 0.0002039872924797237,
+      "activation_packing_verified": false
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 17,
+      "relative_l2": 0.00021093327086418867,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 65,
+      "relative_l2": 0.00020549223700072616,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 17,
+      "relative_l2": 0.00020596783724613488,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 65,
+      "relative_l2": 0.0002082487044390291,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 17,
+      "relative_l2": 0.00020999622938688844,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 65,
+      "relative_l2": 0.00020455043704714626,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 17,
+      "relative_l2": 0.0002138074196409434,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 65,
+      "relative_l2": 0.0002038013335550204,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 17,
+      "relative_l2": 0.00020982814021408558,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 65,
+      "relative_l2": 0.00021317139908205718,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.0,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 17,
+      "relative_l2": 0.00021292534074746072,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "synthetic",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 65,
+      "relative_l2": 0.00020984963339287788,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.0.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.00020518130622804165,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.0.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.00020183979358989745,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.0.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 701,
+      "relative_l2": 0.00020721432520076632,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.0.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 701,
+      "relative_l2": 0.00020709137606900185,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.0.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 2815,
+      "relative_l2": 0.00020717873121611774,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.0.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 2815,
+      "relative_l2": 0.00020724194473586977,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.0.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.00021112890681251884,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.0.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.0002158752322429791,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.0.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 701,
+      "relative_l2": 0.0002077766985166818,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.0.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 701,
+      "relative_l2": 0.0002076093660434708,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.0.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 2815,
+      "relative_l2": 0.0002075305237667635,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.0.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 2815,
+      "relative_l2": 0.0002076507080346346,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.18.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.00020626865443773568,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.18.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.00021167709201108664,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.18.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 701,
+      "relative_l2": 0.00020753055287059397,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.18.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 701,
+      "relative_l2": 0.00020755597506649792,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.18.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 2815,
+      "relative_l2": 0.00020751243573613465,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.18.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 2815,
+      "relative_l2": 0.00020746713562402874,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.18.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.00020712148398160934,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.18.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.00020700333698187023,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.18.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 701,
+      "relative_l2": 0.0002078351826639846,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.18.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 701,
+      "relative_l2": 0.00020784615480806679,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.18.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 2815,
+      "relative_l2": 0.00020777914323844016,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.18.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 2815,
+      "relative_l2": 0.0002077324315905571,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.35.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.00020887066784780473,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.35.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.00020322886120993644,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.35.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 701,
+      "relative_l2": 0.00020740157924592495,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.35.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 701,
+      "relative_l2": 0.00020717633015010506,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.35.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 2815,
+      "relative_l2": 0.00020733167184516788,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.35.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 2815,
+      "relative_l2": 0.0002073209179798141,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.35.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.00020864313410129398,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.35.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.0001963395334314555,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.35.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 701,
+      "relative_l2": 0.00020773665164597332,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.35.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 701,
+      "relative_l2": 0.00020742703054565936,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.35.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 2815,
+      "relative_l2": 0.00020735908765345812,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "awq:model.language_model.layers.35.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 2815,
+      "relative_l2": 0.0002072521747322753,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.0.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.000209169986192137,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.0.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.0002055326331174001,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.0.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 701,
+      "relative_l2": 0.00020738449529744685,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.0.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 701,
+      "relative_l2": 0.00020764699729625136,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.0.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 2815,
+      "relative_l2": 0.00020750731346197426,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.0.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 2815,
+      "relative_l2": 0.00020735914586111903,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.0.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.00021444400772452354,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.0.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.00020706324721686542,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.0.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 701,
+      "relative_l2": 0.0002073505602311343,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.0.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 701,
+      "relative_l2": 0.00020709985983558,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.0.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 2815,
+      "relative_l2": 0.00020730996038764715,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.0.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 2815,
+      "relative_l2": 0.00020741974003612995,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.18.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.00020638387650251389,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.18.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.00020100219990126789,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.18.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 701,
+      "relative_l2": 0.0002073025971185416,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.18.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 701,
+      "relative_l2": 0.00020760491315741092,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.18.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 2815,
+      "relative_l2": 0.0002074096555588767,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.18.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 2815,
+      "relative_l2": 0.0002073771320283413,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.18.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.0002077435638057068,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.18.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.0002060751139651984,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.18.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 701,
+      "relative_l2": 0.00020721275359392166,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.18.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 701,
+      "relative_l2": 0.00020733253040816635,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.18.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 2815,
+      "relative_l2": 0.00020710025273729116,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.18.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 2815,
+      "relative_l2": 0.0002072409843094647,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.35.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.00020068290177732706,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.35.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.00020282805780880153,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.35.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 701,
+      "relative_l2": 0.0002074226358672604,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.35.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 701,
+      "relative_l2": 0.00020725533249787986,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.35.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 2815,
+      "relative_l2": 0.00020734388090204448,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.35.self_attn.q_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 2815,
+      "relative_l2": 0.000207306191441603,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.35.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 1,
+      "relative_l2": 0.00021115969866514206,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.35.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 1,
+      "relative_l2": 0.00021040088904555887,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.35.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 701,
+      "relative_l2": 0.00020731841505039483,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.35.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 701,
+      "relative_l2": 0.0002071970811812207,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.35.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 8,
+      "rows": 2815,
+      "relative_l2": 0.00020727414812427014,
+      "activation_packing_verified": true
+    },
+    {
+      "label": "gptq:model.language_model.layers.35.mlp.down_proj",
+      "weight_bits": 4,
+      "activation_bits": 4,
+      "rows": 2815,
+      "relative_l2": 0.00020730523101519793,
+      "activation_packing_verified": true
+    }
+  ],
+  "ptx_integer_variants": 20,
+  "ptx_float_variants": 6,
+  "ptx_sha256": [
+    "541efde00677b54981f6dca63760b697ed20c4f14d2c5112ddfdbc6bf5e8e689",
+    "c48e39dab96620f389f94ab582faa1e6ac38204be88a51019f2de505c47e7d0e",
+    "8feb211a387d829fff6c6322e5551d9d5d685b2265a4ed388431a39787f83eb8",
+    "db4699b11f5e7bd8639d3dd7ec8452f30ea9a562dfbc893b33906eeb96acaea4",
+    "12bf412e1905b740d4b541f48c13fcbd2f53001ca070132f5e934c0751fdb4ae",
+    "27a7b8e7f0c1c92f3a09489fe693618de7753271313f4f57f89e411526e82aa3",
+    "d6772a438bfc5dd2c442b7b679d94119e00f519ed3df3a72598aaa8db6edc599",
+    "b73b4e09be237ab1d8931cd7f75d9bdf22f001940d77e40e0d5d122ecd52afb6",
+    "c997c870e9539c01d2c25fbc71d1ad4dc50560bf3f1c1d5dd9be07215857f29d",
+    "b7aa1b2ae40bedee37822a8f25217afebdcddbd3a62fafdef5cea10bbd7120d7",
+    "56164ec31c43561d5b5dbbd028b985a5785eb33c8ff65f60678a1e36bb967729",
+    "42378a1a98392e5dc27fad2a4b27c2393b6248237f39059f4fa5ec4cb3a165c3",
+    "de501ffe1a2222b22a042ae9fef82297e2b3286b73f87144d4de0ea9b5b8e710",
+    "cd304ce6268ef34d7159c9ed23b818be7ebc6250dbdc7096f7f84bcf964b1200",
+    "ed1b9776868f0a7b5305038723e3bd11f3d1020a25c5a7235cc9b4584413d7b6",
+    "99b8a924f4bf5cc0435d5ef388c7d94096df6a09eb4756454ab5202988f490b8",
+    "b820e66a6679200f99314179ed0a466f8bc59a849c082243ab1ea73b888e5d88",
+    "7d9f25d1cd23c638348247aeb739ffca71f80044ce6da7b1d98eeac18c51d6e0",
+    "76701e7fdff314632bae89389fab6456781b92ee124880d7ffa2afbd9b8c1f27",
+    "5d218f5054df1bd41704b6c296cfba35188bc6cd242907245202c203cd4cb53d",
+    "6481773ba93feaaf7e8a54528043830e11329ceb51d81f0249fd0db11abf7435",
+    "152446af1b1f8168002d06b8125752371e4d2a66f58c0901b4df2f1f72fb5fac",
+    "66c1e6c0c61336349cd91a9648e7cbe417be2207ff7f2f9182577e142f2077ff",
+    "392fd76f018ed1773ce3bfe1441f9693fa416ffe80b57e8d4b76a68bec5af961",
+    "c646622af11c164274cee0ac4f33710c2976942dfb1a6bb709fe69bf69b277e9",
+    "38ddfd52272112627e27dbd5bfd8b057c15af60511de3d824bae8b1e348c85d3"
+  ],
+  "w4a4_implementation": "packed INT4 activation storage, widening to INT8 integer MMA; not native INT4 MMA",
+  "activation_recipe": "dynamic per-token symmetric maxabs; signed narrow range [-7,7]/[-127,127]",
+  "tolerance_relative_l2": 0.005,
+  "max_relative_l2": 0.0002158752322429791
+}
