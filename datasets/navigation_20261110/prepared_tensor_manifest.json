@@ -1,0 +1,226 @@
+[
+  {
+    "id": "train_515_step_0",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/00.pt",
+    "sequence_length": 701,
+    "images": 2,
+    "sha256": "5686a362f99fd3f41747d040b3542dca71267a783496769478f25c9d6945b0f3"
+  },
+  {
+    "id": "train_515_step_14",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/01.pt",
+    "sequence_length": 2815,
+    "images": 9,
+    "sha256": "cacfdba5014ce4faad294a41a0a85149d16a9150d34d00da8854a95541d1bf02"
+  },
+  {
+    "id": "train_515_step_27",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/02.pt",
+    "sequence_length": 2815,
+    "images": 9,
+    "sha256": "136d2aa12d7bfacbede1466cade25926c3e106ed9357a49badc8beaf790d349d"
+  },
+  {
+    "id": "train_515_step_41",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/03.pt",
+    "sequence_length": 2815,
+    "images": 9,
+    "sha256": "dfe0c530ed0bca57fe890e72560ce6ad9bfc2e22ec8c3898a6d4e0bf97f38992"
+  },
+  {
+    "id": "train_575_step_0",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/04.pt",
+    "sequence_length": 714,
+    "images": 2,
+    "sha256": "7217a76ee0811d0f4f9b5af5af4c53f15b7872b7fb85de30d63b5b49e9170c92"
+  },
+  {
+    "id": "train_575_step_17",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/05.pt",
+    "sequence_length": 2828,
+    "images": 9,
+    "sha256": "7f43e842ab2f2ed1db3888f44e467c75361dba9fc123842484f0f5442c9d5bda"
+  },
+  {
+    "id": "train_575_step_35",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/06.pt",
+    "sequence_length": 2828,
+    "images": 9,
+    "sha256": "8fb800f16ecb08347ae8cc42be1a7c17737c41f437d539b7886baddd7b9294a4"
+  },
+  {
+    "id": "train_575_step_52",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/07.pt",
+    "sequence_length": 2828,
+    "images": 9,
+    "sha256": "4aed24e37c67d892fa7eed3d5ce7cd97803e5f796d75973ce73f789efabfca8a"
+  },
+  {
+    "id": "train_85_step_0",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/08.pt",
+    "sequence_length": 726,
+    "images": 2,
+    "sha256": "3d8eb3a61daf178753b2ccc33e1271dfd31b8f33e629a29eb73cb2e78d014203"
+  },
+  {
+    "id": "train_85_step_17",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/09.pt",
+    "sequence_length": 2840,
+    "images": 9,
+    "sha256": "55b1741f90c8701c7df7b669e5bd25c5a02ca76d354867f29ea312430e31a14c"
+  },
+  {
+    "id": "train_85_step_34",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/10.pt",
+    "sequence_length": 2840,
+    "images": 9,
+    "sha256": "122db6fde789f9955c1f61a899b1aa83d2f706dd876c146aaac11ac1b182738f"
+  },
+  {
+    "id": "train_85_step_51",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/11.pt",
+    "sequence_length": 2840,
+    "images": 9,
+    "sha256": "8c80400fb12d9d2a19f1af48e1c889a1329d4765f312fc8c98b769ca31dcd8ee"
+  },
+  {
+    "id": "train_97_step_0",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/12.pt",
+    "sequence_length": 716,
+    "images": 2,
+    "sha256": "0aa7e0e261bc6b35469a41927e58c50d50ba1838b55a546a6774853c911119bb"
+  },
+  {
+    "id": "train_97_step_14",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/13.pt",
+    "sequence_length": 2830,
+    "images": 9,
+    "sha256": "aaf8ceb694d8a6a52a387435c8248ac41f98fcff5609f383fc5666208d0fc7c4"
+  },
+  {
+    "id": "train_97_step_27",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/14.pt",
+    "sequence_length": 2830,
+    "images": 9,
+    "sha256": "e6582b124265d625ff7e0c944fb29ab12e7f00dd14ea12b5eae781fffe8138b0"
+  },
+  {
+    "id": "train_97_step_41",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/15.pt",
+    "sequence_length": 2830,
+    "images": 9,
+    "sha256": "fd6d82e221b1e21a0ef34b1c9df37e773ae6bceea86c02000368380c27b36a20"
+  },
+  {
+    "id": "train_184_step_0",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/16.pt",
+    "sequence_length": 719,
+    "images": 2,
+    "sha256": "6a52e7c0c79dcc9a9b0b722d52a2069ec575595df1058164ec34261314388fcb"
+  },
+  {
+    "id": "train_184_step_27",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/17.pt",
+    "sequence_length": 2833,
+    "images": 9,
+    "sha256": "ffc15af555cc3138acdb57bbd577328fea339fb2f62c8824b8dede2bbc307378"
+  },
+  {
+    "id": "train_184_step_54",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/18.pt",
+    "sequence_length": 2833,
+    "images": 9,
+    "sha256": "b7752463f9d3095a7077c0a45be19777dba0a211653fc5a13d8d064a09dbd50b"
+  },
+  {
+    "id": "train_184_step_81",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/19.pt",
+    "sequence_length": 2833,
+    "images": 9,
+    "sha256": "7085a7649ace145570ee7057135853a7af8c97b1173f38b2391306d1cd61050f"
+  },
+  {
+    "id": "train_214_step_0",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/20.pt",
+    "sequence_length": 706,
+    "images": 2,
+    "sha256": "1617c8921a1e8743293da64234d518472faacd6cdef6a8b9845c4a61d9a3ef83"
+  },
+  {
+    "id": "train_214_step_20",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/21.pt",
+    "sequence_length": 2820,
+    "images": 9,
+    "sha256": "fcaae3652aa18c73b8ca4aacbca100b9f9a04007db86798d8cf4659d924024bc"
+  },
+  {
+    "id": "train_214_step_40",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/22.pt",
+    "sequence_length": 2820,
+    "images": 9,
+    "sha256": "336c2bb6e570de6d8cfde0009d7067ff2303418e093de4ac7cf9d2ae4e8f0a13"
+  },
+  {
+    "id": "train_214_step_60",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/23.pt",
+    "sequence_length": 2820,
+    "images": 9,
+    "sha256": "566edd04dd9ad8560a58bb245117f547b6f0ea70a96d88b23052e9ea381af70b"
+  },
+  {
+    "id": "train_160_step_0",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/24.pt",
+    "sequence_length": 704,
+    "images": 2,
+    "sha256": "4567b769f257fa7c330d0e60252bb533560ed03d7713a0513f5128bb1813d3c3"
+  },
+  {
+    "id": "train_160_step_13",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/25.pt",
+    "sequence_length": 2818,
+    "images": 9,
+    "sha256": "1386c1bf2880aea0273ca9739ad9a3485c5c554f52cfdbc1da1d7b97c6f3d52b"
+  },
+  {
+    "id": "train_160_step_27",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/26.pt",
+    "sequence_length": 2818,
+    "images": 9,
+    "sha256": "61ffedc602887e17ddf8c247ec458a5ec938f01e57a94c6f40014233cdae903a"
+  },
+  {
+    "id": "train_160_step_40",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/27.pt",
+    "sequence_length": 2818,
+    "images": 9,
+    "sha256": "3429c2a10066bd7eb8b1c69cab9f18d4344c279554c94f9788671e11f0a298c0"
+  },
+  {
+    "id": "train_208_step_0",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/28.pt",
+    "sequence_length": 714,
+    "images": 2,
+    "sha256": "d631229bba428d206b544a20ecec8aba6ab5287d2c27a20e16c6d5eecbf9c779"
+  },
+  {
+    "id": "train_208_step_16",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/29.pt",
+    "sequence_length": 2828,
+    "images": 9,
+    "sha256": "73c15157390ea4e0cf64e30a1acc2648410bba933418196ef7c9c673c3a7a096"
+  },
+  {
+    "id": "train_208_step_33",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/30.pt",
+    "sequence_length": 2828,
+    "images": 9,
+    "sha256": "6baf221391213b3fc52a3ce52fdf40f2637e764f7275dc69395386f724f8fdc5"
+  },
+  {
+    "id": "train_208_step_49",
+    "path": "data/calibration/navigation_awq_learning_20261104/processed/31.pt",
+    "sequence_length": 2828,
+    "images": 9,
+    "sha256": "89a7f86c798916c5adf8ad206b780daa93b15b81d4370b2d84f45bc7338d693a"
+  }
+]

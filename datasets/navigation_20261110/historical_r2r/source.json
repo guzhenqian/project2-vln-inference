@@ -1,0 +1,9 @@
+{
+  "dataset": "Room-to-Room (R2R)",
+  "split": "val_seen",
+  "source": "https://www.dropbox.com/s/8ye4gqce7v8yzdm/R2R_val_seen.json?dl=1",
+  "source_download_script": "https://github.com/peteanderson80/Matterport3DSimulator/blob/master/tasks/R2R/data/download.sh",
+  "sha256": "755633db9d5e64d5ca71d329c5046bb722781a09f0d1d501d7e8d094c83652ec",
+  "bytes": 292756,
+  "note": "Annotations only. Matterport3D scene images are not included."
+}

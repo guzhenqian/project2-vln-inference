@@ -1,0 +1,13 @@
+{
+  "dataset": "TUM RGB-D SLAM Dataset and Benchmark",
+  "sequence": "rgbd_dataset_freiburg1_desk",
+  "official_page": "https://cvg.cit.tum.de/data/datasets/rgbd-dataset/download",
+  "archive_url": "https://cvg.cit.tum.de/rgbd/dataset/freiburg1/rgbd_dataset_freiburg1_desk.tgz",
+  "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031469.595755.png",
+  "retrieved_at_utc": "2026-10-18T09:19:14.690620+00:00",
+  "sha256": "95c63778ad3a3aa4b441c7aa344cc90d5c86e296987f974b4d85df144647bac7",
+  "width": 640,
+  "height": 480,
+  "mode": "RGB",
+  "purpose": "single_image_functional_check"
+}

@@ -1,0 +1,173 @@
+{
+  "sequence": "freiburg2_pioneer_slam",
+  "official_page": "https://cvg.cit.tum.de/data/datasets/rgbd-dataset/download",
+  "source_url": "https://cvg.cit.tum.de/rgbd/dataset/freiburg2/rgbd_dataset_freiburg2_pioneer_slam-rgb.avi",
+  "retrieved_at_utc": "2026-10-20T04:30:22.461947+00:00",
+  "video_sha256": "d48a62d94108fd48445cbc12150bb2376a9d6562ba0ab3dbaec3703c7e1017c3",
+  "fps": 30.0,
+  "frame_count": 2921,
+  "encoding_note": "PNG decoded from official RGB preview AVI, not original archive RGB PNG; video times are not original sensor timestamps.",
+  "status": "candidate selection only; no model inference",
+  "frames": [
+    {
+      "frame_index": 0,
+      "video_time_s": 0.0,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_00000.png",
+      "sha256": "7175585fc8a0f33d9cda4c79176aa2005173a40f9e4ad38b7b75f1ef4ea11595",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 153,
+      "video_time_s": 5.1,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_00153.png",
+      "sha256": "354614281824264ec73add79eb05ecbf6f73c7223ed007c6fc2cae984f56d7ea",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 307,
+      "video_time_s": 10.233333333333333,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_00307.png",
+      "sha256": "dcbb9eb4503eea6d948d7d1fd931d8ae139d8d581f699c46407499762aa56fab",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 461,
+      "video_time_s": 15.366666666666667,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_00461.png",
+      "sha256": "747a147b26e42480220317a7babe2dd5c26bfebf8c143308e2f0f58c6ec60068",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 614,
+      "video_time_s": 20.466666666666665,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_00614.png",
+      "sha256": "ee499035845ab73905d82f67d3416cad3524bb0ddabbd65635329cac272d7fb6",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 768,
+      "video_time_s": 25.6,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_00768.png",
+      "sha256": "5791161873c0d2c684b8f68b2e681a383c9dea5f93cea31817ade71dbfbafd18",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 922,
+      "video_time_s": 30.733333333333334,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_00922.png",
+      "sha256": "3d7063eb714c1680886f757fa7243ae65ebcc1390a48adbe03517957c590153e",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 1075,
+      "video_time_s": 35.833333333333336,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_01075.png",
+      "sha256": "c5f538bac04748f5bef5da2796f71173c6ed8d2a5d0ab40621fe877fc8a5ed9c",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 1229,
+      "video_time_s": 40.96666666666667,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_01229.png",
+      "sha256": "4cb09cfcc4aa8ddb2b67f2e2dfdb8d8bbabd4a0743cbd35f180c6f1ca4fa4c2e",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 1383,
+      "video_time_s": 46.1,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_01383.png",
+      "sha256": "4d57c2743264d8a4127ad9d773e401a083ce1b51e0c1376defd58066a3d0ab73",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 1536,
+      "video_time_s": 51.2,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_01536.png",
+      "sha256": "d0b1a31c56411b6bc477b544e64bddb2fdd83c197e7b5d9f49722d1f236a46bb",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 1690,
+      "video_time_s": 56.333333333333336,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_01690.png",
+      "sha256": "34be334da35b152df47ea379570384b794b4d372a36a85c2d69b0d662640e0e6",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 1844,
+      "video_time_s": 61.46666666666667,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_01844.png",
+      "sha256": "177f8351dce97e8ef476a3e6e5fad0804ae979f2bcf9870bf1c120fca3ab5df2",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 1997,
+      "video_time_s": 66.56666666666666,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_01997.png",
+      "sha256": "a9f2ff2c5c5c6db8c5e47b5d3efdd04c24099087b83678fdcbf572824cac0b96",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 2151,
+      "video_time_s": 71.7,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_02151.png",
+      "sha256": "253c488b581e6a73e75116b5b5c994d38b1dcad0024502be3ebb1782450c90d5",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 2305,
+      "video_time_s": 76.83333333333333,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_02305.png",
+      "sha256": "f7f347d7bf4b86ab6f4bb9a0928f059a2621a658e18035769543b9bdc0a90f29",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 2458,
+      "video_time_s": 81.93333333333334,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_02458.png",
+      "sha256": "6acb2f418200ed96107037382a8061a6635b89a89412f052277024dc9e8e26ff",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 2612,
+      "video_time_s": 87.06666666666666,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_02612.png",
+      "sha256": "0776c343dc0ab9e885bd29e125c8fdc9e1ef975b2bdf119e9672b229050e0bdb",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 2766,
+      "video_time_s": 92.2,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_02766.png",
+      "sha256": "cfd69298dc2eae3b856f3eccbf124bb04426e72034ca34ce25224e1e1d055b9c",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "frame_index": 2920,
+      "video_time_s": 97.33333333333333,
+      "image_path": "data/tum_rgbd/navigation_candidates/pioneer_slam_02920.png",
+      "sha256": "b65740036a40be2cdfc48fc5fc225a6673a069edb1371049f07abe8d6496a4bf",
+      "width": 640,
+      "height": 480
+    }
+  ]
+}

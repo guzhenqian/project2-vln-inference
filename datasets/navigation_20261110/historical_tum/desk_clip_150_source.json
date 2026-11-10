@@ -1,0 +1,770 @@
+{
+  "purpose": "video_loading_functional_check_not_navigation_benchmark",
+  "archive_url": "https://cvg.cit.tum.de/rgbd/dataset/freiburg1/rgbd_dataset_freiburg1_desk.tgz",
+  "official_page": "https://cvg.cit.tum.de/data/datasets/rgbd-dataset/download",
+  "sequence": "rgbd_dataset_freiburg1_desk",
+  "retrieved_at_utc": "2026-10-19T03:12:47.646475+00:00",
+  "archive_rgb_count": 613,
+  "downloaded_bytes": 344011403,
+  "selection": "earliest 150 RGB timestamps in the archive",
+  "encoding": "lossy MJPG in AVI; constant FPS from median source timestamp interval",
+  "width": 640,
+  "height": 480,
+  "frame_count": 150,
+  "video_fps": 31.198,
+  "source_span_s": 4.967836141586304,
+  "max_source_gap_s": 0.03629779815673828,
+  "video_sha256": "064e17b018836fd1e59fa52150d5bc000b400385b9ab0ba7ea8d1d1aafa64863",
+  "frames": [
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031452.791720.png",
+      "timestamp": 1305031452.79172,
+      "sha256": "5dbdd530cd1165fc5cdd875613f87666c67df84645a585dd1745cb18e5982533"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031452.823674.png",
+      "timestamp": 1305031452.823674,
+      "sha256": "ae9783618d64257d1961f199ad425c06d9bbfbb863d54b0d8d418b0a280ef053"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031452.859642.png",
+      "timestamp": 1305031452.859642,
+      "sha256": "11991b2ecbb6aedc986dfdc34bf0968d84f87b8654cb6032269291061e330c88"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031452.891726.png",
+      "timestamp": 1305031452.891726,
+      "sha256": "37999bc4f3be91a46338f7ec478cb331ee8ba4c2e2214068050b626400cf68a0"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031452.923715.png",
+      "timestamp": 1305031452.923715,
+      "sha256": "115238f3964e828b80b95f5aa63d2a5cb1d9c02fb00a759f78d8fcdf3befdbe4"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031452.959701.png",
+      "timestamp": 1305031452.959701,
+      "sha256": "6a905bbc2c8e41bbab7d071b9b82fa7fb530471f2d6b5585e1468420f77a3722"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031452.991647.png",
+      "timestamp": 1305031452.991647,
+      "sha256": "71c6742030e18d797d29a00863727470d7c21e56367fc105aaf3435375c0445e"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.023650.png",
+      "timestamp": 1305031453.02365,
+      "sha256": "d4f712d34a1d0b05f95eb72eb839d3ae5037e91aeb97cb3565a230cf3a0bfe57"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.059754.png",
+      "timestamp": 1305031453.059754,
+      "sha256": "85b0060fbcc6f76b666f4ab752250fc3d9f04bbc52ccfba80c854d6209de683c"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.091704.png",
+      "timestamp": 1305031453.091704,
+      "sha256": "047301c29840c93630bcf1465046b2970a6a8487af8c377d20013ebb2ea7a866"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.123633.png",
+      "timestamp": 1305031453.123633,
+      "sha256": "15035042f59bcc9775193ed7c5ecf79518853f601b423b1a8c3100b0f3d1a15e"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.159673.png",
+      "timestamp": 1305031453.159673,
+      "sha256": "8983aea0bf73d83ba3b7040afd52a7712df731ea5e0d16b87eba2719d2b214ff"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.191726.png",
+      "timestamp": 1305031453.191726,
+      "sha256": "0cb96ce54641fbc0287c38330e35e709497bcad34d8bfb9629c0509a332f6e14"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.223689.png",
+      "timestamp": 1305031453.223689,
+      "sha256": "10ac7a62b7dbacf8602b4c4e5516b29daac1a2265688b7749a4146289da1da1b"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.259670.png",
+      "timestamp": 1305031453.25967,
+      "sha256": "fe2042516066bf590853ed75a29e78d396e3b55af263f4692bc563cdfd981a4f"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.291696.png",
+      "timestamp": 1305031453.291696,
+      "sha256": "76a46fc707c164c897a46facec415416a0df84510615ca0908f4db575039e213"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.323682.png",
+      "timestamp": 1305031453.323682,
+      "sha256": "074bcac26a4a2a63d3a9d28a2a2ec8897aaf18ad550fcb570ce0166f5b3dc568"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.359684.png",
+      "timestamp": 1305031453.359684,
+      "sha256": "0830aec024d647839505c8a3ef24ac505384c3011af9cc2d06e1babeff8c33fa"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.391690.png",
+      "timestamp": 1305031453.39169,
+      "sha256": "d5272c812dc4a8215321d0cab3f200f4b6b4102420ba3d22d0e88ba4943f6b0d"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.423683.png",
+      "timestamp": 1305031453.423683,
+      "sha256": "153c260bd88c4de7ae0b199c99c35ad1f67eacd242454fd66f5dc4cc1f439197"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.459685.png",
+      "timestamp": 1305031453.459685,
+      "sha256": "d648701b8c1454afc2b8267153b4b8b3547dac91fd17f90040ba74f7a0a6af84"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.491698.png",
+      "timestamp": 1305031453.491698,
+      "sha256": "b6c0a4883ad7cc0ab953c517f82cc4d44a870a4e2aa8e0fde9b806cfea599eb7"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.523684.png",
+      "timestamp": 1305031453.523684,
+      "sha256": "7d7d71d4f65329e8b5fab4aff6dcb220e06f5f921c94a41ee15810ad9e23f1e2"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.559753.png",
+      "timestamp": 1305031453.559753,
+      "sha256": "473afbe7679a82f1fa4f8814a4d20b2cb3f45922e04cbfc656d72067dfc02abd"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.591640.png",
+      "timestamp": 1305031453.59164,
+      "sha256": "474ce9ee8ef5515ff9bccb68d0ec30284f24b66913f1a5c257a7cc4e7ec5352d"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.627706.png",
+      "timestamp": 1305031453.627706,
+      "sha256": "86508ac1ab528bb3cd7eb825e1fa8542e1e20b2c2825a239983af9b9d783a0a6"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.659600.png",
+      "timestamp": 1305031453.6596,
+      "sha256": "ba87854c8488c8dee554548c0b7bb83122dead4d79a7b9e3e7d7e44e47edc766"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.691678.png",
+      "timestamp": 1305031453.691678,
+      "sha256": "cb6687d7576d7a09f2b396a7322b8ed26801884d4609a14fb6ae4a07bc34a590"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.727652.png",
+      "timestamp": 1305031453.727652,
+      "sha256": "24c71359d186d2ae4edc0f21023e5a1b146a3ad29e19e8150b37c179cd396ded"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.759694.png",
+      "timestamp": 1305031453.759694,
+      "sha256": "059030791ca58be243197ebfb9289020820b635a3ee6966ab87cca5e0bff063f"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.791716.png",
+      "timestamp": 1305031453.791716,
+      "sha256": "2885cac2cd00afdba5b09d03f074efaec066c2b980f7ba8e32c99d80549abe0b"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.827773.png",
+      "timestamp": 1305031453.827773,
+      "sha256": "5434f6b01d03ee53c8a7d25ff9462272396f2ed94b3b5265ab03e09deec54ea7"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.859705.png",
+      "timestamp": 1305031453.859705,
+      "sha256": "df1a6daf0b9916409a79cf7b29a5131722416261e8b81b3a674d79e3a10be524"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.891710.png",
+      "timestamp": 1305031453.89171,
+      "sha256": "8183ad6c90287235ac5e90a6d105f32c85a0e785e22bd095b8bdf9519f29bcc5"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.927723.png",
+      "timestamp": 1305031453.927723,
+      "sha256": "d2f893a882d5244b15acc2179603114e3b910f836afcb3cf841617d7530c8a59"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.959641.png",
+      "timestamp": 1305031453.959641,
+      "sha256": "f85aceaf337d717f0c8c66d741142a997478e127ace571174e123168fca9c947"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031453.991624.png",
+      "timestamp": 1305031453.991624,
+      "sha256": "0fd32e6270c428f5ca983dbc5b162369fba67f0b0ad70cdee8e7a69f7e2cf60a"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.027662.png",
+      "timestamp": 1305031454.027662,
+      "sha256": "cd9fbfb038e991ff6ddcd031e2eca4ec132dbafe91e60293f75481f5e08dc5b8"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.059654.png",
+      "timestamp": 1305031454.059654,
+      "sha256": "4d9e3496583fd0f02f41bbf5c4f917f2b908fa94075a806fb40e36252fba4745"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.091651.png",
+      "timestamp": 1305031454.091651,
+      "sha256": "e63b669eac3362a2bc23960ce2249a2955844a98b72abcfc50488dc42affdb14"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.127701.png",
+      "timestamp": 1305031454.127701,
+      "sha256": "e7d9ebe77a418b083cad3d775cc8470ad3cb3fc99d3b8485f40e6c26ba60ad96"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.159672.png",
+      "timestamp": 1305031454.159672,
+      "sha256": "673900f42c3206a25cee85806f0741b78171c1e2196d9c17d681ce090f0af29b"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.191658.png",
+      "timestamp": 1305031454.191658,
+      "sha256": "2aa81aac35b26f0b078f970807c0d933d42df691fcc0bf720d0a4adbaaf87b36"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.227671.png",
+      "timestamp": 1305031454.227671,
+      "sha256": "2a19798161ad44c8d83aa7ac4f4a9017af4fc9e8d0a24d185fa37bd36d032ac1"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.259627.png",
+      "timestamp": 1305031454.259627,
+      "sha256": "47cddc50e8cb942a6110e7b71e71a9926a7873b63f6ebc9202eb8024733c56e9"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.291639.png",
+      "timestamp": 1305031454.291639,
+      "sha256": "ef14a227bcfbd37aaf4fc55450d769ac2a50aa0f00bdf12a085a85b56b74a621"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.327699.png",
+      "timestamp": 1305031454.327699,
+      "sha256": "6a93e785dc6b6956d66f7638e3fc51d48b0ece48e1b882b07046cb772322736d"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.359636.png",
+      "timestamp": 1305031454.359636,
+      "sha256": "30fb09d57172a98559bf9704986cb47cf94b5403f083e697499cc499187c690d"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.391677.png",
+      "timestamp": 1305031454.391677,
+      "sha256": "ee9287e809be9b8dae972c58ee227be04443740e3b11a2b589d4a12160dba93b"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.427465.png",
+      "timestamp": 1305031454.427465,
+      "sha256": "69e09b4346522fd0c905a6cb23222a9bab42928daaf8218928ff9ecb46198e39"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.459913.png",
+      "timestamp": 1305031454.459913,
+      "sha256": "0e3d7dd5458823f7236b630597e059d680de28f2412ee2ac0e1494a7423734ce"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.491617.png",
+      "timestamp": 1305031454.491617,
+      "sha256": "0ede03f53ef82649b99ad6beb8b6169e4f2fab1336a1fae5861ee50bf0e417ec"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.527700.png",
+      "timestamp": 1305031454.5277,
+      "sha256": "9f9f6fc01dde1ca7c79b530331adefdf52d7880da57d8cc44526d713e41a4baa"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.559575.png",
+      "timestamp": 1305031454.559575,
+      "sha256": "5712b494d6ae54eb2a8dc8b2b54ce4956d280ed3bae89988d4600155404d1611"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.591635.png",
+      "timestamp": 1305031454.591635,
+      "sha256": "b0f5de5e3b7085d0dd4a37970b708b9a1e4fe046784b4917dfda6101387deb88"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.627580.png",
+      "timestamp": 1305031454.62758,
+      "sha256": "d1586a7cb217fe331be512edcacdb98387cbc30e4f22a51be3b791981dfbfa4e"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.659528.png",
+      "timestamp": 1305031454.659528,
+      "sha256": "65e59d24dfb92bf92dce02f3ed6f4b38f0c545c2a1eac8e281d74864a7afe103"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.691884.png",
+      "timestamp": 1305031454.691884,
+      "sha256": "f919fadf5f9ff5a94bf2b7ebb4605add0a7b1a6e4c221ab0fd748644f6c8aa73"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.727659.png",
+      "timestamp": 1305031454.727659,
+      "sha256": "407e91a191b86b6f793d2ee67d2c965107cf4723bf7eb5a48cb5bfb185a617db"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.759732.png",
+      "timestamp": 1305031454.759732,
+      "sha256": "d3820f377aae41d941223bd148d2ff2d4edd514460a4a5eeeb6f757d00d8e4a4"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.791641.png",
+      "timestamp": 1305031454.791641,
+      "sha256": "13c3e26c431ffa6e58d2f03bf3ce9f69fd52455a7215a27fece7b7f1c1601c9c"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.827570.png",
+      "timestamp": 1305031454.82757,
+      "sha256": "f7e588d88f77a8ee7f4011901bfc372373183cdb81557bbf7da3d613832e16dd"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.859620.png",
+      "timestamp": 1305031454.85962,
+      "sha256": "c821ef92cb1e010797e1cf3eaad3125310730098a3f70755869ff4afe6ce7828"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.891764.png",
+      "timestamp": 1305031454.891764,
+      "sha256": "32ed5727ef756117769941008d09ac9b642a5f9c94c37226ae7225c47e6364aa"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.927567.png",
+      "timestamp": 1305031454.927567,
+      "sha256": "f138b616227ba7e688599a9e92fa4716b399218febbb8c5484dc71d274d733bb"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.959648.png",
+      "timestamp": 1305031454.959648,
+      "sha256": "0e88be9ba2fb85b1f72d29f6f2f5f47fa2f9304dda390f535212c60a66166783"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031454.991937.png",
+      "timestamp": 1305031454.991937,
+      "sha256": "c3cce76ce8eafce46ca9aa0fd14bb66ff132f6aafdbb85e41fbb2988d8182f59"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.027799.png",
+      "timestamp": 1305031455.027799,
+      "sha256": "e5cb59d7c3e480d12452f60202a3b55fc74bd94153e7193b7ada154544298d87"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.059636.png",
+      "timestamp": 1305031455.059636,
+      "sha256": "bbbed9a2cc99d13eafb2ed191953460fc5ca4a65edc5a183c3d22ef557ab344f"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.091700.png",
+      "timestamp": 1305031455.0917,
+      "sha256": "26dde00283d2fe9685fb6002b0c0a9822f1ecdf2af7cd4d587b1628fe39c75f2"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.127695.png",
+      "timestamp": 1305031455.127695,
+      "sha256": "59f1728d659f25c573904efb8f3779c4183548458d0f165376d3dfabe1eed8a5"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.159720.png",
+      "timestamp": 1305031455.15972,
+      "sha256": "55459e4f84325e6841adc20c40b1cebb97029ebfd8ade28601a2997fb3373333"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.191655.png",
+      "timestamp": 1305031455.191655,
+      "sha256": "8677a22cc749f715c54ddbcacf9d926dbc45e7a5d5555d125db5e089e196d049"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.227581.png",
+      "timestamp": 1305031455.227581,
+      "sha256": "629190556dc8172db2c353e12b964a1fbbbc1bbfa728558d5b44350748d5cba0"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.259631.png",
+      "timestamp": 1305031455.259631,
+      "sha256": "e98b4d79c63d8a49debcf5a9056f8061597c75267c03e7b2c97e9b2b0c43e292"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.291831.png",
+      "timestamp": 1305031455.291831,
+      "sha256": "5098db6afa7c4faf13425df662a6b02b14de724c64192abeaefdac6bafa021f0"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.327766.png",
+      "timestamp": 1305031455.327766,
+      "sha256": "b38dcfa8cc8b58f15451b5a8ab8fd51f001e8f8af1dd060e3cd1c88d5c22efdd"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.359630.png",
+      "timestamp": 1305031455.35963,
+      "sha256": "f7e5328272eea940c1bd1591e3ab1b1af48ea3d0b3192d2bf949ebf3c1b2f4ba"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.391665.png",
+      "timestamp": 1305031455.391665,
+      "sha256": "edac7a8d47158da0f0e249f4d0da23c6d46fda76e6fab36cff8b4b35ce5fd46d"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.427642.png",
+      "timestamp": 1305031455.427642,
+      "sha256": "ade3acd8113d9400a684b69363372cf91faa75ce5039316c059d34ba1e9a1262"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.459589.png",
+      "timestamp": 1305031455.459589,
+      "sha256": "357216d1667c79d0def00c3fb05715eda04136e51901065162fdb40f30df5db0"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.491637.png",
+      "timestamp": 1305031455.491637,
+      "sha256": "6b96369db038df168aaf1d090eb47caf88649f5937513d9bb5ae1301b5089cbd"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.527610.png",
+      "timestamp": 1305031455.52761,
+      "sha256": "afc3144a0ed3c003815f28632c4de0845401acdb12aae326017516effebd8453"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.559669.png",
+      "timestamp": 1305031455.559669,
+      "sha256": "f6ce981517d30b184e7ad07132a10bc7544655c119704d56dbc5370ab7aa9b3c"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.591645.png",
+      "timestamp": 1305031455.591645,
+      "sha256": "03a2c1646c9177b17ed7a48d36038e5b341df17ed376abe172ff4fe610772eab"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.627617.png",
+      "timestamp": 1305031455.627617,
+      "sha256": "ab0ce9d920e4d5525972617e48a6d634329651acf8c7b07ca1eece543f918759"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.659615.png",
+      "timestamp": 1305031455.659615,
+      "sha256": "c958bad22811cc82119dd577b2aa3e0ba3788fe16304144989b3d69f46161a5e"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.691605.png",
+      "timestamp": 1305031455.691605,
+      "sha256": "3f99caab2d242a91b1502b36242751cb7b71dc11390bcde2bbe022cd12ffad41"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.727628.png",
+      "timestamp": 1305031455.727628,
+      "sha256": "7638f1255899e1d80369bbac861832499cf537074276abf4aaa99bede1d0af37"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.759683.png",
+      "timestamp": 1305031455.759683,
+      "sha256": "1970acfbf60fa2a422e5cd7615ff5d64859e5c120ce136ea19e3d57d4fca9703"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.791666.png",
+      "timestamp": 1305031455.791666,
+      "sha256": "b13bedcff9cec4c0943d1a5372c950b8382ad89e51514b42da6539ee112f13fc"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.827590.png",
+      "timestamp": 1305031455.82759,
+      "sha256": "61c99bc9f7fd998ddfc88d8e28e1e79d7e9d2e8084f100859c87efe2da9d1135"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.859526.png",
+      "timestamp": 1305031455.859526,
+      "sha256": "91b5f3db5ded969e5edf3286fd7069412ab16392f954c6e161b30fd3374ee225"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.891657.png",
+      "timestamp": 1305031455.891657,
+      "sha256": "713865c2a0ae8dd909c540fb747cd1f5eeb08d974d55d768498609d85e67af4e"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.927955.png",
+      "timestamp": 1305031455.927955,
+      "sha256": "a2789c55f24c7a3ff7d6f0615596d13f38bfeb0c84433ddde66150a114b75b12"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.959716.png",
+      "timestamp": 1305031455.959716,
+      "sha256": "d34a8e0f73d6a1c9820b65fcbe7223fe5ad6f6392bfd43f88c131f25afc78208"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031455.991694.png",
+      "timestamp": 1305031455.991694,
+      "sha256": "0742ff50d6d4fc2bd07b90bb92dfaee803ec7aca26b6dc7d3e586a483d1310a5"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.027770.png",
+      "timestamp": 1305031456.02777,
+      "sha256": "fe1514316733426c28e431737d194bfccfa3970bff291495c694f57210e15e51"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.059713.png",
+      "timestamp": 1305031456.059713,
+      "sha256": "c8552a06662284375bb54562054c5f2748c7183c4b0996cfd8829c6fd35795b1"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.091707.png",
+      "timestamp": 1305031456.091707,
+      "sha256": "0d7cb1ee8de06ed74ab0a413b4868490303fb95d781601c250511e7f202a4c5c"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.127645.png",
+      "timestamp": 1305031456.127645,
+      "sha256": "2564eae19feeb3e9482db503334dc52467b33fcb938874c4b4fe073342f2683c"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.159731.png",
+      "timestamp": 1305031456.159731,
+      "sha256": "3151c44e7d4a35bcea99dc5bb1862a2911ddf56d08f3b759c637af58ab98a707"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.191658.png",
+      "timestamp": 1305031456.191658,
+      "sha256": "e65b788596bc7e83e0da6aef67ab761292332fd3097493ede1bbba14edca3ffb"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.227678.png",
+      "timestamp": 1305031456.227678,
+      "sha256": "41189b59af0741ca6f715d806b8755ca8ba3f6afd6e438554026ef61fe561b14"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.259614.png",
+      "timestamp": 1305031456.259614,
+      "sha256": "26bb741ff5f5b0b41c53efeacdbe50c6631cb7e0effd67c08af79aa3b2aa2f5b"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.291675.png",
+      "timestamp": 1305031456.291675,
+      "sha256": "79a5e2d58485f623415cfacc34f8e9396909c9d6be4ffd375490cb699a361d95"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.327718.png",
+      "timestamp": 1305031456.327718,
+      "sha256": "5e1fa5842ecc502623c0e539a4bbf330497ff51462e476619686de22003e4e2a"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.359846.png",
+      "timestamp": 1305031456.359846,
+      "sha256": "d3f21aa8bfbb2560afe59768513243eec36547127a7c301a0d8413c4ffa5bb6f"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.391619.png",
+      "timestamp": 1305031456.391619,
+      "sha256": "79d4871e5fbbebb5f3dbb9c02753586da8b4fac56c03eec91162780cd36504da"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.427662.png",
+      "timestamp": 1305031456.427662,
+      "sha256": "dc995806a1bd04b58f599db6398176bdd4c6f3601f772a01a76b6ec076e70bc0"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.459610.png",
+      "timestamp": 1305031456.45961,
+      "sha256": "fa98f979abb2f7bd9aa92285d876e802c7ac9b2ed9b57019d91f6c6857246b36"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.491677.png",
+      "timestamp": 1305031456.491677,
+      "sha256": "63d0248fdfc92652129519f76651bba41856641f0cd194fd830e9a947d9e3eb4"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.527641.png",
+      "timestamp": 1305031456.527641,
+      "sha256": "0597dce39d6c40a49072a653ca1ba78052e2043020e1c96e507d0b13e2c7943d"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.559608.png",
+      "timestamp": 1305031456.559608,
+      "sha256": "9a2a94564d5201022d2d219775c771eccfcddea3b66e6d2b2fcfd787c914a81d"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.591651.png",
+      "timestamp": 1305031456.591651,
+      "sha256": "5978ec120e5a34c75fd4fa00f5ee8ed1f736e4a0b365eae99c1bcb90e358a603"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.627612.png",
+      "timestamp": 1305031456.627612,
+      "sha256": "4ec3792cc68484df34bb466504f8d68dfa460cf4e05bde2c60517b8d9b267df7"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.659665.png",
+      "timestamp": 1305031456.659665,
+      "sha256": "52c1827eec564f5c19703a170f34490255ee54f7c810a319262e1fbd6c4fecfd"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.691612.png",
+      "timestamp": 1305031456.691612,
+      "sha256": "16a45e02abea5e141f908fb075c5cc8482750988841dee37b01f1cdceb7bac8f"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.727693.png",
+      "timestamp": 1305031456.727693,
+      "sha256": "2583b44f066cd1a453a5d07e6d0cf0605c91c51a6572ac5fc05db7b5ee0bfedd"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.759615.png",
+      "timestamp": 1305031456.759615,
+      "sha256": "b1553e59f98ef2db652b3e9c4cbd6740ad244c61f84a62ee8f2b85388226c0c5"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.791649.png",
+      "timestamp": 1305031456.791649,
+      "sha256": "da8cb4c39a8b3322dc28431261629b48d8ebe179114ce6370a650c62feeffc98"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.827603.png",
+      "timestamp": 1305031456.827603,
+      "sha256": "78b86e8a27c6a0f6c8f19466dd4f12078b2ec55646f00a08677140b92ae3f388"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.859634.png",
+      "timestamp": 1305031456.859634,
+      "sha256": "ed6bf744f187f4af9ecb78a9441c5a4679d5f121d2a351c8b9c139aac6a77bac"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.891672.png",
+      "timestamp": 1305031456.891672,
+      "sha256": "e12c7bc8caa01af1457b55a4bf91e4d291a6d6ca3448425b1be91a9e1b02e149"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.927690.png",
+      "timestamp": 1305031456.92769,
+      "sha256": "ba7ad3a1c371c457f45b5ec344961ef1f4c5be86eccc79216cf925811a697f5b"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.959667.png",
+      "timestamp": 1305031456.959667,
+      "sha256": "bf7a11ac05702fe4402da0cec4c61b8585a0b1cd80848f6572d509e7a5492e8f"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031456.991709.png",
+      "timestamp": 1305031456.991709,
+      "sha256": "7eacca4fd0fc79f5331af82ccd0eff72a9635180acfc9b7865ed2c72fa0f4e3e"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.027648.png",
+      "timestamp": 1305031457.027648,
+      "sha256": "6174b028eabe2cc1c147a02578faca8a562434a8beb032fc64ac276b729af503"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.059621.png",
+      "timestamp": 1305031457.059621,
+      "sha256": "bcc75a9963afadc9b92dde52d26cc4330b82374c8a22039437f83471888f269a"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.091655.png",
+      "timestamp": 1305031457.091655,
+      "sha256": "41aa9b3ab08c477ec7e9de740dc30e55c8a0c6fba5ebc117d4407b22fa19a3fb"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.127632.png",
+      "timestamp": 1305031457.127632,
+      "sha256": "70ce4b7c5c365f6317b8754a15c4ad947be53af12587561e36c110e22b8c6f28"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.159693.png",
+      "timestamp": 1305031457.159693,
+      "sha256": "800bc75e7f64fb4517ab2c547026f0a0453dd54ac712e1aea165a73633f257fd"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.191735.png",
+      "timestamp": 1305031457.191735,
+      "sha256": "bd01fe60f9cd534cfe21446ff4371989cd3ba2f5d27e0be55b32ffec525f0b02"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.227543.png",
+      "timestamp": 1305031457.227543,
+      "sha256": "8b21a82f798aa0163427dbc0b8ee19edaf9a8ad5abf3f41b530ee41c14b69891"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.259691.png",
+      "timestamp": 1305031457.259691,
+      "sha256": "96d76ac4e0a01bcd9554396d783760624b2e0a8bde606e55576acb284f295109"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.291656.png",
+      "timestamp": 1305031457.291656,
+      "sha256": "a8676d5c8e2edfd049eeb7e6022e3efba5b5a337f3de0d5ac79dbd399eb4dc8d"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.327548.png",
+      "timestamp": 1305031457.327548,
+      "sha256": "ee8a1bbb2f83524b39968ff29bd813820fa18aa9197c07b36ae0b0dfc1e86fbc"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.359712.png",
+      "timestamp": 1305031457.359712,
+      "sha256": "87f1d96ae8c091b186eab1f0bb4cddf314eec12427a3be97207d0819873da65d"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.391684.png",
+      "timestamp": 1305031457.391684,
+      "sha256": "7bb5e15ab71bf0f99daa1932bcb622cd3ff673b3acf8c9588470fd9edf9a028b"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.427641.png",
+      "timestamp": 1305031457.427641,
+      "sha256": "eaccce8747b7b0e7e790d9c535bac059ea36e1f4eb05206cb903ab8dda177271"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.459614.png",
+      "timestamp": 1305031457.459614,
+      "sha256": "bef0775f637b2640f0a11ff3837bb397820ce224520a0de548253c6da346a012"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.491705.png",
+      "timestamp": 1305031457.491705,
+      "sha256": "02dd0cd875885775a1303c241c97cac15d898a102f8ca62144aa75200052077e"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.527638.png",
+      "timestamp": 1305031457.527638,
+      "sha256": "ea62f9948b7d0c36145890be407768378299ee14061c2db9da2e6f2ac4d14b93"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.559685.png",
+      "timestamp": 1305031457.559685,
+      "sha256": "baeb0b9c68c5868a883b57c4e9659c066ee94e05d7e74f067483ffa6d9f63c8b"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.591678.png",
+      "timestamp": 1305031457.591678,
+      "sha256": "7d57e98f4f9e936be6c1315407f20542477f75c46cbed7173007d6ea85131d54"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.627526.png",
+      "timestamp": 1305031457.627526,
+      "sha256": "51b825e047f8ccdf0fc05a99c1044c9f740bb4eccece19f4dfb0bb1b34bbed6b"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.659632.png",
+      "timestamp": 1305031457.659632,
+      "sha256": "9552429b0b040a43a34b883872497f03874ea3e5c61baf394cefe343c014541a"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.691570.png",
+      "timestamp": 1305031457.69157,
+      "sha256": "4a8c17f85ee7b8f20e16da91886494d16b405c2f31e9e044669fbc5503a931f0"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.727669.png",
+      "timestamp": 1305031457.727669,
+      "sha256": "2d61c3758c8b68b7564c55c0fa75b6fc8a60267bfaab1050fc745a4d3cfd074a"
+    },
+    {
+      "archive_member": "rgbd_dataset_freiburg1_desk/rgb/1305031457.759556.png",
+      "timestamp": 1305031457.759556,
+      "sha256": "7f00955f96f169b48138911301c743eb93f1d58970d6a8df89ea928a877cdabc"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "navigation_pool": 150,
+  "comparison_cases": 100,
+  "calibration_trajectories": 8,
+  "calibration_inputs": 32,
+  "evaluation_scenes": 11,
+  "calibration_scenes": 4,
+  "scene_overlap": [],
+  "files": {
+    "batches/batch_01.json": {
+      "bytes": 7870,
+      "sha256": "ec33907af98b8913de8d5972d45f50c0f689d4b46cadc66ab8c709eb123a89ac"
+    },
+    "batches/batch_02.json": {
+      "bytes": 7864,
+      "sha256": "7f59d1141c9ec61bf426002249e2e2e063a76c18d72c52448656370c4918a101"
+    },
+    "batches/batch_03.json": {
+      "bytes": 7859,
+      "sha256": "52eec271665076763da615f2424abd4e76cbfbf52f0c5b0607692fdc868230ce"
+    },
+    "calibration_inputs32.json": {
+      "bytes": 92822,
+      "sha256": "b3a3813ff923b7f810c3f06a96e155ecc795df05c70c425a5743c2686c43291d"
+    },
+    "calibration_protocol.json": {
+      "bytes": 2692,
+      "sha256": "1288233b3333562dc8c76f8e4b86aaac8a9a522e8aad0a7e7715af9dd8f5e75f"
+    },
+    "calibration_train8.json": {
+      "bytes": 15222,
+      "sha256": "6c5adca263066f8d5dab3941e3af553306fa10954306baa8f62515feb619bd6d"
+    },
+    "historical_r2r/source.json": {
+      "bytes": 441,
+      "sha256": "3768096e4e5221552fdf34c819eeddfededf19d8099dd765b4b162828fc691bd"
+    },
+    "historical_selection_inventory.json": {
+      "bytes": 15619,
+      "sha256": "5fb54ff37ec788196cc894909c3a2933bfd32da8bcea9fadb9f70a18a2bd2691"
+    },
+    "historical_tum/desk_clip_150_source.json": {
+      "bytes": 33056,
+      "sha256": "6e2bffcb9407862bf1cfd50141c20704aac3e3dfe026e138972c7e0e2b474f86"
+    },
+    "historical_tum/sample_source.json": {
+      "bytes": 591,
+      "sha256": "1a763e7a94b84c833ac17822dd485239b3347293da31c07d262b5331a788c46e"
+    },
+    "historical_tum/source_manifest.json": {
+      "bytes": 6280,
+      "sha256": "1c591e9599cb504337a585bf0ccce0e38d49fe47167f9def7f49e5afe26655af"
+    },
+    "prepared_tensor_manifest.json": {
+      "bytes": 7915,
+      "sha256": "9da3e6db46ece899bd6c9ee8492f61324dd71190302b115a26a1e6ad85d6ce43"
+    },
+    "selection.json": {
+      "bytes": 4530,
+      "sha256": "972c0ccf414a3a7af879fb8bd1e9eee6186f436558752feed294f3e44fd958ca"
+    },
+    "source.json": {
+      "bytes": 275,
+      "sha256": "29005714a7b6a2781339d321ba83d5d0db89589ab6fd81764dc57d1d7b2ec3e8"
+    },
+    "val_unseen150.json": {
+      "bytes": 300894,
+      "sha256": "533794cae635c5b74724ac896f60ae7839011b9891b6f4dd05f9f06d3a7d32bc"
+    }
+  },
+  "original_200_plan": "Historical plan had200; current completed comparison pool is first150. Do not call every planned case completed.",
+  "excluded_payloads": [
+    "Matterport3D scene archives/meshes/textures",
+    "Rendered MP3D images and calibration tensors",
+    "Model weights",
+    "Private local logs and connection files"
+  ]
+}

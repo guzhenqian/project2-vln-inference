@@ -1,0 +1,2319 @@
+{
+  "license_url": "https://kaldir.vc.in.tum.de/matterport/MP_TOS.pdf",
+  "samples": [
+    {
+      "id": "train_515_step_0",
+      "scene": "data/scene_datasets/mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "episode_id": "515",
+      "step": 0,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0000_image_00.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0000_image_01.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Exit the bedroom, enter the bathroom, wait at the toilet. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+        "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9"
+      ]
+    },
+    {
+      "id": "train_515_step_14",
+      "scene": "data/scene_datasets/mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "episode_id": "515",
+      "step": 14,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Exit the bedroom, enter the bathroom, wait at the toilet. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+        "3b72c3fdd8766b9630168af035252e75298493df0f64ddd5559f97cb2dfc0f00",
+        "26cc6f25fb3b3970502275f96b343a4ba4c79c6d7d91004ccc851e54f9d3f4a2",
+        "a6a3d29d3592271700e284b716779e341091786c8eb923b449a136692a87bca2",
+        "dc265d087e333583cb69495bb6850d1b01d06519387eaee8b93e14ddb8a8644b",
+        "c2bf057993294ea5b8d92bf96d34b77710de9e4565109b0009d99da48e7d53b9",
+        "0efd8a1f782ab3e530531260269837384ee15a95bff3e33cf0562d77fa5bebb7",
+        "8687a750843eaa268829e581df3c46119ada20b752da312811cb62fc8b0a676e",
+        "f5c3fab416476f3e18acd411d0ab9454c6e023a777e84e3f67c65d1a7dd075e2"
+      ]
+    },
+    {
+      "id": "train_515_step_27",
+      "scene": "data/scene_datasets/mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "episode_id": "515",
+      "step": 27,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0027_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0027_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0027_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0027_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0027_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0027_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0027_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0027_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0027_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Exit the bedroom, enter the bathroom, wait at the toilet. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+        "26cc6f25fb3b3970502275f96b343a4ba4c79c6d7d91004ccc851e54f9d3f4a2",
+        "dc265d087e333583cb69495bb6850d1b01d06519387eaee8b93e14ddb8a8644b",
+        "0efd8a1f782ab3e530531260269837384ee15a95bff3e33cf0562d77fa5bebb7",
+        "9502937d79b433378cc6e4973f52cadbd23264dc2950371aec955144d6aacb04",
+        "456938a394dd876f3e2930e5042a5ce386a19d43b22108d49969e9b9f56c056a",
+        "8d8bfde622180e536f091fdfaa854a64dbbb6092d6f40c6b623676555e5e018c",
+        "205f5b8077847f604291f6516af4d4f2833a644df870dc488488665029b1c028",
+        "d4825687402addd0ab65d04119cac41287c54c50db3b85af47a49682461d6ddb"
+      ]
+    },
+    {
+      "id": "train_515_step_41",
+      "scene": "data/scene_datasets/mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "episode_id": "515",
+      "step": 41,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0041_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0041_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0041_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0041_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0041_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0041_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0041_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0041_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_515/sample_0041_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Exit the bedroom, enter the bathroom, wait at the toilet. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+        "a6a3d29d3592271700e284b716779e341091786c8eb923b449a136692a87bca2",
+        "0efd8a1f782ab3e530531260269837384ee15a95bff3e33cf0562d77fa5bebb7",
+        "b5579df8fbcd4a8a6dddac13e5831fdfbdcdf48b594e5ec07a99166bda8b74b5",
+        "2236019656223caa7a81a52eb429268935932d5a95c7d4f628fd4ace60acc61b",
+        "9d8570b23ad179dc943a2993b68ce8041b63ae9a6c8ef90d4a77f7ca3e073c6d",
+        "c13dc5c57df892cdb294b074f9b809d284913b333e595e043a93ae33b4de8be8",
+        "09c57860c252136fd9bce347a6176a883745a702de0af50c6116fcf59dda53f0",
+        "4be19f12c275d73b813fb8eda378caa12cee578476364b1b8236b3080eac80a5"
+      ]
+    },
+    {
+      "id": "train_575_step_0",
+      "scene": "data/scene_datasets/mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "episode_id": "575",
+      "step": 0,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0000_image_00.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0000_image_01.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk past the dining table and take a left into the hallway. In the hallway walk into the bathroom and stop on the rug. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "5d31e1a533056d93add1ba8bc38544a97374f878af8e084dc157cd55f76ed674",
+        "5d31e1a533056d93add1ba8bc38544a97374f878af8e084dc157cd55f76ed674"
+      ]
+    },
+    {
+      "id": "train_575_step_17",
+      "scene": "data/scene_datasets/mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "episode_id": "575",
+      "step": 17,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0017_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0017_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0017_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0017_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0017_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0017_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0017_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0017_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0017_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk past the dining table and take a left into the hallway. In the hallway walk into the bathroom and stop on the rug. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "5d31e1a533056d93add1ba8bc38544a97374f878af8e084dc157cd55f76ed674",
+        "4129581322ac09f1cfc78ce74ea20ec658669c23b73dbfe38928ba3ad04a2963",
+        "73d42a53199acc3acce38b1f007d5b5a90a721b5591daa03892222181df1890b",
+        "d46825de4fe275b4211baf387def6a29ed3286c41c8efd3da9eacbb7f2a9e11c",
+        "1bd625f2d45f8e99ec3fad85f755dfe97b1096da433651483f240f8fcccd14f0",
+        "9bed44310514e95f497550bd8e5d4997fd4e0912344814210b7748de9e28d06c",
+        "2d9759e5d437bea8d2424e0faa3f16e8377ad0ff9e219228c8368fa85f2b5640",
+        "6f898dfb3582c4ec5694a29e7c7d459ea70b4aa4edaadfa613395fe8b238bf00",
+        "341d14407dc703906196ea311cce41ebd69cf87c0336bd72317790645e8c78f0"
+      ]
+    },
+    {
+      "id": "train_575_step_35",
+      "scene": "data/scene_datasets/mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "episode_id": "575",
+      "step": 35,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0035_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0035_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0035_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0035_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0035_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0035_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0035_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0035_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0035_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk past the dining table and take a left into the hallway. In the hallway walk into the bathroom and stop on the rug. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "5d31e1a533056d93add1ba8bc38544a97374f878af8e084dc157cd55f76ed674",
+        "73d42a53199acc3acce38b1f007d5b5a90a721b5591daa03892222181df1890b",
+        "8164df4e433645fe4d7acc5c9b2de454c4381c473a583a970c007865852f3031",
+        "08e7b39425aa2d237fd240651cddf5a0db16d78488a826b3da744a7e6eae10c1",
+        "1f5087a089d326b47901bcf4a65471594219443dc113a695bf8402e5e6992792",
+        "4bd56d9c80da8bfb5b1d7fa2e044b0ed59c21b7ac01ad77252c8c42dc9a07a8e",
+        "283379961ad7c4c15e7ff6b7ac4052b9615236bf72b9bb2cfd31f9761ede4b9a",
+        "b706748f0089c591e18c7e4c3e614dd5af90103fa12a87119b341787c5ec0611",
+        "b8f2b144a3cc75358e19d8408834f9fc22bdb8fecfc8044930cabfaf7e3928fa"
+      ]
+    },
+    {
+      "id": "train_575_step_52",
+      "scene": "data/scene_datasets/mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "episode_id": "575",
+      "step": 52,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0052_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0052_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0052_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0052_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0052_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0052_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0052_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0052_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_575/sample_0052_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk past the dining table and take a left into the hallway. In the hallway walk into the bathroom and stop on the rug. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "5d31e1a533056d93add1ba8bc38544a97374f878af8e084dc157cd55f76ed674",
+        "d46825de4fe275b4211baf387def6a29ed3286c41c8efd3da9eacbb7f2a9e11c",
+        "08e7b39425aa2d237fd240651cddf5a0db16d78488a826b3da744a7e6eae10c1",
+        "e77cbe4183c73afa7a5863e2e49e8c9fab7ed215824de2ccf56bb9a21b94dcdd",
+        "283379961ad7c4c15e7ff6b7ac4052b9615236bf72b9bb2cfd31f9761ede4b9a",
+        "4b4397499271513946d6aa4c5a41727d175bf13913e55a3a0707d2bec5f8ece0",
+        "912202048a33b99cdf3197134998103cdc32509e23a0043b1d08478bc3ebace6",
+        "050a4e99a294369144c5f4e32bd1b0ad0f710d419aab7b4029ee67cdb574751c",
+        "cabb44a88d827cd3b89aa221091114001978525be55c3d189dc24840d5889293"
+      ]
+    },
+    {
+      "id": "train_85_step_0",
+      "scene": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_id": "85",
+      "step": 0,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0000_image_00.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0000_image_01.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Go straight to the hallway and then turn left.  Go past the bed.  Veer to the right and go through the white door.  Stop when you're in the doorway. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "a7fc670530276455b5120b4a5cfb45756a8db90462d7748a57186904448060e0",
+        "a7fc670530276455b5120b4a5cfb45756a8db90462d7748a57186904448060e0"
+      ]
+    },
+    {
+      "id": "train_85_step_17",
+      "scene": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_id": "85",
+      "step": 17,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0017_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0017_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0017_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0017_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0017_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0017_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0017_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0017_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0017_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Go straight to the hallway and then turn left.  Go past the bed.  Veer to the right and go through the white door.  Stop when you're in the doorway. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "a7fc670530276455b5120b4a5cfb45756a8db90462d7748a57186904448060e0",
+        "f50c339e13bf564e5ed5255ec36b73eec482dc19a84e1b0ab56542205c833eaf",
+        "440b2a620b3e2fa464abb975ef6ecfa14b23bb8a19fb82e5ed60882c18b794e2",
+        "ce71a8089ab40b7f3465be6cd5d1b5e6cff449f8ba067f5d5c099f7fb125dea2",
+        "d8418d2de3ed87a5e801ef9763c42262d6852d43a0cc99b7da1ab1d1bead7bcc",
+        "4e0ce09eec28e1990df278572c8963ad12aabfbfa8b6645fdbe2fa267407a6a0",
+        "023c0391947ad735e40ddd74beb1097043d5214c6b13e2f8602b0573e6160adb",
+        "090e8c40243b3c168abebc3fff0d412535664dc77755246b43ee32f9cb34919f",
+        "f479a339b48698e637961008d354724b079809bab0a3c2fe25c750cd20cfc2c2"
+      ]
+    },
+    {
+      "id": "train_85_step_34",
+      "scene": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_id": "85",
+      "step": 34,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0034_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0034_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0034_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0034_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0034_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0034_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0034_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0034_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0034_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Go straight to the hallway and then turn left.  Go past the bed.  Veer to the right and go through the white door.  Stop when you're in the doorway. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "a7fc670530276455b5120b4a5cfb45756a8db90462d7748a57186904448060e0",
+        "440b2a620b3e2fa464abb975ef6ecfa14b23bb8a19fb82e5ed60882c18b794e2",
+        "d8418d2de3ed87a5e801ef9763c42262d6852d43a0cc99b7da1ab1d1bead7bcc",
+        "023c0391947ad735e40ddd74beb1097043d5214c6b13e2f8602b0573e6160adb",
+        "669e2b9dc7ecea90c84200edc87a0a8917e045e5dfe9c2099287085ae46265db",
+        "822ef2ca5961b8723917bbeb6082e4bb5109a213b14c39f4eeb1c98fa50d160b",
+        "096295195ac8de5de1c198613f6c7efce57a2033bbcc97ad6828a0e6d4eb6d19",
+        "6edb9ff35bc74a7010c491d0d9e9d524dac33c9e709f349d33c02f529675e56a",
+        "0965323f1e3c6ba1319083c7a4533e6a28747996bbeb3320dbdc9e878c26eb39"
+      ]
+    },
+    {
+      "id": "train_85_step_51",
+      "scene": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_id": "85",
+      "step": 51,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0051_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0051_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0051_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0051_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0051_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0051_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0051_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0051_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_85/sample_0051_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Go straight to the hallway and then turn left.  Go past the bed.  Veer to the right and go through the white door.  Stop when you're in the doorway. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "a7fc670530276455b5120b4a5cfb45756a8db90462d7748a57186904448060e0",
+        "ce71a8089ab40b7f3465be6cd5d1b5e6cff449f8ba067f5d5c099f7fb125dea2",
+        "023c0391947ad735e40ddd74beb1097043d5214c6b13e2f8602b0573e6160adb",
+        "2ae44b8d3e0a9211f33602f673d1889042692298f60f5a65aaf411b3502731e5",
+        "6e66635113634ca8618e1be06be923eeb247d98c3ac9ed5bfd247369f6fa2120",
+        "9aba67e8021ba8a92eb922e1f8040eff1f1b95a7f4c33f249262b99c1b808cf5",
+        "e14ebe923fbf763da26d71a7d24eb0ffdf5165622402d038afc02abd5cdb3eed",
+        "58ecb4341fc36774ad275af87576fa4bd65fdc7cdef3c7bd2f21ac8e93706826",
+        "aed1f0281cc3ce521df7e25ec3391c9448c1e1b7386e2bce82e5d3036a3ded4b"
+      ]
+    },
+    {
+      "id": "train_97_step_0",
+      "scene": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_id": "97",
+      "step": 0,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0000_image_00.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0000_image_01.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Go straight down the hall and up the stairs. When you reach the door to the gym, go left into the gym and  stop. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "f90ae004cba5d4927569e8e15a9b6e7ea50e6a7056aca64cc1ba7cce1f36e239",
+        "f90ae004cba5d4927569e8e15a9b6e7ea50e6a7056aca64cc1ba7cce1f36e239"
+      ]
+    },
+    {
+      "id": "train_97_step_14",
+      "scene": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_id": "97",
+      "step": 14,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0014_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0014_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0014_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0014_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0014_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0014_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0014_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0014_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0014_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Go straight down the hall and up the stairs. When you reach the door to the gym, go left into the gym and  stop. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "f90ae004cba5d4927569e8e15a9b6e7ea50e6a7056aca64cc1ba7cce1f36e239",
+        "616a7125366f139d2bdd7504e88dc1dcd92a405578f1b804a16be8661021190e",
+        "bfa45529a56b73d1c10856b200ef803ae1e83626186437457a26a3eca29fb6a8",
+        "15a85494cf6fdb18cde4f0dd3937b218e66c8d5e148427d5cec3ee96922ca6f8",
+        "49574228a299fb10322d16a9d5eea311160ed5599f170a980ae04966206d9f39",
+        "95db4e31acacb7f8cc052ac3ec8bf91d4b816d07eb7d0ce183dd1125785cd14a",
+        "3aadb4a15a1ac07cd731aad0c5d0680b57ed285e010a70463f6284b00aa22383",
+        "b3132855f4a497b735d8d539bd872a07279303845b24732d0b1d967d9b571044",
+        "d1c0130eb49d2dd4561d5fbe80e43535849e8ab7c30d906d41ed188417a49abd"
+      ]
+    },
+    {
+      "id": "train_97_step_27",
+      "scene": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_id": "97",
+      "step": 27,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0027_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0027_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0027_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0027_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0027_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0027_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0027_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0027_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0027_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Go straight down the hall and up the stairs. When you reach the door to the gym, go left into the gym and  stop. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "f90ae004cba5d4927569e8e15a9b6e7ea50e6a7056aca64cc1ba7cce1f36e239",
+        "bfa45529a56b73d1c10856b200ef803ae1e83626186437457a26a3eca29fb6a8",
+        "49574228a299fb10322d16a9d5eea311160ed5599f170a980ae04966206d9f39",
+        "3aadb4a15a1ac07cd731aad0c5d0680b57ed285e010a70463f6284b00aa22383",
+        "466367c23a68f47b130a251cf2cb419bd1a6d92f1fd5bdcb8e7cd5b5debe8e84",
+        "ebed86f4a9e21265368ed4bbf0e405e3565b2ffb464bceb1bc069705fe4a3466",
+        "01a5464c26d20413748b90dae1097e768e308eb7e8538474595c47081434067f",
+        "41f702888661048d71889ddefb0bff8b58a73033d04a1d225de214c7a49968ed",
+        "50ee0fdfe09ab4e8164496041bb0df494bca1c49384aacba5bb056e5a1b6aa5f"
+      ]
+    },
+    {
+      "id": "train_97_step_41",
+      "scene": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "episode_id": "97",
+      "step": 41,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0041_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0041_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0041_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0041_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0041_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0041_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0041_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0041_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_97/sample_0041_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Go straight down the hall and up the stairs. When you reach the door to the gym, go left into the gym and  stop. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "f90ae004cba5d4927569e8e15a9b6e7ea50e6a7056aca64cc1ba7cce1f36e239",
+        "15a85494cf6fdb18cde4f0dd3937b218e66c8d5e148427d5cec3ee96922ca6f8",
+        "3aadb4a15a1ac07cd731aad0c5d0680b57ed285e010a70463f6284b00aa22383",
+        "79d6e0615571f736480b8b3feeddc79beefdce82ec9aea6c3a1a049f77de6fbb",
+        "3804889effc1d573b5bccb7cf1632106017a8bec1a25f1dfe653ff22445764da",
+        "fa784b5ef14fc40d2e2c3fd5b884155de6f8450241084b593c3b610153caaf78",
+        "2ce0a50e887abbdd479737f5ae7c4fa7156856c5145d21fe99e8958e9d56b580",
+        "ad6c60c804c62f8109f853d49f14ff3f0134c40e0830e435228ff389a7de336a",
+        "38a076b572c31e293cd76c10d31fb732824ae2f04fbf60e1e923a69c06c43ec7"
+      ]
+    },
+    {
+      "id": "train_184_step_0",
+      "scene": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "episode_id": "184",
+      "step": 0,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0000_image_00.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0000_image_01.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Move down the stairs and then turn left. Move forward and then immediately turn left into the living room. Continue forward and stop in front of the piano. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "5100f57d20d2623394f7bd0715a577ef2d5c29a26ae79e3264c6142563a1555b",
+        "5100f57d20d2623394f7bd0715a577ef2d5c29a26ae79e3264c6142563a1555b"
+      ]
+    },
+    {
+      "id": "train_184_step_27",
+      "scene": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "episode_id": "184",
+      "step": 27,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0027_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0027_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0027_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0027_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0027_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0027_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0027_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0027_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0027_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Move down the stairs and then turn left. Move forward and then immediately turn left into the living room. Continue forward and stop in front of the piano. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "5100f57d20d2623394f7bd0715a577ef2d5c29a26ae79e3264c6142563a1555b",
+        "c7c2f82958c4c3bcde5fef793e4bccbc3dcea3eb24a5a0788d68f283966b3d6c",
+        "b2cbec406e4f9e00c52e470cd7314b9331b1b0378fb426c17dba1a1fb323394c",
+        "bbe0033c2a8935d070d0e80ca9c3209692a0cbeccadd1ca0868dc0ed485831d0",
+        "4aa0bdc7e335951daae88f069a7e4bb7b6ae49d8c88813c6a86b19cb48061f4a",
+        "08d4dd751e99d950fe9e71951cbe61a165cfb35835829b9a2a30dec6e0ccb417",
+        "b4e41c47e053f995df2790e85d55110e748522ff1e9e6947017272c981ce1d93",
+        "05f9d0deeab4179eb9b12b59bf72df69655ab1a8f4a79d07d9bc4b377e02b094",
+        "af60d29f1d7e5828061a1ac5369b6661431f47a14b9deb37841701394b6630b5"
+      ]
+    },
+    {
+      "id": "train_184_step_54",
+      "scene": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "episode_id": "184",
+      "step": 54,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0054_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0054_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0054_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0054_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0054_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0054_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0054_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0054_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0054_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Move down the stairs and then turn left. Move forward and then immediately turn left into the living room. Continue forward and stop in front of the piano. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "5100f57d20d2623394f7bd0715a577ef2d5c29a26ae79e3264c6142563a1555b",
+        "99eab1733d56dba95e7ec48dc9a25e075898b4f86a1abb6acb3299ee476c22c2",
+        "4aa0bdc7e335951daae88f069a7e4bb7b6ae49d8c88813c6a86b19cb48061f4a",
+        "f13ce656dd8b6ff9e4f11e8e04ca958223f44e2c76e06ce428d3b9f68dd7077f",
+        "54502853694e63da19c396911196003c7cc8544f7eaa8213e92d0eea422188cb",
+        "a9aa8c9b8dc60cbd8dcbfe247a33007f47df1e40f8b906d80fd0659bf85dd3ab",
+        "30265fd124ecc093dfc7653435ae67d2b320c5f6140904657d0ffb31bb432c64",
+        "5ff1f6084584cd7dbad9c01719b2d0be1e3e57b9833bf4b122a67750dc40934f",
+        "3f73d9278bfb886048766b4de0ccd31626cd5f26addf634738d3f5cdf783bbc1"
+      ]
+    },
+    {
+      "id": "train_184_step_81",
+      "scene": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "episode_id": "184",
+      "step": 81,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0081_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0081_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0081_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0081_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0081_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0081_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0081_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0081_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_184/sample_0081_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Move down the stairs and then turn left. Move forward and then immediately turn left into the living room. Continue forward and stop in front of the piano. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "5100f57d20d2623394f7bd0715a577ef2d5c29a26ae79e3264c6142563a1555b",
+        "bbe0033c2a8935d070d0e80ca9c3209692a0cbeccadd1ca0868dc0ed485831d0",
+        "f13ce656dd8b6ff9e4f11e8e04ca958223f44e2c76e06ce428d3b9f68dd7077f",
+        "4945ebf72f29c0196bf2fe2575967e3033100061e784f92eec6a850d0fd33138",
+        "38ee7e2d3407cdfd5dd873c166960df42d398105beeff6fc74b15d9cb85a021c",
+        "316789ac5ff06492790472ad6e1208c643378526ee5ed180d21d68a76640c743",
+        "6bc3f8281a4ebc8fa16c49216f8bab0aa495b81a5d1f07a337ec45b53e265322",
+        "aeb17c0ceb8bb76e22741d8aa490febd4b12e3d7a9fa30dc243c7c85905b11fd",
+        "05d247c730f02f360f700a145add770ca965888496f0b0e784a9698e1adf588b"
+      ]
+    },
+    {
+      "id": "train_214_step_0",
+      "scene": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "episode_id": "214",
+      "step": 0,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0000_image_00.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0000_image_01.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk to the end of the hall, into the bedroom and wait by the kitchenette. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "dc331e0ab8b3db405eda79e11eb6550d838768064de2c55d241628c0e23ec473",
+        "dc331e0ab8b3db405eda79e11eb6550d838768064de2c55d241628c0e23ec473"
+      ]
+    },
+    {
+      "id": "train_214_step_20",
+      "scene": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "episode_id": "214",
+      "step": 20,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0020_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0020_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0020_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0020_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0020_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0020_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0020_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0020_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0020_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk to the end of the hall, into the bedroom and wait by the kitchenette. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "dc331e0ab8b3db405eda79e11eb6550d838768064de2c55d241628c0e23ec473",
+        "d7de1257e28e2ac4052459cd8f8cda10c02190c797621823861ca16afb3a0526",
+        "5998d987050228d1d94d2107077f34582fa04969647a76ca509924ac2243a597",
+        "d57b47e7fd75952b51a7b8b670bc9212ae3576dd255c1cecf6642d03066b8bbe",
+        "908e6d5dac6a3c16aed0174de2991050eb0c829699da57699cd1d23221ec5e29",
+        "f236ab92a8e3900fb8fc67ecb7276950165560ea49b999e8a5a0d7dc13c8c370",
+        "ad187472b15c6b9e939f6f35be69d78e348d23892be4c0984ed17b1c827e042f",
+        "55629ebbd13cd937991398d42e284c08777ee7748e7945210331e4f24b6a73f0",
+        "d8256e1c2823104a0e0cd31b90ea8642930ce00b9b41329a926d55ba9268649e"
+      ]
+    },
+    {
+      "id": "train_214_step_40",
+      "scene": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "episode_id": "214",
+      "step": 40,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0040_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0040_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0040_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0040_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0040_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0040_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0040_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0040_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0040_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk to the end of the hall, into the bedroom and wait by the kitchenette. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "dc331e0ab8b3db405eda79e11eb6550d838768064de2c55d241628c0e23ec473",
+        "034a20702dee9773e78db38c1bb102e3eeb3c483b99484a36744c2ecf06a3ba5",
+        "908e6d5dac6a3c16aed0174de2991050eb0c829699da57699cd1d23221ec5e29",
+        "2336f2c563de0a8038d6e4ab1ff69c50997a91773e555c3098337b4f7c971bad",
+        "1b36eb2e6ac2bb572e5919f9951905cdb78dc0fdf0bbf48c637e63edd8383216",
+        "57fa809140b33f2dd2e583982aad7c10bd9808d6dc50645be192c9ee0b64eeb3",
+        "d7fb0500f5ab178af2925d4e8b95b71a9de887b87052890f0621342e909f59ba",
+        "161bd46ea5e2f151c528352c157d5d7b0c280bda37dd9cae0994aff79dc6d364",
+        "8666fc4bee957fa30833bb7d62ccc1d1bae8b325206f8a56455cdc1b80c7d2d4"
+      ]
+    },
+    {
+      "id": "train_214_step_60",
+      "scene": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "episode_id": "214",
+      "step": 60,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0060_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0060_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0060_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0060_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0060_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0060_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0060_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0060_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_214/sample_0060_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk to the end of the hall, into the bedroom and wait by the kitchenette. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "dc331e0ab8b3db405eda79e11eb6550d838768064de2c55d241628c0e23ec473",
+        "d57b47e7fd75952b51a7b8b670bc9212ae3576dd255c1cecf6642d03066b8bbe",
+        "2336f2c563de0a8038d6e4ab1ff69c50997a91773e555c3098337b4f7c971bad",
+        "bf2fd93b136014ecec0948c0077e3e894cb761caabfcaf5e4b113a3207918cc7",
+        "eccaa3366ed930215aecedec0bf3ede2ec63661e8623902f80ba178ac4e5f9db",
+        "92b185fbdd4be8062b4df21dd672c41ee859dfcc9d105aa215bc884c18ce3b3a",
+        "b99e116c81ecb0fc5cd52099b4d7d6e36d69a738db3f3f2ba68adec9d721df5b",
+        "1bcd2dbc5806fb9aec59e0a27098773265162ea4ecddc960430d8a6696f0d7dd",
+        "f483e94bb9d54a9519e9a9efc94cab7d25120a7a45a6faf19c3308bbac76b416"
+      ]
+    },
+    {
+      "id": "train_160_step_0",
+      "scene": "data/scene_datasets/mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "episode_id": "160",
+      "step": 0,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0000_image_00.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0000_image_01.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk out of the room walk into the bathroom on the left and wait there. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "a7fc4cbdced30b43485ab314da4ad986bac69cacdd28f284fddbc991bd35b931",
+        "a7fc4cbdced30b43485ab314da4ad986bac69cacdd28f284fddbc991bd35b931"
+      ]
+    },
+    {
+      "id": "train_160_step_13",
+      "scene": "data/scene_datasets/mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "episode_id": "160",
+      "step": 13,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0013_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0013_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0013_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0013_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0013_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0013_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0013_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0013_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0013_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk out of the room walk into the bathroom on the left and wait there. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "a7fc4cbdced30b43485ab314da4ad986bac69cacdd28f284fddbc991bd35b931",
+        "1cf9acafb09fd06baae2961360697ac89c1e8fb029aa356c871218f41d54db7b",
+        "9c01380ade937c9af4352d3d3040adf8054f541b1d62b2208fac06281d0e2c0d",
+        "fc668632089c3852add8d9f7b20f2aad1f33d9a8c09e33081c2af0c31206bb14",
+        "560525b5581bfa9c9135e659ae6647f8fde6ec795395d4268c0dc65972e7f8ca",
+        "aebfe546c7aefe0d3f49b8ee3f84068d266a7e4b9863c13e20ef82b09dbde73f",
+        "0f45df91102871ccc14ab499835e3c3fcf343c3581517f171396e7a67afd06b2",
+        "1cb9e8f348e48e9b8bfb705d805421b97b4b8fa08d908b01c48f0ea77aacfa1a",
+        "7d6c1901ca84d63b98a48438db647d82617683819999240130756d8d72986abb"
+      ]
+    },
+    {
+      "id": "train_160_step_27",
+      "scene": "data/scene_datasets/mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "episode_id": "160",
+      "step": 27,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0027_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0027_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0027_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0027_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0027_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0027_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0027_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0027_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0027_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk out of the room walk into the bathroom on the left and wait there. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "a7fc4cbdced30b43485ab314da4ad986bac69cacdd28f284fddbc991bd35b931",
+        "f87badc38ffb3a5eac4bc6faf9faf6bce0a4670b137ba7279879c645e7118f74",
+        "560525b5581bfa9c9135e659ae6647f8fde6ec795395d4268c0dc65972e7f8ca",
+        "bf7ca42b16f5a0587435dd91d6b50cb472cd65fa112cde35c0b6ed8b93e065f1",
+        "e6654a0d0f596b5a5f1cf1a5fb66669f78254f9c979905716510bf461ca69e30",
+        "4a17b7727ff92b7d95eb153d75ee41e3bd7580753277d51867e109b703b5c1e0",
+        "5a0a0f4f0e2a3d6eba0bb02260c4fd4f2a4e70859d50a1294881fd2bb5010a03",
+        "569e07cf8ff3e5cb41025d693da4adb25f3634b84dd76a82a432dd60c327681d",
+        "fb98943c38dac8c81ef3e995f4751a14a37cb469b84235f0a7fa2a476a70cea7"
+      ]
+    },
+    {
+      "id": "train_160_step_40",
+      "scene": "data/scene_datasets/mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "episode_id": "160",
+      "step": 40,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0040_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0040_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0040_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0040_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0040_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0040_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0040_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0040_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_160/sample_0040_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk out of the room walk into the bathroom on the left and wait there. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "a7fc4cbdced30b43485ab314da4ad986bac69cacdd28f284fddbc991bd35b931",
+        "aad3586113111f9e6eee108bf8da5d4c2b29def43717f9b158ce6a618ec8e7e1",
+        "bf7ca42b16f5a0587435dd91d6b50cb472cd65fa112cde35c0b6ed8b93e065f1",
+        "954db756454bd59771f9be7939037c06ad9ee4ce9442e95842e76030669d865f",
+        "5a0a0f4f0e2a3d6eba0bb02260c4fd4f2a4e70859d50a1294881fd2bb5010a03",
+        "c3cf0e58be27be5edd557ab587ab954696f8367fb813b0b386897d917d0fb2cf",
+        "53102c9cc9f9670c46c88c75873b6e47e896d15f425dcacbc147674bf4c2c66a",
+        "d76b4d539526dd6b0bda62e988da9fde8c98fce84947e2dff37897bb347359ab",
+        "240b77a17d75562ccd2b7a649d9498514bd78ae7827f8690092fd65f276ad669"
+      ]
+    },
+    {
+      "id": "train_208_step_0",
+      "scene": "data/scene_datasets/mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "episode_id": "208",
+      "step": 0,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0000_image_00.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0000_image_01.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk through the kitchen and take a left. Enter the door second on the left. Stop inside the room next to the door. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "c6e0682fb492df336ca6008fcbab5392bb20a9793dd7b976589b1c1162621e5f",
+        "c6e0682fb492df336ca6008fcbab5392bb20a9793dd7b976589b1c1162621e5f"
+      ]
+    },
+    {
+      "id": "train_208_step_16",
+      "scene": "data/scene_datasets/mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "episode_id": "208",
+      "step": 16,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0016_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0016_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0016_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0016_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0016_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0016_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0016_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0016_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0016_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk through the kitchen and take a left. Enter the door second on the left. Stop inside the room next to the door. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "c6e0682fb492df336ca6008fcbab5392bb20a9793dd7b976589b1c1162621e5f",
+        "466703d810bbd1d633ae8348ba9b2b2eb26b6ba39d234b520168a2652d18b134",
+        "9504d0f91d5692475ce0a4be81c327753ddc09a3be52b658108bed5923129687",
+        "1196a27730d04869c269c0e9f29f4325e70497550a8854a4c05558ba44ba91ab",
+        "f827bf4a32c85721201a2c8c81081f40722b404dfd70f3f597ca0c6033987822",
+        "c3f05bcee2dbe8407bcacd965f6010afc93f1322f32f33aae191233f54bcc8fd",
+        "c096a57d264d8c419e44b639bcc17d86b9ac8aba90e568d58ba6229767a2a3e4",
+        "8dc579cf2cafa425742b80175192c5106ddde2ced0674b6bdd9634bc8c3998d1",
+        "70467369dcffafa6e5811b63c5d532762dcc0d3b4515137526e91d32826c5c5e"
+      ]
+    },
+    {
+      "id": "train_208_step_33",
+      "scene": "data/scene_datasets/mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "episode_id": "208",
+      "step": 33,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0033_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0033_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0033_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0033_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0033_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0033_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0033_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0033_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0033_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk through the kitchen and take a left. Enter the door second on the left. Stop inside the room next to the door. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "c6e0682fb492df336ca6008fcbab5392bb20a9793dd7b976589b1c1162621e5f",
+        "f2ec248d938cb8a650e35c54cf50757619725136946189e6f7b453b6a4d5d579",
+        "f827bf4a32c85721201a2c8c81081f40722b404dfd70f3f597ca0c6033987822",
+        "193a7232dcdc66b95d5526a344b6d6a9326eabb73c6bf6d42c2ba4e9e5702514",
+        "4ce377bc2d3afaeced4ef1ed6998c5a618d0b093352b25b202fc1616f1b1199a",
+        "25afeb86f4e8968c43765941496cf67bd35da4b8915ec0f565528bcc0a27d7da",
+        "ebe49d2c17df122166ed214ffd8579ab57a653a825df803fb54a6973d8abeb1b",
+        "187b79ede1d776fdd37d6699a51dab6a262ad7c9389341e2858e412a4e708600",
+        "417a2e3a19281515473fbe93ede51defd193becda7251cf793cff5d37e10ed29"
+      ]
+    },
+    {
+      "id": "train_208_step_49",
+      "scene": "data/scene_datasets/mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "episode_id": "208",
+      "step": 49,
+      "messages": [
+        {
+          "role": "system",
+          "content": [
+            {
+              "type": "text",
+              "text": "You are a visual language navigation model."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0049_image_00.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0049_image_01.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0049_image_02.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0049_image_03.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0049_image_04.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0049_image_05.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0049_image_06.jpg"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0049_image_07.jpg"
+            },
+            {
+              "type": "text",
+              "text": "and an image of the current observation"
+            },
+            {
+              "type": "image",
+              "image": "data/calibration/navigation_awq_v1/episode_208/sample_0049_image_08.jpg"
+            },
+            {
+              "type": "text",
+              "text": " Your assigned task is: 'Walk through the kitchen and take a left. Enter the door second on the left. Stop inside the room next to the door. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+            }
+          ]
+        }
+      ],
+      "image_sha256": [
+        "c6e0682fb492df336ca6008fcbab5392bb20a9793dd7b976589b1c1162621e5f",
+        "04d9ceeabbac1da7d19b59102c6efbeb878c21f3d1700a9c6c7ec75c2d6f829b",
+        "193a7232dcdc66b95d5526a344b6d6a9326eabb73c6bf6d42c2ba4e9e5702514",
+        "36b5df0e09226593f9e11c9e85786bd92f8f4d081801acf7570ca8649bc25053",
+        "ebe49d2c17df122166ed214ffd8579ab57a653a825df803fb54a6973d8abeb1b",
+        "44135ec8370971bfcaad4771e60f0c77835d30bd28b6ba69fb4ff6d5d02dc8ff",
+        "9991603811b8a668edc2550044aff811957d8667ef8c0fda9cefbdbe7117bd13",
+        "799809c326e73db4aa1388a8fad09d1aa20a1475d9aa6472e1097c7d635a2bf5",
+        "0d1d8b936b5ba0338c80c18e2d4bbc4cec5502395e8eb8235c5467d4b6281688"
+      ]
+    }
+  ],
+  "source_samples_sha256": "e5386370a0997453d8b27211b66f22897a2e31ad2e874d5f1e5cde0782ae87cc",
+  "image_payloads": "Not mirrored; regenerate from authorized MP3D scenes using capture script"
+}
