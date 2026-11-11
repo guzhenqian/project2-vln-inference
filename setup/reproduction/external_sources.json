@@ -33,13 +33,13 @@
     {
       "path": "tmp/habitat_setup/navigation_source_review/simplevln_model_rl.json",
       "repository_source": "setup/reproduction/simplevln_model_rl.json",
-      "sha256": "a228b821e2eb89ddd2f467b2c39846ca3638deb78929dfcec4dc78e31be9689b",
+      "sha256": "648fd474da1c0e6cc24316530427d08f4cf249ccfc7d388ab87026127be04cdd",
       "group": "runtime"
     },
     {
       "path": "tmp/habitat_setup/navigation_source_review/simplevln_model_sft.json",
       "repository_source": "setup/reproduction/simplevln_model_sft.json",
-      "sha256": "c4188f283edb69303ba74aa080201139bc390159ba2ee5f88664386df8c50e52",
+      "sha256": "900585a4cd1f3fbb26a00d68a715b8514c47326826a1a7e306c02da2572fbd21",
       "group": "runtime"
     }
   ]

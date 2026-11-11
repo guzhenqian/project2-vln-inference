@@ -274,7 +274,7 @@
     "setup/originals/vln_init.py": "ca94f9a44fb8eead7f24f0ac4a9052aae2826b60fd2b4e027da2ac111cdbda49",
     "setup/originals/vln_webui.py": "6adcf245473cc35c6f10d17c6516d1c7854e63d7d7c9792b591464438f052f9c",
     "setup/reproduction/delivered_sources.json": "4e31e2463922c6acc16922b35cd0a412c7432e3156e796405f5e044be53951d3",
-    "setup/reproduction/external_sources.json": "c397c9d525cc609b1e48ba098a55870a31d3f224f013adb318b4a6f39b7379b9",
+    "setup/reproduction/external_sources.json": "392800acbc5db037364bdd7a9efbddf1d544a68b35ea0d5a700026819e6996da",
     "setup/reproduction/frozen_inputs.json": "f0e8011831e0edcb944e1c4ee75f8a63fb008773208ae9067b6acad281351ae5",
     "setup/reproduction/frozen_inputs/navigation_awq_calibration_v1/manifest.json": "9699f1c91384618e2de48f61deb7e1d81616c189431726a40f7d18cefeedd613",
     "setup/reproduction/frozen_inputs/navigation_stage2_20261109/manifest.json": "cc41253bb6b1f9cb6177b1f6c2fb85d39011592d89a9fc37cb49f446c70f5471",
@@ -286,8 +286,8 @@
     "setup/reproduction/frozen_inputs/overnight200_fp16_20261031/batch_03.json": "f0ac1d1879af1ab510fcec33f67ee801e39422e53b6265bfc4a35b744a1352fb",
     "setup/reproduction/frozen_inputs/overnight200_fp16_20261031/batch_04.json": "fb3b39dcbde99c5c3ecc971956a1120137fc9676bc21c9093d7a294b5305d66b",
     "setup/reproduction/frozen_inputs/overnight200_fp16_20261031/manifest.json": "c79560d53e33d5c782e83eec49e9736ce992e196f206fd492c3204fc2438039e",
-    "setup/reproduction/simplevln_model_rl.json": "a228b821e2eb89ddd2f467b2c39846ca3638deb78929dfcec4dc78e31be9689b",
-    "setup/reproduction/simplevln_model_sft.json": "c4188f283edb69303ba74aa080201139bc390159ba2ee5f88664386df8c50e52",
+    "setup/reproduction/simplevln_model_rl.json": "648fd474da1c0e6cc24316530427d08f4cf249ccfc7d388ab87026127be04cdd",
+    "setup/reproduction/simplevln_model_sft.json": "900585a4cd1f3fbb26a00d68a715b8514c47326826a1a7e306c02da2572fbd21",
     "setup/webui-requirements.txt": "c13d231c635106bf98f51d106b1585f4467885347f27234172f6ecd22b151345"
   }
 }
