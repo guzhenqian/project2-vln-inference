@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "tested_commit": "1ff6f4fe3c16fe5b297a7ff89f794b16693fbd73",
+  "tested_commit": "ddcfc82b00eb66e6b3c1afb1689467fc365ad0cd",
   "clean_clone": true,
   "source_files": 289,
   "python_files_compiled": 216,
@@ -30,5 +30,5 @@
     "python -B checks/restore_navigation_frozen_inputs.py --archive <official archive>",
     "python -B checks/prepare_navigation_reproduction.py --group awq --count 100 --output data/reproduction/cleancheck_awq"
   ],
-  "source_inventory_sha256": "196d0a4322ccc75d3e669de306d47e50e1d192a7c141703cdc39773aa2cce5f8"
+  "source_inventory_sha256": "079f2b116ab5c2089dd6aeaec300f5ceaf461eb049467acec9cc8536f2571f92"
 }
