@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-11T13:05:06.564711+00:00",
+  "updated_utc": "2026-11-11T14:28:35.901060+00:00",
   "status": "running100",
-  "active_group": "gptq_w4a4",
+  "active_group": "gptq_w4a8",
   "rows": [
     {
       "group": "awq_w4a16",
@@ -119,16 +119,32 @@
     {
       "group": "gptq_w4a4",
       "reused": false,
-      "completed_cases": 0,
-      "status": "running",
-      "metrics": null,
-      "technical_execution_validated": true
+      "completed_cases": 100,
+      "status": "complete",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 0,
+        "sr": 0.0,
+        "spl": 0.0,
+        "actual_model_calls": 100,
+        "request_median_s": 45.492268334375694,
+        "request_p95_s": 45.58378038229421,
+        "sampled_whole_card_peak_mib": 6148.0,
+        "error_count": 100,
+        "collisions": 0,
+        "request_total_s": 4550.151542906184,
+        "quality_error_counts": {
+          "truncated_model_output": 100
+        }
+      },
+      "result_source": "logs/navigation_precision_sequence_20261110/results/gptq_w4a4_100.json",
+      "result_sha256": "0433a669bdbdc78fe1a7467c43bf971b9ff624675f32b82ac14bf0bb5c84107a"
     },
     {
       "group": "gptq_w4a8",
       "reused": false,
       "completed_cases": 0,
-      "status": "pending",
+      "status": "running",
       "metrics": null,
       "technical_execution_validated": true
     },
@@ -141,7 +157,7 @@
       "technical_execution_validated": true
     }
   ],
-  "completed_new_cases": 300,
+  "completed_new_cases": 400,
   "new_cases_planned": 600,
   "all_completed_metrics_independently_recomputed": true,
   "exporter_sources_sha256": {
@@ -150,5 +166,5 @@
   },
   "precision_config_sha256": "43b47a3860f2761f134005ec9e16abfaa194abc7246ed517d9fd4cf12b109f22",
   "scope": "Same100 per group; experimental kernels; only completed audited groups receive performance numbers",
-  "updated_shanghai": "2026-11-11T21:05:06.564711+08:00"
+  "updated_shanghai": "2026-11-11T22:28:35.901060+08:00"
 }
