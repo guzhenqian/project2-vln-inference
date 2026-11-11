@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-10T20:41:30.133382+00:00",
+  "updated_utc": "2026-11-11T02:28:03.202118+00:00",
   "status": "running100",
-  "active_group": "awq_w4a8",
+  "active_group": "awq_w8a16",
   "rows": [
     {
       "group": "awq_w4a16",
@@ -53,16 +53,30 @@
     {
       "group": "awq_w4a8",
       "reused": false,
-      "completed_cases": 51,
-      "status": "running",
-      "metrics": null,
-      "technical_execution_validated": true
+      "completed_cases": 100,
+      "status": "complete",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 65,
+        "sr": 0.65,
+        "spl": 0.5430532036026081,
+        "actual_model_calls": 4350,
+        "request_median_s": 7.562503398978151,
+        "request_p95_s": 7.873184512928129,
+        "sampled_whole_card_peak_mib": 6614.0,
+        "error_count": 0,
+        "collisions": 1287,
+        "request_total_s": 32359.511312789982,
+        "quality_error_counts": {}
+      },
+      "result_source": "logs/navigation_precision_sequence_20261110/results/awq_w4a8_100.json",
+      "result_sha256": "0988c3f328e930b40ae5c2e6f18fb86df117851ad19936e890943b6b5f360f73"
     },
     {
       "group": "awq_w8a16",
       "reused": false,
       "completed_cases": 0,
-      "status": "pending",
+      "status": "running",
       "metrics": null,
       "technical_execution_validated": true
     },
@@ -113,7 +127,7 @@
       "technical_execution_validated": true
     }
   ],
-  "completed_new_cases": 151,
+  "completed_new_cases": 200,
   "new_cases_planned": 600,
   "all_completed_metrics_independently_recomputed": true,
   "exporter_sources_sha256": {
@@ -122,5 +136,5 @@
   },
   "precision_config_sha256": "43b47a3860f2761f134005ec9e16abfaa194abc7246ed517d9fd4cf12b109f22",
   "scope": "Same100 per group; experimental kernels; only completed audited groups receive performance numbers",
-  "updated_shanghai": "2026-11-11T04:41:30.133382+08:00"
+  "updated_shanghai": "2026-11-11T10:28:03.202118+08:00"
 }

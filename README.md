@@ -2,7 +2,7 @@
 
 在 RTX 4070 Ti 12 GB 上完成视觉语言模型部署、业务联调和导航压缩实验。早期使用 Qwen3-VL-2B-Instruct 验证 LMDeploy、FastAPI、Gradio 图片问答与视频功能；当前导航实验使用 SimpleVLN Qwen3-VL 4B RL，在 Habitat 中评测 FP16、AWQ、DART 及组合方案。
 
-**最新进展（2026-11-10晚）：新增六组精度已通过技术接入验证，同100条正式评测进行中。** AWQ/GPTQ各新增W4A4、W4A8、W8A16，与既有两组W4A16合成八组。新配置采用项目实验算子，不能视为原生库支持或纯位宽速度对比；W4A4采用四位激活存储、INT8 MMA计算，验证中已出现输出截断，失败会计入完整分母。见[八组进度快照](reports/navigation_precision_progress_20261110.md)、[六组真实接入证据](reports/navigation_precision_integration_20261110.md)、[精度定义与边界](reports/navigation_precision_plan_20261110.md)。尚未完成的组不填造100条结果，暂不运行Token组合。
+**最新进展（2026-11-11 10:27）：六组新增精度均通过技术接入，AWQ W4A4、W4A8已完成同100条。** W4A4成功0条，86条输出截断、14条动作格式错误；W4A8成功65条、无格式/截断错误，但P95为7.873秒，高于旧W4A16的2.213秒，当前实验实现没有速度收益。AWQ W8A16正在运行，其余三组GPTQ随后执行，与既有两组W4A16合成八组。新配置使用项目实验算子，不能视为原生库支持或纯位宽速度对比；W4A4采用四位激活存储、INT8 MMA计算。见[八组进度与已完成结果](reports/navigation_precision_progress_20261110.md)、[六组真实接入证据](reports/navigation_precision_integration_20261110.md)、[精度定义与边界](reports/navigation_precision_plan_20261110.md)。所有失败计入完整分母，未完成组不填100条统计，暂不运行Token组合。
 
 **已完成的第二阶段算法比较：九组50条初筛及累计100条复筛。** 七个新配置完成真实接入验收和同100条导航，DART75/50复用相同子集；900条逐配置案例记录及新运行29,227对执行记录独立复核通过，九组均无请求/解析错误。统一采用eager、3072完整prefill与原统计方式。DART75成功72/100；SparseVLM-v1单层无合并75%成功69/100，P95低8.26%；AWQ/GPTQ成功66/68条，整卡峰值6863/7160MiB。当前保留这两种量化与两个75%配置作为组合候选，差异仍属单次开发子集观察，新组合尚未启动。见[最新进展与九组100条结果](reports/project_progress_20261110.md)、[完整对比](reports/navigation_stage2_same100_20261109.md)、[算法适配问题台账](reports/navigation_algorithm_adaptation_log.md)。
 
