@@ -1,0 +1,7 @@
+{
+  "service_directory": "logs/navigation_dart50_service_20261108T181956674750Z_8ac00f52",
+  "single_episode_evidence": "logs/navigation_dart50_night_20261108/single_1250",
+  "single_episode_runtime_audit": "logs/navigation_dart50_night_20261108/single_audit.json",
+  "nine_image_trace": "88f813d55f634755bd269d9bb658d172",
+  "c75_report": "logs/navigation_dart150_keep75_resumed_20261108T135623640378Z_99f2e6a6/report.json"
+}

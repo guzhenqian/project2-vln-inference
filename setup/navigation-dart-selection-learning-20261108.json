@@ -1,0 +1,21 @@
+{
+  "scope": "CPU layer-internal DART reference lesson, not a navigation evaluation",
+  "model": "models/SimpleVLN_Qwen3VL_4B_RL_lmdeploy",
+  "model_config_sha256": "8c129761080666a7970e3bf3612c88e5ec64936a1fa8e92c821acc4e32c6c061",
+  "feature_report": "logs/navigation_dart_features_learning_20261108T024329364389Z_854ab1bc/report.json",
+  "feature_report_sha256": "48ba7b8ae6067e9a0d43698ecff0ff3a846fc45cd8e7446f3b3f29760543776c",
+  "source_audit": "reports/navigation_dart_visual_source_audit_20261108T025746545979Z.json",
+  "source_audit_sha256": "4b79bda932ffbd6017f508c4124461bd11c01079a7de7c159cf91c402f0bc50f",
+  "prune_before_language_layer_zero_based": 2,
+  "keep_ratio": 0.75,
+  "visual_pivots": 4,
+  "text_pivots": 4,
+  "text_pool": "All sequence positions after the last image-token span, including vision_end and chat suffix",
+  "budget_rule": "Per-image ceil(N * keep_ratio), including visual pivots; distribute remaining quota by divmod across original pivots",
+  "pivot_order": "Visual pivots then text pivots; each ranked by descending K L1 with lower sequence index breaking ties",
+  "similarity": "Lowest cosine of final-normed boundary hidden states; score in FP32; lower index breaks ties",
+  "weight_rounding": "Unquantized source rounded to FP16",
+  "reference_compute": "CPU FP32",
+  "adaptation_note": "Layer-internal DART mechanism adapted for multiple images, exact budgets and deterministic ordering; not embedding-level pruning or a verbatim official implementation",
+  "algorithm_source": "https://github.com/ZichenWen1/DART/blob/main/Qwen2_5-VL/Qwen2_5VL_DART/modeling_qwen2_5_vl_self.py"
+}

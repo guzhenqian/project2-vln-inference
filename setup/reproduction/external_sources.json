@@ -1,0 +1,46 @@
+{
+  "files": [
+    {
+      "path": "tmp/habitat_setup/navigation_source_review/eval/vln/eval.py",
+      "url": "https://raw.githubusercontent.com/simplevln/SimpleVLN/a450c57cff323587f54b0654c8e20e530a7202ac/eval/vln/eval.py",
+      "sha256": "72efa80174a832cec519eb7bb73ba2f635848b47af4dcaafaa03078e0d8d3a1f",
+      "group": "runtime"
+    },
+    {
+      "path": "tmp/habitat_setup/sources/vlnce-task/task.py",
+      "group": "runtime",
+      "url": "https://raw.githubusercontent.com/jacobkrantz/VLN-CE/729d141b2ee10628061ada74dd3a5b9f70faeba5/habitat_extensions/task.py",
+      "sha256": "e93993eb16e0d1b747e9b0e217fc18c8e6f24953687409acaf5343e2f8a3c4f2"
+    },
+    {
+      "path": "tmp/habitat_setup/sources/vlnce-task/vlnce_task.yaml",
+      "group": "runtime",
+      "url": "https://raw.githubusercontent.com/jacobkrantz/VLN-CE/729d141b2ee10628061ada74dd3a5b9f70faeba5/habitat_extensions/config/vlnce_task.yaml",
+      "sha256": "96c5c4f126ff62d633378e6fd78dbef8859cb92e070d7aea94c33589e88234f4"
+    },
+    {
+      "path": "tmp/habitat_setup/sources/vlnce-task/LICENSE",
+      "group": "runtime",
+      "url": "https://raw.githubusercontent.com/jacobkrantz/VLN-CE/729d141b2ee10628061ada74dd3a5b9f70faeba5/LICENSE",
+      "sha256": "c7c9e93e64f244505d84ba6b0f1d28ab3bd9492b70349727f0f4d0cc4d691200"
+    },
+    {
+      "path": "tmp/habitat_setup/habitat-lab-v0.1.7-source.zip",
+      "url": "https://codeload.github.com/facebookresearch/habitat-lab/zip/refs/tags/v0.1.7",
+      "sha256": "36afe986d81e905332c440fade63da7c0b5b4246125cab6b56c11a6219d82c8b",
+      "group": "habitat"
+    },
+    {
+      "path": "tmp/habitat_setup/navigation_source_review/simplevln_model_rl.json",
+      "repository_source": "setup/reproduction/simplevln_model_rl.json",
+      "sha256": "a228b821e2eb89ddd2f467b2c39846ca3638deb78929dfcec4dc78e31be9689b",
+      "group": "runtime"
+    },
+    {
+      "path": "tmp/habitat_setup/navigation_source_review/simplevln_model_sft.json",
+      "repository_source": "setup/reproduction/simplevln_model_sft.json",
+      "sha256": "c4188f283edb69303ba74aa080201139bc390159ba2ee5f88664386df8c50e52",
+      "group": "runtime"
+    }
+  ]
+}

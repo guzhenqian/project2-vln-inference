@@ -1,0 +1,27 @@
+{
+  "version": "navigation_rl4b_bf16_candidate_v1",
+  "status": "small-sample quality baseline candidate; not full benchmark acceptance",
+  "model_repo": "honglyhly/SimpleVLN_Qwen3VL_4B_RL",
+  "revision": "4078dab77f3c93a0711b57549ac54a59c1c1e1ea",
+  "runtime_precision": "BF16",
+  "server_script": "scripts/start_simplevln_rl_4b.sh",
+  "server_model_name": "SimpleVLN-Qwen3VL-4B-RL",
+  "policy_source": "checks/simplevln_policy.py",
+  "run_script": "scripts/run_simplevln_rl_diagnostic.sh",
+  "groups": {
+    "A_diagnostic": "data/baseline/simplevln_4b_rl_compare/manifest.json",
+    "B_confirmation": "data/baseline/simplevln_4b_rl_confirmation/manifest.json"
+  },
+  "reference_runs": {
+    "A_diagnostic": "logs/simplevln_rl_diagnostic_20261030T101819Z_49596/compare",
+    "B_confirmation": "logs/simplevln_rl_diagnostic_20261030T101819Z_49596/confirmation"
+  },
+  "report": "reports/navigation_sr_final_20261030.md",
+  "next_stage": "freeze calibration/evaluation scene separation before quantization or token compression; keep all policy inputs/settings fixed for comparisons",
+  "limitations": [
+    "six tasks per group",
+    "one stochastic seeded rollout per task",
+    "Habitat0.1.7/LMDeploy differs from author evaluator",
+    "not all failures solved"
+  ]
+}

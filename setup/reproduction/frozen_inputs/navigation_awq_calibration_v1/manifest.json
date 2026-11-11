@@ -1,0 +1,71 @@
+{
+  "version": "navigation_awq_calibration_v1",
+  "split": "train",
+  "scenes": [
+    "mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+    "mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+    "mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+    "mp3d/29hnd4uzFmX/29hnd4uzFmX.glb"
+  ],
+  "episodes": [
+    "515",
+    "575",
+    "85",
+    "97",
+    "184",
+    "214",
+    "160",
+    "208"
+  ],
+  "trajectory_ids": [
+    "338",
+    "378",
+    "67",
+    "73",
+    "123",
+    "144",
+    "110",
+    "140"
+  ],
+  "dataset_path": "data/datasets/R2R_VLNCE_v1-3_quant_calibration/{split}/{split}.json.gz",
+  "source_annotation_sha256": "fef5b703ecea81e1a0ba9302689bfe9ab7130a349d154d655e3701afd4d24ba1",
+  "scene_files": [
+    {
+      "path": "data/scene_datasets/mp3d/17DRP5sb8fy/17DRP5sb8fy.glb",
+      "sha256": "ab0f715afe9f1a0d77ca6c91e6ff41f589b7d649618c5c1cd3776e13ccd075b1"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/17DRP5sb8fy/17DRP5sb8fy.navmesh",
+      "sha256": "0f36abb98ee3545d7e1f5103882269206feaaea05dcb54014333290b1d2b00c8"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.glb",
+      "sha256": "63a0c59f9b34b61333222bbd797f535f688b9b36b7be3d4bf3f8a63f55e5e09b"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/1LXtFkjw3qL/1LXtFkjw3qL.navmesh",
+      "sha256": "b65cd057c1bdb0ababc3218e7d536b45c46ad7e806a4eb255ddec58d4d491f2d"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.glb",
+      "sha256": "b5ac077e799b57598fc3f1fb44c01e1d89ad6c118ec57a3da4f5426293cd13c2"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/1pXnuDYAj8r/1pXnuDYAj8r.navmesh",
+      "sha256": "9e7dc80f3e37340e53b5bb41cdd27a5909cf02af2d0c012660fc3cdda627f9e1"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/29hnd4uzFmX/29hnd4uzFmX.glb",
+      "sha256": "272bfe8831bada774e52cd3f0383a29bf7339f75ca88fa5bae34b3e19d46dec7"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/29hnd4uzFmX/29hnd4uzFmX.navmesh",
+      "sha256": "19f1db6f2ee6f5b264e60f428b8740d5ca712fd150280c151ed8c512de6d7e50"
+    }
+  ],
+  "selection": "Before quantization: first4 lexicographic train scenes, first2 distinct trajectory IDs by ascending episode ID; 3<geodesic<=12m; exclude all A/B scenes",
+  "capture": "Reference-path follower generates observations only; 4 evenly spaced decision observations per trajectory, including start and last pre-STOP. Author input formatting and up to8 historical images from last200; no actions/goals/distances in calibration inputs.",
+  "sample_count": 32,
+  "max_episode_steps": 400,
+  "note": "Representative teacher-path activation calibration, not gradient training and not evaluation. Follower has ground truth only for generating training-split views."
+}

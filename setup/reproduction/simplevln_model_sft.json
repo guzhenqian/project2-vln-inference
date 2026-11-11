@@ -1,0 +1,71 @@
+{
+  "id": "honglyhly/SimpleVLN_Qwen3VL_4B_SFT",
+  "sha": "2b2ae6e30f3e344fb9c6d2ed11ee9c117ac24566",
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+      "size": 1570
+    },
+    {
+      "rfilename": "chat_template.jinja",
+      "blobId": "124386803f142761528f710e77ae483f5f8c4fc4",
+      "size": 5292
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "bf5b439bf47be2150499c955594c1e67f8108423",
+      "size": 1608
+    },
+    {
+      "rfilename": "model-00001-of-00002.safetensors",
+      "blobId": "0dd78e71a75ac95a92ff7f2a5c7513018fec56c0",
+      "size": 4990503096,
+      "lfs": {
+        "sha256": "209068aad6431479c8bcd63bd662f7348a11dfe113cc9dfb173401b1c474eb8f",
+        "size": 4990503096,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00002-of-00002.safetensors",
+      "blobId": "5fd6023454b8eccfe3ad03ef5a2bae9e3180c097",
+      "size": 3885216184,
+      "lfs": {
+        "sha256": "eafa235f4ab6ef051847d6d11dc69f3d4b966d11021026e32e71744bdbaf232b",
+        "size": 3885216184,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model.safetensors.index.json",
+      "blobId": "1caeac485def3435aebcf9aa3b8494c05484153a",
+      "size": 64741
+    },
+    {
+      "rfilename": "preprocessor_config.json",
+      "blobId": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+      "size": 390
+    },
+    {
+      "rfilename": "processor_config.json",
+      "blobId": "33818c7f9e991ad735fd240209f4fa73e6c28c50",
+      "size": 1191
+    },
+    {
+      "rfilename": "tokenizer.json",
+      "blobId": "c7afbed2efcdf019f88ab0572ec29d3bf595dfe2",
+      "size": 11422650,
+      "lfs": {
+        "sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+        "size": 11422650,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "tokenizer_config.json",
+      "blobId": "42bc491eccb6f2ad617f7fe78ea277b8d37c44fc",
+      "size": 734
+    }
+  ]
+}

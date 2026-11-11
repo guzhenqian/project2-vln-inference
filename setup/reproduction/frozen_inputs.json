@@ -1,0 +1,54 @@
+{
+  "files": [
+    {
+      "path": "data/baseline/navigation_awq_calibration_v1/manifest.json",
+      "repository_source": "setup/reproduction/frozen_inputs/navigation_awq_calibration_v1/manifest.json",
+      "sha256": "9699f1c91384618e2de48f61deb7e1d81616c189431726a40f7d18cefeedd613"
+    },
+    {
+      "path": "data/baseline/overnight200_fp16_20261031/manifest.json",
+      "repository_source": "setup/reproduction/frozen_inputs/overnight200_fp16_20261031/manifest.json",
+      "sha256": "c79560d53e33d5c782e83eec49e9736ce992e196f206fd492c3204fc2438039e"
+    },
+    {
+      "path": "data/baseline/overnight200_fp16_20261031/batch_01.json",
+      "repository_source": "setup/reproduction/frozen_inputs/overnight200_fp16_20261031/batch_01.json",
+      "sha256": "4a19f330cc99f436a13d15bf33ed26a785395c0b9eb6c687dd2f453a9befc0ac"
+    },
+    {
+      "path": "data/baseline/overnight200_fp16_20261031/batch_02.json",
+      "repository_source": "setup/reproduction/frozen_inputs/overnight200_fp16_20261031/batch_02.json",
+      "sha256": "d46d5beff6bc52e32ade644e1223b562d8041bd3e1384cb5c205d1b892c01834"
+    },
+    {
+      "path": "data/baseline/overnight200_fp16_20261031/batch_03.json",
+      "repository_source": "setup/reproduction/frozen_inputs/overnight200_fp16_20261031/batch_03.json",
+      "sha256": "f0ac1d1879af1ab510fcec33f67ee801e39422e53b6265bfc4a35b744a1352fb"
+    },
+    {
+      "path": "data/baseline/overnight200_fp16_20261031/batch_04.json",
+      "repository_source": "setup/reproduction/frozen_inputs/overnight200_fp16_20261031/batch_04.json",
+      "sha256": "fb3b39dcbde99c5c3ecc971956a1120137fc9676bc21c9093d7a294b5305d66b"
+    },
+    {
+      "path": "data/baseline/navigation_stage2_20261109/manifest.json",
+      "repository_source": "setup/reproduction/frozen_inputs/navigation_stage2_20261109/manifest.json",
+      "sha256": "cc41253bb6b1f9cb6177b1f6c2fb85d39011592d89a9fc37cb49f446c70f5471"
+    },
+    {
+      "path": "data/baseline/navigation_stage2_20261109/source_batch_01.json",
+      "repository_source": "setup/reproduction/frozen_inputs/navigation_stage2_20261109/source_batch_01.json",
+      "sha256": "5b6d532346c3ec5f8764ef00992f64991d7c66833f55ce1372b3eec3e46b8c74"
+    },
+    {
+      "path": "data/baseline/navigation_stage2_20261109/source_batch_02.json",
+      "repository_source": "setup/reproduction/frozen_inputs/navigation_stage2_20261109/source_batch_02.json",
+      "sha256": "54335db90b568757cb0b62ae02f9b193fed0e38aa63d5791edb8355f3c9a9900"
+    },
+    {
+      "path": "data/baseline/navigation_stage2_20261109/source_batch_03.json",
+      "repository_source": "setup/reproduction/frozen_inputs/navigation_stage2_20261109/source_batch_03.json",
+      "sha256": "645e79d6dd19bb8ec971ca141cd7a78ca1bee844203243fda380b83be07837cb"
+    }
+  ]
+}

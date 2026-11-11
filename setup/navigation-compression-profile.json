@@ -1,0 +1,23 @@
+{
+  "version": "navigation_compression_v1",
+  "baseline": "setup/navigation-baseline-profile.json",
+  "calibration": "data/baseline/navigation_awq_calibration_v1/manifest.json",
+  "evaluation": {
+    "A_diagnostic": "data/baseline/navigation_awq_v1_A_diagnostic/manifest.json",
+    "B_confirmation": "data/baseline/navigation_awq_v1_B_confirmation/manifest.json"
+  },
+  "calibration_evaluation_scene_overlap": [],
+  "first_experiment": {
+    "algorithm": "AWQ",
+    "bits": 4,
+    "group_size": 128,
+    "symmetric": false,
+    "targets": "language decoder Linear only; vision/deepstack projectors/embedding/lm_head/norms stay BF16",
+    "calibration_samples": 32,
+    "seed": 7,
+    "token_compression": false,
+    "retraining": false
+  },
+  "interpretation": "All6 tasks per group retained; model requests only for latency (exclude queued actions). Whole-card memory sampled every200ms. Compare fixed-input replay separately from closed-loop latency because trajectories differ. No claim of full benchmark quality.",
+  "stopping_rule": "One prespecified32-sample AWQ candidate; report all successes/failures, no tuning on B scores."
+}

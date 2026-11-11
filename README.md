@@ -1,5 +1,7 @@
 # 项目2：资源受限的多模态推理部署与业务联调
 
+导航代码交付、固定依赖恢复、校准与量化流程，以及干净副本的无 GPU 检查，见[导航复现指南](docs/navigation_reproduction.md)。
+
 在 RTX 4070 Ti 12 GB 上完成视觉语言模型部署、业务联调和导航压缩实验。早期使用 Qwen3-VL-2B-Instruct 验证 LMDeploy、FastAPI、Gradio 图片问答与视频功能；当前导航实验使用 SimpleVLN Qwen3-VL 4B RL，在 Habitat 中评测 FP16、AWQ、DART 及组合方案。
 
 **最新进展（2026-11-11 10:27）：六组新增精度均通过技术接入，AWQ W4A4、W4A8已完成同100条。** W4A4成功0条，86条输出截断、14条动作格式错误；W4A8成功65条、无格式/截断错误，但P95为7.873秒，高于旧W4A16的2.213秒，当前实验实现没有速度收益。AWQ W8A16正在运行，其余三组GPTQ随后执行，与既有两组W4A16合成八组。新配置使用项目实验算子，不能视为原生库支持或纯位宽速度对比；W4A4采用四位激活存储、INT8 MMA计算。见[八组进度与已完成结果](reports/navigation_precision_progress_20261110.md)、[六组真实接入证据](reports/navigation_precision_integration_20261110.md)、[精度定义与边界](reports/navigation_precision_plan_20261110.md)。所有失败计入完整分母，未完成组不填100条统计，暂不运行Token组合。

@@ -1,0 +1,9 @@
+{
+  "service_directory": "logs/navigation_awq_dart_service_20261109T023434482942Z_aba60e1e",
+  "service_pid": 103583,
+  "single_episode_evidence": "logs/navigation_awq_dart75_sequence_20261109/single_1250",
+  "single_episode_runtime_audit": "logs/navigation_awq_dart75_sequence_20261109/single_audit.json",
+  "nine_image_trace": "b43bcfa5dac5456db3132471f987d308",
+  "native_control_service": "logs/navigation_awq_dart_service_20261109T023327603698Z_3c2d20e6",
+  "validation_directory": "logs/navigation_awq_dart75_sequence_20261109"
+}

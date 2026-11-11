@@ -1,0 +1,56 @@
+{
+  "id": "honglyhly/SimpleVLN_Qwen3VL_4B_RL",
+  "sha": "4078dab77f3c93a0711b57549ac54a59c1c1e1ea",
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+      "size": 1570
+    },
+    {
+      "rfilename": "chat_template.jinja",
+      "blobId": "124386803f142761528f710e77ae483f5f8c4fc4",
+      "size": 5292
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "3a9087a8143a84c0cdad32456b8a88044b971da8",
+      "size": 1674
+    },
+    {
+      "rfilename": "generation_config.json",
+      "blobId": "446381a5922c0685f7293a21be55c9f1f9eb4dfa",
+      "size": 230
+    },
+    {
+      "rfilename": "model.safetensors",
+      "blobId": "cf32f0621e2a4d85a69bf00bd9c2bad0b3964bac",
+      "size": 17751351304,
+      "lfs": {
+        "sha256": "b72a10c2b89a78f43c3c8bb05c4495b7d76dee85ec79f7125d9d795302aaa54b",
+        "size": 17751351304,
+        "pointerSize": 136
+      }
+    },
+    {
+      "rfilename": "processor_config.json",
+      "blobId": "7ad6acdf4203f22b7b990e36ccc3a1fe38563d5e",
+      "size": 1300
+    },
+    {
+      "rfilename": "tokenizer.json",
+      "blobId": "c7afbed2efcdf019f88ab0572ec29d3bf595dfe2",
+      "size": 11422650,
+      "lfs": {
+        "sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+        "size": 11422650,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "tokenizer_config.json",
+      "blobId": "42bc491eccb6f2ad617f7fe78ea277b8d37c44fc",
+      "size": 734
+    }
+  ]
+}

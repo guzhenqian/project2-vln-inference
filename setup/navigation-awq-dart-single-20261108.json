@@ -1,0 +1,76 @@
+{
+  "version": "awq_dart75_single_candidate_20261108",
+  "scope": "D-group pending GPU integration; one unchanged fixed1250 episode, not a completed benchmark",
+  "dataset": "R2R_VLNCE_v1-3",
+  "split": "val_unseen",
+  "scene": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+  "episodes": [
+    "1250"
+  ],
+  "trajectory_ids": [
+    "4940"
+  ],
+  "selection": "First episode in the existing frozen first-batch manifest; selected by order, without outcome filtering.",
+  "max_episode_steps": 400,
+  "success_distance_m": 3.0,
+  "step_size_m": 0.25,
+  "turn_deg": 15,
+  "rgb_hw": [
+    480,
+    640
+  ],
+  "camera_height_m": 1.25,
+  "hfov_deg": 90,
+  "renderer": "Mesa llvmpipe software",
+  "model": "SimpleVLN-Qwen3VL-4B-RL-AWQ-DART-keep75-navigation-20261108",
+  "dtype": "W4A16",
+  "backend": "LMDeploy0.11.1 PyTorch; AWQ W4A16; eager; context4096; maxprefill3072; fixed64 KV blocks of64; no prefix cache",
+  "output_actions": [
+    "STOP",
+    "MOVE_FORWARD",
+    "TURN_LEFT",
+    "TURN_RIGHT"
+  ],
+  "temperature": 0.3,
+  "max_tokens": 512,
+  "seed": 7,
+  "invalid_output_policy": "record error, execute STOP; count every fixed episode in denominator",
+  "model_inputs": "Author policy: RGB-only current and up to eight historical observations, uniformly sampled from last200. No action text, motion feedback, target truth or self-written memory.",
+  "source_annotation_sha256": "152c04e9eb0b5ecee136797441838293eefe74208d4d8bd0a8313c134e0106ad",
+  "horizon_note": "400 primitive actions includingSTOP; no collision early termination or policy changes",
+  "action_parser": "Author parser/action chunking: first two subcommands, at most3 primitive actions each; detect random fallback and mark failed STOP; no silent random action",
+  "scenes": [
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb"
+  ],
+  "dataset_path": "data/datasets/R2R_VLNCE_v1-3_overnight200/{split}/{split}.json.gz",
+  "scene_files": [
+    {
+      "path": "data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "sha256": "b27e60411c72bff7060f88f6fa1ae15ff8aa871dd4cc0ece675835e123538768"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.navmesh",
+      "sha256": "aef479b2a94c230108e247d3b74e471df9cb7740da108bc7433c2feec0c5abaf"
+    }
+  ],
+  "top_p": 0.95,
+  "model_revision": "4078dab77f3c93a0711b57549ac54a59c1c1e1ea",
+  "author_policy_revision": "a450c57cff323587f54b0654c8e20e530a7202ac",
+  "author_policy_sha256": "72efa80174a832cec519eb7bb73ba2f635848b47af4dcaafaa03078e0d8d3a1f",
+  "differences_from_author_benchmark": "Habitat0.1.7/LMDeploy; AWQ plus layer-internal DART75; original author policy unchanged",
+  "pre_registered": "First episode in the existing frozen 150-case subset; no outcome filtering; does not modify prior results.",
+  "source_precision": "Existing B-group INT4 AWQ weights, FP16 activations/vision/KV; DART keeps75% visual tokens",
+  "source_full_annotation_sha256": "d173d8028537f30ab652dc5d24ead737e2b6010b6a4599f974351685710d18e8",
+  "source_manifest": "data/baseline/overnight200_fp16_20261031/batch_01.json",
+  "source_manifest_sha256": "4a19f330cc99f436a13d15bf33ed26a785395c0b9eb6c687dd2f453a9befc0ac",
+  "dart_keep_ratio": 0.75,
+  "dart_profile": "navigation",
+  "execution_gate": "NOT YET READY: C must finish and release resources; AWQ-DART keep100/keep75 two/nine-image GPU traces must pass before this episode",
+  "weight_quantization": {
+    "quant_method": "awq",
+    "version": "gemm",
+    "bits": 4,
+    "group_size": 128,
+    "zero_point": true
+  }
+}

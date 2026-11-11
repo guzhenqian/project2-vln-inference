@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "tested_commit": "1ff6f4fe3c16fe5b297a7ff89f794b16693fbd73",
+  "clean_clone": true,
+  "source_files": 289,
+  "python_files_compiled": 216,
+  "runtime_source_restorations": 6,
+  "restored_frozen_metadata_and_datasets": 12,
+  "unit_tests": 5,
+  "negative_missing_source_detected": true,
+  "repeated_restore_idempotent": true,
+  "reproduction_output_overwrite_rejected": true,
+  "clean_clone_worktree_unchanged": true,
+  "original_runtime_source_and_configuration_files_unchanged": 270,
+  "gpu_experiments_started": false,
+  "model_imports_or_weights_loaded": false,
+  "process_control_performed": false,
+  "frozen_runtime_code_or_config_modified": false,
+  "unverified": [
+    "GPU/runtime compatibility",
+    "fresh rendering/calibration tensor bytes",
+    "quantization and model numerical equivalence",
+    "historical raw log audit"
+  ],
+  "commands": [
+    "python -B checks/check_navigation_repository.py --require-tracked",
+    "python -B checks/restore_navigation_sources.py --restore",
+    "python -B checks/check_navigation_repository.py --require-tracked --require-external",
+    "python -B checks/check_navigation_reproduction_unit.py",
+    "python -B checks/restore_navigation_frozen_inputs.py --archive <official archive>",
+    "python -B checks/prepare_navigation_reproduction.py --group awq --count 100 --output data/reproduction/cleancheck_awq"
+  ],
+  "source_inventory_sha256": "196d0a4322ccc75d3e669de306d47e50e1d192a7c141703cdc39773aa2cce5f8"
+}

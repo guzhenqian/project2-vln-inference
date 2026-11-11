@@ -1,0 +1,609 @@
+{
+  "base_commit": "31296fe1181e8fa426730c87399718bb0ab482bb",
+  "files": [
+    {
+      "path": "checks/analyze_navigation_awq_divergence.py",
+      "sha256": "421904df7507db67be0b1c17f8a765bd1dd60712340923d00d2b2910c2c6e5f2"
+    },
+    {
+      "path": "checks/analyze_navigation_horizon.py",
+      "sha256": "07b8f606b185089d47ce34e64cf968cb9ed685397a725bd3be92ad9f8bbb3c31"
+    },
+    {
+      "path": "checks/analyze_navigation_sr.py",
+      "sha256": "2ef6ba2785a7b014813e9622258416a7ad87811beb28376e1185a3f310e670c5"
+    },
+    {
+      "path": "checks/audit_navigation_awq_dart_run.py",
+      "sha256": "c15e1473d05cc674c164fe2995b0a7a32cfbfb490158b8718399010acae59435"
+    },
+    {
+      "path": "checks/audit_navigation_compression.py",
+      "sha256": "6f8fae347d9babb0b1187ad3ec6cc4b179e9d882b0ae95fb754ea1cb68fdd425"
+    },
+    {
+      "path": "checks/audit_navigation_dart_recovery.py",
+      "sha256": "b63ff9003db535961d9aab10f0732213abf840e75a3b7f59d184e2b6a946fe14"
+    },
+    {
+      "path": "checks/audit_navigation_dart_run.py",
+      "sha256": "f040c21c622d73579190f4f4bbb9cd0908a08af1a077f2a85b8ce889846a0374"
+    },
+    {
+      "path": "checks/benchmark_navigation_dart_request_learning.py",
+      "sha256": "d4f40412a8da75b6b80448297351708b0694d5b4a4ae399f8db1121db660593e"
+    },
+    {
+      "path": "checks/benchmark_navigation_replay.py",
+      "sha256": "153e46a2591a0897920f9a0178646ffa6f5a14f22798d41c13402667c2386264"
+    },
+    {
+      "path": "checks/check_closed_loop_controls.py",
+      "sha256": "3ae7bf058e5de48ce582b6f6f93691b2c51dddb7c642797b79d11e6f5370fc36"
+    },
+    {
+      "path": "checks/check_confirmation_controls.py",
+      "sha256": "835048083b4e65523e4050273fb3b33b9ef74f2033a223b388c2a51e8af0e862"
+    },
+    {
+      "path": "checks/check_export_navigation_abcd150_unit.py",
+      "sha256": "6328b6c3441cc50315819c6b7e346871d340174595521bfd70814f4fe6d3ad1b"
+    },
+    {
+      "path": "checks/check_feedback_contract.py",
+      "sha256": "0b35bfdb2411fa73179d08eb53b545e67097b67caecfc7e80ae30440ffd3929c"
+    },
+    {
+      "path": "checks/check_habitat_render.py",
+      "sha256": "e45e3e7233a20348beac7d5b8738d3536d3191eddcf96ca4d57b735ed0785855"
+    },
+    {
+      "path": "checks/check_habitat_task_imports.py",
+      "sha256": "6a0718f25dee84b17534583bef340d032068f50d5aba1c38e8115acb308396da"
+    },
+    {
+      "path": "checks/check_holdout_controls.py",
+      "sha256": "9ebbf9931f829a962e6865b3d813b3669c96905e7fefd338890df65a63db765c"
+    },
+    {
+      "path": "checks/check_navigation_awq_dart150_unit.py",
+      "sha256": "1c3b3a360775e911ed2454c0878077808a795ffe022b5023918282dd66194575"
+    },
+    {
+      "path": "checks/check_navigation_awq_dart_audit_unit.py",
+      "sha256": "c776b2a4fc959f2553973217455f85551aae20bbe24489327806d36e2cc8a228"
+    },
+    {
+      "path": "checks/check_navigation_awq_dart_preparation_unit.py",
+      "sha256": "2dd299c63e2d1a7f29afd77e10e988599cf107f4cecbe97d84f50cc701e1042e"
+    },
+    {
+      "path": "checks/check_navigation_awq_dart_runtime_unit.py",
+      "sha256": "9daa8d644d1f28c75fd01f6c8a974ab7b165f2393a8f33324834aaf3385364e2"
+    },
+    {
+      "path": "checks/check_navigation_awq_kernel.py",
+      "sha256": "26b1f65bc3b448fbf51cb2f60fcf2862e4311dc85756d3ad04b54dcc83c82a3e"
+    },
+    {
+      "path": "checks/check_navigation_awq_kernel_learning.py",
+      "sha256": "02a0768fd21c794d04fd527c136540eba3bcffdc0ce36c2d7be87963fb318947"
+    },
+    {
+      "path": "checks/check_navigation_awq_request_learning.py",
+      "sha256": "af4872d19f92b652f75525b279609e724a25fce942e2682b3bf2ab2851579703"
+    },
+    {
+      "path": "checks/check_navigation_dart150_unit.py",
+      "sha256": "aab0a43292e3e481f5d0563027bf9bb0077f39afb55d338db2b37f20ea8d87d6"
+    },
+    {
+      "path": "checks/check_navigation_dart50_150_unit.py",
+      "sha256": "6aacff0af5567c34bf77fd257a75b19d1ee2a4ac03a33465077242901ecb161a"
+    },
+    {
+      "path": "checks/check_navigation_dart50_audit_unit.py",
+      "sha256": "1f6b36fdf4bf890fe2787da8395054478b89e972b9177fc27ed326aa47f17c9b"
+    },
+    {
+      "path": "checks/check_navigation_dart50_export_unit.py",
+      "sha256": "0ba65714cf70a6c8adb45d84e660aff8a81ec625deaa70fbfa15201618dd6e6c"
+    },
+    {
+      "path": "checks/check_navigation_dart50_request.py",
+      "sha256": "db8fb5830a6f14c2cde6bec920b9dbb075a3060cef0a752751ccf1f013bc9cb6"
+    },
+    {
+      "path": "checks/check_navigation_dart50_runtime_unit.py",
+      "sha256": "34f15e121ae58db655d1ad9633c63d963c2be44b85c8818ca12f1d7e278105d9"
+    },
+    {
+      "path": "checks/check_navigation_dart50_sequence_unit.py",
+      "sha256": "ceaeed3714dc25777300e578dc8c94c73bf87ed54d2120de7df43f0133246cc2"
+    },
+    {
+      "path": "checks/check_navigation_dart_audit_unit.py",
+      "sha256": "dca72b55607738ba025f7da961adbc1b9150ce7e77d078fd5aeb075b617f303b"
+    },
+    {
+      "path": "checks/check_navigation_dart_features_learning.py",
+      "sha256": "730decbe6ef8c4e457488b2080b2524c8e7591bb4c9dafdb807c70ca0763b7cd"
+    },
+    {
+      "path": "checks/check_navigation_dart_inputs_learning.py",
+      "sha256": "a056e17945e34196aa34af21fecb03330ff32377b48f5559aba47ee4a7c9221e"
+    },
+    {
+      "path": "checks/check_navigation_dart_kv_kernel_learning.py",
+      "sha256": "3edff5e833a6854623b50ae7fab62f5cf936f281a040ea5d06e92297c23e847d"
+    },
+    {
+      "path": "checks/check_navigation_dart_navigation_budget.py",
+      "sha256": "99f27cedbebf805fe23356ea3db870a7c7415aad0b65d6f55a8d08dcf934985d"
+    },
+    {
+      "path": "checks/check_navigation_dart_recovery_audit_unit.py",
+      "sha256": "10dca414f0c66e66f75f958555e73de1d5e4f53324d9112b7e6017d1e0d54b81"
+    },
+    {
+      "path": "checks/check_navigation_dart_recovery_controller_unit.py",
+      "sha256": "c8af123bee562fdef277b17315a9a0788760726ffcec8f4175eaf1d5125f278a"
+    },
+    {
+      "path": "checks/check_navigation_dart_request_learning.py",
+      "sha256": "f310aed1036fd08d37f362121f6ac91ff3ee547892d931b2761d2dc13013297e"
+    },
+    {
+      "path": "checks/check_navigation_dart_selection_learning.py",
+      "sha256": "49118ea095e191bf42120a5256d1121ff1786b76207c6eba703165d15c4c4f6a"
+    },
+    {
+      "path": "checks/check_navigation_dart_selection_unit.py",
+      "sha256": "85b8f91d8f724cdc3f6eb7b2ffcce0bb2af30841ae4cf6c3932cae37320d3706"
+    },
+    {
+      "path": "checks/check_simplevln_rl_compat.py",
+      "sha256": "6689eb331614954c8fa871b2f14bc3bf70fdc5054b326a31a2c6c5bbcfda225b"
+    },
+    {
+      "path": "checks/compare_closed_loop_feedback.py",
+      "sha256": "322fc9691a4e32fb31eb016a9d40760efbc4d5d914fff4d66ddbb90220361198"
+    },
+    {
+      "path": "checks/continue_navigation_stage2.py",
+      "sha256": "82a8be16fe33534ad6464196f72ad5cf5a51277d444aa24db965807ba7b82b0f"
+    },
+    {
+      "path": "checks/convert_navigation_awq.py",
+      "sha256": "63c17ba2d52c2b2ad854a0728f6815467d0e0cf1f3a7adcdc0e8d3fe685cc757"
+    },
+    {
+      "path": "checks/convert_navigation_awq_learning.py",
+      "sha256": "d543c3b35c306c6260ba7dab3e80deeb1481a5313bcd5214c6eb25a0116951c9"
+    },
+    {
+      "path": "checks/dart50_night_awake_windows.py",
+      "sha256": "08b11a7eb49f389905fe31e10490e1a2f82a586f8a66af65d87858af02ace8d3"
+    },
+    {
+      "path": "checks/diagnostic_env.py",
+      "sha256": "cfdb59a8617bcc3c87c04dc8f9269b751c982c6d076343bde7f6c1ca9ac2b09f"
+    },
+    {
+      "path": "checks/download_simplevln_rl.py",
+      "sha256": "78e75ec3ff255ebaed931cbfd6aca1c640f0d6702dda237f61f7fdd68956c3a0"
+    },
+    {
+      "path": "checks/download_simplevln_rl_ranges.py",
+      "sha256": "2ca0435025c6906eefbeff17e07f2fa1094eb61bede46689f29de8abe0012d47"
+    },
+    {
+      "path": "checks/download_simplevln_sft.py",
+      "sha256": "a1e7ecb42c7d184f11888a49b9d196105be4b1e4ef5914827d1f7966278f2ef6"
+    },
+    {
+      "path": "checks/export_navigation_abcd150.py",
+      "sha256": "2ba135e43506d5e33d31afd7ce4e46d9c246a83bc085060a8a878fb08798dc43"
+    },
+    {
+      "path": "checks/export_navigation_benchmark.py",
+      "sha256": "93c4bb310aeed89f1aae703d900d85378f1f78a570c68ae4932ede9681bb152f"
+    },
+    {
+      "path": "checks/export_navigation_dart150.py",
+      "sha256": "b3a95375a524277379fa68a321cecd6c4eb2e3fe4dd9bf9e74534472a0461795"
+    },
+    {
+      "path": "checks/export_navigation_dart50_compare.py",
+      "sha256": "1c7184dee490d06f02e79b755b31af0792ce9b903b77b169ba29d1d031b02988"
+    },
+    {
+      "path": "checks/export_navigation_stage2_integration.py",
+      "sha256": "9cb548c2f21f78ea75007f649739851c45ed8e8ea80d509ad1886db77395aad8"
+    },
+    {
+      "path": "checks/finalize_navigation_sr.py",
+      "sha256": "0ebaf63ca7889f9daab8d56751cdfc2d5008ebab0e0767e40648c0587901ccb4"
+    },
+    {
+      "path": "checks/freeze_navigation_compression.py",
+      "sha256": "a6a896765ebf24dfe64538831893ca62315edb23b9701b79082f984101daad97"
+    },
+    {
+      "path": "checks/freeze_navigation_quality.py",
+      "sha256": "4b9b7347e219230e63fefde2a642ef903893422cf4c289e3961ab0e0feeb287f"
+    },
+    {
+      "path": "checks/inspect_habitat_build.py",
+      "sha256": "2f8c84aadc5ec198303a0b60a1b1450b93072b9fd1446b1fcc100b724630fbee"
+    },
+    {
+      "path": "checks/inspect_habitat_egl.py",
+      "sha256": "a4e2ba33fee20374a0c16ea8330a71fb63ec087f2dea78f78e2f1c05ab5d9d64"
+    },
+    {
+      "path": "checks/navigation_awq_dart_module_map.py",
+      "sha256": "903eb893bede413941051c4da9fc85ce11765cf87e2a28337db99c1fedce6662"
+    },
+    {
+      "path": "checks/navigation_awq_dart_runtime.py",
+      "sha256": "5dcc72d334b56cb05ddc7e2f7352824d7ff6a9b1e04dc815e2c92760e425e2c2"
+    },
+    {
+      "path": "checks/navigation_dart50_module_map.py",
+      "sha256": "65026cd288144011e3d97d20573bc14ad250e421153e8fa87e61e3b11f245169"
+    },
+    {
+      "path": "checks/navigation_dart50_runtime.py",
+      "sha256": "078e828ff5c25ade3335ccfdd1faffb06f21b718cba9919904f5c5bec9294fce"
+    },
+    {
+      "path": "checks/navigation_dart_module_map.py",
+      "sha256": "3bce229ecb1fcc0bf6b6f76c177feece38aee7a306e9ba38a0e01d8ec90a9aa9"
+    },
+    {
+      "path": "checks/navigation_memory_policy.py",
+      "sha256": "b1aef54590ac76bfc7ff950464e58eb7b644cc8ab9229cfb04f38aae763ae2c2"
+    },
+    {
+      "path": "checks/navigation_stage2_awake_windows.py",
+      "sha256": "5295bb190f68cd97fec36c1c5d55469f63b68d58a6cde8d3eacd678e7507d13b"
+    },
+    {
+      "path": "checks/plan_navigation_stage2_rescreen.py",
+      "sha256": "ccc15c29ab962459e124cea65a01a8f91e7fe36b4032a46151a9a38787b13db6"
+    },
+    {
+      "path": "checks/prepare_habitat_lab_source.py",
+      "sha256": "eae5ec05b8d9484d2cc63a9a7e722aa6120c338ef08f31671cbdc8fe6d6b762a"
+    },
+    {
+      "path": "checks/prepare_mp3d_smoke.py",
+      "sha256": "30561729c8d5c264dd29c6d3a1cef0117ecea01c61c440ea8e7c2f727bf47ceb"
+    },
+    {
+      "path": "checks/prepare_navigation_confirmation.py",
+      "sha256": "8da6a7f2c5bec51bc8337d993354d6f138e0d0942185f7d124553d199a290ce1"
+    },
+    {
+      "path": "checks/prepare_navigation_diagnostic.py",
+      "sha256": "f3d800f18a3b0b6b39f63b1c029199d594d68af78780934beecf6a40bc7ec876"
+    },
+    {
+      "path": "checks/prepare_navigation_precision_control.py",
+      "sha256": "1e64510d14e5d3ab0d367f61c45d23e903db7ad5dab42099061050c68d6621bf"
+    },
+    {
+      "path": "checks/prepare_navigation_precision_controllers.py",
+      "sha256": "8a8d1dce7bbe6c58e836a9f4d478d15f67dad3468523b19d5973b6a85710e4e5"
+    },
+    {
+      "path": "checks/prepare_navigation_precision_runtime.py",
+      "sha256": "3efa9b61a94977acc8baf2a27855daf79e43a3ff2da10053ba2d4fd22bf4361a"
+    },
+    {
+      "path": "checks/prepare_navigation_precision_w8.py",
+      "sha256": "91240d775a22568fcc1a9ef88fa70899f4ca639608543506961e6b6d82eff820"
+    },
+    {
+      "path": "checks/prepare_navigation_quant_data.py",
+      "sha256": "c92088f01cf62ea6883f1da8a3f6aa70cc1852276f88e96b4788d36d9ad87963"
+    },
+    {
+      "path": "checks/prepare_navigation_stage2.py",
+      "sha256": "9a82c3a622e1dbb3f5951182c31d6d24bd63c5a648e8836a6fee58f23b50f54c"
+    },
+    {
+      "path": "checks/prepare_overnight_baseline.py",
+      "sha256": "5ba869925b2e1b8926f7d90a2239d088f14945966ce8a86240d783ff9f2b4576"
+    },
+    {
+      "path": "checks/prepare_simplevln_serving.py",
+      "sha256": "90c0232926dc7a535a5a2312deadd8b220813a979e630a0082fe694a45a28cc7"
+    },
+    {
+      "path": "checks/quantize_navigation_awq.py",
+      "sha256": "5cf469d96dd73febc16566448e7f702cc9731597dbbe80ad010d3e6e923ca2ae"
+    },
+    {
+      "path": "checks/quantize_navigation_awq_learning.py",
+      "sha256": "6e62961891399a7894dcf573b81f8b5cbf9fe0d8b1e821dcd8faf08f9415f1fa"
+    },
+    {
+      "path": "checks/reconcile_habitat_metadata.py",
+      "sha256": "da91e895f3ba18ea6f8c4119a206ea7016a4bbf44540a750223598f582e757a1"
+    },
+    {
+      "path": "checks/repair_torch_execstack.py",
+      "sha256": "ef9f99c4f0f22e9b96071489ef3c8f1e86b684823abcfe36b946fac05979ea90"
+    },
+    {
+      "path": "checks/resume_navigation_dart150.py",
+      "sha256": "12e73e45a78c3fdb85d4786b63d62fc68d95d85f127997b83ac78df99b611e25"
+    },
+    {
+      "path": "checks/resume_navigation_run.py",
+      "sha256": "565504f7815ce25cf507ac01fd30a2fe33dec908e71a8f542a32822ccb3246fb"
+    },
+    {
+      "path": "checks/resume_overnight_batch.py",
+      "sha256": "afaf32d7ae685fa2067975d130b55c668c5d23655a3cb2044a4109cfee846174"
+    },
+    {
+      "path": "checks/run_closed_loop_feedback.py",
+      "sha256": "80ff345ca691c755d99217700d7ade6a88d374a517b581ba67a96f3eda3534b8"
+    },
+    {
+      "path": "checks/run_navigation_awq_dart150.py",
+      "sha256": "5cf51da793099280be3ba65565a73fa3ac0867247453800684cce91c1673b720"
+    },
+    {
+      "path": "checks/run_navigation_awq_dart_sequence.py",
+      "sha256": "87eceab17a0d7e140fb65fbddcb51404d7d83dc56bd858aeb18fac3fca74056b"
+    },
+    {
+      "path": "checks/run_navigation_awq_dart_validation.py",
+      "sha256": "909f2c648034f800a936bc7c498d04265576a7c5e7358f837a58b7984e35a6fc"
+    },
+    {
+      "path": "checks/run_navigation_dart150.py",
+      "sha256": "511a57b1a6d34c2d3f6255ba3d40ed861f4f23b9d9f3a9f88da0f232a076e113"
+    },
+    {
+      "path": "checks/run_navigation_dart50_150.py",
+      "sha256": "0b2290ab6d1d21967c9034f487877a3661534762a772ca9e7c7c6be84912c57e"
+    },
+    {
+      "path": "checks/run_navigation_diagnostic.py",
+      "sha256": "4e3fb7ec26f1af1637e4725a8faba6de37c9f0b0c1572b7f3bd48498de1d01b9"
+    },
+    {
+      "path": "checks/run_navigation_stage2_rescreen.py",
+      "sha256": "ccb59e279ce2e3188a5de7740fd6d1a1f9c89c757347b64a4976efcbec66e5af"
+    },
+    {
+      "path": "checks/run_navigation_stage2_screen.py",
+      "sha256": "9e25045150b88a4efd5a46cf17dcaad94e2703a8d3fbac15ff00e81d049f73ee"
+    },
+    {
+      "path": "checks/run_navigation_stage2_validation.py",
+      "sha256": "0fc8bd125056503d9a1fcd7847f9d5cb3a9e688afb9efe9f70e3024838893fe3"
+    },
+    {
+      "path": "checks/run_overnight_awq150.py",
+      "sha256": "a8cf99d44fd71fde1050fea8c747107be3b3a6bde56f5db493762a8d84fe923a"
+    },
+    {
+      "path": "checks/run_overnight_baseline.py",
+      "sha256": "59de26ac86698affcfd1f0272b5846b980110e3312abca64ff5a69dbecc2e67b"
+    },
+    {
+      "path": "checks/run_simplevln_horizon.py",
+      "sha256": "993b3429553897ccfdb27d7c91db337b16526514f1f07a30beb950255df5642f"
+    },
+    {
+      "path": "checks/serve_navigation_awq_dart.py",
+      "sha256": "fdaf036ef9fbedcb6166a4fb7c4f23d575b2d139804db524f0264617e462ccc8"
+    },
+    {
+      "path": "checks/serve_navigation_dart50.py",
+      "sha256": "8cbc495d7e718f075c4a65a0937a96973759e79ccea18edde152b1280683235a"
+    },
+    {
+      "path": "checks/serve_navigation_dart_learning.py",
+      "sha256": "5b8f9498553e13da2e906e9e71679d55d172f5d9929ee91b739af3943b71bf95"
+    },
+    {
+      "path": "checks/start_awq150_windows.py",
+      "sha256": "3e5f712a4e52071b2c0e6fa8ed948c7ba5538e6c623ec59c5f96e1909ef824f2"
+    },
+    {
+      "path": "checks/start_overnight_windows.py",
+      "sha256": "343ad340cc666fa79ce0f6f3d20c8388558c26bb08bb08f16c548b01a4bb4816"
+    },
+    {
+      "path": "checks/stop_navigation_service.py",
+      "sha256": "adfb57de0a8dbceadd48f15afb7281b4d8b2ec006b9521413e868e32e8edf9ec"
+    },
+    {
+      "path": "checks/summarize_closed_loop_baseline.py",
+      "sha256": "628360067a981ce536113005305153b3e44e49eb3b0b932be2fa193bb8703993"
+    },
+    {
+      "path": "checks/verify_mp3d_archive.py",
+      "sha256": "721dad1415ef420ac4f8cd23d16325b7a8fe6e61f814ec7f8065a219369eeb74"
+    },
+    {
+      "path": "checks/verify_navigation_abcd_delivery.py",
+      "sha256": "343997d62f64dc2c9d2b3c36972eeaedb718a8e44fd6c552d70d39bc3582da7f"
+    },
+    {
+      "path": "checks/verify_navigation_stage2_inputs.py",
+      "sha256": "197aeee2b9bd18281476cb7414234ead683b8d0c04f95e23fcb5b0a4cfc11e1a"
+    },
+    {
+      "path": "checks/watch_then_run_dart50.py",
+      "sha256": "e527dc5d8eb3feeb07afc597662b85bb78c5c3de93cafe89b536a1fcbe7842e4"
+    },
+    {
+      "path": "scripts/check_habitat_render.sh",
+      "sha256": "a188caa04815f7d471e8e4a63dde1d37b870cf07ca2cf56ff5c7bd9f45d5fefa"
+    },
+    {
+      "path": "scripts/check_mp3d_episode_render.sh",
+      "sha256": "557795f118ba38fc961d548653ffdcc9d0bce5c4e1e15212c4bc67a20a469975"
+    },
+    {
+      "path": "scripts/download_mp3d_habitat.sh",
+      "sha256": "6b3c18aa06c26ede5497187ef6cc5e073e61ab935e6ae7716b5a060caca876ce"
+    },
+    {
+      "path": "scripts/install_habitat_environment.sh",
+      "sha256": "9621e499b432eae0e87296fe0b63561b93583b59da48f8251d97107e07d43cd5"
+    },
+    {
+      "path": "scripts/install_habitat_task_environment.sh",
+      "sha256": "1ce03d6a11d2ac887395d2c38459ad1d4e8b3c9b2bf6bab79d007d9b13a06332"
+    },
+    {
+      "path": "scripts/plan_habitat_environment.sh",
+      "sha256": "c87daf61890feedd8f090e205a3d1c73579ca2245ed09ea9cef182a909d44102"
+    },
+    {
+      "path": "scripts/plan_habitat_task_environment.sh",
+      "sha256": "44dda60baae55f2a1d1cfa6d0bf7a60103635dde76487a7a92d1550acffa49ef"
+    },
+    {
+      "path": "scripts/repair_habitat_headless.sh",
+      "sha256": "b7d9471c099b4ae55e53e8bee4192a86c984ce8928c269c2d7b8a01debf7a456"
+    },
+    {
+      "path": "scripts/repair_habitat_imageio.sh",
+      "sha256": "87de40908054452a6e60ceacfefe84e5774acbdb76f586cf9dc9f01b6a2272c3"
+    },
+    {
+      "path": "scripts/repair_habitat_task_torch.sh",
+      "sha256": "3e5f41fedafa9ff61a2e12d709e52da89cdf82b9b9debe95888f61902a9f9616"
+    },
+    {
+      "path": "scripts/resume_navigation_fp16.sh",
+      "sha256": "6c421d2e34f7115bdffa069279298b80697b84d639cce2b5f5b0bc8a1f3fec23"
+    },
+    {
+      "path": "scripts/run_closed_loop_baseline.sh",
+      "sha256": "6be2e1dc3589b69e1565831b8da1e11d7de261d6270d6a99ba46d8ebe179a8c1"
+    },
+    {
+      "path": "scripts/run_closed_loop_feedback.sh",
+      "sha256": "e82bc4bd30f9ff2155c4a99b20920e7543b0a4cc50b820cbe0904bd1d50d1f87"
+    },
+    {
+      "path": "scripts/run_navigation_awq.sh",
+      "sha256": "5e2ff7476bed0088fbf59548f9a289fb76f5c5091ce842d33fc60a12062a981d"
+    },
+    {
+      "path": "scripts/run_navigation_awq_evaluation.sh",
+      "sha256": "096c124a933bfba76a88a21f12e39e83c9c23c1f738e47cbff5f0ad8c7c5918e"
+    },
+    {
+      "path": "scripts/run_navigation_diagnostic.sh",
+      "sha256": "0822e1e84f0d3925f6667bd8cfc0e48e8aa1c2e223912d3ddd74b0c548458826"
+    },
+    {
+      "path": "scripts/run_navigation_fp16_control.sh",
+      "sha256": "386989f856a5e171532b0cbdf364c5c9fa4a3c16df48c71351753d426436fe68"
+    },
+    {
+      "path": "scripts/run_simplevln_diagnostic.sh",
+      "sha256": "c97d85014a5d3d4d4e92efa96507f22cd4cdf951913345d5166f8a6fccd6a913"
+    },
+    {
+      "path": "scripts/run_simplevln_rl_diagnostic.sh",
+      "sha256": "f4d948fabf811bdd4ae918bea6e91eecec0721fcf30c5c53a6e07ba2898da857"
+    },
+    {
+      "path": "scripts/setup_habitat_manager.sh",
+      "sha256": "daab88062e796543ba99d8819e6b5c33d352c94f816fa5ed49d1abc6fd4b1788"
+    },
+    {
+      "path": "scripts/setup_navigation_quant.sh",
+      "sha256": "d214b198f006686404f6d3b41b3fb6f3634b60a3371caf25c36099f35f27cabb"
+    },
+    {
+      "path": "scripts/start_simplevln_4b.sh",
+      "sha256": "ba9fe7d7efacaab255928bf105290d8d20b17f0ed76aed04d4e466448afd8507"
+    },
+    {
+      "path": "scripts/start_simplevln_rl_4b.sh",
+      "sha256": "3fc7ac3f61bae4070655ebbb2f34042bb3edf4085566906c37cf91bf71e95c29"
+    },
+    {
+      "path": "scripts/start_simplevln_rl_awq.sh",
+      "sha256": "355055312245a3b6fefc5a37f1091f6a04dfbcec63adc2b47150e2326475aa7e"
+    },
+    {
+      "path": "scripts/start_simplevln_rl_awq_dart.sh",
+      "sha256": "f2c363bec17c17e297a36ece0eee21ebbc55b4c6e16762235384c68392a50450"
+    },
+    {
+      "path": "scripts/start_simplevln_rl_awq_learning.sh",
+      "sha256": "6c9e32006344e03b452493b84d1e08f422723f0187a69b5f03409671c99ac9c1"
+    },
+    {
+      "path": "scripts/start_simplevln_rl_dart_learning.sh",
+      "sha256": "ce98783a7edfe903f11a833a2fb77d02412cb89375cbfd5ecfb6f62f3b158598"
+    },
+    {
+      "path": "scripts/start_simplevln_rl_fp16.sh",
+      "sha256": "0f75fd35bf9ae2e4570b038f3aadf65db7ed9b4c59f6aebebfce08e83c12c163"
+    },
+    {
+      "path": "setup/habitat-task-torch-requirements.txt",
+      "sha256": "d01c656fc4444630dd87b67cd038d711ec1262f5e48ca0268e05ff8d4bd9569c"
+    },
+    {
+      "path": "setup/navigation-awq-dart-single-20261108.json",
+      "sha256": "8f62961c61c41d2f5c7864607db9bbef40ad762ed78fb7f9250eb1090637a12b"
+    },
+    {
+      "path": "setup/navigation-awq-dart-validation-plan-20261108.json",
+      "sha256": "5fb8f335d46be4352836ae1dd18af37d6829bdb17ed3553a15f699c1c5f66a42"
+    },
+    {
+      "path": "setup/navigation-awq-dart75-evidence-20261109.json",
+      "sha256": "9cbe0769a324a9db7be30ca25739f31431b5a4b1816b6875719160fec6c34cd4"
+    },
+    {
+      "path": "setup/navigation-awq-single-learning-20261105.json",
+      "sha256": "f2f9991bff4a57420a7208b0f731d992a14ebcc68865e8b6985ded7d8c735ad4"
+    },
+    {
+      "path": "setup/navigation-baseline-profile.json",
+      "sha256": "30ace27c2f8ed1ec198933df6ebacaf36a69b22aece71c18e27ad008b41ba8e2"
+    },
+    {
+      "path": "setup/navigation-compression-profile.json",
+      "sha256": "0e7278b050d7b7a93f127d8b8f93f33f18d3846e559059f7dceacfb4c79f8213"
+    },
+    {
+      "path": "setup/navigation-compression-v2-profile.json",
+      "sha256": "e8ccc512cac39945e96d13aeb5c3f7c3788be9867fc128d3e6dad446bbd97d28"
+    },
+    {
+      "path": "setup/navigation-dart-selection-learning-20261108.json",
+      "sha256": "0934228137ffde77c9425b8af2b373b72188b71ffdca78f9ddefa6702a8f590c"
+    },
+    {
+      "path": "setup/navigation-dart-single-learning-20261108.json",
+      "sha256": "d67e03c9880537826a2caff738aff60bf1e510eac1d6526f47a41d91015f1061"
+    },
+    {
+      "path": "setup/navigation-dart50-evidence-20261108.json",
+      "sha256": "aa9c652bbe1ee6152e98da2fd67e0aeb156672f3c272fdbbdecde390b0905bae"
+    },
+    {
+      "path": "setup/navigation-dart50-single-20261108.json",
+      "sha256": "428083854195eca63f0875287019e54648970c7a60855d5b337721961f58e255"
+    }
+  ]
+}
