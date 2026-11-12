@@ -1,0 +1,3164 @@
+{
+  "status": "passed",
+  "scope": "W4A16 frozen-launch numerical and restart gate only; same20 navigation still running",
+  "source": "logs/navigation_repair_20261112/initial_sequence_v1/w4_kernel_gate/result.json",
+  "source_sha256": "594e8b94e02709ab34348215d1fa5a110d12c56dca7ed4a0591740159eca3d17",
+  "main_cases": 104,
+  "restart_verification": {
+    "status": "passed",
+    "path": "logs/navigation_repair_20261112/initial_sequence_v1/w4_kernel_gate/frozen_table_replay",
+    "result_sha256": "017b382af8735a1ee9139a632cc1764b6ecc3a807a0cec40125e62c4af8cd7a6",
+    "cases": 52,
+    "exact_selected_configs_preserved": true,
+    "startup_autotune_calls": 0
+  },
+  "max_reference_relative_l2": 0.00042048157774843276,
+  "relative_l2_limit": 0.005,
+  "protocol": {
+    "started_utc": "2026-11-12T11:56:18.877555+00:00",
+    "groups": [
+      "awq",
+      "gptq"
+    ],
+    "layers": [
+      0
+    ],
+    "fused_projections": {
+      "qkv": [
+        "self_attn.q_proj",
+        "self_attn.k_proj",
+        "self_attn.v_proj"
+      ],
+      "o": [
+        "self_attn.o_proj"
+      ],
+      "gate_up": [
+        "mlp.gate_proj",
+        "mlp.up_proj"
+      ],
+      "down": [
+        "mlp.down_proj"
+      ]
+    },
+    "row_counts": [
+      1,
+      701,
+      2815,
+      713,
+      1737,
+      3001,
+      16,
+      17,
+      33,
+      65,
+      704,
+      720,
+      3072
+    ],
+    "repeats": 12,
+    "relative_l2_limit": 0.005,
+    "model_files": {
+      "awq": {
+        "path": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_learning_20261104",
+        "config_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+        "weights_sha256": "31d1c12dba3cbaace283cccf5be23337555f0383a3c4390e6270d2a9230414db"
+      },
+      "gptq": {
+        "path": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_stage2_20261109",
+        "config_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+        "weights_sha256": "2479144ad32b5209cfb7f3b0927d863492e2894cc742603a2567c2802e99260f"
+      }
+    },
+    "explicit_replay_table": null,
+    "sources_sha256": {
+      "navigation_w4a16_repair_kernels.py": "09a181c19e618307f681e02a8ee6964c6ad368a0d47e772d7328f297971e9a87",
+      "probe_navigation_w4a16_repair.py": "0baf0531f9d9612eae426b89344afc20564fc8c88f601fb9957b339319c8ee85",
+      "navigation_w4a16_candidate_kernels.py": "b38189a9beebec838ea56f059d0e5c2693a13d1e67daae907b6266716ae37e38"
+    },
+    "scope": "Same real frozen quantized matrices; random FP16 inputs. Kernel regression and hot timing, not FP16 model quality or navigation acceptance.",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti, 1285 MiB, 43"
+  },
+  "runtime_autotuner_cache_unchanged": true,
+  "runtime_compiled_cache_unchanged": true,
+  "wrong_algorithm_identity_rejected": true,
+  "launch_table": {
+    "frozen": true,
+    "representatives": [
+      1,
+      16,
+      17,
+      33,
+      65,
+      701,
+      2815
+    ],
+    "max_rows": 3072,
+    "algorithm": "awq",
+    "model_weights_sha256": "31d1c12dba3cbaace283cccf5be23337555f0383a3c4390e6270d2a9230414db",
+    "selection_mode": "startup_autotune",
+    "frozen_table_source": null,
+    "selection": "M1 native decode; M2..16->16;17..32->17;33..64->33;65..128->65;129..1758->701;1759..3072->2815",
+    "actual_m_preserved": true,
+    "generic_m_specialization_disabled": true,
+    "runtime_autotuning_allowed": false,
+    "prepare_seconds": 11.75323386862874,
+    "shapes": [
+      {
+        "device": 0,
+        "k": 2560,
+        "n": 6144,
+        "weight_stride": [
+          768,
+          1
+        ],
+        "scales_stride": [
+          6144,
+          1
+        ],
+        "zeros_stride": [
+          768,
+          1
+        ],
+        "split_k": 1,
+        "configs": {
+          "1": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "16": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "17": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "33": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "65": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "701": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "2815": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          }
+        }
+      },
+      {
+        "device": 0,
+        "k": 2560,
+        "n": 19456,
+        "weight_stride": [
+          2432,
+          1
+        ],
+        "scales_stride": [
+          19456,
+          1
+        ],
+        "zeros_stride": [
+          2432,
+          1
+        ],
+        "split_k": 1,
+        "configs": {
+          "1": {
+            "BLOCK_SIZE_N": 128,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "16": {
+            "BLOCK_SIZE_N": 128,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "17": {
+            "BLOCK_SIZE_N": 128,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "33": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "65": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "701": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "2815": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          }
+        }
+      },
+      {
+        "device": 0,
+        "k": 4096,
+        "n": 2560,
+        "weight_stride": [
+          320,
+          1
+        ],
+        "scales_stride": [
+          2560,
+          1
+        ],
+        "zeros_stride": [
+          320,
+          1
+        ],
+        "split_k": 1,
+        "configs": {
+          "1": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "16": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "17": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "33": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "65": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "701": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "2815": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          }
+        }
+      },
+      {
+        "device": 0,
+        "k": 9728,
+        "n": 2560,
+        "weight_stride": [
+          320,
+          1
+        ],
+        "scales_stride": [
+          2560,
+          1
+        ],
+        "zeros_stride": [
+          320,
+          1
+        ],
+        "split_k": 2,
+        "configs": {
+          "1": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "16": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "17": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "33": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "65": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "701": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          },
+          "2815": {
+            "BLOCK_SIZE_N": 64,
+            "GROUP_SIZE_M": 8,
+            "num_warps": 4,
+            "num_ctas": 1,
+            "num_stages": 3
+          }
+        }
+      }
+    ],
+    "runtime_cold_compilation_allowed": false,
+    "compiled_entries": {
+      "decode": 8,
+      "generic": 32
+    },
+    "autotuner_cache_entries": {
+      "True": 4,
+      "False": 24
+    },
+    "dtype": "packed INT4 weights, FP16 activations and output; native FP32 dot accumulator"
+  },
+  "measurements": [
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 1,
+      "k": 2560,
+      "n": 6144,
+      "representative": 1,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 4.55120753031224e-05,
+          "eager": {
+            "cuda_interval_ms": 0.08243199810385704,
+            "host_wall_mean_ms": 0.17279801735033593
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.03276799991726875,
+            "host_wall_mean_ms": 0.045027739057938256
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 4.55120753031224e-05,
+          "eager": {
+            "cuda_interval_ms": 0.05119999870657921,
+            "host_wall_mean_ms": 0.051848823204636574
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.03276799991726875,
+            "host_wall_mean_ms": 0.05098882441719373
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 701,
+      "k": 2560,
+      "n": 6144,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.3256320059299469,
+            "host_wall_mean_ms": 0.33708091359585524
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.32465599477291107,
+            "host_wall_mean_ms": 0.33408515931417543
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 2815,
+      "k": 2560,
+      "n": 6144,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 1.1448320150375366,
+            "host_wall_mean_ms": 1.1639916726077597
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 1.1448320150375366,
+            "host_wall_mean_ms": 1.1672396600867312
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 713,
+      "k": 2560,
+      "n": 6144,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.3256320059299469,
+            "host_wall_mean_ms": 0.3376868941510717
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.3261440098285675,
+            "host_wall_mean_ms": 0.337931754377981
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 1737,
+      "k": 2560,
+      "n": 6144,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.7352319955825806,
+            "host_wall_mean_ms": 0.749575401035448
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.7352319955825806,
+            "host_wall_mean_ms": 0.74569849918286
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 3001,
+      "k": 2560,
+      "n": 6144,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 1.2431360483169556,
+            "host_wall_mean_ms": 1.2577461699644725
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 1.2431360483169556,
+            "host_wall_mean_ms": 1.2535132700577378
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 16,
+      "k": 2560,
+      "n": 6144,
+      "representative": 16,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.0793600007891655,
+            "host_wall_mean_ms": 0.08193391840904951
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.04198399931192398,
+            "host_wall_mean_ms": 0.04999316297471523
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 17,
+      "k": 2560,
+      "n": 6144,
+      "representative": 17,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.026655999943614006,
+            "host_wall_mean_ms": 0.05361849131683508
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.04761600121855736,
+            "host_wall_mean_ms": 0.04923797678202391
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 33,
+      "k": 2560,
+      "n": 6144,
+      "representative": 33,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.056943999603390694,
+            "host_wall_mean_ms": 0.05847824892650048
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.04095999896526337,
+            "host_wall_mean_ms": 0.052509053299824394
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 65,
+      "k": 2560,
+      "n": 6144,
+      "representative": 65,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.0727040022611618,
+            "host_wall_mean_ms": 0.09038291561106841
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.0727040022611618,
+            "host_wall_mean_ms": 0.08493390244742234
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 704,
+      "k": 2560,
+      "n": 6144,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.3235839903354645,
+            "host_wall_mean_ms": 0.3319608513265848
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.3235839903354645,
+            "host_wall_mean_ms": 0.3391047551607092
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 720,
+      "k": 2560,
+      "n": 6144,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.3246079981327057,
+            "host_wall_mean_ms": 0.3350743403037389
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.3246079981327057,
+            "host_wall_mean_ms": 0.33299500743548077
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 3072,
+      "k": 2560,
+      "n": 6144,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 1.2427520155906677,
+            "host_wall_mean_ms": 1.2645501410588622
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 1.2427520155906677,
+            "host_wall_mean_ms": 1.2586412485688925
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "o",
+      "m": 1,
+      "k": 4096,
+      "n": 2560,
+      "representative": 1,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 7.334260590141639e-05,
+          "eager": {
+            "cuda_interval_ms": 0.04915200173854828,
+            "host_wall_mean_ms": 0.054753501899540424
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.027711999602615833,
+            "host_wall_mean_ms": 0.042819612038632236
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 7.334260590141639e-05,
+          "eager": {
+            "cuda_interval_ms": 0.046592000871896744,
+            "host_wall_mean_ms": 0.05213369149714708
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.027648000046610832,
+            "host_wall_mean_ms": 0.03422315542896589
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "o",
+      "m": 701,
+      "k": 4096,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.21299199759960175,
+            "host_wall_mean_ms": 0.22240565158426762
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.21299199759960175,
+            "host_wall_mean_ms": 0.2199899172410369
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "o",
+      "m": 2815,
+      "k": 4096,
+      "n": 2560,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.00026636559050530195,
+          "eager": {
+            "cuda_interval_ms": 0.7628800272941589,
+            "host_wall_mean_ms": 0.773992738686502
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.00026636559050530195,
+          "eager": {
+            "cuda_interval_ms": 0.7628800272941589,
+            "host_wall_mean_ms": 0.7729065837338567
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "o",
+      "m": 713,
+      "k": 4096,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.21452800184488297,
+            "host_wall_mean_ms": 0.2254054027919968
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.21401600539684296,
+            "host_wall_mean_ms": 0.22210301055262485
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "o",
+      "m": 1737,
+      "k": 4096,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.00033542627352289855,
+          "eager": {
+            "cuda_interval_ms": 0.5109760165214539,
+            "host_wall_mean_ms": 0.5249648044506708
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.00033542627352289855,
+          "eager": {
+            "cuda_interval_ms": 0.5120000243186951,
+            "host_wall_mean_ms": 0.519566354341805
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "o",
+      "m": 3001,
+      "k": 4096,
+      "n": 2560,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.8161280155181885,
+            "host_wall_mean_ms": 0.828433510226508
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.8151040077209473,
+            "host_wall_mean_ms": 0.8254857966676354
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "o",
+      "m": 16,
+      "k": 4096,
+      "n": 2560,
+      "representative": 16,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.05177599936723709,
+            "host_wall_mean_ms": 0.06398775925238927
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.0451200008392334,
+            "host_wall_mean_ms": 0.050673571725686394
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "o",
+      "m": 17,
+      "k": 4096,
+      "n": 2560,
+      "representative": 17,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.07475200295448303,
+            "host_wall_mean_ms": 0.08782798734803994
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.07656000182032585,
+            "host_wall_mean_ms": 0.08198040692756574
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "o",
+      "m": 33,
+      "k": 4096,
+      "n": 2560,
+      "representative": 33,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.053328000009059906,
+            "host_wall_mean_ms": 0.06736151408404112
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.05632000043988228,
+            "host_wall_mean_ms": 0.06502886147548755
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "o",
+      "m": 65,
+      "k": 4096,
+      "n": 2560,
+      "representative": 65,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.06656000018119812,
+            "host_wall_mean_ms": 0.08175114635378122
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.08294399827718735,
+            "host_wall_mean_ms": 0.09265576954931021
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "o",
+      "m": 704,
+      "k": 4096,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.2126080021262169,
+            "host_wall_mean_ms": 0.22214441560208797
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.21299199759960175,
+            "host_wall_mean_ms": 0.2208353253081441
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "o",
+      "m": 720,
+      "k": 4096,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.21401600539684296,
+            "host_wall_mean_ms": 0.22284791339188814
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.21401600539684296,
+            "host_wall_mean_ms": 0.22382677222291628
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "o",
+      "m": 3072,
+      "k": 4096,
+      "n": 2560,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.8171840012073517,
+            "host_wall_mean_ms": 0.8356040343642235
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.8171520233154297,
+            "host_wall_mean_ms": 0.8326003638406595
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 1,
+      "k": 2560,
+      "n": 19456,
+      "representative": 1,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 4.781783354701474e-05,
+          "eager": {
+            "cuda_interval_ms": 0.08243199810385704,
+            "host_wall_mean_ms": 0.0914711660395066
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.06247999891638756,
+            "host_wall_mean_ms": 0.07244540999333064
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 4.781783354701474e-05,
+          "eager": {
+            "cuda_interval_ms": 0.060416001826524734,
+            "host_wall_mean_ms": 0.06724517637242873
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.06348799914121628,
+            "host_wall_mean_ms": 0.06895225184659164
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 701,
+      "k": 2560,
+      "n": 19456,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.9861119985580444,
+            "host_wall_mean_ms": 1.0059446018810074
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.9861119985580444,
+            "host_wall_mean_ms": 0.9994891006499529
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 2815,
+      "k": 2560,
+      "n": 19456,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 3.55788791179657,
+            "host_wall_mean_ms": 3.5830671743800244
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 3.5712000131607056,
+            "host_wall_mean_ms": 3.586387999045352
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 713,
+      "k": 2560,
+      "n": 19456,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.9907839894294739,
+            "host_wall_mean_ms": 0.9997859985257188
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.9907679855823517,
+            "host_wall_mean_ms": 1.0004561627283692
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 1737,
+      "k": 2560,
+      "n": 19456,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 2.2631200551986694,
+            "host_wall_mean_ms": 2.2816903268297515
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 2.2722558975219727,
+            "host_wall_mean_ms": 2.2987400103981295
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 3001,
+      "k": 2560,
+      "n": 19456,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 3.8749120235443115,
+            "host_wall_mean_ms": 3.9098509199296436
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 3.8901760578155518,
+            "host_wall_mean_ms": 3.910334470371405
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 16,
+      "k": 2560,
+      "n": 19456,
+      "representative": 16,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.053247999399900436,
+            "host_wall_mean_ms": 0.06433917830387752
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.053247999399900436,
+            "host_wall_mean_ms": 0.06511923857033253
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 17,
+      "k": 2560,
+      "n": 19456,
+      "representative": 17,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.0798719972372055,
+            "host_wall_mean_ms": 0.09246255892018478
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.0798719972372055,
+            "host_wall_mean_ms": 0.09380160675694545
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 33,
+      "k": 2560,
+      "n": 19456,
+      "representative": 33,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0003353302599862218,
+          "eager": {
+            "cuda_interval_ms": 0.1013759970664978,
+            "host_wall_mean_ms": 0.11127391674866279
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0003353302599862218,
+          "eager": {
+            "cuda_interval_ms": 0.1013759970664978,
+            "host_wall_mean_ms": 0.11648101887355249
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 65,
+      "k": 2560,
+      "n": 19456,
+      "representative": 65,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.19968000054359436,
+            "host_wall_mean_ms": 0.21563741999367872
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.19968000054359436,
+            "host_wall_mean_ms": 0.21139190842707953
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 704,
+      "k": 2560,
+      "n": 19456,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.9861119985580444,
+            "host_wall_mean_ms": 1.0073607554659247
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.9861119985580444,
+            "host_wall_mean_ms": 1.0103994281962514
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 720,
+      "k": 2560,
+      "n": 19456,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.9881600141525269,
+            "host_wall_mean_ms": 0.999040591220061
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.9881600141525269,
+            "host_wall_mean_ms": 1.0000385033587615
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 3072,
+      "k": 2560,
+      "n": 19456,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 3.8799359798431396,
+            "host_wall_mean_ms": 3.908925767367085
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 3.8737919330596924,
+            "host_wall_mean_ms": 3.931817404615382
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "down",
+      "m": 1,
+      "k": 9728,
+      "n": 2560,
+      "representative": 1,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0003608542028814554,
+          "eager": {
+            "cuda_interval_ms": 0.055296000093221664,
+            "host_wall_mean_ms": 0.06180986141165098
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.03891199827194214,
+            "host_wall_mean_ms": 0.04776668113966783
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0003608542028814554,
+          "eager": {
+            "cuda_interval_ms": 0.05273600108921528,
+            "host_wall_mean_ms": 0.06518144315729539
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.03839999996125698,
+            "host_wall_mean_ms": 0.04414465123166641
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "down",
+      "m": 701,
+      "k": 9728,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.00035736733116209507,
+          "eager": {
+            "cuda_interval_ms": 0.48947200179100037,
+            "host_wall_mean_ms": 0.499901594594121
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.00035736733116209507,
+          "eager": {
+            "cuda_interval_ms": 0.48895999789237976,
+            "host_wall_mean_ms": 0.5106481645877162
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "down",
+      "m": 2815,
+      "k": 9728,
+      "n": 2560,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.00042009790195152164,
+          "eager": {
+            "cuda_interval_ms": 1.7889280319213867,
+            "host_wall_mean_ms": 1.806374522857368
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.00042009790195152164,
+          "eager": {
+            "cuda_interval_ms": 1.7889280319213867,
+            "host_wall_mean_ms": 1.7975504354884226
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "down",
+      "m": 713,
+      "k": 9728,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.00035785185173153877,
+          "eager": {
+            "cuda_interval_ms": 0.4915199875831604,
+            "host_wall_mean_ms": 0.5033723233888546
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.00035785185173153877,
+          "eager": {
+            "cuda_interval_ms": 0.4915199875831604,
+            "host_wall_mean_ms": 0.5036025928954283
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "down",
+      "m": 1737,
+      "k": 9728,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.00042018364183604717,
+          "eager": {
+            "cuda_interval_ms": 1.1427839994430542,
+            "host_wall_mean_ms": 1.15646425789843
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.00042018364183604717,
+          "eager": {
+            "cuda_interval_ms": 1.141759991645813,
+            "host_wall_mean_ms": 1.1506414351363976
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "down",
+      "m": 3001,
+      "k": 9728,
+      "n": 2560,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.00042048157774843276,
+          "eager": {
+            "cuda_interval_ms": 1.9179519414901733,
+            "host_wall_mean_ms": 1.9297375498960416
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.00042048157774843276,
+          "eager": {
+            "cuda_interval_ms": 1.926144003868103,
+            "host_wall_mean_ms": 1.949528659073015
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "down",
+      "m": 16,
+      "k": 9728,
+      "n": 2560,
+      "representative": 16,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0003571353736333549,
+          "eager": {
+            "cuda_interval_ms": 0.0578560009598732,
+            "host_wall_mean_ms": 0.06530558069547017
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0003571353736333549,
+          "eager": {
+            "cuda_interval_ms": 0.05275199934840202,
+            "host_wall_mean_ms": 0.0604319308574001
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "down",
+      "m": 17,
+      "k": 9728,
+      "n": 2560,
+      "representative": 17,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.00035223193117417395,
+          "eager": {
+            "cuda_interval_ms": 0.08755199983716011,
+            "host_wall_mean_ms": 0.09927568801989158
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.00035223193117417395,
+          "eager": {
+            "cuda_interval_ms": 0.05222399905323982,
+            "host_wall_mean_ms": 0.05957232012103001
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "down",
+      "m": 33,
+      "k": 9728,
+      "n": 2560,
+      "representative": 33,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.000356546719558537,
+          "eager": {
+            "cuda_interval_ms": 0.07475200295448303,
+            "host_wall_mean_ms": 0.08342713893701632
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.000356546719558537,
+          "eager": {
+            "cuda_interval_ms": 0.07475200295448303,
+            "host_wall_mean_ms": 0.08183484897017479
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "down",
+      "m": 65,
+      "k": 9728,
+      "n": 2560,
+      "representative": 65,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.00035772070987150073,
+          "eager": {
+            "cuda_interval_ms": 0.13312000036239624,
+            "host_wall_mean_ms": 0.14654834133883318
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.00035772070987150073,
+          "eager": {
+            "cuda_interval_ms": 0.13209599256515503,
+            "host_wall_mean_ms": 0.1463338267058134
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "down",
+      "m": 704,
+      "k": 9728,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.00035761750768870115,
+          "eager": {
+            "cuda_interval_ms": 0.48947200179100037,
+            "host_wall_mean_ms": 0.501174246892333
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.00035761750768870115,
+          "eager": {
+            "cuda_interval_ms": 0.4904960095882416,
+            "host_wall_mean_ms": 0.49928944402684766
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "down",
+      "m": 720,
+      "k": 9728,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0003575935261324048,
+          "eager": {
+            "cuda_interval_ms": 0.4904960095882416,
+            "host_wall_mean_ms": 0.5021284256751338
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0003575935261324048,
+          "eager": {
+            "cuda_interval_ms": 0.4904960095882416,
+            "host_wall_mean_ms": 0.5004997365176678
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "awq",
+      "layer": 0,
+      "projection": "down",
+      "m": 3072,
+      "k": 9728,
+      "n": 2560,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0004203106800559908,
+          "eager": {
+            "cuda_interval_ms": 1.9179519414901733,
+            "host_wall_mean_ms": 1.934804837219417
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0004203106800559908,
+          "eager": {
+            "cuda_interval_ms": 1.9225599765777588,
+            "host_wall_mean_ms": 1.9348585822929938
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 1,
+      "k": 2560,
+      "n": 6144,
+      "representative": 1,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 6.43033636151813e-05,
+          "eager": {
+            "cuda_interval_ms": 0.05222399905323982,
+            "host_wall_mean_ms": 0.05694765908022722
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.03276799991726875,
+            "host_wall_mean_ms": 0.03867949514339367
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 6.43033636151813e-05,
+          "eager": {
+            "cuda_interval_ms": 0.05222399905323982,
+            "host_wall_mean_ms": 0.0520643467704455
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.03276799991726875,
+            "host_wall_mean_ms": 0.03925419878214598
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 701,
+      "k": 2560,
+      "n": 6144,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.3246079981327057,
+            "host_wall_mean_ms": 0.33400192235906917
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.3246079981327057,
+            "host_wall_mean_ms": 0.33230889433374006
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 2815,
+      "k": 2560,
+      "n": 6144,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 1.13919997215271,
+            "host_wall_mean_ms": 1.1494937352836132
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 1.139311969280243,
+            "host_wall_mean_ms": 1.1489324970170856
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 713,
+      "k": 2560,
+      "n": 6144,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.3246079981327057,
+            "host_wall_mean_ms": 0.3350015031173825
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.3246079981327057,
+            "host_wall_mean_ms": 0.3315418337782224
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 1737,
+      "k": 2560,
+      "n": 6144,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.7321599721908569,
+            "host_wall_mean_ms": 0.7443634094670415
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.7321599721908569,
+            "host_wall_mean_ms": 0.7461588053653637
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 3001,
+      "k": 2560,
+      "n": 6144,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 1.2431360483169556,
+            "host_wall_mean_ms": 1.294267092210551
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 1.2431360483169556,
+            "host_wall_mean_ms": 1.2527665045733254
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 16,
+      "k": 2560,
+      "n": 6144,
+      "representative": 16,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.04827200062572956,
+            "host_wall_mean_ms": 0.05380964527527491
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.04928000085055828,
+            "host_wall_mean_ms": 0.06689414537201326
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 17,
+      "k": 2560,
+      "n": 6144,
+      "representative": 17,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.050175998359918594,
+            "host_wall_mean_ms": 0.05592599821587404
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.04665600135922432,
+            "host_wall_mean_ms": 0.04993650751809279
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 33,
+      "k": 2560,
+      "n": 6144,
+      "representative": 33,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.04915200173854828,
+            "host_wall_mean_ms": 0.06073267043878635
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.04608000069856644,
+            "host_wall_mean_ms": 0.050465731571118035
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 65,
+      "k": 2560,
+      "n": 6144,
+      "representative": 65,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.07372800260782242,
+            "host_wall_mean_ms": 0.08037833807369073
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.0727200023829937,
+            "host_wall_mean_ms": 0.0796910220136245
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 704,
+      "k": 2560,
+      "n": 6144,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.3256320059299469,
+            "host_wall_mean_ms": 0.33472327049821615
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.3256320059299469,
+            "host_wall_mean_ms": 0.33297541085630655
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 720,
+      "k": 2560,
+      "n": 6144,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.3256320059299469,
+            "host_wall_mean_ms": 0.33459490320334834
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.3256320059299469,
+            "host_wall_mean_ms": 0.3328411839902401
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "qkv",
+      "m": 3072,
+      "k": 2560,
+      "n": 6144,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 1.2431360483169556,
+            "host_wall_mean_ms": 1.2560381631677349
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 1.2431360483169556,
+            "host_wall_mean_ms": 1.259471910695235
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "o",
+      "m": 1,
+      "k": 4096,
+      "n": 2560,
+      "representative": 1,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 5.588299609371461e-05,
+          "eager": {
+            "cuda_interval_ms": 0.05119999870657921,
+            "host_wall_mean_ms": 0.0586196935425202
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.026751999743282795,
+            "host_wall_mean_ms": 0.0348994896436731
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 5.588299609371461e-05,
+          "eager": {
+            "cuda_interval_ms": 0.04556800052523613,
+            "host_wall_mean_ms": 0.05748751573264599
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.027231999672949314,
+            "host_wall_mean_ms": 0.03479025326669216
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "o",
+      "m": 701,
+      "k": 4096,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.21299199759960175,
+            "host_wall_mean_ms": 0.22120614691327015
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.21299199759960175,
+            "host_wall_mean_ms": 0.23120366192112365
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "o",
+      "m": 2815,
+      "k": 4096,
+      "n": 2560,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.00026627935585565865,
+          "eager": {
+            "cuda_interval_ms": 0.7598080039024353,
+            "host_wall_mean_ms": 0.7709728476280967
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.00026627935585565865,
+          "eager": {
+            "cuda_interval_ms": 0.7608320116996765,
+            "host_wall_mean_ms": 0.7701919336492816
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "o",
+      "m": 713,
+      "k": 4096,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.2131200060248375,
+            "host_wall_mean_ms": 0.22065833521385989
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.21320000290870667,
+            "host_wall_mean_ms": 0.22293440997600555
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "o",
+      "m": 1737,
+      "k": 4096,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0003353421052452177,
+          "eager": {
+            "cuda_interval_ms": 0.5095359981060028,
+            "host_wall_mean_ms": 0.5189099271471301
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0003353421052452177,
+          "eager": {
+            "cuda_interval_ms": 0.5099520087242126,
+            "host_wall_mean_ms": 0.5180020816624165
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "o",
+      "m": 3001,
+      "k": 4096,
+      "n": 2560,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.8125439882278442,
+            "host_wall_mean_ms": 0.8223529051368436
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.8130559921264648,
+            "host_wall_mean_ms": 0.8218468089277545
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "o",
+      "m": 16,
+      "k": 4096,
+      "n": 2560,
+      "representative": 16,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.04918400011956692,
+            "host_wall_mean_ms": 0.0546334000925223
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.045184001326560974,
+            "host_wall_mean_ms": 0.05064427386969328
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "o",
+      "m": 17,
+      "k": 4096,
+      "n": 2560,
+      "representative": 17,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.027648000046610832,
+            "host_wall_mean_ms": 0.05567151432236036
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.04608000069856644,
+            "host_wall_mean_ms": 0.04994391929358244
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "o",
+      "m": 33,
+      "k": 4096,
+      "n": 2560,
+      "representative": 33,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.05019199848175049,
+            "host_wall_mean_ms": 0.05880265962332487
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.04355200007557869,
+            "host_wall_mean_ms": 0.05070927242437998
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "o",
+      "m": 65,
+      "k": 4096,
+      "n": 2560,
+      "representative": 65,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.06678400188684464,
+            "host_wall_mean_ms": 0.07454259321093559
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.06716800108551979,
+            "host_wall_mean_ms": 0.0735942351942261
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "o",
+      "m": 704,
+      "k": 4096,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.21302399784326553,
+            "host_wall_mean_ms": 0.2210115004951755
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.2136160060763359,
+            "host_wall_mean_ms": 0.22077234461903572
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "o",
+      "m": 720,
+      "k": 4096,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.21401600539684296,
+            "host_wall_mean_ms": 0.24289575715859732
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.21401600539684296,
+            "host_wall_mean_ms": 0.22041258246948323
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "o",
+      "m": 3072,
+      "k": 4096,
+      "n": 2560,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.8161280155181885,
+            "host_wall_mean_ms": 0.8267696636418501
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.8156160116195679,
+            "host_wall_mean_ms": 0.8235631588225564
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 1,
+      "k": 2560,
+      "n": 19456,
+      "representative": 1,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 5.176221384317614e-05,
+          "eager": {
+            "cuda_interval_ms": 0.060416001826524734,
+            "host_wall_mean_ms": 0.06853276863694191
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.062463998794555664,
+            "host_wall_mean_ms": 0.06668816786259413
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 5.176221384317614e-05,
+          "eager": {
+            "cuda_interval_ms": 0.060416001826524734,
+            "host_wall_mean_ms": 0.0675632618367672
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.06257599964737892,
+            "host_wall_mean_ms": 0.0692493049427867
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 701,
+      "k": 2560,
+      "n": 19456,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.9830399751663208,
+            "host_wall_mean_ms": 0.9931576593468586
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.9830399751663208,
+            "host_wall_mean_ms": 0.9930693389226993
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 2815,
+      "k": 2560,
+      "n": 19456,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 3.54201602935791,
+            "host_wall_mean_ms": 3.5570120671764016
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 3.5609599351882935,
+            "host_wall_mean_ms": 3.5804028157144785
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 713,
+      "k": 2560,
+      "n": 19456,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.99030402302742,
+            "host_wall_mean_ms": 1.0025168303400278
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.9902080297470093,
+            "host_wall_mean_ms": 1.0040722554549575
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 1737,
+      "k": 2560,
+      "n": 19456,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 2.2625280618667603,
+            "host_wall_mean_ms": 2.272740394497911
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 2.262063980102539,
+            "host_wall_mean_ms": 2.278949716128409
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 3001,
+      "k": 2560,
+      "n": 19456,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 3.8763519525527954,
+            "host_wall_mean_ms": 3.894875020099183
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 3.8748159408569336,
+            "host_wall_mean_ms": 3.909151341455678
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 16,
+      "k": 2560,
+      "n": 19456,
+      "representative": 16,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.05427199974656105,
+            "host_wall_mean_ms": 0.06383707902083795
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.05331199988722801,
+            "host_wall_mean_ms": 0.0615117217724522
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 17,
+      "k": 2560,
+      "n": 19456,
+      "representative": 17,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.07998399809002876,
+            "host_wall_mean_ms": 0.08797300203392903
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.08089599758386612,
+            "host_wall_mean_ms": 0.08682025751719873
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 33,
+      "k": 2560,
+      "n": 19456,
+      "representative": 33,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.00033435720251873136,
+          "eager": {
+            "cuda_interval_ms": 0.10239999741315842,
+            "host_wall_mean_ms": 0.10987324640154839
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.00033435720251873136,
+          "eager": {
+            "cuda_interval_ms": 0.10291199758648872,
+            "host_wall_mean_ms": 0.11134966431806485
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 65,
+      "k": 2560,
+      "n": 19456,
+      "representative": 65,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.20070399343967438,
+            "host_wall_mean_ms": 0.20819743319104114
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.20070399343967438,
+            "host_wall_mean_ms": 0.2157612470909953
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 704,
+      "k": 2560,
+      "n": 19456,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.9902400076389313,
+            "host_wall_mean_ms": 0.9993612378214797
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.9907200038433075,
+            "host_wall_mean_ms": 1.0003250014657776
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 720,
+      "k": 2560,
+      "n": 19456,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.9907200038433075,
+            "host_wall_mean_ms": 1.0010069236159325
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 0.9908320009708405,
+            "host_wall_mean_ms": 0.9996377242108186
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "gate_up",
+      "m": 3072,
+      "k": 2560,
+      "n": 19456,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 3.8737919330596924,
+            "host_wall_mean_ms": 3.93848893387864
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0,
+          "eager": {
+            "cuda_interval_ms": 3.8871039152145386,
+            "host_wall_mean_ms": 3.909585337775449
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "down",
+      "m": 1,
+      "k": 9728,
+      "n": 2560,
+      "representative": 1,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0003575819719117135,
+          "eager": {
+            "cuda_interval_ms": 0.057360000908374786,
+            "host_wall_mean_ms": 0.06669957656413317
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.03839999996125698,
+            "host_wall_mean_ms": 0.0481124734506011
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0003575819719117135,
+          "eager": {
+            "cuda_interval_ms": 0.05427199974656105,
+            "host_wall_mean_ms": 0.05939890009661516
+          },
+          "cuda_graph_replay": {
+            "cuda_interval_ms": 0.03891199827194214,
+            "host_wall_mean_ms": 0.043787333803872265
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "down",
+      "m": 701,
+      "k": 9728,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.00035744786146096885,
+          "eager": {
+            "cuda_interval_ms": 0.49007999897003174,
+            "host_wall_mean_ms": 0.5001033035417398
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.00035744786146096885,
+          "eager": {
+            "cuda_interval_ms": 0.4904960095882416,
+            "host_wall_mean_ms": 0.5023969958225886
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "down",
+      "m": 2815,
+      "k": 9728,
+      "n": 2560,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.00041845825035125017,
+          "eager": {
+            "cuda_interval_ms": 1.7786879539489746,
+            "host_wall_mean_ms": 1.7957215119774144
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.00041845825035125017,
+          "eager": {
+            "cuda_interval_ms": 1.7797119617462158,
+            "host_wall_mean_ms": 1.79429876152426
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "down",
+      "m": 713,
+      "k": 9728,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0003578246396500617,
+          "eager": {
+            "cuda_interval_ms": 0.4925439953804016,
+            "host_wall_mean_ms": 0.5024670778463284
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0003578246396500617,
+          "eager": {
+            "cuda_interval_ms": 0.4925439953804016,
+            "host_wall_mean_ms": 0.49977574963122606
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "down",
+      "m": 1737,
+      "k": 9728,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0004190634354017675,
+          "eager": {
+            "cuda_interval_ms": 1.141759991645813,
+            "host_wall_mean_ms": 1.153854071162641
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0004190634354017675,
+          "eager": {
+            "cuda_interval_ms": 1.141759991645813,
+            "host_wall_mean_ms": 1.1892343172803521
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "down",
+      "m": 3001,
+      "k": 9728,
+      "n": 2560,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0004185289435554296,
+          "eager": {
+            "cuda_interval_ms": 1.9170080423355103,
+            "host_wall_mean_ms": 1.9289613313352068
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0004185289435554296,
+          "eager": {
+            "cuda_interval_ms": 1.918463945388794,
+            "host_wall_mean_ms": 1.9302174914628267
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "down",
+      "m": 16,
+      "k": 9728,
+      "n": 2560,
+      "representative": 16,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0003568207612261176,
+          "eager": {
+            "cuda_interval_ms": 0.0435199998319149,
+            "host_wall_mean_ms": 0.08545982806632917
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0003568207612261176,
+          "eager": {
+            "cuda_interval_ms": 0.05222399905323982,
+            "host_wall_mean_ms": 0.059691607020795345
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "down",
+      "m": 17,
+      "k": 9728,
+      "n": 2560,
+      "representative": 17,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0003578475443646312,
+          "eager": {
+            "cuda_interval_ms": 0.055296000093221664,
+            "host_wall_mean_ms": 0.06358558312058449
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0003578475443646312,
+          "eager": {
+            "cuda_interval_ms": 0.05222399905323982,
+            "host_wall_mean_ms": 0.05915598012506962
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "down",
+      "m": 33,
+      "k": 9728,
+      "n": 2560,
+      "representative": 33,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0003590377455111593,
+          "eager": {
+            "cuda_interval_ms": 0.07577600330114365,
+            "host_wall_mean_ms": 0.08323489843557279
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0003590377455111593,
+          "eager": {
+            "cuda_interval_ms": 0.07577600330114365,
+            "host_wall_mean_ms": 0.08351033708701532
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "down",
+      "m": 65,
+      "k": 9728,
+      "n": 2560,
+      "representative": 65,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0003568196843843907,
+          "eager": {
+            "cuda_interval_ms": 0.13414399325847626,
+            "host_wall_mean_ms": 0.14417890148858228
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0003568196843843907,
+          "eager": {
+            "cuda_interval_ms": 0.13414399325847626,
+            "host_wall_mean_ms": 0.14243399103482565
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "down",
+      "m": 704,
+      "k": 9728,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0003582157369237393,
+          "eager": {
+            "cuda_interval_ms": 0.4925439953804016,
+            "host_wall_mean_ms": 0.5016567495961984
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0003582157369237393,
+          "eager": {
+            "cuda_interval_ms": 0.4925439953804016,
+            "host_wall_mean_ms": 0.5024253623560071
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "down",
+      "m": 720,
+      "k": 9728,
+      "n": 2560,
+      "representative": 701,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0003580513584893197,
+          "eager": {
+            "cuda_interval_ms": 0.4925439953804016,
+            "host_wall_mean_ms": 0.5157528600345055
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0003580513584893197,
+          "eager": {
+            "cuda_interval_ms": 0.492591992020607,
+            "host_wall_mean_ms": 0.5015945062041283
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    },
+    {
+      "group": "gptq",
+      "layer": 0,
+      "projection": "down",
+      "m": 3072,
+      "k": 9728,
+      "n": 2560,
+      "representative": 2815,
+      "variants": {
+        "phase_tuned": {
+          "relative_l2": 0.0004185345023870468,
+          "eager": {
+            "cuda_interval_ms": 1.9194879531860352,
+            "host_wall_mean_ms": 1.9308986375108361
+          }
+        },
+        "frozen_launch": {
+          "relative_l2": 0.0004185345023870468,
+          "eager": {
+            "cuda_interval_ms": 1.9189759492874146,
+            "host_wall_mean_ms": 1.9286130166923006
+          }
+        }
+      },
+      "frozen_vs_phase_relative_l2": 0.0
+    }
+  ]
+}

@@ -298,7 +298,15 @@ def audit_batch(directory, base_path, expected_count):
         shortest = episode['start_distance_m']
         require(math.isfinite(shortest) and shortest > 0, 'Invalid starting distance')
         spl = success*shortest/max(shortest, path_length)
-        equal_number(episode['metrics']['spl'], episode['metrics']['success']*shortest/max(shortest,path_length), 'Habitat SPL')
+        # Habitat accumulates its path length internally at a different floating
+        # precision from saved poses. Match the frozen evaluator's1e-5 check
+        # only for this cross-representation consistency comparison. The final
+        # corrected SPL below and saved-result comparisons remain unchanged.
+        habitat_spl = episode['metrics']['spl']
+        require(isinstance(habitat_spl, (int, float)) and not isinstance(habitat_spl, bool)
+                and math.isfinite(habitat_spl)
+                and math.isclose(habitat_spl, episode['metrics']['success']*shortest/max(shortest,path_length),
+                                 rel_tol=1e-9, abs_tol=1e-5), 'Habitat SPL consistency mismatch')
         calculated = dict(episode_id=eid, trajectory_id=ids[eid], success=success, spl=spl,
             steps=len(rows), actual_model_calls=sum(r['model_called'] for r in rows),
             errors=sum(bool(r.get('error')) for r in rows),
