@@ -2,6 +2,7 @@
   "files": {
     "checks/analyze_navigation_awq_divergence.py": "421904df7507db67be0b1c17f8a765bd1dd60712340923d00d2b2910c2c6e5f2",
     "checks/analyze_navigation_horizon.py": "07b8f606b185089d47ce34e64cf968cb9ed685397a725bd3be92ad9f8bbb3c31",
+    "checks/analyze_navigation_precision_latency_offline.py": "c24265406610abe8b9e2fcf8a82e9275144097cfcfb4234663d4af6f604c4d9d",
     "checks/analyze_navigation_sr.py": "2ef6ba2785a7b014813e9622258416a7ad87811beb28376e1185a3f310e670c5",
     "checks/audit_navigation_awq_dart_run.py": "c15e1473d05cc674c164fe2995b0a7a32cfbfb490158b8718399010acae59435",
     "checks/audit_navigation_compression.py": "6f8fae347d9babb0b1187ad3ec6cc4b179e9d882b0ae95fb754ea1cb68fdd425",
@@ -91,7 +92,7 @@
     "checks/export_navigation_dart50_compare.py": "1c7184dee490d06f02e79b755b31af0792ce9b903b77b169ba29d1d031b02988",
     "checks/export_navigation_dataset_release.py": "b37717cf95b4451794036a95210fa6de43ce952b428e57bc0fa5d2d97ac04570",
     "checks/export_navigation_precision_integration.py": "a38e5edfcedf887769f28a10f9c83b9c7bd887770588ab7d2ed11d281c31bea7",
-    "checks/export_navigation_precision_progress.py": "22d38724f463cdb6b282e7cb8d83bf4f1ce438ec8548983a0d6841267e46d969",
+    "checks/export_navigation_precision_progress.py": "9303f7ab944de6b019fb25cbd25848343c6a74e6107c96ed8724ed0f9906b192",
     "checks/export_navigation_precision_results.py": "5a32f1f9f696347f16f3517abc4f701ed5339268d95cd984357ee4ba4a5079c2",
     "checks/export_navigation_quant_timing.py": "50a54159cda1153068f6d0ee18e479525cf07c577803c181be6bc82732538bfc",
     "checks/export_navigation_stage2_delivery.py": "6d5d3f656284a2203df1d7d1360d794cefe658c088bbf1457ec2ad9cdc1a0fec",

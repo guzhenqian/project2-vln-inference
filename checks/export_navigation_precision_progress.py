@@ -14,6 +14,11 @@ def main():
     keys = ('case_count','success_count','sr','spl','actual_model_calls','request_median_s',
             'request_p95_s','sampled_whole_card_peak_mib','error_count','collisions','request_total_s',
             'quality_error_counts')
+    baseline_path = ROOT/'logs/navigation_stage2_sequence_20261109/results/fp16_100.json'
+    baseline = verify_result(baseline_path, selection['same100'], trajectories)
+    rows.append(dict(group='baseline_fp16', reused=True, completed_cases=100, status='complete_reused',
+        metrics={key:baseline[key] for key in keys}, result_source=baseline_path.relative_to(ROOT).as_posix(),
+        result_sha256=digest(baseline_path)))
     for algorithm in ('awq','gptq'):
         for precision in ('w4a16','w4a4','w4a8','w8a16'):
             group = algorithm+'_'+precision
@@ -43,7 +48,9 @@ def main():
                             count += read(folder/'summary.json')['episode_count']
                         elif (folder/'progress.json').exists():
                             count += read(folder/'progress.json')['completed_episodes']
-                    row.update(completed_cases=count, status='running' if state['status']!='failed' else 'interrupted')
+                    stopped = state['status'] == 'cancelled'
+                    row.update(completed_cases=count, status='cancelled' if stopped else
+                               ('running' if state['status']!='failed' else 'interrupted'))
                 row['technical_execution_validated'] = (RUN/'validation'/(group+'_passed.json')).exists()
             rows.append(row)
     data = dict(updated_utc=datetime.now(timezone.utc).isoformat(), status=state['status'],
@@ -57,12 +64,13 @@ def main():
     data['updated_shanghai'] = datetime.fromisoformat(data['updated_utc']).astimezone(timezone(timedelta(hours=8))).isoformat()
     output = ROOT/'reports/navigation_precision_progress_20261110'
     output.with_suffix('.json').write_bytes((json.dumps(data,ensure_ascii=False,indent=2,allow_nan=False)+'\n').encode('utf-8'))
-    lines = ['# 八组精度比较进度', '',
+    lines = ['# 未量化基线与八组精度比较进度', '',
         f"快照时间（北京时间）：{data['updated_shanghai']}；新运行已完成{data['completed_new_cases']}/600条逐配置案例。此页是人工导出的进度快照，不是实时监控。", '',
-        '两种W4A16沿用原同100条；六种新配置通过技术执行验收后逐组运行。只为完成100条并通过审计的组填写统计，未完成组不按部分案例推算成功率。', '',
+        ('用户已要求停止量化测试；剩余任务不再运行，已有结果保留。' if state['status']=='cancelled' else '') +
+        '未量化FP16与两种W4A16沿用原同100条。只为完成100条并通过审计的组填写统计，未完成组不按部分案例推算成功率。', '',
         '| 配置 | 完成案例 | 状态 | 成功/100 | SPL | P95/s | 整卡峰值/MiB | 格式/截断错误 |',
         '|---|---:|---|---:|---:|---:|---:|---:|']
-    labels = dict(pending='待运行',running='运行中',interrupted='中断待恢复',complete='完成',complete_reused='完成（复用）')
+    labels = dict(pending='待运行',running='运行中',interrupted='中断待恢复',cancelled='用户要求停止',complete='完成',complete_reused='完成（复用）')
     for row in rows:
         prefix = f"| {row['group'].upper()} | {row['completed_cases']}/100 | {labels[row['status']]} |"
         m = row['metrics']

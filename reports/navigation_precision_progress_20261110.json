@@ -1,8 +1,30 @@
 {
-  "updated_utc": "2026-11-11T18:51:58.746718+00:00",
-  "status": "running100",
-  "active_group": "gptq_w4a8",
+  "updated_utc": "2026-11-12T07:00:12.370624+00:00",
+  "status": "cancelled",
+  "active_group": "gptq_w8a16",
   "rows": [
+    {
+      "group": "baseline_fp16",
+      "reused": true,
+      "completed_cases": 100,
+      "status": "complete_reused",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 66,
+        "sr": 0.66,
+        "spl": 0.5436392456142527,
+        "actual_model_calls": 4098,
+        "request_median_s": 2.1039848730433732,
+        "request_p95_s": 2.4027292427374047,
+        "sampled_whole_card_peak_mib": 11671.0,
+        "error_count": 0,
+        "collisions": 1526,
+        "request_total_s": 8309.15112140798,
+        "quality_error_counts": {}
+      },
+      "result_source": "logs/navigation_stage2_sequence_20261109/results/fp16_100.json",
+      "result_sha256": "38e72e78822ebd3d3fe1817ebc90b949603cdec514aaaa25e554c606bb3970b2"
+    },
     {
       "group": "awq_w4a16",
       "reused": true,
@@ -143,28 +165,42 @@
     {
       "group": "gptq_w4a8",
       "reused": false,
-      "completed_cases": 50,
-      "status": "running",
-      "metrics": null,
-      "technical_execution_validated": true
+      "completed_cases": 100,
+      "status": "complete",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 68,
+        "sr": 0.68,
+        "spl": 0.5798137998795715,
+        "actual_model_calls": 4097,
+        "request_median_s": 7.54722102638334,
+        "request_p95_s": 7.89027142720297,
+        "sampled_whole_card_peak_mib": 6849.0,
+        "error_count": 0,
+        "collisions": 1868,
+        "request_total_s": 30441.1238046675,
+        "quality_error_counts": {}
+      },
+      "result_source": "logs/navigation_precision_sequence_20261110/results/gptq_w4a8_100.json",
+      "result_sha256": "315e78f07095cbff982316d7f9a02f85afaf126fb1430d64b5f8af7e13574c3e"
     },
     {
       "group": "gptq_w8a16",
       "reused": false,
-      "completed_cases": 0,
-      "status": "pending",
+      "completed_cases": 50,
+      "status": "cancelled",
       "metrics": null,
       "technical_execution_validated": true
     }
   ],
-  "completed_new_cases": 450,
+  "completed_new_cases": 550,
   "new_cases_planned": 600,
   "all_completed_metrics_independently_recomputed": true,
   "exporter_sources_sha256": {
-    "export_navigation_precision_progress.py": "22d38724f463cdb6b282e7cb8d83bf4f1ce438ec8548983a0d6841267e46d969",
+    "export_navigation_precision_progress.py": "9303f7ab944de6b019fb25cbd25848343c6a74e6107c96ed8724ed0f9906b192",
     "export_navigation_precision_results.py": "5a32f1f9f696347f16f3517abc4f701ed5339268d95cd984357ee4ba4a5079c2"
   },
   "precision_config_sha256": "43b47a3860f2761f134005ec9e16abfaa194abc7246ed517d9fd4cf12b109f22",
   "scope": "Same100 per group; experimental kernels; only completed audited groups receive performance numbers",
-  "updated_shanghai": "2026-11-12T02:51:58.746718+08:00"
+  "updated_shanghai": "2026-11-12T15:00:12.370624+08:00"
 }
