@@ -1,0 +1,381 @@
+{
+  "scope": "Completed same20 controller result; independent audit and FP16 drift repeat still pending. Not a same100 result or final acceptance.",
+  "source": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/result.json",
+  "source_sha256": "9b846dc1e822dd0178587c4089cef35e51bdacec2f7d0c1a890d0fde6290a2c7",
+  "fixed_speed_gate_source": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/fixed_speed_gate.json",
+  "fixed_speed_gate_sha256": "22e914dbad1849a71e85b9e32ec4ab1133fddbab1e4f13daf59c80611652a102",
+  "fixed_speed_gate": {
+    "passed": true,
+    "ratios": {
+      "0_18": {
+        "http_p50_s": 0.6620129828429112,
+        "http_p95_s": 0.6608170568038935
+      },
+      "0_64": {
+        "http_p50_s": 0.5465989431356446,
+        "http_p95_s": 0.5288376459163693
+      },
+      "1_18": {
+        "http_p50_s": 0.8966526443044915,
+        "http_p95_s": 0.9034782804960211
+      },
+      "1_64": {
+        "http_p50_s": 0.766810714327799,
+        "http_p95_s": 0.7607111192024713
+      }
+    },
+    "baseline_sha256": "3e1cfad7753c991de3e228a6e70807b7264fc334fb68c9229a09a63b6cd5d400",
+    "max_ratio": 1.1
+  },
+  "result": {
+    "status": "complete",
+    "case_count": 20,
+    "success_count": 13,
+    "sr": 0.65,
+    "spl": 0.5686283752502491,
+    "actual_model_calls": 939,
+    "completion_tokens": 17153,
+    "prompt_tokens": 2598879,
+    "request_median_s": 1.5784611091949046,
+    "request_p95_s": 1.7992495918646454,
+    "request_total_s": 1443.5676813516766,
+    "sampled_whole_card_peak_mib": 6740.0,
+    "error_count": 0,
+    "quality_errors": {},
+    "infrastructure_errors": 0,
+    "warmup_errors": [],
+    "episodes": [
+      {
+        "episode_id": "558",
+        "trajectory_id": "2258",
+        "success": 0,
+        "spl": 0.0,
+        "steps": 400,
+        "actual_model_calls": 128,
+        "errors": 0,
+        "collisions": 3,
+        "terminal_stop_source": "step_limit"
+      },
+      {
+        "episode_id": "1164",
+        "trajectory_id": "4633",
+        "success": 0,
+        "spl": 0.0,
+        "steps": 400,
+        "actual_model_calls": 113,
+        "errors": 0,
+        "collisions": 0,
+        "terminal_stop_source": "step_limit"
+      },
+      {
+        "episode_id": "917",
+        "trajectory_id": "3769",
+        "success": 1,
+        "spl": 0.11800006666059448,
+        "steps": 269,
+        "actual_model_calls": 63,
+        "errors": 0,
+        "collisions": 0,
+        "terminal_stop_source": "model"
+      },
+      {
+        "episode_id": "591",
+        "trajectory_id": "2380",
+        "success": 1,
+        "spl": 0.9971743625883337,
+        "steps": 49,
+        "actual_model_calls": 13,
+        "errors": 0,
+        "collisions": 0,
+        "terminal_stop_source": "model"
+      },
+      {
+        "episode_id": "1010",
+        "trajectory_id": "4094",
+        "success": 1,
+        "spl": 0.8468502753776136,
+        "steps": 87,
+        "actual_model_calls": 23,
+        "errors": 0,
+        "collisions": 0,
+        "terminal_stop_source": "model"
+      },
+      {
+        "episode_id": "1724",
+        "trajectory_id": "6843",
+        "success": 1,
+        "spl": 0.9337973251155642,
+        "steps": 72,
+        "actual_model_calls": 19,
+        "errors": 0,
+        "collisions": 3,
+        "terminal_stop_source": "model"
+      },
+      {
+        "episode_id": "1022",
+        "trajectory_id": "4152",
+        "success": 1,
+        "spl": 0.9404710912401055,
+        "steps": 79,
+        "actual_model_calls": 18,
+        "errors": 0,
+        "collisions": 1,
+        "terminal_stop_source": "model"
+      },
+      {
+        "episode_id": "1466",
+        "trajectory_id": "5822",
+        "success": 0,
+        "spl": 0.0,
+        "steps": 146,
+        "actual_model_calls": 38,
+        "errors": 0,
+        "collisions": 0,
+        "terminal_stop_source": "model"
+      },
+      {
+        "episode_id": "720",
+        "trajectory_id": "2905",
+        "success": 1,
+        "spl": 1.0,
+        "steps": 32,
+        "actual_model_calls": 9,
+        "errors": 0,
+        "collisions": 0,
+        "terminal_stop_source": "model"
+      },
+      {
+        "episode_id": "1803",
+        "trajectory_id": "7170",
+        "success": 1,
+        "spl": 0.9661292480155393,
+        "steps": 61,
+        "actual_model_calls": 16,
+        "errors": 0,
+        "collisions": 0,
+        "terminal_stop_source": "model"
+      },
+      {
+        "episode_id": "1381",
+        "trajectory_id": "5455",
+        "success": 1,
+        "spl": 0.8813842002447432,
+        "steps": 73,
+        "actual_model_calls": 19,
+        "errors": 0,
+        "collisions": 0,
+        "terminal_stop_source": "model"
+      },
+      {
+        "episode_id": "1582",
+        "trajectory_id": "6306",
+        "success": 0,
+        "spl": 0.0,
+        "steps": 400,
+        "actual_model_calls": 125,
+        "errors": 0,
+        "collisions": 7,
+        "terminal_stop_source": "step_limit"
+      },
+      {
+        "episode_id": "1638",
+        "trajectory_id": "6570",
+        "success": 1,
+        "spl": 0.916343626152468,
+        "steps": 54,
+        "actual_model_calls": 16,
+        "errors": 0,
+        "collisions": 0,
+        "terminal_stop_source": "model"
+      },
+      {
+        "episode_id": "439",
+        "trajectory_id": "1720",
+        "success": 1,
+        "spl": 1.0,
+        "steps": 56,
+        "actual_model_calls": 16,
+        "errors": 0,
+        "collisions": 0,
+        "terminal_stop_source": "model"
+      },
+      {
+        "episode_id": "1262",
+        "trajectory_id": "4951",
+        "success": 1,
+        "spl": 0.9108691935670111,
+        "steps": 73,
+        "actual_model_calls": 20,
+        "errors": 0,
+        "collisions": 2,
+        "terminal_stop_source": "model"
+      },
+      {
+        "episode_id": "1378",
+        "trajectory_id": "5434",
+        "success": 1,
+        "spl": 1.0,
+        "steps": 38,
+        "actual_model_calls": 11,
+        "errors": 0,
+        "collisions": 0,
+        "terminal_stop_source": "model"
+      },
+      {
+        "episode_id": "662",
+        "trajectory_id": "2745",
+        "success": 1,
+        "spl": 0.8615481160430085,
+        "steps": 67,
+        "actual_model_calls": 24,
+        "errors": 0,
+        "collisions": 3,
+        "terminal_stop_source": "model"
+      },
+      {
+        "episode_id": "233",
+        "trajectory_id": "961",
+        "success": 0,
+        "spl": 0.0,
+        "steps": 400,
+        "actual_model_calls": 131,
+        "errors": 0,
+        "collisions": 86,
+        "terminal_stop_source": "step_limit"
+      },
+      {
+        "episode_id": "1593",
+        "trajectory_id": "6339",
+        "success": 0,
+        "spl": 0.0,
+        "steps": 400,
+        "actual_model_calls": 96,
+        "errors": 0,
+        "collisions": 7,
+        "terminal_stop_source": "step_limit"
+      },
+      {
+        "episode_id": "1740",
+        "trajectory_id": "6893",
+        "success": 0,
+        "spl": 0.0,
+        "steps": 156,
+        "actual_model_calls": 41,
+        "errors": 0,
+        "collisions": 1,
+        "terminal_stop_source": "model"
+      }
+    ],
+    "step_files_sha256": {
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_558/steps.jsonl": "181c22a4c1d98877798cfde720d8564d905c1b5c7e2f1d520dec101ebbb759e4",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_1164/steps.jsonl": "05fcd39ec23ba019b3bbb61e857cf67ada590b25632ffbcbc763e8e01c810bfe",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_917/steps.jsonl": "68af0d9581ae372993e630f78e76c693d4e831c92adf20a23f773c1754617aed",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_591/steps.jsonl": "b2366e90948e9c17e2797631c6233ea53d6da97dfbc23c9ec6938ce4c950fa66",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_1010/steps.jsonl": "efc91924e92b1d3de99bf245e56b956786fb3f2eb8e7e8ae5d2c5247b09a2846",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_1724/steps.jsonl": "fd4ac4b0814665b609380deeab11e371977acbf40e56c96457ddf3c8d061e0f1",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_1022/steps.jsonl": "5265e1eff62ff62f4fd2346f848e66611b9b3b41f436bd8225f3bb501657ee69",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_1466/steps.jsonl": "8a0d5c0350a4b84bed52961293c4cb4da0be42aa4a9f117ffdaabdbcf5d7b2ce",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_720/steps.jsonl": "9ed135be5d7aa58965d1ff02ac0debe6710fd318fb19992a7921d0b116373c59",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_1803/steps.jsonl": "c28cdc45318cda50095263ca0940c41cf6a1a58d535089aba2d61146c03e254d",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_1381/steps.jsonl": "cc26582894ef1cac3401be4326880e265d6f6b810880ef5e66148d421be5e73a",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_1582/steps.jsonl": "58c1651d06fd259086208e6b46449c5b2f91ef2e8a7b7c1f501b159dd9b6d710",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_1638/steps.jsonl": "59e2a37308e4b7236a8ae3b8f17bd02982b9e37131595d7208704b14a0117f49",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_439/steps.jsonl": "6f1c58006a9551767f63fac1f27ee5ca09eec5018b581fc6fdccd3251ab1a8ce",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_1262/steps.jsonl": "404f910adefd381d32e4dc96726d4883897bd6a2e3cb68b774340afa79f6a94d",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_1378/steps.jsonl": "8fac35da11b4f8e08a1e53f15cf1388394fb076ea0594bc275202c57c07a7e0e",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_662/steps.jsonl": "4678d52cb3ea27ad4ff5ca414d1ef125dcc299ff4b4c5ba5e5b7d3d52dedea44",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_233/steps.jsonl": "a44e6b7e7379f23a8fc7c6d5c1ed457e7db8f30925d5407df67663e93d0a82c0",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_1593/steps.jsonl": "7b4d6824f0027a71d5a9bca892f381387af1e32c71cc5b452d66c6ededbe626c",
+      "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_1740/steps.jsonl": "a9cb01e0fb70a3877eee0805f9521e12b393db6249ec5ca59235f9df66abf381"
+    },
+    "timing_start": 51,
+    "timing_end_exclusive": 992,
+    "stage_summary": {
+      "requests": 939,
+      "prefill_language_p50_ms": 352.5529479980469,
+      "prefill_language_p95_ms": 357.85052185058595,
+      "actual_decode_forwards": 29792,
+      "decode_ms_per_actual_forward": 7.972685341084042,
+      "decode_request_mean_p50_ms": 7.9720189422369,
+      "decode_request_mean_p95_ms": 8.069658578932286
+    },
+    "manifest_sha256": "fcc6b58274f3fc7c2829f8646f085fe25f4ba7e2d123cf7670b13201e2a8e15a",
+    "group": "awq_w4a16",
+    "fixed_input": {
+      "0_18": {
+        "n": 10,
+        "http_p50_s": 0.3507608200889081,
+        "http_p95_s": 0.3607865094905719,
+        "stage_summary": {
+          "requests": 10,
+          "prefill_language_p50_ms": 80.47821044921875,
+          "prefill_language_p95_ms": 80.54916954040527,
+          "actual_decode_forwards": 320,
+          "decode_ms_per_actual_forward": 7.311779303848743,
+          "decode_request_mean_p50_ms": 7.319093495607376,
+          "decode_request_mean_p95_ms": 7.327336715161801
+        }
+      },
+      "0_64": {
+        "n": 10,
+        "http_p50_s": 0.7784902299754322,
+        "http_p95_s": 0.7841114688431844,
+        "stage_summary": {
+          "requests": 10,
+          "prefill_language_p50_ms": 80.52428817749023,
+          "prefill_language_p95_ms": 81.00259819030762,
+          "actual_decode_forwards": 640,
+          "decode_ms_per_actual_forward": 7.317901402711868,
+          "decode_request_mean_p50_ms": 7.320947993546724,
+          "decode_request_mean_p95_ms": 7.341334484890103
+        }
+      },
+      "1_18": {
+        "n": 10,
+        "http_p50_s": 1.5562581398990005,
+        "http_p95_s": 1.649241137341596,
+        "stage_summary": {
+          "requests": 10,
+          "prefill_language_p50_ms": 339.68946838378906,
+          "prefill_language_p95_ms": 343.1089691162109,
+          "actual_decode_forwards": 320,
+          "decode_ms_per_actual_forward": 7.980616898834706,
+          "decode_request_mean_p50_ms": 7.984866492450237,
+          "decode_request_mean_p95_ms": 8.018272454291582
+        }
+      },
+      "1_64": {
+        "n": 10,
+        "http_p50_s": 2.000757633242756,
+        "http_p95_s": 2.0244617033516987,
+        "stage_summary": {
+          "requests": 10,
+          "prefill_language_p50_ms": 340.4247131347656,
+          "prefill_language_p95_ms": 341.47481536865234,
+          "actual_decode_forwards": 640,
+          "decode_ms_per_actual_forward": 7.97674075588584,
+          "decode_request_mean_p50_ms": 7.974354773759842,
+          "decode_request_mean_p95_ms": 8.014118506386875
+        }
+      }
+    },
+    "source_hashes": {
+      "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+      "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+      "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+      "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+      "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+      "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+      "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+      "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+      "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1",
+      "navigation_w4a16_fix_runtime.py": "9c06aeae3014c278bea0fd610f4a587f57f1f1ad5be4ec1bb8fe9e12f55ebd0d",
+      "navigation_repair_runtime.py": "e3ca4c02732d531f85a3a6306966549d31e8217c056a7d5a8cf3d91f51813ae8",
+      "navigation_repair_module_map.py": "159d3e35eb311d4157a51f2b92f35ddb0b102b0c3b0010a8aa36a9795e8efa7a",
+      "serve_navigation_repair.py": "74b39ef35c8d8cef9852318de4e8bf5bab021a745b15c234447f99d83ca3cc99",
+      "navigation_w4a16_candidate_kernels.py": "b38189a9beebec838ea56f059d0e5c2693a13d1e67daae907b6266716ae37e38",
+      "navigation_w4a16_repair_kernels.py": "09a181c19e618307f681e02a8ee6964c6ad368a0d47e772d7328f297971e9a87"
+    },
+    "passed_stability": true
+  }
+}
