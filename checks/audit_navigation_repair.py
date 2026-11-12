@@ -6,11 +6,13 @@ The supplied directories contain result.json, service/, and navigation/.
 Unrun groups stay pending. Pipeline completion alone never grants acceptance.
 """
 import argparse
+import ast
 from collections import Counter
 from datetime import datetime, timezone
 import hashlib
 import json
 import math
+import re
 from pathlib import Path
 import statistics
 import struct
@@ -22,6 +24,7 @@ QUALITY_ERRORS = {'truncated_model_output', 'invalid_action_random_fallback_reje
 CELLS = [(s, t) for s in (0, 1) for t in (18, 64)]
 HASH_CACHE = {}
 TENSOR_HASH_CACHE = {}
+SMOKE_PARSER = None
 ACTIVATION_RECIPES = {
     4: 'dynamic_per_token_per_group128_symmetric_maxabs_narrow_range',
     8: 'dynamic_per_token_symmetric_maxabs_narrow_range', 16: 'none'}
@@ -194,6 +197,99 @@ def controller_source(protocol, evidence):
     return matches[0]
 
 
+def inspect_smoke_answer(answer):
+    """Run only the two hash-pinned author parser methods, without model/UI imports."""
+    global SMOKE_PARSER
+    require(len(answer['choices']) == 1, 'Natural smoke returned multiple choices')
+    choice = answer['choices'][0]
+    tokens = answer['usage']['completion_tokens']
+    require(type(tokens) is int and tokens > 0, 'Natural smoke has invalid completion count')
+    receipt = dict(finish_reason=choice['finish_reason'], completion_tokens=tokens,
+        parser='Pinned AuthorAgent.extract_multi_result; same first-two-action queue rule')
+    if choice['finish_reason'] != 'stop':
+        return dict(receipt, passed=False, error='truncated_model_output')
+    text = choice['message']['content']
+    if not isinstance(text, str) or not text.strip():
+        return dict(receipt, passed=False, error='empty_model_output')
+    if SMOKE_PARSER is None:
+        source = ROOT / 'tmp/habitat_setup/navigation_source_review/eval/vln/eval.py'
+        require(sha(source) == '72efa80174a832cec519eb7bb73ba2f635848b47af4dcaafaa03078e0d8d3a1f',
+                'Pinned author parser source changed')
+        tree = ast.parse(source.read_text(encoding='utf-8'))
+        agent = next(n for n in tree.body if isinstance(n, ast.ClassDef) and n.name == 'SimpleVLN_Agent')
+        methods = [n for n in agent.body if isinstance(n, ast.FunctionDef)
+                   and n.name in ('extract_multi_result', 'extract_result')]
+        require(len(methods) == 2, 'Missing pinned parser methods')
+        namespace = dict(re=re)
+        exec(compile(ast.Module(body=methods, type_ignores=[]), str(source), 'exec'), namespace)
+        parser_type = type('PinnedSmokeParser', (), {n.name: namespace[n.name] for n in methods})
+        SMOKE_PARSER = parser_type()
+        SMOKE_PARSER.forward_distance, SMOKE_PARSER.turn_angle = 25, 15
+    cleaned = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL).strip()
+    try:
+        actions = SMOKE_PARSER.extract_multi_result(cleaned)[:2]
+        queued, rejected = [], False
+        for action, value in actions:
+            if action == 0:
+                queued.append(0)
+            elif action in (1, 2, 3):
+                unit = 25 if action == 1 else 15
+                queued.extend([action] * max(0, min(3, round(value / unit))))
+            if action is None or not queued:
+                rejected = True
+                queued.append(0)
+        return dict(receipt, passed=bool(queued) and not rejected, parsed_actions=actions,
+            queued_actions=queued, error='invalid_action_random_fallback_rejected' if rejected or not queued else None)
+    except Exception as error:
+        return dict(receipt, passed=False, error='output_parser_exception', exception=repr(error))
+
+
+def verify_smoke_receipt(evidence, directory, row):
+    calculated = inspect_smoke_answer(row['response'])
+    path = directory / f"smoke{row['sample']}_output_gate.json"
+    if path.exists():
+        require(evidence.load(path) == calculated, 'Natural-output gate differs from the pinned parser')
+    elif 'checks/navigation_repair_output_gate.py' in evidence.snapshots:
+        raise ValueError('Missing declared natural-output gate receipt')
+    return calculated
+
+
+def incomplete_group(directory, result=None):
+    """Distinguish absent work, a retained pre-navigation failure, and a running job."""
+    group = directory.name
+    base = dict(group=group, directory=relative(directory), case_count=None,
+                success_count=None, sr=None, spl=None)
+    if not directory.exists():
+        return dict(base, pipeline_status='pending', error='Group directory not created; not run')
+    if result is not None:
+        require(result.get('case_count') == 0 and result.get('success_count') is None,
+                'Early failure must not claim navigation success')
+    evidence = Evidence(directory)
+    fixed_path = directory / 'fixed_requests.json'
+    rejected = []
+    if fixed_path.exists():
+        for row in evidence.load(fixed_path):
+            if row['phase'] == 'smoke':
+                calculated = verify_smoke_receipt(evidence, directory, row)
+                if not calculated['passed']:
+                    rejected.append(dict(sample=row['sample'], request_index=row['index'], gate=calculated))
+    failure_path = directory.parent / 'failure.json'
+    failure = evidence.load(failure_path) if failure_path.exists() else None
+    if rejected:
+        require(not (directory / 'navigation').exists(), 'Rejected natural smoke nevertheless started navigation')
+        return dict(base, pipeline_status='natural_output_gate_failed', case_count=0,
+            error='Natural fixed-input output was rejected before any20-case navigation',
+            natural_output_gate_passed=False, quality_gate_passed=None, rejected_smokes=rejected,
+            recorded_run_failure=failure, evidence_files_sha256=evidence.hashes)
+    if result is not None:
+        raise ValueError('Unrecognized zero-case result without a verified failed natural-output gate')
+    if failure is not None:
+        return dict(base, pipeline_status='run_failed',
+            case_count=0 if not (directory / 'navigation').exists() else None,
+            error=failure.get('error', 'Run failed before result'), evidence_files_sha256=evidence.hashes)
+    return dict(base, pipeline_status='pending', error='Started but no complete result.json; no acceptance inferred')
+
+
 def audit_fixed(evidence, directory, result, launch):
     service = directory / 'service'
     fixed = evidence.load(directory / 'fixed_requests.json')
@@ -207,7 +303,7 @@ def audit_fixed(evidence, directory, result, launch):
         require(math.isfinite(row['http_total_s']) and row['http_total_s'] > 0, 'Invalid fixed HTTP latency')
         choice = response['choices'][0]
         if row['phase'] == 'smoke':
-            require(choice['finish_reason'] == 'stop', 'Natural EOS smoke failed')
+            require(verify_smoke_receipt(evidence, directory, row)['passed'], 'Natural EOS/format smoke failed')
         else:
             require(row['phase'] in ('warmup', 'measured') and row['tokens'] in (18, 64), 'Unexpected fixed protocol cell')
             require(response['usage']['completion_tokens'] == row['tokens'] and choice['finish_reason'] == 'length',
@@ -407,6 +503,8 @@ def audit_group(directory):
         evidence.source(source, protocol[key])
     if protocol.get('source_snapshot_sha256'):
         require(protocol['source_snapshot_sha256'] == sha(run / 'source_snapshot.json'), 'Snapshot manifest hash mismatch')
+    for source, snapshot in evidence.snapshots.items():
+        evidence.source(source, snapshot['sha256'])
     evidence.source('tmp/habitat_setup/navigation_source_review/eval/vln/eval.py', manifest['author_policy_sha256'])
     for name in ('simplevln_env.py', 'simplevln_policy.py', 'run_navigation_precision_diagnostic.py', 'run_closed_loop_baseline.py'):
         require(name in provenance['scripts'], 'Missing evaluator source provenance: ' + name)
@@ -547,11 +645,14 @@ def combine(audits):
     for group in GROUPS:
         item = audits.get(group)
         if item is None:
-            table.append(dict(group=group, status='pending', passed=False, reason='Not run in this audit'))
+            table.append(dict(group=group, status='pending', passed=False, case_count=None,
+                success_count=None, sr=None, spl=None, reason='Not run in this audit'))
             continue
         if not item.get('metrics') and not item.get('fixed_input'):
             table.append(dict(group=group, status=item.get('pipeline_status', 'audit_failed'), passed=False,
-                              reason=item.get('error', 'No completed result')))
+                case_count=item.get('case_count'), success_count=None, sr=None, spl=None,
+                natural_output_gate_passed=item.get('natural_output_gate_passed'),
+                quality_gate_passed=None, reason=item.get('error', 'No completed result')))
             continue
         quality = speed = same20 = tensor_match = first_inputs_match = None
         speed_cells = {}
@@ -856,9 +957,15 @@ def apply_kernel_gates(table, audits, paths):
             if coverage.get('activation_recipe') and coverage['activation_recipe'] != item['actual_recipe']['activation_recipe']:
                 mismatches.append(dict(result=gate['result'], reason='Probe/service activation recipe differs'))
                 continue
+            conflicts = [source for source, expected in gate['evidence_files_sha256'].items()
+                         if item['evidence_files_sha256'].get(source) not in (None, expected)]
+            if conflicts:
+                mismatches.append(dict(result=gate['result'], reason='Kernel/service evidence SHA conflict', files=conflicts))
+                continue
             matches.append(dict(result=gate['result'], result_sha256=gate['result_sha256'],
                 kernel_sha256=gate['kernel_sha256'], numerical_cases=coverage['numerical_cases'],
                 max_reference_relative_l2=coverage['max_reference_relative_l2']))
+            item['evidence_files_sha256'].update(gate['evidence_files_sha256'])
         row['technical_gate_status'] = 'passed' if matches else 'technical_evidence_pending'
         row['technical_gate_matches'] = matches
         row['technical_gate_mismatches'] = mismatches
@@ -885,15 +992,15 @@ def main():
         require(directory.is_relative_to(ROOT / 'logs'), 'Group directory must be under logs/')
         group = directory.name
         require(group in GROUPS and group not in audits, 'Unknown/duplicate group directory: ' + group)
-        if not (directory / 'result.json').exists():
-            failure_path = directory.parent / 'failure.json'
-            audits[group] = dict(group=group, directory=relative(directory),
-                pipeline_status='run_failed' if failure_path.exists() else 'pending',
-                error=read(failure_path).get('error', 'Run failed before result') if failure_path.exists()
-                      else 'No complete result.json; no acceptance inferred')
-            continue
         try:
-            audits[group] = audit_group(directory)
+            if not (directory / 'result.json').exists():
+                audits[group] = incomplete_group(directory)
+            else:
+                status = read(directory / 'result.json')
+                if status.get('case_count') == 0 and status.get('status') not in ('fixed_speed_gate_failed', 'fixed_input_only_complete'):
+                    audits[group] = incomplete_group(directory, status)
+                else:
+                    audits[group] = audit_group(directory)
             require(audits[group]['group'] == group, 'Directory/result group mismatch')
         except Exception as error:
             audits[group] = dict(group=group, directory=relative(directory), pipeline_status='audit_failed',
