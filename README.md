@@ -4,7 +4,7 @@
 
 在 RTX 4070 Ti 12 GB 上完成视觉语言模型部署、业务联调和导航压缩实验。早期使用 Qwen3-VL-2B-Instruct 验证 LMDeploy、FastAPI、Gradio 图片问答与视频功能；当前导航实验使用 SimpleVLN Qwen3-VL 4B RL，在 Habitat 中评测 FP16、AWQ、DART 及组合方案。
 
-**最新进展（2026-11-12）：按用户要求停止量化测试，先排查延迟退化。** 已有FP16基线及7组完整量化结果；最后GPTQ W8A16保留50条，余下50条不再运行。W4A8的AWQ/GPTQ成功65/68条，但P95达7.873/7.890秒；AWQ W8A16成功64条、P95为8.661秒。两组W4A4均成功0条，大量输出达到512 token。新组改用了项目实验算子，当前没有速度收益；W8A16实际为反量化后FP16乘法，W4A4为打包四位、INT8乘法。对旧日志按同输入和同输出长度匹配后，新配置仍明显更慢，不能只归因于导航轨迹；具体算子耗时占比尚未测清。见[延迟退化分析与停止决定](reports/navigation_precision_latency_review_20261112.md)、[含未量化基线的结果表](reports/navigation_precision_progress_20261110.md)。冻结模型、内核与原始测量保留，未启动新测试或Token组合。
+**最新进展（2026-11-12）：原W4A16已完成独立延迟优化验证。** 采用按输入行数分别调优＋decode CUDA Graph，保留原量化权重与3072完整prefill。九图、18输出token的确认测试中，AWQ/GPTQ整请求中位延迟分别下降20.4%/5.9%，decode模型区间分别下降59.6%/59.2%。首轮与确认共192次正式计时，优化前后固定输入输出逐token一致；另做12次FP16间隔检查，跨轮基线波动仍未完全定位，不宣称量化prefill稳定优于FP16。100条闭环质量尚未重跑。见[优化前后对比](reports/navigation_w4a16_optimization_20261112.md)、[方法与失败记录](reports/navigation_w4a16_optimization_method_20261112.md)。原新增精度全量测试仍停止，GPTQ W8A16保留50条，Token组合未运行；[原精度结果](reports/navigation_precision_progress_20261110.md)保持原样。
 
 **已完成的第二阶段算法比较：九组50条初筛及累计100条复筛。** 七个新配置完成真实接入验收和同100条导航，DART75/50复用相同子集；900条逐配置案例记录及新运行29,227对执行记录独立复核通过，九组均无请求/解析错误。统一采用eager、3072完整prefill与原统计方式。DART75成功72/100；SparseVLM-v1单层无合并75%成功69/100，P95低8.26%；AWQ/GPTQ成功66/68条，整卡峰值6863/7160MiB。当前保留这两种量化与两个75%配置作为组合候选，差异仍属单次开发子集观察，新组合尚未启动。见[最新进展与九组100条结果](reports/project_progress_20261110.md)、[完整对比](reports/navigation_stage2_same100_20261109.md)、[算法适配问题台账](reports/navigation_algorithm_adaptation_log.md)。
 
