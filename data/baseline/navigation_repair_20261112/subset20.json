@@ -1,0 +1,197 @@
+{
+  "version": "navigation_repair_20261112",
+  "scope": "engineering acceptance20",
+  "dataset": "R2R_VLNCE_v1-3",
+  "split": "val_unseen",
+  "scene": null,
+  "episodes": [
+    "558",
+    "1164",
+    "591",
+    "1724",
+    "720",
+    "1582",
+    "1638",
+    "1378",
+    "1803",
+    "662",
+    "1022",
+    "233",
+    "917",
+    "1593",
+    "1381",
+    "1466",
+    "439",
+    "1010",
+    "1262",
+    "1740"
+  ],
+  "trajectory_ids": [
+    "2258",
+    "4633",
+    "2380",
+    "6843",
+    "2905",
+    "6306",
+    "6570",
+    "5434",
+    "7170",
+    "2745",
+    "4152",
+    "961",
+    "3769",
+    "6339",
+    "5455",
+    "5822",
+    "1720",
+    "4094",
+    "4951",
+    "6893"
+  ],
+  "selection": "Outcome-blind repair subset; see adjacent manifest.json for frozen algorithm.",
+  "max_episode_steps": 400,
+  "success_distance_m": 3.0,
+  "step_size_m": 0.25,
+  "turn_deg": 15,
+  "rgb_hw": [
+    480,
+    640
+  ],
+  "camera_height_m": 1.25,
+  "hfov_deg": 90,
+  "renderer": "Mesa llvmpipe software",
+  "model": "w4a16-fix-fp16",
+  "dtype": "FP16",
+  "backend": "LMDeploy0.11.1 native decode CUDA Graph; full-prefill3072; FP16 KV64x64; TP/DP/batch1",
+  "output_actions": [
+    "STOP",
+    "MOVE_FORWARD",
+    "TURN_LEFT",
+    "TURN_RIGHT"
+  ],
+  "temperature": 0.3,
+  "max_tokens": 512,
+  "seed": 7,
+  "invalid_output_policy": "record error, execute STOP; count every fixed episode in denominator",
+  "model_inputs": "Author policy: RGB-only current and up to eight historical observations, uniformly sampled from last200. No action text, motion feedback, target truth or self-written memory.",
+  "source_annotation_sha256": "152c04e9eb0b5ecee136797441838293eefe74208d4d8bd0a8313c134e0106ad",
+  "horizon_note": "400 primitive actions includingSTOP; no collision early termination or policy changes",
+  "action_parser": "Author parser/action chunking: first two subcommands, at most3 primitive actions each; detect random fallback and mark failed STOP; no silent random action",
+  "scenes": [
+    "mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+    "mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+    "mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+    "mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+    "mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+    "mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+    "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+    "mp3d/oLBMNvg9in8/oLBMNvg9in8.glb",
+    "mp3d/pLe4wQe7qrG/pLe4wQe7qrG.glb",
+    "mp3d/x8F5xyUWy9e/x8F5xyUWy9e.glb",
+    "mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb"
+  ],
+  "dataset_path": "data/datasets/R2R_VLNCE_v1-3_overnight200/{split}/{split}.json.gz",
+  "scene_files": [
+    {
+      "path": "data/scene_datasets/mp3d/2azQ1b91cZZ/2azQ1b91cZZ.glb",
+      "sha256": "982d3028b6fa82ca63930122065597171c8a8e84b17fe4926f67d9489a321444"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/2azQ1b91cZZ/2azQ1b91cZZ.navmesh",
+      "sha256": "7f64fd59beee93adb11772256ebc0894ebb91024cd8504559f7ee904b80b4f49"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/8194nk5LbLH/8194nk5LbLH.glb",
+      "sha256": "40a745d677562da1697de9a5faaeaa51f39e066ffec0fd2b0772f1a3738d7229"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/8194nk5LbLH/8194nk5LbLH.navmesh",
+      "sha256": "888bbdf1f17cab353c06a143f753fec7ce1ce3dfae5919c0fafb4cbbfd5b0f06"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.glb",
+      "sha256": "57aef31e1667b6c078b0c722dee83a7e3b616e4f69d0006de5c47cba78507c38"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/EU6Fwq7SyZv/EU6Fwq7SyZv.navmesh",
+      "sha256": "1be0a640e0cfa0af6c01f633191b33a7e1fc58616d33c80b24830a7f0a054a6f"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/QUCTc6BB5sX/QUCTc6BB5sX.glb",
+      "sha256": "8c7b2e79be1632775498206640023831e918d88af80023a00c278694d04ec58f"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/QUCTc6BB5sX/QUCTc6BB5sX.navmesh",
+      "sha256": "5550366a4b7ce8817c3ce4aa69ba21b2e0b30dce7e4075911f57f0528a2395cc"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.glb",
+      "sha256": "79de4fd9e64ac82a3183e6ecfd007cb3df28d93f8345fa4d5b3c822981418a38"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/TbHJrupSAjP/TbHJrupSAjP.navmesh",
+      "sha256": "e02496af9408e4f04c88ac4bcb6f4cedf40651d14002b10fb34447b1d14332f0"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/X7HyMhZNoso/X7HyMhZNoso.glb",
+      "sha256": "37323649877c8dbee948cf055739251953b74b996ca6f5eb83c742afd8c3f2f7"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/X7HyMhZNoso/X7HyMhZNoso.navmesh",
+      "sha256": "3c41054a76a7a2de05ebf95fe73beb3b47b1e46ac0dfa84014d599aba67c5d40"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+      "sha256": "b27e60411c72bff7060f88f6fa1ae15ff8aa871dd4cc0ece675835e123538768"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.navmesh",
+      "sha256": "aef479b2a94c230108e247d3b74e471df9cb7740da108bc7433c2feec0c5abaf"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/oLBMNvg9in8/oLBMNvg9in8.glb",
+      "sha256": "aa1ff80501ad47ca9505616de05f7d383956154fe2b0b523bae1260cdfca2f23"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/oLBMNvg9in8/oLBMNvg9in8.navmesh",
+      "sha256": "686e5c40f85d18d1035d130b401816913a4be251e719d8affded82b39a0ce7d5"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/pLe4wQe7qrG/pLe4wQe7qrG.glb",
+      "sha256": "7faa385a31779ad1c0ef4594507f739840371de75a38b599945521dd26eea3f8"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/pLe4wQe7qrG/pLe4wQe7qrG.navmesh",
+      "sha256": "f1965baab7a21fcf01d48e20279c04449503526419015750edf501678361d1e3"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/x8F5xyUWy9e/x8F5xyUWy9e.glb",
+      "sha256": "9c30281ef4f394a0793ea0612bc24c6631e7de14147181f269c33b18eac8837c"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/x8F5xyUWy9e/x8F5xyUWy9e.navmesh",
+      "sha256": "e1e8e8d367b2e722479189f49134b25d92a5b9352afc49b08f9d74f212dea75b"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.glb",
+      "sha256": "3611ac3b2a2b76bb15ab2623054929a932aa40c03786b3890cb17a73eccc5689"
+    },
+    {
+      "path": "data/scene_datasets/mp3d/zsNo4HB9uLZ/zsNo4HB9uLZ.navmesh",
+      "sha256": "495495066a57c1eb662d7a3daa3c73f3889460695db148bd991044eef9b06c42"
+    }
+  ],
+  "top_p": 0.95,
+  "model_revision": "4078dab77f3c93a0711b57549ac54a59c1c1e1ea",
+  "author_policy_revision": "a450c57cff323587f54b0654c8e20e530a7202ac",
+  "author_policy_sha256": "72efa80174a832cec519eb7bb73ba2f635848b47af4dcaafaa03078e0d8d3a1f",
+  "differences_from_author_benchmark": "Original frozen development subset and policy; repaired inference execution and explicitly documented precision recipe.",
+  "pre_registered": "2026-11-12 before new repair inference results",
+  "sampling_seed": 20261112,
+  "source_full_annotation_sha256": "d173d8028537f30ab652dc5d24ead737e2b6010b6a4599f974351685710d18e8",
+  "graph": "on",
+  "repair_manifest_role": "FP16 base manifest; controller changes only model identity/precision metadata per configuration, then freezes run copy.",
+  "repair_roster_sha256": "4fec80860a3ae9aee487a63b65c6b4de7297e88af7b0379f0b07f669aef2bfcb",
+  "repair_protocol": "reports/navigation_repair_protocol_20261112.md",
+  "repair_protocol_sha256": "d80fbb5ba1d92c7ba958d6675595b6c13d1631bc32ebcaaf9ca66c6bebe0ac12"
+}
