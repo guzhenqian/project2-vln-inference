@@ -24,6 +24,7 @@ from collect_navigation_stage2 import percentile
 
 BASELINE = None
 FIXED_ONLY = False
+FROZEN_TABLE = None
 
 
 def fixed_summary(service, fixed_rows):
@@ -43,7 +44,7 @@ def source_snapshot(run, groups):
         'run_navigation_precision_diagnostic.py', 'navigation_precision_quality.py',
         'simplevln_policy.py', 'simplevln_env.py', 'run_closed_loop_baseline.py',
         'navigation_w4a16_fix_runtime.py', 'navigation_stage2_common.py',
-        'check_navigation_awq_dart_request.py']
+        'check_navigation_awq_dart_request.py', 'navigation_repair_output_gate.py']
     if any(group.endswith('_w4a16') for group in groups):
         names += ['navigation_w4a16_repair_kernels.py']
     if any(group != 'fp16' and not group.endswith('_w4a16') for group in groups):
@@ -168,6 +169,10 @@ def run_group(run, group, manifest_path, port):
     env = dict(os.environ, PYTHONDONTWRITEBYTECODE='1', PYTHONUNBUFFERED='1', LIBGL_ALWAYS_SOFTWARE='1')
     env.pop('DISPLAY', None)
     env.pop('CUDA_VISIBLE_DEVICES', None)
+    env.pop('PROJECT2_W4A16_REPAIR_TABLE', None)
+    if FROZEN_TABLE is not None:
+        assert group.endswith('_w4a16')
+        env['PROJECT2_W4A16_REPAIR_TABLE'] = str(FROZEN_TABLE)
     child = evaluator = None
     try:
         with socket.socket() as probe:
@@ -207,7 +212,10 @@ def run_group(run, group, manifest_path, port):
             fixed_rows.append(row)
             write(directory/'fixed_requests.json', fixed_rows, exclusive=False)
             if phase == 'smoke':
-                assert row['response']['choices'][0]['finish_reason'] == 'stop', 'Natural EOS smoke failed'
+                from navigation_repair_output_gate import inspect_answer
+                output_gate = inspect_answer(row['response'])
+                write(directory/f'smoke{sample}_output_gate.json', output_gate)
+                assert output_gate['passed'], 'Natural output quality gate failed: '+str(output_gate)
             print('FIXED_REQUEST', group, phase, sample, round(row['http_total_s'],3), flush=True)
         # Explicit tail request flushes the last fixed measurement before the
         # speed gate. It is excluded and included in navigation's timing offset.
@@ -241,7 +249,7 @@ def run_group(run, group, manifest_path, port):
                         source_precision='Frozen checkpoint; actual runtime precision in repair_recipe')
         manifest.update(model='navigation-repair-'+group, repair_group=group,
             backend='LMDeploy0.11.1 native decode graph, full prefill3072, FP16 KV64x64',
-            scope='Repair acceptance: frozen same20; unchanged author navigation policy')
+            scope=f"Repair evaluation: frozen {len(manifest['episodes'])} cases; unchanged author navigation policy")
         write(directory/'case_manifest.json', manifest)
         folder = directory/'navigation'
         with (directory/'navigation_console.log').open('x') as console:
@@ -278,7 +286,7 @@ def run_group(run, group, manifest_path, port):
 
 
 def main():
-    global BASELINE, FIXED_ONLY
+    global BASELINE, FIXED_ONLY, FROZEN_TABLE
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--manifest', required=True, type=Path)
@@ -286,8 +294,13 @@ def main():
     parser.add_argument('--base-port', type=int, default=23710)
     parser.add_argument('--baseline', type=Path)
     parser.add_argument('--fixed-only', action='store_true')
+    parser.add_argument('--frozen-launch-table', type=Path)
     args = parser.parse_args()
     FIXED_ONLY = args.fixed_only
+    FROZEN_TABLE = args.frozen_launch_table.resolve() if args.frozen_launch_table else None
+    if FROZEN_TABLE is not None:
+        assert FROZEN_TABLE.is_relative_to(ROOT/'logs') and FROZEN_TABLE.is_file()
+        assert len(args.groups) == 1 and args.groups[0].endswith('_w4a16')
     BASELINE = args.baseline.resolve() if args.baseline else None
     if BASELINE is not None:
         assert read(BASELINE)['group'] == 'fp16' and read(BASELINE)['passed_stability']
@@ -305,6 +318,8 @@ def main():
         controller_sha256=digest(Path(__file__)), navigation_policy_sha256=digest(ROOT/'checks/simplevln_policy.py'),
         evaluator_sha256=digest(ROOT/'checks/run_navigation_precision_diagnostic.py'),
         source_snapshot_sha256=digest(run/'source_snapshot.json'),
+        frozen_launch_table_source=str(FROZEN_TABLE.relative_to(ROOT)) if FROZEN_TABLE else None,
+        frozen_launch_table_source_sha256=digest(FROZEN_TABLE) if FROZEN_TABLE else None,
         fixed_input='2/9 images, 18/64 forced outputs, 2 warmups+10 repeats each, 1s untimed idle',
         navigation='Original temperature0.3/top_p0.95/max512/seed7; no added idle; two excluded warmups'))
     completed = []

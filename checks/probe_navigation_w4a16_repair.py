@@ -4,6 +4,7 @@ import gc
 import json
 import statistics
 import subprocess
+import sys
 import time
 import traceback
 from datetime import datetime, timezone
@@ -17,6 +18,8 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--groups', nargs='+', choices=('awq', 'gptq'), default=['awq', 'gptq'])
     parser.add_argument('--repeats', type=int, default=12)
+    parser.add_argument('--replay-table', type=Path,
+                        help='Child validation mode: warm this exact table without autotuning; exactly one matching group.')
     args = parser.parse_args()
     out = args.output.resolve()
     assert out.is_relative_to(ROOT/'logs') and not out.exists()
@@ -30,10 +33,22 @@ def main():
     torch.backends.cuda.matmul.allow_tf32 = False
     projections = {'qkv': ['self_attn.q_proj', 'self_attn.k_proj', 'self_attn.v_proj'],
         'o': ['self_attn.o_proj'], 'gate_up': ['mlp.gate_proj', 'mlp.up_proj'], 'down': ['mlp.down_proj']}
-    sizes = (1, 701, 2815, 713, 1737, 3001, 16, 17, 33, 65)
+    sizes = (1, 701, 2815, 713, 1737, 3001, 16, 17, 33, 65, 704, 720, 3072)
+    from run_navigation_w4a16_fixes import FROZEN
+    models = {}
+    for group in args.groups:
+        path = ROOT/GROUPS[group]['model']
+        weight_sha = digest(path/'model.safetensors')
+        assert weight_sha == FROZEN[group], 'Frozen W4 checkpoint identity changed'
+        models[group] = dict(path=GROUPS[group]['model'], config_sha256=digest(path/'config.json'),
+                             weights_sha256=weight_sha)
+    if args.replay_table:
+        assert len(args.groups) == 1, 'Frozen replay belongs to exactly one checkpoint identity'
+        repair.load_launch_table(args.replay_table, args.groups[0], models[args.groups[0]]['weights_sha256'])
     meta = dict(started_utc=datetime.now(timezone.utc).isoformat(), groups=args.groups,
         layers=[0], fused_projections=projections, row_counts=list(sizes), repeats=args.repeats,
-        relative_l2_limit=0.005,
+        relative_l2_limit=0.005, model_files=models,
+        explicit_replay_table=str(args.replay_table.resolve()) if args.replay_table else None,
         sources_sha256={name: digest(ROOT/'checks'/name) for name in
             ('navigation_w4a16_repair_kernels.py', 'probe_navigation_w4a16_repair.py',
              'navigation_w4a16_candidate_kernels.py')},
@@ -92,8 +107,18 @@ def main():
                 del qw, s, qz
                 gc.collect()
                 torch.cuda.empty_cache()
-            receipt = repair.freeze()
+            receipt = repair.freeze(args.groups[0], models[args.groups[0]]['weights_sha256'])
             write(out/'launch_table.json', receipt)
+            repair.validate_table(receipt, args.groups[0], models[args.groups[0]]['weights_sha256'])
+            rejected_wrong_identity = False
+            try:
+                repair.validate_table(receipt, 'gptq' if args.groups[0] == 'awq' else 'awq', models[args.groups[0]]['weights_sha256'])
+            except ValueError:
+                rejected_wrong_identity = True
+            assert rejected_wrong_identity
+            if args.replay_table:
+                assert receipt['selection_mode'] == 'replayed_frozen_table'
+                assert all(count == 0 for count in receipt['autotuner_cache_entries'].values())
             initial_cache = receipt['autotuner_cache_entries']
             initial_compiled = receipt['compiled_entries']
             for group in args.groups:
@@ -131,9 +156,28 @@ def main():
                     del qw, s, qz, dense
                     gc.collect()
                     torch.cuda.empty_cache()
+        replay_verification = None
+        if not args.replay_table:
+            # A fresh worker proves a saved table can be replayed across service
+            # restarts. This is separate from the unchanged primary104 checks.
+            child_output = out/'frozen_table_replay'
+            with (out/'frozen_table_replay.log').open('x', encoding='utf-8') as stream:
+                subprocess.run([sys.executable, '-B', '-u', str(Path(__file__).resolve()),
+                    '--output', str(child_output), '--groups', args.groups[0],
+                    '--repeats', str(args.repeats), '--replay-table', str(out/'launch_table.json')],
+                    cwd=ROOT, stdout=stream, stderr=subprocess.STDOUT, check=True)
+            replay_result = json.loads((child_output/'result.json').read_text())
+            assert replay_result['status'] == 'passed'
+            replay_table = replay_result['launch_table']
+            assert replay_table['shapes'] == receipt['shapes']
+            assert all(count == 0 for count in replay_table['autotuner_cache_entries'].values())
+            replay_verification = dict(status='passed', path=child_output.relative_to(ROOT).as_posix(),
+                result_sha256=digest(child_output/'result.json'), cases=len(replay_result['measurements']),
+                exact_selected_configs_preserved=True, startup_autotune_calls=0)
         write(out/'result.json', dict(status='passed', numerical_gate_passed=True,
             performance_gate='Descriptive timings only; full fixed-input service gate required before 20 cases.',
             runtime_autotuner_cache_unchanged=True, runtime_compiled_cache_unchanged=True,
+            wrong_algorithm_identity_rejected=True, frozen_table_restart_verification=replay_verification,
             protocol=meta, launch_table=receipt, measurements=rows))
         print('W4A16_REPAIR_KERNEL_GATE_PASSED', len(rows), flush=True)
     except BaseException as error:
