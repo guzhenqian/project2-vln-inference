@@ -1,0 +1,793 @@
+{
+  "status": "complete_inventory",
+  "created_utc": "2026-11-14T18:46:52.574332+00:00",
+  "scope": "Fixed1+8 inventory; completed100 and20 qualification are separate statuses.",
+  "completed100_groups": [],
+  "all_nine_100_complete": false,
+  "all_eight_quantized_100_comparisons_available": false,
+  "baseline100_available": false,
+  "table": [
+    {
+      "group": "fp16",
+      "status": "passed_20_waiting_80",
+      "latest20": {
+        "verdict": {
+          "group": "fp16",
+          "status": "passed",
+          "passed": true,
+          "baseline_accepted": true,
+          "integrity_passed": true,
+          "stability_passed": true,
+          "same20_and_execution_order": true,
+          "fixed_input_tensor_sha_matches_fp16": true,
+          "quality_gate_passed": true,
+          "speed_gate_passed": true,
+          "episode_initial_input_matches_fp16": true,
+          "fixed_speed_cells": {
+            "0_18": {
+              "http_p50_ratio_to_fp16": 1.0,
+              "http_p95_ratio_to_fp16": 1.0,
+              "passed": true
+            },
+            "0_64": {
+              "http_p50_ratio_to_fp16": 1.0,
+              "http_p95_ratio_to_fp16": 1.0,
+              "passed": true
+            },
+            "1_18": {
+              "http_p50_ratio_to_fp16": 1.0,
+              "http_p95_ratio_to_fp16": 1.0,
+              "passed": true
+            },
+            "1_64": {
+              "http_p50_ratio_to_fp16": 1.0,
+              "http_p95_ratio_to_fp16": 1.0,
+              "passed": true
+            }
+          },
+          "integrity_failures": [],
+          "case_count": 20,
+          "success_count": 11,
+          "sr": 0.55,
+          "spl": 0.44460008779460464,
+          "actual_model_calls": 1035,
+          "completion_tokens": 18788,
+          "prompt_tokens": 2874108,
+          "request_median_s": 1.8009311947971582,
+          "request_p95_s": 2.044153234036639,
+          "request_total_s": 1859.5559301637113,
+          "sampled_whole_card_peak_mib": 11763.0,
+          "error_count": 0,
+          "infrastructure_errors": 0,
+          "technical_gate_status": "not_required_for_unquantized_baseline"
+        },
+        "pipeline_status": "complete",
+        "directory": "logs/navigation_repair_20261112/screen_fp16_v1/fp16",
+        "result_sha256": "3e1cfad7753c991de3e228a6e70807b7264fc334fb68c9229a09a63b6cd5d400",
+        "quality_errors": {},
+        "error": null
+      },
+      "metrics100": null,
+      "comparison": {
+        "status": "pending_comparison",
+        "reason": "Requires both this group and FP16 complete100 evidence."
+      },
+      "final100_quality_threshold": null,
+      "final100_quality_statement": "No preregistered100 quality pass threshold;20 gates are not extrapolated.",
+      "field_sources": {
+        "latest20": {
+          "path": "reports/navigation_repair_20261114_continuation_20.json",
+          "sha256": "ce578b221737ad76f74e3b49d8b0790eb7cf232c63c006c82f59cc5018eac4b9",
+          "pointer": "table[group=fp16]; groups[fp16]"
+        }
+      }
+    },
+    {
+      "group": "awq_w4a16",
+      "status": "passed_20_waiting_80",
+      "latest20": {
+        "verdict": {
+          "group": "awq_w4a16",
+          "status": "passed",
+          "passed": true,
+          "baseline_accepted": true,
+          "integrity_passed": true,
+          "stability_passed": true,
+          "same20_and_execution_order": true,
+          "fixed_input_tensor_sha_matches_fp16": true,
+          "quality_gate_passed": true,
+          "speed_gate_passed": true,
+          "episode_initial_input_matches_fp16": true,
+          "fixed_speed_cells": {
+            "0_18": {
+              "http_p50_ratio_to_fp16": 0.6620129828429112,
+              "http_p95_ratio_to_fp16": 0.6608170568038935,
+              "passed": true
+            },
+            "0_64": {
+              "http_p50_ratio_to_fp16": 0.5465989431356446,
+              "http_p95_ratio_to_fp16": 0.5288376459163693,
+              "passed": true
+            },
+            "1_18": {
+              "http_p50_ratio_to_fp16": 0.8966526443044915,
+              "http_p95_ratio_to_fp16": 0.9034782804960211,
+              "passed": true
+            },
+            "1_64": {
+              "http_p50_ratio_to_fp16": 0.766810714327799,
+              "http_p95_ratio_to_fp16": 0.7607111192024713,
+              "passed": true
+            }
+          },
+          "integrity_failures": [],
+          "case_count": 20,
+          "success_count": 13,
+          "sr": 0.65,
+          "spl": 0.5686283752502491,
+          "actual_model_calls": 939,
+          "completion_tokens": 17153,
+          "prompt_tokens": 2598879,
+          "request_median_s": 1.5784611091949046,
+          "request_p95_s": 1.7992495918646454,
+          "request_total_s": 1443.5676813516766,
+          "sampled_whole_card_peak_mib": 6740.0,
+          "error_count": 0,
+          "infrastructure_errors": 0,
+          "technical_gate_status": "passed",
+          "technical_gate_matches": [
+            {
+              "result": "logs/navigation_repair_20261112/initial_sequence_v1/w4_kernel_gate/result.json",
+              "result_sha256": "594e8b94e02709ab34348215d1fa5a110d12c56dca7ed4a0591740159eca3d17",
+              "kernel_sha256": "09a181c19e618307f681e02a8ee6964c6ad368a0d47e772d7328f297971e9a87",
+              "numerical_cases": 52,
+              "max_reference_relative_l2": 0.00042048157774843276
+            }
+          ],
+          "technical_gate_mismatches": []
+        },
+        "pipeline_status": "complete",
+        "directory": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16",
+        "result_sha256": "9b846dc1e822dd0178587c4089cef35e51bdacec2f7d0c1a890d0fde6290a2c7",
+        "quality_errors": {},
+        "error": null
+      },
+      "metrics100": null,
+      "comparison": {
+        "status": "pending_comparison",
+        "reason": "Requires both this group and FP16 complete100 evidence."
+      },
+      "final100_quality_threshold": null,
+      "final100_quality_statement": "No preregistered100 quality pass threshold;20 gates are not extrapolated.",
+      "field_sources": {
+        "latest20": {
+          "path": "reports/navigation_repair_20261114_continuation_20.json",
+          "sha256": "ce578b221737ad76f74e3b49d8b0790eb7cf232c63c006c82f59cc5018eac4b9",
+          "pointer": "table[group=awq_w4a16]; groups[awq_w4a16]"
+        }
+      }
+    },
+    {
+      "group": "awq_w4a4",
+      "status": "passed_20_waiting_80",
+      "latest20": {
+        "verdict": {
+          "group": "awq_w4a4",
+          "status": "passed",
+          "passed": true,
+          "baseline_accepted": true,
+          "integrity_passed": true,
+          "stability_passed": true,
+          "same20_and_execution_order": true,
+          "fixed_input_tensor_sha_matches_fp16": true,
+          "quality_gate_passed": true,
+          "speed_gate_passed": true,
+          "episode_initial_input_matches_fp16": true,
+          "fixed_speed_cells": {
+            "0_18": {
+              "http_p50_ratio_to_fp16": 0.8245965398501608,
+              "http_p95_ratio_to_fp16": 0.8382501006527296,
+              "passed": true
+            },
+            "0_64": {
+              "http_p50_ratio_to_fp16": 0.6714739603849867,
+              "http_p95_ratio_to_fp16": 0.6516759387861617,
+              "passed": true
+            },
+            "1_18": {
+              "http_p50_ratio_to_fp16": 1.047490444345239,
+              "http_p95_ratio_to_fp16": 1.0203737439080014,
+              "passed": true
+            },
+            "1_64": {
+              "http_p50_ratio_to_fp16": 0.8962838576178812,
+              "http_p95_ratio_to_fp16": 0.9100166729605356,
+              "passed": true
+            }
+          },
+          "integrity_failures": [],
+          "case_count": 20,
+          "success_count": 11,
+          "sr": 0.55,
+          "spl": 0.5129052803226366,
+          "actual_model_calls": 932,
+          "completion_tokens": 16983,
+          "prompt_tokens": 2580525,
+          "request_median_s": 1.8405483530368656,
+          "request_p95_s": 2.0464667160995305,
+          "request_total_s": 1673.1646641409025,
+          "sampled_whole_card_peak_mib": 6519.0,
+          "error_count": 0,
+          "infrastructure_errors": 0,
+          "technical_gate_status": "passed",
+          "technical_gate_matches": [
+            {
+              "result": "logs/navigation_repair_20261112/precision_gate_six_balanced_v1/result.json",
+              "result_sha256": "0225bd8b46f784fb8e8991f6b207c684d235c813186d943a043ae2ecd300cf6f",
+              "kernel_sha256": "351ff66d176b7dea45ab733b16db06b73091e94715c9acca45915ebb2b95e3cc",
+              "numerical_cases": 48,
+              "max_reference_relative_l2": 0.00021075157565064728
+            }
+          ],
+          "technical_gate_mismatches": []
+        },
+        "pipeline_status": "complete",
+        "directory": "logs/navigation_repair_20261112/screen_six_balanced_v1/awq_w4a4",
+        "result_sha256": "ff3c040bef28d28513032cc72239d7e251ce012e25034c14c3cb765eec68cca7",
+        "quality_errors": {},
+        "error": null
+      },
+      "metrics100": null,
+      "comparison": {
+        "status": "pending_comparison",
+        "reason": "Requires both this group and FP16 complete100 evidence."
+      },
+      "final100_quality_threshold": null,
+      "final100_quality_statement": "No preregistered100 quality pass threshold;20 gates are not extrapolated.",
+      "field_sources": {
+        "latest20": {
+          "path": "reports/navigation_repair_20261114_continuation_20.json",
+          "sha256": "ce578b221737ad76f74e3b49d8b0790eb7cf232c63c006c82f59cc5018eac4b9",
+          "pointer": "table[group=awq_w4a4]; groups[awq_w4a4]"
+        }
+      }
+    },
+    {
+      "group": "awq_w4a8",
+      "status": "passed_20_waiting_80",
+      "latest20": {
+        "verdict": {
+          "group": "awq_w4a8",
+          "status": "passed",
+          "passed": true,
+          "baseline_accepted": true,
+          "integrity_passed": true,
+          "stability_passed": true,
+          "same20_and_execution_order": true,
+          "fixed_input_tensor_sha_matches_fp16": true,
+          "quality_gate_passed": true,
+          "speed_gate_passed": true,
+          "episode_initial_input_matches_fp16": true,
+          "fixed_speed_cells": {
+            "0_18": {
+              "http_p50_ratio_to_fp16": 0.7792025234598016,
+              "http_p95_ratio_to_fp16": 0.7643397110286325,
+              "passed": true
+            },
+            "0_64": {
+              "http_p50_ratio_to_fp16": 0.6685123893955224,
+              "http_p95_ratio_to_fp16": 0.6482457331498792,
+              "passed": true
+            },
+            "1_18": {
+              "http_p50_ratio_to_fp16": 0.9524591357625484,
+              "http_p95_ratio_to_fp16": 0.9574202937437255,
+              "passed": true
+            },
+            "1_64": {
+              "http_p50_ratio_to_fp16": 0.8498475954232694,
+              "http_p95_ratio_to_fp16": 0.8419061429218859,
+              "passed": true
+            }
+          },
+          "integrity_failures": [],
+          "case_count": 20,
+          "success_count": 14,
+          "sr": 0.7,
+          "spl": 0.6522322593453942,
+          "actual_model_calls": 866,
+          "completion_tokens": 15706,
+          "prompt_tokens": 2394072,
+          "request_median_s": 1.6748812550213188,
+          "request_p95_s": 1.8966968283057213,
+          "request_total_s": 1416.5962930852547,
+          "sampled_whole_card_peak_mib": 6538.0,
+          "error_count": 0,
+          "infrastructure_errors": 0,
+          "technical_gate_status": "passed",
+          "technical_gate_matches": [
+            {
+              "result": "logs/navigation_repair_20261112/precision_gate_six_balanced_v1/result.json",
+              "result_sha256": "0225bd8b46f784fb8e8991f6b207c684d235c813186d943a043ae2ecd300cf6f",
+              "kernel_sha256": "351ff66d176b7dea45ab733b16db06b73091e94715c9acca45915ebb2b95e3cc",
+              "numerical_cases": 48,
+              "max_reference_relative_l2": 0.00021355037461034954
+            }
+          ],
+          "technical_gate_mismatches": []
+        },
+        "pipeline_status": "complete",
+        "directory": "logs/navigation_repair_20261112/screen_six_balanced_v1/awq_w4a8",
+        "result_sha256": "93a85de7487d834412d51262f570c24debf3017fd762419e0946ff680ca36af0",
+        "quality_errors": {},
+        "error": null
+      },
+      "metrics100": null,
+      "comparison": {
+        "status": "pending_comparison",
+        "reason": "Requires both this group and FP16 complete100 evidence."
+      },
+      "final100_quality_threshold": null,
+      "final100_quality_statement": "No preregistered100 quality pass threshold;20 gates are not extrapolated.",
+      "field_sources": {
+        "latest20": {
+          "path": "reports/navigation_repair_20261114_continuation_20.json",
+          "sha256": "ce578b221737ad76f74e3b49d8b0790eb7cf232c63c006c82f59cc5018eac4b9",
+          "pointer": "table[group=awq_w4a8]; groups[awq_w4a8]"
+        }
+      }
+    },
+    {
+      "group": "awq_w8a16",
+      "status": "passed_20_waiting_80",
+      "latest20": {
+        "verdict": {
+          "group": "awq_w8a16",
+          "status": "passed",
+          "passed": true,
+          "baseline_accepted": true,
+          "integrity_passed": true,
+          "stability_passed": true,
+          "same20_and_execution_order": true,
+          "fixed_input_tensor_sha_matches_fp16": true,
+          "quality_gate_passed": true,
+          "speed_gate_passed": true,
+          "episode_initial_input_matches_fp16": true,
+          "fixed_speed_cells": {
+            "0_18": {
+              "http_p50_ratio_to_fp16": 0.9354345042245025,
+              "http_p95_ratio_to_fp16": 0.9201922752854531,
+              "passed": true
+            },
+            "0_64": {
+              "http_p50_ratio_to_fp16": 0.8116598494514816,
+              "http_p95_ratio_to_fp16": 0.7857774542349912,
+              "passed": true
+            },
+            "1_18": {
+              "http_p50_ratio_to_fp16": 1.0661246217612816,
+              "http_p95_ratio_to_fp16": 1.0352892764228332,
+              "passed": true
+            },
+            "1_64": {
+              "http_p50_ratio_to_fp16": 0.9673057563703862,
+              "http_p95_ratio_to_fp16": 0.974785987173612,
+              "passed": true
+            }
+          },
+          "integrity_failures": [],
+          "case_count": 20,
+          "success_count": 11,
+          "sr": 0.55,
+          "spl": 0.474836554273723,
+          "actual_model_calls": 1085,
+          "completion_tokens": 19786,
+          "prompt_tokens": 3015243,
+          "request_median_s": 1.8472863342612982,
+          "request_p95_s": 1.9827852132730186,
+          "request_total_s": 1964.50646097539,
+          "sampled_whole_card_peak_mib": 8260.0,
+          "error_count": 0,
+          "infrastructure_errors": 0,
+          "technical_gate_status": "passed",
+          "technical_gate_matches": [
+            {
+              "result": "logs/navigation_repair_20261112/precision_gate_six_balanced_v1/result.json",
+              "result_sha256": "0225bd8b46f784fb8e8991f6b207c684d235c813186d943a043ae2ecd300cf6f",
+              "kernel_sha256": "351ff66d176b7dea45ab733b16db06b73091e94715c9acca45915ebb2b95e3cc",
+              "numerical_cases": 48,
+              "max_reference_relative_l2": 0.00021969711815472692
+            }
+          ],
+          "technical_gate_mismatches": []
+        },
+        "pipeline_status": "complete",
+        "directory": "logs/navigation_repair_20261112/screen_six_balanced_v1/awq_w8a16",
+        "result_sha256": "7fd6f1db84579f4fb508e3bb5fa8c4b3418318bdfdd1ddadabaad27eb869c6ec",
+        "quality_errors": {},
+        "error": null
+      },
+      "metrics100": null,
+      "comparison": {
+        "status": "pending_comparison",
+        "reason": "Requires both this group and FP16 complete100 evidence."
+      },
+      "final100_quality_threshold": null,
+      "final100_quality_statement": "No preregistered100 quality pass threshold;20 gates are not extrapolated.",
+      "field_sources": {
+        "latest20": {
+          "path": "reports/navigation_repair_20261114_continuation_20.json",
+          "sha256": "ce578b221737ad76f74e3b49d8b0790eb7cf232c63c006c82f59cc5018eac4b9",
+          "pointer": "table[group=awq_w8a16]; groups[awq_w8a16]"
+        }
+      }
+    },
+    {
+      "group": "gptq_w4a16",
+      "status": "passed_20_waiting_80",
+      "latest20": {
+        "verdict": {
+          "group": "gptq_w4a16",
+          "status": "passed",
+          "passed": true,
+          "baseline_accepted": true,
+          "integrity_passed": true,
+          "stability_passed": true,
+          "same20_and_execution_order": true,
+          "fixed_input_tensor_sha_matches_fp16": true,
+          "quality_gate_passed": true,
+          "speed_gate_passed": true,
+          "episode_initial_input_matches_fp16": true,
+          "fixed_speed_cells": {
+            "0_18": {
+              "http_p50_ratio_to_fp16": 0.6567884718861975,
+              "http_p95_ratio_to_fp16": 0.6531712588540725,
+              "passed": true
+            },
+            "0_64": {
+              "http_p50_ratio_to_fp16": 0.5469477044086121,
+              "http_p95_ratio_to_fp16": 0.5291253028625357,
+              "passed": true
+            },
+            "1_18": {
+              "http_p50_ratio_to_fp16": 0.8863686208809995,
+              "http_p95_ratio_to_fp16": 0.8880334750664481,
+              "passed": true
+            },
+            "1_64": {
+              "http_p50_ratio_to_fp16": 0.7692661629782445,
+              "http_p95_ratio_to_fp16": 0.7588902829362465,
+              "passed": true
+            }
+          },
+          "integrity_failures": [],
+          "case_count": 20,
+          "success_count": 14,
+          "sr": 0.7,
+          "spl": 0.5770788403464838,
+          "actual_model_calls": 949,
+          "completion_tokens": 17164,
+          "prompt_tokens": 2627360,
+          "request_median_s": 1.577624045778066,
+          "request_p95_s": 1.7767785902135074,
+          "request_total_s": 1445.4205060256645,
+          "sampled_whole_card_peak_mib": 6341.0,
+          "error_count": 0,
+          "infrastructure_errors": 0,
+          "technical_gate_status": "passed",
+          "technical_gate_matches": [
+            {
+              "result": "logs/navigation_repair_20261112/initial_sequence_v1/w4_kernel_gate/result.json",
+              "result_sha256": "594e8b94e02709ab34348215d1fa5a110d12c56dca7ed4a0591740159eca3d17",
+              "kernel_sha256": "09a181c19e618307f681e02a8ee6964c6ad368a0d47e772d7328f297971e9a87",
+              "numerical_cases": 52,
+              "max_reference_relative_l2": 0.0004190634354017675
+            }
+          ],
+          "technical_gate_mismatches": []
+        },
+        "pipeline_status": "complete",
+        "directory": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/gptq_w4a16",
+        "result_sha256": "573bfab03fc7cea677e20d48164ed16df196b437baf4a0402922bf8b4de66d46",
+        "quality_errors": {},
+        "error": null
+      },
+      "metrics100": null,
+      "comparison": {
+        "status": "pending_comparison",
+        "reason": "Requires both this group and FP16 complete100 evidence."
+      },
+      "final100_quality_threshold": null,
+      "final100_quality_statement": "No preregistered100 quality pass threshold;20 gates are not extrapolated.",
+      "field_sources": {
+        "latest20": {
+          "path": "reports/navigation_repair_20261114_continuation_20.json",
+          "sha256": "ce578b221737ad76f74e3b49d8b0790eb7cf232c63c006c82f59cc5018eac4b9",
+          "pointer": "table[group=gptq_w4a16]; groups[gptq_w4a16]"
+        }
+      }
+    },
+    {
+      "group": "gptq_w4a4",
+      "status": "passed_20_waiting_80",
+      "latest20": {
+        "verdict": {
+          "group": "gptq_w4a4",
+          "status": "passed",
+          "passed": true,
+          "baseline_accepted": true,
+          "integrity_passed": true,
+          "stability_passed": true,
+          "same20_and_execution_order": true,
+          "fixed_input_tensor_sha_matches_fp16": true,
+          "quality_gate_passed": true,
+          "speed_gate_passed": true,
+          "episode_initial_input_matches_fp16": true,
+          "fixed_speed_cells": {
+            "0_18": {
+              "http_p50_ratio_to_fp16": 0.836981759996921,
+              "http_p95_ratio_to_fp16": 0.8247619839199334,
+              "passed": true
+            },
+            "0_64": {
+              "http_p50_ratio_to_fp16": 0.6745068760225083,
+              "http_p95_ratio_to_fp16": 0.6518861538525444,
+              "passed": true
+            },
+            "1_18": {
+              "http_p50_ratio_to_fp16": 1.0317579289491732,
+              "http_p95_ratio_to_fp16": 1.014061261179623,
+              "passed": true
+            },
+            "1_64": {
+              "http_p50_ratio_to_fp16": 0.8972894441284127,
+              "http_p95_ratio_to_fp16": 0.8952795762421906,
+              "passed": true
+            }
+          },
+          "integrity_failures": [],
+          "case_count": 20,
+          "success_count": 12,
+          "sr": 0.6,
+          "spl": 0.47438437416295487,
+          "actual_model_calls": 871,
+          "completion_tokens": 15828,
+          "prompt_tokens": 2406069,
+          "request_median_s": 1.8630553162656724,
+          "request_p95_s": 2.0420485155191272,
+          "request_total_s": 1569.9660650342703,
+          "sampled_whole_card_peak_mib": 6603.0,
+          "error_count": 0,
+          "infrastructure_errors": 0,
+          "technical_gate_status": "passed",
+          "technical_gate_matches": [
+            {
+              "result": "logs/navigation_repair_20261112/precision_gate_six_balanced_v1/result.json",
+              "result_sha256": "0225bd8b46f784fb8e8991f6b207c684d235c813186d943a043ae2ecd300cf6f",
+              "kernel_sha256": "351ff66d176b7dea45ab733b16db06b73091e94715c9acca45915ebb2b95e3cc",
+              "numerical_cases": 48,
+              "max_reference_relative_l2": 0.00021352077601477504
+            }
+          ],
+          "technical_gate_mismatches": []
+        },
+        "pipeline_status": "complete",
+        "directory": "logs/navigation_repair_20261112/screen_six_balanced_v1/gptq_w4a4",
+        "result_sha256": "a7b17c0d2331b83fa8e16fdeb549132fee940cf760113a361ff10a4699c3c31d",
+        "quality_errors": {},
+        "error": null
+      },
+      "metrics100": null,
+      "comparison": {
+        "status": "pending_comparison",
+        "reason": "Requires both this group and FP16 complete100 evidence."
+      },
+      "final100_quality_threshold": null,
+      "final100_quality_statement": "No preregistered100 quality pass threshold;20 gates are not extrapolated.",
+      "field_sources": {
+        "latest20": {
+          "path": "reports/navigation_repair_20261114_continuation_20.json",
+          "sha256": "ce578b221737ad76f74e3b49d8b0790eb7cf232c63c006c82f59cc5018eac4b9",
+          "pointer": "table[group=gptq_w4a4]; groups[gptq_w4a4]"
+        }
+      }
+    },
+    {
+      "group": "gptq_w4a8",
+      "status": "passed_20_waiting_80",
+      "latest20": {
+        "verdict": {
+          "group": "gptq_w4a8",
+          "status": "passed",
+          "passed": true,
+          "baseline_accepted": true,
+          "integrity_passed": true,
+          "stability_passed": true,
+          "same20_and_execution_order": true,
+          "fixed_input_tensor_sha_matches_fp16": true,
+          "quality_gate_passed": true,
+          "speed_gate_passed": true,
+          "episode_initial_input_matches_fp16": true,
+          "fixed_speed_cells": {
+            "0_18": {
+              "http_p50_ratio_to_fp16": 0.7816111821174154,
+              "http_p95_ratio_to_fp16": 0.7643998532575671,
+              "passed": true
+            },
+            "0_64": {
+              "http_p50_ratio_to_fp16": 0.6690129353156159,
+              "http_p95_ratio_to_fp16": 0.6495411978355292,
+              "passed": true
+            },
+            "1_18": {
+              "http_p50_ratio_to_fp16": 0.9513008853152831,
+              "http_p95_ratio_to_fp16": 0.9348762135904721,
+              "passed": true
+            },
+            "1_64": {
+              "http_p50_ratio_to_fp16": 0.8455531084045138,
+              "http_p95_ratio_to_fp16": 0.857167623238846,
+              "passed": true
+            }
+          },
+          "integrity_failures": [],
+          "case_count": 20,
+          "success_count": 12,
+          "sr": 0.6,
+          "spl": 0.49405481831072307,
+          "actual_model_calls": 943,
+          "completion_tokens": 17029,
+          "prompt_tokens": 2610751,
+          "request_median_s": 1.6814308213070035,
+          "request_p95_s": 1.8708155322819948,
+          "request_total_s": 1536.9000828624703,
+          "sampled_whole_card_peak_mib": 6627.0,
+          "error_count": 0,
+          "infrastructure_errors": 0,
+          "technical_gate_status": "passed",
+          "technical_gate_matches": [
+            {
+              "result": "logs/navigation_repair_20261112/precision_gate_six_balanced_v1/result.json",
+              "result_sha256": "0225bd8b46f784fb8e8991f6b207c684d235c813186d943a043ae2ecd300cf6f",
+              "kernel_sha256": "351ff66d176b7dea45ab733b16db06b73091e94715c9acca45915ebb2b95e3cc",
+              "numerical_cases": 48,
+              "max_reference_relative_l2": 0.00020937816589139402
+            }
+          ],
+          "technical_gate_mismatches": []
+        },
+        "pipeline_status": "complete",
+        "directory": "logs/navigation_repair_20261112/screen_six_balanced_v1/gptq_w4a8",
+        "result_sha256": "056db6a4d926a68a1fd961b0c10f0626eefc842dbba95923874d97a3fa070bc4",
+        "quality_errors": {},
+        "error": null
+      },
+      "metrics100": null,
+      "comparison": {
+        "status": "pending_comparison",
+        "reason": "Requires both this group and FP16 complete100 evidence."
+      },
+      "final100_quality_threshold": null,
+      "final100_quality_statement": "No preregistered100 quality pass threshold;20 gates are not extrapolated.",
+      "field_sources": {
+        "latest20": {
+          "path": "reports/navigation_repair_20261114_continuation_20.json",
+          "sha256": "ce578b221737ad76f74e3b49d8b0790eb7cf232c63c006c82f59cc5018eac4b9",
+          "pointer": "table[group=gptq_w4a8]; groups[gptq_w4a8]"
+        }
+      }
+    },
+    {
+      "group": "gptq_w8a16",
+      "status": "passed_20_waiting_80",
+      "latest20": {
+        "verdict": {
+          "group": "gptq_w8a16",
+          "status": "passed",
+          "passed": true,
+          "baseline_accepted": true,
+          "integrity_passed": true,
+          "stability_passed": true,
+          "same20_and_execution_order": true,
+          "fixed_input_tensor_sha_matches_fp16": true,
+          "quality_gate_passed": true,
+          "speed_gate_passed": true,
+          "episode_initial_input_matches_fp16": true,
+          "fixed_speed_cells": {
+            "0_18": {
+              "http_p50_ratio_to_fp16": 0.9409311517035974,
+              "http_p95_ratio_to_fp16": 0.9271891058803963,
+              "passed": true
+            },
+            "0_64": {
+              "http_p50_ratio_to_fp16": 0.811042791916545,
+              "http_p95_ratio_to_fp16": 0.7852379154799595,
+              "passed": true
+            },
+            "1_18": {
+              "http_p50_ratio_to_fp16": 1.0596701746371444,
+              "http_p95_ratio_to_fp16": 1.0470486224063666,
+              "passed": true
+            },
+            "1_64": {
+              "http_p50_ratio_to_fp16": 0.9690302786720982,
+              "http_p95_ratio_to_fp16": 0.9555921250643523,
+              "passed": true
+            }
+          },
+          "integrity_failures": [],
+          "case_count": 20,
+          "success_count": 11,
+          "sr": 0.55,
+          "spl": 0.4148976247713085,
+          "actual_model_calls": 1004,
+          "completion_tokens": 18213,
+          "prompt_tokens": 2784752,
+          "request_median_s": 1.8862204200122505,
+          "request_p95_s": 2.109890820714645,
+          "request_total_s": 1855.9433828103356,
+          "sampled_whole_card_peak_mib": 8260.0,
+          "error_count": 0,
+          "infrastructure_errors": 0,
+          "technical_gate_status": "passed",
+          "technical_gate_matches": [
+            {
+              "result": "logs/navigation_repair_20261112/precision_gate_six_balanced_v1/result.json",
+              "result_sha256": "0225bd8b46f784fb8e8991f6b207c684d235c813186d943a043ae2ecd300cf6f",
+              "kernel_sha256": "351ff66d176b7dea45ab733b16db06b73091e94715c9acca45915ebb2b95e3cc",
+              "numerical_cases": 48,
+              "max_reference_relative_l2": 0.0002100679703289643
+            }
+          ],
+          "technical_gate_mismatches": []
+        },
+        "pipeline_status": "complete",
+        "directory": "logs/navigation_repair_20261112/screen_six_balanced_v1/gptq_w8a16",
+        "result_sha256": "140b484b055dca8dbf5da0426f1210a108768ea4cbf7bf2b08c8e0ce2823c5cb",
+        "quality_errors": {},
+        "error": null
+      },
+      "metrics100": null,
+      "comparison": {
+        "status": "pending_comparison",
+        "reason": "Requires both this group and FP16 complete100 evidence."
+      },
+      "final100_quality_threshold": null,
+      "final100_quality_statement": "No preregistered100 quality pass threshold;20 gates are not extrapolated.",
+      "field_sources": {
+        "latest20": {
+          "path": "reports/navigation_repair_20261114_continuation_20.json",
+          "sha256": "ce578b221737ad76f74e3b49d8b0790eb7cf232c63c006c82f59cc5018eac4b9",
+          "pointer": "table[group=gptq_w8a16]; groups[gptq_w8a16]"
+        }
+      }
+    }
+  ],
+  "initial_input_comparison_scope": "Only each case first real request; subsequent policy trajectories may differ.",
+  "latest20_source": {
+    "path": "reports/navigation_repair_20261114_continuation_20.json",
+    "sha256": "ce578b221737ad76f74e3b49d8b0790eb7cf232c63c006c82f59cc5018eac4b9",
+    "created_utc": "2026-11-14T18:46:52.362968+00:00"
+  },
+  "raw100_verification": {},
+  "verified_non_model_evidence_sha256": {
+    "reports/navigation_repair_20261114_continuation_20.json": "ce578b221737ad76f74e3b49d8b0790eb7cf232c63c006c82f59cc5018eac4b9",
+    "data/baseline/navigation_repair_20261112/original100.json": "a9750fb607b8ff5c1397653d921467b610a9e03ef4abc6d94dc4727d3d263b8c",
+    "data/baseline/navigation_repair_20261112/subset20.json": "0a0cad38c4caba4b2579524f11f526db4912dcc069cdbca58c4fa8ad6ef73882",
+    "data/baseline/navigation_repair_20261112/remaining80.json": "d57dd831c674e15bbac05518ba4e7cc9f4bdcc08db7e0a50d84585486599bcf6",
+    "data/baseline/navigation_repair_20261112/manifest.json": "10bd43d8256c2a400c7729e9f6452e77fa2506fb0c0ef7fc29fad08993da1cea",
+    "checks/summarize_navigation_repair100.py": "001778ce5b2915e343daf2f120ab809689678d56e540c3ef54df930c67fa3097"
+  },
+  "model_assets_sha256_referenced_from_collectors": {},
+  "validation_status": "No100 reports supplied; this is only the latest20 status inventory. No100 raw-evidence validation was performed.",
+  "limitations": [
+    "Complete100 is completion, not a quality pass; no100 threshold is invented from the20 gates.",
+    "Absent80 leaves100 fields empty. Latest20 failures/review requirements remain visible even if an earlier100 exists.",
+    "SR/SPL use model-origin STOP, no error, distance<3m; quality failures stay in the100 denominator.",
+    "HTTP quantiles are checked from all real requests and displayed from collector values; no batch/episode percentile averaging.",
+    "Closed-loop HTTP distributions have different subsequent trajectories/token lengths and do not isolate quantization algorithm speed.",
+    "Without matched FP16100 there is no comparative conclusion; differing first inputs block comparison.",
+    "Model assets/weights are not opened here; their SHA identity is referenced from the preceding collector verification.",
+    "Whole-card memory includes desktop/prewarm and200ms sampling; decode uses actual forwards, including post-response work."
+  ]
+}
