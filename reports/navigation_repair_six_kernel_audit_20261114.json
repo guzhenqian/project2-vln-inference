@@ -1,0 +1,273 @@
+{
+  "status": "passed",
+  "result": "logs/navigation_repair_20261112/precision_gate_six_balanced_v1/result.json",
+  "result_sha256": "0225bd8b46f784fb8e8991f6b207c684d235c813186d943a043ae2ecd300cf6f",
+  "kernel_source": "navigation_precision_repair_kernels.py",
+  "kernel_sha256": "351ff66d176b7dea45ab733b16db06b73091e94715c9acca45915ebb2b95e3cc",
+  "coverage": {
+    "awq_w4a4": {
+      "numerical_cases": 48,
+      "layers": [
+        0,
+        18,
+        35
+      ],
+      "projections": [
+        "qkv",
+        "o",
+        "gate_up",
+        "down"
+      ],
+      "rows": [
+        1,
+        17,
+        701,
+        2815
+      ],
+      "max_reference_relative_l2": 0.00021075157565064728,
+      "model": {
+        "path": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_learning_20261104",
+        "config_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+        "safetensors_size": 3496772056
+      },
+      "kernel_variant": "balanced",
+      "activation_recipe": "dynamic_per_token_per_group128_symmetric_maxabs_narrow_range",
+      "actual_checkpoint_fused_tensor_hashes_verified": true
+    },
+    "awq_w4a8": {
+      "numerical_cases": 48,
+      "layers": [
+        0,
+        18,
+        35
+      ],
+      "projections": [
+        "qkv",
+        "o",
+        "gate_up",
+        "down"
+      ],
+      "rows": [
+        1,
+        17,
+        701,
+        2815
+      ],
+      "max_reference_relative_l2": 0.00021355037461034954,
+      "model": {
+        "path": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_learning_20261104",
+        "config_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+        "safetensors_size": 3496772056
+      },
+      "kernel_variant": "balanced",
+      "activation_recipe": "dynamic_per_token_symmetric_maxabs_narrow_range",
+      "actual_checkpoint_fused_tensor_hashes_verified": true
+    },
+    "awq_w8a16": {
+      "numerical_cases": 48,
+      "layers": [
+        0,
+        18,
+        35
+      ],
+      "projections": [
+        "qkv",
+        "o",
+        "gate_up",
+        "down"
+      ],
+      "rows": [
+        1,
+        17,
+        701,
+        2815
+      ],
+      "max_reference_relative_l2": 0.00021969711815472692,
+      "model": {
+        "path": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_W8_20261110_retry1",
+        "config_sha256": "7888d895e07f812e1683a452bc1fd979599e7b75621515be11b92028a7c271c5",
+        "safetensors_size": 5327622984
+      },
+      "kernel_variant": "balanced",
+      "activation_recipe": "none",
+      "actual_checkpoint_fused_tensor_hashes_verified": true
+    },
+    "gptq_w4a4": {
+      "numerical_cases": 48,
+      "layers": [
+        0,
+        18,
+        35
+      ],
+      "projections": [
+        "qkv",
+        "o",
+        "gate_up",
+        "down"
+      ],
+      "rows": [
+        1,
+        17,
+        701,
+        2815
+      ],
+      "max_reference_relative_l2": 0.00021352077601477504,
+      "model": {
+        "path": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_stage2_20261109",
+        "config_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+        "safetensors_size": 3496772056
+      },
+      "kernel_variant": "balanced",
+      "activation_recipe": "dynamic_per_token_per_group128_symmetric_maxabs_narrow_range",
+      "actual_checkpoint_fused_tensor_hashes_verified": true
+    },
+    "gptq_w4a8": {
+      "numerical_cases": 48,
+      "layers": [
+        0,
+        18,
+        35
+      ],
+      "projections": [
+        "qkv",
+        "o",
+        "gate_up",
+        "down"
+      ],
+      "rows": [
+        1,
+        17,
+        701,
+        2815
+      ],
+      "max_reference_relative_l2": 0.00020937816589139402,
+      "model": {
+        "path": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_stage2_20261109",
+        "config_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+        "safetensors_size": 3496772056
+      },
+      "kernel_variant": "balanced",
+      "activation_recipe": "dynamic_per_token_symmetric_maxabs_narrow_range",
+      "actual_checkpoint_fused_tensor_hashes_verified": true
+    },
+    "gptq_w8a16": {
+      "numerical_cases": 48,
+      "layers": [
+        0,
+        18,
+        35
+      ],
+      "projections": [
+        "qkv",
+        "o",
+        "gate_up",
+        "down"
+      ],
+      "rows": [
+        1,
+        17,
+        701,
+        2815
+      ],
+      "max_reference_relative_l2": 0.0002100679703289643,
+      "model": {
+        "path": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_W8_20261110",
+        "config_sha256": "7888d895e07f812e1683a452bc1fd979599e7b75621515be11b92028a7c271c5",
+        "safetensors_size": 5327622984
+      },
+      "kernel_variant": "balanced",
+      "activation_recipe": "none",
+      "actual_checkpoint_fused_tensor_hashes_verified": true
+    }
+  },
+  "source_checks": [
+    {
+      "source": "checks/navigation_precision_repair_kernels.py",
+      "expected_sha256": "351ff66d176b7dea45ab733b16db06b73091e94715c9acca45915ebb2b95e3cc",
+      "evidence_path": "checks/navigation_precision_repair_kernels.py",
+      "actual_sha256": "351ff66d176b7dea45ab733b16db06b73091e94715c9acca45915ebb2b95e3cc",
+      "passed": true
+    },
+    {
+      "source": "checks/probe_navigation_precision_repair.py",
+      "expected_sha256": "9bdd92852179ed28b02375190761f2e4f5367412acab41e16f8734d51f069f98",
+      "evidence_path": "checks/probe_navigation_precision_repair.py",
+      "actual_sha256": "9bdd92852179ed28b02375190761f2e4f5367412acab41e16f8734d51f069f98",
+      "passed": true
+    },
+    {
+      "source": "checks/navigation_precision_kernels.py",
+      "expected_sha256": "48cb79fcd0243e07434f7fd67859a91be658364682f51512bd39563ec20aac65",
+      "evidence_path": "checks/navigation_precision_kernels.py",
+      "actual_sha256": "48cb79fcd0243e07434f7fd67859a91be658364682f51512bd39563ec20aac65",
+      "passed": true
+    },
+    {
+      "source": "setup/navigation-precision-20261110.json",
+      "expected_sha256": "43b47a3860f2761f134005ec9e16abfaa194abc7246ed517d9fd4cf12b109f22",
+      "evidence_path": "setup/navigation-precision-20261110.json",
+      "actual_sha256": "43b47a3860f2761f134005ec9e16abfaa194abc7246ed517d9fd4cf12b109f22",
+      "passed": true
+    },
+    {
+      "source": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_learning_20261104/config.json",
+      "expected_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+      "evidence_path": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_learning_20261104/config.json",
+      "actual_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+      "passed": true
+    },
+    {
+      "source": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_learning_20261104/config.json",
+      "expected_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+      "evidence_path": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_learning_20261104/config.json",
+      "actual_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+      "passed": true
+    },
+    {
+      "source": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_W8_20261110_retry1/config.json",
+      "expected_sha256": "7888d895e07f812e1683a452bc1fd979599e7b75621515be11b92028a7c271c5",
+      "evidence_path": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_W8_20261110_retry1/config.json",
+      "actual_sha256": "7888d895e07f812e1683a452bc1fd979599e7b75621515be11b92028a7c271c5",
+      "passed": true
+    },
+    {
+      "source": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_stage2_20261109/config.json",
+      "expected_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+      "evidence_path": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_stage2_20261109/config.json",
+      "actual_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+      "passed": true
+    },
+    {
+      "source": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_stage2_20261109/config.json",
+      "expected_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+      "evidence_path": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_stage2_20261109/config.json",
+      "actual_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+      "passed": true
+    },
+    {
+      "source": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_W8_20261110/config.json",
+      "expected_sha256": "7888d895e07f812e1683a452bc1fd979599e7b75621515be11b92028a7c271c5",
+      "evidence_path": "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_W8_20261110/config.json",
+      "actual_sha256": "7888d895e07f812e1683a452bc1fd979599e7b75621515be11b92028a7c271c5",
+      "passed": true
+    }
+  ],
+  "evidence_files_sha256": {
+    "logs/navigation_repair_20261112/precision_gate_six_balanced_v1/result.json": "0225bd8b46f784fb8e8991f6b207c684d235c813186d943a043ae2ecd300cf6f",
+    "logs/navigation_repair_20261112/precision_gate_six_balanced_v1/protocol.json": "dcbcef0f2156036401adffb4957981fb609f91bc5829e5eecefb52061df86eb5",
+    "checks/navigation_precision_repair_kernels.py": "351ff66d176b7dea45ab733b16db06b73091e94715c9acca45915ebb2b95e3cc",
+    "checks/probe_navigation_precision_repair.py": "9bdd92852179ed28b02375190761f2e4f5367412acab41e16f8734d51f069f98",
+    "checks/navigation_precision_kernels.py": "48cb79fcd0243e07434f7fd67859a91be658364682f51512bd39563ec20aac65",
+    "logs/navigation_repair_20261112/precision_gate_six_balanced_v1/measurements.json": "f96446d98b488ae2439a5b331da45be8eb6a05cca405a45578b7bde967dd0912",
+    "setup/navigation-precision-20261110.json": "43b47a3860f2761f134005ec9e16abfaa194abc7246ed517d9fd4cf12b109f22",
+    "logs/navigation_repair_20261112/precision_gate_six_balanced_v1/synthetic.json": "d7b1ba2f20bcb0cbea12b58012a8a22b1a51aec29711b6eb985ed885b2e10513",
+    "logs/navigation_repair_20261112/precision_gate_six_balanced_v1/preparation.json": "ebd86ddc004751a2c898e56fb923f623e53321ee0f386bfb5760e6b53af64842",
+    "logs/navigation_repair_20261112/precision_gate_six_balanced_v1/cache_checks.json": "662c1baa3c7dc7a25465f28bc84b31bb83f942b6512fe30fa31479fd5954ac1b",
+    "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_learning_20261104/config.json": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+    "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_W8_20261110_retry1/config.json": "7888d895e07f812e1683a452bc1fd979599e7b75621515be11b92028a7c271c5",
+    "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_stage2_20261109/config.json": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+    "models/SimpleVLN_Qwen3VL_4B_RL_GPTQ_W8_20261110/config.json": "7888d895e07f812e1683a452bc1fd979599e7b75621515be11b92028a7c271c5"
+  },
+  "scope": "Reference arithmetic, packing, real packed matrices and execution/cache checks with synthetic inputs only.",
+  "quality_conclusion": "None: random/synthetic activation errors do not prove activation fidelity or navigation quality."
+}
