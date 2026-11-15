@@ -1,0 +1,524 @@
+{
+  "created_utc": "2026-11-15T19:49:37.193110+00:00",
+  "status": "repair_evaluation_complete",
+  "all_nine_100_complete": true,
+  "case_evaluations": 900,
+  "actual_model_calls": 38392,
+  "all_requested_precision_execution_verified": true,
+  "all_groups_zero_output_or_infrastructure_errors": true,
+  "all_quantized_quality_fully_restored": false,
+  "remaining_quality_limitations": [
+    "awq_w4a4",
+    "gptq_w4a4"
+  ],
+  "table": [
+    {
+      "group": "fp16",
+      "status": "complete_100",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 66,
+        "sr": 0.66,
+        "spl": 0.5436392439824625,
+        "actual_model_calls": 4098,
+        "prompt_tokens": 11300033,
+        "completion_tokens": 74008,
+        "request_median_s": 1.6387816187925637,
+        "request_p95_s": 1.9903769408818335,
+        "request_total_s": 6842.747216449119,
+        "sampled_whole_card_peak_mib": 11763.0,
+        "error_count": 0,
+        "infrastructure_errors": 0,
+        "quality_errors": {},
+        "collisions": 1526,
+        "actual_prefill_forwards": 4098,
+        "actual_decode_forwards": 129744,
+        "actual_total_forwards": 133842,
+        "stage_summary": {
+          "requests": 4098,
+          "prefill_language_p50_ms": 332.42572021484375,
+          "prefill_language_p95_ms": 426.43819122314454,
+          "actual_decode_forwards": 129744,
+          "decode_ms_per_actual_forward": 17.15513953330235,
+          "decode_request_mean_p50_ms": 17.065041035413742,
+          "decode_request_mean_p95_ms": 17.767883762717247
+        }
+      },
+      "comparison": {
+        "status": "baseline",
+        "baseline_report": {
+          "path": "reports/navigation_repair_20261114_continuation_fp16_100.json",
+          "sha256": "df0e038ddb68df3f86c2a1c14b8db829bd85b1093b7db521d3b7961c947a9547"
+        },
+        "initial_input_identity_cases": 100,
+        "initial_input_mismatches": [],
+        "success_count_delta": 0,
+        "sr_delta": 0.0,
+        "spl_delta": 0.0,
+        "request_p50_ratio": 1.0,
+        "request_p95_ratio": 1.0,
+        "scope": "Observed closed-loop distributions; different subsequent trajectories/output lengths prevent pure algorithm attribution."
+      },
+      "same20_max_fixed_p50_p95_ratio": 1.0,
+      "quality_interpretation": "Descriptive fixed100 result; no statistical equivalence or superiority claim."
+    },
+    {
+      "group": "awq_w4a16",
+      "status": "complete_100",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 66,
+        "sr": 0.66,
+        "spl": 0.5671283371575464,
+        "actual_model_calls": 4195,
+        "prompt_tokens": 11578263,
+        "completion_tokens": 76058,
+        "request_median_s": 1.4589889720082283,
+        "request_p95_s": 1.7730106469243765,
+        "request_total_s": 6190.041562010534,
+        "sampled_whole_card_peak_mib": 6740.0,
+        "error_count": 0,
+        "infrastructure_errors": 0,
+        "quality_errors": {},
+        "collisions": 2147,
+        "actual_prefill_forwards": 4195,
+        "actual_decode_forwards": 132896,
+        "actual_total_forwards": 137091,
+        "stage_summary": {
+          "requests": 4195,
+          "prefill_language_p50_ms": 352.0307312011719,
+          "prefill_language_p95_ms": 356.2857421875,
+          "actual_decode_forwards": 132896,
+          "decode_ms_per_actual_forward": 7.93157101414834,
+          "decode_request_mean_p50_ms": 7.942079931497574,
+          "decode_request_mean_p95_ms": 8.02054360806942
+        }
+      },
+      "comparison": {
+        "status": "descriptive_comparison",
+        "baseline_report": {
+          "path": "reports/navigation_repair_20261114_continuation_fp16_100.json",
+          "sha256": "df0e038ddb68df3f86c2a1c14b8db829bd85b1093b7db521d3b7961c947a9547"
+        },
+        "initial_input_identity_cases": 100,
+        "initial_input_mismatches": [],
+        "success_count_delta": 0,
+        "sr_delta": 0.0,
+        "spl_delta": 0.023489093175083853,
+        "request_p50_ratio": 0.8902888312130297,
+        "request_p95_ratio": 0.8907913925785569,
+        "scope": "Observed closed-loop distributions; different subsequent trajectories/output lengths prevent pure algorithm attribution."
+      },
+      "same20_max_fixed_p50_p95_ratio": 0.9034782804960211,
+      "quality_interpretation": "Descriptive fixed100 result; no statistical equivalence or superiority claim."
+    },
+    {
+      "group": "awq_w4a4",
+      "status": "complete_100",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 53,
+        "sr": 0.53,
+        "spl": 0.4471922763462095,
+        "actual_model_calls": 4844,
+        "prompt_tokens": 13422706,
+        "completion_tokens": 88660,
+        "request_median_s": 1.7046480257995427,
+        "request_p95_s": 2.0267159303883084,
+        "request_total_s": 8385.604715387337,
+        "sampled_whole_card_peak_mib": 6519.0,
+        "error_count": 0,
+        "infrastructure_errors": 0,
+        "quality_errors": {},
+        "collisions": 1502,
+        "actual_prefill_forwards": 4844,
+        "actual_decode_forwards": 153792,
+        "actual_total_forwards": 158636,
+        "stage_summary": {
+          "requests": 4844,
+          "prefill_language_p50_ms": 562.9450073242188,
+          "prefill_language_p95_ms": 566.7901611328125,
+          "actual_decode_forwards": 153792,
+          "decode_ms_per_actual_forward": 9.930590000070238,
+          "decode_request_mean_p50_ms": 9.942343026399612,
+          "decode_request_mean_p95_ms": 10.007328583300113
+        }
+      },
+      "comparison": {
+        "status": "descriptive_comparison",
+        "baseline_report": {
+          "path": "reports/navigation_repair_20261114_continuation_fp16_100.json",
+          "sha256": "df0e038ddb68df3f86c2a1c14b8db829bd85b1093b7db521d3b7961c947a9547"
+        },
+        "initial_input_identity_cases": 100,
+        "initial_input_mismatches": [],
+        "success_count_delta": -13,
+        "sr_delta": -0.13,
+        "spl_delta": -0.09644696763625304,
+        "request_p50_ratio": 1.0401923027764424,
+        "request_p95_ratio": 1.0182573404866593,
+        "scope": "Observed closed-loop distributions; different subsequent trajectories/output lengths prevent pure algorithm attribution."
+      },
+      "same20_max_fixed_p50_p95_ratio": 1.047490444345239,
+      "quality_interpretation": "Observed success/SPL loss versus FP16; output stability restored in these100 cases."
+    },
+    {
+      "group": "awq_w4a8",
+      "status": "complete_100",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 65,
+        "sr": 0.65,
+        "spl": 0.5599167184554061,
+        "actual_model_calls": 4379,
+        "prompt_tokens": 12102964,
+        "completion_tokens": 79503,
+        "request_median_s": 1.5788706257008016,
+        "request_p95_s": 1.7554130126256495,
+        "request_total_s": 6880.693156667054,
+        "sampled_whole_card_peak_mib": 6538.0,
+        "error_count": 0,
+        "infrastructure_errors": 0,
+        "quality_errors": {},
+        "collisions": 1225,
+        "actual_prefill_forwards": 4379,
+        "actual_decode_forwards": 138800,
+        "actual_total_forwards": 143179,
+        "stage_summary": {
+          "requests": 4379,
+          "prefill_language_p50_ms": 402.6408996582031,
+          "prefill_language_p95_ms": 406.6098236083984,
+          "actual_decode_forwards": 138800,
+          "decode_ms_per_actual_forward": 10.46848257569827,
+          "decode_request_mean_p50_ms": 10.481887996196747,
+          "decode_request_mean_p95_ms": 10.548369044065476
+        }
+      },
+      "comparison": {
+        "status": "descriptive_comparison",
+        "baseline_report": {
+          "path": "reports/navigation_repair_20261114_continuation_fp16_100.json",
+          "sha256": "df0e038ddb68df3f86c2a1c14b8db829bd85b1093b7db521d3b7961c947a9547"
+        },
+        "initial_input_identity_cases": 100,
+        "initial_input_mismatches": [],
+        "success_count_delta": -1,
+        "sr_delta": -0.010000000000000009,
+        "spl_delta": 0.016277474472943587,
+        "request_p50_ratio": 0.9634417469632691,
+        "request_p95_ratio": 0.8819500349757451,
+        "scope": "Observed closed-loop distributions; different subsequent trajectories/output lengths prevent pure algorithm attribution."
+      },
+      "same20_max_fixed_p50_p95_ratio": 0.9574202937437255,
+      "quality_interpretation": "Descriptive fixed100 result; no statistical equivalence or superiority claim."
+    },
+    {
+      "group": "awq_w8a16",
+      "status": "complete_100",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 65,
+        "sr": 0.65,
+        "spl": 0.5584431374051865,
+        "actual_model_calls": 4120,
+        "prompt_tokens": 11366243,
+        "completion_tokens": 74597,
+        "request_median_s": 1.7574766846373677,
+        "request_p95_s": 1.9956773110665378,
+        "request_total_s": 7257.050309153274,
+        "sampled_whole_card_peak_mib": 8260.0,
+        "error_count": 0,
+        "infrastructure_errors": 0,
+        "quality_errors": {},
+        "collisions": 1647,
+        "actual_prefill_forwards": 4120,
+        "actual_decode_forwards": 130480,
+        "actual_total_forwards": 134600,
+        "stage_summary": {
+          "requests": 4120,
+          "prefill_language_p50_ms": 541.8475341796875,
+          "prefill_language_p95_ms": 545.8558288574219,
+          "actual_decode_forwards": 130480,
+          "decode_ms_per_actual_forward": 13.03519103301222,
+          "decode_request_mean_p50_ms": 13.051143512129784,
+          "decode_request_mean_p95_ms": 13.113552792370319
+        }
+      },
+      "comparison": {
+        "status": "descriptive_comparison",
+        "baseline_report": {
+          "path": "reports/navigation_repair_20261114_continuation_fp16_100.json",
+          "sha256": "df0e038ddb68df3f86c2a1c14b8db829bd85b1093b7db521d3b7961c947a9547"
+        },
+        "initial_input_identity_cases": 100,
+        "initial_input_mismatches": [],
+        "success_count_delta": -1,
+        "sr_delta": -0.010000000000000009,
+        "spl_delta": 0.014803893422723924,
+        "request_p50_ratio": 1.0724288486541955,
+        "request_p95_ratio": 1.002662998186844,
+        "scope": "Observed closed-loop distributions; different subsequent trajectories/output lengths prevent pure algorithm attribution."
+      },
+      "same20_max_fixed_p50_p95_ratio": 1.0661246217612816,
+      "quality_interpretation": "Descriptive fixed100 result; no statistical equivalence or superiority claim."
+    },
+    {
+      "group": "gptq_w4a16",
+      "status": "complete_100",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 68,
+        "sr": 0.68,
+        "spl": 0.5797803383078606,
+        "actual_model_calls": 3733,
+        "prompt_tokens": 10266546,
+        "completion_tokens": 67110,
+        "request_median_s": 1.4794099987484515,
+        "request_p95_s": 1.790412484388798,
+        "request_total_s": 5534.564318020828,
+        "sampled_whole_card_peak_mib": 6498.0,
+        "error_count": 0,
+        "infrastructure_errors": 0,
+        "quality_errors": {},
+        "collisions": 2028,
+        "actual_prefill_forwards": 3733,
+        "actual_decode_forwards": 118112,
+        "actual_total_forwards": 121845,
+        "stage_summary": {
+          "requests": 3733,
+          "prefill_language_p50_ms": 352.2396240234375,
+          "prefill_language_p95_ms": 356.31553955078124,
+          "actual_decode_forwards": 118112,
+          "decode_ms_per_actual_forward": 7.931797947794142,
+          "decode_request_mean_p50_ms": 7.948427975177765,
+          "decode_request_mean_p95_ms": 8.020294016599655
+        }
+      },
+      "comparison": {
+        "status": "descriptive_comparison",
+        "baseline_report": {
+          "path": "reports/navigation_repair_20261114_continuation_fp16_100.json",
+          "sha256": "df0e038ddb68df3f86c2a1c14b8db829bd85b1093b7db521d3b7961c947a9547"
+        },
+        "initial_input_identity_cases": 100,
+        "initial_input_mismatches": [],
+        "success_count_delta": 2,
+        "sr_delta": 0.020000000000000018,
+        "spl_delta": 0.03614109432539803,
+        "request_p50_ratio": 0.9027499343313751,
+        "request_p95_ratio": 0.8995343784457022,
+        "scope": "Observed closed-loop distributions; different subsequent trajectories/output lengths prevent pure algorithm attribution."
+      },
+      "same20_max_fixed_p50_p95_ratio": 0.8880334750664481,
+      "quality_interpretation": "Descriptive fixed100 result; no statistical equivalence or superiority claim."
+    },
+    {
+      "group": "gptq_w4a4",
+      "status": "complete_100",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 58,
+        "sr": 0.58,
+        "spl": 0.49349671951684404,
+        "actual_model_calls": 4820,
+        "prompt_tokens": 13346228,
+        "completion_tokens": 88071,
+        "request_median_s": 1.7282072398811579,
+        "request_p95_s": 1.946814435604029,
+        "request_total_s": 8321.493234587368,
+        "sampled_whole_card_peak_mib": 6603.0,
+        "error_count": 0,
+        "infrastructure_errors": 0,
+        "quality_errors": {},
+        "collisions": 2516,
+        "actual_prefill_forwards": 4820,
+        "actual_decode_forwards": 152992,
+        "actual_total_forwards": 157812,
+        "stage_summary": {
+          "requests": 4820,
+          "prefill_language_p50_ms": 563.167236328125,
+          "prefill_language_p95_ms": 567.1247680664062,
+          "actual_decode_forwards": 152992,
+          "decode_ms_per_actual_forward": 9.939181201616558,
+          "decode_request_mean_p50_ms": 9.951288491487503,
+          "decode_request_mean_p95_ms": 10.018153071403503
+        }
+      },
+      "comparison": {
+        "status": "descriptive_comparison",
+        "baseline_report": {
+          "path": "reports/navigation_repair_20261114_continuation_fp16_100.json",
+          "sha256": "df0e038ddb68df3f86c2a1c14b8db829bd85b1093b7db521d3b7961c947a9547"
+        },
+        "initial_input_identity_cases": 100,
+        "initial_input_mismatches": [],
+        "success_count_delta": -8,
+        "sr_delta": -0.08000000000000007,
+        "spl_delta": -0.05014252446561851,
+        "request_p50_ratio": 1.0545683574084033,
+        "request_p95_ratio": 0.9781134395284421,
+        "scope": "Observed closed-loop distributions; different subsequent trajectories/output lengths prevent pure algorithm attribution."
+      },
+      "same20_max_fixed_p50_p95_ratio": 1.0317579289491732,
+      "quality_interpretation": "Observed success/SPL loss versus FP16; output stability restored in these100 cases."
+    },
+    {
+      "group": "gptq_w4a8",
+      "status": "complete_100",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 63,
+        "sr": 0.63,
+        "spl": 0.5487405198436005,
+        "actual_model_calls": 4138,
+        "prompt_tokens": 11416272,
+        "completion_tokens": 74696,
+        "request_median_s": 1.5717003096360713,
+        "request_p95_s": 1.864302491326816,
+        "request_total_s": 6555.1648877928965,
+        "sampled_whole_card_peak_mib": 6627.0,
+        "error_count": 0,
+        "infrastructure_errors": 0,
+        "quality_errors": {},
+        "collisions": 2186,
+        "actual_prefill_forwards": 4138,
+        "actual_decode_forwards": 131120,
+        "actual_total_forwards": 135258,
+        "stage_summary": {
+          "requests": 4138,
+          "prefill_language_p50_ms": 402.7166748046875,
+          "prefill_language_p95_ms": 406.6064483642578,
+          "actual_decode_forwards": 131120,
+          "decode_ms_per_actual_forward": 10.46929274343586,
+          "decode_request_mean_p50_ms": 10.483128532767296,
+          "decode_request_mean_p95_ms": 10.551645191013813
+        }
+      },
+      "comparison": {
+        "status": "descriptive_comparison",
+        "baseline_report": {
+          "path": "reports/navigation_repair_20261114_continuation_fp16_100.json",
+          "sha256": "df0e038ddb68df3f86c2a1c14b8db829bd85b1093b7db521d3b7961c947a9547"
+        },
+        "initial_input_identity_cases": 100,
+        "initial_input_mismatches": [],
+        "success_count_delta": -3,
+        "sr_delta": -0.030000000000000027,
+        "spl_delta": 0.005101275861137955,
+        "request_p50_ratio": 0.9590663524735424,
+        "request_p95_ratio": 0.9366580033331976,
+        "scope": "Observed closed-loop distributions; different subsequent trajectories/output lengths prevent pure algorithm attribution."
+      },
+      "same20_max_fixed_p50_p95_ratio": 0.9513008853152831,
+      "quality_interpretation": "Descriptive fixed100 result; no statistical equivalence or superiority claim."
+    },
+    {
+      "group": "gptq_w8a16",
+      "status": "complete_100",
+      "metrics": {
+        "case_count": 100,
+        "success_count": 66,
+        "sr": 0.66,
+        "spl": 0.5397769589114261,
+        "actual_model_calls": 4065,
+        "prompt_tokens": 11204543,
+        "completion_tokens": 73342,
+        "request_median_s": 1.7766096978448331,
+        "request_p95_s": 2.0954487436451017,
+        "request_total_s": 7261.647937863134,
+        "sampled_whole_card_peak_mib": 8260.0,
+        "error_count": 0,
+        "infrastructure_errors": 0,
+        "quality_errors": {},
+        "collisions": 1414,
+        "actual_prefill_forwards": 4065,
+        "actual_decode_forwards": 128672,
+        "actual_total_forwards": 132737,
+        "stage_summary": {
+          "requests": 4065,
+          "prefill_language_p50_ms": 541.5454711914062,
+          "prefill_language_p95_ms": 545.5276245117187,
+          "actual_decode_forwards": 128672,
+          "decode_ms_per_actual_forward": 13.035147508714248,
+          "decode_request_mean_p50_ms": 13.051950961351395,
+          "decode_request_mean_p95_ms": 13.11458780169487
+        }
+      },
+      "comparison": {
+        "status": "descriptive_comparison",
+        "baseline_report": {
+          "path": "reports/navigation_repair_20261114_continuation_fp16_100.json",
+          "sha256": "df0e038ddb68df3f86c2a1c14b8db829bd85b1093b7db521d3b7961c947a9547"
+        },
+        "initial_input_identity_cases": 100,
+        "initial_input_mismatches": [],
+        "success_count_delta": 0,
+        "sr_delta": 0.0,
+        "spl_delta": -0.0038622850710364753,
+        "request_p50_ratio": 1.084103993766918,
+        "request_p95_ratio": 1.0527899015533793,
+        "scope": "Observed closed-loop distributions; different subsequent trajectories/output lengths prevent pure algorithm attribution."
+      },
+      "same20_max_fixed_p50_p95_ratio": 1.0596701746371444,
+      "quality_interpretation": "Descriptive fixed100 result; no statistical equivalence or superiority claim."
+    }
+  ],
+  "report_references": {
+    "fp16": {
+      "path": "reports/navigation_repair_20261114_continuation_fp16_100.json",
+      "sha256": "df0e038ddb68df3f86c2a1c14b8db829bd85b1093b7db521d3b7961c947a9547"
+    },
+    "awq_w4a16": {
+      "path": "reports/navigation_repair_20261114_continuation_awq_w4a16_100.json",
+      "sha256": "ff7767fd8bf0609bcb94a3669439fd2afa0cbf25fd81e1fde4164941259773f9"
+    },
+    "awq_w4a4": {
+      "path": "reports/navigation_repair_20261114_continuation_awq_w4a4_100.json",
+      "sha256": "c259344f1a52541da0e93582502612313fc97f7ad514f808e81b8192108cd4cf"
+    },
+    "awq_w4a8": {
+      "path": "reports/navigation_repair_20261114_continuation_awq_w4a8_100.json",
+      "sha256": "3af3a3807042c35ffed869f1cd4bfa11353236c71077506c9114d0f0859bdf2b"
+    },
+    "awq_w8a16": {
+      "path": "reports/navigation_repair_20261114_continuation_awq_w8a16_100.json",
+      "sha256": "da71e8ba875afb3cce904679854edce73d22e3672ce51009a57c490f6190282d"
+    },
+    "gptq_w4a16": {
+      "path": "reports/navigation_repair_20261114_continuation_gptq_w4a16_100.json",
+      "sha256": "05ecbc9c721fa790ac6201883f9d44eda0f07f7018f246c91301844b44ed37cd"
+    },
+    "gptq_w4a4": {
+      "path": "reports/navigation_repair_20261114_continuation_gptq_w4a4_100.json",
+      "sha256": "61ec98f1cc9d944818865b406cbc131f49e85cf1e8ccc436445294545648eb7a"
+    },
+    "gptq_w4a8": {
+      "path": "reports/navigation_repair_20261114_continuation_gptq_w4a8_100.json",
+      "sha256": "b4fea1d9a26d64c9d03ba9710c2de5ecb3d3801addee26d4f6f2fcbd958e2260"
+    },
+    "gptq_w8a16": {
+      "path": "reports/navigation_repair_20261114_continuation_gptq_w8a16_100.json",
+      "sha256": "52e7479dcada4e208abecd288bbb205bb091e5998e6ed76bdbf399b69f7485ba"
+    }
+  },
+  "evidence": {
+    "final_raw_audit": {
+      "path": "reports/navigation_repair_20261114_continuation_inventory_after_gptq_w8a16.json",
+      "sha256": "bd26c4b51b1628207759b83d2c9a8b53780759ac7e689b5d52fbd5cf200302e9"
+    },
+    "accepted20": {
+      "path": "reports/navigation_repair_20261114_continuation_20.json",
+      "sha256": "ce578b221737ad76f74e3b49d8b0790eb7cf232c63c006c82f59cc5018eac4b9"
+    },
+    "original100_sha256": "a9750fb607b8ff5c1397653d921467b610a9e03ef4abc6d94dc4727d3d263b8c",
+    "finalizer_sha256": "0a4ef0cfa2b5e44f5ae460fa0b901d58d61c7089b7b36dcefbba912d202875be"
+  },
+  "limitations": [
+    "New accepted20 + unchanged remaining80; no historical cancelled cases reused.",
+    "Same100 development cases;20 engineering gates do not establish statistical equivalence.",
+    "HTTP quantiles pool real requests; subsequent trajectories/output lengths differ across models.",
+    "Memory is whole-card200ms sampled peak including desktop and prewarm, not model allocator memory.",
+    "W4A4 uses packedINT4 widened toINT8 MMA; W4A8 usesINT8 MMA; W8A16 unpacks byte weights intoFP16 MMA.",
+    "Artifact arithmetic/packing/execution correctness and output stability do not prove full navigation quality recovery."
+  ]
+}
