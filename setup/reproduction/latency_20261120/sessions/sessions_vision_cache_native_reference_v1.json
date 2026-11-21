@@ -1,0 +1,25 @@
+[
+  {
+    "group": "awq_w4a16",
+    "label": "awq_w4a16_inprocess2",
+    "env": {
+      "PROJECT2_LATENCY_EXECUTOR": "uni",
+      "PROJECT2_LATENCY_PREFILL_INTERVAL": "2",
+      "PROJECT2_LATENCY_INPROCESS": "1"
+    },
+    "frozen_table": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json",
+    "service_entry": "checks/serve_navigation_latency_20261120.py",
+    "model_name": "navigation-repair-awq_w4a16"
+  },
+  {
+    "group": "fp16",
+    "label": "fp16_inprocess2",
+    "env": {
+      "PROJECT2_LATENCY_EXECUTOR": "uni",
+      "PROJECT2_LATENCY_PREFILL_INTERVAL": "2",
+      "PROJECT2_LATENCY_INPROCESS": "1"
+    },
+    "service_entry": "checks/serve_navigation_latency_20261120.py",
+    "model_name": "navigation-repair-fp16"
+  }
+]

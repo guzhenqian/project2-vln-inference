@@ -1,0 +1,185 @@
+{
+  "status": "micro_observed_fullmodel_pending",
+  "source": {
+    "logs\\navigation_latency_20261120\\expanded_int8_prefill_awq_v1\\result.json": "e36b7c7aed6c42a9e452cfa5f7f4633b376289d309afa85020cb8baa43a50696",
+    "logs\\navigation_latency_20261120\\expanded_int8_prefill_awq_v1\\protocol.json": "e95629f8f9f4d7be6b60093334a67572994007b436d173a7658d0006716f70d0",
+    "logs\\navigation_latency_20261120\\expanded_int8_prefill_awq_v1\\attempts.jsonl": "7fe520d073e473847cb072cf2d1f810da43d3d78990e51d3ad35d44417e44cdc",
+    "logs\\navigation_latency_20261120\\expanded_int8_prefill_awq_v1\\conversions.json": "f46f467a6d46fe7f56b36c942909393517492236e9cafac3a341dfd0b4952bd2"
+  },
+  "elapsed_s": 54.09289427600015,
+  "attempts": 144,
+  "accepted": 120,
+  "rejected": 24,
+  "implementation_all_passed": true,
+  "repeat_stability_all_passed": true,
+  "rejection_scope": [
+    [
+      35,
+      "down"
+    ],
+    [
+      35,
+      "gate_up"
+    ]
+  ],
+  "predeclared_relative_l2_limit": 0.02,
+  "failures_by_projection": {
+    "gate_up": {
+      "weight_relative_l2": [
+        0.02096238173544407
+      ],
+      "combined_relative_l2_range": [
+        0.02252344973385334,
+        0.022861754521727562
+      ]
+    },
+    "down": {
+      "weight_relative_l2": [
+        0.026123318821191788
+      ],
+      "combined_relative_l2_range": [
+        0.026826297864317894,
+        0.02894216775894165
+      ]
+    }
+  },
+  "eligible": [
+    {
+      "projection": "qkv",
+      "layout": "nk_transposed",
+      "cases": 18,
+      "all_random_micro_gates_passed": true,
+      "promising_for_next_investigation": true,
+      "scope": "Not full-model approval; future actual activations/navigation quality and VRAM required"
+    },
+    {
+      "projection": "o",
+      "layout": "nk_transposed",
+      "cases": 18,
+      "all_random_micro_gates_passed": true,
+      "promising_for_next_investigation": true,
+      "scope": "Not full-model approval; future actual activations/navigation quality and VRAM required"
+    }
+  ],
+  "attention_nk_timings": [
+    {
+      "projection": "qkv",
+      "m": 701,
+      "p50_ms": {
+        "hot": {
+          "native_w4a16": 0.34508800506591797,
+          "same_w4_dense_fp16": 0.31436800956726074,
+          "expanded_int8_full": 0.130048006772995
+        },
+        "cold": {
+          "native_w4a16": 0.35123199224472046,
+          "same_w4_dense_fp16": 0.3246079981327057,
+          "expanded_int8_full": 0.14950400590896606
+        }
+      },
+      "gain_fraction": {
+        "hot": {
+          "native_w4a16": 0.6231453864988628,
+          "same_w4_dense_fp16": 0.5863192092859228
+        },
+        "cold": {
+          "native_w4a16": 0.5743439971014961,
+          "same_w4_dense_fp16": 0.5394321558033635
+        }
+      },
+      "timing_screen_passed": true
+    },
+    {
+      "projection": "qkv",
+      "m": 2815,
+      "p50_ms": {
+        "hot": {
+          "native_w4a16": 1.1479040384292603,
+          "same_w4_dense_fp16": 1.0598399639129639,
+          "expanded_int8_full": 0.591871976852417
+        },
+        "cold": {
+          "native_w4a16": 1.151039958000183,
+          "same_w4_dense_fp16": 1.0638560056686401,
+          "expanded_int8_full": 0.6000639796257019
+        }
+      },
+      "gain_fraction": {
+        "hot": {
+          "native_w4a16": 0.4843889758744052,
+          "same_w4_dense_fp16": 0.4415458965453555
+        },
+        "cold": {
+          "native_w4a16": 0.4786766736853748,
+          "same_w4_dense_fp16": 0.43595376025672017
+        }
+      },
+      "timing_screen_passed": true
+    },
+    {
+      "projection": "o",
+      "m": 701,
+      "p50_ms": {
+        "hot": {
+          "native_w4a16": 0.22732800245285034,
+          "same_w4_dense_fp16": 0.20377600193023682,
+          "expanded_int8_full": 0.10035199671983719
+        },
+        "cold": {
+          "native_w4a16": 0.23360000550746918,
+          "same_w4_dense_fp16": 0.20787200331687927,
+          "expanded_int8_full": 0.12492799758911133
+        }
+      },
+      "gain_fraction": {
+        "hot": {
+          "native_w4a16": 0.5585585777508822,
+          "same_w4_dense_fp16": 0.5075377092038889
+        },
+        "cold": {
+          "native_w4a16": 0.4652055023812195,
+          "same_w4_dense_fp16": 0.399014799512604
+        }
+      },
+      "timing_screen_passed": true
+    },
+    {
+      "projection": "o",
+      "m": 2815,
+      "p50_ms": {
+        "hot": {
+          "native_w4a16": 0.7659519910812378,
+          "same_w4_dense_fp16": 0.6993920207023621,
+          "expanded_int8_full": 0.4341759979724884
+        },
+        "cold": {
+          "native_w4a16": 0.7720159888267517,
+          "same_w4_dense_fp16": 0.7065600156784058,
+          "expanded_int8_full": 0.43929600715637207
+        }
+      },
+      "gain_fraction": {
+        "hot": {
+          "native_w4a16": 0.4331550762605967,
+          "same_w4_dense_fp16": 0.37920939169928103
+        },
+        "cold": {
+          "native_w4a16": 0.43097550631823167,
+          "same_w4_dense_fp16": 0.37826087323299684
+        }
+      },
+      "timing_screen_passed": true
+    }
+  ],
+  "interpretation": [
+    "KN layout does not pass the timing advance gate.",
+    "NK makes all four projection families faster in layer0 microtiming, but gate_up/down remain rejected by layer35 accuracy; timing does not override the predeclared2% gate.",
+    "Only qkv/o NK is eligible for the next guarded wholemodel experiment, not already approved across all36 layers.",
+    "New runtime must independently gate every72 enabled actual weights plus two actual-input72-module local errors.",
+    "This is additional W8/A8 requantization, not original W4 arithmetic equality.",
+    "Hot/cold micro reductions cannot be multiplied into HTTP or fullmodel gains; current quality20 remains independent."
+  ],
+  "future_module_mask": "A separately authorized all36layer×4projection×3M×2amplitude NK screening may register a module-specific mask. Preserve existing24 failures and threshold; no automatic MLP promotion.",
+  "current_fixed_mask": "qkv/o only; original MLP and all decode stay frozen W4",
+  "full_model_quality": "not_evaluated"
+}

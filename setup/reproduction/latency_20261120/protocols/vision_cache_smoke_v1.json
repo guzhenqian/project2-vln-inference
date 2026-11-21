@@ -1,0 +1,466 @@
+{
+  "schema": "navigation_vision_cpu_cache_smoke/v1",
+  "created_utc": "2026-11-20T14:53:46.686082+00:00",
+  "sessions": [
+    {
+      "group": "awq_w4a16",
+      "label": "awq_w4a16_vision_cache_cpu96",
+      "env": {
+        "PROJECT2_LATENCY_EXECUTOR": "uni",
+        "PROJECT2_LATENCY_PREFILL_INTERVAL": "2",
+        "PROJECT2_LATENCY_INPROCESS": "1",
+        "PROJECT2_LATENCY_VISION_CACHE": "cpu",
+        "PROJECT2_LATENCY_VISION_CACHE_CAPACITY": "96",
+        "PROJECT2_LATENCY_VISION_CACHE_VALIDATE": "1"
+      },
+      "frozen_table": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json",
+      "service_entry": "checks/serve_navigation_latency_vision_cache_20261120.py",
+      "model_name": "navigation-repair-awq_w4a16"
+    },
+    {
+      "group": "fp16",
+      "label": "fp16_vision_cache_cpu96",
+      "env": {
+        "PROJECT2_LATENCY_EXECUTOR": "uni",
+        "PROJECT2_LATENCY_PREFILL_INTERVAL": "2",
+        "PROJECT2_LATENCY_INPROCESS": "1",
+        "PROJECT2_LATENCY_VISION_CACHE": "cpu",
+        "PROJECT2_LATENCY_VISION_CACHE_CAPACITY": "96",
+        "PROJECT2_LATENCY_VISION_CACHE_VALIDATE": "1"
+      },
+      "service_entry": "checks/serve_navigation_latency_vision_cache_20261120.py",
+      "model_name": "navigation-repair-fp16"
+    }
+  ],
+  "native_reference_bindings": [
+    {
+      "reference_session": {
+        "group": "awq_w4a16",
+        "label": "awq_w4a16_inprocess2",
+        "env": {
+          "PROJECT2_LATENCY_EXECUTOR": "uni",
+          "PROJECT2_LATENCY_PREFILL_INTERVAL": "2",
+          "PROJECT2_LATENCY_INPROCESS": "1"
+        },
+        "frozen_table": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json",
+        "service_entry": "checks/serve_navigation_latency_20261120.py",
+        "model_name": "navigation-repair-awq_w4a16"
+      },
+      "evidence": {
+        "study": "logs/navigation_latency_20261120/system_confirmation_reverse_v1",
+        "fixed_session": "logs/navigation_latency_20261120/system_confirmation_reverse_v1/01_awq_w4a16_inprocess2",
+        "fixed_result_sha256": "70c3101cec0458c33f49855df0f285e3bb1144fbffe43d5b28bd4039225144d7",
+        "engine": {
+          "dtype": "float16",
+          "tp": 1,
+          "dp": 1,
+          "dp_rank": 0,
+          "ep": 1,
+          "session_len": 4096,
+          "max_batch_size": 1,
+          "attn_tp_size": null,
+          "mlp_tp_size": null,
+          "moe_tp_size": null,
+          "cache_max_entry_count": 0.35,
+          "prefill_interval": 2,
+          "block_size": 64,
+          "num_cpu_blocks": 0,
+          "num_gpu_blocks": 64,
+          "adapters": null,
+          "max_prefill_token_num": 3072,
+          "thread_safe": false,
+          "enable_prefix_caching": false,
+          "device_type": "cuda",
+          "eager_mode": false,
+          "custom_module_map": "/mnt/e/000_博士/000_实习与工作/AI infra/项目2/checks/navigation_repair_module_map.py",
+          "download_dir": null,
+          "revision": null,
+          "quant_policy": 0,
+          "distributed_executor_backend": "uni",
+          "empty_init": false,
+          "enable_microbatch": false,
+          "enable_eplb": false,
+          "enable_mp_engine": false,
+          "mp_engine_backend": "mp",
+          "model_format": null,
+          "enable_metrics": false,
+          "hf_overrides": null,
+          "disable_vision_encoder": false,
+          "logprobs_mode": null,
+          "enable_return_routed_experts": false,
+          "enable_transfer_obj_ref": false,
+          "dllm_block_length": null,
+          "dllm_unmasking_strategy": "low_confidence_dynamic",
+          "dllm_denoising_steps": null,
+          "dllm_confidence_threshold": 0.85,
+          "role": 1,
+          "migration_backend": 1
+        },
+        "model_weights_sha256": "31d1c12dba3cbaace283cccf5be23337555f0383a3c4390e6270d2a9230414db",
+        "requested_engine": {
+          "dtype": "float16",
+          "tp": 1,
+          "dp": 1,
+          "dp_rank": 0,
+          "ep": 1,
+          "session_len": 4096,
+          "max_batch_size": 1,
+          "attn_tp_size": null,
+          "mlp_tp_size": null,
+          "moe_tp_size": null,
+          "cache_max_entry_count": 0.35,
+          "prefill_interval": 2,
+          "block_size": 64,
+          "num_cpu_blocks": 0,
+          "num_gpu_blocks": 64,
+          "adapters": null,
+          "max_prefill_token_num": 3072,
+          "thread_safe": false,
+          "enable_prefix_caching": false,
+          "device_type": "cuda",
+          "eager_mode": false,
+          "custom_module_map": "/mnt/e/000_博士/000_实习与工作/AI infra/项目2/checks/navigation_repair_module_map.py",
+          "download_dir": null,
+          "revision": null,
+          "quant_policy": 0,
+          "distributed_executor_backend": "uni",
+          "empty_init": false,
+          "enable_microbatch": false,
+          "enable_eplb": false,
+          "enable_mp_engine": true,
+          "mp_engine_backend": "mp",
+          "model_format": null,
+          "enable_metrics": false,
+          "hf_overrides": null,
+          "disable_vision_encoder": false,
+          "logprobs_mode": null,
+          "enable_return_routed_experts": false,
+          "enable_transfer_obj_ref": false,
+          "dllm_block_length": null,
+          "dllm_unmasking_strategy": "low_confidence_dynamic",
+          "dllm_denoising_steps": null,
+          "dllm_confidence_threshold": 0.85,
+          "role": 1,
+          "migration_backend": 1
+        },
+        "execution_identity": {
+          "executor": "uni",
+          "prefill_interval": 2,
+          "requested_mp_engine": true,
+          "inprocess_requested": true,
+          "linear_ipc_requested": false,
+          "wide_w4_requested": false,
+          "vision_qmax_requested": false,
+          "vision_qmax_validation_enabled": false,
+          "profile_enabled": false,
+          "vision_qmax_status": "disabled",
+          "kernel_implementation": {
+            "backend": "native_frozen"
+          },
+          "inprocess_status": "observed_native_engine_in_http_process",
+          "effective_mp_engine": false,
+          "linear_ipc_status": "disabled"
+        },
+        "frozen_launch_configuration_sha256": "81e6c24072e870bbae2370ca5d4452db0d607846a892a4ae7179f8a1f798c3bb",
+        "wide_evidence": null,
+        "vision_qmax_evidence": null,
+        "actual_input_tensors": {
+          "701": {
+            "input_ids": {
+              "shape": [
+                1,
+                701
+              ],
+              "dtype": "torch.int64",
+              "sha256": "34e296b783323f853154bf09afc2aecc5e8f69daeb2d4e71bc11cb1214c37f86"
+            },
+            "pixel_values": {
+              "shape": [
+                2400,
+                1536
+              ],
+              "dtype": "torch.float32",
+              "sha256": "4b6dc3971ec662309c5e0250b5737a6a7bbcd72f3e42e9083e9d8dd3ef7276af"
+            }
+          },
+          "2815": {
+            "input_ids": {
+              "shape": [
+                1,
+                2815
+              ],
+              "dtype": "torch.int64",
+              "sha256": "c60e2f2166c9f470faf19a8140c124954c91119cbcccb00c37b9e23b68cbe1da"
+            },
+            "pixel_values": {
+              "shape": [
+                10800,
+                1536
+              ],
+              "dtype": "torch.float32",
+              "sha256": "7f631a78da9d9d67793617e11c0b185cda6708b5aaa184dec34a37af1c6b91f1"
+            }
+          }
+        },
+        "source_sha256": {
+          "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+          "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+          "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+          "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+          "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+          "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+          "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+          "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+          "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1",
+          "navigation_w4a16_fix_runtime.py": "9c06aeae3014c278bea0fd610f4a587f57f1f1ad5be4ec1bb8fe9e12f55ebd0d",
+          "navigation_repair_runtime.py": "e3ca4c02732d531f85a3a6306966549d31e8217c056a7d5a8cf3d91f51813ae8",
+          "navigation_repair_module_map.py": "159d3e35eb311d4157a51f2b92f35ddb0b102b0c3b0010a8aa36a9795e8efa7a",
+          "serve_navigation_repair.py": "74b39ef35c8d8cef9852318de4e8bf5bab021a745b15c234447f99d83ca3cc99",
+          "serve_navigation_latency_20261120.py": "01c1111d1954d1eec38918f415ce0b81b455f4d8117b9f43b9d602a8e4c88345",
+          "navigation_w4a16_candidate_kernels.py": "b38189a9beebec838ea56f059d0e5c2693a13d1e67daae907b6266716ae37e38",
+          "navigation_w4a16_repair_kernels.py": "09a181c19e618307f681e02a8ee6964c6ad368a0d47e772d7328f297971e9a87",
+          "navigation_latency_inprocess_20261120.py": "52d55d4b7305de9099178fdbb17e39ca9c7f06ee0f662030498342abb300e3c3"
+        },
+        "scope": "Same-source/effective-configuration four-cell nonstream evidence; not a repair100 acceptance receipt"
+      },
+      "native_launch_sha256": "40c57f5a11fe30efc6807afe3d4523bf3a4f9b071020842a6e3cd53e0b9dba78",
+      "native_model_config_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+      "scope": "Native configuration provenance only; cache entry is separately audited and fixed latencies are not replay measurements"
+    },
+    {
+      "reference_session": {
+        "group": "fp16",
+        "label": "fp16_inprocess2",
+        "env": {
+          "PROJECT2_LATENCY_EXECUTOR": "uni",
+          "PROJECT2_LATENCY_PREFILL_INTERVAL": "2",
+          "PROJECT2_LATENCY_INPROCESS": "1"
+        },
+        "service_entry": "checks/serve_navigation_latency_20261120.py",
+        "model_name": "navigation-repair-fp16"
+      },
+      "evidence": {
+        "study": "logs/navigation_latency_20261120/system_confirmation_reverse_v1",
+        "fixed_session": "logs/navigation_latency_20261120/system_confirmation_reverse_v1/02_fp16_inprocess2",
+        "fixed_result_sha256": "2a504e09c28a631b39c5b858ecaf2239060c1505383d79f697ed93e19a092855",
+        "engine": {
+          "dtype": "float16",
+          "tp": 1,
+          "dp": 1,
+          "dp_rank": 0,
+          "ep": 1,
+          "session_len": 4096,
+          "max_batch_size": 1,
+          "attn_tp_size": null,
+          "mlp_tp_size": null,
+          "moe_tp_size": null,
+          "cache_max_entry_count": 0.35,
+          "prefill_interval": 2,
+          "block_size": 64,
+          "num_cpu_blocks": 0,
+          "num_gpu_blocks": 64,
+          "adapters": null,
+          "max_prefill_token_num": 3072,
+          "thread_safe": false,
+          "enable_prefix_caching": false,
+          "device_type": "cuda",
+          "eager_mode": false,
+          "custom_module_map": "/mnt/e/000_博士/000_实习与工作/AI infra/项目2/checks/navigation_repair_module_map.py",
+          "download_dir": null,
+          "revision": null,
+          "quant_policy": 0,
+          "distributed_executor_backend": "uni",
+          "empty_init": false,
+          "enable_microbatch": false,
+          "enable_eplb": false,
+          "enable_mp_engine": false,
+          "mp_engine_backend": "mp",
+          "model_format": null,
+          "enable_metrics": false,
+          "hf_overrides": null,
+          "disable_vision_encoder": false,
+          "logprobs_mode": null,
+          "enable_return_routed_experts": false,
+          "enable_transfer_obj_ref": false,
+          "dllm_block_length": null,
+          "dllm_unmasking_strategy": "low_confidence_dynamic",
+          "dllm_denoising_steps": null,
+          "dllm_confidence_threshold": 0.85,
+          "role": 1,
+          "migration_backend": 1
+        },
+        "model_weights_sha256": "b72a10c2b89a78f43c3c8bb05c4495b7d76dee85ec79f7125d9d795302aaa54b",
+        "requested_engine": {
+          "dtype": "float16",
+          "tp": 1,
+          "dp": 1,
+          "dp_rank": 0,
+          "ep": 1,
+          "session_len": 4096,
+          "max_batch_size": 1,
+          "attn_tp_size": null,
+          "mlp_tp_size": null,
+          "moe_tp_size": null,
+          "cache_max_entry_count": 0.35,
+          "prefill_interval": 2,
+          "block_size": 64,
+          "num_cpu_blocks": 0,
+          "num_gpu_blocks": 64,
+          "adapters": null,
+          "max_prefill_token_num": 3072,
+          "thread_safe": false,
+          "enable_prefix_caching": false,
+          "device_type": "cuda",
+          "eager_mode": false,
+          "custom_module_map": "/mnt/e/000_博士/000_实习与工作/AI infra/项目2/checks/navigation_repair_module_map.py",
+          "download_dir": null,
+          "revision": null,
+          "quant_policy": 0,
+          "distributed_executor_backend": "uni",
+          "empty_init": false,
+          "enable_microbatch": false,
+          "enable_eplb": false,
+          "enable_mp_engine": true,
+          "mp_engine_backend": "mp",
+          "model_format": null,
+          "enable_metrics": false,
+          "hf_overrides": null,
+          "disable_vision_encoder": false,
+          "logprobs_mode": null,
+          "enable_return_routed_experts": false,
+          "enable_transfer_obj_ref": false,
+          "dllm_block_length": null,
+          "dllm_unmasking_strategy": "low_confidence_dynamic",
+          "dllm_denoising_steps": null,
+          "dllm_confidence_threshold": 0.85,
+          "role": 1,
+          "migration_backend": 1
+        },
+        "execution_identity": {
+          "executor": "uni",
+          "prefill_interval": 2,
+          "requested_mp_engine": true,
+          "inprocess_requested": true,
+          "linear_ipc_requested": false,
+          "wide_w4_requested": false,
+          "vision_qmax_requested": false,
+          "vision_qmax_validation_enabled": false,
+          "profile_enabled": false,
+          "vision_qmax_status": "disabled",
+          "kernel_implementation": {
+            "backend": "native_frozen"
+          },
+          "inprocess_status": "observed_native_engine_in_http_process",
+          "effective_mp_engine": false,
+          "linear_ipc_status": "disabled"
+        },
+        "frozen_launch_configuration_sha256": null,
+        "wide_evidence": null,
+        "vision_qmax_evidence": null,
+        "actual_input_tensors": {
+          "701": {
+            "input_ids": {
+              "shape": [
+                1,
+                701
+              ],
+              "dtype": "torch.int64",
+              "sha256": "34e296b783323f853154bf09afc2aecc5e8f69daeb2d4e71bc11cb1214c37f86"
+            },
+            "pixel_values": {
+              "shape": [
+                2400,
+                1536
+              ],
+              "dtype": "torch.float32",
+              "sha256": "4b6dc3971ec662309c5e0250b5737a6a7bbcd72f3e42e9083e9d8dd3ef7276af"
+            }
+          },
+          "2815": {
+            "input_ids": {
+              "shape": [
+                1,
+                2815
+              ],
+              "dtype": "torch.int64",
+              "sha256": "c60e2f2166c9f470faf19a8140c124954c91119cbcccb00c37b9e23b68cbe1da"
+            },
+            "pixel_values": {
+              "shape": [
+                10800,
+                1536
+              ],
+              "dtype": "torch.float32",
+              "sha256": "7f631a78da9d9d67793617e11c0b185cda6708b5aaa184dec34a37af1c6b91f1"
+            }
+          }
+        },
+        "source_sha256": {
+          "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+          "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+          "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+          "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+          "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+          "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+          "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+          "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+          "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1",
+          "navigation_w4a16_fix_runtime.py": "9c06aeae3014c278bea0fd610f4a587f57f1f1ad5be4ec1bb8fe9e12f55ebd0d",
+          "navigation_repair_runtime.py": "e3ca4c02732d531f85a3a6306966549d31e8217c056a7d5a8cf3d91f51813ae8",
+          "navigation_repair_module_map.py": "159d3e35eb311d4157a51f2b92f35ddb0b102b0c3b0010a8aa36a9795e8efa7a",
+          "serve_navigation_repair.py": "74b39ef35c8d8cef9852318de4e8bf5bab021a745b15c234447f99d83ca3cc99",
+          "serve_navigation_latency_20261120.py": "01c1111d1954d1eec38918f415ce0b81b455f4d8117b9f43b9d602a8e4c88345",
+          "navigation_latency_inprocess_20261120.py": "52d55d4b7305de9099178fdbb17e39ca9c7f06ee0f662030498342abb300e3c3"
+        },
+        "scope": "Same-source/effective-configuration four-cell nonstream evidence; not a repair100 acceptance receipt"
+      },
+      "native_launch_sha256": "aa980bd0e3c38a9627927d9b6ca16cc618cef83043ce0eefd3cc8602aa158701",
+      "native_model_config_sha256": "8c129761080666a7970e3bf3612c88e5ec64936a1fa8e92c821acc4e32c6c061",
+      "scope": "Native configuration provenance only; cache entry is separately audited and fixed latencies are not replay measurements"
+    }
+  ],
+  "smoke_only": true,
+  "no_latency_claim": true,
+  "no_quality_claim": true,
+  "complete_replay_evidence": false,
+  "replay_manifest_sha256": "cadeab61f5eb8e973fefa1a7c94272464a0b86030b550c9c1226a626df10ce12",
+  "source_sha256": {
+    "checks/check_navigation_awq_dart_request.py": "8175bd0f192cba4612fc6617683d3599fa41e16cccd033d7d9a927f59f10a478",
+    "checks/navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+    "checks/navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+    "checks/navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+    "checks/navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1",
+    "checks/navigation_latency_inprocess_20261120.py": "52d55d4b7305de9099178fdbb17e39ca9c7f06ee0f662030498342abb300e3c3",
+    "checks/navigation_latency_vision_cpu_cache_20261120.py": "1c4f97786aa2ac89c774b600985b501a6cf2f59ede8497c801b618dd1a8bf21f",
+    "checks/navigation_latency_vision_cpu_cache_module_map_20261120.py": "3aea91dac5532bfbf39200bf17a593790d880405ea12d5b18d86488c867b5c85",
+    "checks/navigation_repair_module_map.py": "159d3e35eb311d4157a51f2b92f35ddb0b102b0c3b0010a8aa36a9795e8efa7a",
+    "checks/navigation_repair_output_gate.py": "46d634fc4998793f6079ca380b005ce5fae54bfd607325f118d6817597f122c1",
+    "checks/navigation_repair_runtime.py": "e3ca4c02732d531f85a3a6306966549d31e8217c056a7d5a8cf3d91f51813ae8",
+    "checks/navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+    "checks/navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+    "checks/navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+    "checks/navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+    "checks/navigation_w4a16_candidate_kernels.py": "b38189a9beebec838ea56f059d0e5c2693a13d1e67daae907b6266716ae37e38",
+    "checks/navigation_w4a16_fix_runtime.py": "9c06aeae3014c278bea0fd610f4a587f57f1f1ad5be4ec1bb8fe9e12f55ebd0d",
+    "checks/navigation_w4a16_repair_kernels.py": "09a181c19e618307f681e02a8ee6964c6ad368a0d47e772d7328f297971e9a87",
+    "checks/prepare_navigation_latency_replay_20261120.py": "20d68b8c8fd4b60713a137e5beb209aa4e790014cdae711892242991f10aa41d",
+    "checks/run_navigation_latency_navigation_20261120.py": "d442f21645f25b7a8eb23f6a511c94657138620c82bbbe0a0b96e8e2a848b843",
+    "checks/run_navigation_latency_replay_20261120.py": "33fd6143823ad5dcf5ff7a99d22b11f43a38d3ca706a48e1e91bf5af47643bb8",
+    "checks/run_navigation_latency_study_20261120.py": "d8c6f33c93fc3b1a7d53a7fdbd5f8ee90feb387f1f9c5538c3365fb1e9e5067d",
+    "checks/run_navigation_latency_vision_cache_replay_20261120.py": "b005cd14c9fb0a46e5af8de5526d526a1543e94c9c8e5a4fa30e2c3bd8352b55",
+    "checks/serve_navigation_latency_20261120.py": "01c1111d1954d1eec38918f415ce0b81b455f4d8117b9f43b9d602a8e4c88345",
+    "checks/serve_navigation_latency_vision_cache_20261120.py": "760ca951a4abba820f49142a6ec5c86c1dc56408fc613ca41113d85356468867",
+    "checks/serve_navigation_repair.py": "74b39ef35c8d8cef9852318de4e8bf5bab021a745b15c234447f99d83ca3cc99",
+    "checks/serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+    "checks/summarize_navigation_latency_20261120.py": "0bd36efc0d71831b2caaac20c934fb41fa16c2e443debd2704b484567da29509"
+  },
+  "measured_requests": 0,
+  "output_contract": "18 tokens, greedy top_k1/top_p1/temperature0, seed7, min_new_tokens18, ignore_eosTrue",
+  "artificial_idle_seconds": 0,
+  "sequence_repetitions": 1,
+  "outputs_fed_back": false,
+  "navigation_success_claim": false,
+  "cache_reset": "No historical episode executed in smoke",
+  "input_scope": "Same immutable payloads/model-only substitution; tensor SHA restricted to two excluded warmups",
+  "numerical_scope": "Four-feature bytewise gate on two excluded input warmups only; formal all343 exact-output pair audit still required"
+}

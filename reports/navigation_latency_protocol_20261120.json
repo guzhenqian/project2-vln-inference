@@ -1,0 +1,41 @@
+{
+  "date_local": "2026-11-20",
+  "timezone": "Asia/Shanghai",
+  "objective": "Determine whether quantized end-to-end latency benefit can be materially improved, with matched controls and preserved navigation inputs and model weights.",
+  "report_due_local": "2026-11-21T09:00:00+08:00",
+  "historical_results_frozen": "reports/navigation_repair_final_20261116.json",
+  "primary_models": ["fp16", "awq_w4a16", "gptq_w4a16"],
+  "candidate_families": [
+    "Remove redundant single-device executor IPC using the installed native UniExecutor",
+    "Measure frontend, engine communication and worker preparation without synchronizing GPU",
+    "Investigate smaller native decode scheduling intervals without changing output policy",
+    "Widen native W4A16 launch configuration search with independent numerical validation"
+  ],
+  "invariants": {
+    "weights": "Existing frozen checkpoints, SHA verified, no requantization",
+    "input": "Identical original two-image and nine-image payloads; original mRoPE and all visual tokens retained",
+    "engine": "batch/TP/DP=1, context4096, complete prefill budget3072, FP16 KV64x64, prefix cache off, native decode graph on",
+    "fixed_generation": "Greedy seed7, exactly18 or64 returned tokens; report actual decode forwards separately",
+    "navigation": "If tested, original author policy, temperature0.3/top_p0.95/max512/seed7/400-step limit unchanged"
+  },
+  "measurement": {
+    "cells": ["0_18", "0_64", "1_18", "1_64"],
+    "screening": "The 1_18 cell may screen candidate viability; cannot generalize it to other loads",
+    "warmups_per_cell": 2,
+    "measured_per_cell": 10,
+    "request_idle_s": 1.0,
+    "idle_in_http_timer": false,
+    "http_modes": "Streaming and nonstreaming are separate experiments; navigation-facing conclusion requires nonstreaming confirmation",
+    "excluded": ["startup", "warmup", "input-SHA requests", "first capture", "tail flush"],
+    "repeat": "Promising configurations require an independent reversed-order or interleaved round with FP16 and old W4A16 controls; retain every run",
+    "summary": "HTTP P50/P95, TTFT where streaming, vision/prefill/decode events and host timings, actual forward counts, output token IDs/hashes, sampled GPU state"
+  },
+  "decision": {
+    "correctness": "Same-weight execution changes must preserve input SHA and fixed-output token sequence; changed arithmetic also needs independent packed-weight numerical reference checks before full-model timing",
+    "screening_gain": "Seek at least5% HTTP median improvement over the same-model control without over2% P95 regression in repeated matched measurements; small/unstable differences remain inconclusive",
+    "quantization_gain": "Report T_FP16/T_quant using equally optimized FP16 and quantized paths, separately from new_quant versus old_quant absolute latency reduction",
+    "quality": "Fixed-output agreement does not prove closed-loop quality. Any navigation subset is reported separately and never merged into old100 results",
+    "limitations": "No inference that 10 samples prove statistical significance; no choosing a favorable slow baseline; no promise of speedup before measurement"
+  },
+  "ownership": "Only the root agent runs GPU work. All experiments serialized. New isolated source and log paths; no installed-package or historical-source edits. Never read server.md."
+}

@@ -1,0 +1,241 @@
+{
+  "status": "historical_metadata_archive",
+  "date_local": "2026-11-21",
+  "entries": [
+    {
+      "source": "logs/navigation_latency_20261120/sessions_feature_screen_v1.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_feature_screen_v1.json",
+      "sha256": "7002594945354d86ec54e85346cb2005e6b0a56eeaf2dbf737b6805c3b9a3297",
+      "bytes": 1750
+    },
+    {
+      "source": "logs/navigation_latency_20261120/sessions_ipc_screen.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_ipc_screen.json",
+      "sha256": "6108d902290f7493eb4305f26b711b2e51402e2123d995d063b7ac2623ab0b1f",
+      "bytes": 580
+    },
+    {
+      "source": "logs/navigation_latency_20261120/sessions_kernel_vision_screen_v1.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_kernel_vision_screen_v1.json",
+      "sha256": "75a1c51737d4317001b2e92376663ea3ad8ff542c28d3ab651b8dcceb7d34b58",
+      "bytes": 1903
+    },
+    {
+      "source": "logs/navigation_latency_20261120/sessions_navigation_native2_v1.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_navigation_native2_v1.json",
+      "sha256": "8b86c38e52baaeec7e338b83055f5b3dc900ccf10e5499857285edcf1185a121",
+      "bytes": 1636
+    },
+    {
+      "source": "logs/navigation_latency_20261120/sessions_replay_native_oldnew_v1.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_replay_native_oldnew_v1.json",
+      "sha256": "e65c411804daff9f56e1b67739c96601ffc1a3e3e2d87e9b64a504152cbaa691",
+      "bytes": 2463
+    },
+    {
+      "source": "logs/navigation_latency_20261120/sessions_schedule_diagnostic_v1.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_schedule_diagnostic_v1.json",
+      "sha256": "755a270920e6ca415d57c4a604550a7006f21908578d60f051b4497acf599c25",
+      "bytes": 893
+    },
+    {
+      "source": "logs/navigation_latency_20261120/sessions_system_candidates_v1.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_system_candidates_v1.json",
+      "sha256": "2daccaee388dcf59b66a4fdd668f1eebeffcc082c7b905c0d24120a76abc0748",
+      "bytes": 2983
+    },
+    {
+      "source": "logs/navigation_latency_20261120/sessions_system_confirmation_reverse_v1.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_system_confirmation_reverse_v1.json",
+      "sha256": "1af554792bd26cb8ce9a8f7b6abf242e3bceff4bd5ee539e06ec53dcb6e0d09d",
+      "bytes": 1990
+    },
+    {
+      "source": "logs/navigation_latency_20261120/sessions_system_full_v1.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_system_full_v1.json",
+      "sha256": "6fd6f5d878293bdb20ac2d8acc608b537e008b69aab33fd48878854fc33ac3f3",
+      "bytes": 1260
+    },
+    {
+      "source": "logs/navigation_latency_20261120/sessions_vision_cache_native_reference_v1.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_vision_cache_native_reference_v1.json",
+      "sha256": "ef0c7a48da9ed26a69912811396b23d4567f610643e6a5207f1983ffcf45d014",
+      "bytes": 821
+    },
+    {
+      "source": "logs/navigation_latency_20261120/sessions_vision_cache_native_reference_v2.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_vision_cache_native_reference_v2.json",
+      "sha256": "ef0c7a48da9ed26a69912811396b23d4567f610643e6a5207f1983ffcf45d014",
+      "bytes": 821
+    },
+    {
+      "source": "logs/navigation_latency_20261120/sessions_vision_cache_replay_v1.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_vision_cache_replay_v1.json",
+      "sha256": "4764bea3ac03cd8a69f9508c8c5791f5e25e5366b4e3fc0d143b93ae9315c2d3",
+      "bytes": 2345
+    },
+    {
+      "source": "logs/navigation_latency_20261120/sessions_vision_cache_replay_v2.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_vision_cache_replay_v2.json",
+      "sha256": "565ab4d05adac042cb7cdf1e8ac56946a0708f87b82a579ffd57a3aea12ba288",
+      "bytes": 2369
+    },
+    {
+      "source": "logs/navigation_latency_20261120/sessions_vision_cache_smoke_v1.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_vision_cache_smoke_v1.json",
+      "sha256": "e8fa2ffd05d32ab415752c8f70a83f3bcb270e4b8b03d64dece1bdab0be06533",
+      "bytes": 1175
+    },
+    {
+      "source": "logs/navigation_latency_20261120/sessions_vision_cache_smoke_v2.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_vision_cache_smoke_v2.json",
+      "sha256": "8b5c3d3d81ec2afa2f37002557f5a36808ff7cf1243eaa582c991adb44c4f09b",
+      "bytes": 1187
+    },
+    {
+      "source": "logs/navigation_latency_20261120/sessions_w4_stable_final_v1.json",
+      "archive": "setup/reproduction/latency_20261120/sessions/sessions_w4_stable_final_v1.json",
+      "sha256": "63982104c0fbb247325da724a07facde83c642fa32c2fde8a163ee9f36a2de9f",
+      "bytes": 1471
+    },
+    {
+      "source": "logs/navigation_latency_20261120/expanded_int8_prefill_awq_v1/protocol.json",
+      "archive": "setup/reproduction/latency_20261120/protocols/expanded_int8_prefill_awq_v1.json",
+      "sha256": "e95629f8f9f4d7be6b60093334a67572994007b436d173a7658d0006716f70d0",
+      "bytes": 3734
+    },
+    {
+      "source": "logs/navigation_latency_20261120/feature_screen_v1/protocol.json",
+      "archive": "setup/reproduction/latency_20261120/protocols/feature_screen_v1.json",
+      "sha256": "1c3f388720993246643515c6abb781473ddd452e811760f99ad1ce5d971c0aea",
+      "bytes": 7994
+    },
+    {
+      "source": "logs/navigation_latency_20261120/ipc_screen_v1/protocol.json",
+      "archive": "setup/reproduction/latency_20261120/protocols/ipc_screen_v1.json",
+      "sha256": "b781f6544ffdb68776900ee0aab652a80503f2d238cd81be8445b928d40542ec",
+      "bytes": 5494
+    },
+    {
+      "source": "logs/navigation_latency_20261120/kernel_vision_screen_v1/protocol.json",
+      "archive": "setup/reproduction/latency_20261120/protocols/kernel_vision_screen_v1.json",
+      "sha256": "67a546777334ee29ee16642427121e06e04d078ac9520e9408818d1894e424f4",
+      "bytes": 10315
+    },
+    {
+      "source": "logs/navigation_latency_20261120/navigation_native2_v1/protocol.json",
+      "archive": "setup/reproduction/latency_20261120/protocols/navigation_native2_v1.json",
+      "sha256": "e87305ca3e40bdebf678f02bf95757ce520bf1a70ac61cbce2d66a2c32d99867",
+      "bytes": 27538
+    },
+    {
+      "source": "logs/navigation_latency_20261120/replay_native_oldnew_v1/protocol.json",
+      "archive": "setup/reproduction/latency_20261120/protocols/replay_native_oldnew_v1.json",
+      "sha256": "91dc198f819bd0d388716ecc90c54ccc56c38038f07f591d48f4574ee2ad88d4",
+      "bytes": 49969
+    },
+    {
+      "source": "logs/navigation_latency_20261120/system_candidates_v1/protocol.json",
+      "archive": "setup/reproduction/latency_20261120/protocols/system_candidates_v1.json",
+      "sha256": "2031a595258c42113a1a8ebf4fef3510c6a9930abfa4ff8cf5b7e2d31d5f0f9b",
+      "bytes": 11286
+    },
+    {
+      "source": "logs/navigation_latency_20261120/system_confirmation_reverse_v1/protocol.json",
+      "archive": "setup/reproduction/latency_20261120/protocols/system_confirmation_reverse_v1.json",
+      "sha256": "6104af9f33b113b82c16afb3d1a1d133047feb7ed2bb00b37635fc105f39a3f2",
+      "bytes": 10403
+    },
+    {
+      "source": "logs/navigation_latency_20261120/system_full_v1/protocol.json",
+      "archive": "setup/reproduction/latency_20261120/protocols/system_full_v1.json",
+      "sha256": "225c8554ba03934e031f61bba5a34b6bec2f95e31af45310b10e8480bf80bb75",
+      "bytes": 7403
+    },
+    {
+      "source": "logs/navigation_latency_20261120/vision_cache_smoke_v1/protocol.json",
+      "archive": "setup/reproduction/latency_20261120/protocols/vision_cache_smoke_v1.json",
+      "sha256": "4b724ce0a64d516c0fc131582c0661168b496ab903110da04850341cf85025bd",
+      "bytes": 22315
+    },
+    {
+      "source": "logs/navigation_latency_20261120/vision_cache_smoke_v2/protocol.json",
+      "archive": "setup/reproduction/latency_20261120/protocols/vision_cache_smoke_v2.json",
+      "sha256": "69e1094a19f94e1fdc8250fd9a5bd35c0cfcfbf2fd3e8136bc9b61d9ed8a661a",
+      "bytes": 22339
+    },
+    {
+      "source": "logs/navigation_latency_20261120/w4_gemv_awq_v1/protocol.json",
+      "archive": "setup/reproduction/latency_20261120/protocols/w4_gemv_awq_v1.json",
+      "sha256": "a6bda33b726e5cd39a76a29f4b7e08f06a318b0ee03510d8c13a2530a00b7c03",
+      "bytes": 2497
+    },
+    {
+      "source": "logs/navigation_latency_20261120/w4_search_awq_v1/protocol.json",
+      "archive": "setup/reproduction/latency_20261120/protocols/w4_search_awq_v1.json",
+      "sha256": "c86b4577b3455a2b50bab1233b7f3ef3dd3c99674ab928afe9cd422b4f4f2641",
+      "bytes": 1815
+    },
+    {
+      "source": "logs/navigation_latency_20261120/w4_stable_final_v1/protocol.json",
+      "archive": "setup/reproduction/latency_20261120/protocols/w4_stable_final_v1.json",
+      "sha256": "efe124910779c07212b8bf7df9837a08fc4e4e11dec9ec234176cc5f2bd9351e",
+      "bytes": 12630
+    },
+    {
+      "source": "logs/navigation_latency_20261120/w4_stable_native_awq_v1/protocol.json",
+      "archive": "setup/reproduction/latency_20261120/protocols/w4_stable_native_awq_v1.json",
+      "sha256": "c8555ee8d8f8752fd3a3d690b5ddf46db2f341fc49187fe720880f50d04ad16f",
+      "bytes": 14439
+    },
+    {
+      "source": "logs/navigation_latency_20261120/navigation_native2_v1/00_gptq_w4a16_inprocess2/result.json",
+      "archive": "setup/reproduction/latency_20261120/native20/00_gptq_w4a16_inprocess2.json",
+      "sha256": "460d72ffd0f6493fe437dd65deb648c3bb2d1016ffc4c770202f21f796518cbf",
+      "bytes": 54657
+    },
+    {
+      "source": "logs/navigation_latency_20261120/navigation_native2_v1/01_awq_w4a16_inprocess2/result.json",
+      "archive": "setup/reproduction/latency_20261120/native20/01_awq_w4a16_inprocess2.json",
+      "sha256": "a445cc74329c1cabb900da1b8caa264991a62624e1e123e6b19981d01ab3d2c2",
+      "bytes": 54639
+    },
+    {
+      "source": "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/result.json",
+      "archive": "setup/reproduction/latency_20261120/native20/02_fp16_inprocess2.json",
+      "sha256": "9ffb49ea14441733ed611124202fecb576ed807442b4f563b16490755ef93a5e",
+      "bytes": 53785
+    },
+    {
+      "source": "logs/navigation_latency_20261120/w4_stable_final_v1/status.json",
+      "archive": "setup/reproduction/latency_20261120/interrupted_w4_stable/status.json",
+      "sha256": "a54967f77ad88bf8cc86ffd8a94630a218a073e6bd833e4af7bfcfe85195feb6",
+      "bytes": 105
+    },
+    {
+      "source": "logs/navigation_latency_20261120/w4_stable_final_v1/user_stop_requested.json",
+      "archive": "setup/reproduction/latency_20261120/interrupted_w4_stable/user_stop_requested.json",
+      "sha256": "d216bba5a5df218c09b1490782cb45c8cec06871ff52ff2c0620aeca40d6ca03",
+      "bytes": 280
+    },
+    {
+      "source": "logs/navigation_latency_20261120/w4_stable_final_v1/completed.json",
+      "archive": "setup/reproduction/latency_20261120/interrupted_w4_stable/completed.json",
+      "sha256": "e00b7585dd5117cb6f751d40bc3e3b64eaf70bc8911a0ee7f0fa15c3743578bc",
+      "bytes": 148859
+    },
+    {
+      "source": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json",
+      "archive": "setup/reproduction/latency_20261120/frozen_launch_tables/awq_w4a16.json",
+      "sha256": "8ccdafddb1bcef0397198ca9eb7c3c9f1f7d615071ca81cfb514d19a4c642783",
+      "bytes": 7572
+    },
+    {
+      "source": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/gptq_w4a16/service/repair_execution_audit.json",
+      "archive": "setup/reproduction/latency_20261120/frozen_launch_tables/gptq_w4a16.json",
+      "sha256": "da347e09fdccc7a337c99fe13cbe71644af8da201f1c389bebb34b9aaf45d4e7",
+      "bytes": 7573
+    }
+  ],
+  "scope": "Small original-byte protocols, session recipes, execution tables and native20 result receipts only. Full logs, weights, scenes, images and tensors are not included. Historical paths remain unchanged for provenance; archived files do not recreate those paths or the historical runs."
+}

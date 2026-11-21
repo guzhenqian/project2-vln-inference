@@ -4,13 +4,42 @@
 
 在 RTX 4070 Ti 12 GB 上完成视觉语言模型部署、业务联调和导航压缩实验。早期使用 Qwen3-VL-2B-Instruct 验证 LMDeploy、FastAPI、Gradio 图片问答与视频功能；当前导航实验使用 SimpleVLN Qwen3-VL 4B RL，在 Habitat 中评测 FP16、AWQ、DART 及组合方案。
 
-**最新进展（2026-11-12）：原W4A16已完成独立延迟优化验证。** 采用按输入行数分别调优＋decode CUDA Graph，保留原量化权重与3072完整prefill。九图、18输出token的确认测试中，AWQ/GPTQ整请求中位延迟分别下降20.4%/5.9%，decode模型区间分别下降59.6%/59.2%。首轮与确认共192次正式计时，优化前后固定输入输出逐token一致；另做12次FP16间隔检查，跨轮基线波动仍未完全定位，不宣称量化prefill稳定优于FP16。100条闭环质量尚未重跑。见[优化前后对比](reports/navigation_w4a16_optimization_20261112.md)、[方法与失败记录](reports/navigation_w4a16_optimization_method_20261112.md)。原新增精度全量测试仍停止，GPTQ W8A16保留50条，Token组合未运行；[原精度结果](reports/navigation_precision_progress_20261110.md)保持原样。
+## 量化优化最终结果 2026年11月21日
+
+完整结果见[量化实验总结与分析](reports/quantization_summary_20261121.md)，可下载[老师版 Word 报告](reports/量化实验结果总结与分析_20261121.docx)。本轮量化时延研究已收尾。
+
+FP16 与 AWQ/GPTQ 各四种规格（W4A16、W4A8、W4A4、W8A16）均完成同批 100 条导航评测，共 900 次案例评估，九组均零运行、格式和截断错误。W4A16 综合表现最好；W4A4 仍有质量损失，W8A16 在当前实现下没有端到端时延优势。此前“部分规格未完成”的状态已被[最终九组结果](reports/navigation_repair_final_20261116.md)取代。
+
+后续系统优化对 FP16 和两种 W4A16 使用相同配置。在 RTX 4070 Ti 12GB、batch＝1、九图 2815 输入 token、固定 18 输出 token 条件下，各测 10 次取中位数：
+
+| 指标 | FP16 | AWQ W4A16 | GPTQ W4A16 |
+| --- | ---: | ---: | ---: |
+| 语言 Prefill /ms | 322.12 | 348.79 | 349.05 |
+| Decode /ms 每次实际前向 | 17.85 | 8.18 | 8.20 |
+| 完整 HTTP 请求 /s | 0.880 | 0.739 | 0.740 |
+| Decode 耗时降幅 | 基线 | 54.2% | 54.1% |
+| 完整请求耗时降幅 | 基线 | 16.1% | 15.9% |
+
+实际导航平均输入约 2770 token、输出约 18 token。相同九图输入仅将固定输出从 18 增至 64 token，AWQ 请求耗时降幅由 16.1% 增至 31.6%，支持“长输入、短输出限制量化端到端收益”的判断。视觉编码仍约 138 ms，当前 W4A16 prefill 未获加速；阶段 GPU 计时与 HTTP 边界不同，不直接相加中位数。
+
+343 条匹配回放中，两种 W4A16 相对 FP16 的请求 P50 降幅均约 16.3%。AWQ 系统优化前后 P50 降低 52.8%，FP16 同样降低 52.2%；这不是量化本身获得 50% 以上端到端收益。三种模型另完成各 20 条导航验证，同权重新旧路径动作、文本和完整轨迹一致。历史同 100 条 W4A16 整卡采样峰值降低约 43%—45%；该显存口径和旧轮时延不与新版混算。
+
+- [固定输入审计](reports/navigation_latency_system_confirmation_reverse_v1_audit_20261120.md)与[统计摘要](reports/navigation_latency_system_confirmation_summary_20261120.json)
+- [343 条匹配回放审计](reports/navigation_latency_replay_native_oldnew_v1_audit_20261120.md)与[结果摘要](reports/navigation_latency_replay_summary_20261120.json)
+- [最终结论与限制](reports/navigation_latency_conclusion_20261121.json)、[原配置及结果凭据归档](setup/reproduction/latency_20261120/archive_manifest.json)
+- [新增入口及复现边界](docs/navigation_reproduction.md#2026年11月量化时延研究归档)
+
+新增 INT8 prefill、视觉缓存和其他 W4 内核候选按各自记录保留失败、未执行或用户停止的状态，不能计为已落地收益。源码、参数、摘要和审计随仓库发布；模型、授权场景、图像张量和完整原始日志按既有约定保留本地。
+
+## 历史阶段结果
+
+**2026-11-12 阶段记录：** 当时采用按输入行数分别调优与 decode CUDA Graph，保留原量化权重。九图短输出单例优化前后收益及当时尚未完成的质量状态见[优化前后对比](reports/navigation_w4a16_optimization_20261112.md)、[方法与失败记录](reports/navigation_w4a16_optimization_method_20261112.md)。这些历史条件不同于上方统一配置后的最终比较；[原精度结果](reports/navigation_precision_progress_20261110.md)保留原样供追溯。
 
 **已完成的第二阶段算法比较：九组50条初筛及累计100条复筛。** 七个新配置完成真实接入验收和同100条导航，DART75/50复用相同子集；900条逐配置案例记录及新运行29,227对执行记录独立复核通过，九组均无请求/解析错误。统一采用eager、3072完整prefill与原统计方式。DART75成功72/100；SparseVLM-v1单层无合并75%成功69/100，P95低8.26%；AWQ/GPTQ成功66/68条，整卡峰值6863/7160MiB。当前保留这两种量化与两个75%配置作为组合候选，差异仍属单次开发子集观察，新组合尚未启动。见[最新进展与九组100条结果](reports/project_progress_20261110.md)、[完整对比](reports/navigation_stage2_same100_20261109.md)、[算法适配问题台账](reports/navigation_algorithm_adaptation_log.md)。
 
 第一阶段A/B/C/D已完成同一冻结清单的150条导航任务，另完成DART50%消融；下表保留第一阶段结果，其执行环境差异见表后说明。第二阶段原始基线/AWQ重新运行，不能用下表旧A/B直接代替本轮对照。[第一阶段进展](reports/project_progress_20261109.md)。
 
-**量化速度补充排查：** 固定同两/九图和64输出token的分段实测已完成。当前eager W4A16路径虽然降低显存，但长prefill更慢、decode未体现加速；原闭环请求差异不能替代固定工作量对比。见[固定输入分段计时与瓶颈](reports/navigation_quant_timing_20261110.md)。本次未运行组合，也未修改原导航配置与结果。
+**2026-11-10 历史量化速度排查：** 当时固定同两/九图和64输出token的分段实测中，eager W4A16路径虽然降低显存，但长prefill更慢、decode未体现加速；原闭环请求差异不能替代固定工作量对比。见[固定输入分段计时与瓶颈](reports/navigation_quant_timing_20261110.md)。该结论只对应当时实现，后续修复和系统优化结果见上方最终汇总。
 
 | 同一批 150 条 | A：FP16 | B：AWQ | C：DART 75% | D：AWQ＋DART 75% |
 | --- | ---: | ---: | ---: | ---: |
@@ -237,7 +266,7 @@ bash scripts/start_webui.sh
 7. WSL字体修复读取本机 `/mnt/c/Windows/Fonts/`；其他系统需要可用的中文字体。
 8. 启动时出现过Triton编译信息，现有输入可运行，不代表所有输入形状均已验证。
 
-早期2B业务诊断与当前4B仿真导航实验属于不同验证范围。AWQ、DART及75%组合实验现已完成；投机解码、本地训练、真实机器人导航和全量1839条评测尚未完成，不作为已取得成果。当前进展以上方2026-11-09四组结果和[进展报告](reports/project_progress_20261109.md)为准。
+早期2B业务诊断与当前4B仿真导航实验属于不同验证范围。AWQ、DART及75%组合实验现已完成；投机解码、本地训练、真实机器人导航和全量1839条评测尚未完成，不作为已取得成果。量化最新进展以上方2026-11-21最终汇总为准；四组组合的历史结果见[2026-11-09进展报告](reports/project_progress_20261109.md)。
 # 数据公开（2026-11-10）
 
 [固定150条导航任务与同100条名单](datasets/navigation_20261110/README.md)已整理，另含8条训练轨迹、32个校准输入的标注/来源/哈希及历史数据清单。场景与渲染图遵循Matterport授权渠道获取；公开包附原协议和可验证的子集恢复脚本。

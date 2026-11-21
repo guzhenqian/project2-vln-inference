@@ -1,0 +1,84 @@
+{
+  "scope": "Additional metadata-only LRU simulation; no speed/memory measurement",
+  "metadata_report": "reports/navigation_vision_cache_opportunity_20261120.json",
+  "metadata_report_sha256": "b58cf6b596c22ded3f6aae2cba9bde16aa393525c9b956df66243aaf469a2b55",
+  "feature_memory_basis": {
+    "visual_tokens_per_image": 300,
+    "hidden_size": 2560,
+    "fp16_bytes": 2,
+    "feature_arrays": 4,
+    "bytes_per_image": 6144000,
+    "excludes": [
+      "allocator overhead",
+      "temporary assembly/copies",
+      "other inference tensors",
+      "KV allocation"
+    ]
+  },
+  "groups": {
+    "fp16": {
+      "12": {
+        "hits": 579,
+        "misses": 2441,
+        "slot_hit_ratio": 0.19172185430463576,
+        "theoretical_feature_mib": 70.3125
+      },
+      "24": {
+        "hits": 783,
+        "misses": 2237,
+        "slot_hit_ratio": 0.25927152317880797,
+        "theoretical_feature_mib": 140.625
+      },
+      "48": {
+        "hits": 1000,
+        "misses": 2020,
+        "slot_hit_ratio": 0.33112582781456956,
+        "theoretical_feature_mib": 281.25
+      },
+      "96": {
+        "hits": 1517,
+        "misses": 1503,
+        "slot_hit_ratio": 0.502317880794702,
+        "theoretical_feature_mib": 562.5
+      },
+      "200": {
+        "hits": 2116,
+        "misses": 904,
+        "slot_hit_ratio": 0.7006622516556291,
+        "theoretical_feature_mib": 1171.875
+      }
+    },
+    "awq_w4a16": {
+      "12": {
+        "hits": 332,
+        "misses": 1388,
+        "slot_hit_ratio": 0.1930232558139535,
+        "theoretical_feature_mib": 70.3125
+      },
+      "24": {
+        "hits": 488,
+        "misses": 1232,
+        "slot_hit_ratio": 0.2837209302325581,
+        "theoretical_feature_mib": 140.625
+      },
+      "48": {
+        "hits": 612,
+        "misses": 1108,
+        "slot_hit_ratio": 0.3558139534883721,
+        "theoretical_feature_mib": 281.25
+      },
+      "96": {
+        "hits": 849,
+        "misses": 871,
+        "slot_hit_ratio": 0.4936046511627907,
+        "theoretical_feature_mib": 562.5
+      },
+      "200": {
+        "hits": 1105,
+        "misses": 615,
+        "slot_hit_ratio": 0.6424418604651163,
+        "theoretical_feature_mib": 1171.875
+      }
+    }
+  }
+}

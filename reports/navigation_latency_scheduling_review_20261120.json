@@ -1,0 +1,624 @@
+{
+  "date": "2026-11-20",
+  "scope": "Read-only static review; no GPU execution or timing attribution performed by this review",
+  "sources": [
+    {
+      "path": "pytorch/engine/engine_loop.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/engine_loop.py",
+      "sha256": "ed2a1c26751785c9f94a8c12202d82bdb30b96e741f73506e5f1058543d50f41",
+      "findings": [
+        {
+          "needle": "class CounterEvent",
+          "occurrences": [
+            {
+              "line": 36,
+              "text": "class CounterEvent(asyncio.Event):"
+            }
+          ]
+        },
+        {
+          "needle": "async def send_response_loop",
+          "occurrences": [
+            {
+              "line": 196,
+              "text": "async def send_response_loop(self):"
+            }
+          ]
+        },
+        {
+          "needle": "await self.forward_event.wait()",
+          "occurrences": [
+            {
+              "line": 139,
+              "text": "await self.forward_event.wait()"
+            },
+            {
+              "line": 207,
+              "text": "await self.forward_event.wait()"
+            }
+          ]
+        },
+        {
+          "needle": "resp_type = (ResponseType.FINISH",
+          "occurrences": [
+            {
+              "line": 154,
+              "text": "resp_type = (ResponseType.FINISH if out.finish else ResponseType.SUCCESS)"
+            }
+          ]
+        },
+        {
+          "needle": "num_loops = forward_inputs",
+          "occurrences": [
+            {
+              "line": 293,
+              "text": "num_loops = forward_inputs['loop_count']"
+            }
+          ]
+        },
+        {
+          "needle": "if idx == num_loops // 2:",
+          "occurrences": [
+            {
+              "line": 310,
+              "text": "if idx == num_loops // 2:"
+            }
+          ]
+        },
+        {
+          "needle": "self.resp_queue.put_nowait(step_outputs)",
+          "occurrences": [
+            {
+              "line": 305,
+              "text": "self.resp_queue.put_nowait(step_outputs)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "pytorch/engine/model_agent.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/model_agent.py",
+      "sha256": "7844f9e2a6f05dc7b1356860e6f669ca3b57268632066837b37f9f85df404a27",
+      "findings": [
+        {
+          "needle": "async def _async_step_background",
+          "occurrences": [
+            {
+              "line": 715,
+              "text": "async def _async_step_background("
+            }
+          ]
+        },
+        {
+          "needle": "for idx in range(loop_count):",
+          "occurrences": [
+            {
+              "line": 770,
+              "text": "for idx in range(loop_count):"
+            }
+          ]
+        },
+        {
+          "needle": "stopping_criteria.step",
+          "occurrences": [
+            {
+              "line": 817,
+              "text": "stopped, stop_pos, stopping_criteria = stopping_criteria.step(next_token_ids,"
+            }
+          ]
+        },
+        {
+          "needle": "async def _async_loop_background",
+          "occurrences": [
+            {
+              "line": 848,
+              "text": "async def _async_loop_background(self, forward_event: asyncio.Event = None):"
+            }
+          ]
+        },
+        {
+          "needle": "forward_event.set()",
+          "occurrences": [
+            {
+              "line": 865,
+              "text": "forward_event.set()"
+            }
+          ]
+        },
+        {
+          "needle": "forward_event.clear()",
+          "occurrences": [
+            {
+              "line": 887,
+              "text": "forward_event.clear()"
+            }
+          ]
+        },
+        {
+          "needle": "def _on_finish_callback",
+          "occurrences": [
+            {
+              "line": 890,
+              "text": "def _on_finish_callback(task: asyncio.Task, ptasks: asyncio.Task) -> None:"
+            }
+          ]
+        },
+        {
+          "needle": "def release(self):",
+          "occurrences": [
+            {
+              "line": 1185,
+              "text": "def release(self):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "pytorch/engine/executor/uni_executor.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/executor/uni_executor.py",
+      "sha256": "3e6cf2b0d6e21018485082d6159f2469b04bd773746954fb8ed9d03ebaa747d3",
+      "findings": [
+        {
+          "needle": "def start(self, forward_event:",
+          "occurrences": [
+            {
+              "line": 85,
+              "text": "def start(self, forward_event: asyncio.Event):"
+            }
+          ]
+        },
+        {
+          "needle": "self.model_agent.start(forward_event)",
+          "occurrences": [
+            {
+              "line": 87,
+              "text": "self.model_agent.start(forward_event)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "pytorch/engine/executor/mp_executor.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/executor/mp_executor.py",
+      "sha256": "36d4e3d6100ed469f0381d71d3789e9ce34feaba012823c5c53d464d85fda314",
+      "findings": [
+        {
+          "needle": "def start(self, forward_event:",
+          "occurrences": [
+            {
+              "line": 382,
+              "text": "def start(self, forward_event: asyncio.Event):"
+            }
+          ]
+        },
+        {
+          "needle": "self.collective_rpc('start')",
+          "occurrences": [
+            {
+              "line": 384,
+              "text": "self.collective_rpc('start')"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "pytorch/strategies/ar/engine.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/strategies/ar/engine.py",
+      "sha256": "82877f3d1214734ec71d35e9386c464acac200a1d23cfd725d47e9aee321e261",
+      "findings": [
+        {
+          "needle": "def get_prealloc_size",
+          "occurrences": [
+            {
+              "line": 14,
+              "text": "def get_prealloc_size(self, is_decoding: bool):"
+            }
+          ]
+        },
+        {
+          "needle": "def get_num_loops",
+          "occurrences": [
+            {
+              "line": 18,
+              "text": "def get_num_loops(self, is_decoding: bool) -> int:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "pytorch/strategies/ar/model_agent.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/strategies/ar/model_agent.py",
+      "sha256": "1c6b00dbbe71622ca1387b06e425f2aa12d004310bbfc4c8d08f25af9c184c9e",
+      "findings": [
+        {
+          "needle": "class ARStoppingCriteria",
+          "occurrences": [
+            {
+              "line": 31,
+              "text": "class ARStoppingCriteria(StoppingCriteria):"
+            }
+          ]
+        },
+        {
+          "needle": "num_appendable_ids = self.num_appendable_ids - 1",
+          "occurrences": [
+            {
+              "line": 41,
+              "text": "num_appendable_ids = self.num_appendable_ids - 1"
+            }
+          ]
+        },
+        {
+          "needle": "stopped = stopped | sw_stopped",
+          "occurrences": [
+            {
+              "line": 46,
+              "text": "stopped = stopped | sw_stopped"
+            }
+          ]
+        },
+        {
+          "needle": "sampling_inputs.random_offsets += 1",
+          "occurrences": [
+            {
+              "line": 79,
+              "text": "sampling_inputs.random_offsets += 1"
+            }
+          ]
+        },
+        {
+          "needle": "num_appendable = [seq.sampling_param.max_new_tokens",
+          "occurrences": [
+            {
+              "line": 89,
+              "text": "num_appendable = [seq.sampling_param.max_new_tokens - seq.num_new_tokens for seq in seqs]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "pytorch/strategies/ar/sequence.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/strategies/ar/sequence.py",
+      "sha256": "7f3eb72e00afd14abec64e38dcb60cacef367d62eaa835ed66f06f8e13d02cfa",
+      "findings": [
+        {
+          "needle": "if msg.status != MessageStatus.RUNNING:",
+          "occurrences": [
+            {
+              "line": 125,
+              "text": "if msg.status != MessageStatus.RUNNING:"
+            }
+          ]
+        },
+        {
+          "needle": "if stop:",
+          "occurrences": [
+            {
+              "line": 130,
+              "text": "if stop:"
+            }
+          ]
+        },
+        {
+          "needle": "msg.state.finish()",
+          "occurrences": [
+            {
+              "line": 131,
+              "text": "msg.state.finish()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "pytorch/strategies/ar/sampling.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/strategies/ar/sampling.py",
+      "sha256": "49d53d202b652e99b77ca05ffc8e226c2770a460f1e2a069a4296b9c0096051f",
+      "findings": [
+        {
+          "needle": "random_offsets[idx] = seq.num_valid_ids",
+          "occurrences": [
+            {
+              "line": 73,
+              "text": "random_offsets[idx] = seq.num_valid_ids"
+            }
+          ]
+        },
+        {
+          "needle": "if param.random_seed is not None:",
+          "occurrences": [
+            {
+              "line": 75,
+              "text": "if param.random_seed is not None:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "pytorch/engine/engine_instance.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/engine_instance.py",
+      "sha256": "b532a28109b76df1b3b8e8c130f55c914e62f59bd50f44c6b9e4fc65fa9f67b1",
+      "findings": [
+        {
+          "needle": "elif resp.type in (ResponseType.FINISH, ResponseType.CANCEL):",
+          "occurrences": [
+            {
+              "line": 187,
+              "text": "elif resp.type in (ResponseType.FINISH, ResponseType.CANCEL):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "pytorch/engine/engine.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/engine.py",
+      "sha256": "80c6703b623df59dc24971f515bca6d444d8b39bd266b45abf4542e5edf4720c",
+      "findings": [
+        {
+          "needle": "if resp.type == ResponseType.FINISH:",
+          "occurrences": [
+            {
+              "line": 70,
+              "text": "if resp.type == ResponseType.FINISH:"
+            }
+          ]
+        },
+        {
+          "needle": "def _loop_finally",
+          "occurrences": [
+            {
+              "line": 428,
+              "text": "def _loop_finally(self):"
+            }
+          ]
+        },
+        {
+          "needle": "async def async_loop",
+          "occurrences": [
+            {
+              "line": 447,
+              "text": "async def async_loop(self):"
+            }
+          ]
+        },
+        {
+          "needle": "def close(self):",
+          "occurrences": [
+            {
+              "line": 474,
+              "text": "def close(self):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "pytorch/engine/mp_engine/zmq_rpc.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/mp_engine/zmq_rpc.py",
+      "sha256": "8af0bada58202ae0aeb503bf696ff2f821064249ad44123e3d4228c89e311f57",
+      "findings": [
+        {
+          "needle": "async def _method_async_task",
+          "occurrences": [
+            {
+              "line": 83,
+              "text": "async def _method_async_task(self, client_id, request_id, method: Callable, args: tuple, kwargs: Dict):"
+            }
+          ]
+        },
+        {
+          "needle": "async def _method_async_streaming_task",
+          "occurrences": [
+            {
+              "line": 92,
+              "text": "async def _method_async_streaming_task(self, stream_id, method: Callable, args: tuple, kwargs: Dict):"
+            }
+          ]
+        },
+        {
+          "needle": "response = dict(success=False",
+          "occurrences": [
+            {
+              "line": 80,
+              "text": "response = dict(success=False, request_id=request_id, error=str(e))"
+            },
+            {
+              "line": 89,
+              "text": "response = dict(success=False, request_id=request_id, error=str(e))"
+            },
+            {
+              "line": 156,
+              "text": "response = dict(success=False, request_id=request_id, error=f'Method {method_name} not found')"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "pytorch/engine/mp_engine/zmq_engine.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/mp_engine/zmq_engine.py",
+      "sha256": "7e35954251b437fd3decb074f6f1e50cd73369950e6fc0f335de9ac0f631eb84",
+      "findings": [
+        {
+          "needle": "atexit.register(self.close)",
+          "occurrences": [
+            {
+              "line": 47,
+              "text": "atexit.register(self.close)"
+            }
+          ]
+        },
+        {
+          "needle": "def close(self)",
+          "occurrences": [
+            {
+              "line": 167,
+              "text": "def close(self) -> None:"
+            }
+          ]
+        },
+        {
+          "needle": "self.proc.terminate()",
+          "occurrences": [
+            {
+              "line": 173,
+              "text": "self.proc.terminate()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "serve/async_engine.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/serve/async_engine.py",
+      "sha256": "f9a12e14b1fa172ce260c29b7ff968a53faa852e4bafbd790f50370c190a99a9",
+      "findings": [
+        {
+          "needle": "class _EventLoopThread",
+          "occurrences": [
+            {
+              "line": 214,
+              "text": "class _EventLoopThread:"
+            }
+          ]
+        },
+        {
+          "needle": "atexit.register(self.close)",
+          "occurrences": [
+            {
+              "line": 223,
+              "text": "atexit.register(self.close)"
+            }
+          ]
+        },
+        {
+          "needle": "def close(self):",
+          "occurrences": [
+            {
+              "line": 170,
+              "text": "def close(self):"
+            },
+            {
+              "line": 265,
+              "text": "def close(self):"
+            },
+            {
+              "line": 370,
+              "text": "def close(self):"
+            }
+          ]
+        },
+        {
+          "needle": "async def stop_session",
+          "occurrences": [
+            {
+              "line": 476,
+              "text": "async def stop_session(self, session_id: int):"
+            }
+          ]
+        },
+        {
+          "needle": "async def end_session",
+          "occurrences": [
+            {
+              "line": 485,
+              "text": "async def end_session(self, session_id: int):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "serve/openai/api_server.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/serve/openai/api_server.py",
+      "sha256": "11a39253b54a880a6ec37ab71b80a314f3c3f9bffdc356e123b157d1083c885c",
+      "findings": [
+        {
+          "needle": "def create_lifespan_handler",
+          "occurrences": [
+            {
+              "line": 1321,
+              "text": "def create_lifespan_handler(backend_config: Union[PytorchEngineConfig, TurbomindEngineConfig],"
+            }
+          ]
+        },
+        {
+          "needle": "async_engine.start_loop(use_async_api=True)",
+          "occurrences": [
+            {
+              "line": 1235,
+              "text": "async_engine.start_loop(use_async_api=True)"
+            }
+          ]
+        },
+        {
+          "needle": "uvicorn.run(app=app",
+          "occurrences": [
+            {
+              "line": 1496,
+              "text": "uvicorn.run(app=app,"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "finish_delivery_chain": [
+    "AR engine strategy uses prefill_interval for decode loop_count and extra KV preallocation for upcoming decode steps; prefill itself stays one forward.",
+    "Every model step runs sampling and the original stopping criterion. The block loop does not break when a sequence first becomes stopped.",
+    "ARSequenceStrategy marks a stopped sequence finished; later outputs for non-RUNNING sequences are ignored.",
+    "EngineLoop creates CPU InferOutput(finish=True), puts outputs into resp_queue, and send_response_loop waits on forward_event before _send_resps.",
+    "The event is a reference-counted CounterEvent, not merely an independent boolean flag. EngineLoop also clears it at the midpoint of its output loop.",
+    "UniExecutor passes the same event to the model agent. Agent input preprocessing clears it, and agent background execution sets it only after the entire decode block returns.",
+    "MPExecutor.start ignores the event argument and starts its remote worker without the shared event. Therefore UniExecutor can expose a full-block delivery delay that is absent or differently scheduled with MPExecutor.",
+    "After the event opens, _send_resp selects ResponseType.FINISH and EngineInstance yields the final output and breaks. Static ordering does not quantify the observed delay; use timestamps."
+  ],
+  "semantics": [
+    "Changing interval does not directly change weights, activation precision, temperature, top_p, max_new_tokens, min_new_tokens, or stop words.",
+    "The stop condition is evaluated each token and later stopped outputs are suppressed, so the intended returned-token contract remains unchanged.",
+    "Within a block, sampling random_offsets increments per token. At a new block, offsets are rebuilt from seq.num_valid_ids and the explicitly provided seed. This supports equivalent seeded behavior but is not a substitute for output-identity tests.",
+    "Interval also changes KV preallocation and input/scheduling granularity. Exact output identity must be checked, particularly seeded stochastic generation and natural EOS; fixed greedy 18/64 output checks alone do not establish full navigation equivalence."
+  ],
+  "performance_and_fairness": [
+    "Smaller intervals reduce post-stop tail work and the maximum number of remaining forwards before response delivery can resume.",
+    "Interval=1 increases scheduler, CPU input rebuilding and small input-transfer frequency; interval=4 may balance these costs against short-output tail delay.",
+    "For long output or multi-request serving, a larger interval may improve throughput while increasing admission/response latency. Batch1 findings do not establish a general concurrent-serving optimum.",
+    "Compare FP16 and each quantized model at the same executor and interval. Report old-to-new system acceleration separately from quantization speedup under the new matched system.",
+    "Do not count an actual-forward reduction as a change in returned-token workload. Report returned tokens, actual forwards, HTTP latency and model-stage time separately.",
+    "Treat interval selection as a candidate system setting; freeze it before final paired tests and quality checks."
+  ],
+  "inprocess_limits": [
+    "Native Engine(False) is implemented, but the HTTP entry deliberately forces mp mode. Our guarded bridge overrides that construction choice and is not a public HTTP configuration guarantee.",
+    "In-process frontend and model tasks share an event loop. Blocking CPU work, model dispatch or CUDA synchronizations may affect HTTP responsiveness and cancellation; current tests are single concurrent request only.",
+    "The ZMQ path wraps ordinary worker method exceptions into RPC error responses. The native path relies on local engine-task exception/cancellation handling; neither source inspection alone proves reliable HTTP error delivery after every GPU failure.",
+    "A fatal process-level CUDA/native failure in the in-process engine also takes down the HTTP process. Removing the worker process removes that isolation boundary.",
+    "Native Engine.close cancels its main task and releases executor resources in the task finally path; the loop must remain alive long enough to complete cleanup.",
+    "The HTTP serve function has no explicit async_engine.close after uvicorn.run, and its lifespan finally only handles metrics. The outer ZMQ engine registers its own atexit close; native Engine has no corresponding registration in these inspected files. Whole-service process exit releases OS-owned resources, but repeated in-process construction/destruction needs explicit cleanup testing.",
+    "Do not start fork-based CUDA workers after initializing a CUDA context in the frontend. This candidate uses native uni execution and starts no model subprocess."
+  ],
+  "probe": {
+    "path": "checks/navigation_latency_schedule_probe_20261120.py",
+    "opt_in": "PROJECT2_LATENCY_SCHEDULE_TRACE=1",
+    "status": "Implemented and CPU contract checks passed; not GPU tested by this review. CPU report: reports/navigation_latency_schedule_cpu_20261120.json; probe SHA256 c25fe308511142156b69dd7649d21137a19962cf0d8ef6de3a3218ab956cb21c.",
+    "events": [
+      "model_block_begin/end",
+      "CounterEvent set/clear/wait begin/end with task and counter",
+      "cpu_output_ready finish flag",
+      "engine_response_dispatch finish flag"
+    ],
+    "measurement": "For a finish=True output, compare CPU output-ready timestamp to engine-response dispatch; identify MainLoopSendResponse wait and matching CounterEvent release/model-block end. This measures scheduler host delay, not GPU kernel time.",
+    "limitations": [
+      "Host timestamps only; no CUDA sync or tensor copies.",
+      "Events are buffered; FINISH flush adds I/O after dispatch, so diagnostic HTTP results cannot be primary speed evidence.",
+      "Use UniExecutor first so model and scheduler events share a process. MP worker traces require explicit flush or graceful exit."
+    ]
+  }
+}

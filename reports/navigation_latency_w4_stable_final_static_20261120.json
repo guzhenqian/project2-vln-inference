@@ -1,0 +1,24 @@
+{
+  "status": "static_source_and_small_table_compatible_not_executed",
+  "session_config": "logs/navigation_latency_20261120/sessions_w4_stable_final_v1.json",
+  "session_config_sha256": "63982104c0fbb247325da724a07facde83c642fa32c2fde8a163ee9f36a2de9f",
+  "service_sha256": "01c1111d1954d1eec38918f415ce0b81b455f4d8117b9f43b9d602a8e4c88345",
+  "table_sha256": "473c3c2896ebe35435dc7d054bd3d2f28d37886e562bff4ce8c71fe1201067ed",
+  "same_native_awq_table": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json",
+  "order": [
+    "awq_w4a16_stable_all_inprocess2",
+    "awq_w4a16_inprocess2",
+    "fp16_inprocess2"
+  ],
+  "gates": {
+    "fixed_runner": "Session env strings passed directly to service; no legacy probe-status read in this controller.",
+    "service": "PROJECT2_LATENCY_W4_TABLE selects frozen wide module map and requires weight_bits4.",
+    "adapter": "load_table then requires12 exact M1/701/2815 x4 projection layouts; all144 modules precompiled before freeze.",
+    "kernel_load_table": "Only algorithm/whole-checkpoint SHA/exact_m_only/numerical_gate_passed/nonempty/unique shapes gates; no old probe status check."
+  },
+  "table_required_shapes_present": true,
+  "legacy_probe_status_blocks_startup": false,
+  "actual_service_or_check_only_run": false,
+  "caution": "Static compatibility only. Whole-model four-cell output gates pending; after run use new stable-aware summarizer, never old legacy probe audit or raw controller ratios as acceptance.",
+  "cli": "/home/guzhenqian/.venvs/project2/bin/python -B checks/run_navigation_latency_study_20261120.py --session-config logs/navigation_latency_20261120/sessions_w4_stable_final_v1.json --output logs/navigation_latency_20261120/w4_stable_final_v1 --http-mode nonstream --cells 0_18 0_64 1_18 1_64 --warmups 2 --repeats 10 --idle-seconds 1 --base-port 24810"
+}

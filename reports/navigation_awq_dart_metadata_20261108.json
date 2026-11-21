@@ -1,0 +1,70 @@
+{
+  "checkpoint": {
+    "status": "metadata_layout_passed",
+    "model_source": "models/SimpleVLN_Qwen3VL_4B_RL_AWQ_learning_20261104",
+    "quantization": {
+      "quant_method": "awq",
+      "version": "gemm",
+      "bits": 4,
+      "group_size": 128,
+      "zero_point": true
+    },
+    "stored_quantized_projections": 252,
+    "vision_tensor_count": 315,
+    "vision_dtype": "float16",
+    "config_sha256": "fc18ed52e9298aa32ce48b06e33ab058020de2487534eff9a45455f3e7bd2351",
+    "weight_header_sha256": "05843a73ea4312c7b6b54f1661d7a0dd20db369dfc1bb4208139a5c5b529da54",
+    "conversion_audit_sha256": "71f9543df88a1e567b4d892a674278e18029976d3283419860ba0ff08fdde2bb",
+    "weight_bytes": 3496772056,
+    "historical_full_weight_sha256": "31d1c12dba3cbaace283cccf5be23337555f0383a3c4390e6270d2a9230414db",
+    "full_weight_sha256_rechecked_this_run": false,
+    "cuda_execution_verified_this_run": false
+  },
+  "c_locked_sources": {
+    "checks/run_simplevln_diagnostic.py": "a7388b2d2b2e94d5f4a5f798bf90f5e898176867d060b5534e84a96335bc4dd8",
+    "checks/simplevln_env.py": "7d6fc47cc03c3aace6b7e9687798913c316a5269efbd7463e6797f116b454183",
+    "checks/simplevln_policy.py": "e73eb87dfa0946a42fc9b8efb4e1911ac41e382478a0ace24e5e5e19cd8132bc",
+    "checks/run_closed_loop_baseline.py": "fca113731e8f7e4da21a1f5ce8f8ce586b45443f1d5a5c5f5f355633a870d385",
+    "scripts/run_habitat_task_python.sh": "687ec1aeffacd38a2d85786635a91843ff1b1ccc525cf8c5d8954570aac886b5",
+    "checks/navigation_dart_runtime.py": "fd7df464152b7e28bb1b52a76cdc1dae5139deca51df36b0286e8024a7396d72",
+    "checks/navigation_dart_module_map.py": "3bce229ecb1fcc0bf6b6f76c177feece38aee7a306e9ba38a0e01d8ec90a9aa9",
+    "checks/navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1",
+    "checks/navigation_dart_selection.py": "9ad5a3e884bb1d5da5a6e5be90dd54fdfe58f4204ddb0c34c530acc62e7cfbde",
+    "checks/navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+    "checks/serve_navigation_dart_learning.py": "5b8f9498553e13da2e906e9e71679d55d172f5d9929ee91b739af3943b71bf95",
+    "checks/audit_navigation_dart_run.py": "f040c21c622d73579190f4f4bbb9cd0908a08af1a077f2a85b8ce889846a0374",
+    "checks/run_navigation_dart150.py": "511a57b1a6d34c2d3f6255ba3d40ed861f4f23b9d9f3a9f88da0f232a076e113"
+  },
+  "c_status_snapshot": {
+    "status": "running",
+    "started_utc": "2026-11-08T10:09:21.888197+00:00",
+    "model": "SimpleVLN-Qwen3VL-4B-RL-FP16-DART-keep75-navigation-20261108",
+    "planned_count": 150,
+    "completed_batches": [],
+    "controller_pid": 92872,
+    "reason": "",
+    "service_directory": "logs/navigation_dart_service_learning_20261108T065350824909Z_284bc210",
+    "automatic_retry": false,
+    "current_batch": 1,
+    "batch_started_utc": "2026-11-08T10:09:26.836656+00:00",
+    "command": [
+      "bash",
+      "scripts/run_habitat_task_python.sh",
+      "checks/run_simplevln_diagnostic.py",
+      "--policy",
+      "memory",
+      "--manifest",
+      "/mnt/e/000_博士/000_实习与工作/AI infra/项目2/data/baseline/navigation_dart150_keep75_20261108/batch_01.json",
+      "--output",
+      "/mnt/e/000_博士/000_实习与工作/AI infra/项目2/logs/navigation_dart150_keep75_20261108T100921887552Z_0ad70d02/batch_01",
+      "--endpoint",
+      "http://127.0.0.1:23333/v1"
+    ],
+    "evaluator_pid": 92883,
+    "updated_utc": "2026-11-08T10:26:10.158391+00:00",
+    "current_episode": "436",
+    "current_step": 20
+  },
+  "combination_gpu_verified": false,
+  "formal_d150_started": false
+}

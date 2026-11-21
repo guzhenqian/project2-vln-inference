@@ -137,3 +137,38 @@ env -u DISPLAY LIBGL_ALWAYS_SOFTWARE=1 bash scripts/run_habitat_task_python.sh c
 固定输入计时入口为 `run_navigation_quant_timing.py`、`run_navigation_quant_attribution.py`、`probe_navigation_quant_bottlenecks.py`；三者调用的 `prepare_input` 已包含在仓库。它们需要校准 JPEG、原始样本 JSON、全部对应模型和指定环境，也会启动服务或访问 GPU，不属于静态检查。
 
 SR/SPL 保留全部固定案例作为分母；延迟只统计真实模型请求，排除预热和队列动作的零秒记录。历史报告的完整重新审计还需要原始逐步日志、运行时 trace 和显存采样；源码交付不替代这些证据。
+
+## 2026年11月量化时延研究归档
+
+[量化总结](../reports/quantization_summary_20261121.md)包含九组完整精度比较及后续 W4A16 系统优化，两轮分别标注条件。新增源码保持实测时的原字节，相关 `.gitattributes` 禁用换行转换以保留审计中的 SHA256。上传和静态检查没有重跑 GPU 实验。
+
+| 用途 | 入口或文件 |
+| --- | --- |
+| 固定输入时延研究 | `checks/run_navigation_latency_study_20261120.py` |
+| 统一系统优化服务 | `checks/serve_navigation_latency_20261120.py` |
+| 进程内执行与 IPC | `checks/navigation_latency_inprocess_20261120.py`、`checks/navigation_latency_ipc_20261120.py` |
+| 固定历史输入准备与回放 | `checks/prepare_navigation_latency_replay_20261120.py`、`checks/run_navigation_latency_replay_20261120.py` |
+| 导航质量复测 | `checks/run_navigation_latency_navigation_20261120.py` |
+| 结果审计 | `checks/summarize_navigation_latency_20261120.py`、`checks/summarize_navigation_latency_replay_20261120.py` |
+| 冻结会话配置 | `setup/reproduction/latency_20261120/sessions/` |
+| 原协议与冻结 launch 表 | `setup/reproduction/latency_20261120/protocols/`、`frozen_launch_tables/` |
+| 新版三组各 20 条结果凭据 | `setup/reproduction/latency_20261120/native20/` |
+| 用户停止的候选研究 | `setup/reproduction/latency_20261120/interrupted_w4_stable/` |
+
+归档副本的原路径、字节数和 SHA256 见 [archive_manifest.json](../setup/reproduction/latency_20261120/archive_manifest.json)。历史 JSON 内的 `logs/` 路径保持不变以保留证据，不代表克隆后这些日志自动存在。三组 `native20` 文件包含逐例结果和历史轨迹一致性比较；完整轨迹及逐请求原始文件仍在本地。
+
+重做固定输入比较前，先按前文恢复模型、校准 JPEG、样本清单与环境。历史会话配置引用原 `repair_execution_audit.json` launch 表；可从归档清单找到两个 `frozen_launch_tables` 副本，核对 SHA256 后复制到相应 `source` 路径。若目标已有文件，必须核对相同字节，不覆盖不同内容。该操作恢复的是小型配置凭据，不是历史运行日志。
+
+在数据、权重和冻结 launch 表都准备好后，可使用新的空输出目录运行确认配置：
+
+```bash
+~/.venvs/project2/bin/python -B -u checks/run_navigation_latency_study_20261120.py \
+  --session-config setup/reproduction/latency_20261120/sessions/sessions_system_confirmation_reverse_v1.json \
+  --output logs/reproduction_latency_confirmation_20261121 \
+  --http-mode nonstream --cells 0_18 0_64 1_18 1_64 \
+  --warmups 2 --repeats 10 --idle-seconds 1 --base-port 24810
+```
+
+这会加载模型并运行 GPU 测量，应确保没有其他任务争用 GPU，不复用已有结果目录。历史冻结表和固定输入与原环境绑定；环境或输入变化时，应作为新的实验记录，不更改旧哈希来绕过验证。343 条回放和原始结果重新审计还依赖本地历史轨迹、输入及固定实验目录，不能仅凭归档摘要在干净克隆中重建。
+
+候选代码并非全部已通过落地验证。宽 W4 内核部分输出不一致；视觉缓存未通过严格特征一致性检查；稳定 W4 全配置比较因用户要求收尾而中断。新的 INT8 prefill 仅有微基准和静态结果，完整模型适配器尚未执行。各候选协议、失败记录和源码保留用于研究追溯，正式结论以总结中已完成的匹配实验为准。

@@ -1,0 +1,142 @@
+{
+  "status": "strict_numeric_gate_failed_candidate_stopped",
+  "source_version": "vision_cache_v2",
+  "evidence_path": "logs/navigation_latency_20261120/vision_cache_smoke_v2/00_awq_w4a16_vision_cache_cpu96_v2/service/vision_cache_numeric_0000.json",
+  "evidence_sha256": "0010482a85bb0bbc8e08125ed54ecd025c2a0858251c7762def25d34a1844bb4",
+  "run_status": {
+    "status": "failed",
+    "completed_sessions": 0,
+    "updated_utc": "2026-11-20T14:58:43.015233+00:00"
+  },
+  "patch_module_sha256": "0d158240215b5829f7a19c6397961592bb5419f05af3a559e9fdf76d8aea3f18",
+  "observed": {
+    "group": "awq_w4a16",
+    "request_index": 0,
+    "scope": "First excluded two-image warmup only",
+    "original_image_slots": 2,
+    "distinct_RGB_keys": 1,
+    "original_total_raw_patches": 2400,
+    "candidate_raw_patches": 1200,
+    "candidate_distinct_misses": 1,
+    "historical_hits": 0,
+    "full_output_shape": [
+      600,
+      2560
+    ],
+    "features": [
+      {
+        "feature": "main",
+        "reference_shape": [
+          600,
+          2560
+        ],
+        "candidate_shape": [
+          600,
+          2560
+        ],
+        "reference_dtype": "torch.float16",
+        "candidate_dtype": "torch.float16",
+        "finite": true,
+        "distinct_storage": true,
+        "torch_equal": false,
+        "bitwise_equal": false,
+        "max_abs_error": 0.0078125,
+        "relative_l2": 0.0003170938677586424
+      },
+      {
+        "feature": "deepstack0",
+        "reference_shape": [
+          600,
+          2560
+        ],
+        "candidate_shape": [
+          600,
+          2560
+        ],
+        "reference_dtype": "torch.float16",
+        "candidate_dtype": "torch.float16",
+        "finite": true,
+        "distinct_storage": true,
+        "torch_equal": false,
+        "bitwise_equal": false,
+        "max_abs_error": 0.00390625,
+        "relative_l2": 0.00031646371753486525
+      },
+      {
+        "feature": "deepstack1",
+        "reference_shape": [
+          600,
+          2560
+        ],
+        "candidate_shape": [
+          600,
+          2560
+        ],
+        "reference_dtype": "torch.float16",
+        "candidate_dtype": "torch.float16",
+        "finite": true,
+        "distinct_storage": true,
+        "torch_equal": false,
+        "bitwise_equal": false,
+        "max_abs_error": 0.0078125,
+        "relative_l2": 0.0003195720622966101
+      },
+      {
+        "feature": "deepstack2",
+        "reference_shape": [
+          600,
+          2560
+        ],
+        "candidate_shape": [
+          600,
+          2560
+        ],
+        "reference_dtype": "torch.float16",
+        "candidate_dtype": "torch.float16",
+        "finite": true,
+        "distinct_storage": true,
+        "torch_equal": false,
+        "bitwise_equal": false,
+        "max_abs_error": 0.0078125,
+        "relative_l2": 0.00031833714010591035
+      }
+    ],
+    "gate_failed": true,
+    "gate_was_not_relaxed": true
+  },
+  "unmeasured": [
+    "FP16 cache smoke",
+    "Nine-image warmup",
+    "Partial-hit masks",
+    "All343 history replay",
+    "Navigation quality",
+    "Valid cache speed comparison",
+    "Direct native-reference D2H/H2D roundtrip byte comparison"
+  ],
+  "causal_scope": {
+    "supported": "One-image deduplicated visual execution differs from original two-image full batch in main and all3 DeepStack outputs while metadata/finite/storage checks pass.",
+    "hypothesis": "Changing total patch/GEMM/merge batch shapes may change FP16 accumulation/algorithm choices; plausible from source, but no individual operator has been localized.",
+    "not_proved": "The reference-vs-all-hit comparison reuses features already different from reference. It is not evidence that CPU transfer introduced the difference; direct copy-only equality has not been tested."
+  },
+  "next_action": "No further GPU or343 execution. Preserve v1 engineering failure and v2 numerical failure separately. Any new protocol must be separately authorized and preregistered.",
+  "proposals_only": [
+    {
+      "name": "Separate tolerance protocol with complete output and quality gates",
+      "implemented": false,
+      "design": "First isolate copy-only byte equality from encoder shape changes. Pre-register feature tolerances separately from v2; do not relabel or pass v2. Cover every distinct miss count and duplicate/grid layout, then all343 same-weight exact token comparison and subset20 closed-loop quality. FP16 and AWQ use same cache rules and same frozen inputs; all online costs included.",
+      "limits": "Tolerance thresholds require explicit prior choice; observed failure is not retrospective justification for relaxing the strict gate. No performance assumption."
+    },
+    {
+      "name": "Strict full-batch miss / all-hit-only cache",
+      "implemented": false,
+      "design": "On any miss execute the untouched complete native visual batch, without dedup or smaller miss batch. Use full visual-batch identity plus all grids/order/dtype/source as the safest cache key; all-hit can skip whole visual execution, with copy-only byte gate. A finer image key would additionally require complete batch grid layout and original slot offsets and fresh byte validation.",
+      "limits": "Preserves the native execution shape on misses but computes all images, so real-history benefit may be very small. Existing per-image LRU hit estimates do not apply; never replace the real sequence with fixed repeated warm inputs."
+    },
+    {
+      "name": "Canonical fixed vision execution shape",
+      "implemented": false,
+      "design": "A separately redesigned encoder with fixed per-image arithmetic/tiling could make cache entries independent of current miss batch shape.",
+      "limits": "Per-image forwards can add substantial launch overhead; padding every miss batch to full size can eliminate saved compute. Changing encoder arithmetic requires new accuracy/quality evidence and cannot be claimed as a drop-in bitwise optimization."
+    }
+  ]
+}

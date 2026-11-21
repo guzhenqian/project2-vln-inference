@@ -1,0 +1,329 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-20T13:24:40.990757+00:00",
+  "status": "gemv_micro_passed_down_only_hybrid_full_model_pending",
+  "scope": "Read-only interpretation of completed GPU receipts; this review does not execute torch/GPU or read checkpoint bytes.",
+  "evidence": {
+    "protocol.json": {
+      "path": "logs/navigation_latency_20261120/w4_gemv_awq_v1/protocol.json",
+      "sha256": "a6bda33b726e5cd39a76a29f4b7e08f06a318b0ee03510d8c13a2530a00b7c03"
+    },
+    "result.json": {
+      "path": "logs/navigation_latency_20261120/w4_gemv_awq_v1/result.json",
+      "sha256": "bed2eceaa15f37b82287e6ab83c83b6d242189603059518e727ec1c0c4ac19b0"
+    },
+    "selection.json": {
+      "path": "logs/navigation_latency_20261120/w4_gemv_awq_v1/selection.json",
+      "sha256": "f29a7af78a26e227fc7faabcbc738769e9581aee5241c1aae59781683b2ccded"
+    },
+    "attempts.jsonl": {
+      "path": "logs/navigation_latency_20261120/w4_gemv_awq_v1/attempts.jsonl",
+      "sha256": "0c9cff095d0cd9796d8deecc96ed5d71303db2be0de03bbb12b0a911166ee5cb"
+    },
+    "numerical_validation.json": {
+      "path": "logs/navigation_latency_20261120/w4_gemv_awq_v1/numerical_validation.json",
+      "sha256": "7c985f2d5d7ff3c8459e60ccb9eef8737fddb24a36369cda2606c951cb05f346"
+    },
+    "boundary_checks.json": {
+      "path": "logs/navigation_latency_20261120/w4_gemv_awq_v1/boundary_checks.json",
+      "sha256": "f0e40edd53d4fd3bfe308f156f29534cfe6832631fdc9fdbaa09eede2f07e548"
+    },
+    "measurements.json": {
+      "path": "logs/navigation_latency_20261120/w4_gemv_awq_v1/measurements.json",
+      "sha256": "360e3ac3cd8243f87f1ccad5d8c050a0842e06316ddab9336463a32e5406b288"
+    }
+  },
+  "attempts": 288,
+  "attempt_status_counts": {
+    "numerical_and_timing_passed": 288
+  },
+  "numerical_cases": 72,
+  "numerical_cases_scope": "3 real layers x4 projections x2 amplitudes x3 implementations =72; GEMV-only24 cases",
+  "worst_numeric": {
+    "implementation": "wide",
+    "layer": 0,
+    "projection": "down",
+    "m": 1,
+    "k": 9728,
+    "n": 2560,
+    "input_magnitude": 1.0,
+    "relative_l2": 0.00046409640344791114,
+    "max_absolute_error": 0.00390625,
+    "passed": true
+  },
+  "numerical_limit": 0.005,
+  "tail_cases": 15,
+  "all_tails_passed": true,
+  "cache_flush_evidence": {
+    "buffer_bytes": 100663296,
+    "flush_count": 480,
+    "full_buffer_checksum": 22548578304,
+    "expected_checksum": 22548578304,
+    "verified": true,
+    "timing_scope": "96MiB-or-configured eviction finishes before begin event; both GEMV and partial reduction are timed"
+  },
+  "projections": [
+    {
+      "projection": "qkv",
+      "selected_config": {
+        "block_n": 128,
+        "block_k": 128,
+        "split_k": 4,
+        "num_warps": 2,
+        "compiler_stages": 1
+      },
+      "hot_p50_ms": {
+        "native": 0.03411199897527695,
+        "wide": 0.024063999764621258,
+        "gemv": 0.023552000522613525
+      },
+      "cold_p50_ms": {
+        "native": 0.04710400104522705,
+        "wide": 0.03993599861860275,
+        "gemv": 0.04761600121855736
+      },
+      "reduction_percent": {
+        "hot": {
+          "native": 30.95684442391341,
+          "wide": 2.12765644537809
+        },
+        "cold": {
+          "native": -1.086956865593458,
+          "wide": -19.23077640627009
+        }
+      },
+      "cold_saved_microseconds_over_wide": -7.680002599954605,
+      "promising": false,
+      "compiled": {
+        "gemv": {
+          "n_regs": 255,
+          "n_spills": 2,
+          "shared": 1024,
+          "num_warps": 2
+        },
+        "reduction": {
+          "n_regs": 26,
+          "n_spills": 0,
+          "shared": 2048,
+          "num_warps": 4
+        },
+        "schedule": {
+          "ctas": 192,
+          "max_k_iterations": 5,
+          "tile_elements": 16384,
+          "tile_elements_per_thread": 256.0,
+          "packed_weight_bytes": 7864320,
+          "scale_and_zero_bytes": 307200,
+          "fp32_partial_bytes": 98304,
+          "launches": 2,
+          "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+        }
+      }
+    },
+    {
+      "projection": "o",
+      "selected_config": {
+        "block_n": 128,
+        "block_k": 128,
+        "split_k": 8,
+        "num_warps": 4,
+        "compiler_stages": 1
+      },
+      "hot_p50_ms": {
+        "native": 0.05867199972271919,
+        "wide": 0.029824000783264637,
+        "gemv": 0.039423998445272446
+      },
+      "cold_p50_ms": {
+        "native": 0.05427199974656105,
+        "wide": 0.0435199998319149,
+        "gemv": 0.03276799991726875
+      },
+      "reduction_percent": {
+        "hot": {
+          "native": 32.806110867895754,
+          "wide": -32.1888325170469
+        },
+        "cold": {
+          "native": 39.62264137992243,
+          "wide": 24.705882252235877
+        }
+      },
+      "cold_saved_microseconds_over_wide": 10.751999914646149,
+      "promising": false,
+      "compiled": {
+        "gemv": {
+          "n_regs": 168,
+          "n_spills": 0,
+          "shared": 2048,
+          "num_warps": 4
+        },
+        "reduction": {
+          "n_regs": 32,
+          "n_spills": 0,
+          "shared": 2048,
+          "num_warps": 4
+        },
+        "schedule": {
+          "ctas": 160,
+          "max_k_iterations": 4,
+          "tile_elements": 16384,
+          "tile_elements_per_thread": 128.0,
+          "packed_weight_bytes": 5242880,
+          "scale_and_zero_bytes": 204800,
+          "fp32_partial_bytes": 81920,
+          "launches": 2,
+          "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+        }
+      }
+    },
+    {
+      "projection": "gate_up",
+      "selected_config": {
+        "block_n": 128,
+        "block_k": 128,
+        "split_k": 8,
+        "num_warps": 2,
+        "compiler_stages": 1
+      },
+      "hot_p50_ms": {
+        "native": 0.06656000018119812,
+        "wide": 0.05478399991989136,
+        "gemv": 0.048128001391887665
+      },
+      "cold_p50_ms": {
+        "native": 0.10239999741315842,
+        "wide": 0.09523200243711472,
+        "gemv": 0.10239999741315842
+      },
+      "reduction_percent": {
+        "hot": {
+          "native": 27.692305797975536,
+          "wide": 12.149530041137035
+        },
+        "cold": {
+          "native": 0.0,
+          "wide": -7.526876252315495
+        }
+      },
+      "cold_saved_microseconds_over_wide": -7.167994976043701,
+      "promising": false,
+      "compiled": {
+        "gemv": {
+          "n_regs": 255,
+          "n_spills": 2,
+          "shared": 1024,
+          "num_warps": 2
+        },
+        "reduction": {
+          "n_regs": 32,
+          "n_spills": 0,
+          "shared": 2048,
+          "num_warps": 4
+        },
+        "schedule": {
+          "ctas": 1216,
+          "max_k_iterations": 3,
+          "tile_elements": 16384,
+          "tile_elements_per_thread": 256.0,
+          "packed_weight_bytes": 24903680,
+          "scale_and_zero_bytes": 972800,
+          "fp32_partial_bytes": 622592,
+          "launches": 2,
+          "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+        }
+      }
+    },
+    {
+      "projection": "down",
+      "selected_config": {
+        "block_n": 64,
+        "block_k": 256,
+        "split_k": 8,
+        "num_warps": 2,
+        "compiler_stages": 1
+      },
+      "hot_p50_ms": {
+        "native": 0.03993599861860275,
+        "wide": 0.03686400130391121,
+        "gemv": 0.03174399957060814
+      },
+      "cold_p50_ms": {
+        "native": 0.07577600330114365,
+        "wide": 0.06912000104784966,
+        "gemv": 0.06348799914121628
+      },
+      "reduction_percent": {
+        "hot": {
+          "native": 20.512818838536983,
+          "wide": 13.888893099512355
+        },
+        "cold": {
+          "native": 16.216220999533647,
+          "wide": 8.148150783062801
+        }
+      },
+      "cold_saved_microseconds_over_wide": 5.632001906633377,
+      "promising": true,
+      "compiled": {
+        "gemv": {
+          "n_regs": 255,
+          "n_spills": 6,
+          "shared": 512,
+          "num_warps": 2
+        },
+        "reduction": {
+          "n_regs": 32,
+          "n_spills": 0,
+          "shared": 2048,
+          "num_warps": 4
+        },
+        "schedule": {
+          "ctas": 320,
+          "max_k_iterations": 5,
+          "tile_elements": 16384,
+          "tile_elements_per_thread": 256.0,
+          "packed_weight_bytes": 12451840,
+          "scale_and_zero_bytes": 486400,
+          "fp32_partial_bytes": 81920,
+          "launches": 2,
+          "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+        }
+      }
+    }
+  ],
+  "decision": {
+    "selected_projections": [
+      "down"
+    ],
+    "rule": "Beats both native and saved wide in hot; cold gain >= protocol threshold against both",
+    "cold_min_gain": 0.03,
+    "rejected_interpretations": {
+      "qkv": "Hot slightly improves but cold regresses versus both references. Reject.",
+      "o": "Cold improves but hot is slower than saved wide. Reject under the predeclared joint rule.",
+      "gate_up": "Hot improves but cold regresses versus wide and is flat versus native. Reject."
+    },
+    "selected_interpretation": "Down hot improves13.89% and cold8.15% versus saved wide. Absolute cold saving is5.632 microseconds per isolated projection; this is eligibility for model testing, not evidence of end-to-end benefit."
+  },
+  "resource_interpretation": "Selected qkv/gate_up use255 registers and2 spills; down uses255 registers and6 spills. Resource pressure is real. Its role in cold regressions is a hypothesis, not a proven causal attribution. Do not blindly install all hot winners.",
+  "hybrid_candidate": {
+    "scope": "m1_down_gemv_over_wide",
+    "decode": {
+      "gemv_down": 36,
+      "wide": 108
+    },
+    "prefill_701_2815": {
+      "wide": 144
+    },
+    "unknown_m": "original frozen native fallback",
+    "integration": "New independent adapter/module map/service only; existing source and wide table unchanged",
+    "gate": "Wait for wide-all full-model output gate and same-weight complete hybrid output/latency validation; stop or design a separately audited native-prefill variant if wide-all fails"
+  },
+  "limitations": [
+    "Hot and cold are distinct distributions; they are not pooled.",
+    "Native o hot timing is noticeably different from previous micro runs; retain it and follow the fixed decision rule rather than cherry-picking cold.",
+    "Same packed weights do not ensure same autoregressive tokens after changing floating-point reduction order.",
+    "Do not multiply per-projection medians by36 or decode-tail counts to claim HTTP latency.",
+    "Full model includes attention, visual input, other projections, memory competition and scheduling; only measured full-model HTTP results can decide adoption."
+  ]
+}

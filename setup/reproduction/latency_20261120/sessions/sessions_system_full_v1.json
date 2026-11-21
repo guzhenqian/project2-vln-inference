@@ -1,0 +1,48 @@
+[
+  {
+    "group": "fp16",
+    "label": "fp16_mp",
+    "env": {
+      "PROJECT2_LATENCY_EXECUTOR": "mp"
+    }
+  },
+  {
+    "group": "awq_w4a16",
+    "label": "awq_w4a16_mp",
+    "env": {
+      "PROJECT2_LATENCY_EXECUTOR": "mp"
+    },
+    "frozen_table": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json"
+  },
+  {
+    "group": "gptq_w4a16",
+    "label": "gptq_w4a16_mp",
+    "env": {
+      "PROJECT2_LATENCY_EXECUTOR": "mp"
+    },
+    "frozen_table": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/gptq_w4a16/service/repair_execution_audit.json"
+  },
+  {
+    "group": "gptq_w4a16",
+    "label": "gptq_w4a16_uni",
+    "env": {
+      "PROJECT2_LATENCY_EXECUTOR": "uni"
+    },
+    "frozen_table": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/gptq_w4a16/service/repair_execution_audit.json"
+  },
+  {
+    "group": "awq_w4a16",
+    "label": "awq_w4a16_uni",
+    "env": {
+      "PROJECT2_LATENCY_EXECUTOR": "uni"
+    },
+    "frozen_table": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json"
+  },
+  {
+    "group": "fp16",
+    "label": "fp16_uni",
+    "env": {
+      "PROJECT2_LATENCY_EXECUTOR": "uni"
+    }
+  }
+]

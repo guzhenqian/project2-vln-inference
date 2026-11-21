@@ -1,0 +1,1123 @@
+{
+  "model": "SimpleVLN-Qwen3VL-4B-RL-FP16",
+  "scope": "24 fixed original-B image requests x2; seed7; original policy; whole HTTP request, not pure GPU time",
+  "median_s": 2.2980633715633303,
+  "requests": [
+    {
+      "episode_id": "97",
+      "step": 0,
+      "repeat": 0,
+      "request_s": 0.8389858710579574,
+      "image_sha256": [
+        "11432fc71e94e2ea67d792fbc22e0a45b442be2f34f30cb4ceb8f212badf2778",
+        "11432fc71e94e2ea67d792fbc22e0a45b442be2f34f30cb4ceb8f212badf2778"
+      ],
+      "payload_sha256": "2fdcc834801be310b8b7915ab8d903c5edcc96375ef333309fb2bfc85b398b2d",
+      "raw": "turn right 45 degree, turn right 45 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 716,
+        "total_tokens": 735,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "97",
+      "step": 25,
+      "repeat": 0,
+      "request_s": 2.369409848935902,
+      "image_sha256": [
+        "11432fc71e94e2ea67d792fbc22e0a45b442be2f34f30cb4ceb8f212badf2778",
+        "3d9a1d94325ef880223fe3db61ef6617659cb234c15557f023f8e3aa87a303ac",
+        "2b7dfc0e008ffa8b1144647dda9c0ac748a29584dcc1216ca56838093e6d9b6f",
+        "65882599899c74ef1156c44cd98b21b2b9eda35fe010ce7e92b06eaa4af668f5",
+        "55686ac6c7adc779d854bee97ca3bfe9e05a8d750f42b46e29c80ea333ad18eb",
+        "1ee10ab4269e2c53f543d82e0b6d3794be557107876a94a18d6bf5bf6afb0019",
+        "cd3fd0a1db319d3a060a55addd5f6632671c17e2d90fa6a61706238179d7abde",
+        "8d36007b1df1109c86b2a964c69e8e8d791a067da897b8d94b6f142e86d6ddce",
+        "2e213633a93bb5a50652cd26ee503d81f282832fde273212882a852d35f977db"
+      ],
+      "payload_sha256": "686eb569fa64b11721e9060f1a88d2ac13196dfbeb50b79cc287d0df8c7121ba",
+      "raw": "forward 50 cm, turn left 15 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 2830,
+        "total_tokens": 2848,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "97",
+      "step": 60,
+      "repeat": 0,
+      "request_s": 2.3703141030855477,
+      "image_sha256": [
+        "11432fc71e94e2ea67d792fbc22e0a45b442be2f34f30cb4ceb8f212badf2778",
+        "0dc236bb739940e812440e250bba4feaf46a5bdf5f4639b6c7b503d0e42c631f",
+        "1ee10ab4269e2c53f543d82e0b6d3794be557107876a94a18d6bf5bf6afb0019",
+        "2e213633a93bb5a50652cd26ee503d81f282832fde273212882a852d35f977db",
+        "2e86f22a9674a5f3ad875843b83b971698817d960cda3d7869a80429a5124249",
+        "4a566516dd6c6c1b4200b9c76ddef7cc2694b8c06ba01b3b3bf8c68f473206ae",
+        "569169246faecc60778937c73e3cd74206192aa6b68d610677d757496f32afca",
+        "bfadd745e97725423f1907960a31758413aff4a55637c08864d76f1fa87c77a2",
+        "c892231af8e08e363d6a236f2bdecbfea4928819e61708a3ccf691d740b1d37e"
+      ],
+      "payload_sha256": "53e3de9047fe912ee2fb11ec30ef0438e0a999f02e3f9c0328f4988efdd4fb3e",
+      "raw": "forward 75 cm, forward 25 cm, turn right 15 degree",
+      "usage": {
+        "prompt_tokens": 2830,
+        "total_tokens": 2848,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "97",
+      "step": 94,
+      "repeat": 0,
+      "request_s": 2.051589304814115,
+      "image_sha256": [
+        "11432fc71e94e2ea67d792fbc22e0a45b442be2f34f30cb4ceb8f212badf2778",
+        "967fc6f41c61db03843d14ce0a9a45dd8bc771000fb78d4e67999933d201c0a7",
+        "17e6b9fbc9b9c29710369af8469434c07fd1ef8c306e865564ef40246c9572f0",
+        "0ae4b4b1607a7f3078894e321384ddc3dca149f53c261deba0bb71c7fab277b9",
+        "f06a6e058094cfd047f46b9f89fed7edaca0767dfbc28a8f1204fca5ae34f560",
+        "655ec4ed72efd2b63e4a872915bbee3f97135a62bf7fb81594cc91e8cc1605fb",
+        "ddf5ae8373d4162033c79e7ce7327872812541f203d55129d9b075a15d20ca1c",
+        "303de2c6cee2e1f331bcec47ea3caaa07f4df5b3a8af469a137bbf935c005713",
+        "e8b0fbe8797c1e7fb9c589a593135e8139fb4bf716dd27214f7f2699df8192ad"
+      ],
+      "payload_sha256": "964d58f4cd032cb37ea6246cf0259f0f9ee303b218d8178b0eac9a4310ab279a",
+      "raw": "forward 25 cm, stop",
+      "usage": {
+        "prompt_tokens": 2830,
+        "total_tokens": 2837,
+        "completion_tokens": 7
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "103",
+      "step": 0,
+      "repeat": 0,
+      "request_s": 0.7572261590976268,
+      "image_sha256": [
+        "bcf8e0b4f09fff55ea81b5bb50f05bb74729a2c37b26ad3aca5575f716546120",
+        "bcf8e0b4f09fff55ea81b5bb50f05bb74729a2c37b26ad3aca5575f716546120"
+      ],
+      "payload_sha256": "813c2f64b1a008816071c2d9fead5babcba68a134e53c8113fc1a0037fa43cda",
+      "raw": "turn right 45 degree, turn right 45 degree, turn right 45 degree",
+      "usage": {
+        "prompt_tokens": 701,
+        "total_tokens": 721,
+        "completion_tokens": 20
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "103",
+      "step": 20,
+      "repeat": 0,
+      "request_s": 2.3221973748877645,
+      "image_sha256": [
+        "bcf8e0b4f09fff55ea81b5bb50f05bb74729a2c37b26ad3aca5575f716546120",
+        "7fa2b0e04990679da16ad15a51a7e74eddd09bec35786b3198c171575506ea45",
+        "d0de6dbe6621ecf18088686a888cd8398220e891354cef13e28142d38ff3ea74",
+        "f6037801e7435dee9a0a2aba283ddfa458e86041957ac7acca2e52134f4926e3",
+        "919e8c3c3f0ed3b93a8bdd743b7495ac397b6e5f7237a2f35b6431e5e6d30661",
+        "6dc4348bc9c391a856dd3f2cfff6eca777befc51b140c50279aaf1174a917586",
+        "c201fa8fd049d08f63b1b52060aa04e1f3939b76b3128b6e6eae1e3295de9286",
+        "bf69cc0404a8e1c1dae40f38e766ccf70d95cc2b9bf68640089de7fa3169abec",
+        "d80c532b30a497fa0850f65e6d2f728e3e03cd28ce8017ba25131d60fa153d0c"
+      ],
+      "payload_sha256": "639aadad450af147ab183dd945374eb5e38fe405a8999dcedc0eed35f76634f8",
+      "raw": "forward 50 cm, turn right 15 degree, forward 75 cm",
+      "usage": {
+        "prompt_tokens": 2815,
+        "total_tokens": 2833,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "103",
+      "step": 35,
+      "repeat": 0,
+      "request_s": 2.3097103249747306,
+      "image_sha256": [
+        "bcf8e0b4f09fff55ea81b5bb50f05bb74729a2c37b26ad3aca5575f716546120",
+        "d0de6dbe6621ecf18088686a888cd8398220e891354cef13e28142d38ff3ea74",
+        "c984097b80e58b80d51f4a3419c68cb68f138cc404f18077e6c212720358f7e8",
+        "909382c958a2ca4efc83f67987354f427a86ff96ad850bb7f260850166322eee",
+        "bf69cc0404a8e1c1dae40f38e766ccf70d95cc2b9bf68640089de7fa3169abec",
+        "b13ecc6266fa94360a1cfa519530f440036bc7173e53203d59fd14dc000b2efc",
+        "dbd466b6b7dda6569e9bf254ff68c16ef194e94463c9b8ed12eca28672dbdc12",
+        "e840882f5e97f3231bb45b53dad2bce117b9d53d7c7a5b1835eefba5a83bd903",
+        "6d217fa4eb1ebc143ac04c79db7f798eed6b91902f545c4e373f1d7f2bd18274"
+      ],
+      "payload_sha256": "e477600de8eb6347474c394fc6d882c047c4ac6b0c560dca6af87fd2e302c76e",
+      "raw": "forward 75 cm, turn right 15 degree, forward 75 cm",
+      "usage": {
+        "prompt_tokens": 2815,
+        "total_tokens": 2833,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "103",
+      "step": 53,
+      "repeat": 0,
+      "request_s": 2.312691272003576,
+      "image_sha256": [
+        "bcf8e0b4f09fff55ea81b5bb50f05bb74729a2c37b26ad3aca5575f716546120",
+        "e5ab1ae0048516e011fead504b5947925ab8df2e0bccc2c9e36b9550faa3e64e",
+        "909382c958a2ca4efc83f67987354f427a86ff96ad850bb7f260850166322eee",
+        "d112e4041f11f9c9c626a10252c53ba7a5fa3165cea89ab9ffc07a7bfdef7c03",
+        "8346f200d6897039306561da4c4fb6f04485c6abd52808c78ee25418a148e1f4",
+        "c55fbed6086f0fb00cd3dd21bd03099cb833ce487c55f376b43c1d14d1e879a3",
+        "c0ea41e21dd4ab3cbe1abc83ad9621c93e3139793e0cd1e7c1d985284b559b86",
+        "e2e4a41476dc231e2826bf60ace35dab58b8ae63cb04bedc71e4207d39c3c208",
+        "489dd672af0415dbcfbf8d2cd7395b7d44109701ca97d99705f20eb6e13811bd"
+      ],
+      "payload_sha256": "0127f46f0cfbc0af27ec2577541785132479eef9bdad21fbe48e13c9f38d8a2e",
+      "raw": "forward 75 cm, turn right 15 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 2815,
+        "total_tokens": 2833,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "4",
+      "step": 0,
+      "repeat": 0,
+      "request_s": 0.8139568530023098,
+      "image_sha256": [
+        "a74065d177c9100a4aa45abdc562d15d6e19dc4c41740b66232a8b1543372604",
+        "a74065d177c9100a4aa45abdc562d15d6e19dc4c41740b66232a8b1543372604"
+      ],
+      "payload_sha256": "6f5e0aaaf2e63f8efed20bee6eab57cf93a31c947ab9abaa20cc4d147e41c9f3",
+      "raw": "turn right 30 degree, turn right 15 degree, forward 75 cm",
+      "usage": {
+        "prompt_tokens": 713,
+        "total_tokens": 732,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "4",
+      "step": 23,
+      "repeat": 0,
+      "request_s": 2.3065913491882384,
+      "image_sha256": [
+        "a74065d177c9100a4aa45abdc562d15d6e19dc4c41740b66232a8b1543372604",
+        "c279a732816b6aabf38c750fb265b91d2e9db009bbe1436d66b3450dcfdf74eb",
+        "134e048929ce38236b95a1e08c8a8fa6c2c80372a18907616fe23cdb1ab51d28",
+        "00a0d5d8e0737cca40c747da98ce6131184b435cceedd5221135212b9c1d896a",
+        "676b17cc38552e164ab90977f0c3cd4299bd4b70844c97ed3ea62c5ecd4b4cc8",
+        "47ab4f82784b9387df3d7b727b920b0ceaac68a9cdf83e5613a02cdf266ccceb",
+        "edf8016f43acc88676766c567aa5dbad08cb39b55420ab9e167cdfc26a7ad215",
+        "eddc8b49df77ea0a6860bece25321a97e56fc55d9d15e0753134cbd19ec52089",
+        "e22ee0de5cde79edf32311cb2283f1e58ebb3cc9fe483852802ad06b5d5a8d70"
+      ],
+      "payload_sha256": "87b60110a0a84739fdda9c1d8eefdb6c8049cfa65beea67e8529b8bfd4952db4",
+      "raw": "forward 25 cm, turn right 30 degree, turn right 15 degree",
+      "usage": {
+        "prompt_tokens": 2827,
+        "total_tokens": 2846,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "4",
+      "step": 55,
+      "repeat": 0,
+      "request_s": 2.314732202794403,
+      "image_sha256": [
+        "a74065d177c9100a4aa45abdc562d15d6e19dc4c41740b66232a8b1543372604",
+        "24bf278444117cda15501849967550596425607a7f7c7db3488bb29dd843916d",
+        "0abaea649d4cefe26b62f3116e7b196bb28c65e967dec9e85b6d7eda3c60e92e",
+        "e22ee0de5cde79edf32311cb2283f1e58ebb3cc9fe483852802ad06b5d5a8d70",
+        "022b2dfb8cbef5ab6e8fa905cf81b47d03355ab580d43c37104509abbfb8c472",
+        "a76c7f9c3eeb6a28d3319fe2825d5351eb42421cad2bbb7068717fdc77ef17d7",
+        "ac294e5a7757c78a681ca9937d2eb0a875482fd5546e49cb3a9ab417eb31ac55",
+        "6a1a2d3ff62e7d5a06dca718ee1353fec2f76c15923c236c239b32f9994832a4",
+        "dfa00d55cdced0984ac6579afb622e0bb2c1f374903fc027eddf361fa9137b96"
+      ],
+      "payload_sha256": "0ccddc51a8eaaa38510ee93595ed958a5dea845665f3a6aaae0fe1b101fc5385",
+      "raw": "turn right 45 degree, turn right 15 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 2827,
+        "total_tokens": 2846,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "4",
+      "step": 84,
+      "repeat": 0,
+      "request_s": 2.3592486910056323,
+      "image_sha256": [
+        "a74065d177c9100a4aa45abdc562d15d6e19dc4c41740b66232a8b1543372604",
+        "1207a94475d12400cf48f77e3c232a9a4089e91ebb7ca84e62674ad0261a9127",
+        "d4a457badeb6567f70096c5d0ece2149e22cf07723bc6542ec2ca222ddd3eb19",
+        "ee3bab79ba6124dd0a7c3887fb6fd132bcaaed3fc2c013c297f88a0afcfed92a",
+        "bee7d52b5c86035344b93c0dfb0224f293fa20e74e7742fd31cfab281f7654c7",
+        "d6a84cc6df8393a21131aa6577dde4046cfa32daca7d252f3b8de8ea6a6704cd",
+        "9f71287e9f50298803964e1143372f269eea1c6813a282bb199dc08616828244",
+        "a7ca75c2ec50b92e25dff27c2890f67ee55290d64713cc6174176dbff3392d3e",
+        "9c668567726c1ef26a6f7cccf51794707628c25606a8349ce615b3a2919c5422"
+      ],
+      "payload_sha256": "b70331141f7703521152fa27f2c8e2a39e24d1772d79c4a688f00a69e19431af",
+      "raw": "forward 25 cm, turn left 30 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 2827,
+        "total_tokens": 2845,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "22",
+      "step": 0,
+      "repeat": 0,
+      "request_s": 0.8543688100762665,
+      "image_sha256": [
+        "eda8f1b0df813310de0ddecc9be60f99aae43494775328251f993648012f96ee",
+        "eda8f1b0df813310de0ddecc9be60f99aae43494775328251f993648012f96ee"
+      ],
+      "payload_sha256": "5a5a69f3c3f5ffb4058c9ec178609d0da89ceb4e8b1d7dc5543d5696cee5ca1c",
+      "raw": "turn left 45 degree, turn left 45 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 737,
+        "total_tokens": 756,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "22",
+      "step": 12,
+      "repeat": 0,
+      "request_s": 2.4516089339740574,
+      "image_sha256": [
+        "eda8f1b0df813310de0ddecc9be60f99aae43494775328251f993648012f96ee",
+        "034e38bceadd46321167e95226be6ddb00444e6a2c2216517d23b9474c5637b9",
+        "c9780c9e4ec22e3410014822b297bd1786107fa63d9c66ff08aa8f281d3f8b97",
+        "41896157cda2e198af63c0a4439701eb18a4bd23044727767e2809a1b3eb8568",
+        "21d63a5ead3076ffead607747017ae37b6962897d24d744ce900534a848c5101",
+        "5479eebc362b11378a7d1e4ab1a9d7d837ed4779b60f5854c1689ad934c19401",
+        "30a417660f768896f654e86df1867747bab209f9dd8b3e5f199f17c700578e05",
+        "96dbf72f24c9538374dfcdc134a1a4105e36426d77deb9377645ce0a2da38883",
+        "707961d0d0aa9d9e8cc3b92213dc2d1b28301170524364a9b422ea005bd29002"
+      ],
+      "payload_sha256": "4ac5b263ac0c1f9cf48d8f32d55f7ddcd231ce0b297152cea67dcf2cd8eab89d",
+      "raw": "forward 50 cm, forward 25 cm, turn right 15 degree",
+      "usage": {
+        "prompt_tokens": 2851,
+        "total_tokens": 2869,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "22",
+      "step": 32,
+      "repeat": 0,
+      "request_s": 2.3223588310647756,
+      "image_sha256": [
+        "eda8f1b0df813310de0ddecc9be60f99aae43494775328251f993648012f96ee",
+        "36ccf43c63966f433d780ef80d73008f3dc1fa70a9633228e5f7e9f0adcf8dbe",
+        "30a417660f768896f654e86df1867747bab209f9dd8b3e5f199f17c700578e05",
+        "c70d24bfe536b976e52c6b3151cda2f4320a969b342e99f6235f4e72a75ae26b",
+        "0ab53fa78471c9b441507821dc3b545de8153b53c26c0487197b9b29145eec07",
+        "068065792faf051f9f2e47008ebaab7945004eb4975c61f379d70cefd4791f99",
+        "021235e04cfbe9017b074d50c3fe956a7cbf5a7a962fae80d7476b5c81202343",
+        "26bdd22775004c773d4cb7a24b0c2b65f396f58ddd0beb612592b7e3e88cddb4",
+        "393a82d5a33c2a0c0a0edf67c10b6d730acaa37beda12ec2d312bd5cedb967cb"
+      ],
+      "payload_sha256": "e3cfac444c4c31d67e3a6f8479dc9ffb829f072eb48e34cc01d910c362ebf071",
+      "raw": "forward 75 cm, turn right 15 degree, forward 50 cm",
+      "usage": {
+        "prompt_tokens": 2851,
+        "total_tokens": 2869,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "22",
+      "step": 46,
+      "repeat": 0,
+      "request_s": 2.3174431349616498,
+      "image_sha256": [
+        "eda8f1b0df813310de0ddecc9be60f99aae43494775328251f993648012f96ee",
+        "21d63a5ead3076ffead607747017ae37b6962897d24d744ce900534a848c5101",
+        "c70d24bfe536b976e52c6b3151cda2f4320a969b342e99f6235f4e72a75ae26b",
+        "7e14a1b783cef62c89b7ca9207812503615a6b3ec982d000e4c277db355356e7",
+        "47e201d923fba438635c393ed4e7de9a2cd7bd66daddddc8933cc9431378c8a4",
+        "393a82d5a33c2a0c0a0edf67c10b6d730acaa37beda12ec2d312bd5cedb967cb",
+        "707cd7fef02c68e5351100839fafbff13523949404eea2bb7c6c3940878b101d",
+        "83eb84dc7a62d1fb7df67a785addfb8dabceec517f6e8fe7c784e5545d22e2c8",
+        "c5fd031df996508fd10d5a6f4f909a2acf444c761875a181b52f76ee63353ba3"
+      ],
+      "payload_sha256": "926b70a5dcc699c3dfc21f48d67effae946431826321258c49adbee06608a3be",
+      "raw": "forward 50 cm, turn left 15 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 2851,
+        "total_tokens": 2869,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "46",
+      "step": 0,
+      "repeat": 0,
+      "request_s": 0.8125740550458431,
+      "image_sha256": [
+        "2fab45218b24ab1ef882ce5bbd0df86f5498eafd1491179dda638619540914ce",
+        "2fab45218b24ab1ef882ce5bbd0df86f5498eafd1491179dda638619540914ce"
+      ],
+      "payload_sha256": "ec7180bf9e1f8b228a763a7bffd24b98287b382686ff8e7f648eaf77db881f82",
+      "raw": "turn left 45 degree, turn left 45 degree, forward 50 cm",
+      "usage": {
+        "prompt_tokens": 755,
+        "total_tokens": 774,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "46",
+      "step": 115,
+      "repeat": 0,
+      "request_s": 2.357773365918547,
+      "image_sha256": [
+        "2fab45218b24ab1ef882ce5bbd0df86f5498eafd1491179dda638619540914ce",
+        "1a67c717c89565c23521ddc0b34adee73bf75f51c19580b5019de75286e63fc9",
+        "7a692a9510cbf0a159892a0bdb7abb5cca904d619807017e210fa01cfbdba6d5",
+        "068406d2accca7e78e62a7753a38bce066833ae1fe80f0eea7e54ec2061d59a7",
+        "551380129e393b91bc813cce4e65fb15a9a9f29d208bd9a8c6ba23aa4fa44e9e",
+        "4689a5e8200a1ee1053a627ad7b27c15916d6be7f9c3dbf918d7e3ca6c8aa10a",
+        "6210c496dddc4129787bd83173fae9a0ae8ebc2fabc6b70ec5c5425cb8f6f9c7",
+        "6e82baf5105ab74d62b19c28dec717f19649f0e914e9d1dbd17fef52a8c5d56b",
+        "94211c4fb7e92a13802d00b38e6ffe81b839289a133fcd9c5435452740c429b5"
+      ],
+      "payload_sha256": "a7a9e37e1d6813d81a58ebf22f97a823956422daa5e90defa019c80a8ef77d09",
+      "raw": "turn left 30 degree, turn left 15 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 2869,
+        "total_tokens": 2888,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "46",
+      "step": 211,
+      "repeat": 0,
+      "request_s": 2.2944810120388865,
+      "image_sha256": [
+        "166a660393027464c22bce1079f9dbbc51cda319a4c3f13440e956582ab15367",
+        "9fc69310ea8da1e4a591892d7f9458d0645c2aace48d892f3b1bab736aa9c842",
+        "50e1f6b19fb745651afc6888cab390064fe4fbe0d1634d12258e8ae11aa550b6",
+        "068406d2accca7e78e62a7753a38bce066833ae1fe80f0eea7e54ec2061d59a7",
+        "45293163859aad5bcb0f0e4a32c304d20b27b10bbf1c0cdc6cac2622d6224af7",
+        "1f9d16edc82c1e4918a5b4b6c083ee0244c5fe956e97c5afdab6e90d1f35886b",
+        "99ac0aae2c7f1b8139e5f772083d8ae992bff735028a00d256d00207daacb435",
+        "c3cc24bc3958d30d9310ba6e45f80150c3e3121fe4754dc2a5205838537d564e",
+        "1dd9a8eb3f7a89845629c6f0915dd3c8727a438bfdda7eecbcb4296e8771f5a2"
+      ],
+      "payload_sha256": "d55aeb85e2ffa86bdb3428ec59cee36b1253de83eda603e0078396a6d8ca841e",
+      "raw": "turn right 15 degree, forward 25 cm, turn right 15 degree",
+      "usage": {
+        "prompt_tokens": 2869,
+        "total_tokens": 2888,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "46",
+      "step": 314,
+      "repeat": 0,
+      "request_s": 1.9538815440610051,
+      "image_sha256": [
+        "94211c4fb7e92a13802d00b38e6ffe81b839289a133fcd9c5435452740c429b5",
+        "476caae0fe30d00b8212603d6a97fdef54935b6a7d2c3314a3eb5312486e2f62",
+        "f0701d5e56a1794590a32975e3d981ccd80ae95d07bfaefd3687e44f80d31cdc",
+        "a3258cf68715413b86b52119370b8a4852f628d72c50976924b7ecd447415c93",
+        "b4ff0ac2a137ad7227d3bb4a69fb7d13e949436288e4a6fffa0c29fe15b733ee",
+        "6fcaefd3623b5c1612d81e24d241a6597f8de27865c6cbaefd5e0e38dd1ff983",
+        "3770dd77d5581e334e91773e8f3d5de912fd62f114504eff697fc16f936f577c",
+        "dfb931cf8cb7b76e2bae1f862da58abab15eb994cb90cf7dbc6aead832940474",
+        "d5e9987ab7d2adc245b6765295d7fc5f201f1a7f90645f8582505f34270de5b9"
+      ],
+      "payload_sha256": "0466e329b4d500cd22b3b44284d8fcc38b6498da1b4afc680b6dab33a06e3d6e",
+      "raw": "stop",
+      "usage": {
+        "prompt_tokens": 2869,
+        "total_tokens": 2870,
+        "completion_tokens": 1
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "112",
+      "step": 0,
+      "repeat": 0,
+      "request_s": 0.8350801749620587,
+      "image_sha256": [
+        "d9ee7e5acb7a02a4127c62fa911f9b4696d56219355bbd4ca753fba4ec1e0327",
+        "d9ee7e5acb7a02a4127c62fa911f9b4696d56219355bbd4ca753fba4ec1e0327"
+      ],
+      "payload_sha256": "98be826dc931c96b939b33e69e8d5422db3d9521464fd5631d189804d88d8d0a",
+      "raw": "turn left 45 degree, turn left 15 degree, forward 75 cm",
+      "usage": {
+        "prompt_tokens": 714,
+        "total_tokens": 733,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "112",
+      "step": 26,
+      "repeat": 0,
+      "request_s": 2.4540742989629507,
+      "image_sha256": [
+        "d9ee7e5acb7a02a4127c62fa911f9b4696d56219355bbd4ca753fba4ec1e0327",
+        "5bec458a033d990ef501bbe2a78c072d8da33b1e7c560c1a2c99dd2ea8e57ce3",
+        "ca825e07b10b12439b5e24735a72386337b57abcff1fb78366e29975b18e8657",
+        "b72a2720f39e0304d5bf9265da28eddec5510201b694abe31c9173ca66e3b66a",
+        "d65b03888884753db88f6326d6fbad736dd0e20cf527dcef961cc390c704a90d",
+        "73e1cdb33e6468733efca5f34973668cbd4270c5f73e806072baf4f63f45d3f6",
+        "af3ec5820bb6729dc266eee7985d0d56027a70e5f40eb5a1a77cf82ca525ee0b",
+        "345a02bb940e8eae607c135ae39f10b2b0c95b6da6966cc64716f73af16baf0a",
+        "1379ff93851e53bdebb122ae256663e3963bc84e8656ae69363ef3454eb0b8f0"
+      ],
+      "payload_sha256": "99aee4f9e6d11540bc90f4cbf1909d3ec532842d5dbddc979a9aa603bc9eecdf",
+      "raw": "forward 75 cm, turn right 15 degree, forward 50 cm",
+      "usage": {
+        "prompt_tokens": 2828,
+        "total_tokens": 2846,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "112",
+      "step": 45,
+      "repeat": 0,
+      "request_s": 2.5091037538368255,
+      "image_sha256": [
+        "d9ee7e5acb7a02a4127c62fa911f9b4696d56219355bbd4ca753fba4ec1e0327",
+        "b31cdebf3f7e16b37a34cdef507d7cb09a0f5a556a1b297adc027203069823e0",
+        "e1637ba41aa55af37cc3c52d69fcc2967ef85d2655b27eea252bb4dc9611309b",
+        "24a1b658d02a3dc7476fe7292090c5d6946f353fe3247bda2f7ccb2e25c26d2c",
+        "345a02bb940e8eae607c135ae39f10b2b0c95b6da6966cc64716f73af16baf0a",
+        "eb4d64914d8916742ca84681d4bbab189444c46753446b85f6a267f1dcd4f69f",
+        "530d84d068e61c33ba0139a4dd50a7a96563359b9698cab022a01782d0ec65fa",
+        "c2b81aae6135669a693803cf90fe64a12c0512deed39f96a837d95595ad14c5f",
+        "a6e75a70650d7cd27e4e11ddcb9deca670dd1fa494382ea92da606f85ccddb16"
+      ],
+      "payload_sha256": "b86d38e5a05254f7b1486736f11e92c17b216081434ea63a2dab7e2e60d35398",
+      "raw": "forward 75 cm, turn right 15 degree, forward 50 cm",
+      "usage": {
+        "prompt_tokens": 2828,
+        "total_tokens": 2846,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "112",
+      "step": 66,
+      "repeat": 0,
+      "request_s": 2.224528199993074,
+      "image_sha256": [
+        "d9ee7e5acb7a02a4127c62fa911f9b4696d56219355bbd4ca753fba4ec1e0327",
+        "9091d7b36094acd2130d7fdae19f5947d19e59ce8b22eac1f4eb06127f8b3105",
+        "24a1b658d02a3dc7476fe7292090c5d6946f353fe3247bda2f7ccb2e25c26d2c",
+        "9bbcd081e9d017d3a15c3dd89614d89c7abd86efc041a12dd4ece0d92d738892",
+        "c19e985f26061f667d1c9944699ffb631e41d09b4d928536772cb1c5b968c225",
+        "c625a313f1645053903909a49d869752a1c86018beac89d9750c1cc6f6ce7537",
+        "13285850985a67978836cbefc3cb1b8ff20ad66bf2360b113e4770bce3ad8b84",
+        "7e916e821e61aa85c0fdd65c2c47930132cd49b46bde4f111523f082ff65590a",
+        "6dce5961dee8b8a550e13278ced3164a395e33bdeb611337d37323a7776585c5"
+      ],
+      "payload_sha256": "3e545981e243ecc9912c46ac9a9724b8f1932443f3f3eee4a10df6697310a47f",
+      "raw": "forward 25 cm, stop",
+      "usage": {
+        "prompt_tokens": 2828,
+        "total_tokens": 2835,
+        "completion_tokens": 7
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "97",
+      "step": 0,
+      "repeat": 1,
+      "request_s": 0.7481283980887383,
+      "image_sha256": [
+        "11432fc71e94e2ea67d792fbc22e0a45b442be2f34f30cb4ceb8f212badf2778",
+        "11432fc71e94e2ea67d792fbc22e0a45b442be2f34f30cb4ceb8f212badf2778"
+      ],
+      "payload_sha256": "2fdcc834801be310b8b7915ab8d903c5edcc96375ef333309fb2bfc85b398b2d",
+      "raw": "turn right 45 degree, turn right 45 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 716,
+        "total_tokens": 735,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "97",
+      "step": 25,
+      "repeat": 1,
+      "request_s": 2.2597731449641287,
+      "image_sha256": [
+        "11432fc71e94e2ea67d792fbc22e0a45b442be2f34f30cb4ceb8f212badf2778",
+        "3d9a1d94325ef880223fe3db61ef6617659cb234c15557f023f8e3aa87a303ac",
+        "2b7dfc0e008ffa8b1144647dda9c0ac748a29584dcc1216ca56838093e6d9b6f",
+        "65882599899c74ef1156c44cd98b21b2b9eda35fe010ce7e92b06eaa4af668f5",
+        "55686ac6c7adc779d854bee97ca3bfe9e05a8d750f42b46e29c80ea333ad18eb",
+        "1ee10ab4269e2c53f543d82e0b6d3794be557107876a94a18d6bf5bf6afb0019",
+        "cd3fd0a1db319d3a060a55addd5f6632671c17e2d90fa6a61706238179d7abde",
+        "8d36007b1df1109c86b2a964c69e8e8d791a067da897b8d94b6f142e86d6ddce",
+        "2e213633a93bb5a50652cd26ee503d81f282832fde273212882a852d35f977db"
+      ],
+      "payload_sha256": "686eb569fa64b11721e9060f1a88d2ac13196dfbeb50b79cc287d0df8c7121ba",
+      "raw": "forward 50 cm, turn left 15 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 2830,
+        "total_tokens": 2848,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "97",
+      "step": 60,
+      "repeat": 1,
+      "request_s": 2.3196984990499914,
+      "image_sha256": [
+        "11432fc71e94e2ea67d792fbc22e0a45b442be2f34f30cb4ceb8f212badf2778",
+        "0dc236bb739940e812440e250bba4feaf46a5bdf5f4639b6c7b503d0e42c631f",
+        "1ee10ab4269e2c53f543d82e0b6d3794be557107876a94a18d6bf5bf6afb0019",
+        "2e213633a93bb5a50652cd26ee503d81f282832fde273212882a852d35f977db",
+        "2e86f22a9674a5f3ad875843b83b971698817d960cda3d7869a80429a5124249",
+        "4a566516dd6c6c1b4200b9c76ddef7cc2694b8c06ba01b3b3bf8c68f473206ae",
+        "569169246faecc60778937c73e3cd74206192aa6b68d610677d757496f32afca",
+        "bfadd745e97725423f1907960a31758413aff4a55637c08864d76f1fa87c77a2",
+        "c892231af8e08e363d6a236f2bdecbfea4928819e61708a3ccf691d740b1d37e"
+      ],
+      "payload_sha256": "53e3de9047fe912ee2fb11ec30ef0438e0a999f02e3f9c0328f4988efdd4fb3e",
+      "raw": "forward 75 cm, forward 25 cm, turn right 15 degree",
+      "usage": {
+        "prompt_tokens": 2830,
+        "total_tokens": 2848,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "97",
+      "step": 94,
+      "repeat": 1,
+      "request_s": 1.9507687410805374,
+      "image_sha256": [
+        "11432fc71e94e2ea67d792fbc22e0a45b442be2f34f30cb4ceb8f212badf2778",
+        "967fc6f41c61db03843d14ce0a9a45dd8bc771000fb78d4e67999933d201c0a7",
+        "17e6b9fbc9b9c29710369af8469434c07fd1ef8c306e865564ef40246c9572f0",
+        "0ae4b4b1607a7f3078894e321384ddc3dca149f53c261deba0bb71c7fab277b9",
+        "f06a6e058094cfd047f46b9f89fed7edaca0767dfbc28a8f1204fca5ae34f560",
+        "655ec4ed72efd2b63e4a872915bbee3f97135a62bf7fb81594cc91e8cc1605fb",
+        "ddf5ae8373d4162033c79e7ce7327872812541f203d55129d9b075a15d20ca1c",
+        "303de2c6cee2e1f331bcec47ea3caaa07f4df5b3a8af469a137bbf935c005713",
+        "e8b0fbe8797c1e7fb9c589a593135e8139fb4bf716dd27214f7f2699df8192ad"
+      ],
+      "payload_sha256": "964d58f4cd032cb37ea6246cf0259f0f9ee303b218d8178b0eac9a4310ab279a",
+      "raw": "forward 25 cm, stop",
+      "usage": {
+        "prompt_tokens": 2830,
+        "total_tokens": 2837,
+        "completion_tokens": 7
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "103",
+      "step": 0,
+      "repeat": 1,
+      "request_s": 0.7566337240859866,
+      "image_sha256": [
+        "bcf8e0b4f09fff55ea81b5bb50f05bb74729a2c37b26ad3aca5575f716546120",
+        "bcf8e0b4f09fff55ea81b5bb50f05bb74729a2c37b26ad3aca5575f716546120"
+      ],
+      "payload_sha256": "813c2f64b1a008816071c2d9fead5babcba68a134e53c8113fc1a0037fa43cda",
+      "raw": "turn right 45 degree, turn right 45 degree, turn right 45 degree",
+      "usage": {
+        "prompt_tokens": 701,
+        "total_tokens": 721,
+        "completion_tokens": 20
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "103",
+      "step": 20,
+      "repeat": 1,
+      "request_s": 2.3127323049120605,
+      "image_sha256": [
+        "bcf8e0b4f09fff55ea81b5bb50f05bb74729a2c37b26ad3aca5575f716546120",
+        "7fa2b0e04990679da16ad15a51a7e74eddd09bec35786b3198c171575506ea45",
+        "d0de6dbe6621ecf18088686a888cd8398220e891354cef13e28142d38ff3ea74",
+        "f6037801e7435dee9a0a2aba283ddfa458e86041957ac7acca2e52134f4926e3",
+        "919e8c3c3f0ed3b93a8bdd743b7495ac397b6e5f7237a2f35b6431e5e6d30661",
+        "6dc4348bc9c391a856dd3f2cfff6eca777befc51b140c50279aaf1174a917586",
+        "c201fa8fd049d08f63b1b52060aa04e1f3939b76b3128b6e6eae1e3295de9286",
+        "bf69cc0404a8e1c1dae40f38e766ccf70d95cc2b9bf68640089de7fa3169abec",
+        "d80c532b30a497fa0850f65e6d2f728e3e03cd28ce8017ba25131d60fa153d0c"
+      ],
+      "payload_sha256": "639aadad450af147ab183dd945374eb5e38fe405a8999dcedc0eed35f76634f8",
+      "raw": "forward 50 cm, turn right 15 degree, forward 75 cm",
+      "usage": {
+        "prompt_tokens": 2815,
+        "total_tokens": 2833,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "103",
+      "step": 35,
+      "repeat": 1,
+      "request_s": 2.284384259954095,
+      "image_sha256": [
+        "bcf8e0b4f09fff55ea81b5bb50f05bb74729a2c37b26ad3aca5575f716546120",
+        "d0de6dbe6621ecf18088686a888cd8398220e891354cef13e28142d38ff3ea74",
+        "c984097b80e58b80d51f4a3419c68cb68f138cc404f18077e6c212720358f7e8",
+        "909382c958a2ca4efc83f67987354f427a86ff96ad850bb7f260850166322eee",
+        "bf69cc0404a8e1c1dae40f38e766ccf70d95cc2b9bf68640089de7fa3169abec",
+        "b13ecc6266fa94360a1cfa519530f440036bc7173e53203d59fd14dc000b2efc",
+        "dbd466b6b7dda6569e9bf254ff68c16ef194e94463c9b8ed12eca28672dbdc12",
+        "e840882f5e97f3231bb45b53dad2bce117b9d53d7c7a5b1835eefba5a83bd903",
+        "6d217fa4eb1ebc143ac04c79db7f798eed6b91902f545c4e373f1d7f2bd18274"
+      ],
+      "payload_sha256": "e477600de8eb6347474c394fc6d882c047c4ac6b0c560dca6af87fd2e302c76e",
+      "raw": "forward 75 cm, turn right 15 degree, forward 75 cm",
+      "usage": {
+        "prompt_tokens": 2815,
+        "total_tokens": 2833,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "103",
+      "step": 53,
+      "repeat": 1,
+      "request_s": 2.304642434930429,
+      "image_sha256": [
+        "bcf8e0b4f09fff55ea81b5bb50f05bb74729a2c37b26ad3aca5575f716546120",
+        "e5ab1ae0048516e011fead504b5947925ab8df2e0bccc2c9e36b9550faa3e64e",
+        "909382c958a2ca4efc83f67987354f427a86ff96ad850bb7f260850166322eee",
+        "d112e4041f11f9c9c626a10252c53ba7a5fa3165cea89ab9ffc07a7bfdef7c03",
+        "8346f200d6897039306561da4c4fb6f04485c6abd52808c78ee25418a148e1f4",
+        "c55fbed6086f0fb00cd3dd21bd03099cb833ce487c55f376b43c1d14d1e879a3",
+        "c0ea41e21dd4ab3cbe1abc83ad9621c93e3139793e0cd1e7c1d985284b559b86",
+        "e2e4a41476dc231e2826bf60ace35dab58b8ae63cb04bedc71e4207d39c3c208",
+        "489dd672af0415dbcfbf8d2cd7395b7d44109701ca97d99705f20eb6e13811bd"
+      ],
+      "payload_sha256": "0127f46f0cfbc0af27ec2577541785132479eef9bdad21fbe48e13c9f38d8a2e",
+      "raw": "forward 75 cm, turn right 15 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 2815,
+        "total_tokens": 2833,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "4",
+      "step": 0,
+      "repeat": 1,
+      "request_s": 0.8092477079480886,
+      "image_sha256": [
+        "a74065d177c9100a4aa45abdc562d15d6e19dc4c41740b66232a8b1543372604",
+        "a74065d177c9100a4aa45abdc562d15d6e19dc4c41740b66232a8b1543372604"
+      ],
+      "payload_sha256": "6f5e0aaaf2e63f8efed20bee6eab57cf93a31c947ab9abaa20cc4d147e41c9f3",
+      "raw": "turn right 30 degree, turn right 15 degree, forward 75 cm",
+      "usage": {
+        "prompt_tokens": 713,
+        "total_tokens": 732,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "4",
+      "step": 23,
+      "repeat": 1,
+      "request_s": 2.3675403979141265,
+      "image_sha256": [
+        "a74065d177c9100a4aa45abdc562d15d6e19dc4c41740b66232a8b1543372604",
+        "c279a732816b6aabf38c750fb265b91d2e9db009bbe1436d66b3450dcfdf74eb",
+        "134e048929ce38236b95a1e08c8a8fa6c2c80372a18907616fe23cdb1ab51d28",
+        "00a0d5d8e0737cca40c747da98ce6131184b435cceedd5221135212b9c1d896a",
+        "676b17cc38552e164ab90977f0c3cd4299bd4b70844c97ed3ea62c5ecd4b4cc8",
+        "47ab4f82784b9387df3d7b727b920b0ceaac68a9cdf83e5613a02cdf266ccceb",
+        "edf8016f43acc88676766c567aa5dbad08cb39b55420ab9e167cdfc26a7ad215",
+        "eddc8b49df77ea0a6860bece25321a97e56fc55d9d15e0753134cbd19ec52089",
+        "e22ee0de5cde79edf32311cb2283f1e58ebb3cc9fe483852802ad06b5d5a8d70"
+      ],
+      "payload_sha256": "87b60110a0a84739fdda9c1d8eefdb6c8049cfa65beea67e8529b8bfd4952db4",
+      "raw": "forward 25 cm, turn right 30 degree, turn right 15 degree",
+      "usage": {
+        "prompt_tokens": 2827,
+        "total_tokens": 2846,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "4",
+      "step": 55,
+      "repeat": 1,
+      "request_s": 2.3321727830916643,
+      "image_sha256": [
+        "a74065d177c9100a4aa45abdc562d15d6e19dc4c41740b66232a8b1543372604",
+        "24bf278444117cda15501849967550596425607a7f7c7db3488bb29dd843916d",
+        "0abaea649d4cefe26b62f3116e7b196bb28c65e967dec9e85b6d7eda3c60e92e",
+        "e22ee0de5cde79edf32311cb2283f1e58ebb3cc9fe483852802ad06b5d5a8d70",
+        "022b2dfb8cbef5ab6e8fa905cf81b47d03355ab580d43c37104509abbfb8c472",
+        "a76c7f9c3eeb6a28d3319fe2825d5351eb42421cad2bbb7068717fdc77ef17d7",
+        "ac294e5a7757c78a681ca9937d2eb0a875482fd5546e49cb3a9ab417eb31ac55",
+        "6a1a2d3ff62e7d5a06dca718ee1353fec2f76c15923c236c239b32f9994832a4",
+        "dfa00d55cdced0984ac6579afb622e0bb2c1f374903fc027eddf361fa9137b96"
+      ],
+      "payload_sha256": "0ccddc51a8eaaa38510ee93595ed958a5dea845665f3a6aaae0fe1b101fc5385",
+      "raw": "turn right 45 degree, turn right 15 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 2827,
+        "total_tokens": 2846,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "4",
+      "step": 84,
+      "repeat": 1,
+      "request_s": 2.2572226161137223,
+      "image_sha256": [
+        "a74065d177c9100a4aa45abdc562d15d6e19dc4c41740b66232a8b1543372604",
+        "1207a94475d12400cf48f77e3c232a9a4089e91ebb7ca84e62674ad0261a9127",
+        "d4a457badeb6567f70096c5d0ece2149e22cf07723bc6542ec2ca222ddd3eb19",
+        "ee3bab79ba6124dd0a7c3887fb6fd132bcaaed3fc2c013c297f88a0afcfed92a",
+        "bee7d52b5c86035344b93c0dfb0224f293fa20e74e7742fd31cfab281f7654c7",
+        "d6a84cc6df8393a21131aa6577dde4046cfa32daca7d252f3b8de8ea6a6704cd",
+        "9f71287e9f50298803964e1143372f269eea1c6813a282bb199dc08616828244",
+        "a7ca75c2ec50b92e25dff27c2890f67ee55290d64713cc6174176dbff3392d3e",
+        "9c668567726c1ef26a6f7cccf51794707628c25606a8349ce615b3a2919c5422"
+      ],
+      "payload_sha256": "b70331141f7703521152fa27f2c8e2a39e24d1772d79c4a688f00a69e19431af",
+      "raw": "forward 25 cm, turn left 30 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 2827,
+        "total_tokens": 2845,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "22",
+      "step": 0,
+      "repeat": 1,
+      "request_s": 0.8146504978649318,
+      "image_sha256": [
+        "eda8f1b0df813310de0ddecc9be60f99aae43494775328251f993648012f96ee",
+        "eda8f1b0df813310de0ddecc9be60f99aae43494775328251f993648012f96ee"
+      ],
+      "payload_sha256": "5a5a69f3c3f5ffb4058c9ec178609d0da89ceb4e8b1d7dc5543d5696cee5ca1c",
+      "raw": "turn left 45 degree, turn left 45 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 737,
+        "total_tokens": 756,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "22",
+      "step": 12,
+      "repeat": 1,
+      "request_s": 2.305011497111991,
+      "image_sha256": [
+        "eda8f1b0df813310de0ddecc9be60f99aae43494775328251f993648012f96ee",
+        "034e38bceadd46321167e95226be6ddb00444e6a2c2216517d23b9474c5637b9",
+        "c9780c9e4ec22e3410014822b297bd1786107fa63d9c66ff08aa8f281d3f8b97",
+        "41896157cda2e198af63c0a4439701eb18a4bd23044727767e2809a1b3eb8568",
+        "21d63a5ead3076ffead607747017ae37b6962897d24d744ce900534a848c5101",
+        "5479eebc362b11378a7d1e4ab1a9d7d837ed4779b60f5854c1689ad934c19401",
+        "30a417660f768896f654e86df1867747bab209f9dd8b3e5f199f17c700578e05",
+        "96dbf72f24c9538374dfcdc134a1a4105e36426d77deb9377645ce0a2da38883",
+        "707961d0d0aa9d9e8cc3b92213dc2d1b28301170524364a9b422ea005bd29002"
+      ],
+      "payload_sha256": "4ac5b263ac0c1f9cf48d8f32d55f7ddcd231ce0b297152cea67dcf2cd8eab89d",
+      "raw": "forward 50 cm, forward 25 cm, turn right 15 degree",
+      "usage": {
+        "prompt_tokens": 2851,
+        "total_tokens": 2869,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "22",
+      "step": 32,
+      "repeat": 1,
+      "request_s": 2.283490741858259,
+      "image_sha256": [
+        "eda8f1b0df813310de0ddecc9be60f99aae43494775328251f993648012f96ee",
+        "36ccf43c63966f433d780ef80d73008f3dc1fa70a9633228e5f7e9f0adcf8dbe",
+        "30a417660f768896f654e86df1867747bab209f9dd8b3e5f199f17c700578e05",
+        "c70d24bfe536b976e52c6b3151cda2f4320a969b342e99f6235f4e72a75ae26b",
+        "0ab53fa78471c9b441507821dc3b545de8153b53c26c0487197b9b29145eec07",
+        "068065792faf051f9f2e47008ebaab7945004eb4975c61f379d70cefd4791f99",
+        "021235e04cfbe9017b074d50c3fe956a7cbf5a7a962fae80d7476b5c81202343",
+        "26bdd22775004c773d4cb7a24b0c2b65f396f58ddd0beb612592b7e3e88cddb4",
+        "393a82d5a33c2a0c0a0edf67c10b6d730acaa37beda12ec2d312bd5cedb967cb"
+      ],
+      "payload_sha256": "e3cfac444c4c31d67e3a6f8479dc9ffb829f072eb48e34cc01d910c362ebf071",
+      "raw": "forward 75 cm, turn right 15 degree, forward 50 cm",
+      "usage": {
+        "prompt_tokens": 2851,
+        "total_tokens": 2869,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "22",
+      "step": 46,
+      "repeat": 1,
+      "request_s": 2.301645731087774,
+      "image_sha256": [
+        "eda8f1b0df813310de0ddecc9be60f99aae43494775328251f993648012f96ee",
+        "21d63a5ead3076ffead607747017ae37b6962897d24d744ce900534a848c5101",
+        "c70d24bfe536b976e52c6b3151cda2f4320a969b342e99f6235f4e72a75ae26b",
+        "7e14a1b783cef62c89b7ca9207812503615a6b3ec982d000e4c277db355356e7",
+        "47e201d923fba438635c393ed4e7de9a2cd7bd66daddddc8933cc9431378c8a4",
+        "393a82d5a33c2a0c0a0edf67c10b6d730acaa37beda12ec2d312bd5cedb967cb",
+        "707cd7fef02c68e5351100839fafbff13523949404eea2bb7c6c3940878b101d",
+        "83eb84dc7a62d1fb7df67a785addfb8dabceec517f6e8fe7c784e5545d22e2c8",
+        "c5fd031df996508fd10d5a6f4f909a2acf444c761875a181b52f76ee63353ba3"
+      ],
+      "payload_sha256": "926b70a5dcc699c3dfc21f48d67effae946431826321258c49adbee06608a3be",
+      "raw": "forward 50 cm, turn left 15 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 2851,
+        "total_tokens": 2869,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "46",
+      "step": 0,
+      "repeat": 1,
+      "request_s": 0.8078715249430388,
+      "image_sha256": [
+        "2fab45218b24ab1ef882ce5bbd0df86f5498eafd1491179dda638619540914ce",
+        "2fab45218b24ab1ef882ce5bbd0df86f5498eafd1491179dda638619540914ce"
+      ],
+      "payload_sha256": "ec7180bf9e1f8b228a763a7bffd24b98287b382686ff8e7f648eaf77db881f82",
+      "raw": "turn left 45 degree, turn left 45 degree, forward 50 cm",
+      "usage": {
+        "prompt_tokens": 755,
+        "total_tokens": 774,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "46",
+      "step": 115,
+      "repeat": 1,
+      "request_s": 2.2881372198462486,
+      "image_sha256": [
+        "2fab45218b24ab1ef882ce5bbd0df86f5498eafd1491179dda638619540914ce",
+        "1a67c717c89565c23521ddc0b34adee73bf75f51c19580b5019de75286e63fc9",
+        "7a692a9510cbf0a159892a0bdb7abb5cca904d619807017e210fa01cfbdba6d5",
+        "068406d2accca7e78e62a7753a38bce066833ae1fe80f0eea7e54ec2061d59a7",
+        "551380129e393b91bc813cce4e65fb15a9a9f29d208bd9a8c6ba23aa4fa44e9e",
+        "4689a5e8200a1ee1053a627ad7b27c15916d6be7f9c3dbf918d7e3ca6c8aa10a",
+        "6210c496dddc4129787bd83173fae9a0ae8ebc2fabc6b70ec5c5425cb8f6f9c7",
+        "6e82baf5105ab74d62b19c28dec717f19649f0e914e9d1dbd17fef52a8c5d56b",
+        "94211c4fb7e92a13802d00b38e6ffe81b839289a133fcd9c5435452740c429b5"
+      ],
+      "payload_sha256": "a7a9e37e1d6813d81a58ebf22f97a823956422daa5e90defa019c80a8ef77d09",
+      "raw": "turn left 30 degree, turn left 15 degree, forward 25 cm",
+      "usage": {
+        "prompt_tokens": 2869,
+        "total_tokens": 2888,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "46",
+      "step": 211,
+      "repeat": 1,
+      "request_s": 2.3598996168002486,
+      "image_sha256": [
+        "166a660393027464c22bce1079f9dbbc51cda319a4c3f13440e956582ab15367",
+        "9fc69310ea8da1e4a591892d7f9458d0645c2aace48d892f3b1bab736aa9c842",
+        "50e1f6b19fb745651afc6888cab390064fe4fbe0d1634d12258e8ae11aa550b6",
+        "068406d2accca7e78e62a7753a38bce066833ae1fe80f0eea7e54ec2061d59a7",
+        "45293163859aad5bcb0f0e4a32c304d20b27b10bbf1c0cdc6cac2622d6224af7",
+        "1f9d16edc82c1e4918a5b4b6c083ee0244c5fe956e97c5afdab6e90d1f35886b",
+        "99ac0aae2c7f1b8139e5f772083d8ae992bff735028a00d256d00207daacb435",
+        "c3cc24bc3958d30d9310ba6e45f80150c3e3121fe4754dc2a5205838537d564e",
+        "1dd9a8eb3f7a89845629c6f0915dd3c8727a438bfdda7eecbcb4296e8771f5a2"
+      ],
+      "payload_sha256": "d55aeb85e2ffa86bdb3428ec59cee36b1253de83eda603e0078396a6d8ca841e",
+      "raw": "turn right 15 degree, forward 25 cm, turn right 15 degree",
+      "usage": {
+        "prompt_tokens": 2869,
+        "total_tokens": 2888,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "46",
+      "step": 314,
+      "repeat": 1,
+      "request_s": 1.9452191351447254,
+      "image_sha256": [
+        "94211c4fb7e92a13802d00b38e6ffe81b839289a133fcd9c5435452740c429b5",
+        "476caae0fe30d00b8212603d6a97fdef54935b6a7d2c3314a3eb5312486e2f62",
+        "f0701d5e56a1794590a32975e3d981ccd80ae95d07bfaefd3687e44f80d31cdc",
+        "a3258cf68715413b86b52119370b8a4852f628d72c50976924b7ecd447415c93",
+        "b4ff0ac2a137ad7227d3bb4a69fb7d13e949436288e4a6fffa0c29fe15b733ee",
+        "6fcaefd3623b5c1612d81e24d241a6597f8de27865c6cbaefd5e0e38dd1ff983",
+        "3770dd77d5581e334e91773e8f3d5de912fd62f114504eff697fc16f936f577c",
+        "dfb931cf8cb7b76e2bae1f862da58abab15eb994cb90cf7dbc6aead832940474",
+        "d5e9987ab7d2adc245b6765295d7fc5f201f1a7f90645f8582505f34270de5b9"
+      ],
+      "payload_sha256": "0466e329b4d500cd22b3b44284d8fcc38b6498da1b4afc680b6dab33a06e3d6e",
+      "raw": "stop",
+      "usage": {
+        "prompt_tokens": 2869,
+        "total_tokens": 2870,
+        "completion_tokens": 1
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "112",
+      "step": 0,
+      "repeat": 1,
+      "request_s": 0.8915103790350258,
+      "image_sha256": [
+        "d9ee7e5acb7a02a4127c62fa911f9b4696d56219355bbd4ca753fba4ec1e0327",
+        "d9ee7e5acb7a02a4127c62fa911f9b4696d56219355bbd4ca753fba4ec1e0327"
+      ],
+      "payload_sha256": "98be826dc931c96b939b33e69e8d5422db3d9521464fd5631d189804d88d8d0a",
+      "raw": "turn left 45 degree, turn left 15 degree, forward 75 cm",
+      "usage": {
+        "prompt_tokens": 714,
+        "total_tokens": 733,
+        "completion_tokens": 19
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "112",
+      "step": 26,
+      "repeat": 1,
+      "request_s": 2.3317983800079674,
+      "image_sha256": [
+        "d9ee7e5acb7a02a4127c62fa911f9b4696d56219355bbd4ca753fba4ec1e0327",
+        "5bec458a033d990ef501bbe2a78c072d8da33b1e7c560c1a2c99dd2ea8e57ce3",
+        "ca825e07b10b12439b5e24735a72386337b57abcff1fb78366e29975b18e8657",
+        "b72a2720f39e0304d5bf9265da28eddec5510201b694abe31c9173ca66e3b66a",
+        "d65b03888884753db88f6326d6fbad736dd0e20cf527dcef961cc390c704a90d",
+        "73e1cdb33e6468733efca5f34973668cbd4270c5f73e806072baf4f63f45d3f6",
+        "af3ec5820bb6729dc266eee7985d0d56027a70e5f40eb5a1a77cf82ca525ee0b",
+        "345a02bb940e8eae607c135ae39f10b2b0c95b6da6966cc64716f73af16baf0a",
+        "1379ff93851e53bdebb122ae256663e3963bc84e8656ae69363ef3454eb0b8f0"
+      ],
+      "payload_sha256": "99aee4f9e6d11540bc90f4cbf1909d3ec532842d5dbddc979a9aa603bc9eecdf",
+      "raw": "forward 75 cm, turn right 15 degree, forward 50 cm",
+      "usage": {
+        "prompt_tokens": 2828,
+        "total_tokens": 2846,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "112",
+      "step": 45,
+      "repeat": 1,
+      "request_s": 2.305109170032665,
+      "image_sha256": [
+        "d9ee7e5acb7a02a4127c62fa911f9b4696d56219355bbd4ca753fba4ec1e0327",
+        "b31cdebf3f7e16b37a34cdef507d7cb09a0f5a556a1b297adc027203069823e0",
+        "e1637ba41aa55af37cc3c52d69fcc2967ef85d2655b27eea252bb4dc9611309b",
+        "24a1b658d02a3dc7476fe7292090c5d6946f353fe3247bda2f7ccb2e25c26d2c",
+        "345a02bb940e8eae607c135ae39f10b2b0c95b6da6966cc64716f73af16baf0a",
+        "eb4d64914d8916742ca84681d4bbab189444c46753446b85f6a267f1dcd4f69f",
+        "530d84d068e61c33ba0139a4dd50a7a96563359b9698cab022a01782d0ec65fa",
+        "c2b81aae6135669a693803cf90fe64a12c0512deed39f96a837d95595ad14c5f",
+        "a6e75a70650d7cd27e4e11ddcb9deca670dd1fa494382ea92da606f85ccddb16"
+      ],
+      "payload_sha256": "b86d38e5a05254f7b1486736f11e92c17b216081434ea63a2dab7e2e60d35398",
+      "raw": "forward 75 cm, turn right 15 degree, forward 50 cm",
+      "usage": {
+        "prompt_tokens": 2828,
+        "total_tokens": 2846,
+        "completion_tokens": 18
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "episode_id": "112",
+      "step": 66,
+      "repeat": 1,
+      "request_s": 2.1957663849461824,
+      "image_sha256": [
+        "d9ee7e5acb7a02a4127c62fa911f9b4696d56219355bbd4ca753fba4ec1e0327",
+        "9091d7b36094acd2130d7fdae19f5947d19e59ce8b22eac1f4eb06127f8b3105",
+        "24a1b658d02a3dc7476fe7292090c5d6946f353fe3247bda2f7ccb2e25c26d2c",
+        "9bbcd081e9d017d3a15c3dd89614d89c7abd86efc041a12dd4ece0d92d738892",
+        "c19e985f26061f667d1c9944699ffb631e41d09b4d928536772cb1c5b968c225",
+        "c625a313f1645053903909a49d869752a1c86018beac89d9750c1cc6f6ce7537",
+        "13285850985a67978836cbefc3cb1b8ff20ad66bf2360b113e4770bce3ad8b84",
+        "7e916e821e61aa85c0fdd65c2c47930132cd49b46bde4f111523f082ff65590a",
+        "6dce5961dee8b8a550e13278ced3164a395e33bdeb611337d37323a7776585c5"
+      ],
+      "payload_sha256": "3e545981e243ecc9912c46ac9a9724b8f1932443f3f3eee4a10df6697310a47f",
+      "raw": "forward 25 cm, stop",
+      "usage": {
+        "prompt_tokens": 2828,
+        "total_tokens": 2835,
+        "completion_tokens": 7
+      },
+      "finish_reason": "stop"
+    }
+  ]
+}

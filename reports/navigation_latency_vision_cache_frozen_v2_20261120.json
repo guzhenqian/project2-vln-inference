@@ -1,0 +1,94 @@
+{
+  "status": "v2_source_frozen_pending_root_scheduled_strict_smoke",
+  "date": "2026-11-20",
+  "scope": "Independent CPU visual-feature cache candidate; frozen native sources and measured runs untouched",
+  "sources_sha256": {
+    "checks/navigation_latency_vision_cpu_cache_v2_20261120.py": "0d158240215b5829f7a19c6397961592bb5419f05af3a559e9fdf76d8aea3f18",
+    "checks/navigation_latency_vision_cpu_cache_module_map_v2_20261120.py": "3aea91dac5532bfbf39200bf17a593790d880405ea12d5b18d86488c867b5c85",
+    "checks/serve_navigation_latency_vision_cache_v2_20261120.py": "184f0a2690b3b63f06c4cf278746672c36134f16c8c1705608285984d6604c25",
+    "checks/run_navigation_latency_vision_cache_replay_v2_20261120.py": "efe2aa651686151434904fd355c165533caa635899f8263d0aac53ebc9cdbb60",
+    "checks/probe_navigation_latency_vision_cache_static_v2_20261120.py": "7b615db4490610bcd6af1cb695d08eb703f6760fb8d05bc9dd8660ab862ddae6"
+  },
+  "static_qa": "reports/navigation_latency_vision_cache_v2_static_20261120.json",
+  "execution_performed": {
+    "real_torch_or_lmdeploy_import": false,
+    "GPU": false,
+    "image_decode": false,
+    "large_weight_read": false,
+    "actual_service": false
+  },
+  "environment": {
+    "PROJECT2_LATENCY_EXECUTOR": "uni",
+    "PROJECT2_LATENCY_PREFILL_INTERVAL": "2",
+    "PROJECT2_LATENCY_INPROCESS": "1",
+    "PROJECT2_LATENCY_VISION_CACHE": "off|cpu",
+    "PROJECT2_LATENCY_VISION_CACHE_CAPACITY": "96|200",
+    "PROJECT2_LATENCY_VISION_CACHE_VALIDATE": "1"
+  },
+  "key": "Actual decoded RGB SHA+mode+dimensions, complete image-processor config/effective resize and guarded source SHA, actual native grid, whole-checkpoint/config SHA and dtype; no client-supplied identity trusted",
+  "storage": "CPU pageable four tensors per image: main plus all three DeepStack features. Blocking D2H/H2D, hash/assembly/copy inside HTTP time. No GPU resident cache.",
+  "layout": "Preserve full visual tokens, original image slots including duplicates, full language/mRoPE, original FP16 KV. Distinct misses run in one native visual batch, with rawpatch/pos/cos/sin identically selected and cumulative lengths rebuilt without leading zero.",
+  "numeric": "Only indices0/1 with exact natural input_warmup spec and actual input SHA receipt. Compare original visual vs candidate and all-hit CPU roundtrip. Index1 also fixed distinct-miss masks1/3/4/8 when at least one hit remains. All4 arrays require metadata,finite,distinct storage,torch equal and uint8 byte equality. Record errors and stop on any failure. Extra language forwards0; formal requests never compare/recompute.",
+  "reset": "Each full-history episode first request physically clears LRU before lookup and writes plan/index/generation/entries/bytes receipt. First formal request discards excluded warmup contents. Smoke has no historical episodes and no reset claims.",
+  "receipts": [
+    "vision_cache_model_install.json",
+    "vision_cache_processor_<pid>_<processorSHA>.json",
+    "vision_cache_numeric_0000.json",
+    "vision_cache_numeric_0001.json",
+    "vision_cache_request_<index:04d>.json",
+    "vision_cache_reset_<index:04d>.json"
+  ],
+  "flush": "Host execution receipt is persisted at next prefill; tail request flushes final formal request. All-hit has zero native encoder calls/no vision timer, with separate vision_cache_total host/CUDA interval timer.",
+  "smoke": {
+    "CLI": "/home/guzhenqian/.venvs/project2/bin/python -B checks/run_navigation_latency_vision_cache_replay_v2_20261120.py --replay logs/navigation_latency_20261120/replay_fp16_first6_payloads_v1 --session-config logs/navigation_latency_20261120/sessions_vision_cache_smoke_v2.json --native-reference-config logs/navigation_latency_20261120/sessions_vision_cache_native_reference_v2.json --fixed-study logs/navigation_latency_20261120/system_confirmation_reverse_v1 --output logs/navigation_latency_20261120/vision_cache_smoke_v2 --smoke-only",
+    "scope": "Exactly2 excluded fixed warmups+tail; zero historical payload loads/requests. status smoke_only, no_latency_claim/no_quality_claim, complete_replay_evidence=False"
+  },
+  "full_replay": {
+    "CLI_change": "NOT AUTHORIZED now; only after root separately accepts v2 strict smoke and schedules full cache replay with new v2 replay config/fresh directory",
+    "requests": 343,
+    "episodes": [
+      "1250",
+      "159",
+      "1413",
+      "558",
+      "1123",
+      "384"
+    ],
+    "sequence_repetitions": 1,
+    "artificial_idle_s": 0,
+    "output_feedback": false,
+    "forced_tokens": 18
+  },
+  "limitations": [
+    "Fake tensor QA is Python layout/control flow only, not real numerical evidence.",
+    "Two warmups and selected masks do not establish all343 real requests bitwise; same-weight off/on all343 token gate plus subset20 quality required before claims.",
+    "CPU SHA/D2H/H2D may erase the approximately138ms nine-image vision opportunity. No benefit is predicted.",
+    "Capacity96/200 distinct-image cache retains roughly562.5/1171.875MiB host feature payload at300merged rows per image; allocator/bookkeeping/RGB buffers extra.",
+    "Independent cache-aware paired audit still required; frozen native auditor intentionally rejects the distinct cache module-map filename."
+  ],
+  "source_frozen": true,
+  "supersedes_source_hashes_in": null,
+  "config_files_sha256": {
+    "logs/navigation_latency_20261120/sessions_vision_cache_native_reference_v2.json": "ef0c7a48da9ed26a69912811396b23d4567f610643e6a5207f1983ffcf45d014",
+    "logs/navigation_latency_20261120/sessions_vision_cache_smoke_v2.json": "8b5c3d3d81ec2afa2f37002557f5a36808ff7cf1243eaa582c991adb44c4f09b",
+    "logs/navigation_latency_20261120/sessions_vision_cache_replay_v2.json": "565ab4d05adac042cb7cdf1e8ac56946a0708f87b82a579ffd57a3aea12ba288"
+  },
+  "static_review": {
+    "benchmark_agent": "Independent v2 helper/diff/source-routing review found no blocker; runtime only receipt helper changed; no runtime imports/GPU performed.",
+    "fixtures": "25 stdlib/AST/fake checks; real old helper reproduces duplicate-key bug, real new helper writes exact processor payload; guard/patch/mode conflicts reject before file creation."
+  },
+  "extra_audit_requirements": "Bind original native launch/config SHA; numeric auditor independently rechecks all4 fields rather than summary passed. Initial/all-hit/partial native calls must equal bool(misses), fixed partial masks and slots/distinct hits recomputed.",
+  "stop_on_smoke_failure": "Retain v2 logs and exact errors; stop. Never start343 or relax numerical thresholds automatically.",
+  "previous_version": "reports/navigation_latency_vision_cache_frozen_20261120.json",
+  "previous_sources_preserved_and_reverified": true,
+  "source_change": "Only runtime write_receipt: identical envelope metadata merges, conflicting claims reject before file creation. New entry/map/runner filenames route and bind v2. No cache/numeric-policy change.",
+  "v1_failure": {
+    "run": "logs/navigation_latency_20261120/vision_cache_smoke_v1",
+    "phase": "First excluded request preprocessing, before numerical gate",
+    "error": "TypeError: dict() got multiple values for keyword argument guarded_source_sha256",
+    "numeric_validation_executed": false,
+    "numeric_validation_failed": false,
+    "is_engineering_receipt_bug": true,
+    "logs_and_sources_preserved": true
+  }
+}

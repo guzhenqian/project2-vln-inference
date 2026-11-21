@@ -1,0 +1,89 @@
+{
+  "status": "static_tools_prepared_runner_not_executed",
+  "source_sha256": {
+    "checks/prepare_navigation_latency_replay_20261120.py": "20d68b8c8fd4b60713a137e5beb209aa4e790014cdae711892242991f10aa41d",
+    "checks/run_navigation_latency_replay_20261120.py": "33fd6143823ad5dcf5ff7a99d22b11f43a38d3ca706a48e1e91bf5af47643bb8"
+  },
+  "selection": {
+    "source": "accepted FP16 original100 first six in original order",
+    "episodes": [
+      "1250",
+      "159",
+      "1413",
+      "558",
+      "1123",
+      "384"
+    ],
+    "model_calls": [
+      128,
+      14,
+      16,
+      156,
+      17,
+      12
+    ],
+    "total_calls": 343,
+    "primitive_png_frames": 1010,
+    "latency_or_outcome_selection": false
+  },
+  "prepare": {
+    "entry": "checks/prepare_navigation_latency_replay_20261120.py",
+    "environment": "Original scripts/run_habitat_task_python.sh Python3.6.15/imageio2.9/Pillow8.3.2; not project2Python3.12 lacking imageio",
+    "metadata_check_by_this_agent": "Passed through original wrapper:14 source pins,343 calls,1010 steps; no PNG reads/decodes",
+    "actual_preparation": "Root reported completed with exact original JPEG SHA/text equality for all343 calls; this agent did not execute preparation",
+    "prepared_directory": "logs/navigation_latency_20261120/replay_fp16_first6_payloads_v1",
+    "prepared_manifest_sha256": "cadeab61f5eb8e973fefa1a7c94272464a0b86030b550c9c1226a626df10ce12",
+    "loaders": "Project2Python3.12 stdlib manifest/payload loading; no PNG reads/decode"
+  },
+  "runner": {
+    "entry": "checks/run_navigation_latency_replay_20261120.py",
+    "environment": "Project2 WSL Python3.12",
+    "prerequisite": "Complete same-source, same-engine, four-cell nonstream fixed-study audit with >=10 repeats",
+    "sequence": "Two excluded natural inputSHA warmups, all343 real-history requests once in frozen order, one excluded final flush",
+    "generation": "18 greedy tokens, seed7, top_p1, top_k1, min_new_tokens18, ignore_eosTrue, nonstream, return_token_idsTrue",
+    "same_input_contract": "Canonical model-normalized payloads frozen offline; only model field substituted before GPU service startup",
+    "timed_loop": "Already encoded bodies; serial localhost HTTP, buffered responseJSONL; no explicit idle/image work/source hashing/stage audit",
+    "measurements": [
+      "raw response and response bytes SHA",
+      "token IDs/output SHA",
+      "per-request HTTP time",
+      "actual prompt count",
+      "original JPEG/payload identity",
+      "prefill vision/language/model timers",
+      "actual decode forwards and CUDA graph modes",
+      "observed inter-request client gaps"
+    ],
+    "episode_boundaries": "Recorded; no cache exists or reset is performed",
+    "input_tensor_sha_scope": "Only two excluded warmups; active NavigationRepairModel override suppresses all later per-length hashing",
+    "first_seen_length_scope": "Descriptive input novelty grouping only; no added hash-cost attribution",
+    "not_navigation_SR": true,
+    "outputs_feedback": false,
+    "vision_cache": false,
+    "prefix_KV_cache": false,
+    "comparison_scope": "Only same frozen full replay/no-idle counterpart; never pool with fixed1s-idle HTTP results"
+  },
+  "static_checks": [
+    "Both source files parse as AST",
+    "Replay HTTP helper has no sleep",
+    "Runner has no torch import",
+    "Benchmark agent read-only review found no blocking helper/API mismatch",
+    "Native/Wide frozen table config/source/selection and execution receipts bound",
+    "QMAX first-grid receipts bound to exact plan and actual prefill; numeric limited0/1",
+    "Exactly two warmup tensorSHA files required; no343-request tensorSHA claim"
+  ],
+  "correction": {
+    "superseded_claim": "Earlier base-class-only reading suggested hashes for each new prompt length",
+    "correct_evidence": "checks/navigation_repair_runtime.py:45-50 override pre-populates _fix_seen_inputs after first two smokes; repair_execution_audit.input_sha_scope explicitly confirms this",
+    "effect": "No new length tensor-hash cost in formal replay; all earlier messages making that attribution are superseded"
+  },
+  "pending": [
+    "Root runs runner --check-only in idle window; wide evidence audit may mmap packed checkpoint",
+    "Root chooses compatible completed fixed studies/session configuration",
+    "Root owns any GPU execution; none started by this agent"
+  ],
+  "example_commands": [
+    "bash scripts/run_habitat_task_python.sh -u checks/prepare_navigation_latency_replay_20261120.py --prepare-only --output <fresh replay directory>",
+    "/home/guzhenqian/.venvs/project2/bin/python -B checks/run_navigation_latency_replay_20261120.py --replay logs/navigation_latency_20261120/replay_fp16_first6_payloads_v1 --session-config <sessions.json> --fixed-study <completed fixed-study directories> --check-only",
+    "/home/guzhenqian/.venvs/project2/bin/python -B checks/run_navigation_latency_replay_20261120.py --replay logs/navigation_latency_20261120/replay_fp16_first6_payloads_v1 --session-config <sessions.json> --fixed-study <completed fixed-study directories> --output <fresh logs run directory>"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "created_utc": "2026-11-20T13:35:22.911490+00:00",
+  "status": "prepared_not_run",
+  "configuration": {
+    "path": "logs/navigation_latency_20261120/hybrid_full4_session_config_v1.json",
+    "sha256": "102f69db3cce6a75d3887f28055344fbb4bb5c4dad4b031c1ffb3fb4edf70478",
+    "session_labels": [
+      "fp16_inprocess2",
+      "awq_native2",
+      "awq_wide_all2",
+      "awq_hybrid2"
+    ]
+  },
+  "protocol": {
+    "cells": [
+      "0_18",
+      "0_64",
+      "1_18",
+      "1_64"
+    ],
+    "warmups": 2,
+    "measured_repeats": 10,
+    "http_mode": "nonstream",
+    "idle_seconds": 1.0,
+    "executor": "uni",
+    "inprocess": true,
+    "prefill_interval": 2,
+    "qmax": false
+  },
+  "service_source_evidence": {
+    "primary_entry_sha256": "01c1111d1954d1eec38918f415ce0b81b455f4d8117b9f43b9d602a8e4c88345",
+    "active_kernel_screen_snapshot_sha256": "01c1111d1954d1eec38918f415ce0b81b455f4d8117b9f43b9d602a8e4c88345",
+    "primary_exact_same_source_version": true,
+    "hybrid_entry_sha256": "6954644a540ad6c63de0aa803507ffeca0487f4b853afec65d5e8e6ae0149ac8",
+    "normalized_ast_calls_identical": {
+      "PytorchEngineConfig": true,
+      "VisionConfig": true,
+      "serve": true
+    },
+    "scope": "Primary FP16/native/wide use exactly the current kernel-screen service bytes. New hybrid entry preserves the same engine and server call AST; its module map, proof-binding, source inventory and candidate scope differ deliberately. This is source-level parity, not runtime proof."
+  },
+  "comparison_plan": [
+    "FP16 vs AWQ native: matched execution quantization baseline.",
+    "AWQ native vs wide-all: only wide launch implementation changes; require same-weight token equality across all four cells.",
+    "Wide-all vs hybrid: only M1 down36 routes change to GEMV;108 decode routes and all measured prefills remain wide; same-weight same-engine four-cell output gate required.",
+    "FP16 vs validated hybrid: optimized quantized implementation under matched system configuration; distinguish this from the native quantization result."
+  ],
+  "prerequisites": [
+    "Current wide-all full-model output gate must pass before hybrid startup; otherwise stop or design a separate native-prefill variant.",
+    "New hybrid auditor must verify install/table/source/model identity,144 actual-stride warmups,36/108 graph capture and per-request routes.",
+    "Do not modify frozen primary/wide/qmax/hybrid sources during this study; no qmax combination in this configuration."
+  ],
+  "invocation": [
+    "python",
+    "-B",
+    "-u",
+    "checks/run_navigation_latency_study_20261120.py",
+    "--output",
+    "logs/navigation_latency_20261120/hybrid_full4_v1",
+    "--session-config",
+    "logs/navigation_latency_20261120/hybrid_full4_session_config_v1.json",
+    "--http-mode",
+    "nonstream",
+    "--cells",
+    "0_18",
+    "0_64",
+    "1_18",
+    "1_64",
+    "--warmups",
+    "2",
+    "--repeats",
+    "10",
+    "--idle-seconds",
+    "1"
+  ],
+  "root_controls": "Root selects a free base port and launches only after active GPU work and required gates complete."
+}

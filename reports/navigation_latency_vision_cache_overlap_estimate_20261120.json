@@ -1,0 +1,134 @@
+{
+  "scope": "Offline JPEG-SHA identity reuse estimate; not observed RGB-cache execution, numerical correctness, or speed evidence",
+  "manifest_sha256": "cadeab61f5eb8e973fefa1a7c94272464a0b86030b550c9c1226a626df10ce12",
+  "reset": "before every episode",
+  "request_count": 343,
+  "capacities": [
+    {
+      "capacity": 96,
+      "totals": {
+        "requests": 343,
+        "slots": 3020,
+        "historical_hit_slots": 1541,
+        "distinct_misses": 1471,
+        "duplicate_miss_slots": 8,
+        "all_hit_requests": 0
+      },
+      "historical_hit_slot_fraction": 0.5102649006622516,
+      "encoder_image_count_reduction_estimate": 0.5129139072847682,
+      "per_episode": {
+        "1250": {
+          "requests": 128,
+          "slots": 1140,
+          "historical_hit_slots": 511,
+          "distinct_misses": 628,
+          "duplicate_miss_slots": 1,
+          "all_hit_requests": 0
+        },
+        "159": {
+          "requests": 14,
+          "slots": 113,
+          "historical_hit_slots": 67,
+          "distinct_misses": 45,
+          "duplicate_miss_slots": 1,
+          "all_hit_requests": 0
+        },
+        "1413": {
+          "requests": 16,
+          "slots": 129,
+          "historical_hit_slots": 83,
+          "distinct_misses": 45,
+          "duplicate_miss_slots": 1,
+          "all_hit_requests": 0
+        },
+        "558": {
+          "requests": 156,
+          "slots": 1395,
+          "historical_hit_slots": 730,
+          "distinct_misses": 662,
+          "duplicate_miss_slots": 3,
+          "all_hit_requests": 0
+        },
+        "1123": {
+          "requests": 17,
+          "slots": 144,
+          "historical_hit_slots": 92,
+          "distinct_misses": 51,
+          "duplicate_miss_slots": 1,
+          "all_hit_requests": 0
+        },
+        "384": {
+          "requests": 12,
+          "slots": 99,
+          "historical_hit_slots": 58,
+          "distinct_misses": 40,
+          "duplicate_miss_slots": 1,
+          "all_hit_requests": 0
+        }
+      }
+    },
+    {
+      "capacity": 200,
+      "totals": {
+        "requests": 343,
+        "slots": 3020,
+        "historical_hit_slots": 2109,
+        "distinct_misses": 903,
+        "duplicate_miss_slots": 8,
+        "all_hit_requests": 15
+      },
+      "historical_hit_slot_fraction": 0.6983443708609272,
+      "encoder_image_count_reduction_estimate": 0.7009933774834437,
+      "per_episode": {
+        "1250": {
+          "requests": 128,
+          "slots": 1140,
+          "historical_hit_slots": 736,
+          "distinct_misses": 403,
+          "duplicate_miss_slots": 1,
+          "all_hit_requests": 0
+        },
+        "159": {
+          "requests": 14,
+          "slots": 113,
+          "historical_hit_slots": 67,
+          "distinct_misses": 45,
+          "duplicate_miss_slots": 1,
+          "all_hit_requests": 0
+        },
+        "1413": {
+          "requests": 16,
+          "slots": 129,
+          "historical_hit_slots": 83,
+          "distinct_misses": 45,
+          "duplicate_miss_slots": 1,
+          "all_hit_requests": 0
+        },
+        "558": {
+          "requests": 156,
+          "slots": 1395,
+          "historical_hit_slots": 1073,
+          "distinct_misses": 319,
+          "duplicate_miss_slots": 3,
+          "all_hit_requests": 15
+        },
+        "1123": {
+          "requests": 17,
+          "slots": 144,
+          "historical_hit_slots": 92,
+          "distinct_misses": 51,
+          "duplicate_miss_slots": 1,
+          "all_hit_requests": 0
+        },
+        "384": {
+          "requests": 12,
+          "slots": 99,
+          "historical_hit_slots": 58,
+          "distinct_misses": 40,
+          "duplicate_miss_slots": 1,
+          "all_hit_requests": 0
+        }
+      }
+    }
+  ]
+}

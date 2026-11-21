@@ -1,0 +1,6440 @@
+{
+  "updated_local": "2026-11-05T05:42:30.307721+08:00",
+  "controller_state": {
+    "status": "completed",
+    "started_local": "2026-11-04T21:31:41.483894+08:00",
+    "planned_count": 150,
+    "completed_count": 150,
+    "completed_batches": 3,
+    "controller_pid": 72076,
+    "model": "SimpleVLN-Qwen3VL-4B-RL-AWQ-learning-20261104",
+    "reason": "All150 fixed episodes finished",
+    "service_pid": 72077,
+    "service_smoke_passed": true,
+    "current_batch": 3,
+    "batch_started_local": "2026-11-05T02:57:55.481505+08:00",
+    "progress": {
+      "completed_episodes": 49,
+      "current_episode": "1293",
+      "current_step": 47,
+      "last_action": "MOVE_FORWARD",
+      "metrics": {
+        "distance_to_goal": 0.7967512011528015,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      }
+    },
+    "evaluator_pid": 74260,
+    "updated_local": "2026-11-05T05:42:02.412502+08:00",
+    "batch_elapsed_s": 9846.930978656048,
+    "batch_wall_s": [
+      9486.636249894975,
+      10057.409283867106,
+      9861.93504778319
+    ],
+    "finished_local": "2026-11-05T05:42:29.037531+08:00",
+    "owned_service_stopped": true
+  },
+  "planned_count": 150,
+  "completed_episode_count": 150,
+  "completed_batches": [
+    1,
+    2,
+    3
+  ],
+  "incomplete_episodes": [],
+  "episodes": [
+    {
+      "episode_id": "1250",
+      "trajectory_id": "4940",
+      "steps": 400,
+      "start_distance_m": 10.696831703186035,
+      "path_length_m": 34.94509151504062,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 13.77695369720459,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 91,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 350.8416044518817,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 117,
+      "request_latency_s": {
+        "count": 117,
+        "median": 1.9244567109271884,
+        "p95": 2.115624683955684,
+        "mean": 1.8955828552791036,
+        "total": 221.78319406765513
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 82,
+        "later_movement_over_2cm": 89,
+        "longest_blocked_forward_streak": 20,
+        "max_identical_response_count": 13
+      },
+      "steps_sha256": "4919643312fc154b4ec17ecc9cfe7114dee0b42797bbbfb0649b151f7654fd77",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "159",
+      "trajectory_id": "654",
+      "steps": 56,
+      "start_distance_m": 8.955533981323242,
+      "path_length_m": 12.500001202056586,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 3.296217679977417,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 39.90746168186888,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 13,
+      "request_latency_s": {
+        "count": 13,
+        "median": 1.9632984281051904,
+        "p95": 2.1800589465536175,
+        "mean": 1.775062961396403,
+        "total": 23.07581849815324
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "2753cad5a59dcd89321c856937c5218127935647cb9ceb32accbb75f2071266b",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.7462942778840187
+    },
+    {
+      "episode_id": "1413",
+      "trajectory_id": "5601",
+      "steps": 400,
+      "start_distance_m": 7.175664901733398,
+      "path_length_m": 31.59641342989288,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 9.112466812133789,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 12,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 314.4179755169898,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 110,
+      "request_latency_s": {
+        "count": 110,
+        "median": 1.8110872729448602,
+        "p95": 1.8523375731892884,
+        "mean": 1.785601060767658,
+        "total": 196.4161166844424
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 5,
+        "later_movement_over_2cm": 114,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 8
+      },
+      "steps_sha256": "3a830eacd75ae288197ffca25fdbd3be960b20d251da3514e8f1ad88ba698a92",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.7673316924745242
+    },
+    {
+      "episode_id": "558",
+      "trajectory_id": "2258",
+      "steps": 400,
+      "start_distance_m": 7.334458351135254,
+      "path_length_m": 36.19694308540988,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 6.658933162689209,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 35,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 336.66218777606264,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 114,
+      "request_latency_s": {
+        "count": 114,
+        "median": 1.8066596356220543,
+        "p95": 1.8430532534606754,
+        "mean": 1.7898168273662265,
+        "total": 204.03911831974983
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 13,
+        "later_movement_over_2cm": 152,
+        "longest_blocked_forward_streak": 3,
+        "max_identical_response_count": 13
+      },
+      "steps_sha256": "051dc79cf0ea4f0f681bd50f9679c331c0c19b533eeac1f2a2f8388d5161f44d",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1123",
+      "trajectory_id": "4502",
+      "steps": 51,
+      "start_distance_m": 6.461352348327637,
+      "path_length_m": 7.803916193371649,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.1067191362380981,
+        "success": 1.0,
+        "spl": 0.827962806653543,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 36.26641708309762,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.827962806653543,
+      "actual_model_calls": 14,
+      "request_latency_s": {
+        "count": 14,
+        "median": 1.8395741819404066,
+        "p95": 2.0011502780951558,
+        "mean": 1.7426748241996393,
+        "total": 24.39744753879495
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 1
+      },
+      "steps_sha256": "c36a86991937b6118f9014eaca90e2a169945c45bccdc1c418678d131254bd04",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.8585968497919703
+    },
+    {
+      "episode_id": "384",
+      "trajectory_id": "1539",
+      "steps": 50,
+      "start_distance_m": 8.920482635498047,
+      "path_length_m": 5.998962257454953,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 3.9915690422058105,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 42.76966988481581,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 16,
+      "request_latency_s": {
+        "count": 16,
+        "median": 1.7955520779360086,
+        "p95": 2.1704743942827918,
+        "mean": 1.7996435017557815,
+        "total": 28.794296028092504
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 13,
+        "later_movement_over_2cm": 21,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 5
+      },
+      "steps_sha256": "fa4bb464004d949ff3a128e3b4d03e0e66acd459d4fb1d856589f8547c62e111",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1542",
+      "trajectory_id": "6056",
+      "steps": 400,
+      "start_distance_m": 5.721174716949463,
+      "path_length_m": 38.928545278517625,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 4.420753002166748,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 12,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 309.34408301417716,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 106,
+      "request_latency_s": {
+        "count": 106,
+        "median": 1.8154652680968866,
+        "p95": 1.879424316866789,
+        "mean": 1.8058635893273431,
+        "total": 191.42154046869837
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 30,
+        "later_movement_over_2cm": 141,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 6
+      },
+      "steps_sha256": "0a0412b146e9e2d5a759bfa13415e762dff1956aee1781b31155df25ede3a8a2",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.8744496562393043
+    },
+    {
+      "episode_id": "746",
+      "trajectory_id": "3053",
+      "steps": 42,
+      "start_distance_m": 6.387984275817871,
+      "path_length_m": 6.500000375108747,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.45293769240379333,
+        "success": 1.0,
+        "spl": 0.9827667575927831,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 30.879658706951886,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.9827667575927831,
+      "actual_model_calls": 14,
+      "request_latency_s": {
+        "count": 14,
+        "median": 1.788965740473941,
+        "p95": 1.83302534352988,
+        "mean": 1.652896149848987,
+        "total": 23.140546097885817
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 6
+      },
+      "steps_sha256": "ed32ae416df4c19d88a1be1973fd22a0129648f1da3272b4734f71b23eb96534",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "1444",
+      "trajectory_id": "5704",
+      "steps": 400,
+      "start_distance_m": 6.645548343658447,
+      "path_length_m": 27.094715935497668,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.9047787189483643,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 45,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 348.2672619728837,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 138,
+      "request_latency_s": {
+        "count": 138,
+        "median": 1.806375882937573,
+        "p95": 1.860815990320407,
+        "mean": 1.7937569421516948,
+        "total": 247.53845801693387
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 26,
+        "later_movement_over_2cm": 108,
+        "longest_blocked_forward_streak": 2,
+        "max_identical_response_count": 22
+      },
+      "steps_sha256": "bb482523c6092facc7f70f659edc0ec9e9a5e8a942da0d40c2e9af96ca8f0f18",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1550",
+      "trajectory_id": "6077",
+      "steps": 400,
+      "start_distance_m": 10.902677536010742,
+      "path_length_m": 45.3969199888622,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 13.385215759277344,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 5,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 326.0122064650059,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 129,
+      "request_latency_s": {
+        "count": 129,
+        "median": 1.8045840030536056,
+        "p95": 1.8427983092144131,
+        "mean": 1.7917164751660628,
+        "total": 231.1314252964221
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 20,
+        "later_movement_over_2cm": 176,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 15
+      },
+      "steps_sha256": "4f8869b46ee61230f05bb95470a4e4664bc70d5224fe942d0e2cdcd49327ec55",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.8644688584617886
+    },
+    {
+      "episode_id": "758",
+      "trajectory_id": "3121",
+      "steps": 400,
+      "start_distance_m": 5.539675712585449,
+      "path_length_m": 42.3821032669358,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.9024620056152344,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 7,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 332.69269188307226,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 113,
+      "request_latency_s": {
+        "count": 113,
+        "median": 2.008954324061051,
+        "p95": 2.1767106920480725,
+        "mean": 2.011807842262551,
+        "total": 227.33428617566824
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 257,
+        "later_movement_over_2cm": 77,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 13
+      },
+      "steps_sha256": "8349c12edd88a69c81674b762d608aaf939d4998afdcc5bc2d537feb881d4e30",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1319",
+      "trajectory_id": "5148",
+      "steps": 260,
+      "start_distance_m": 8.197789192199707,
+      "path_length_m": 25.721822215751445,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.4343157708644867,
+        "success": 1.0,
+        "spl": 0.318709506135509,
+        "collisions": {
+          "count": 12,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 187.2317085689865,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.318709506135509,
+      "actual_model_calls": 76,
+      "request_latency_s": {
+        "count": 76,
+        "median": 1.7982128375442699,
+        "p95": 1.833716559689492,
+        "mean": 1.7761181482377364,
+        "total": 134.98497926606797
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 12,
+        "later_movement_over_2cm": 101,
+        "longest_blocked_forward_streak": 1,
+        "max_identical_response_count": 8
+      },
+      "steps_sha256": "27ff40f1e9a92c048600de8e882f6c46e4096f0ad0b981d80229973b98049d99",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.9222481550255291
+    },
+    {
+      "episode_id": "953",
+      "trajectory_id": "3914",
+      "steps": 400,
+      "start_distance_m": 7.380720138549805,
+      "path_length_m": 39.23665497978603,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 3.914341688156128,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 10,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 326.85650959890336,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 120,
+      "request_latency_s": {
+        "count": 120,
+        "median": 1.798131113522686,
+        "p95": 1.8423560816911049,
+        "mean": 1.7804087728494777,
+        "total": 213.64905274193734
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 21,
+        "later_movement_over_2cm": 142,
+        "longest_blocked_forward_streak": 1,
+        "max_identical_response_count": 12
+      },
+      "steps_sha256": "842897da7a59608453b1a9aa5380f6d905a11099d4d445fca9ef66de8aabb6fd",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "709",
+      "trajectory_id": "2866",
+      "steps": 48,
+      "start_distance_m": 7.777539253234863,
+      "path_length_m": 8.796850743866116,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.276983380317688,
+        "success": 1.0,
+        "spl": 0.8841276893488962,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 39.95409770286642,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.8841276893488962,
+      "actual_model_calls": 16,
+      "request_latency_s": {
+        "count": 16,
+        "median": 1.8861708574695513,
+        "p95": 1.9497551909880713,
+        "mean": 1.7434424334787764,
+        "total": 27.895078935660422
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 41,
+        "later_movement_over_2cm": 3,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 9
+      },
+      "steps_sha256": "d12e519f6110f5ebe76d313ef058a65baf8307cedcd965d539f5e1f634395c14",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.997317608312099
+    },
+    {
+      "episode_id": "607",
+      "trajectory_id": "2527",
+      "steps": 97,
+      "start_distance_m": 9.10207462310791,
+      "path_length_m": 13.1863930805691,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.8088777661323547,
+        "success": 1.0,
+        "spl": 0.6902626461433071,
+        "collisions": {
+          "count": 2,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 83.81857719318941,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.6902626461433071,
+      "actual_model_calls": 31,
+      "request_latency_s": {
+        "count": 31,
+        "median": 1.7996874139644206,
+        "p95": 1.8325513055315241,
+        "mean": 1.7391338442572422,
+        "total": 53.91314917197451
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 21,
+        "later_movement_over_2cm": 45,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 3
+      },
+      "steps_sha256": "64e08ace5543f12063f27d58e8028447621d56cefb8f0e00ab7c28dfe696fa6f",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.6465550577013249
+    },
+    {
+      "episode_id": "436",
+      "trajectory_id": "1716",
+      "steps": 400,
+      "start_distance_m": 7.113245487213135,
+      "path_length_m": 33.55661146222385,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 8.379684448242188,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 92,
+          "is_collision": true
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 356.9190838020295,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 131,
+      "request_latency_s": {
+        "count": 131,
+        "median": 1.8014199181925505,
+        "p95": 1.8476154229138047,
+        "mean": 1.790604332669901,
+        "total": 234.56916757975705
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 232,
+        "later_movement_over_2cm": 20,
+        "longest_blocked_forward_streak": 13,
+        "max_identical_response_count": 35
+      },
+      "steps_sha256": "a7f26c3f85bf808881e7644208756773b1589a9f83d1a62b498064b89b27b500",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1194",
+      "trajectory_id": "4728",
+      "steps": 48,
+      "start_distance_m": 6.590128421783447,
+      "path_length_m": 8.567429457688224,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.7726401090621948,
+        "success": 1.0,
+        "spl": 0.7692072081369544,
+        "collisions": {
+          "count": 4,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 39.93608313403092,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.7692072081369544,
+      "actual_model_calls": 13,
+      "request_latency_s": {
+        "count": 13,
+        "median": 2.010554220993072,
+        "p95": 2.1262342438101767,
+        "mean": 1.8526538306345732,
+        "total": 24.084499798249453
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 44,
+        "later_movement_over_2cm": 1,
+        "longest_blocked_forward_streak": 2,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "c8d12c06e1e130fbfd2dbed9dcff70a74378f0200723b4d87c8abf402c42db17",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.7691265499077706
+    },
+    {
+      "episode_id": "958",
+      "trajectory_id": "3949",
+      "steps": 70,
+      "start_distance_m": 7.744872570037842,
+      "path_length_m": 9.50000379665497,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.8209409713745117,
+        "success": 1.0,
+        "spl": 0.8152494321985284,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 62.17716688802466,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.8152494321985284,
+      "actual_model_calls": 22,
+      "request_latency_s": {
+        "count": 22,
+        "median": 2.0244598689023405,
+        "p95": 2.156573095952626,
+        "mean": 1.9043377435088835,
+        "total": 41.89543035719544
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 6
+      },
+      "steps_sha256": "3ed7ad7318e4368c878045cc9fdc19e8b0f2df6e2ae281cfe3376ac927a3ff88",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.9111612136701249
+    },
+    {
+      "episode_id": "1164",
+      "trajectory_id": "4633",
+      "steps": 400,
+      "start_distance_m": 10.697043418884277,
+      "path_length_m": 56.95701718326391,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 20.30666732788086,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 50,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 350.62197932903655,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 111,
+      "request_latency_s": {
+        "count": 111,
+        "median": 2.000593922100961,
+        "p95": 2.167001825524494,
+        "mean": 2.013736494235812,
+        "total": 223.52475086017512
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 175,
+        "later_movement_over_2cm": 102,
+        "longest_blocked_forward_streak": 6,
+        "max_identical_response_count": 15
+      },
+      "steps_sha256": "0911bd595c978d7791eee58583ba3ef7772eeb27d623e9ad460e4905fca785a3",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "307",
+      "trajectory_id": "1189",
+      "steps": 400,
+      "start_distance_m": 8.065011024475098,
+      "path_length_m": 28.161695494623558,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 6.089673042297363,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 28,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 340.9798730460461,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 121,
+      "request_latency_s": {
+        "count": 121,
+        "median": 2.037746287882328,
+        "p95": 2.193294459953904,
+        "mean": 2.0432950495838473,
+        "total": 247.23870099964552
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 106,
+        "later_movement_over_2cm": 78,
+        "longest_blocked_forward_streak": 6,
+        "max_identical_response_count": 25
+      },
+      "steps_sha256": "3caae211be3d2adbe307f3522837321ee071229dad42ac60d52cd4ffe2871594",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.7311605060159453
+    },
+    {
+      "episode_id": "499",
+      "trajectory_id": "1998",
+      "steps": 48,
+      "start_distance_m": 9.363972663879395,
+      "path_length_m": 9.753712911783417,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.3893622159957886,
+        "success": 1.0,
+        "spl": 0.9600418581874512,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 27.966221295995638,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.9600418581874512,
+      "actual_model_calls": 10,
+      "request_latency_s": {
+        "count": 10,
+        "median": 1.7808405889663845,
+        "p95": 1.8141280834330247,
+        "mean": 1.5862908544018866,
+        "total": 15.862908544018865
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 31,
+        "later_movement_over_2cm": 15,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 4
+      },
+      "steps_sha256": "b74a87dd4c9366fca68b63fd0aa0170e86b0bf6d26d9437d373ee756055309a6",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.9852962597398804
+    },
+    {
+      "episode_id": "591",
+      "trajectory_id": "2380",
+      "steps": 50,
+      "start_distance_m": 8.376006126403809,
+      "path_length_m": 8.444605881156441,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.2733674645423889,
+        "success": 1.0,
+        "spl": 0.9918765047048356,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 37.496424969052896,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.9918765047048356,
+      "actual_model_calls": 14,
+      "request_latency_s": {
+        "count": 14,
+        "median": 2.01082897442393,
+        "p95": 2.191096753696911,
+        "mean": 1.8855923641240224,
+        "total": 26.398293097736314
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "488b4b3d36e0a1394d483140e55b45bd732420ddea48fb5dbfdb03b6e56e07c5",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.987506295304967
+    },
+    {
+      "episode_id": "1191",
+      "trajectory_id": "4721",
+      "steps": 400,
+      "start_distance_m": 10.228483200073242,
+      "path_length_m": 63.945278770816955,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 4.523665428161621,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 4,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 336.05760419904254,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 109,
+      "request_latency_s": {
+        "count": 109,
+        "median": 2.009328480111435,
+        "p95": 2.1744739254005254,
+        "mean": 2.0233068939430825,
+        "total": 220.54045143979602
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 29,
+        "later_movement_over_2cm": 240,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 11
+      },
+      "steps_sha256": "4edbd9a9f5b747101d8f8bebf044488dd3e5c35204442e3e1b6d404b3e1b25db",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1253",
+      "trajectory_id": "4941",
+      "steps": 400,
+      "start_distance_m": 13.548358917236328,
+      "path_length_m": 50.03134056032082,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 7.751253128051758,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 12,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 291.9800330270082,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 118,
+      "request_latency_s": {
+        "count": 118,
+        "median": 1.8025449269916862,
+        "p95": 1.8449171262676827,
+        "mean": 1.7909729700077768,
+        "total": 211.33481046091765
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 267,
+        "later_movement_over_2cm": 45,
+        "longest_blocked_forward_streak": 1,
+        "max_identical_response_count": 14
+      },
+      "steps_sha256": "851c115a08791c6a1de54ff62389d2d9c10c92fa52fa88e58c74cbf6a08055b2",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "419",
+      "trajectory_id": "1665",
+      "steps": 71,
+      "start_distance_m": 12.458867073059082,
+      "path_length_m": 11.00000048710577,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 2.00871205329895,
+        "success": 1.0,
+        "spl": 1.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 43.407313021831214,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 1.0,
+      "actual_model_calls": 16,
+      "request_latency_s": {
+        "count": 16,
+        "median": 1.7870799824595451,
+        "p95": 1.853872969688382,
+        "mean": 1.6764453238429269,
+        "total": 26.82312518148683
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 5
+      },
+      "steps_sha256": "7f2ff01264c90a538f8668879ccec33bf3148261a39349816fc13b721bd5af82",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "1546",
+      "trajectory_id": "6068",
+      "steps": 69,
+      "start_distance_m": 9.431220054626465,
+      "path_length_m": 11.802280428153114,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.6144311428070068,
+        "success": 1.0,
+        "spl": 0.7991015113718852,
+        "collisions": {
+          "count": 5,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 50.30881519289687,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.7991015113718852,
+      "actual_model_calls": 17,
+      "request_latency_s": {
+        "count": 17,
+        "median": 1.8042049338109791,
+        "p95": 1.9633156338240951,
+        "mean": 1.7091492403243833,
+        "total": 29.055537085514516
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 39,
+        "later_movement_over_2cm": 20,
+        "longest_blocked_forward_streak": 4,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "9fbbce0399b14f1d74301476f09c4b91fc9972cbbe770d854de0470200c5379b",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.8183234468095819
+    },
+    {
+      "episode_id": "1716",
+      "trajectory_id": "6822",
+      "steps": 400,
+      "start_distance_m": 6.573099136352539,
+      "path_length_m": 62.253691157232126,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 11.887150764465332,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 31,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 321.3120741639286,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 106,
+      "request_latency_s": {
+        "count": 106,
+        "median": 2.0109652045648545,
+        "p95": 2.186118972254917,
+        "mean": 2.018953806167152,
+        "total": 214.00910345371813
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 138,
+        "later_movement_over_2cm": 157,
+        "longest_blocked_forward_streak": 3,
+        "max_identical_response_count": 10
+      },
+      "steps_sha256": "8dac8345d386929569d81e944149d3698d0b45eb8dd2880da52352ae262097c1",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1726",
+      "trajectory_id": "6850",
+      "steps": 400,
+      "start_distance_m": 9.457917213439941,
+      "path_length_m": 38.39633401515233,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 7.139872074127197,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 89,
+          "is_collision": true
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 301.364563500043,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 108,
+      "request_latency_s": {
+        "count": 108,
+        "median": 1.804996874067001,
+        "p95": 1.8374787662294694,
+        "mean": 1.7792105703524106,
+        "total": 192.15474159806035
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 12,
+        "later_movement_over_2cm": 158,
+        "longest_blocked_forward_streak": 25,
+        "max_identical_response_count": 7
+      },
+      "steps_sha256": "e2adbb5db811a8b72388c660ed346260b5d4a9f22e77d6f105a6c9fa57d235cf",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.3408439698600336
+    },
+    {
+      "episode_id": "1724",
+      "trajectory_id": "6843",
+      "steps": 394,
+      "start_distance_m": 11.950681686401367,
+      "path_length_m": 55.515407068303055,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 3.4127731323242188,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 8,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 331.918907238869,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 125,
+      "request_latency_s": {
+        "count": 125,
+        "median": 1.807613380951807,
+        "p95": 1.8513866044115275,
+        "mean": 1.7896838915608824,
+        "total": 223.7104864451103
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 91,
+        "later_movement_over_2cm": 170,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 16
+      },
+      "steps_sha256": "1dbe32edd7d4435896b825262076946c000a80b7319e7971e8658a038cb7b065",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "1353",
+      "trajectory_id": "5286",
+      "steps": 400,
+      "start_distance_m": 13.392192840576172,
+      "path_length_m": 64.04993116983147,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 7.55804967880249,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 5,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 277.6600378390867,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 94,
+      "request_latency_s": {
+        "count": 94,
+        "median": 1.7998539459658787,
+        "p95": 1.8391289967345075,
+        "mean": 1.775154319217805,
+        "total": 166.86450600647368
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 19,
+        "later_movement_over_2cm": 245,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 17
+      },
+      "steps_sha256": "0a90caa1ea92abaf78c427630c88cc9b0f4c8fdc7abf5765a2cc6779b7883b89",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "870",
+      "trajectory_id": "3529",
+      "steps": 400,
+      "start_distance_m": 8.875715255737305,
+      "path_length_m": 34.257925741605796,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 3.0535261631011963,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 325.348559319973,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 125,
+      "request_latency_s": {
+        "count": 125,
+        "median": 1.8073639960493892,
+        "p95": 1.8507425667718054,
+        "mean": 1.7957235600836574,
+        "total": 224.4654450104572
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 11
+      },
+      "steps_sha256": "45e9c2cbd5c47001dc707654c82d750190721e70e62142dc5fb96e9019f60732",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "517",
+      "trajectory_id": "2131",
+      "steps": 112,
+      "start_distance_m": 9.671638488769531,
+      "path_length_m": 13.2381892660947,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 4.965439319610596,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 2,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 105.23491213400848,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 38,
+      "request_latency_s": {
+        "count": 38,
+        "median": 1.996116207446903,
+        "p95": 2.18408861188218,
+        "mean": 1.9642863151874688,
+        "total": 74.64287997712381
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 70,
+        "later_movement_over_2cm": 8,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 8
+      },
+      "steps_sha256": "80adeb01862d9a90816f23d09047291b38828aa6ffccda6d380fc8f04fdd879e",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.8580834693983196
+    },
+    {
+      "episode_id": "1145",
+      "trajectory_id": "4592",
+      "steps": 400,
+      "start_distance_m": 7.653949737548828,
+      "path_length_m": 5.553546552410697,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 6.836485862731934,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 374,
+          "is_collision": true
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 236.22627278300934,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 73,
+      "request_latency_s": {
+        "count": 73,
+        "median": 1.7808793589938432,
+        "p95": 1.8333180848509074,
+        "mean": 1.7636256690251908,
+        "total": 128.74467383883893
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 11,
+        "later_movement_over_2cm": 54,
+        "longest_blocked_forward_streak": 103,
+        "max_identical_response_count": 23
+      },
+      "steps_sha256": "e7f0993e21af4e6d89c1c5ee499154ca7b3ae73c045c5aa822cf0d489de62f02",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "720",
+      "trajectory_id": "2905",
+      "steps": 49,
+      "start_distance_m": 5.156440734863281,
+      "path_length_m": 7.000001116250279,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 2.3911750316619873,
+        "success": 1.0,
+        "spl": 0.7366342730871897,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 44.135062757181004,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.7366342730871897,
+      "actual_model_calls": 16,
+      "request_latency_s": {
+        "count": 16,
+        "median": 2.107154926052317,
+        "p95": 2.176954902242869,
+        "mean": 1.940938587373239,
+        "total": 31.055017397971824
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 4
+      },
+      "steps_sha256": "556b497435c020c13d7fc9b25036d467db139692b141c0340e0fd8e9e6a915fc",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.9375344911013074
+    },
+    {
+      "episode_id": "1582",
+      "trajectory_id": "6306",
+      "steps": 400,
+      "start_distance_m": 7.765632152557373,
+      "path_length_m": 44.6740697037366,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 4.151718616485596,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 98,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 352.7854713560082,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 124,
+      "request_latency_s": {
+        "count": 124,
+        "median": 1.8079415700631216,
+        "p95": 1.851812222553417,
+        "mean": 1.7968006271515944,
+        "total": 222.8032777667977
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 15,
+        "later_movement_over_2cm": 201,
+        "longest_blocked_forward_streak": 27,
+        "max_identical_response_count": 23
+      },
+      "steps_sha256": "ef8dae5ce56d5c0cc2d72bec84b2296350cf77c8bea99de39b4c847055c50d7f",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "963",
+      "trajectory_id": "3952",
+      "steps": 59,
+      "start_distance_m": 7.965977191925049,
+      "path_length_m": 8.257852820840268,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.17468780279159546,
+        "success": 1.0,
+        "spl": 0.9646547758069343,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 37.35816241404973,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.9646547758069343,
+      "actual_model_calls": 15,
+      "request_latency_s": {
+        "count": 15,
+        "median": 1.7942437590099871,
+        "p95": 1.8211998593993486,
+        "mean": 1.665144165745005,
+        "total": 24.977162486175075
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "17876ff6e35a45df7321f08dc80c3d15b9d0d289921a62d2b51d46ff1b15f0f6",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.9957471156056075
+    },
+    {
+      "episode_id": "561",
+      "trajectory_id": "2282",
+      "steps": 400,
+      "start_distance_m": 11.793622016906738,
+      "path_length_m": 81.9188071896637,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 34.24917984008789,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 3,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 353.2334086461924,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 113,
+      "request_latency_s": {
+        "count": 113,
+        "median": 1.9999493069481105,
+        "p95": 2.1773487200029193,
+        "mean": 2.0123826348845046,
+        "total": 227.39923774194904
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 63,
+        "later_movement_over_2cm": 272,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 17
+      },
+      "steps_sha256": "0e3585febea77a7a4cb569a0a6485b18da9c928286115154cc63511f12b1e233",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "754",
+      "trajectory_id": "3116",
+      "steps": 400,
+      "start_distance_m": 10.911423683166504,
+      "path_length_m": 3.258449138083103,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 9.082290649414062,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 381,
+          "is_collision": true
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 308.63680503191426,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 90,
+      "request_latency_s": {
+        "count": 90,
+        "median": 1.910478413105011,
+        "p95": 2.011280295730103,
+        "mean": 1.8724552390450198,
+        "total": 168.52097151405178
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 9,
+        "later_movement_over_2cm": 7,
+        "longest_blocked_forward_streak": 214,
+        "max_identical_response_count": 46
+      },
+      "steps_sha256": "10abb6206abe72e8c045e324cebb790e4101d69de3c3c15dfaacf24d29991a51",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "313",
+      "trajectory_id": "1194",
+      "steps": 76,
+      "start_distance_m": 9.997159957885742,
+      "path_length_m": 12.999576417451136,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 2.0659115314483643,
+        "success": 1.0,
+        "spl": 0.7690373717772746,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 60.35690105496906,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.7690373717772746,
+      "actual_model_calls": 21,
+      "request_latency_s": {
+        "count": 21,
+        "median": 1.80567780113779,
+        "p95": 2.182893788907677,
+        "mean": 1.7737010130991362,
+        "total": 37.24772127508186
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 42,
+        "later_movement_over_2cm": 23,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 3
+      },
+      "steps_sha256": "2d6f85d4c10b556c12918c9e51ec6b1e391e530c3a447593351c7e61a03dd3de",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.7334575418341556
+    },
+    {
+      "episode_id": "1638",
+      "trajectory_id": "6570",
+      "steps": 400,
+      "start_distance_m": 5.727148056030273,
+      "path_length_m": 26.488244773289793,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 4.510837078094482,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 5,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 288.28971818997525,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 110,
+      "request_latency_s": {
+        "count": 110,
+        "median": 1.8039242984959856,
+        "p95": 1.8425237273448147,
+        "mean": 1.7914085337934507,
+        "total": 197.05493871727958
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 243,
+        "later_movement_over_2cm": 70,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 8
+      },
+      "steps_sha256": "53e0f3450aece8fd0b0e9c255177536d18e41ee08d2839acb458b532b61f2468",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.855327616048933
+    },
+    {
+      "episode_id": "735",
+      "trajectory_id": "2988",
+      "steps": 400,
+      "start_distance_m": 8.189435005187988,
+      "path_length_m": 16.05191029184569,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 11.244436264038086,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 5,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 321.7568483410869,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 117,
+      "request_latency_s": {
+        "count": 117,
+        "median": 1.8117964658886194,
+        "p95": 1.8621687743347137,
+        "mean": 1.8008123016657516,
+        "total": 210.69503929489292
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 146,
+        "later_movement_over_2cm": 39,
+        "longest_blocked_forward_streak": 1,
+        "max_identical_response_count": 9
+      },
+      "steps_sha256": "515961157cdfa8b5e9910aa30285b52725c70eaaceae8e56838139f983d4c48b",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "387",
+      "trajectory_id": "1549",
+      "steps": 60,
+      "start_distance_m": 10.360467910766602,
+      "path_length_m": 10.749999575030792,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.5628891587257385,
+        "success": 1.0,
+        "spl": 0.9637644968932935,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 39.71435260795988,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.9637644968932935,
+      "actual_model_calls": 15,
+      "request_latency_s": {
+        "count": 15,
+        "median": 1.7925479949917644,
+        "p95": 1.821741178445518,
+        "mean": 1.6659591365916033,
+        "total": 24.98938704887405
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 4
+      },
+      "steps_sha256": "7003bdc07798459669a62becf092951a7368d6d941e9d00825ba4287392693c5",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "502",
+      "trajectory_id": "2012",
+      "steps": 30,
+      "start_distance_m": 5.258496284484863,
+      "path_length_m": 4.015191623818849,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.2860934734344482,
+        "success": 1.0,
+        "spl": 1.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 21.79737942898646,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 1.0,
+      "actual_model_calls": 7,
+      "request_latency_s": {
+        "count": 7,
+        "median": 1.9526253889780492,
+        "p95": 2.0024864230072126,
+        "mean": 1.6470814130069422,
+        "total": 11.529569891048595
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 1
+      },
+      "steps_sha256": "8281628e5f12cd2dab35fda32c7bcad4595b7775b8ea2e40eca401e8259eaeb8",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "1506",
+      "trajectory_id": "5904",
+      "steps": 46,
+      "start_distance_m": 8.351572036743164,
+      "path_length_m": 8.45870264662763,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.46422240138053894,
+        "success": 1.0,
+        "spl": 0.9873348747419907,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 34.0778177769389,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.9873348747419907,
+      "actual_model_calls": 14,
+      "request_latency_s": {
+        "count": 14,
+        "median": 1.8077174323843792,
+        "p95": 1.8390067294589243,
+        "mean": 1.617785900598392,
+        "total": 22.649002608377486
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "a744912c9e3540a36b990f6247fff58b316d2d51855a26f4f140ba47b2a41c7e",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "1523",
+      "trajectory_id": "5971",
+      "steps": 400,
+      "start_distance_m": 4.368268966674805,
+      "path_length_m": 16.2467646462018,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 7.247463703155518,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 2,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 286.4637880360242,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 106,
+      "request_latency_s": {
+        "count": 106,
+        "median": 1.7968031610362232,
+        "p95": 1.835264116001781,
+        "mean": 1.7832973437726427,
+        "total": 189.02951843990013
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 62,
+        "later_movement_over_2cm": 41,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 11
+      },
+      "steps_sha256": "2dce9ead8fa1782c4bac44be18490621f4b9ee6182f4b3e9bbe6eae2b91b1cf5",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1718",
+      "trajectory_id": "6828",
+      "steps": 69,
+      "start_distance_m": 10.675936698913574,
+      "path_length_m": 11.022550070358266,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.404289186000824,
+        "success": 1.0,
+        "spl": 0.9685541597842698,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 46.64650386897847,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.9685541597842698,
+      "actual_model_calls": 15,
+      "request_latency_s": {
+        "count": 15,
+        "median": 1.7915166420862079,
+        "p95": 1.8235252836719156,
+        "mean": 1.6676237193712344,
+        "total": 25.014355790568516
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 27,
+        "later_movement_over_2cm": 35,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "1e46babbe9a4a1f428d32d93349187c24badd4e3a120a165e6f1f7a281653295",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.9680657825123299
+    },
+    {
+      "episode_id": "1378",
+      "trajectory_id": "5434",
+      "steps": 38,
+      "start_distance_m": 5.487870216369629,
+      "path_length_m": 5.261977223970237,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.6569944620132446,
+        "success": 1.0,
+        "spl": 1.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 29.790212157880887,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 1.0,
+      "actual_model_calls": 12,
+      "request_latency_s": {
+        "count": 12,
+        "median": 1.7851555210072547,
+        "p95": 1.8105958428699522,
+        "mean": 1.6064089517458342,
+        "total": 19.27690742095001
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 3
+      },
+      "steps_sha256": "d6ce1cdb1903ee9ab390b0aa3ff4a01fa676871ffa098730f61ce40cd3aeae54",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "919",
+      "trajectory_id": "3785",
+      "steps": 61,
+      "start_distance_m": 9.113612174987793,
+      "path_length_m": 9.108192574348818,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.9660134315490723,
+        "success": 1.0,
+        "spl": 1.0,
+        "collisions": {
+          "count": 5,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 43.42735073505901,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 1.0,
+      "actual_model_calls": 15,
+      "request_latency_s": {
+        "count": 15,
+        "median": 1.7946212890092283,
+        "p95": 1.8566422205185518,
+        "mean": 1.6831391154788435,
+        "total": 25.24708673218265
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 25,
+        "later_movement_over_2cm": 31,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 1
+      },
+      "steps_sha256": "f4aa59b53d0d4cd5a88cf01f2883afab4711bee48bef11e6ab8bdd433162f399",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "897",
+      "trajectory_id": "3627",
+      "steps": 109,
+      "start_distance_m": 14.889719009399414,
+      "path_length_m": 15.541313829746269,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.5206374526023865,
+        "success": 1.0,
+        "spl": 0.9580733854212033,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 91.49941257201135,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.9580733854212033,
+      "actual_model_calls": 32,
+      "request_latency_s": {
+        "count": 32,
+        "median": 2.012861564522609,
+        "p95": 2.1796442455612124,
+        "mean": 1.979880791324831,
+        "total": 63.356185322394595
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 4
+      },
+      "steps_sha256": "6a3bd7e5213262d8c3e76e6b6a0a1185ff85fa29c861704cff0f3a664f7847e3",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "1408",
+      "trajectory_id": "5594",
+      "steps": 85,
+      "start_distance_m": 4.612120151519775,
+      "path_length_m": 9.378828342158522,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 3.1548409461975098,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 2,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 77.54026567796245,
+      "batch": 1,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 29,
+      "request_latency_s": {
+        "count": 29,
+        "median": 2.0403485998976976,
+        "p95": 2.172883875481784,
+        "mean": 1.9746147256890505,
+        "total": 57.26382704498246
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 7,
+        "later_movement_over_2cm": 36,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 6
+      },
+      "steps_sha256": "3628333acb43b097498157469e548409193bcb057dcbab7a2e4f084747c15f2d",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.6970826857460852
+    },
+    {
+      "episode_id": "1109",
+      "trajectory_id": "4471",
+      "steps": 52,
+      "start_distance_m": 10.928180694580078,
+      "path_length_m": 10.499999911252678,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.5197147727012634,
+        "success": 1.0,
+        "spl": 1.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 29.255411324091256,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 1.0,
+      "actual_model_calls": 11,
+      "request_latency_s": {
+        "count": 11,
+        "median": 1.7887114628683776,
+        "p95": 1.8091565135400742,
+        "mean": 1.607606095473536,
+        "total": 17.683667050208896
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 4
+      },
+      "steps_sha256": "e6cf840d73d0647acab432656ce046adb9858c76b08094f4d6e8aeecba6e6687",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "1803",
+      "trajectory_id": "7170",
+      "steps": 73,
+      "start_distance_m": 9.90282917022705,
+      "path_length_m": 12.000006239912821,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.8438384532928467,
+        "success": 1.0,
+        "spl": 0.8252353460887805,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 56.89506159792654,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.8252353460887805,
+      "actual_model_calls": 21,
+      "request_latency_s": {
+        "count": 21,
+        "median": 1.7935484170448035,
+        "p95": 1.8561428100802004,
+        "mean": 1.7148250908302587,
+        "total": 36.01132690743543
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 5
+      },
+      "steps_sha256": "7e50b7c6da4570b247065421dbc7f8579e65f5e46619d889dc213428c5f49daf",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.9902824890882942
+    },
+    {
+      "episode_id": "662",
+      "trajectory_id": "2745",
+      "steps": 148,
+      "start_distance_m": 8.085611343383789,
+      "path_length_m": 18.762872270193224,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 6.342411041259766,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 140.54928220203146,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 54,
+      "request_latency_s": {
+        "count": 54,
+        "median": 1.7995120749110356,
+        "p95": 1.8427469129208476,
+        "mean": 1.7681089970067627,
+        "total": 95.47788583836518
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 130,
+        "later_movement_over_2cm": 7,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 16
+      },
+      "steps_sha256": "b3141cf85085fadc5076a375cf56f2cab75c3881796c1ec96f68e6124e0ef0fc",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.8310533708633964
+    },
+    {
+      "episode_id": "184",
+      "trajectory_id": "772",
+      "steps": 400,
+      "start_distance_m": 5.5948896408081055,
+      "path_length_m": 11.858633222409868,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 10.099187850952148,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 28,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 310.5444569091778,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 109,
+      "request_latency_s": {
+        "count": 109,
+        "median": 1.8052548300474882,
+        "p95": 1.8530425685923546,
+        "mean": 1.792387591854353,
+        "total": 195.37024751212448
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 17,
+        "later_movement_over_2cm": 44,
+        "longest_blocked_forward_streak": 8,
+        "max_identical_response_count": 10
+      },
+      "steps_sha256": "73179919bcc7154faaf2bd9c18218fd344cae8e904a2381af220002ade6319b5",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.8182825197461407
+    },
+    {
+      "episode_id": "1778",
+      "trajectory_id": "7042",
+      "steps": 400,
+      "start_distance_m": 6.270608901977539,
+      "path_length_m": 41.502273752952206,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 5.576315402984619,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 60,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 358.72131942398846,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 126,
+      "request_latency_s": {
+        "count": 126,
+        "median": 1.8094720205990598,
+        "p95": 1.8600061782635748,
+        "mean": 1.792227781885895,
+        "total": 225.82070051762275
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 12,
+        "later_movement_over_2cm": 169,
+        "longest_blocked_forward_streak": 7,
+        "max_identical_response_count": 14
+      },
+      "steps_sha256": "03d64611841fed8f6f0f6578ac867bad319b214e8e02631a4f2435e6a67a4bb0",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1022",
+      "trajectory_id": "4152",
+      "steps": 400,
+      "start_distance_m": 10.829700469970703,
+      "path_length_m": 35.73288335868194,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 9.61703109741211,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 5,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 285.31607186002657,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 100,
+      "request_latency_s": {
+        "count": 100,
+        "median": 1.8106866965536028,
+        "p95": 1.860834062367212,
+        "mean": 1.7966538571030832,
+        "total": 179.66538571030833
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 15,
+        "later_movement_over_2cm": 142,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 5
+      },
+      "steps_sha256": "714305e4fc3d42910cc97a9e498ea941cbc87abda6025b4e1caad54b175941fd",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "142",
+      "trajectory_id": "573",
+      "steps": 400,
+      "start_distance_m": 5.445591449737549,
+      "path_length_m": 50.5630756068292,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 18.2261962890625,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 4,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 296.79064882081,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 108,
+      "request_latency_s": {
+        "count": 108,
+        "median": 1.813562455587089,
+        "p95": 1.8537644356372767,
+        "mean": 1.7995946399406184,
+        "total": 194.3562211135868
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 42,
+        "later_movement_over_2cm": 185,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 10
+      },
+      "steps_sha256": "0524e93972021c796e1aeb1520315ecbd8f318e3afb7ef3317022a66e30d3d9b",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "233",
+      "trajectory_id": "961",
+      "steps": 177,
+      "start_distance_m": 12.076064109802246,
+      "path_length_m": 14.195375909001068,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 3.309002637863159,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 34,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 154.23525546281599,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 58,
+      "request_latency_s": {
+        "count": 58,
+        "median": 1.8225029493914917,
+        "p95": 1.99996966853505,
+        "mean": 1.8363677627679988,
+        "total": 106.50933024054393
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 51,
+        "later_movement_over_2cm": 36,
+        "longest_blocked_forward_streak": 4,
+        "max_identical_response_count": 8
+      },
+      "steps_sha256": "3727b8d9a9fcf3f55244d7522c0e0e0aab86671fc0d7be57030c7f0cab6fec9e",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1066",
+      "trajectory_id": "4284",
+      "steps": 128,
+      "start_distance_m": 7.57863712310791,
+      "path_length_m": 13.85421379102738,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 3.709892749786377,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 2,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 101.76891284296289,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 37,
+      "request_latency_s": {
+        "count": 37,
+        "median": 1.8095879929605871,
+        "p95": 1.8985074098221957,
+        "mean": 1.764415037616886,
+        "total": 65.28335639182478
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 105,
+        "later_movement_over_2cm": 5,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 5
+      },
+      "steps_sha256": "7167ad5ec7ffd61eaac699d1703131c56ce75369cc0840a80a0c20931c598171",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.7857451623795927
+    },
+    {
+      "episode_id": "180",
+      "trajectory_id": "721",
+      "steps": 400,
+      "start_distance_m": 7.9530439376831055,
+      "path_length_m": 48.47540955452024,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 11.442045211791992,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 303.283398254076,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 107,
+      "request_latency_s": {
+        "count": 107,
+        "median": 1.8009192959871143,
+        "p95": 1.8348248498281463,
+        "mean": 1.7775355568460285,
+        "total": 190.19630458252504
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 241,
+        "later_movement_over_2cm": 89,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 7
+      },
+      "steps_sha256": "9728e746edfb888887e1736b99b3a4e535e2959109b75a745ad5b6f33d37075d",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "917",
+      "trajectory_id": "3769",
+      "steps": 400,
+      "start_distance_m": 6.79164457321167,
+      "path_length_m": 66.32329363094847,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 23.469104766845703,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 301.52829165617004,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 96,
+      "request_latency_s": {
+        "count": 96,
+        "median": 1.8009517149766907,
+        "p95": 1.8331522078369744,
+        "mean": 1.7580539394087584,
+        "total": 168.77317818324082
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 235,
+        "later_movement_over_2cm": 98,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 16
+      },
+      "steps_sha256": "45accb620d0134cd8d430d619a1500b6ec0c124fe1e5ace8ee9f8623ea8ae6a5",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.1130327618766448
+    },
+    {
+      "episode_id": "579",
+      "trajectory_id": "2365",
+      "steps": 79,
+      "start_distance_m": 14.125213623046875,
+      "path_length_m": 13.323779949379897,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.145567536354065,
+        "success": 1.0,
+        "spl": 1.0,
+        "collisions": {
+          "count": 2,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 54.442917208885774,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 1.0,
+      "actual_model_calls": 19,
+      "request_latency_s": {
+        "count": 19,
+        "median": 1.8005033971276134,
+        "p95": 1.82462025731802,
+        "mean": 1.6957240235795707,
+        "total": 32.218756448011845
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 45,
+        "later_movement_over_2cm": 32,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "ed4785033424aa9b60ba583abd018a25592dbc899dff96e9e2f742f52a95ddc9",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "657",
+      "trajectory_id": "2695",
+      "steps": 285,
+      "start_distance_m": 9.51393985748291,
+      "path_length_m": 23.72471685004153,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.3724617958068848,
+        "success": 1.0,
+        "spl": 0.4010138435223892,
+        "collisions": {
+          "count": 9,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 214.38563050702214,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.4010138435223892,
+      "actual_model_calls": 83,
+      "request_latency_s": {
+        "count": 83,
+        "median": 1.7978277339134365,
+        "p95": 1.830234498856589,
+        "mean": 1.7762669194489717,
+        "total": 147.43015431426466
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 134,
+        "later_movement_over_2cm": 53,
+        "longest_blocked_forward_streak": 2,
+        "max_identical_response_count": 11
+      },
+      "steps_sha256": "fb0065278511a36f2c2bd37e8c13b5af5c4d8be32ddd608ccbd7d6fd6edd4f28",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.3061210402241609
+    },
+    {
+      "episode_id": "356",
+      "trajectory_id": "1397",
+      "steps": 65,
+      "start_distance_m": 8.459192276000977,
+      "path_length_m": 9.484074899507887,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.7836336493492126,
+        "success": 1.0,
+        "spl": 0.8919364682666308,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 51.36310836300254,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.8919364682666308,
+      "actual_model_calls": 21,
+      "request_latency_s": {
+        "count": 21,
+        "median": 1.8109049298800528,
+        "p95": 1.8433364739175886,
+        "mean": 1.7172976322361224,
+        "total": 36.06325027695857
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 54,
+        "later_movement_over_2cm": 5,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 7
+      },
+      "steps_sha256": "f1898745cf97c667af08d10767c435103d9d8f17dc76b651980b6c7a60a11f7f",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.9400005582180123
+    },
+    {
+      "episode_id": "888",
+      "trajectory_id": "3562",
+      "steps": 400,
+      "start_distance_m": 7.107693195343018,
+      "path_length_m": 35.89492640597842,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 9.421626091003418,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 157,
+          "is_collision": true
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 343.6155394690577,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 115,
+      "request_latency_s": {
+        "count": 115,
+        "median": 1.7894633091054857,
+        "p95": 1.839220326137729,
+        "mean": 1.7768821903423446,
+        "total": 204.34145188936964
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 14,
+        "later_movement_over_2cm": 157,
+        "longest_blocked_forward_streak": 83,
+        "max_identical_response_count": 21
+      },
+      "steps_sha256": "1cda6a7e8d4c35f7378af87153737cac77344dfa7f2af7ab0ea1afd1d981e9cb",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1128",
+      "trajectory_id": "4504",
+      "steps": 75,
+      "start_distance_m": 10.727333068847656,
+      "path_length_m": 13.286609634414106,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 5.675261497497559,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 58.244637198979035,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 23,
+      "request_latency_s": {
+        "count": 23,
+        "median": 1.809949436923489,
+        "p95": 1.869642919418402,
+        "mean": 1.7024625428527107,
+        "total": 39.15663848561235
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "2e67ca948b5939737ac2df53f5194a9faae973c03c744deffe73a3070f44f456",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.7903936553133423
+    },
+    {
+      "episode_id": "948",
+      "trajectory_id": "3903",
+      "steps": 400,
+      "start_distance_m": 8.853271484375,
+      "path_length_m": 16.064849844369313,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.8262070417404175,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 51,
+          "is_collision": true
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 356.35412367410026,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 128,
+      "request_latency_s": {
+        "count": 128,
+        "median": 1.8058815714903176,
+        "p95": 1.8467184987850487,
+        "mean": 1.7959221046985476,
+        "total": 229.8780294014141
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 11,
+        "later_movement_over_2cm": 57,
+        "longest_blocked_forward_streak": 17,
+        "max_identical_response_count": 14
+      },
+      "steps_sha256": "e94a6bff994814c04126e4930e35942e50e0b8f676973d47faa18699ccb1bf98",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "116",
+      "trajectory_id": "412",
+      "steps": 363,
+      "start_distance_m": 5.625521659851074,
+      "path_length_m": 35.58258154189286,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.3960531949996948,
+        "success": 1.0,
+        "spl": 0.1580976284627352,
+        "collisions": {
+          "count": 9,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 301.581505456008,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.1580976284627352,
+      "actual_model_calls": 117,
+      "request_latency_s": {
+        "count": 117,
+        "median": 1.7981621040962636,
+        "p95": 1.8383431706577538,
+        "mean": 1.7797101746396855,
+        "total": 208.2260904328432
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 41,
+        "later_movement_over_2cm": 129,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 10
+      },
+      "steps_sha256": "7a7e7e748f14500e33c67be90d5f50fc80064cd4d14fa6636e25a3115c71bf31",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "150",
+      "trajectory_id": "601",
+      "steps": 400,
+      "start_distance_m": 8.754947662353516,
+      "path_length_m": 36.52893234689341,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 2.6089885234832764,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 321.1326759830117,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 121,
+      "request_latency_s": {
+        "count": 121,
+        "median": 1.8045799469109625,
+        "p95": 1.836229879874736,
+        "mean": 1.7922998394005092,
+        "total": 216.86828056746162
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 208,
+        "later_movement_over_2cm": 68,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 9
+      },
+      "steps_sha256": "a05f16b1127276e5b93f63e048ee74f19a3516de6470adc38b11c558649aa18f",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "814",
+      "trajectory_id": "3356",
+      "steps": 221,
+      "start_distance_m": 6.782794952392578,
+      "path_length_m": 19.799296295891605,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.7502349615097046,
+        "success": 1.0,
+        "spl": 0.34257757652262577,
+        "collisions": {
+          "count": 7,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 181.18632903695107,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.34257757652262577,
+      "actual_model_calls": 71,
+      "request_latency_s": {
+        "count": 71,
+        "median": 1.8136527389287949,
+        "p95": 1.8576962675433606,
+        "mean": 1.78735540609833,
+        "total": 126.90223383298144
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 97,
+        "later_movement_over_2cm": 34,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 9
+      },
+      "steps_sha256": "73645b4b3b22e5f6d3a922a3f606f8cfb0dcd28db4f9e3a7699f873de2fb2c63",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.4776780387594576
+    },
+    {
+      "episode_id": "528",
+      "trajectory_id": "2144",
+      "steps": 400,
+      "start_distance_m": 5.682068347930908,
+      "path_length_m": 39.80250562899766,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 3.249145030975342,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 2,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 332.34219406102784,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 113,
+      "request_latency_s": {
+        "count": 113,
+        "median": 1.790258599910885,
+        "p95": 1.8297026376239955,
+        "mean": 1.7739775548586045,
+        "total": 200.4594636990223
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 23,
+        "later_movement_over_2cm": 152,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 14
+      },
+      "steps_sha256": "c11418efe7cb925299258fdfb53c0076042759f3bcb9d86c32af93e444961af0",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1595",
+      "trajectory_id": "6357",
+      "steps": 34,
+      "start_distance_m": 7.74806022644043,
+      "path_length_m": 7.430659364826847,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.5373708605766296,
+        "success": 1.0,
+        "spl": 1.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 23.49801265913993,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 1.0,
+      "actual_model_calls": 9,
+      "request_latency_s": {
+        "count": 9,
+        "median": 1.7945705179590732,
+        "p95": 1.8094893754459918,
+        "mean": 1.5270007226823106,
+        "total": 13.743006504140794
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "38d99ff5599da19e6c03bcb8e0b2e413ac1638991f0214634a95ad2fdc1cae1a",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "241",
+      "trajectory_id": "973",
+      "steps": 62,
+      "start_distance_m": 7.082428932189941,
+      "path_length_m": 9.619677337180459,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 2.032325506210327,
+        "success": 1.0,
+        "spl": 0.7362439272438939,
+        "collisions": {
+          "count": 3,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 41.92314254096709,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.7362439272438939,
+      "actual_model_calls": 18,
+      "request_latency_s": {
+        "count": 18,
+        "median": 1.793118759058416,
+        "p95": 1.824287549580913,
+        "mean": 1.689796089970817,
+        "total": 30.41632961947471
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 12,
+        "later_movement_over_2cm": 36,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 3
+      },
+      "steps_sha256": "882cc864ad2226dbca9a862be6b03e9fd211d6489b9cf07ea676c17bb7be0196",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.9345691147183145
+    },
+    {
+      "episode_id": "1362",
+      "trajectory_id": "5333",
+      "steps": 400,
+      "start_distance_m": 7.892679214477539,
+      "path_length_m": 45.7499740078589,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 2.9186973571777344,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 312.1950504959095,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 122,
+      "request_latency_s": {
+        "count": 122,
+        "median": 1.7982734530232847,
+        "p95": 1.8553976147668436,
+        "mean": 1.7880024951978082,
+        "total": 218.1363044141326
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 387,
+        "later_movement_over_2cm": 8,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 19
+      },
+      "steps_sha256": "00684f74752d657135d1936cf05e8bcadadc07c354f3f19978c1daae6a8aef6c",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "858",
+      "trajectory_id": "3492",
+      "steps": 97,
+      "start_distance_m": 11.00468635559082,
+      "path_length_m": 19.94271878996354,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 8.526754379272461,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 58.6578475269489,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 21,
+      "request_latency_s": {
+        "count": 21,
+        "median": 1.771935892989859,
+        "p95": 1.8239341441076249,
+        "mean": 1.6901974708529277,
+        "total": 35.494146887911484
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 6
+      },
+      "steps_sha256": "5aaa766121eb8364b28a01a1d0ae643efd42b03beb2e2af40eb517b04dc074e5",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1755",
+      "trajectory_id": "6940",
+      "steps": 58,
+      "start_distance_m": 7.313485622406006,
+      "path_length_m": 8.002405552170465,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.1910216063261032,
+        "success": 1.0,
+        "spl": 0.9139109001485224,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 42.57708154991269,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.9139109001485224,
+      "actual_model_calls": 18,
+      "request_latency_s": {
+        "count": 18,
+        "median": 1.779465604457073,
+        "p95": 1.8332783573539928,
+        "mean": 1.6813030816588759,
+        "total": 30.263455469859764
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 24,
+        "later_movement_over_2cm": 22,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 7
+      },
+      "steps_sha256": "5edd3872f6e8504950fb9c5c8d7c081e95b96888609540f0c44a071f2c004865",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.9132461412122783
+    },
+    {
+      "episode_id": "1476",
+      "trajectory_id": "5840",
+      "steps": 400,
+      "start_distance_m": 7.123377799987793,
+      "path_length_m": 42.46369074563231,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 13.298338890075684,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 6,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 272.5864626779221,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 106,
+      "request_latency_s": {
+        "count": 106,
+        "median": 1.801084214472212,
+        "p95": 1.8450952553539537,
+        "mean": 1.7845902143019903,
+        "total": 189.16656271601096
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 210,
+        "later_movement_over_2cm": 71,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 13
+      },
+      "steps_sha256": "ed5cda6452aced30bd6150f0906e64ac95e9624e0c0b3f4611ee0141b826ade0",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.2925917751572916
+    },
+    {
+      "episode_id": "1447",
+      "trajectory_id": "5731",
+      "steps": 66,
+      "start_distance_m": 10.344746589660645,
+      "path_length_m": 12.516635373071304,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.4115056991577148,
+        "success": 1.0,
+        "spl": 0.8264798280661855,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 43.187777447048575,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.8264798280661855,
+      "actual_model_calls": 17,
+      "request_latency_s": {
+        "count": 17,
+        "median": 1.7982165871653706,
+        "p95": 1.842421572562307,
+        "mean": 1.6906580841716599,
+        "total": 28.741187430918217
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 4
+      },
+      "steps_sha256": "7fdb143a27d0d1cf622484cf4d294aeaef42645096c7064deafc2345c85fe475",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1593",
+      "trajectory_id": "6339",
+      "steps": 140,
+      "start_distance_m": 8.31124496459961,
+      "path_length_m": 21.98479806343793,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 3.937495470046997,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 7,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 103.29789971699938,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 36,
+      "request_latency_s": {
+        "count": 36,
+        "median": 1.7922668090322986,
+        "p95": 1.8192327694850974,
+        "mean": 1.7313043842958804,
+        "total": 62.326957834651694
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 73,
+        "later_movement_over_2cm": 51,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 4
+      },
+      "steps_sha256": "e90fc51c592744d6d9dd96cfc9a41a55ea85709c1b67e4396d45af3e2798c2fb",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "721",
+      "trajectory_id": "2909",
+      "steps": 400,
+      "start_distance_m": 4.7544355392456055,
+      "path_length_m": 38.18923484042893,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.6396371126174927,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 15,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 314.0567186300177,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 109,
+      "request_latency_s": {
+        "count": 109,
+        "median": 1.8064964469522238,
+        "p95": 1.8417228776495904,
+        "mean": 1.7917499160757202,
+        "total": 195.3007408522535
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 62,
+        "later_movement_over_2cm": 150,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 7
+      },
+      "steps_sha256": "c515ff57f7958722ee7749603d287053a3863b27969f71e36720e2cd3d840b4c",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "587",
+      "trajectory_id": "2375",
+      "steps": 46,
+      "start_distance_m": 5.349807262420654,
+      "path_length_m": 6.779818182557504,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.2160903215408325,
+        "success": 1.0,
+        "spl": 0.789078276004062,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 36.09242467978038,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.789078276004062,
+      "actual_model_calls": 13,
+      "request_latency_s": {
+        "count": 13,
+        "median": 1.8056559548713267,
+        "p95": 1.8433580918703227,
+        "mean": 1.6514107957840538,
+        "total": 21.4683403451927
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "58cc555ad47a2abdbd7890f76953a15b8e95518cbb5a833123946a247f3d5896",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.20541840496028366
+    },
+    {
+      "episode_id": "1381",
+      "trajectory_id": "5455",
+      "steps": 74,
+      "start_distance_m": 8.593505859375,
+      "path_length_m": 9.500008265872285,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.45255473256111145,
+        "success": 1.0,
+        "spl": 0.9045787809279607,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 50.172965322155505,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.9045787809279607,
+      "actual_model_calls": 18,
+      "request_latency_s": {
+        "count": 18,
+        "median": 1.7871034229174256,
+        "p95": 1.8072385850944557,
+        "mean": 1.6789652849806265,
+        "total": 30.22137512965128
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "ce37a12aa8d3602cc9049d57924df8fdacfbd20714a379e975e07ca9d233d9aa",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.9824904250184412
+    },
+    {
+      "episode_id": "1807",
+      "trajectory_id": "7192",
+      "steps": 88,
+      "start_distance_m": 15.506034851074219,
+      "path_length_m": 16.74999966263374,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.0601898431777954,
+        "success": 1.0,
+        "spl": 0.9257334552397224,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 56.797049685847014,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.9257334552397224,
+      "actual_model_calls": 21,
+      "request_latency_s": {
+        "count": 21,
+        "median": 1.780509906122461,
+        "p95": 1.8337527010589838,
+        "mean": 1.6944099786979634,
+        "total": 35.58260955265723
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 4
+      },
+      "steps_sha256": "12b841bd598b577511b40ade277aa3291c2138f52e85e39488f87ae88f384ee2",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "275",
+      "trajectory_id": "1090",
+      "steps": 58,
+      "start_distance_m": 8.34052562713623,
+      "path_length_m": 8.67811689885705,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.1195521205663681,
+        "success": 1.0,
+        "spl": 0.96109855966282,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 40.88360009086318,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.96109855966282,
+      "actual_model_calls": 16,
+      "request_latency_s": {
+        "count": 16,
+        "median": 1.7872013836167753,
+        "p95": 1.8149070564541034,
+        "mean": 1.6713940905610798,
+        "total": 26.742305448977277
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "5b213d7b6e1c076d9e3c391ee9a7d034948e643be728b66b0677db4b6fb5767f",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.955022546222937
+    },
+    {
+      "episode_id": "1466",
+      "trajectory_id": "5822",
+      "steps": 400,
+      "start_distance_m": 10.542823791503906,
+      "path_length_m": 42.60862524995561,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 7.790738582611084,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 10,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 324.4892314018216,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 117,
+      "request_latency_s": {
+        "count": 117,
+        "median": 1.8100507918279618,
+        "p95": 1.846903044823557,
+        "mean": 1.7958362559374008,
+        "total": 210.1128419446759
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 7,
+        "later_movement_over_2cm": 171,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 17
+      },
+      "steps_sha256": "8e001fc194d9987981a243de99718b69a24509a4bac800774abdc9677aab09d6",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "439",
+      "trajectory_id": "1720",
+      "steps": 400,
+      "start_distance_m": 5.762962341308594,
+      "path_length_m": 17.995408673185725,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 2.6523325443267822,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 2,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 275.2178042118903,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 100,
+      "request_latency_s": {
+        "count": 100,
+        "median": 1.7992874420015141,
+        "p95": 1.8655447677825576,
+        "mean": 1.7893713691970334,
+        "total": 178.93713691970333
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 182,
+        "later_movement_over_2cm": 50,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 6
+      },
+      "steps_sha256": "57b9c63eef27e5d424581eeb9712d811955d8cfcf9364b04898d13db365b52e5",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "1337",
+      "trajectory_id": "5201",
+      "steps": 54,
+      "start_distance_m": 7.768569469451904,
+      "path_length_m": 7.499999768785991,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.5558423399925232,
+        "success": 1.0,
+        "spl": 1.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 32.31619439017959,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 1.0,
+      "actual_model_calls": 13,
+      "request_latency_s": {
+        "count": 13,
+        "median": 1.8039167940150946,
+        "p95": 1.8491882076486945,
+        "mean": 1.6572007112061748,
+        "total": 21.543609245680273
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "0eefecc0a6488365c910516fee9a435a203246eef4099046afe3bbce91faddce",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "1405",
+      "trajectory_id": "5562",
+      "steps": 400,
+      "start_distance_m": 6.9030351638793945,
+      "path_length_m": 39.614453374083865,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 6.84575080871582,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 12,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 331.2298387500923,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 134,
+      "request_latency_s": {
+        "count": 134,
+        "median": 1.7971652154810727,
+        "p95": 1.8263710717437789,
+        "mean": 1.782130980379393,
+        "total": 238.80555137083866
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 74,
+        "later_movement_over_2cm": 122,
+        "longest_blocked_forward_streak": 1,
+        "max_identical_response_count": 18
+      },
+      "steps_sha256": "700e35e5cbcd8bd2ee2f61a4a263a583658b640293b71cafa4be79465647569d",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1525",
+      "trajectory_id": "5972",
+      "steps": 400,
+      "start_distance_m": 11.760185241699219,
+      "path_length_m": 58.2918671261898,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 9.504999160766602,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 16,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 338.08159388322383,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 124,
+      "request_latency_s": {
+        "count": 124,
+        "median": 1.8074444880476221,
+        "p95": 1.8456476372783073,
+        "mean": 1.7908811434660288,
+        "total": 222.06926178978756
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 130,
+        "later_movement_over_2cm": 170,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 15
+      },
+      "steps_sha256": "ed4cc046969573432129aeb06a030763ca246823646ed441ef61f2c6171be503",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "994",
+      "trajectory_id": "4070",
+      "steps": 400,
+      "start_distance_m": 12.830215454101562,
+      "path_length_m": 53.62134578373848,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 14.98665714263916,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 4,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 305.5315169340465,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 109,
+      "request_latency_s": {
+        "count": 109,
+        "median": 1.8097749908920377,
+        "p95": 1.857224523089826,
+        "mean": 1.7936968629466319,
+        "total": 195.51295806118287
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 55,
+        "later_movement_over_2cm": 183,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 5
+      },
+      "steps_sha256": "dd5ee02c2dfb1ef33f966f82ac721cbe2c4c7e4cbcf2923a2257834d6959a7fe",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1132",
+      "trajectory_id": "4534",
+      "steps": 400,
+      "start_distance_m": 11.939268112182617,
+      "path_length_m": 69.0198083825523,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 8.301881790161133,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 319.21948468405753,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 110,
+      "request_latency_s": {
+        "count": 110,
+        "median": 1.8078179215081036,
+        "p95": 1.8570542881148868,
+        "mean": 1.7771330654875122,
+        "total": 195.48463720362633
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 32,
+        "later_movement_over_2cm": 249,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 11
+      },
+      "steps_sha256": "cac200a906014fc5b077b495704f4fc06f7f31af4a348dad3ad2d90b30e8104c",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "575",
+      "trajectory_id": "2342",
+      "steps": 381,
+      "start_distance_m": 10.261893272399902,
+      "path_length_m": 75.07939303763845,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 2.1373274326324463,
+        "success": 1.0,
+        "spl": 0.13668055687377523,
+        "collisions": {
+          "count": 3,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 324.3606007769704,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.13668055687377523,
+      "actual_model_calls": 113,
+      "request_latency_s": {
+        "count": 113,
+        "median": 1.80305911693722,
+        "p95": 1.8441275927703829,
+        "mean": 1.785794157761487,
+        "total": 201.79473982704803
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 264,
+        "later_movement_over_2cm": 88,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 20
+      },
+      "steps_sha256": "2b9c3c2fbdf475f91e6d4a4360bb7e009562f06ae6be80f5d002912ebfbd53b8",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.1789414303212382
+    },
+    {
+      "episode_id": "1010",
+      "trajectory_id": "4094",
+      "steps": 400,
+      "start_distance_m": 7.3460164070129395,
+      "path_length_m": 29.514335008018914,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 7.316282749176025,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 4,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 290.82470466801897,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 112,
+      "request_latency_s": {
+        "count": 112,
+        "median": 1.8012133239535615,
+        "p95": 1.8437099509406834,
+        "mean": 1.7886884396721143,
+        "total": 200.3331052432768
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 33,
+        "later_movement_over_2cm": 95,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 9
+      },
+      "steps_sha256": "173d08f65f9ecb9060806529e31bb695456862d24ca7c30597ce9ee38bfd1c23",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.7382698202128125
+    },
+    {
+      "episode_id": "1051",
+      "trajectory_id": "4235",
+      "steps": 400,
+      "start_distance_m": 10.43698501586914,
+      "path_length_m": 14.687511536657686,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.9705715775489807,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 290.430081514176,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 91,
+      "request_latency_s": {
+        "count": 91,
+        "median": 1.8006259619724005,
+        "p95": 1.869891774491407,
+        "mean": 1.7861835406965239,
+        "total": 162.54270220338367
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 13
+      },
+      "steps_sha256": "500517269ae58a44f0c6db6ed888538b50972b7db62576ef8403e87fdd2916d9",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "950",
+      "trajectory_id": "3908",
+      "steps": 56,
+      "start_distance_m": 6.674201011657715,
+      "path_length_m": 8.729387217267476,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 3.9946372509002686,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 43.565160054014996,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 16,
+      "request_latency_s": {
+        "count": 16,
+        "median": 1.7953876126557589,
+        "p95": 1.8173876946093515,
+        "mean": 1.6727762760856422,
+        "total": 26.764420417370275
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 3
+      },
+      "steps_sha256": "e299b495f790b66f535544f5a13502029733b6c4997fd68f319132815e0ec0fe",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1262",
+      "trajectory_id": "4951",
+      "steps": 151,
+      "start_distance_m": 9.990175247192383,
+      "path_length_m": 17.81406395919083,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.4130546450614929,
+        "success": 1.0,
+        "spl": 0.5608027080714856,
+        "collisions": {
+          "count": 3,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 111.17306097480468,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.5608027080714856,
+      "actual_model_calls": 45,
+      "request_latency_s": {
+        "count": 45,
+        "median": 1.7936742869205773,
+        "p95": 1.8237002753652631,
+        "mean": 1.7516392067023037,
+        "total": 78.82376430160366
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 54,
+        "later_movement_over_2cm": 32,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 8
+      },
+      "steps_sha256": "f441a019eb6d133bed2a7525a8c04d72c74bb9428930a3d5cf461fe7983f7936",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "833",
+      "trajectory_id": "3411",
+      "steps": 400,
+      "start_distance_m": 9.908374786376953,
+      "path_length_m": 44.60862734275167,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 17.845109939575195,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 6,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 321.8102786310483,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 114,
+      "request_latency_s": {
+        "count": 114,
+        "median": 1.7974712376017123,
+        "p95": 1.845134874782525,
+        "mean": 1.7815796824666394,
+        "total": 203.1000838011969
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 9,
+        "later_movement_over_2cm": 177,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 11
+      },
+      "steps_sha256": "a52c49c78b87d4442584137e5390fa740cf2cc7ac62b52c8242a24d6d019b490",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "444",
+      "trajectory_id": "1775",
+      "steps": 99,
+      "start_distance_m": 11.29076862335205,
+      "path_length_m": 17.063775689296282,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.3447043895721436,
+        "success": 1.0,
+        "spl": 0.6616805622942945,
+        "collisions": {
+          "count": 3,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 77.51925801718608,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.6616805622942945,
+      "actual_model_calls": 25,
+      "request_latency_s": {
+        "count": 25,
+        "median": 1.7980415078345686,
+        "p95": 1.8344525332096964,
+        "mean": 1.7201846035197377,
+        "total": 43.00461508799344
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 70,
+        "later_movement_over_2cm": 20,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 3
+      },
+      "steps_sha256": "cd60ffaf6e5d17121720908fe4fee876a7a458ad9d955362da1e854617439ac8",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.679259066194972
+    },
+    {
+      "episode_id": "1740",
+      "trajectory_id": "6893",
+      "steps": 400,
+      "start_distance_m": 5.883550643920898,
+      "path_length_m": 45.60511580375093,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.2117117643356323,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 6,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 313.83096588682383,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 133,
+      "request_latency_s": {
+        "count": 133,
+        "median": 1.7874369309283793,
+        "p95": 1.8321305359248072,
+        "mean": 1.7731774625511967,
+        "total": 235.83260251930915
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 6,
+        "later_movement_over_2cm": 179,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 21
+      },
+      "steps_sha256": "670aeafafeb446580435247bec43ff36dbc7da56619f6191631fb3424d3a1679",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1131",
+      "trajectory_id": "4510",
+      "steps": 400,
+      "start_distance_m": 7.720594882965088,
+      "path_length_m": 43.60414095523164,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 5.934032917022705,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 35,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 315.83646237803623,
+      "batch": 2,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 110,
+      "request_latency_s": {
+        "count": 110,
+        "median": 1.8090541824931279,
+        "p95": 1.8548870465834624,
+        "mean": 1.7964038843331351,
+        "total": 197.60442727664486
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 159,
+        "later_movement_over_2cm": 74,
+        "longest_blocked_forward_streak": 11,
+        "max_identical_response_count": 8
+      },
+      "steps_sha256": "c0c4fee21074bd02641025a6338a0236dc89ab603a2b3862e0a3b02ce348f997",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "937",
+      "trajectory_id": "3875",
+      "steps": 35,
+      "start_distance_m": 5.787616729736328,
+      "path_length_m": 5.7977370439665865,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.44229331612586975,
+        "success": 1.0,
+        "spl": 0.9982544494719283,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 29.014892591862008,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.9982544494719283,
+      "actual_model_calls": 12,
+      "request_latency_s": {
+        "count": 12,
+        "median": 1.7772089949576184,
+        "p95": 1.8014994271215983,
+        "mean": 1.524253681418486,
+        "total": 18.29104417702183
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 3
+      },
+      "steps_sha256": "da8c3f79476701bfb396b09a6c7a348c3de2affade08f2d3f481af8fde7b3fd2",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "976",
+      "trajectory_id": "4009",
+      "steps": 400,
+      "start_distance_m": 8.899764060974121,
+      "path_length_m": 49.13961591584513,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 27.076114654541016,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 43,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 291.0829334179871,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 109,
+      "request_latency_s": {
+        "count": 109,
+        "median": 1.7924282590392977,
+        "p95": 1.830330569623038,
+        "mean": 1.7756763750456548,
+        "total": 193.54872487997636
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 19,
+        "later_movement_over_2cm": 188,
+        "longest_blocked_forward_streak": 13,
+        "max_identical_response_count": 7
+      },
+      "steps_sha256": "13055d15936ecefa51ad1c0cc3c076484854d549726c924068a89fe0d25edfc8",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1060",
+      "trajectory_id": "4268",
+      "steps": 114,
+      "start_distance_m": 8.661920547485352,
+      "path_length_m": 13.268198270204847,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 2.4288198947906494,
+        "success": 1.0,
+        "spl": 0.6528332110605843,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 88.9599159040954,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.6528332110605843,
+      "actual_model_calls": 35,
+      "request_latency_s": {
+        "count": 35,
+        "median": 1.779547578888014,
+        "p95": 1.8175775383366273,
+        "mean": 1.7241765685113413,
+        "total": 60.346179897896945
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 3
+      },
+      "steps_sha256": "f263841ebb0436f9fa7721fb4e9fc2ad62aa912496be8a9c43e310f26fb4f11b",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.785316064089888
+    },
+    {
+      "episode_id": "1457",
+      "trajectory_id": "5795",
+      "steps": 400,
+      "start_distance_m": 7.9887285232543945,
+      "path_length_m": 45.33187150673063,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 19.327104568481445,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 61,
+          "is_collision": true
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 325.81051409314387,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 120,
+      "request_latency_s": {
+        "count": 120,
+        "median": 1.792912703473121,
+        "p95": 1.8448541546938941,
+        "mean": 1.778399910554678,
+        "total": 213.40798926656134
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 125,
+        "later_movement_over_2cm": 116,
+        "longest_blocked_forward_streak": 15,
+        "max_identical_response_count": 10
+      },
+      "steps_sha256": "8e4a94a4a78e9a2483913a58ebd2c5c1fc4ed986155a46c8a9ce9568f02f389b",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "447",
+      "trajectory_id": "1793",
+      "steps": 122,
+      "start_distance_m": 11.755081176757812,
+      "path_length_m": 14.999999445861164,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 16.542367935180664,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 83.24873233097605,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 32,
+      "request_latency_s": {
+        "count": 32,
+        "median": 1.7957809475483373,
+        "p95": 1.8334556184941904,
+        "mean": 1.7340859944597469,
+        "total": 55.4907518227119
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "1f9e3f6306e2027f5529d65303727cfabdeb4e6be92c8a18ebcbc4c9a73e9140",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1167",
+      "trajectory_id": "4634",
+      "steps": 95,
+      "start_distance_m": 13.365565299987793,
+      "path_length_m": 15.610547002114568,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 2.781101703643799,
+        "success": 1.0,
+        "spl": 0.8561881607599485,
+        "collisions": {
+          "count": 2,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 70.68562408420257,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.8561881607599485,
+      "actual_model_calls": 27,
+      "request_latency_s": {
+        "count": 27,
+        "median": 1.7859974401071668,
+        "p95": 1.830096882255748,
+        "mean": 1.718565782342382,
+        "total": 46.401276123244315
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 62,
+        "later_movement_over_2cm": 18,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 5
+      },
+      "steps_sha256": "7e5d3d5df7cf495859271662d78d117d5ea85fb56817e6d4cfd2d79137478ade",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "1285",
+      "trajectory_id": "5026",
+      "steps": 400,
+      "start_distance_m": 7.492407321929932,
+      "path_length_m": 41.207711955275336,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 7.249577045440674,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 2,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 318.3055508348625,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 124,
+      "request_latency_s": {
+        "count": 124,
+        "median": 1.7979692979715765,
+        "p95": 1.8377951666247099,
+        "mean": 1.7780740686519552,
+        "total": 220.48118451284245
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 19,
+        "later_movement_over_2cm": 156,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 17
+      },
+      "steps_sha256": "a821a108e19682267b701677c4861967ecac740a27ccafc67a0a33b41f3cb562",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1819",
+      "trajectory_id": "7225",
+      "steps": 223,
+      "start_distance_m": 9.982793807983398,
+      "path_length_m": 37.62411765842101,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 25.02507972717285,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 32,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 166.40795758506283,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 54,
+      "request_latency_s": {
+        "count": 54,
+        "median": 1.7786709800129756,
+        "p95": 1.8174751845421269,
+        "mean": 1.743444215010472,
+        "total": 94.1459876105655
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 60,
+        "later_movement_over_2cm": 101,
+        "longest_blocked_forward_streak": 6,
+        "max_identical_response_count": 11
+      },
+      "steps_sha256": "2389f28666c6e638dcfd532b44ee15965a63525a70913c4f0a7e99e57c5a4d57",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.7818932850032967
+    },
+    {
+      "episode_id": "643",
+      "trajectory_id": "2665",
+      "steps": 90,
+      "start_distance_m": 10.240154266357422,
+      "path_length_m": 11.579747591631252,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.5153248310089111,
+        "success": 1.0,
+        "spl": 0.8843158399025015,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 68.00137676508166,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.8843158399025015,
+      "actual_model_calls": 24,
+      "request_latency_s": {
+        "count": 24,
+        "median": 1.7923640545923263,
+        "p95": 1.8222102814237586,
+        "mean": 1.707580194857049,
+        "total": 40.98192467656918
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 3
+      },
+      "steps_sha256": "b45698f141c76398593bce4a62628052f8a67e599e36c04c46f9ff3093324c53",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.9949117289459516
+    },
+    {
+      "episode_id": "292",
+      "trajectory_id": "1144",
+      "steps": 75,
+      "start_distance_m": 9.100987434387207,
+      "path_length_m": 10.84138912743218,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.7631948590278625,
+        "success": 1.0,
+        "spl": 0.8394669138095202,
+        "collisions": {
+          "count": 3,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 55.090769867179915,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.8394669138095202,
+      "actual_model_calls": 23,
+      "request_latency_s": {
+        "count": 23,
+        "median": 1.785913130035624,
+        "p95": 1.8107864633435384,
+        "mean": 1.666265061955251,
+        "total": 38.324096424970776
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 13,
+        "later_movement_over_2cm": 38,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "0b6e37d3c04df1740225137ef198daf5dacf12f8a508051e488c0be37354dd37",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "801",
+      "trajectory_id": "3284",
+      "steps": 400,
+      "start_distance_m": 8.349437713623047,
+      "path_length_m": 29.838992173170322,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.38967663049697876,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 5,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 305.99820497911423,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 116,
+      "request_latency_s": {
+        "count": 116,
+        "median": 1.7981679720105603,
+        "p95": 1.8290630371193402,
+        "mean": 1.783783404937351,
+        "total": 206.91887497273274
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 26,
+        "later_movement_over_2cm": 100,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 10
+      },
+      "steps_sha256": "e14d6d842c9f38e93bf21b0f97a9be5a9eb8c811c221d74a01986e5d3ba28e48",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "862",
+      "trajectory_id": "3521",
+      "steps": 382,
+      "start_distance_m": 11.144094467163086,
+      "path_length_m": 47.447408483936364,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.7875257730484009,
+        "success": 1.0,
+        "spl": 0.23487256383641825,
+        "collisions": {
+          "count": 33,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 291.77909195492975,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.23487256383641825,
+      "actual_model_calls": 116,
+      "request_latency_s": {
+        "count": 116,
+        "median": 1.7949718080926687,
+        "p95": 1.8475087109254673,
+        "mean": 1.783142662502761,
+        "total": 206.84454885032028
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 25,
+        "later_movement_over_2cm": 191,
+        "longest_blocked_forward_streak": 1,
+        "max_identical_response_count": 12
+      },
+      "steps_sha256": "5dc134c4a1fa0dad6863cdd678645da0b30381e8b841fd5cb96089d6629393a1",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "83",
+      "trajectory_id": "277",
+      "steps": 400,
+      "start_distance_m": 13.14793586730957,
+      "path_length_m": 64.88223490382332,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.311366081237793,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 7,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 273.35945944394916,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 95,
+      "request_latency_s": {
+        "count": 95,
+        "median": 1.7834795529488474,
+        "p95": 1.81361090245191,
+        "mean": 1.7652909339111493,
+        "total": 167.7026387215592
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 28,
+        "later_movement_over_2cm": 237,
+        "longest_blocked_forward_streak": 2,
+        "max_identical_response_count": 11
+      },
+      "steps_sha256": "a65bc09fae9c6b073a539c0c23ae05aba0706653907c7e0720371a8bf45f2248",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "621",
+      "trajectory_id": "2599",
+      "steps": 93,
+      "start_distance_m": 5.838303565979004,
+      "path_length_m": 8.779519524010151,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.7410697937011719,
+        "success": 1.0,
+        "spl": 0.6649912465737016,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 76.05619305302389,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.6649912465737016,
+      "actual_model_calls": 26,
+      "request_latency_s": {
+        "count": 26,
+        "median": 1.7999336465727538,
+        "p95": 1.8519771076971665,
+        "mean": 1.7295304990928764,
+        "total": 44.967792976414785
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 3
+      },
+      "steps_sha256": "dca7908adb4c15fa8d8361593197e55332b7747cc5d554525e1b2af705e3b9db",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.831852626636532
+    },
+    {
+      "episode_id": "1437",
+      "trajectory_id": "5671",
+      "steps": 400,
+      "start_distance_m": 8.47883415222168,
+      "path_length_m": 50.37216750717359,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 6.414346218109131,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 13,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 300.33656197204255,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 122,
+      "request_latency_s": {
+        "count": 122,
+        "median": 1.7954043344361708,
+        "p95": 1.8403003633837216,
+        "mean": 1.7834529606510932,
+        "total": 217.58126119943336
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 32,
+        "later_movement_over_2cm": 183,
+        "longest_blocked_forward_streak": 1,
+        "max_identical_response_count": 22
+      },
+      "steps_sha256": "d2cc838214c29f98ae07b0f491bca07fa0223847f6ee253fe15c981cbd267c44",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "991",
+      "trajectory_id": "4063",
+      "steps": 400,
+      "start_distance_m": 8.789604187011719,
+      "path_length_m": 71.78228277858875,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 7.159628868103027,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 14,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 322.7445639220532,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 121,
+      "request_latency_s": {
+        "count": 121,
+        "median": 1.7978332131169736,
+        "p95": 1.8331498440820724,
+        "mean": 1.7849589764671632,
+        "total": 215.98003615252674
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 28,
+        "later_movement_over_2cm": 271,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 19
+      },
+      "steps_sha256": "c735fc4f494b93acd88581d908e50586e195ce5e0e2aeddfbcf931dc4520d5b0",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.8169736072738136
+    },
+    {
+      "episode_id": "1143",
+      "trajectory_id": "4590",
+      "steps": 400,
+      "start_distance_m": 6.5736212730407715,
+      "path_length_m": 52.949244657977495,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 9.941956520080566,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 7,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 328.90973681095056,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 123,
+      "request_latency_s": {
+        "count": 123,
+        "median": 1.9289074919652194,
+        "p95": 1.974662601738237,
+        "mean": 1.8656473870018149,
+        "total": 229.47462860122323
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 92,
+        "later_movement_over_2cm": 164,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 13
+      },
+      "steps_sha256": "2d53b699790208d2a846280771ba36d775e3c6799f6c27dd96a76a61465ab54e",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "160",
+      "trajectory_id": "657",
+      "steps": 400,
+      "start_distance_m": 9.720928192138672,
+      "path_length_m": 33.201538219869654,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 3.9092628955841064,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 61,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 319.7011142389383,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 110,
+      "request_latency_s": {
+        "count": 110,
+        "median": 1.8021484800847247,
+        "p95": 1.8356261149398052,
+        "mean": 1.7872941237197004,
+        "total": 196.60235360916704
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 37,
+        "later_movement_over_2cm": 117,
+        "longest_blocked_forward_streak": 56,
+        "max_identical_response_count": 11
+      },
+      "steps_sha256": "9091b4f73e73ee72c8bc4fc3b8c75faf45860eaa46c84232fc5e4b1fe8ec86da",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "349",
+      "trajectory_id": "1382",
+      "steps": 83,
+      "start_distance_m": 14.447518348693848,
+      "path_length_m": 14.458924926527347,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.75458824634552,
+        "success": 1.0,
+        "spl": 0.9992111144686104,
+        "collisions": {
+          "count": 3,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 61.03739837789908,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.9992111144686104,
+      "actual_model_calls": 22,
+      "request_latency_s": {
+        "count": 22,
+        "median": 1.8056627274490893,
+        "p95": 1.8491492857807317,
+        "mean": 1.7204813891810111,
+        "total": 37.850590561982244
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 20,
+        "later_movement_over_2cm": 52,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 3
+      },
+      "steps_sha256": "2983c21bdae74ba8ff19cc8663fa963ddb1562f477acc11be3aa59b7bc3b59b3",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "1486",
+      "trajectory_id": "5876",
+      "steps": 400,
+      "start_distance_m": 9.19420051574707,
+      "path_length_m": 32.82219521705368,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 7.194484710693359,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 5,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 307.80492206895724,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 116,
+      "request_latency_s": {
+        "count": 116,
+        "median": 1.7915984829887748,
+        "p95": 1.827094414853491,
+        "mean": 1.775273077420746,
+        "total": 205.93167698080651
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 101,
+        "later_movement_over_2cm": 87,
+        "longest_blocked_forward_streak": 1,
+        "max_identical_response_count": 9
+      },
+      "steps_sha256": "0ee6662ee0b6ff40ebb22d2649dce48d66ccc8f2305b767ef4fcc06b3ddcd557",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "1657",
+      "trajectory_id": "6623",
+      "steps": 79,
+      "start_distance_m": 8.035599708557129,
+      "path_length_m": 14.15803552811744,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 5.460590362548828,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 61.22275517694652,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 21,
+      "request_latency_s": {
+        "count": 21,
+        "median": 1.7819281951524317,
+        "p95": 1.8033972359262407,
+        "mean": 1.688387945028288,
+        "total": 35.45614684559405
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "1a0365445c0bdfbe8e3f4d29eaeac0a6d63091310dbaa5e1e89d1fad6520f4e9",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1072",
+      "trajectory_id": "4300",
+      "steps": 90,
+      "start_distance_m": 8.934564590454102,
+      "path_length_m": 12.260773155048577,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.7310840487480164,
+        "success": 1.0,
+        "spl": 0.728711357261152,
+        "collisions": {
+          "count": 7,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 76.58664351701736,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.728711357261152,
+      "actual_model_calls": 29,
+      "request_latency_s": {
+        "count": 29,
+        "median": 1.790280711138621,
+        "p95": 1.8402572069782763,
+        "mean": 1.6985941999351029,
+        "total": 49.25923179811798
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 49,
+        "later_movement_over_2cm": 16,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 3
+      },
+      "steps_sha256": "dc089e61ba10e76b0638e3478dd26f66989d44556124cb0fe463280dc8c24704",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1428",
+      "trajectory_id": "5644",
+      "steps": 64,
+      "start_distance_m": 12.992501258850098,
+      "path_length_m": 13.998446603552974,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.0148121118545532,
+        "success": 1.0,
+        "spl": 0.9281387908851991,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 43.158432740019634,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.9281387908851991,
+      "actual_model_calls": 15,
+      "request_latency_s": {
+        "count": 15,
+        "median": 1.7725910928566009,
+        "p95": 1.8086771542672069,
+        "mean": 1.654057796889295,
+        "total": 24.810866953339428
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "d1cd8d96ba198d5ca1d319140325e33d3c88eca096188ec973458111b4e89e71",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "272",
+      "trajectory_id": "1070",
+      "steps": 400,
+      "start_distance_m": 5.091952323913574,
+      "path_length_m": 31.054047503464744,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 2.351959466934204,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 4,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 373.40935452701524,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 152,
+      "request_latency_s": {
+        "count": 152,
+        "median": 1.7948404604103416,
+        "p95": 1.853954021667596,
+        "mean": 1.789560970277403,
+        "total": 272.01326748216525
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 121,
+        "later_movement_over_2cm": 77,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 34
+      },
+      "steps_sha256": "daef561b57a24365060786fbaadb617ca268a6b832c1b6dd3b9d036c9b4dd661",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "873",
+      "trajectory_id": "3530",
+      "steps": 400,
+      "start_distance_m": 13.415464401245117,
+      "path_length_m": 71.59571397146185,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 20.464078903198242,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 57,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 306.5985179548152,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 100,
+      "request_latency_s": {
+        "count": 100,
+        "median": 1.7908463679486886,
+        "p95": 1.8370278870570473,
+        "mean": 1.776350344719831,
+        "total": 177.6350344719831
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 91,
+        "later_movement_over_2cm": 243,
+        "longest_blocked_forward_streak": 3,
+        "max_identical_response_count": 16
+      },
+      "steps_sha256": "8b364a55c9f6851c1314a383566d3c1d357952b37b9a99f74ee9281a7356d78f",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "925",
+      "trajectory_id": "3840",
+      "steps": 55,
+      "start_distance_m": 5.540542125701904,
+      "path_length_m": 7.0008487313384355,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.3367738723754883,
+        "success": 1.0,
+        "spl": 0.7914100572107973,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 41.775711494963616,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.7914100572107973,
+      "actual_model_calls": 18,
+      "request_latency_s": {
+        "count": 18,
+        "median": 1.781395496451296,
+        "p95": 1.8099284485913814,
+        "mean": 1.678205794784137,
+        "total": 30.207704306114465
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 4
+      },
+      "steps_sha256": "39ec1fcc593fd9720f1c4bd24322284c46744baeaea03b4386248384ca125dc5",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.8863663602510802
+    },
+    {
+      "episode_id": "997",
+      "trajectory_id": "4079",
+      "steps": 78,
+      "start_distance_m": 6.5287628173828125,
+      "path_length_m": 7.547684724929802,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.3853333294391632,
+        "success": 1.0,
+        "spl": 0.8650020639799675,
+        "collisions": {
+          "count": 14,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 71.71363137615845,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.8650020639799675,
+      "actual_model_calls": 28,
+      "request_latency_s": {
+        "count": 28,
+        "median": 1.7932937220903113,
+        "p95": 1.8248792272410355,
+        "mean": 1.714280923421029,
+        "total": 47.99986585578881
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 51,
+        "later_movement_over_2cm": 0,
+        "longest_blocked_forward_streak": 2,
+        "max_identical_response_count": 10
+      },
+      "steps_sha256": "4d6fa33c0ec439b49387de8df089344febefd1560b74c15afcdabb5d51590469",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.8639642610227813
+    },
+    {
+      "episode_id": "990",
+      "trajectory_id": "4051",
+      "steps": 400,
+      "start_distance_m": 14.714162826538086,
+      "path_length_m": 21.971575556952512,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.9852408170700073,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 3,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 276.45877746795304,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 96,
+      "request_latency_s": {
+        "count": 96,
+        "median": 1.8006928965914994,
+        "p95": 1.8480919522698969,
+        "mean": 1.781701332605735,
+        "total": 171.04332793015055
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 241,
+        "later_movement_over_2cm": 60,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 8
+      },
+      "steps_sha256": "b2c553396005ecfd522ed0f543a1baf5a2ff64e8fd9e675fe335bc498b933e55",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.6592080207102288
+    },
+    {
+      "episode_id": "2",
+      "trajectory_id": "15",
+      "steps": 63,
+      "start_distance_m": 7.9608235359191895,
+      "path_length_m": 9.500001376296801,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.4298385381698608,
+        "success": 1.0,
+        "spl": 0.8379813052222936,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 49.825630884151906,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.8379813052222936,
+      "actual_model_calls": 21,
+      "request_latency_s": {
+        "count": 21,
+        "median": 1.7962070610374212,
+        "p95": 1.8232128371018916,
+        "mean": 1.657102740613655,
+        "total": 34.799157552886754
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 4
+      },
+      "steps_sha256": "05228a00195a09ef7b3335b564f7c7c957c9d26473aa25a6374a1f42dac07420",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.8164945843672076
+    },
+    {
+      "episode_id": "835",
+      "trajectory_id": "3417",
+      "steps": 44,
+      "start_distance_m": 6.152979373931885,
+      "path_length_m": 7.536258833312928,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 0.6130869388580322,
+        "success": 1.0,
+        "spl": 0.8164501145159201,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 38.163799691945314,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.8164501145159201,
+      "actual_model_calls": 17,
+      "request_latency_s": {
+        "count": 17,
+        "median": 1.7920533339492977,
+        "p95": 1.813900469057262,
+        "mean": 1.5852490189375685,
+        "total": 26.949233321938664
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 5
+      },
+      "steps_sha256": "ef560777cd1fff2b76db593a6ffd6d960951ae7420c98ba83494684c8deab7b1",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.9134292140911671
+    },
+    {
+      "episode_id": "1624",
+      "trajectory_id": "6523",
+      "steps": 400,
+      "start_distance_m": 4.98142147064209,
+      "path_length_m": 2.8625938077669257,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 7.113570213317871,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 372,
+          "is_collision": true
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 270.7556033639703,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 86,
+      "request_latency_s": {
+        "count": 86,
+        "median": 1.8033981960033998,
+        "p95": 1.8366178922588006,
+        "mean": 1.779914372519395,
+        "total": 153.07263603666797
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 4,
+        "later_movement_over_2cm": 11,
+        "longest_blocked_forward_streak": 252,
+        "max_identical_response_count": 34
+      },
+      "steps_sha256": "7ebae91e55b969b972b367efa7f64ff7d789281d984d30bad776964d3d47ccb7",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1575",
+      "trajectory_id": "6292",
+      "steps": 400,
+      "start_distance_m": 7.060490608215332,
+      "path_length_m": 43.49946553413945,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 18.48247528076172,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 3,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 316.33690097299404,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 111,
+      "request_latency_s": {
+        "count": 111,
+        "median": 1.8013090300373733,
+        "p95": 1.8453332025092095,
+        "mean": 1.7887952096575686,
+        "total": 198.55626827199012
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 222,
+        "later_movement_over_2cm": 79,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 7
+      },
+      "steps_sha256": "775419b7884b6f511131c49b5a32e636338402b1c505633f516bd1f405fc2ba9",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1569",
+      "trajectory_id": "6169",
+      "steps": 400,
+      "start_distance_m": 7.120190620422363,
+      "path_length_m": 36.44566241537494,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 12.97797679901123,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 4,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 279.0544918868691,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 114,
+      "request_latency_s": {
+        "count": 114,
+        "median": 1.8006130559369922,
+        "p95": 1.843935749924276,
+        "mean": 1.7848062573200942,
+        "total": 203.46791333449073
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 35,
+        "later_movement_over_2cm": 117,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 9
+      },
+      "steps_sha256": "a37a7dc4d97479b47f4be595e977c3573231218f004ac89f80abc7bae0badb6a",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1516",
+      "trajectory_id": "5956",
+      "steps": 400,
+      "start_distance_m": 8.417325973510742,
+      "path_length_m": 32.34911241698655,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 9.430351257324219,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 202,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 321.68791065807454,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 103,
+      "request_latency_s": {
+        "count": 103,
+        "median": 1.7982495999895036,
+        "p95": 1.836918033636175,
+        "mean": 1.7664194487451206,
+        "total": 181.9412032207474
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 6,
+        "later_movement_over_2cm": 139,
+        "longest_blocked_forward_streak": 45,
+        "max_identical_response_count": 11
+      },
+      "steps_sha256": "8b0a9bc26a53228982759f4f4209e5c6edf6850e66be2f12020bb0bede604191",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "33",
+      "trajectory_id": "129",
+      "steps": 252,
+      "start_distance_m": 6.361871719360352,
+      "path_length_m": 33.22593145690541,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 10.701632499694824,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 10,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 195.16531633585691,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 73,
+      "request_latency_s": {
+        "count": 73,
+        "median": 1.7966960940975696,
+        "p95": 1.8244825937785207,
+        "mean": 1.7670982065865743,
+        "total": 128.99816908081993
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 107,
+        "later_movement_over_2cm": 58,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 7
+      },
+      "steps_sha256": "ca61fa523fb19120054b469f38361086272fd0340eca6d6c4e2b4738bb1853a0",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "140",
+      "trajectory_id": "552",
+      "steps": 235,
+      "start_distance_m": 13.368412017822266,
+      "path_length_m": 24.774242130667933,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.9673694372177124,
+        "success": 1.0,
+        "spl": 0.539609332440169,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 209.98600223008543,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.539609332440169,
+      "actual_model_calls": 78,
+      "request_latency_s": {
+        "count": 78,
+        "median": 1.7980844364501536,
+        "p95": 1.8414166231639681,
+        "mean": 1.7655441288161688,
+        "total": 137.71244204766117
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 9
+      },
+      "steps_sha256": "56b2a35708b2e5c5e4dd4bc4a11372120262343e77c97d20ad590e0f26ed6f74",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    },
+    {
+      "episode_id": "852",
+      "trajectory_id": "3484",
+      "steps": 400,
+      "start_distance_m": 13.823664665222168,
+      "path_length_m": 10.21556811357846,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 14.781087875366211,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 263,
+          "is_collision": true
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 271.5716928881593,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 90,
+      "request_latency_s": {
+        "count": 90,
+        "median": 1.7823921559611335,
+        "p95": 1.8219039125600829,
+        "mean": 1.764125618359281,
+        "total": 158.7713056523353
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 25,
+        "later_movement_over_2cm": 40,
+        "longest_blocked_forward_streak": 204,
+        "max_identical_response_count": 37
+      },
+      "steps_sha256": "5ff4ac40d8b5f2bfe023385e51368fd7679e1993183d27996eafef0acf0a34c4",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.7505348853278049
+    },
+    {
+      "episode_id": "1314",
+      "trajectory_id": "5138",
+      "steps": 67,
+      "start_distance_m": 11.160687446594238,
+      "path_length_m": 12.516402811166424,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.6166067123413086,
+        "success": 1.0,
+        "spl": 0.8916849078087169,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 50.334595821099356,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.8916849078087169,
+      "actual_model_calls": 19,
+      "request_latency_s": {
+        "count": 19,
+        "median": 1.7875640650745481,
+        "p95": 1.8145102966576814,
+        "mean": 1.6715596859882538,
+        "total": 31.75963403377682
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "8f004e25f39e5c42b1f3b543fb5cb09862e4a5599a3c3e3569383317415b7701",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.9922607940352516
+    },
+    {
+      "episode_id": "1605",
+      "trajectory_id": "6396",
+      "steps": 74,
+      "start_distance_m": 6.89449405670166,
+      "path_length_m": 10.079039426690615,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 2.9253127574920654,
+        "success": 1.0,
+        "spl": 0.6840427760208789,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 64.22804299509153,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.6840427760208789,
+      "actual_model_calls": 24,
+      "request_latency_s": {
+        "count": 24,
+        "median": 1.7943126785103232,
+        "p95": 1.8215942358016037,
+        "mean": 1.7190226736032248,
+        "total": 41.2565441664774
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 25,
+        "later_movement_over_2cm": 29,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 3
+      },
+      "steps_sha256": "af8a812f6781333c91ab053daed10c172aab3d3b5509e9763bd77a002dec3311",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.7833063173364654
+    },
+    {
+      "episode_id": "1279",
+      "trajectory_id": "4993",
+      "steps": 118,
+      "start_distance_m": 10.962905883789062,
+      "path_length_m": 12.280179472725726,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 8.504195213317871,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 85.42648413218558,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 34,
+      "request_latency_s": {
+        "count": 34,
+        "median": 1.7953637763857841,
+        "p95": 1.8378529408830218,
+        "mean": 1.745638810837751,
+        "total": 59.35171956848353
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "1177e788486a9f3ae543924c4a4a7a1a139e64fcb636abafdf05540fb5265cd3",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.8882748517784299
+    },
+    {
+      "episode_id": "1293",
+      "trajectory_id": "5038",
+      "steps": 57,
+      "start_distance_m": 8.643853187561035,
+      "path_length_m": 10.6829051848178,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.93401038646698,
+        "success": 1.0,
+        "spl": 0.8091294640216249,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 42.320434025954455,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.8091294640216249,
+      "actual_model_calls": 15,
+      "request_latency_s": {
+        "count": 15,
+        "median": 1.7867047800682485,
+        "p95": 1.8150665980298073,
+        "mean": 1.6501917560274402,
+        "total": 24.752876340411603
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 17,
+        "later_movement_over_2cm": 33,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 2
+      },
+      "steps_sha256": "0f8a03c62b05efde471f84369c8b5cc33935efb3984ddfeab6e16d235c632b92",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.8282548235621582
+    },
+    {
+      "episode_id": "1013",
+      "trajectory_id": "4099",
+      "steps": 400,
+      "start_distance_m": 7.445135116577148,
+      "path_length_m": 46.8271524673783,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 4.389249801635742,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 12,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 325.12080154707655,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 128,
+      "request_latency_s": {
+        "count": 128,
+        "median": 1.7994682234711945,
+        "p95": 1.8367566922097467,
+        "mean": 1.7898220054303238,
+        "total": 229.09721669508144
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 7,
+        "later_movement_over_2cm": 185,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 18
+      },
+      "steps_sha256": "0844b137eec943f89dc6501c2e12eaf51c77c9d4b44ffbec6024b89f82d39bc5",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.2505576225406148
+    },
+    {
+      "episode_id": "826",
+      "trajectory_id": "3391",
+      "steps": 400,
+      "start_distance_m": 7.025258541107178,
+      "path_length_m": 59.941721594667875,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 6.251858234405518,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 6,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 271.1752957049757,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 103,
+      "request_latency_s": {
+        "count": 103,
+        "median": 1.7853145089466125,
+        "p95": 1.8317841016221792,
+        "mean": 1.7666970003075282,
+        "total": 181.9697910316754
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 285,
+        "later_movement_over_2cm": 75,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 19
+      },
+      "steps_sha256": "d115fa5d16388cbf1d7ff7612a4965ff63539845ba11565d514d2fe03a6abb7e",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "531",
+      "trajectory_id": "2154",
+      "steps": 400,
+      "start_distance_m": 5.272797584533691,
+      "path_length_m": 49.60773819370751,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 6.28548002243042,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 8,
+          "is_collision": true
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 308.96150872902945,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 119,
+      "request_latency_s": {
+        "count": 119,
+        "median": 1.7974234661087394,
+        "p95": 1.8379934188676998,
+        "mean": 1.765780781108119,
+        "total": 210.12791295186616
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 29,
+        "later_movement_over_2cm": 185,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 16
+      },
+      "steps_sha256": "bfc3bf85c47681879995510bfd9ed254a9946ef2a637faa48149cdbe5d3344be",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1796",
+      "trajectory_id": "7158",
+      "steps": 400,
+      "start_distance_m": 5.136144638061523,
+      "path_length_m": 23.477572981275117,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 8.442834854125977,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 11,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 298.05765541805886,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 124,
+      "request_latency_s": {
+        "count": 124,
+        "median": 1.7999984428752214,
+        "p95": 1.8628333423053844,
+        "mean": 1.7930044170258748,
+        "total": 222.33254771120846
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 95,
+        "later_movement_over_2cm": 83,
+        "longest_blocked_forward_streak": 1,
+        "max_identical_response_count": 8
+      },
+      "steps_sha256": "7d29a36148565a3aca1e3f12b17e9116602db2163ada232caf53f78e3d5d764a",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "562",
+      "trajectory_id": "2288",
+      "steps": 76,
+      "start_distance_m": 10.400999069213867,
+      "path_length_m": 13.005261483193404,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.4233758449554443,
+        "success": 1.0,
+        "spl": 0.7997531761908657,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 52.32289697206579,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 0.7997531761908657,
+      "actual_model_calls": 20,
+      "request_latency_s": {
+        "count": 20,
+        "median": 1.8092402335023507,
+        "p95": 1.863024298765231,
+        "mean": 1.7136452743317931,
+        "total": 34.272905486635864
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 3
+      },
+      "steps_sha256": "87a910e512028c99c1f120b537fbf7ea49e480a068552ea24ae485af6327a47b",
+      "fp16_success": 1.0,
+      "fp16_spl": 0.9904059145789539
+    },
+    {
+      "episode_id": "1534",
+      "trajectory_id": "6014",
+      "steps": 400,
+      "start_distance_m": 7.673558712005615,
+      "path_length_m": 32.124432691940854,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 12.921634674072266,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 19,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 333.19560561398976,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 112,
+      "request_latency_s": {
+        "count": 112,
+        "median": 1.8011673010187224,
+        "p95": 1.8353659780579619,
+        "mean": 1.7846703656998995,
+        "total": 199.88308095838875
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 23,
+        "later_movement_over_2cm": 111,
+        "longest_blocked_forward_streak": 3,
+        "max_identical_response_count": 10
+      },
+      "steps_sha256": "ab1871147a88fc4c896b037ed734fe475390cf3acab1eae248229b7d53d2e18a",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "78",
+      "trajectory_id": "264",
+      "steps": 400,
+      "start_distance_m": 9.06766128540039,
+      "path_length_m": 57.42061843007854,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 14.136601448059082,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 15,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 316.37860883399844,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 112,
+      "request_latency_s": {
+        "count": 112,
+        "median": 1.8028774425620213,
+        "p95": 1.8363804928259924,
+        "mean": 1.7868640141885928,
+        "total": 200.12876958912238
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 13,
+        "later_movement_over_2cm": 227,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 14
+      },
+      "steps_sha256": "13ca0451def8a360f15b5075ce835686c94ce50ca8be4340a70c24c039c7da69",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1309",
+      "trajectory_id": "5134",
+      "steps": 400,
+      "start_distance_m": 13.924505233764648,
+      "path_length_m": 86.85865186706118,
+      "stop_called": false,
+      "time_limit_reached": true,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 14.678594589233398,
+        "success": 0.0,
+        "spl": 0.0,
+        "collisions": {
+          "count": 1,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "step_limit",
+      "elapsed_s": 295.49724519904703,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 0,
+      "protocol_spl": 0.0,
+      "actual_model_calls": 96,
+      "request_latency_s": {
+        "count": 96,
+        "median": 1.7816873624688014,
+        "p95": 1.8261405152152292,
+        "mean": 1.7414166597639753,
+        "total": 167.17599933734164
+      },
+      "collision_diagnostics": {
+        "first_collision_step": 128,
+        "later_movement_over_2cm": 244,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 13
+      },
+      "steps_sha256": "b7866c2af4c2382a727d606955860114bbcb3ef905dcc0076f4da8cbee481f19",
+      "fp16_success": 0.0,
+      "fp16_spl": 0.0
+    },
+    {
+      "episode_id": "1329",
+      "trajectory_id": "5167",
+      "steps": 58,
+      "start_distance_m": 9.347658157348633,
+      "path_length_m": 9.003241443950222,
+      "stop_called": true,
+      "time_limit_reached": false,
+      "error_count": 0,
+      "metrics": {
+        "distance_to_goal": 1.1126830577850342,
+        "success": 1.0,
+        "spl": 1.0,
+        "collisions": {
+          "count": 0,
+          "is_collision": false
+        }
+      },
+      "terminal_stop_source": "model",
+      "elapsed_s": 42.3559314541053,
+      "batch": 3,
+      "batch_complete": true,
+      "protocol_success": 1,
+      "protocol_spl": 1.0,
+      "actual_model_calls": 16,
+      "request_latency_s": {
+        "count": 16,
+        "median": 1.7943769085686654,
+        "p95": 1.8446200800244696,
+        "mean": 1.6751189117494505,
+        "total": 26.801902587991208
+      },
+      "collision_diagnostics": {
+        "first_collision_step": null,
+        "later_movement_over_2cm": null,
+        "longest_blocked_forward_streak": 0,
+        "max_identical_response_count": 3
+      },
+      "steps_sha256": "15312e43759a749ff3ae1c30ad06052fbe1f261a606f124d778087f986155ebc",
+      "fp16_success": 1.0,
+      "fp16_spl": 1.0
+    }
+  ],
+  "sr": 0.4,
+  "spl": 0.3216303634721502,
+  "paired_comparison": {
+    "count": 150,
+    "fp16_sr": 0.54,
+    "fp16_spl": 0.4535492158765656,
+    "awq_sr": 0.4,
+    "awq_spl": 0.3216303634721502,
+    "gained_success": [
+      "1378",
+      "116",
+      "1447",
+      "1262",
+      "292",
+      "862",
+      "1072"
+    ],
+    "lost_success": [
+      "159",
+      "1413",
+      "1542",
+      "1550",
+      "307",
+      "1726",
+      "1724",
+      "1353",
+      "870",
+      "517",
+      "1638",
+      "1408",
+      "662",
+      "184",
+      "1066",
+      "917",
+      "1128",
+      "1476",
+      "439",
+      "1010",
+      "1051",
+      "1819",
+      "991",
+      "1486",
+      "990",
+      "852",
+      "1279",
+      "1013"
+    ]
+  },
+  "actual_request_latency_s": {
+    "count": 10558,
+    "median": 1.8031065915711224,
+    "p95": 2.0005679128924383,
+    "mean": 1.7951300620373698,
+    "total": 18952.98319499055
+  },
+  "sampled_whole_card_peak_mib": 8351.0,
+  "action_steps": 37200,
+  "errors": [],
+  "model_stop_success_count": 60,
+  "fallback_stop_success_count": 0,
+  "step_limit_count": 73,
+  "collision_episode_count": 108,
+  "episode_loop_total_s": 29118.428332439857,
+  "plan_sha256": "0a5e23e36916a3d551635e312153e8b0174599c7d0a715fd1c98c127b6e179c8",
+  "model_sha256": "31d1c12dba3cbaace283cccf5be23337555f0383a3c4390e6270d2a9230414db",
+  "fp16_full": {
+    "count": 150,
+    "sr": 0.54,
+    "spl": 0.4535492158765656,
+    "actual_request_latency_s": {
+      "count": 8338,
+      "median": 2.055287398979999,
+      "p95": 2.2397606592974624,
+      "mean": 2.0332287304214733,
+      "total": 16953.061154254247
+    },
+    "sampled_whole_card_peak_mib": 11655.0
+  },
+  "notes": [
+    "seed7, 400 atomic actions, model STOP with geodesic distance<3m; original parser; no recovery actions",
+    "HTTP request timings from model_called=true only; two warmups per batch excluded",
+    "whole-card memory.used sampled every200ms; includes desktop and engine cache; not model-exclusive",
+    "FP16 batch1 interruption/recovery preserved; episode735 prefix IO omitted from loop timing.",
+    "Closed-loop inputs/trajectory lengths can diverge; request-latency comparison is workload-level, not fixed-input kernel speedup.",
+    "All fixed tasks retained regardless of outcomes; 2cm collision threshold is diagnostic only.",
+    "Only common completed episodes form the paired quality comparison; incomplete tasks explicitly listed.",
+    "Model file sizes and whole-card sampled VRAM are different metrics; engine cache budgets are fractions of free memory."
+  ]
+}

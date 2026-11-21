@@ -1,0 +1,443 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-20T12:56:34.487724+00:00",
+  "status": "prepared_static_only_gpu_not_run",
+  "scope": "New independent GEMV branch only; no imports of torch/Triton during this review, no GPU execution, no checkpoint read, no runtime adapter/table edits.",
+  "files": {
+    "checks/navigation_latency_w4_gemv_20261120.py": "a1748d748186a11d407abc350929fe4df80454ca8a1e7650269c0be755cd26e4",
+    "checks/probe_navigation_latency_w4_gemv_20261120.py": "f4dd0dc6a6ef68c08203466be9aa4ffafdcdb607706c4dede97796dcfe159306"
+  },
+  "arithmetic": [
+    "Existing native unpack helper uses the same asymmetric group128 packed order [0,16,4,20,8,24,12,28].",
+    "FP32 subtract/multiply of exactly represented uint4 differences and FP16 scale, then explicit FP16 weight round before FP32 x multiplication; native FP16 scale product has this same rounding target.",
+    "Bounded BK128/256 tiles, runtime K loop, FP32 tile reduction and FP32 running accumulation; split1 casts final output to FP16.",
+    "Split2/4/8 writes disjoint FP32 partial[split,N], including zero for empty splits, then a separate small FP32 sum and FP16 cast. No atomics, no zero-initialization dependency.",
+    "Reduction ordering differs from Tensor Core GEMM and original FP16 split-atomic behavior; mathematical-format agreement is not bitwise output equivalence."
+  ],
+  "cpu_checks": {
+    "ast_parsed": [
+      "navigation_latency_w4_gemv_20261120.py",
+      "probe_navigation_latency_w4_gemv_20261120.py"
+    ],
+    "unique_candidates": 72,
+    "k_group_coverage": [
+      {
+        "k": 128,
+        "tested_configs": 72,
+        "block_and_group_exact_once": true
+      },
+      {
+        "k": 384,
+        "tested_configs": 72,
+        "block_and_group_exact_once": true
+      },
+      {
+        "k": 2560,
+        "tested_configs": 72,
+        "block_and_group_exact_once": true
+      },
+      {
+        "k": 4096,
+        "tested_configs": 72,
+        "block_and_group_exact_once": true
+      },
+      {
+        "k": 9728,
+        "tested_configs": 72,
+        "block_and_group_exact_once": true
+      }
+    ],
+    "n_tail_coverage": [
+      8,
+      40,
+      2560,
+      6144,
+      19456
+    ],
+    "signed_packed_words_checked": 5,
+    "fp16_rounding_distinction_example": {
+      "integer_difference": 3,
+      "scale_fp16": 0.0999755859375,
+      "rounded_weight_fp16": 0.2998046875,
+      "unrounded_weight_fp32": 0.2999267578125
+    },
+    "tiny_scalar_math_check": {
+      "k": 384,
+      "n": 40,
+      "bk": [
+        128,
+        256
+      ],
+      "split": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "max_fp16_output_abs_difference": 0.0,
+      "scope": "Python arithmetic sanity only; not a Triton numerical or device-memory gate"
+    },
+    "cli_help_without_torch_import": "passed: Windows Python -B probe_navigation_latency_w4_gemv_20261120.py --help",
+    "bytecode_compilation_without_execution": "passed for both new files; no pycache written"
+  },
+  "register_and_bandwidth_review": {
+    "elements_per_thread_range": [
+      16,
+      512
+    ],
+    "caveat": "Tile elements/thread is only a pressure indicator, not measured register count. Large BK256/BN128 with 2 warps has 512 logical elements/thread and may spill or fail; failures are retained. GPU receipts record n_regs/n_spills/shared when Triton exposes them.",
+    "packed_access": "Load [BK,BN/8] packed int32 only once, then reuse native unpack; load only BK/128 zero/scale rows before broadcast across each 128-row group. BN32 packed row is16bytes, BN64 is32bytes, BN128 is64bytes; narrow tiles may lose transaction efficiency.",
+    "parallelism": "CTA count is ceil(N/BN)*split. Example N2560 gives80/40/20 CTAs before split for BN32/64/128. Split may increase parallelism but adds a second launch and FP32 partial read/write; many-output gate_up already has many CTAs.",
+    "x_traffic": "Logical x reads before cache reuse add 4/BN of packed-weight bytes:12.5%,6.25%,3.125% for BN32/64/128. x is small and likely reused in cache; this is not measured DRAM traffic.",
+    "precision_tradeoff": "CUDA-core dequant/multiply/reduction avoids the BM16 Tensor Core replicated M work but sacrifices Tensor Core throughput and adds cross-thread reduction. Neither direction is assumed faster.",
+    "resources": [
+      {
+        "projection": "qkv",
+        "k": 2560,
+        "n": 6144,
+        "config": {
+          "block_n": 32,
+          "block_k": 128,
+          "split_k": 4,
+          "num_warps": 4,
+          "compiler_stages": 1
+        },
+        "ctas": 768,
+        "max_k_iterations": 5,
+        "tile_elements": 4096,
+        "tile_elements_per_thread": 32.0,
+        "packed_weight_bytes": 7864320,
+        "scale_and_zero_bytes": 307200,
+        "fp32_partial_bytes": 98304,
+        "launches": 2,
+        "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+      },
+      {
+        "projection": "qkv",
+        "k": 2560,
+        "n": 6144,
+        "config": {
+          "block_n": 64,
+          "block_k": 128,
+          "split_k": 4,
+          "num_warps": 4,
+          "compiler_stages": 1
+        },
+        "ctas": 384,
+        "max_k_iterations": 5,
+        "tile_elements": 8192,
+        "tile_elements_per_thread": 64.0,
+        "packed_weight_bytes": 7864320,
+        "scale_and_zero_bytes": 307200,
+        "fp32_partial_bytes": 98304,
+        "launches": 2,
+        "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+      },
+      {
+        "projection": "qkv",
+        "k": 2560,
+        "n": 6144,
+        "config": {
+          "block_n": 128,
+          "block_k": 128,
+          "split_k": 4,
+          "num_warps": 4,
+          "compiler_stages": 1
+        },
+        "ctas": 192,
+        "max_k_iterations": 5,
+        "tile_elements": 16384,
+        "tile_elements_per_thread": 128.0,
+        "packed_weight_bytes": 7864320,
+        "scale_and_zero_bytes": 307200,
+        "fp32_partial_bytes": 98304,
+        "launches": 2,
+        "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+      },
+      {
+        "projection": "o",
+        "k": 4096,
+        "n": 2560,
+        "config": {
+          "block_n": 32,
+          "block_k": 128,
+          "split_k": 4,
+          "num_warps": 4,
+          "compiler_stages": 1
+        },
+        "ctas": 320,
+        "max_k_iterations": 8,
+        "tile_elements": 4096,
+        "tile_elements_per_thread": 32.0,
+        "packed_weight_bytes": 5242880,
+        "scale_and_zero_bytes": 204800,
+        "fp32_partial_bytes": 40960,
+        "launches": 2,
+        "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+      },
+      {
+        "projection": "o",
+        "k": 4096,
+        "n": 2560,
+        "config": {
+          "block_n": 64,
+          "block_k": 128,
+          "split_k": 4,
+          "num_warps": 4,
+          "compiler_stages": 1
+        },
+        "ctas": 160,
+        "max_k_iterations": 8,
+        "tile_elements": 8192,
+        "tile_elements_per_thread": 64.0,
+        "packed_weight_bytes": 5242880,
+        "scale_and_zero_bytes": 204800,
+        "fp32_partial_bytes": 40960,
+        "launches": 2,
+        "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+      },
+      {
+        "projection": "o",
+        "k": 4096,
+        "n": 2560,
+        "config": {
+          "block_n": 128,
+          "block_k": 128,
+          "split_k": 4,
+          "num_warps": 4,
+          "compiler_stages": 1
+        },
+        "ctas": 80,
+        "max_k_iterations": 8,
+        "tile_elements": 16384,
+        "tile_elements_per_thread": 128.0,
+        "packed_weight_bytes": 5242880,
+        "scale_and_zero_bytes": 204800,
+        "fp32_partial_bytes": 40960,
+        "launches": 2,
+        "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+      },
+      {
+        "projection": "gate_up",
+        "k": 2560,
+        "n": 19456,
+        "config": {
+          "block_n": 32,
+          "block_k": 128,
+          "split_k": 4,
+          "num_warps": 4,
+          "compiler_stages": 1
+        },
+        "ctas": 2432,
+        "max_k_iterations": 5,
+        "tile_elements": 4096,
+        "tile_elements_per_thread": 32.0,
+        "packed_weight_bytes": 24903680,
+        "scale_and_zero_bytes": 972800,
+        "fp32_partial_bytes": 311296,
+        "launches": 2,
+        "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+      },
+      {
+        "projection": "gate_up",
+        "k": 2560,
+        "n": 19456,
+        "config": {
+          "block_n": 64,
+          "block_k": 128,
+          "split_k": 4,
+          "num_warps": 4,
+          "compiler_stages": 1
+        },
+        "ctas": 1216,
+        "max_k_iterations": 5,
+        "tile_elements": 8192,
+        "tile_elements_per_thread": 64.0,
+        "packed_weight_bytes": 24903680,
+        "scale_and_zero_bytes": 972800,
+        "fp32_partial_bytes": 311296,
+        "launches": 2,
+        "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+      },
+      {
+        "projection": "gate_up",
+        "k": 2560,
+        "n": 19456,
+        "config": {
+          "block_n": 128,
+          "block_k": 128,
+          "split_k": 4,
+          "num_warps": 4,
+          "compiler_stages": 1
+        },
+        "ctas": 608,
+        "max_k_iterations": 5,
+        "tile_elements": 16384,
+        "tile_elements_per_thread": 128.0,
+        "packed_weight_bytes": 24903680,
+        "scale_and_zero_bytes": 972800,
+        "fp32_partial_bytes": 311296,
+        "launches": 2,
+        "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+      },
+      {
+        "projection": "down",
+        "k": 9728,
+        "n": 2560,
+        "config": {
+          "block_n": 32,
+          "block_k": 128,
+          "split_k": 4,
+          "num_warps": 4,
+          "compiler_stages": 1
+        },
+        "ctas": 320,
+        "max_k_iterations": 19,
+        "tile_elements": 4096,
+        "tile_elements_per_thread": 32.0,
+        "packed_weight_bytes": 12451840,
+        "scale_and_zero_bytes": 486400,
+        "fp32_partial_bytes": 40960,
+        "launches": 2,
+        "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+      },
+      {
+        "projection": "down",
+        "k": 9728,
+        "n": 2560,
+        "config": {
+          "block_n": 64,
+          "block_k": 128,
+          "split_k": 4,
+          "num_warps": 4,
+          "compiler_stages": 1
+        },
+        "ctas": 160,
+        "max_k_iterations": 19,
+        "tile_elements": 8192,
+        "tile_elements_per_thread": 64.0,
+        "packed_weight_bytes": 12451840,
+        "scale_and_zero_bytes": 486400,
+        "fp32_partial_bytes": 40960,
+        "launches": 2,
+        "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+      },
+      {
+        "projection": "down",
+        "k": 9728,
+        "n": 2560,
+        "config": {
+          "block_n": 128,
+          "block_k": 128,
+          "split_k": 4,
+          "num_warps": 4,
+          "compiler_stages": 1
+        },
+        "ctas": 80,
+        "max_k_iterations": 19,
+        "tile_elements": 16384,
+        "tile_elements_per_thread": 128.0,
+        "packed_weight_bytes": 12451840,
+        "scale_and_zero_bytes": 486400,
+        "fp32_partial_bytes": 40960,
+        "launches": 2,
+        "limitation": "Elements/thread is not registers/thread; compiler metadata is measured separately."
+      }
+    ]
+  },
+  "gpu_probe_protocol": {
+    "group": "awq by default; gptq separately",
+    "references": [
+      "frozen original native",
+      "existing saved wide M1 GEMM"
+    ],
+    "search": {
+      "layer": 0,
+      "m": 1,
+      "amplitudes": [
+        0.1,
+        1.0
+      ],
+      "maximum_candidates_per_projection": 72,
+      "soft_budget_seconds": 600
+    },
+    "selected_validation": {
+      "layers": [
+        0,
+        18,
+        35
+      ],
+      "projections": 4,
+      "amplitudes": [
+        0.1,
+        1.0
+      ],
+      "implementations": [
+        "native",
+        "wide",
+        "gemv"
+      ],
+      "cases_if_all_selected": 72,
+      "candidate_only_cases": 24,
+      "relative_l2_limit": 0.005,
+      "tensor_sha": "Each real fused qweight/scales/qzeros tensor hashed"
+    },
+    "tail_tests": {
+      "shapes": [
+        [
+          128,
+          8
+        ],
+        [
+          384,
+          40
+        ],
+        [
+          9728,
+          40
+        ]
+      ],
+      "configurations": "Selected configurations plus BK256/BN32/split8 stress case; all masked K/N/groups and empty split outputs"
+    },
+    "timings": "Hot search12 graph replays; independent randomized two-round confirmations with40 hot and20 cold samples per implementation per round. Both GEMV and partial-reduction kernels remain inside timed replay.",
+    "cold": "96MiB GPU add_ before each begin CUDA event; observed whole-buffer checksum and count; never include eviction time in kernel intervals or silently choose winner from cold results.",
+    "failure_handling": "Append every attempt including numerical/resource/compiler failure; stop on device faults. All-unsuitable branches retain result/attempts and install no runtime table. Nonfinite numerical values are JSON-safe nulls with passed=false.",
+    "concurrency": "Probe takes both existing study/GPU advisory locks before importing torch or reading checkpoint.",
+    "decision": "Predeclared screening threshold: beat both native and saved wide in hot; at least3% cold gain against both. If no projection passes, stop. If only some pass, root may consider a later selective hybrid adapter; no automatic full-model deployment."
+  },
+  "still_required": [
+    "Actual Triton compile/device launch and real numerical validation; AST cannot prove CUDA compatibility.",
+    "Independent review of resource/launch failures and cold confirmation; selection from hot alone is not performance proof.",
+    "Any later service integration must preserve prefill baseline and prove M1 capture/replay routes, same-weight full-model token equivalence, fair fixed-input latency and navigation gates."
+  ],
+  "source_references": [
+    {
+      "path": "checks/navigation_w4a16_repair_kernels.py",
+      "lines": "143-150",
+      "purpose": "Existing BM16 minimum and SM89 pipeline choice"
+    },
+    {
+      "path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/kernels/cuda/awq_kernels.py",
+      "lines": "60-82,174-207",
+      "purpose": "Native packed unpack, FP16 dequant, Tensor Core accumulation and FP16 split atomic"
+    },
+    {
+      "path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/triton/backends/nvidia/compiler.py",
+      "lines": "62-88,259,284",
+      "purpose": "Installed3.1 supports num_warps and enable_fp_fusion=False"
+    },
+    {
+      "path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/triton/compiler/compiler.py",
+      "lines": "337-376",
+      "purpose": "Installed compiled metadata and n_regs/n_spills"
+    },
+    {
+      "url": "https://triton-lang.org/main/python-api/generated/triton.language.range.html",
+      "purpose": "Official loop documentation; implementation deliberately uses plain runtime range supported by installed3.1 rather than newer loop attributes"
+    },
+    {
+      "url": "https://triton-lang.org/main/python-api/generated/triton.language.cast.html",
+      "purpose": "Explicit downcast semantics; installed API/source takes precedence over current main docs"
+    }
+  ]
+}

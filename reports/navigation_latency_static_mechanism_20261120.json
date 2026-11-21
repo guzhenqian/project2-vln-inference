@@ -1,0 +1,327 @@
+{
+  "scope": "Static mechanism review of installed LMDeploy 0.11.1; does not assign measured time to mechanisms",
+  "date": "2026-11-20",
+  "sources": [
+    {
+      "relative_path": "pytorch/engine/executor/mp_executor.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/executor/mp_executor.py",
+      "sha256": "36d4e3d6100ed469f0381d71d3789e9ce34feaba012823c5c53d464d85fda314",
+      "findings": [
+        {
+          "label": "block_size",
+          "occurrences": [
+            {
+              "line": 28,
+              "text": "SHARED_BLOCK_SIZE = 1 << 20"
+            }
+          ]
+        },
+        {
+          "label": "block_count",
+          "occurrences": [
+            {
+              "line": 30,
+              "text": "NUM_SHARED_BLOCK = 32"
+            }
+          ]
+        },
+        {
+          "label": "serialize",
+          "occurrences": [
+            {
+              "line": 130,
+              "text": "dumped_data = pickle.dumps(data, protocol=pickle.HIGHEST_PROTOCOL)"
+            }
+          ]
+        },
+        {
+          "label": "send_suffix_copy",
+          "occurrences": [
+            {
+              "line": 141,
+              "text": "dumped_data = dumped_data[pac_size:]"
+            }
+          ]
+        },
+        {
+          "label": "receive_prefix_copy",
+          "occurrences": [
+            {
+              "line": 166,
+              "text": "dumped_data += buf[HEAD_SIZE:HEAD_SIZE + pac_size]"
+            },
+            {
+              "line": 178,
+              "text": "dumped_data += buf[HEAD_SIZE:HEAD_SIZE + pac_size]"
+            }
+          ]
+        },
+        {
+          "label": "deserialize",
+          "occurrences": [
+            {
+              "line": 182,
+              "text": "data = pickle.loads(dumped_data)"
+            }
+          ]
+        },
+        {
+          "label": "barrier",
+          "occurrences": [
+            {
+              "line": 55,
+              "text": "self.bar.wait()"
+            },
+            {
+              "line": 57,
+              "text": "self.bar.wait()"
+            },
+            {
+              "line": 67,
+              "text": "self.bar.wait()"
+            },
+            {
+              "line": 75,
+              "text": "self.bar.wait()"
+            },
+            {
+              "line": 76,
+              "text": "self.bar.wait()"
+            },
+            {
+              "line": 85,
+              "text": "self.bar.wait()"
+            },
+            {
+              "line": 86,
+              "text": "self.bar.wait()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "pytorch/engine/executor/__init__.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/executor/__init__.py",
+      "sha256": "23295bce83964f0cf91d12bf82684a728a31c3118ef98d75f12102ac3da513ac",
+      "findings": [
+        {
+          "label": "single_device_default",
+          "occurrences": [
+            {
+              "line": 30,
+              "text": "if world_size == 1:"
+            }
+          ]
+        },
+        {
+          "label": "native_uni_branch",
+          "occurrences": [
+            {
+              "line": 98,
+              "text": "if distributed_executor_backend == 'uni':"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "pytorch/engine/mp_engine/zmq_rpc.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/mp_engine/zmq_rpc.py",
+      "sha256": "8af0bada58202ae0aeb503bf696ff2f821064249ad44123e3d4228c89e311f57",
+      "findings": [
+        {
+          "label": "serialize_request",
+          "occurrences": [
+            {
+              "line": 241,
+              "text": "data = pickle.dumps(dict(request_id=request_id, method=method, args=args, kwargs=kwargs))"
+            },
+            {
+              "line": 264,
+              "text": "data = pickle.dumps(dict(request_id=request_id, method=method, args=args, kwargs=kwargs, streaming=streaming))"
+            }
+          ]
+        },
+        {
+          "label": "deserialize_request",
+          "occurrences": [
+            {
+              "line": 150,
+              "text": "request = pickle.loads(request_data)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "messages.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/messages.py",
+      "sha256": "781bc8a0b5b95411fe15552084e9e488d5ac9316308b74948f60fbc6f1fbf8f2",
+      "findings": [
+        {
+          "label": "native_engine_default",
+          "occurrences": [
+            {
+              "line": 383,
+              "text": "enable_mp_engine: bool = False"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "serve/openai/api_server.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/serve/openai/api_server.py",
+      "sha256": "11a39253b54a880a6ec37ab71b80a314f3c3f9bffdc356e123b157d1083c885c",
+      "findings": [
+        {
+          "label": "server_forces_mp",
+          "occurrences": [
+            {
+              "line": 1449,
+              "text": "backend_config.enable_mp_engine = True"
+            }
+          ]
+        },
+        {
+          "label": "async_startup",
+          "occurrences": [
+            {
+              "line": 1235,
+              "text": "async_engine.start_loop(use_async_api=True)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "serve/async_engine.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/serve/async_engine.py",
+      "sha256": "f9a12e14b1fa172ce260c29b7ff968a53faa852e4bafbd790f50370c190a99a9",
+      "findings": [
+        {
+          "label": "build_bridge",
+          "occurrences": [
+            {
+              "line": 398,
+              "text": "def _build_pytorch(self,"
+            }
+          ]
+        },
+        {
+          "label": "native_factory",
+          "occurrences": [
+            {
+              "line": 405,
+              "text": "return Engine.from_pretrained(model_path, engine_config=backend_config, speculative_config=speculative_config)"
+            }
+          ]
+        },
+        {
+          "label": "loop_api",
+          "occurrences": [
+            {
+              "line": 1089,
+              "text": "def start_loop(self, use_async_api=False):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "pytorch/engine/engine.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/engine.py",
+      "sha256": "80c6703b623df59dc24971f515bca6d444d8b39bd266b45abf4542e5edf4720c",
+      "findings": [
+        {
+          "label": "mp_branch",
+          "occurrences": [
+            {
+              "line": 213,
+              "text": "if engine_config is not None and engine_config.enable_mp_engine:"
+            }
+          ]
+        },
+        {
+          "label": "native_factory_branch",
+          "occurrences": [
+            {
+              "line": 225,
+              "text": "return cls("
+            }
+          ]
+        },
+        {
+          "label": "native_loop",
+          "occurrences": [
+            {
+              "line": 496,
+              "text": "def start_loop(self):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "pytorch/engine/executor/uni_executor.py",
+      "absolute_path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/executor/uni_executor.py",
+      "sha256": "3e6cf2b0d6e21018485082d6159f2469b04bd773746954fb8ed9d03ebaa747d3",
+      "findings": [
+        {
+          "label": "direct_model_queue",
+          "occurrences": [
+            {
+              "line": 99,
+              "text": "self.model_agent.set_forward_inputs(inputs)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "observations": [
+    "The frozen repair service explicitly selects MPExecutor although world_size=1 has a native UniExecutor route.",
+    "With both mp engine and mp executor enabled, the frontend-to-model path has ZMQ serialization and a second shared-buffer serialization stage.",
+    "MP SharedBuffer slices remaining immutable bytes on send and concatenates immutable bytes on receive once per 1 MiB block. Cumulative copied suffix/prefix volume grows quadratically in payload block count.",
+    "The optional linear-copy patch preserves the packet header, pickle protocol, receiver mask, ring buffer, notifier, and 32-block barriers.",
+    "Switching to native UniExecutor removes the second process transport entirely and leaves native model execution intact.",
+    "The API server forces outer mp engine on. Public PytorchEngineConfig defaults it off, and Engine.from_pretrained supports the native in-process route."
+  ],
+  "candidates": [
+    {
+      "name": "uni_executor",
+      "change": "distributed_executor_backend=uni",
+      "status": "native supported single-device executor path"
+    },
+    {
+      "name": "linear_mp_copy",
+      "change": "opt-in process-local SharedBuffer pack_data and _receive_step1 replacements",
+      "source_guard": "36d4e3d6100ed469f0381d71d3789e9ce34feaba012823c5c53d464d85fda314",
+      "status": "independent candidate; inference validation belongs to root experiment"
+    },
+    {
+      "name": "native_outer_engine",
+      "change": "process-local wrapper of AsyncEngine._build_pytorch sets backend_config.enable_mp_engine=False immediately before delegating unchanged to the original method",
+      "status": "Independent shim implemented; CPU import, source guards, idempotent installation and no-CUDA-initialization check passed; no GPU validation yet.",
+      "constraints": [
+        "single GPU, tp=dp=batch=1",
+        "native uni executor",
+        "same weights, KV, model runtime, preprocessing, generation settings",
+        "record effective engine class/config after initialization"
+      ],
+      "risks": [
+        "_build_pytorch is a private bridge and requires source guards",
+        "frontend and model tasks share one event loop; host work could increase scheduling contention",
+        "must validate startup loop, stream/nonstream response, tail forwards, cleanup, execution evidence and output identity"
+      ],
+      "implementation": "checks/navigation_latency_inprocess_20261120.py",
+      "effective_receipt": "effective_inprocess_engine.json is written only after checking actual native Engine and UniExecutor classes."
+    }
+  ],
+  "limitations": [
+    "Static code paths do not prove the entire historical frontend-to-worker delay is IPC.",
+    "Serialization, copies, waits, preprocessing and host/device scheduling need distinct measurements.",
+    "Any system optimization must be applied to FP16 as well as quantized models before reporting quantization speedup."
+  ]
+}

@@ -34,3 +34,6 @@ __pycache__/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Microsoft Office owner and lock files
+~$*

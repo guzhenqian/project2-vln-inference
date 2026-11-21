@@ -1,0 +1,41 @@
+{
+  "status": "new_independent_hypothesis_only_no_implementation_or_GPU_result",
+  "motivation_from_local_measurements": {
+    "fixed_nine_image_language_prefill_ms": {
+      "fp16": 322.5907,
+      "awq_w4a16": 349.4088
+    },
+    "historical_closed_loop_language_prefill_p50_ms": {
+      "awq_w4a8": 402.6409,
+      "gptq_w4a8": 402.7167
+    },
+    "caution": "Historical variable-input medians are not paired with this new fixed study. They motivate investigation, not a speed ratio."
+  },
+  "local_source_observation": "The existing precision-repair INT8 MMA forms a new integer partial sum for each K128 weight group, converts it to FP32, rescales and accumulates. Activations use per-token maxabs in W4A8. Merely selecting INT8 MMA has not produced fast prefill in this implementation.",
+  "hypothesis": "In a fresh isolated candidate, retain original W4A16 decode and original checkpoints on disk. At startup expand the FP16-dequantized W4 projection weights into per-output-channel INT8 weights for prefill. Per-token INT8 activations and one whole-K integer GEMM can move floating scaling to the epilogue. Measure the full activation-quantization/GEMM/epilogue cost and extra resident memory.",
+  "semantic_boundary": "This intentionally introduces a second quantization of prefill weights and quantizes prefill activations. It is a new arithmetic/precision recipe, not an equivalent W4A16 execution optimization and not a direct reproduction of QQQ or QServe. Keep results separate from the unchanged-weight system study.",
+  "required_before_adoption": [
+    "Independent packed-weight/dequantization reference, finite and repeatable numerical results on actual layers and shapes",
+    "Compare numerical error with the intended new INT8 arithmetic and separately measure approximation error versus the original dequantized weights",
+    "Time activation quantization, padding if required, integer GEMM and output rescaling together; report startup conversion separately",
+    "Measure complete-model peak memory and HTTP with equally optimized FP16 and native AWQ controls",
+    "Original-policy closed-loop quality cohort, separately reported; no accuracy-equivalence assumption from microbenchmarks"
+  ],
+  "primary_sources": [
+    {
+      "url": "https://arxiv.org/html/2405.04532v2",
+      "section": "III-B and Figure5; IV-A",
+      "finding": "QServe explains how weight or partial-sum dequantization inside the GEMM main loop can limit low-bit performance. Its progressive quantization is designed to reduce that overhead. Whole-K W8A8 applies its scale in the epilogue.",
+      "limitation": "Its serving-throughput and roofline results are for different hardware, models and workloads; no corresponding speedup is predicted for this RTX4070Ti navigation workload. Its quantization format cannot be assumed compatible with our existing asymmetric packed weights."
+    },
+    {
+      "url": "https://arxiv.org/abs/2406.09904",
+      "version": "v3,2024-07-31",
+      "finding": "QQQ targets both prefill and decode with W4A8 plus smoothing, Hessian-based compensation and specialized kernels. The abstract reports up to2.24x versus FP16 and1.25x versus W4A16.",
+      "limitation": "These are paper results, not this project's results or a promise. The identity of the paper previously shown to the user remains unconfirmed.",
+      "full_text": "https://arxiv.org/html/2406.09904v3",
+      "reported_speedup_context": "Section4.3 same-batch throughput, LLaMA-2-13B on A10080GB, vLLM0.4.1/PyTorch2.1.2/CUDA11.8, continuous batching and paged attention, input1024/output128. Small batches have comparable speed to W4A16; gain grows with batch size.",
+      "compatibility": "Section3.3 explicitly restricts QQQ kernels to symmetric weight quantization. Current project packed weights are asymmetric; no drop-in compatibility claim."
+    }
+  ]
+}

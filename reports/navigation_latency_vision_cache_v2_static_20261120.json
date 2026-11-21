@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "checks": [
+    "four new candidate files parse without imports",
+    "cache module top level imports stdlib only",
+    "v1 observed duplicate guarded_source_sha256 failure reproduced with real receipt helper",
+    "v2 real helper writes actual duplicate-metadata processor payload and preserves all fields",
+    "v2 conflicting source/patch/mode metadata rejected before file creation; exclusive writes preserved",
+    "runtime AST unchanged outside receipt helper; no numeric/cache policy changes",
+    "duplicate first input encodes one distinct image",
+    "mixed hits batch all distinct misses once",
+    "raw/cos/sin/pos and cumulative lengths preserve variable-grid ordering",
+    "all-hit skips native encoder and restores repeated slots",
+    "all stored feature tensors are CPU owned",
+    "partial-hit masks1/3/4/8 preserve all four feature arrays",
+    "current hits protected during miss insertion",
+    "LRU capacity/bytes/actual clear match",
+    "cache plan clears exactly episode starts after excluded warmups, never on tail",
+    "smoke plan has only two excluded warmups plus tail; historical payload loading bypassed and claims disabled",
+    "per-array numeric audit accepts all4 exact independent finite arrays",
+    "per-array numeric audit rejects trusted-summary-only byte/finite/storage/error/label corruption",
+    "partial-mask numeric audit recomputes slots and distinct hit/miss counts",
+    "initial numeric execution rejects multiple native visual forwards for one miss batch",
+    "actual wrapper runs all eligible index1 partial masks with fake comparator",
+    "formal all-hit request performs zero comparisons and zero encoder calls",
+    "numerical failure writes failed receipt and raises before accepting warmup",
+    "numerical repetitions restricted to first two excluded warmups; partial masks only index1",
+    "strict frozen four-feature bytewise helper and fail-closed required"
+  ],
+  "torch_imported": false,
+  "lmdeploy_imported": false,
+  "gpu_executed": false,
+  "images_read": false,
+  "scope": "Tiny stdlib/AST/fake-tensor layout/control checks only; no real numeric or performance evidence",
+  "source_sha256": {
+    "navigation_latency_vision_cpu_cache_v2_20261120.py": "0d158240215b5829f7a19c6397961592bb5419f05af3a559e9fdf76d8aea3f18",
+    "navigation_latency_vision_cpu_cache_module_map_v2_20261120.py": "3aea91dac5532bfbf39200bf17a593790d880405ea12d5b18d86488c867b5c85",
+    "serve_navigation_latency_vision_cache_v2_20261120.py": "184f0a2690b3b63f06c4cf278746672c36134f16c8c1705608285984d6604c25",
+    "run_navigation_latency_vision_cache_replay_v2_20261120.py": "efe2aa651686151434904fd355c165533caa635899f8263d0aac53ebc9cdbb60"
+  }
+}

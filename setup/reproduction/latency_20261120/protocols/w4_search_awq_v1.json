@@ -1,0 +1,59 @@
+{
+  "started_utc": "2026-11-20T12:37:57.369501+00:00",
+  "algorithm": "awq",
+  "model_weights_sha256": "31d1c12dba3cbaace283cccf5be23337555f0383a3c4390e6270d2a9230414db",
+  "baseline_table": "/mnt/e/000_博士/000_实习与工作/AI infra/项目2/logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json",
+  "baseline_table_sha256": "8ccdafddb1bcef0397198ca9eb7c3c9f1f7d615071ca81cfb514d19a4c642783",
+  "layers": [
+    0
+  ],
+  "rows": [
+    1,
+    701,
+    2815
+  ],
+  "projections": [
+    "qkv",
+    "o",
+    "gate_up",
+    "down"
+  ],
+  "max_candidates": 32,
+  "repeats": 12,
+  "confirm_repeats": 40,
+  "cold_repeats": 20,
+  "cold_cache_mib": 96,
+  "target_l2_mib": 48,
+  "cold_cache_scope": "Separate evidence; not mixed with hot samples or used to silently replace hot winner",
+  "search_budget_seconds": 900.0,
+  "boundary_rows": [
+    2,
+    16,
+    17,
+    33,
+    65,
+    713,
+    1737,
+    3001,
+    3072
+  ],
+  "validation_layers": [
+    0,
+    18,
+    35
+  ],
+  "validation_input_magnitudes": [
+    0.1,
+    1.0
+  ],
+  "relative_l2_limit": 0.005,
+  "seed": 20261120,
+  "scope": "Same frozen quantized matrices, wider native launch choices. Exact-M hot projection timing; not navigation quality or service latency.",
+  "sources_sha256": {
+    "navigation_latency_w4_kernels_20261120.py": "9af558753d46b92a7d288ab46b5cd86793d32acf7039fdd4869df10939771337",
+    "probe_navigation_latency_w4_20261120.py": "5b4d68859c246ef7630f63cb7b675cdece881f95a72d46b02f8269462a76ed96",
+    "navigation_w4a16_repair_kernels.py": "09a181c19e618307f681e02a8ee6964c6ad368a0d47e772d7328f297971e9a87",
+    "navigation_w4a16_candidate_kernels.py": "b38189a9beebec838ea56f059d0e5c2693a13d1e67daae907b6266716ae37e38"
+  },
+  "gpu": "NVIDIA GeForce RTX 4070 Ti, 1428 MiB, 45"
+}

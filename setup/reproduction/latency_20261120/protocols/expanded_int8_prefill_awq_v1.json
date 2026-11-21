@@ -1,0 +1,84 @@
+{
+  "schema": "navigation_expanded_int8_prefill_probe/v1",
+  "created_utc": "2026-11-20T14:55:09.971490+00:00",
+  "group": "awq",
+  "model_weights_sha256": "31d1c12dba3cbaace283cccf5be23337555f0383a3c4390e6270d2a9230414db",
+  "versions": {
+    "torch": "2.5.1+cu121",
+    "triton": "3.1.0",
+    "lmdeploy": "0.11.1",
+    "numpy": "2.5.2"
+  },
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4070 Ti",
+    "capability": [
+      8,
+      9
+    ]
+  },
+  "baseline_table": "/mnt/e/000_博士/000_实习与工作/AI infra/项目2/logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json",
+  "baseline_table_sha256": "8ccdafddb1bcef0397198ca9eb7c3c9f1f7d615071ca81cfb514d19a4c642783",
+  "sources_sha256": {
+    "probe_navigation_latency_expanded_int8_prefill_20261120.py": "255dfde2854a873d3065823e073b8a044611810e9134bdf9d8052fbfddc90bb8",
+    "navigation_latency_expanded_int8_prefill_20261120.py": "7419f76d0203bf4dcc156958258692262711df0be8cf25793aad748644d8cda4",
+    "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+    "navigation_w4a16_repair_kernels.py": "09a181c19e618307f681e02a8ee6964c6ad368a0d47e772d7328f297971e9a87",
+    "navigation_w4a16_candidate_kernels.py": "b38189a9beebec838ea56f059d0e5c2693a13d1e67daae907b6266716ae37e38"
+  },
+  "native_awq_source": {
+    "path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/kernels/cuda/awq_kernels.py",
+    "sha256": "0e53a5ae32780e411d4a4f6802968e1cd6aa29048357a77c609b969bf7b8ab18"
+  },
+  "design_sha256": "6834a94ccc825c950066ed5c3dbacadf06a1950d5f48f1cd869100853b589fa5",
+  "layers": [
+    0,
+    18,
+    35
+  ],
+  "rows": [
+    17,
+    701,
+    2815
+  ],
+  "amplitudes": [
+    0.1,
+    1.0
+  ],
+  "projections": [
+    "qkv",
+    "o",
+    "gate_up",
+    "down"
+  ],
+  "layouts": [
+    "kn_contiguous",
+    "nk_transposed"
+  ],
+  "logical_cases": 72,
+  "layout_execution_cases": 144,
+  "semantic_boundaries_per_layout": [
+    "positive_bound",
+    "negative_bound",
+    "zero_row",
+    "ties_to_even",
+    "zero_weight"
+  ],
+  "pad_m_multiple": 0,
+  "stability_repeats": 4,
+  "timing_repeats": 20,
+  "cold_repeats": 10,
+  "cold_cache_mib": 96,
+  "approximation_relative_l2_limit": 0.02,
+  "native_reference_relative_l2_limit": 0.005,
+  "seed": 20261120,
+  "arithmetic": "Original W4 FP16-round dequant -> symmetric per-channel W8; per-token A8; INT32 whole-K dot; FP32 (integer*row_scale)*channel_scale -> FP16",
+  "quantization": "maxabs/127 in FP32; zero-vector scale1; round-nearest-even, clamp[-127,127]; no clipping/calibration/smoothing",
+  "implementation_gate": "Independent selected CPU int64 dot exact; CPU ordered FP32 epilogue final half bytes exact; CPU quantizer/dequant selected rows/columns exact; full integer/output repeat bytes",
+  "approximation_gate": "Finite and <=2% global relativeL2 for reconstructed weights, reconstructed activations and combined output on every random case; component output errors retained",
+  "timing": "Full activation quant + whole-K torch._int_mm + epilogue; graph replay. Two randomized rounds, hot and96MiB cold. GEMM-only timings are diagnostic.",
+  "advancement_rule": "All cases at a projection/layout pass and both hot/cold full-path gain>=3% versus frozen W4 and same-W4 dequant FP16 at each measured M. Still only a micro candidate.",
+  "memory_scope": "Single-projection isolated micro; both layouts may coexist here. Full model must retain one layout only and unchanged KV64x64; fit unproven.",
+  "quality_status": "not_evaluated; random projection screen is not actual activation or navigation accuracy",
+  "full_model_adapter_created": false,
+  "original_checkpoint_modified": false
+}

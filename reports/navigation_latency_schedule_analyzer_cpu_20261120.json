@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "scope": "stdlib-only synthetic trace contracts, no GPU or torch import",
+  "analyzer_sha256": "a66ce7848c85df8517615daa980f63502d8402b6dfceb13789d1ef2463d54e04",
+  "checks": [
+    "wait and model blocks split across trace chunks",
+    "duplicate FINISH ready/dispatch",
+    "natural stop token omitted from HTTP",
+    "exact response ID and order mapping",
+    "closed-gate overlap distinct from await resume",
+    "terminal block without end retained",
+    "CLI run/output invocation",
+    "token mismatch rejected",
+    "dropped trace rejected"
+  ],
+  "expected_ms": [
+    [
+      23,
+      20,
+      19
+    ],
+    [
+      25,
+      20,
+      15
+    ]
+  ]
+}

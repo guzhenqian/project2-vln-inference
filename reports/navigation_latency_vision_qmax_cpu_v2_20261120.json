@@ -1,0 +1,88 @@
+{
+  "passed": true,
+  "scope": "Stdlib fake-object control-flow QA; no real model, kernel or torch import",
+  "candidate_sha256": "b5d1f66b9ef9d54e7393866e4d35c444d35b1d35cd4fb5f3c07db14bf3775a75",
+  "probe_sha256": "3ab4f8ff298cf5fd4cd558250920b8ba84dc0cfddd2983deeed3be18c31d83e4",
+  "torch_imported": false,
+  "cuda_executed": false,
+  "checks": [
+    "installed hashes and AST: grid-only bound, no active autotune, unchanged metadata rules",
+    "no direct CUDA kernel package import in candidate install",
+    "AST: numerical passed requires metadata/finite/distinct storage/value and uint8 bitwise equality",
+    "disabled install is a no-op without importing LMDeploy",
+    "2/9/mixed image grids: one CPU tolist, all 24 layers verified",
+    "all base inputs, Q/K/V and segment tensor identities preserved",
+    "only native attention max_q_seqlen changes; output identity preserved",
+    "repeat shape receipt suppression and model wrapping idempotence",
+    "external calls, explicit positional/keyword max, bad query/KV/segment shapes reject",
+    "CPU grid requirement, positive integer/static-grid and total-patch validation",
+    "nested ContextVar restored after native success and exception",
+    "decode and externally supplied embeddings bypass unchanged",
+    "first unseen shape requires exactly all 24 layers",
+    "incompatible backend, causal mode, and replaced kernel fail closed",
+    "simulated receipt schema: one install plus one 24-layer execution per distinct grid",
+    "eligible 2/9 warmups: vision twice, native full model and language once",
+    "all 24 baseline calls use native default; all 24 candidate calls use CPU qmax",
+    "candidate visual features returned; nested reference and outer contexts restored",
+    "repeated shape and later unseen shape perform one visual forward without numerical gate",
+    "numerical gate eligibility rejects measured phase, missing SHA receipt and wrong image count",
+    "simulated numerical receipts include native/candidate 24-layer evidence and passed comparison",
+    "failed numerical gate writes failed receipt and stops before language forward",
+    "baseline/candidate visual exceptions and comparator exception restore both contexts"
+  ],
+  "cases": [
+    {
+      "label": "two",
+      "total_patches": 2400,
+      "segments": 2,
+      "max_q_seqlen": 1200,
+      "verified_layers": 24
+    },
+    {
+      "label": "nine",
+      "total_patches": 10800,
+      "segments": 9,
+      "max_q_seqlen": 1200,
+      "verified_layers": 24
+    },
+    {
+      "label": "mixed",
+      "total_patches": 2528,
+      "segments": 3,
+      "max_q_seqlen": 1200,
+      "verified_layers": 24
+    }
+  ],
+  "installed_source_audit": {
+    "source_sha256": {
+      "pytorch/models/qwen3_vl.py": "377b26921dfe42b7d91c2306a908713741fa461a792863b18da0182435127e25",
+      "pytorch/models/qwen2_5_vl.py": "b5dff117a94bef52686a883b4581befd2c0dfc429c4e4784a2ddd26ef93fef99",
+      "pytorch/nn/attention.py": "9773ac13b792f6f67f87476b259046e16b5e96f9dd1923ffdd59570c2514a474",
+      "pytorch/backends/cuda/flash_attention.py": "a9ecd1ce93d93c31b4e569f53149e39f7f84a2301bb775935b9cc35f2f25ed18",
+      "pytorch/kernels/cuda/flashattention.py": "fbf78dfe596f6a0d2138378ba5a22a9f0a365d796549ffafe853dd68af0d3fec"
+    },
+    "flash_signature": [
+      "self",
+      "query",
+      "key",
+      "value",
+      "q_start_loc",
+      "q_seqlens",
+      "kv_start_loc",
+      "kv_seqlens",
+      "max_q_seqlen"
+    ],
+    "max_seqlen_name_lines": [
+      476,
+      485,
+      486
+    ],
+    "effective_change": "Launch grid.x only; no kernel argument, autotune, block/warp/stage dependency"
+  },
+  "limitations": [
+    "Synthetic package replaces source guards only inside the fake fixture; real installed hashes are audited separately.",
+    "Fake receipts are temporary and not real execution receipts.",
+    "The torch feature comparator is replaced by a controlled stub; its pass criteria are checked statically only.",
+    "Real numerical equivalence and performance require the separately authorized GPU study."
+  ]
+}

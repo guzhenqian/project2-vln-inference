@@ -1,0 +1,735 @@
+{
+  "created_utc": "2026-11-20T14:12:19.420940+00:00",
+  "status": "prepared_static_only_not_run",
+  "sources_sha256": {
+    "navigation_latency_w4_stable_selector_20261120.py": "06835b749a41176a21b56b70af6b167cb03abea9d0d715c2495db9ba2d71aa9a",
+    "probe_navigation_latency_w4_stable_20261120.py": "2a9b187be2fc7800ede53e32f50021cff5aff00ef2663ab8d0302751ae3d2f1f"
+  },
+  "pools": {
+    "native_split": {
+      "qkv": {
+        "count": 8,
+        "splits": [
+          1
+        ],
+        "configs": [
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 3,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 3,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          }
+        ]
+      },
+      "o": {
+        "count": 8,
+        "splits": [
+          1
+        ],
+        "configs": [
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 3,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 3,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 2,
+            "group_m": 8
+          }
+        ]
+      },
+      "gate_up": {
+        "count": 8,
+        "splits": [
+          1
+        ],
+        "configs": [
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 3,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 3,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 3,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          }
+        ]
+      },
+      "down": {
+        "count": 8,
+        "splits": [
+          2
+        ],
+        "configs": [
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 3,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 2,
+            "num_warps": 8,
+            "pipeline_stages": 3,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 3,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 8,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          }
+        ]
+      }
+    },
+    "split_le_2": {
+      "qkv": {
+        "count": 8,
+        "splits": [
+          1,
+          2
+        ],
+        "configs": [
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 3,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 3,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          }
+        ]
+      },
+      "o": {
+        "count": 8,
+        "splits": [
+          1,
+          2
+        ],
+        "configs": [
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 3,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 3,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          }
+        ]
+      },
+      "gate_up": {
+        "count": 8,
+        "splits": [
+          1,
+          2
+        ],
+        "configs": [
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 3,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 3,
+            "compiler_stages": 2,
+            "group_m": 8
+          }
+        ]
+      },
+      "down": {
+        "count": 8,
+        "splits": [
+          1,
+          2
+        ],
+        "configs": [
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 3,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 2,
+            "num_warps": 8,
+            "pipeline_stages": 3,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 3,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          }
+        ]
+      }
+    }
+  },
+  "cpu_checks": [
+    "AST and bytecode compilation without execution passed for both new files",
+    "Actual saved shortlists obey policies, include original native and contain no duplicate config",
+    "split_le_2 default8 covers both1 and2 in every projection",
+    "Stability comparison rejects differing or internally unstable bytes",
+    "CLI --help passed before final metadata-only additions; no torch/Triton loaded by fixtures"
+  ],
+  "gate": {
+    "search": "Layer0 two amplitudes per candidate, numerical and repeated bytewise tests first",
+    "selected_numeric": "72 cases:3layers x4projections x3M x2amplitudes",
+    "selected_stability": "24 M1 cases:3layers x4projections x2amplitudes; each candidate and native checked16 times in4 conditions (eager/replay x hot/cold)",
+    "native_bytewise": "Optional --require-native-bytewise, mismatch reasons and exactness flags always saved",
+    "prefill": "Source wide M701/2815 configs retained verbatim; unknownM is not in the candidate table",
+    "selection": "Minimum fresh cold graph P50 among passing candidates, followed by two randomized hot/cold confirmation rounds",
+    "failure": "All attempts/reasons saved; no finaltable when a required numeric/stability/equality gate fails"
+  },
+  "estimated_gpu": {
+    "typical_minutes": [
+      3,
+      8
+    ],
+    "reserve_minutes": 15,
+    "search_budget_seconds": 600,
+    "budget_type": "Soft search allocation; setup, controls, confirmation and full numerical/stability gates can extend beyond it.",
+    "basis": "Earlier GEMV288 candidates+72numbers completed in127.6s; this probe uses32 candidates but about8k synchronized output-byte samples plus full72cases, so estimate remains uncertain."
+  },
+  "recommended_cli": [
+    "python",
+    "-B",
+    "-u",
+    "checks/probe_navigation_latency_w4_stable_20261120.py",
+    "--group",
+    "awq",
+    "--baseline-table",
+    "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json",
+    "--source-wide-table",
+    "logs/navigation_latency_20261120/w4_search_awq_v1/launch_table.json",
+    "--max-candidates",
+    "8",
+    "--stability-repeats",
+    "16",
+    "--search-budget-seconds",
+    "600",
+    "--output",
+    "logs/navigation_latency_20261120/w4_stable_native_awq_v1",
+    "--decode-policy",
+    "native_split",
+    "--require-native-bytewise"
+  ],
+  "secondary_cli": [
+    "python",
+    "-B",
+    "-u",
+    "checks/probe_navigation_latency_w4_stable_20261120.py",
+    "--group",
+    "awq",
+    "--baseline-table",
+    "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json",
+    "--source-wide-table",
+    "logs/navigation_latency_20261120/w4_search_awq_v1/launch_table.json",
+    "--max-candidates",
+    "8",
+    "--stability-repeats",
+    "16",
+    "--search-budget-seconds",
+    "600",
+    "--output",
+    "logs/navigation_latency_20261120/w4_stable_le2_awq_v1",
+    "--decode-policy",
+    "split_le_2"
+  ],
+  "limitations": [
+    "No GPU/torch/LMDeploy import, model weight read or table publication occurred in preparation.",
+    "Bytewise tests are finite and use random inputs; same-model full four-cell output/token gates remain mandatory.",
+    "Original wide M1 appears only as an explicitly unapproved diagnostic reference. Its failed full64 gate is never overwritten.",
+    "The stronger native exactness requirement can reject a stable candidate; preserve the reason and do not silently disable the requirement."
+  ]
+}

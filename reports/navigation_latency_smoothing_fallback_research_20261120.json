@@ -1,0 +1,28 @@
+{
+  "status": "source_researched_only_not_implemented",
+  "condition": "Only consider if actual-activation INT8 gates fail; existing qkv/o/masked candidates have priority",
+  "sources": [
+    {
+      "url": "https://arxiv.org/html/2211.10438v7",
+      "sections": "4,5.1,5.3",
+      "finding": "Per-input-channel reciprocal activation scaling and matching weight scaling preserve the unquantized linear product; choose scales from activation and weight ranges before quantization."
+    },
+    {
+      "url": "https://github.com/mit-han-lab/smoothquant",
+      "finding": "Official examples use512 calibration sentences; listed alpha is model dependent; INT8 acceleration requires actual integer kernels, fake quantization is for quality simulation."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mit-han-lab/smoothquant/main/smoothquant/smooth.py",
+      "finding": "Reference smooth_ln_fcs_llama_like uses input-channel activation range and weight range, divides normalization weights and multiplies linear weights; this cannot be directly applied to our frozen W4 decode."
+    }
+  ],
+  "possible_project_variant": "Collect native AWQ actual activation channel maxima on explicit calibration inputs, freeze scaling, apply inverse scaling inside prefill-only activation quantization and matching scaling before startup W8 conversion. Keep original W4 decode, checkpoint,KV unchanged. This is a new recipe, not a reproduction of SmoothQuant.",
+  "required_before_any_claim": [
+    "Predeclare calibration roster and alpha policy before evaluating quality outcomes",
+    "Use new math/kernel/source version and independent CPU quantizer/int64/FP32 epilogue gates; do not modify frozen INT8v1",
+    "Actual-input errors and full-model repeated outputs, matched FP16/AWQ timing, originalsubset20 quality and memory validation",
+    "Do not infer adequate calibration coverage from only two warmups or copy an alpha from another architecture"
+  ],
+  "paper_speed_scope": "Paper reports up to1.56x on its own language-model/FasterTransformer setup; not a prediction for nine-image Qwen3-VL HTTP latency.",
+  "current_actual_activation_failure_observed": false
+}

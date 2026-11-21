@@ -1,0 +1,5 @@
+[
+  {"group":"awq_w4a16","label":"awq_trace_uni16","env":{"PROJECT2_LATENCY_EXECUTOR":"uni","PROJECT2_LATENCY_PREFILL_INTERVAL":"16","PROJECT2_LATENCY_SCHEDULE_TRACE":"1"},"frozen_table":"logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json"},
+  {"group":"awq_w4a16","label":"awq_trace_uni4","env":{"PROJECT2_LATENCY_EXECUTOR":"uni","PROJECT2_LATENCY_PREFILL_INTERVAL":"4","PROJECT2_LATENCY_SCHEDULE_TRACE":"1"},"frozen_table":"logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json"},
+  {"group":"awq_w4a16","label":"awq_trace_uni1","env":{"PROJECT2_LATENCY_EXECUTOR":"uni","PROJECT2_LATENCY_PREFILL_INTERVAL":"1","PROJECT2_LATENCY_SCHEDULE_TRACE":"1"},"frozen_table":"logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json"}
+]

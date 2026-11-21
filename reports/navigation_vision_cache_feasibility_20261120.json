@@ -1,0 +1,89 @@
+{
+  "status": "read_only_design_not_implemented_or_GPU_validated",
+  "conclusion": "Per-image complete vision-feature caching has structural support; numerical equivalence and realistic timing remain unproved. Prioritize the separate grid-only vision attention candidate first.",
+  "metadata_reports": [
+    {
+      "path": "reports/navigation_vision_cache_opportunity_20261120.json",
+      "sha256": "b58cf6b596c22ded3f6aae2cba9bde16aa393525c9b956df66243aaf469a2b55"
+    },
+    {
+      "path": "reports/navigation_vision_cache_lru_20261120.json",
+      "sha256": "a2e1bf13995c29a9efc1edb9b7dd61c92a518a439b33f5ea9f0de92943dd3a0d"
+    }
+  ],
+  "source_root": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy",
+  "source_sha256": {
+    "pytorch/models/qwen3_vl.py": "377b26921dfe42b7d91c2306a908713741fa461a792863b18da0182435127e25",
+    "pytorch/models/qwen2_5_vl.py": "b5dff117a94bef52686a883b4581befd2c0dfc429c4e4784a2ddd26ef93fef99",
+    "vl/model/qwen3.py": "5b0369a27ae133b661309eee58cec1315b3a562d35cd6e4994b21b8d5ed91173",
+    "pytorch/nn/attention.py": "9773ac13b792f6f67f87476b259046e16b5e96f9dd1923ffdd59570c2514a474",
+    "pytorch/kernels/cuda/flashattention.py": "fbf78dfe596f6a0d2138378ba5a22a9f0a365d796549ffafe853dd68af0d3fec"
+  },
+  "mechanism": [
+    {
+      "source": "vl/model/qwen3.py",
+      "lines": "76-91",
+      "evidence": "Preprocessing iterates images separately and derives token count from grid."
+    },
+    {
+      "source": "pytorch/models/qwen3_vl.py",
+      "lines": "359-428;584-599",
+      "evidence": "Visual positions are per-image grid based; attention segment lengths are h*w repeated t times."
+    },
+    {
+      "source": "pytorch/models/qwen3_vl.py",
+      "lines": "430-447",
+      "evidence": "Visual forward returns primary embedding plus all three DeepStack feature arrays."
+    },
+    {
+      "source": "pytorch/models/qwen2_5_vl.py",
+      "lines": "98-102;125-131",
+      "evidence": "Noncausal visual self attention receives per-segment starts and lengths."
+    },
+    {
+      "source": "pytorch/kernels/cuda/flashattention.py",
+      "lines": "196-239",
+      "evidence": "Kernel accesses independent Q/KV segment starts and lengths."
+    },
+    {
+      "source": "pytorch/models/qwen3_vl.py",
+      "lines": "512-538",
+      "evidence": "Supplying inputs_embeds directly bypasses visual forward and leaves DeepStack unset; reject this shortcut."
+    },
+    {
+      "source": "pytorch/models/qwen3_vl.py",
+      "lines": "739-779",
+      "evidence": "Native language mRoPE derives from full current multimodal start/end positions and must remain unchanged."
+    }
+  ],
+  "candidate_design": {
+    "boundary": "Memoize complete visual() return per image, including primary+three DeepStack arrays; slice by grid.prod()/merge_size**2, restore original order and duplicates",
+    "key": [
+      "exact content identity",
+      "processor resize/normalization/config",
+      "grid_thw",
+      "visual weights/checkpoint version",
+      "dtype",
+      "backend and source versions"
+    ],
+    "scope": "Static images t=1, per-episode bounded cache, cold start, no prepopulation from measured future inputs",
+    "unchanged": [
+      "all input IDs",
+      "all language and visual tokens",
+      "native mRoPE",
+      "full language prefill",
+      "FP16 KV",
+      "prefix caching off"
+    ],
+    "memory": "For observed 300 tokens/image: 300*2560*2*4=6144000 bytes/image; 96 entries 562.5MiB, 200 entries1171.875MiB before allocator and assembly overhead"
+  },
+  "required_validation": [
+    "Original nine-image batch vs per-image/miss-only batch primary and all DeepStack errors; batch shapes may change Conv3d/F.linear algorithm and rounding.",
+    "Partial hits, reordering, duplicate images, mixed grids, eviction and unchanged full input/mRoPE contracts.",
+    "Tokens, natural EOS and navigation actions/quality; mathematical independence does not guarantee bitwise equivalence.",
+    "Replay a frozen real chronological history with image reconstruction checks; cold cache each episode; compare FP16 off/on and AWQ off/on under identical load.",
+    "Report first request, subsequent requests, hit/miss/eviction, total episode time, peak memory and host lookup/hash/assembly cost.",
+    "Repetition of one fixed request with fully warm cache is not general navigation or quantization evidence."
+  ],
+  "attribution": "Any common visual-compute savings are system improvements. Equal savings can enlarge endpoint-relative quantization advantage without making quantized language kernels themselves faster."
+}

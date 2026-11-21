@@ -1,0 +1,21 @@
+{
+  "scope": "Historical CPU-only import checks before root requested no further torch imports during HTTP timing",
+  "tests": [
+    {
+      "patch_sha256": "pre-fix revision; not retained as candidate",
+      "duration_wall_s": 2.2,
+      "CUDA_VISIBLE_DEVICES": "",
+      "result": "failed: direct kernels.cuda package import tried Triton driver initialization; zero active drivers",
+      "resolution": "Remove direct kernel package import from install; inspect already-built native function at first image forward"
+    },
+    {
+      "patch_sha256": "2ad561322f155fdd4799087268bf08258c2ffe8850f18be664e38c645fbb443c",
+      "duration_wall_s": 2.1,
+      "CUDA_VISIBLE_DEVICES": "",
+      "result": "passed: import, install twice, five source guards, original signature, torch.cuda.is_initialized() false"
+    }
+  ],
+  "absolute_start_times_recorded": false,
+  "later_revision": "Optional gated numerical validation added after these checks; final revision receives stdlib fake/AST tests only until root authorizes real import/GPU",
+  "interference_interpretation": "These checks may overlap HTTP measurement; no causal attribution to observed tail outliers is established; retain all samples."
+}

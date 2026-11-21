@@ -1,0 +1,176 @@
+{
+  "created_utc": "2026-11-20T13:26:49.357356+00:00",
+  "sessions": [
+    {
+      "group": "fp16",
+      "label": "fp16_inprocess2",
+      "env": {
+        "PROJECT2_LATENCY_EXECUTOR": "uni",
+        "PROJECT2_LATENCY_PREFILL_INTERVAL": "2",
+        "PROJECT2_LATENCY_INPROCESS": "1"
+      },
+      "service_entry": "checks/serve_navigation_latency_20261120.py",
+      "model_name": "navigation-repair-fp16"
+    },
+    {
+      "group": "awq_w4a16",
+      "label": "awq_inprocess2",
+      "env": {
+        "PROJECT2_LATENCY_EXECUTOR": "uni",
+        "PROJECT2_LATENCY_PREFILL_INTERVAL": "2",
+        "PROJECT2_LATENCY_INPROCESS": "1"
+      },
+      "frozen_table": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json",
+      "service_entry": "checks/serve_navigation_latency_20261120.py",
+      "model_name": "navigation-repair-awq_w4a16"
+    },
+    {
+      "group": "awq_w4a16",
+      "label": "awq_wide_all",
+      "env": {
+        "PROJECT2_LATENCY_EXECUTOR": "uni",
+        "PROJECT2_LATENCY_PREFILL_INTERVAL": "2",
+        "PROJECT2_LATENCY_INPROCESS": "1",
+        "PROJECT2_LATENCY_W4_TABLE": "logs/navigation_latency_20261120/w4_search_awq_v1/launch_table.json",
+        "PROJECT2_LATENCY_W4_PHASE": "all"
+      },
+      "frozen_table": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json",
+      "service_entry": "checks/serve_navigation_latency_20261120.py",
+      "model_name": "navigation-repair-awq_w4a16"
+    },
+    {
+      "group": "awq_w4a16",
+      "label": "awq_wide_prefill",
+      "env": {
+        "PROJECT2_LATENCY_EXECUTOR": "uni",
+        "PROJECT2_LATENCY_PREFILL_INTERVAL": "2",
+        "PROJECT2_LATENCY_INPROCESS": "1",
+        "PROJECT2_LATENCY_W4_TABLE": "logs/navigation_latency_20261120/w4_search_awq_v1/launch_table.json",
+        "PROJECT2_LATENCY_W4_PHASE": "prefill"
+      },
+      "frozen_table": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json",
+      "service_entry": "checks/serve_navigation_latency_20261120.py",
+      "model_name": "navigation-repair-awq_w4a16"
+    },
+    {
+      "group": "awq_w4a16",
+      "label": "awq_qmax",
+      "env": {
+        "PROJECT2_LATENCY_EXECUTOR": "uni",
+        "PROJECT2_LATENCY_PREFILL_INTERVAL": "2",
+        "PROJECT2_LATENCY_INPROCESS": "1",
+        "PROJECT2_LATENCY_VISION_QMAX": "1",
+        "PROJECT2_LATENCY_VISION_QMAX_VALIDATE": "1"
+      },
+      "frozen_table": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json",
+      "service_entry": "checks/serve_navigation_latency_20261120.py",
+      "model_name": "navigation-repair-awq_w4a16"
+    },
+    {
+      "group": "fp16",
+      "label": "fp16_qmax",
+      "env": {
+        "PROJECT2_LATENCY_EXECUTOR": "uni",
+        "PROJECT2_LATENCY_PREFILL_INTERVAL": "2",
+        "PROJECT2_LATENCY_INPROCESS": "1",
+        "PROJECT2_LATENCY_VISION_QMAX": "1",
+        "PROJECT2_LATENCY_VISION_QMAX_VALIDATE": "1"
+      },
+      "service_entry": "checks/serve_navigation_latency_20261120.py",
+      "model_name": "navigation-repair-fp16"
+    }
+  ],
+  "http_mode": "nonstream",
+  "cells": [
+    "0_18",
+    "0_64",
+    "1_18",
+    "1_64"
+  ],
+  "warmups": 2,
+  "measured_repeats": 10,
+  "input_warmups": 2,
+  "tail_requests": 1,
+  "idle_seconds_outside_timer": 1.0,
+  "input_evidence": {
+    "0": {
+      "id": "train_515_step_0",
+      "image_paths": [
+        "data/calibration/navigation_awq_v1/episode_515/sample_0000_image_00.jpg",
+        "data/calibration/navigation_awq_v1/episode_515/sample_0000_image_01.jpg"
+      ],
+      "image_sha256": [
+        "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+        "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9"
+      ],
+      "payload_sha256": "59db0545d0efa6c3a6af956886b8e7a924fd2589bf4ab6e6f704c70a873c0134"
+    },
+    "1": {
+      "id": "train_515_step_14",
+      "image_paths": [
+        "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_00.jpg",
+        "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_01.jpg",
+        "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_02.jpg",
+        "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_03.jpg",
+        "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_04.jpg",
+        "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_05.jpg",
+        "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_06.jpg",
+        "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_07.jpg",
+        "data/calibration/navigation_awq_v1/episode_515/sample_0014_image_08.jpg"
+      ],
+      "image_sha256": [
+        "e8ee7decea7d46175a02cf62b842dbe5e54852e60a9692f94d1209069e6f64a9",
+        "3b72c3fdd8766b9630168af035252e75298493df0f64ddd5559f97cb2dfc0f00",
+        "26cc6f25fb3b3970502275f96b343a4ba4c79c6d7d91004ccc851e54f9d3f4a2",
+        "a6a3d29d3592271700e284b716779e341091786c8eb923b449a136692a87bca2",
+        "dc265d087e333583cb69495bb6850d1b01d06519387eaee8b93e14ddb8a8644b",
+        "c2bf057993294ea5b8d92bf96d34b77710de9e4565109b0009d99da48e7d53b9",
+        "0efd8a1f782ab3e530531260269837384ee15a95bff3e33cf0562d77fa5bebb7",
+        "8687a750843eaa268829e581df3c46119ada20b752da312811cb62fc8b0a676e",
+        "f5c3fab416476f3e18acd411d0ab9454c6e023a777e84e3f67c65d1a7dd075e2"
+      ],
+      "payload_sha256": "092df4c8c098015a1dfeb7c2858a9dc5a0671a77dd2d8f1ce7e57291b6701499"
+    }
+  },
+  "weight_sha256": {
+    "awq": "31d1c12dba3cbaace283cccf5be23337555f0383a3c4390e6270d2a9230414db",
+    "fp16": "b72a10c2b89a78f43c3c8bb05c4495b7d76dee85ec79f7125d9d795302aaa54b"
+  },
+  "source_sha256": {
+    "checks/analyze_navigation_latency_schedule_20261120.py": "a66ce7848c85df8517615daa980f63502d8402b6dfceb13789d1ef2463d54e04",
+    "checks/check_navigation_awq_dart_request.py": "8175bd0f192cba4612fc6617683d3599fa41e16cccd033d7d9a927f59f10a478",
+    "checks/navigation_latency_frontend_20261120.py": "ea739ba25bde83d8c97d53a228f107f188f720e864742b9f01ef81bc515cc2db",
+    "checks/navigation_latency_inprocess_20261120.py": "52d55d4b7305de9099178fdbb17e39ca9c7f06ee0f662030498342abb300e3c3",
+    "checks/navigation_latency_ipc_20261120.py": "2840ffff0a0be80a23542afe562004e181e00b2e265deb08c95286c15f8465ab",
+    "checks/navigation_latency_schedule_probe_20261120.py": "c25fe308511142156b69dd7649d21137a19962cf0d8ef6de3a3218ab956cb21c",
+    "checks/navigation_latency_vision_qmax_20261120.py": "b5d1f66b9ef9d54e7393866e4d35c444d35b1d35cd4fb5f3c07db14bf3775a75",
+    "checks/navigation_latency_w4_adapter_20261120.py": "5afbe93fa5978f5e4f0f342dbbc837e689356ee903a326936ed53c69393d27e5",
+    "checks/navigation_latency_w4_gemv_20261120.py": "a1748d748186a11d407abc350929fe4df80454ca8a1e7650269c0be755cd26e4",
+    "checks/navigation_latency_w4_hybrid_adapter_20261120.py": "889b878999de0e80fbaae7d43b0f739c45cca70ab9d1233768b4e4addbad4852",
+    "checks/navigation_latency_w4_hybrid_contract_20261120.py": "cb961c9479b80c8af7f448243b2d089e4debc7a387cb1e534e1a4f3d13285e0e",
+    "checks/navigation_latency_w4_hybrid_module_map_20261120.py": "4703e40221511100e86fc5483ddb22b67da17e7bcb99bfbce0232757ff075470",
+    "checks/navigation_latency_w4_kernels_20261120.py": "9af558753d46b92a7d288ab46b5cd86793d32acf7039fdd4869df10939771337",
+    "checks/navigation_latency_w4_module_map_20261120.py": "106fae18cf9c6ec6d21426f04e409cbb32a469691a6beef9f5007b3d9293aab1",
+    "checks/navigation_repair_output_gate.py": "46d634fc4998793f6079ca380b005ce5fae54bfd607325f118d6817597f122c1",
+    "checks/navigation_repair_runtime.py": "e3ca4c02732d531f85a3a6306966549d31e8217c056a7d5a8cf3d91f51813ae8",
+    "checks/navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+    "checks/navigation_w4a16_fix_runtime.py": "9c06aeae3014c278bea0fd610f4a587f57f1f1ad5be4ec1bb8fe9e12f55ebd0d",
+    "checks/navigation_w4a16_repair_kernels.py": "09a181c19e618307f681e02a8ee6964c6ad368a0d47e772d7328f297971e9a87",
+    "checks/prepare_navigation_latency_replay_20261120.py": "20d68b8c8fd4b60713a137e5beb209aa4e790014cdae711892242991f10aa41d",
+    "checks/probe_navigation_latency_ipc_cpu_20261120.py": "26c597c70dd0acc5e72c8c468146f54c1fa29e123990ea076889c4c645c66d06",
+    "checks/probe_navigation_latency_schedule_cpu_20261120.py": "aa64188fa1ce76cdd08d4f0030977e66f63ab7847d9a9fa30e64dcbf0b09a246",
+    "checks/probe_navigation_latency_vision_qmax_cpu_20261120.py": "3ab4f8ff298cf5fd4cd558250920b8ba84dc0cfddd2983deeed3be18c31d83e4",
+    "checks/probe_navigation_latency_w4_20261120.py": "5b4d68859c246ef7630f63cb7b675cdece881f95a72d46b02f8269462a76ed96",
+    "checks/probe_navigation_latency_w4_gemv_20261120.py": "f4dd0dc6a6ef68c08203466be9aa4ffafdcdb607706c4dede97796dcfe159306",
+    "checks/run_navigation_latency_navigation_20261120.py": "d442f21645f25b7a8eb23f6a511c94657138620c82bbbe0a0b96e8e2a848b843",
+    "checks/run_navigation_latency_replay_20261120.py": "33fd6143823ad5dcf5ff7a99d22b11f43a38d3ca706a48e1e91bf5af47643bb8",
+    "checks/run_navigation_latency_study_20261120.py": "d8c6f33c93fc3b1a7d53a7fdbd5f8ee90feb387f1f9c5538c3365fb1e9e5067d",
+    "checks/serve_navigation_latency_20261120.py": "01c1111d1954d1eec38918f415ce0b81b455f4d8117b9f43b9d602a8e4c88345",
+    "checks/serve_navigation_latency_hybrid_20261120.py": "6954644a540ad6c63de0aa803507ffeca0487f4b853afec65d5e8e6ae0149ac8",
+    "checks/summarize_navigation_latency_20261120.py": "0bd36efc0d71831b2caaac20c934fb41fa16c2e443debd2704b484567da29509"
+  },
+  "gpu_before": "1427, 0, 50, 38.81, 2730, 10501",
+  "scope": "Independent fixed-input speed/correctness study; no closed-loop navigation, no weight recalibration or token pruning.",
+  "timing_scope": "HTTP starts after idle; warmups, capture and tail excluded. CUDA intervals may include dispatch gaps. Decode divisor is actual forward count including response-tail work. Stream token arrivals may be batched. Nonstream has no TTFT. Stream/nonstream runs must not be pooled.",
+  "baseline_scope": "Ratios reference first same-run FP16; later FP16 sessions expose drift. Same-weight output equality is descriptive and must pass before deployment claims."
+}

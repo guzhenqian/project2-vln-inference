@@ -1,0 +1,274 @@
+{
+  "status": "verified_fixed_request_system_confirmation; research_and_navigation_validation_still_in_progress",
+  "audit": "reports\\navigation_latency_system_confirmation_reverse_v1_audit_20261120.json",
+  "audit_sha256": "0e1dae0723eaa6d80a77edaec18b254a5fe197386692426c74d5081dab224352",
+  "round": "logs\\navigation_latency_20261120\\system_confirmation_reverse_v1",
+  "protocol": "2/9images,18/64forcedgreedyoutput,nonstream,10measuredpercell,1secondidleoutsideHTTP,reversemodelorder,all3agentsCPUtoolsquiet",
+  "cells": {
+    "0_18": {
+      "fp16": {
+        "old_http_s": {
+          "p50": 0.524745952000103,
+          "p95": 0.5320542018001561,
+          "min": 0.5217639380007313,
+          "max": 0.5326143600004798
+        },
+        "new_http_s": {
+          "p50": 0.5046473535003315,
+          "p95": 0.5279560540003331,
+          "min": 0.4902634030004265,
+          "max": 0.5349523480008429
+        },
+        "same_model_p50_reduction_percent": 3.8301578931984825,
+        "same_weight_tokens_equal": true
+      },
+      "awq_w4a16": {
+        "old_http_s": {
+          "p50": 0.3572393254999042,
+          "p95": 0.7741395559004551,
+          "min": 0.35195825699975103,
+          "max": 1.1125375930005248
+        },
+        "new_http_s": {
+          "p50": 0.3310237470004722,
+          "p95": 0.3547104327501529,
+          "min": 0.3244054930000857,
+          "max": 0.356151164000039
+        },
+        "same_model_p50_reduction_percent": 7.3383797998014755,
+        "same_weight_tokens_equal": true,
+        "old_p50_reduction_vs_equal_fp16_percent": 31.92147092545192,
+        "new_p50_reduction_vs_equal_fp16_percent": 34.404937486657246,
+        "old_fp16_minus_quant_p50_seconds": 0.16750662650019876,
+        "new_fp16_minus_quant_p50_seconds": 0.1736236064998593
+      },
+      "gptq_w4a16": {
+        "old_http_s": {
+          "p50": 0.3520843539999987,
+          "p95": 0.35632941005042085,
+          "min": 0.3477127209998798,
+          "max": 0.3583079750005709
+        },
+        "new_http_s": {
+          "p50": 0.3321137259995339,
+          "p95": 0.36826276264978325,
+          "min": 0.3271833990002051,
+          "max": 0.3902754860000641
+        },
+        "same_model_p50_reduction_percent": 5.672114586626831,
+        "same_weight_tokens_equal": true,
+        "old_p50_reduction_vs_equal_fp16_percent": 32.903845630822595,
+        "new_p50_reduction_vs_equal_fp16_percent": 34.18894923436555,
+        "old_fp16_minus_quant_p50_seconds": 0.17266159800010428,
+        "new_fp16_minus_quant_p50_seconds": 0.1725336275007976
+      },
+      "separate_fp16_interval4_control": {
+        "p50": 0.5443458125000689,
+        "p95": 0.5712832803501442,
+        "min": 0.5379495230008615,
+        "max": 0.5782814359999975
+      }
+    },
+    "0_64": {
+      "fp16": {
+        "old_http_s": {
+          "p50": 1.4114870609996615,
+          "p95": 1.418605298750117,
+          "min": 1.408915667000656,
+          "max": 1.4191982479997023
+        },
+        "new_http_s": {
+          "p50": 1.4489193489998797,
+          "p95": 1.478233521349921,
+          "min": 1.436645273999602,
+          "max": 1.492415216000154
+        },
+        "same_model_p50_reduction_percent": -2.651975284400243,
+        "same_weight_tokens_equal": true
+      },
+      "awq_w4a16": {
+        "old_http_s": {
+          "p50": 0.7947254635000718,
+          "p95": 0.7999425236997922,
+          "min": 0.7851183920001858,
+          "max": 0.7999957379997795
+        },
+        "new_http_s": {
+          "p50": 0.8234373724999386,
+          "p95": 0.8574910116995852,
+          "min": 0.8121155779999754,
+          "max": 0.881005749999531
+        },
+        "same_model_p50_reduction_percent": -3.6128084877784072,
+        "same_weight_tokens_equal": true,
+        "old_p50_reduction_vs_equal_fp16_percent": 43.69587327727814,
+        "new_p50_reduction_vs_equal_fp16_percent": 43.168860774181915,
+        "old_fp16_minus_quant_p50_seconds": 0.6167615974995897,
+        "new_fp16_minus_quant_p50_seconds": 0.6254819764999411
+      },
+      "gptq_w4a16": {
+        "old_http_s": {
+          "p50": 0.7912069740000334,
+          "p95": 0.7983893567003179,
+          "min": 0.7812677230003828,
+          "max": 0.7989109850004752
+        },
+        "new_http_s": {
+          "p50": 0.8330553920000057,
+          "p95": 0.9115531416000522,
+          "min": 0.8137531860002127,
+          "max": 0.9328954680004244
+        },
+        "same_model_p50_reduction_percent": -5.289187200714762,
+        "same_weight_tokens_equal": true,
+        "old_p50_reduction_vs_equal_fp16_percent": 43.94514864063475,
+        "new_p50_reduction_vs_equal_fp16_percent": 42.505054365170544,
+        "old_fp16_minus_quant_p50_seconds": 0.6202800869996281,
+        "new_fp16_minus_quant_p50_seconds": 0.6158639569998741
+      },
+      "separate_fp16_interval4_control": {
+        "p50": 1.42059304949953,
+        "p95": 1.427312872249877,
+        "min": 1.4136283649995676,
+        "max": 1.4278170770003271
+      }
+    },
+    "1_18": {
+      "fp16": {
+        "old_http_s": {
+          "p50": 1.7151465209999515,
+          "p95": 1.7980218252497706,
+          "min": 1.6782749479998529,
+          "max": 1.8216697549996752
+        },
+        "new_http_s": {
+          "p50": 0.8804032425000514,
+          "p95": 0.8985849584000789,
+          "min": 0.8681452659993738,
+          "max": 0.9009721669999635
+        },
+        "same_model_p50_reduction_percent": 48.66891943512992,
+        "same_weight_tokens_equal": true
+      },
+      "awq_w4a16": {
+        "old_http_s": {
+          "p50": 1.574781509999866,
+          "p95": 1.6460820829497151,
+          "min": 1.4544517979993543,
+          "max": 1.66974602999926
+        },
+        "new_http_s": {
+          "p50": 0.7386954244998378,
+          "p95": 0.7740705843498744,
+          "min": 0.7330588370004989,
+          "max": 0.7820250260001558
+        },
+        "same_model_p50_reduction_percent": 53.092195977085055,
+        "same_weight_tokens_equal": true,
+        "old_p50_reduction_vs_equal_fp16_percent": 8.1838495592931,
+        "new_p50_reduction_vs_equal_fp16_percent": 16.095785562739483,
+        "old_fp16_minus_quant_p50_seconds": 0.14036501100008536,
+        "new_fp16_minus_quant_p50_seconds": 0.1417078180002136
+      },
+      "gptq_w4a16": {
+        "old_http_s": {
+          "p50": 1.5568010660003893,
+          "p95": 1.6283206491002147,
+          "min": 1.5173303430001397,
+          "max": 1.6572426090006047
+        },
+        "new_http_s": {
+          "p50": 0.7404965604996505,
+          "p95": 0.7663312008001412,
+          "min": 0.7321970350003539,
+          "max": 0.7736264010000014
+        },
+        "same_model_p50_reduction_percent": 52.43473449038187,
+        "same_weight_tokens_equal": true,
+        "old_p50_reduction_vs_equal_fp16_percent": 9.232182385633436,
+        "new_p50_reduction_vs_equal_fp16_percent": 15.891204762389632,
+        "old_fp16_minus_quant_p50_seconds": 0.1583454549995622,
+        "new_fp16_minus_quant_p50_seconds": 0.1399066820004009
+      },
+      "separate_fp16_interval4_control": {
+        "p50": 0.9267491455002528,
+        "p95": 0.9489185392998479,
+        "min": 0.9170464170001651,
+        "max": 0.9572755549997964
+      }
+    },
+    "1_64": {
+      "fp16": {
+        "old_http_s": {
+          "p50": 2.6374374359998,
+          "p95": 2.6552339677998136,
+          "min": 2.5950132520001716,
+          "max": 2.6592743450000853
+        },
+        "new_http_s": {
+          "p50": 1.8454828875001112,
+          "p95": 1.891579059800142,
+          "min": 1.8361137169995345,
+          "max": 1.9109108960001322
+        },
+        "same_model_p50_reduction_percent": 30.027425018310417,
+        "same_weight_tokens_equal": true
+      },
+      "awq_w4a16": {
+        "old_http_s": {
+          "p50": 2.0267438729997593,
+          "p95": 2.3964899138505182,
+          "min": 1.9903505180000138,
+          "max": 2.6732051770004546
+        },
+        "new_http_s": {
+          "p50": 1.2629117219998989,
+          "p95": 1.2853536753000299,
+          "min": 1.2538111149997349,
+          "max": 1.2904235040005005
+        },
+        "same_model_p50_reduction_percent": 37.68765067829324,
+        "same_weight_tokens_equal": true,
+        "old_p50_reduction_vs_equal_fp16_percent": 23.154807566782676,
+        "new_p50_reduction_vs_equal_fp16_percent": 31.567410862820978,
+        "old_fp16_minus_quant_p50_seconds": 0.6106935630000407,
+        "new_fp16_minus_quant_p50_seconds": 0.5825711655002124
+      },
+      "gptq_w4a16": {
+        "old_http_s": {
+          "p50": 2.02369784550001,
+          "p95": 2.0470437973497155,
+          "min": 1.905490648000523,
+          "max": 2.059693583999433
+        },
+        "new_http_s": {
+          "p50": 1.2694423474999894,
+          "p95": 1.3040958397004032,
+          "min": 1.257882977999543,
+          "max": 1.3061246800007211
+        },
+        "same_model_p50_reduction_percent": 37.27115190033031,
+        "same_weight_tokens_equal": true,
+        "old_p50_reduction_vs_equal_fp16_percent": 23.270299500664127,
+        "new_p50_reduction_vs_equal_fp16_percent": 31.2135400388581,
+        "old_fp16_minus_quant_p50_seconds": 0.6137395904997902,
+        "new_fp16_minus_quant_p50_seconds": 0.5760405400001218
+      },
+      "separate_fp16_interval4_control": {
+        "p50": 1.839788944999782,
+        "p95": 1.8627065108496936,
+        "min": 1.8260585180005364,
+        "max": 1.8696741249996194
+      }
+    }
+  },
+  "limitations": [
+    "These are fixed-request medians; no navigation quality claim yet.",
+    "Do not pool percentiles across rounds or claim n10 statistical significance.",
+    "The uniform interval2 target favors short navigation output; two-image64 is slower than oldmp16, and small-sample tails can also regress.",
+    "FP16interval4 is a separate complete long-output control, not a spliced per-cell deployment.",
+    "Wide-all arithmetic candidate failed one output-stability cell and is not included; QMAX has no meaningful HTTP gain.",
+    "Real-history343 replay and originalsubset20 quality remain pending."
+  ],
+  "critical_interpretation": "For nine-image18, removing common system overhead raises the relative quantization advantage, while the absolute FP16-minus-AWQ median gap remains about0.14seconds. Do not present the53% same-model system reduction as a53% intrinsic quantization-kernel acceleration."
+}

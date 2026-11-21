@@ -1,0 +1,93 @@
+{
+  "created_utc": "2026-11-12T11:58:59.407649+00:00",
+  "audit_source_sha256": "650c3c63a221b6fd4c6d39ef63f90cc53618f698c0e3c915c4dc7a4bef42d42c",
+  "protocol_sha256": "d80fbb5ba1d92c7ba958d6675595b6c13d1631bc32ebcaaf9ca66c6bebe0ac12",
+  "scope": "Independent raw-step/timing audit of fixed20; not statistical equivalence or completed same100.",
+  "gates": {
+    "infrastructure_errors": 0,
+    "format_or_truncation_errors": 0,
+    "max_success_count_drop": 2,
+    "max_spl_drop": 0.1,
+    "fixed_http_p50_p95_max_ratio": 1.1,
+    "fixed_repetitions_per_cell_min": 10,
+    "all_four_cells_required": true,
+    "actual_input_tensor_sha_equality_required": true
+  },
+  "all_eight_quantized_20_gates_passed": false,
+  "formal100_status": "Not assessed by this fixed20 audit",
+  "table": [
+    {
+      "group": "fp16",
+      "status": "audit_failed",
+      "passed": false,
+      "reason": "ValueError: Habitat SPL consistency: 0.9902825510649791 != independently computed 0.9902825383680078",
+      "technical_gate_status": "not_required_for_unquantized_baseline"
+    },
+    {
+      "group": "awq_w4a16",
+      "status": "pending",
+      "passed": false,
+      "reason": "Not run in this audit"
+    },
+    {
+      "group": "awq_w4a4",
+      "status": "pending",
+      "passed": false,
+      "reason": "Not run in this audit"
+    },
+    {
+      "group": "awq_w4a8",
+      "status": "pending",
+      "passed": false,
+      "reason": "Not run in this audit"
+    },
+    {
+      "group": "awq_w8a16",
+      "status": "pending",
+      "passed": false,
+      "reason": "Not run in this audit"
+    },
+    {
+      "group": "gptq_w4a16",
+      "status": "pending",
+      "passed": false,
+      "reason": "Not run in this audit"
+    },
+    {
+      "group": "gptq_w4a4",
+      "status": "pending",
+      "passed": false,
+      "reason": "Not run in this audit"
+    },
+    {
+      "group": "gptq_w4a8",
+      "status": "pending",
+      "passed": false,
+      "reason": "Not run in this audit"
+    },
+    {
+      "group": "gptq_w8a16",
+      "status": "pending",
+      "passed": false,
+      "reason": "Not run in this audit"
+    }
+  ],
+  "groups": {
+    "fp16": {
+      "group": "fp16",
+      "directory": "logs/navigation_repair_20261112/screen_fp16_v1/fp16",
+      "pipeline_status": "audit_failed",
+      "error": "ValueError: Habitat SPL consistency: 0.9902825510649791 != independently computed 0.9902825383680078"
+    }
+  },
+  "fp16_repeat": null,
+  "kernel_gates": [],
+  "limitations": [
+    "20 cases screen engineering defects and obvious collapse; no statistical quality-equivalence claim.",
+    "Fixed-input speed uses matching inputs/budgets; navigation request distributions may differ by trajectory.",
+    "CUDA events include dispatch/idle; decode denominator is actual forwards including post-response work.",
+    "Memory is whole-card 200ms sampling and includes desktop/prewarm usage.",
+    "Kernel numerical gates validate reference arithmetic on synthetic inputs; they do not establish activation fidelity or navigation quality.",
+    "A passed20 gate authorizes the next formal run; it does not mean100 cases are complete."
+  ]
+}

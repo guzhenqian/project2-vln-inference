@@ -1,0 +1,311 @@
+{
+  "schema_version": 1,
+  "date_local": "2026-11-20",
+  "timezone": "Asia/Shanghai",
+  "status": "read_only_review_and_candidates_prepared_gpu_results_pending",
+  "scope": "基于历史实测和本地 LMDeploy 0.11.1 源码的量化时延研究。此文件不报告 2026-11-20 候选已获全模型或端到端收益。候选效果须由 root 串行实测确认。",
+  "preserved_conditions": [
+    "原 AWQ/GPTQ 非对称 group128 W4 权重和零点，不重新量化",
+    "FP16 激活、完整视觉输入、完整最多 3072 token prefill、原生 mRoPE 和 FP16 KV",
+    "原报告、冻结实现和安装包保持不变",
+    "所有性能变化同时比较同条件 FP16，防止只优化量化服务造成归因偏差"
+  ],
+  "historical_matched_evidence": {
+    "source": "reports/navigation_repair_20261114_continuation_20.json",
+    "json_path": "groups.<group>.fixed_input.1_18",
+    "workload": "相同九图、2815 输入 token、强制返回 18 token，每组 2 次预热和 10 次测量",
+    "fp16": {
+      "http_p50_s": 1.735631015850231,
+      "language_prefill_p50_ms": 332.9700164794922,
+      "decode_request_mean_p50_ms_per_actual_forward": 17.489834487438202,
+      "actual_decode_forwards_across_10_requests": 320
+    },
+    "awq_w4a16": {
+      "http_p50_s": 1.5562581398990005,
+      "language_prefill_p50_ms": 339.68946838378906,
+      "decode_request_mean_p50_ms_per_actual_forward": 7.984866492450237,
+      "actual_decode_forwards_across_10_requests": 320
+    },
+    "gptq_w4a16": {
+      "http_p50_s": 1.5384088698774576,
+      "language_prefill_p50_ms": 339.3111114501953,
+      "decode_request_mean_p50_ms_per_actual_forward": 7.954428017139435,
+      "actual_decode_forwards_across_10_requests": 320
+    },
+    "interpretation": [
+      "W4 decode 模型区间已显著缩短，不能说量化没有局部加速。",
+      "W4 语言 prefill 约 340ms，FP16 约 333ms；当前证据不支持量化 prefill 更快。",
+      "端到端 HTTP 比值与 decode 比值是不同指标；必须继续定位未随 W4 缩短的请求开销。"
+    ]
+  },
+  "shared_overhead_dilution": {
+    "conceptual_model_only": "若暂以不重叠的共同开销 C、FP16 专属成本 F、量化专属成本 Q 表示 T_fp16=C+F、T_quant=C+Q，则时延降幅为 (F-Q)/(C+F)。C 越大，同一份量化节省越容易被稀释。",
+    "implication": "修复双方共同的 IPC/调度成本，可能在保持量化内核不变时提高量化的相对端到端收益；这属于系统优化让已有量化收益更充分显现，不能把全部系统节省算成量化内核收益。",
+    "current_ipc_candidate": "checks/navigation_latency_ipc_20261120.py 只改变 SharedBuffer 中冗余 bytes 复制方式，保留 wire 格式、协议和通知边界。是否缩短端到端请求必须看 root 的同轮 FP16/W4 配对结果。",
+    "limitations": [
+      "该加法模型用于解释方向，不是当前请求的已测精确分解。实际执行可能重叠并包含 CPU/GPU 等待。",
+      "历史 frontend prompt 完成到 worker prepare 的长间隔包含多个阶段，不能直接把整个间隔称为已证明的 IPC 成本。",
+      "不能用当前未测的 IPC 时间代入公式并报告预测值为真实加速。"
+    ]
+  },
+  "timing_boundary_constraints": [
+    "18 个返回 token 在历史 interval16 设置下实际执行 32 次 decode；一部分在 HTTP 已结束之后，不能把 32×decode 单次时间直接当作该请求的 HTTP decode 部分。",
+    "首末返回 token 的时间间隔数为 17；它与 32 次实际模型前向不是同一个分母。",
+    "语言/视觉/模型 CUDA events 可以包含主机派发造成的空隙，不是纯 kernel 累计时间；也不得把相互嵌套的区间相加。",
+    "不同请求分布的 P50 不能直接相加还原 HTTP P50；阶段均值乘次数也不能替代逐请求时间线。",
+    "前一请求的尾部前向可能影响下一请求 TTFT；固定输入孤立请求的计时外 idle 与真实连续调用必须分别报告。",
+    "固定测量的 1 秒计时外 idle 只用于隔离请求，不是部署侧优化，也不能计入或减去 HTTP 时延。"
+  ],
+  "native_kernel_audit": {
+    "installed_source": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/kernels/cuda/awq_kernels.py",
+    "current_wrapper": "checks/navigation_w4a16_repair_kernels.py",
+    "findings": [
+      "已冻结 wrapper 的调优候选实际上只有 BLOCK_SIZE_N=64/128；BLOCK_SIZE_M 由 M 直接确定，大 M 固定 128；GROUP_SIZE_M 固定 8。",
+      "SPLIT_K 固定 max(1,K//4096)，四投影中仅 down 使用 2；原搜索没有系统比较 split1/2/4。",
+      "内核从 INT4 解包并按 group128 零点/scale 反量化后执行 FP16 tl.dot，FP32 局部累加。它减少权重搬运，不会把所有长 prefill 算术成本降到四分之一。",
+      "大 M 反复复用权重，量化的带宽优势可能变小，反量化增加额外工作；此为机制解释，尚非基于硬件计数器证实本卡各形状均受计算限制。",
+      "split>1 在每次调用创建清零输出后原生 atomic_add。候选继续保留这一约束；不能移除清零或混用旧输出。"
+    ],
+    "real_layer0_shapes_verified_from_both_safetensors_headers": [
+      {
+        "projection": "qkv",
+        "k": 2560,
+        "n": 6144,
+        "quantization_groups": 20
+      },
+      {
+        "projection": "o",
+        "k": 4096,
+        "n": 2560,
+        "quantization_groups": 32
+      },
+      {
+        "projection": "gate_up",
+        "k": 2560,
+        "n": 19456,
+        "quantization_groups": 20
+      },
+      {
+        "projection": "down",
+        "k": 9728,
+        "n": 2560,
+        "quantization_groups": 76
+      }
+    ],
+    "geometry_validation": "所有 N 均可被 BN64/128/256 整除，K/128 均可被 split4 整除。保持 BK128 后尺度与零点分组索引可沿原逻辑使用。实际数值误差仍须 GPU 验证。"
+  },
+  "candidate_priority": [
+    {
+      "priority": 1,
+      "name": "原生 wider launch 搜索",
+      "reason": "保留已有权重与数学，只扩大尚未充分探索的 launch 参数，依赖和集成变更最小。",
+      "search_axes": [
+        "BM16/32/64/128（按 M 选择候选集合）",
+        "BN64/128/256",
+        "split1/2/4",
+        "warps4/8",
+        "pipeline2/3",
+        "compiler stages2/3",
+        "GROUP_M4/8"
+      ],
+      "measurement": "M1 用真实 CUDA Graph replay 计时，M701/2815 用 eager；每个候选先对独立反量化参考验数值，选优后再随机顺序做更长基线/候选确认。",
+      "prepared_files": [
+        "checks/navigation_latency_w4_kernels_20261120.py",
+        "checks/probe_navigation_latency_w4_20261120.py"
+      ],
+      "status": "已准备并通过 CPU AST/接口/真实权重头核对，尚未在本报告中取得 GPU 数值或性能结果"
+    },
+    {
+      "priority": 2,
+      "name": "准确 M 候选的完整服务验证",
+      "reason": "投影热缓存收益必须通过真实模型、图捕获、完整输入和 HTTP 复测才能采用。",
+      "measurement": "先四固定负载，每格同 FP16 对照；核对输入 SHA、自然/强制输出 token、每请求错误、候选执行覆盖、capture/replay，以及 prefill/decode/HTTP/显存。",
+      "prepared_files": [
+        "checks/navigation_latency_w4_adapter_20261120.py",
+        "checks/navigation_latency_w4_module_map_20261120.py"
+      ],
+      "adapter_boundary": "M1/701/2815 全144投影必须走候选；未测 synthetic M 明确走旧冻结基线。表只声明 exact M，不宣称动态导航已验证。",
+      "status": "接入文件已准备，完整模型正确性/服务时延待测"
+    },
+    {
+      "priority": 3,
+      "name": "独立原生 prefill_interval 对照",
+      "reason": "这是调度参数，不改变量化矩阵；可能减少短回答结束后的多余前向和下一请求等待，但也可能增加主机调度/IPC频率。",
+      "status": "只读建议，需同轮测量，不能保证 interval1 更快"
+    },
+    {
+      "priority": 4,
+      "name": "支持零点的 AWQ-Marlin 独立移植",
+      "reason": "成熟低 M 内核有潜力，但当前环境没有 marlin/vllm，涉及扩展、布局和数值验证；不是今晚风险最低的第一步。",
+      "constraints": [
+        "Marlin 原始 Layer 明确为对称量化，只有 scales 接口，不能直接替换本项目非对称零点格式。",
+        "vLLM v0.6.4.post1 AWQ-Marlin 明确支持运行时零点、uint4、group128、SM>=80，四本地布局满足它的 K%128、N%64 条件。",
+        "不能因已有 GPTQ 名称便使用只接受对称 GPTQ 的转换；本项目两套权重均已转为当前带零点的 GEMM 布局，需逐值证明无重新量化。",
+        "原始 Marlin 的接近4倍主张主要适用于低到中等 M 约16–32；不等价于本项目 M2815 prefill 或端到端4倍。"
+      ],
+      "status": "原始/官方源码已核对，未安装、未编译、未运行"
+    }
+  ],
+  "not_prioritized": {
+    "temporary_dense_prefill": "历史真实层0微测的临时逐投影反量化+FP16 GEMM 多数没有稳定胜过 phase_tuned。数据在 reports/navigation_w4a16_optimization_attempts_20261112.json。除非新定位给出新的适用形状或复用方案，否则不优先重复该已试路线。",
+    "bitwidth_reduction": "目前 A4 有导航质量损失，继续降低激活精度并不能直接解决已有共同开销；先把 W4A16 的收益显现出来。"
+  },
+  "prefill_interval_review": {
+    "native_paths": [
+      {
+        "file": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/strategies/ar/engine.py",
+        "line": 18,
+        "finding": "get_num_loops 在 decode 时返回 scheduler_config.prefill_interval，prefill 时为1；get_prealloc_size 也随 interval 改变。"
+      },
+      {
+        "file": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/inputs_maker.py",
+        "line": 300,
+        "finding": "把策略产生的 num_loops 传入 forward_inputs.loop_count。"
+      },
+      {
+        "file": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/model_agent.py",
+        "line": 770,
+        "finding": "worker for idx in range(loop_count) 中每步都做前向、sampling、stopping输出；本循环看到 stopped 后没有本地 break。"
+      },
+      {
+        "file": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/engine_loop.py",
+        "line": 295,
+        "finding": "engine 同样按 num_loops 消费输出；末步触发下一批预取，半程清 forward_event，因此改变 interval 会改变主机调度节奏。"
+      }
+    ],
+    "low_risk_experiment": "使用原生 PytorchEngineConfig.prefill_interval，不修改 while/for 或 stopping 代码；先比较16与1，必要时2/4/8，只变这一项。FP16/AWQ/GPTQ用相同参数和顺序，图模式不变。",
+    "two_required_load_modes": [
+      "孤立请求：原协议1秒计时外idle，观察当前请求 HTTP/TTFT/返回token间隔。",
+      "连续请求：零idle或固定真实调用节奏，观察前一请求结束到下一请求首token的影响、全序列耗时与实际总前向数。"
+    ],
+    "required_checks": [
+      "强制输出18与64 token时逐token一致；自然结束固定输入核对动作解析与 finish_reason。",
+      "保留每请求实际prefill/decode计数，区分最后HTTP响应前和响应后的工作；不能预先假设 interval1 恰好只执行18次。",
+      "测量GPU实际前向和CPU/IPC调度开销，避免节省尾算力却增加逐token派发导致当前请求更慢。",
+      "确认原生CUDA Graph仍实际capture/replay；不要以参数配置替代执行证据。",
+      "若调整采样调度导致随机输出变化，需明确是执行条件变化并补质量检查，不能沿用旧100条成功率。"
+    ],
+    "interpretation_limit": "减少响应后的GPU工作不必然降低该请求已经结束的HTTP时延，但可能改善下一请求TTFT、持续请求吞吐和功耗。收益需要按对应指标报告。"
+  },
+  "primary_references": [
+    {
+      "type": "local_report",
+      "path": "reports/navigation_repair_20261114_continuation_20.json",
+      "supports": "固定九图18token实际阶段和HTTP结果"
+    },
+    {
+      "type": "local_report",
+      "path": "reports/navigation_w4a16_optimization_method_20261112.md",
+      "supports": "调度尾部计算、计时边界、跨轮漂移限制"
+    },
+    {
+      "type": "local_report",
+      "path": "reports/navigation_w4a16_optimization_attempts_20261112.json",
+      "supports": "已尝试逐投影临时反量化方案的真实微测"
+    },
+    {
+      "type": "local_source",
+      "path": "checks/navigation_w4a16_repair_kernels.py",
+      "supports": "当前固定launch候选、真实M和冻结策略"
+    },
+    {
+      "type": "official_repository",
+      "url": "https://github.com/IST-DASLab/marlin",
+      "supports": "原始Marlin低M性能范围、Ampere/Ada硬件要求和实现机制"
+    },
+    {
+      "type": "official_source",
+      "url": "https://github.com/IST-DASLab/marlin/blob/master/marlin/__init__.py",
+      "supports": "原始Layer为对称group量化、pack只接收scales"
+    },
+    {
+      "type": "official_source",
+      "url": "https://github.com/vllm-project/vllm/blob/v0.6.4.post1/vllm/model_executor/layers/quantization/awq_marlin.py",
+      "supports": "AWQ-Marlin对zero_point及uint4的实现支持"
+    },
+    {
+      "type": "official_source",
+      "url": "https://github.com/vllm-project/vllm/blob/v0.6.4.post1/vllm/model_executor/layers/quantization/utils/marlin_utils.py",
+      "supports": "SM、group size与K/N几何约束"
+    }
+  ],
+  "work_not_performed_by_this_review": [
+    "未运行GPU",
+    "未安装或编译Marlin",
+    "未修改安装包或旧冻结代码",
+    "未把理论或微测结果宣称为整模型/端到端收益"
+  ],
+  "uni_short_output_gating_hypothesis": {
+    "status": "source_supported_hypothesis_not_yet_causally_verified",
+    "trigger_observation_from_root": "system_full_v1 中 GPTQ uni 两图18输出约0.47s、mp约0.355s；两图64输出uni约0.77s、mp约0.79s；九图18输出uni约0.99s、mp约1.57s。这些为研究中观察，正式数字以root最终原始审计为准。",
+    "hypothesis": "uni共享同一个forward_event。decode块输入预处理清除此event，块执行结束才重新置位，而响应发送协程也等待它。因此短回答可能已经产生停止输出，却等到该调度块末尾才发出响应。MP的worker没有拿到engine中的同一个event，不必出现相同门控时序。",
+    "not_the_hypothesis": "不是“uni整块执行时不yield导致事件循环饥饿”：async_forward每次实际前向后显式await asyncio.sleep(0)。",
+    "source_evidence": [
+      {
+        "file": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/executor/uni_executor.py",
+        "line": 85,
+        "through_line": 87,
+        "finding": "UniExecutor.start(forward_event)把engine传入的event交给model_agent.start。"
+      },
+      {
+        "file": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/model_agent.py",
+        "line": 869,
+        "through_line": 887,
+        "finding": "_async_loop_inputs_preprocess在H2D完成、放入_in_que之后调用forward_event.clear()。"
+      },
+      {
+        "file": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/model_agent.py",
+        "line": 860,
+        "through_line": 865,
+        "finding": "_async_loop_background等待整个_async_step_background完成，随后forward_event.set()；后者包含loop_count个前向。"
+      },
+      {
+        "file": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/engine_loop.py",
+        "line": 196,
+        "through_line": 208,
+        "finding": "send_response_loop从resp_queue取得响应后，在_send_resps前await self.forward_event.wait()。"
+      },
+      {
+        "file": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/model_agent.py",
+        "line": 1086,
+        "through_line": 1096,
+        "finding": "async_forward在_forward_impl之后await asyncio.sleep(0)，存在逐前向协作式yield。"
+      },
+      {
+        "file": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/executor/mp_executor.py",
+        "line": 382,
+        "through_line": 388,
+        "finding": "MPExecutor.start虽收到forward_event，但只调用collective_rpc(start)，未把该event传给worker；模型worker在独立进程/事件循环执行。"
+      },
+      {
+        "file": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/model_agent.py",
+        "line": 647,
+        "through_line": 651,
+        "finding": "_push_output记录CUDA event后用put_nowait入队，本身不等待整个decode块。"
+      },
+      {
+        "file": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/model_agent.py",
+        "line": 992,
+        "through_line": 1005,
+        "finding": "get_output_async逐项取队列、异步轮询对应CUDA event并转CPU，表明“输出已经可读”与“engine门控允许发响应”是可区分阶段。"
+      }
+    ],
+    "numerical_consistency_is_not_proof": "14次尾前向×约8ms约112ms，与观察到约115ms差值接近，只是支持检验该假设的线索；未取得事件时间线前不能把它当作精确归因。",
+    "controlled_experiment": "不修改native event同步或停止循环。仅通过官方PytorchEngineConfig配置比较uni interval16→1/4（必要时8），保持输入、输出预算、权重、图模式和其他参数一致；同时给FP16和W4运行同样候选。",
+    "fairness_requirement": [
+      "uni16可能把更多尾部工作纳入HTTP窗口，不能用该较慢FP16路径人为放大量化加速比。",
+      "报告同配置受控对照，也报告FP16与量化各自通过正确性检查后的最低延迟配置；明确最佳配置是否不同。",
+      "最好配置依据固定负载选定，再用独立重复测量验证，避免直接报告探索中的最小噪声样本。",
+      "计算量化相对速度时保留基线选择和HTTP完成边界；旧MP结果不能与新uni阶段数无说明混算。"
+    ],
+    "lightweight_diagnostic_suggestion": [
+      "仅在独立诊断服务、少量请求中包装EngineLoop._send_resp；out.finish时记录perf_counter_ns、forward_event.is_set和已生成token数。",
+      "uni可从executor.model_agent.patched_model.model的既有_fix_steps读取decode步骤，并对既有model-end CUDA events调用query()，统计服务发FINISH时已提交和已完成的前向数；不要新增synchronize或额外GPU到CPU张量拷贝。",
+      "在_make_infer_outputs首次识别finish/stopped时同样记录时间与完成数，再比较_send_resp放行时间，区分GPU产出、engine收到停止输出、允许发送响应三个阶段。",
+      "记录客户端HTTP结束perf_counter_ns与上述同主机时间线；服务发FINISH时的GPU完成数不应被偷换成客户端精确截止时完成数。",
+      "诊断中event.query结果是非阻塞完成观测，CPU前向函数返回时刻只是提交/主机返回，不等于GPU已完成。",
+      "若18token已被engine识别停止，而FINISH直到32步完成后才发，且interval1/4减少等待，才可增强共享event门控的因果结论。"
+    ],
+    "changes_made": "仅追加此只读研究说明；未改active runtime、native event或当前batch。"
+  }
+}

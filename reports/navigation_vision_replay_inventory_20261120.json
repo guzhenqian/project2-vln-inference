@@ -1,0 +1,191 @@
+{
+  "scope": "Directory names plus steps metadata/source schema only; no image payload was opened or hashed",
+  "passed_inventory": true,
+  "entries": [
+    {
+      "group": "fp16",
+      "episode_id": "1250",
+      "directory": "logs/navigation_repair_20261112/continuation_20261114_v1/remaining80_fp16/fp16/navigation/episode_1250",
+      "steps": 400,
+      "referenced_step_frames": 400,
+      "present_frames": 400,
+      "missing": [],
+      "first_frame": "frame_0000.png",
+      "last_frame": "frame_0399.png",
+      "final_png_present": true,
+      "model_requests": 128
+    },
+    {
+      "group": "fp16",
+      "episode_id": "159",
+      "directory": "logs/navigation_repair_20261112/continuation_20261114_v1/remaining80_fp16/fp16/navigation/episode_159",
+      "steps": 53,
+      "referenced_step_frames": 53,
+      "present_frames": 53,
+      "missing": [],
+      "first_frame": "frame_0000.png",
+      "last_frame": "frame_0052.png",
+      "final_png_present": true,
+      "model_requests": 14
+    },
+    {
+      "group": "fp16",
+      "episode_id": "1413",
+      "directory": "logs/navigation_repair_20261112/continuation_20261114_v1/remaining80_fp16/fp16/navigation/episode_1413",
+      "steps": 52,
+      "referenced_step_frames": 52,
+      "present_frames": 52,
+      "missing": [],
+      "first_frame": "frame_0000.png",
+      "last_frame": "frame_0051.png",
+      "final_png_present": true,
+      "model_requests": 16
+    },
+    {
+      "group": "fp16",
+      "episode_id": "558",
+      "directory": "logs/navigation_repair_20261112/screen_fp16_v1/fp16/navigation/episode_558",
+      "steps": 400,
+      "referenced_step_frames": 400,
+      "present_frames": 400,
+      "missing": [],
+      "first_frame": "frame_0000.png",
+      "last_frame": "frame_0399.png",
+      "final_png_present": true,
+      "model_requests": 156
+    },
+    {
+      "group": "fp16",
+      "episode_id": "1123",
+      "directory": "logs/navigation_repair_20261112/continuation_20261114_v1/remaining80_fp16/fp16/navigation/episode_1123",
+      "steps": 59,
+      "referenced_step_frames": 59,
+      "present_frames": 59,
+      "missing": [],
+      "first_frame": "frame_0000.png",
+      "last_frame": "frame_0058.png",
+      "final_png_present": true,
+      "model_requests": 17
+    },
+    {
+      "group": "fp16",
+      "episode_id": "384",
+      "directory": "logs/navigation_repair_20261112/continuation_20261114_v1/remaining80_fp16/fp16/navigation/episode_384",
+      "steps": 46,
+      "referenced_step_frames": 46,
+      "present_frames": 46,
+      "missing": [],
+      "first_frame": "frame_0000.png",
+      "last_frame": "frame_0045.png",
+      "final_png_present": true,
+      "model_requests": 12
+    },
+    {
+      "group": "awq_w4a16",
+      "episode_id": "1250",
+      "directory": "logs/navigation_repair_20261112/continuation_20261114_v1/remaining80_awq_w4a16/awq_w4a16/navigation/episode_1250",
+      "steps": 28,
+      "referenced_step_frames": 28,
+      "present_frames": 28,
+      "missing": [],
+      "first_frame": "frame_0000.png",
+      "last_frame": "frame_0027.png",
+      "final_png_present": true,
+      "model_requests": 10
+    },
+    {
+      "group": "awq_w4a16",
+      "episode_id": "159",
+      "directory": "logs/navigation_repair_20261112/continuation_20261114_v1/remaining80_awq_w4a16/awq_w4a16/navigation/episode_159",
+      "steps": 56,
+      "referenced_step_frames": 56,
+      "present_frames": 56,
+      "missing": [],
+      "first_frame": "frame_0000.png",
+      "last_frame": "frame_0055.png",
+      "final_png_present": true,
+      "model_requests": 15
+    },
+    {
+      "group": "awq_w4a16",
+      "episode_id": "1413",
+      "directory": "logs/navigation_repair_20261112/continuation_20261114_v1/remaining80_awq_w4a16/awq_w4a16/navigation/episode_1413",
+      "steps": 60,
+      "referenced_step_frames": 60,
+      "present_frames": 60,
+      "missing": [],
+      "first_frame": "frame_0000.png",
+      "last_frame": "frame_0059.png",
+      "final_png_present": true,
+      "model_requests": 19
+    },
+    {
+      "group": "awq_w4a16",
+      "episode_id": "558",
+      "directory": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/navigation/episode_558",
+      "steps": 400,
+      "referenced_step_frames": 400,
+      "present_frames": 400,
+      "missing": [],
+      "first_frame": "frame_0000.png",
+      "last_frame": "frame_0399.png",
+      "final_png_present": true,
+      "model_requests": 128
+    },
+    {
+      "group": "awq_w4a16",
+      "episode_id": "1123",
+      "directory": "logs/navigation_repair_20261112/continuation_20261114_v1/remaining80_awq_w4a16/awq_w4a16/navigation/episode_1123",
+      "steps": 48,
+      "referenced_step_frames": 48,
+      "present_frames": 48,
+      "missing": [],
+      "first_frame": "frame_0000.png",
+      "last_frame": "frame_0047.png",
+      "final_png_present": true,
+      "model_requests": 13
+    },
+    {
+      "group": "awq_w4a16",
+      "episode_id": "384",
+      "directory": "logs/navigation_repair_20261112/continuation_20261114_v1/remaining80_awq_w4a16/awq_w4a16/navigation/episode_384",
+      "steps": 44,
+      "referenced_step_frames": 44,
+      "present_frames": 44,
+      "missing": [],
+      "first_frame": "frame_0000.png",
+      "last_frame": "frame_0043.png",
+      "final_png_present": true,
+      "model_requests": 14
+    }
+  ],
+  "total_referenced_step_frames": 1646,
+  "source_evidence": [
+    {
+      "file": "checks/run_navigation_precision_diagnostic.py",
+      "lines": "104-106;125-132",
+      "finding": "Saves exact observations rgb to lossless PNG before policy act on every primitive step, including queued non-model actions; each row stores frame path."
+    },
+    {
+      "file": "checks/benchmark_navigation_replay.py",
+      "lines": "26-35",
+      "finding": "Existing legacy helper reconstructs author rgb_list from prior up-to199 PNG frames, adds current PNG via act, and asserts encoded JPEG SHA sequence equals original request hashes. Do not run unchanged: old dataset path and sparse/repeated request selection are unsuitable for chronological cache workload."
+    },
+    {
+      "file": "tmp/habitat_setup/navigation_source_review/eval/vln/eval.py",
+      "lines": "38-40;173-178;300-333",
+      "finding": "Frozen policy JPEG-encodes PIL RGB; samples up to8 historical observations plus current, preserving full history/primitives."
+    }
+  ],
+  "reconstruction_plan": [
+    "Freeze one accepted reference trajectory set, irrespective of model used for replay; use same full chronological requests in all four FP16/quantized cache-off/on arms.",
+    "For each model_called row reconstruct prior 199 primitive-step frames and current frame with original PIL RGB/JPEG path and policy sampling; do not reconstruct history only from earlier model calls.",
+    "Assert encoded JPEG SHA sequence, image count, all request text elements and normalized full payload hash against original metadata before timing. Re-encoding identity remains unverified until images may be read.",
+    "Reset cache before each episode; include first navigation request in workload total, keep model-engine warmup separate and prevent warmup from populating episode-image cache.",
+    "Fix output budget in a speed replay or separately report natural output token lengths; replay is speed/input evidence, not closed-loop success proof."
+  ],
+  "remaining_verification": [
+    "No PNG content/decoder/JPEG re-encoding was read or tested in this inventory.",
+    "Legacy replay code proves an available reconstruction approach but is not directly a fair cache benchmark."
+  ]
+}

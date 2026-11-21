@@ -1,0 +1,25 @@
+{
+  "status": "registered_before_confirmation_run",
+  "scope": "Confirm native system improvements independently of unaccepted arithmetic candidates",
+  "run": "logs/navigation_latency_20261120/system_confirmation_reverse_v1",
+  "configuration": "logs/navigation_latency_20261120/sessions_system_confirmation_reverse_v1.json",
+  "generation": "Nonstream HTTP, same original 2/9 image payloads, fixed18/64 greedy output, two excluded warmups per cell, ten measured repeats per cell, one second idle outside HTTP timer",
+  "order": ["gptq_inprocess2", "awq_inprocess2", "fp16_inprocess2", "gptq_mp16", "awq_mp16", "fp16_mp16", "fp16_inprocess4_long_control"],
+  "primary_deployment": "One uniform native inprocess+UniExecutor+prefill_interval2 configuration, chosen for the navigation short-output target before this run",
+  "additional_control": "FP16 interval4 is retained as a separate complete deployment because exploratory data shows a long-output scheduling tradeoff; do not splice cell minima into an invented configuration",
+  "quiet_condition": "All agents stop CPU tooling before launch and until run completes; root performs only bounded small status reads. No checkpoint mmap, imports, PNG decode, source preparation or compilation from other jobs during measured sessions.",
+  "correctness": "All same-weight fixed input and output token sequences must agree; graph/executor/launch-table/source receipts independently audited",
+  "statistics": "Keep all requests and outliers. Summarize each independent round separately; do not pool P95 or characterize n10 as statistical significance.",
+  "claim_separation": [
+    "Same-model new versus old is system improvement",
+    "Quantized versus FP16 under equal optimized conditions is quantization advantage",
+    "Standalone kernel or vision candidate screening is not an accepted deployment result"
+  ],
+  "excluded_candidates": {
+    "wide_all": "Observed unstable two-image64 output in one of ten repeats; full-model gate not met. No adoption or benefit claim.",
+    "wide_prefill_only": "Four-cell outputs agree but initial HTTP benefit is small; not selected for this system-only confirmation.",
+    "vision_qmax": "AWQ screen showed little HTTP improvement; complete FP16 result and independent numerical audit pending at plan registration.",
+    "hybrid": "Not yet GPU tested; dependency on the rejected wide-all reference prevents current acceptance.",
+    "vision_cache": "Implementation research only; not part of this confirmation."
+  }
+}

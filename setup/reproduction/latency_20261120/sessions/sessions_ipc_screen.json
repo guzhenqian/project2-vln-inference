@@ -1,0 +1,20 @@
+[
+  {
+    "group": "awq_w4a16",
+    "label": "awq_mp",
+    "frozen_table": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json",
+    "env": {
+      "PROJECT2_LATENCY_EXECUTOR": "mp",
+      "PROJECT2_LATENCY_PROFILE": "1"
+    }
+  },
+  {
+    "group": "awq_w4a16",
+    "label": "awq_uni",
+    "frozen_table": "logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json",
+    "env": {
+      "PROJECT2_LATENCY_EXECUTOR": "uni",
+      "PROJECT2_LATENCY_PROFILE": "1"
+    }
+  }
+]

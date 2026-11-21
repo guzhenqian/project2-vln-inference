@@ -1,0 +1,820 @@
+{
+  "created_utc": "2026-11-20T13:40:57.131375+00:00",
+  "status": "wide_all_failed_forced64_gate_hybrid_on_hold",
+  "scope": "Read-only small receipts/config/source analysis. No torch/Triton/LMDeploy import, GPU, weight bytes, or frozen-file edits.",
+  "evidence": {
+    "native": {
+      "requests.json": {
+        "path": "logs/navigation_latency_20261120/kernel_vision_screen_v1/01_awq_inprocess2/requests.json",
+        "sha256": "b5fa6cfd8bcda5dc11fe1128dc656d2b7cb178fd559e04ac236249c69e015dfd"
+      },
+      "result.json": {
+        "path": "logs/navigation_latency_20261120/kernel_vision_screen_v1/01_awq_inprocess2/result.json",
+        "sha256": "7685259cdd3a861a32d71f52f56979aa2b074b04afc51152b48644ab697f7292"
+      }
+    },
+    "wide_all": {
+      "requests.json": {
+        "path": "logs/navigation_latency_20261120/kernel_vision_screen_v1/02_awq_wide_all/requests.json",
+        "sha256": "119d86f57c20cea6bc547afd9fac9236ec1db5fea57f89fd52cfe50fb94d7b12"
+      },
+      "result.json": {
+        "path": "logs/navigation_latency_20261120/kernel_vision_screen_v1/02_awq_wide_all/result.json",
+        "sha256": "18524b79c91e199170e7159a62bc14d776d8b9c9713b48d82a325f91ba41fa22"
+      }
+    },
+    "wide_prefill": {
+      "requests.json": {
+        "path": "logs/navigation_latency_20261120/kernel_vision_screen_v1/03_awq_wide_prefill/requests.json",
+        "sha256": "08a4cbd2ce2bd99edca907679d7bfa272e85f92c7f439d15f1e9bba3ec50ce07"
+      },
+      "result.json": {
+        "path": "logs/navigation_latency_20261120/kernel_vision_screen_v1/03_awq_wide_prefill/result.json",
+        "sha256": "4e3ce2e8b9e1d55ca910077a3d4c3dcfde4545c4b2954fc4e28c43357aa9e0ae"
+      }
+    }
+  },
+  "cells": {
+    "native": {
+      "0_18": {
+        "n": 10,
+        "unique_output_hashes": {
+          "93939cc8337fd5662d3c308e83c03e121b2d67038045017ba54b4108e6740cce": 10
+        },
+        "equal_native": 10,
+        "same_semantic_payload": true,
+        "result_stable": true
+      },
+      "0_64": {
+        "n": 10,
+        "unique_output_hashes": {
+          "e87ebfb6d90531428354d0774c7f2a6cb6366c59fe408c484652b4e956cef955": 10
+        },
+        "equal_native": 10,
+        "same_semantic_payload": true,
+        "result_stable": true
+      },
+      "1_18": {
+        "n": 10,
+        "unique_output_hashes": {
+          "ba379f286471938c47f0d185b643f614b89c2fe11eb168e5e779ce266be22c53": 10
+        },
+        "equal_native": 10,
+        "same_semantic_payload": true,
+        "result_stable": true
+      },
+      "1_64": {
+        "n": 10,
+        "unique_output_hashes": {
+          "8a635b1d2670903d5f636875345744a7f10dce5c9c85d5cad8675d7f637673a6": 10
+        },
+        "equal_native": 10,
+        "same_semantic_payload": true,
+        "result_stable": true
+      }
+    },
+    "wide_all": {
+      "0_18": {
+        "n": 10,
+        "unique_output_hashes": {
+          "93939cc8337fd5662d3c308e83c03e121b2d67038045017ba54b4108e6740cce": 10
+        },
+        "equal_native": 10,
+        "same_semantic_payload": true,
+        "result_stable": true
+      },
+      "0_64": {
+        "n": 10,
+        "unique_output_hashes": {
+          "8dfe4b0ec5345f33dd79d6523f17634b17e9a312f2c4ee3681286f59e7022115": 1,
+          "e87ebfb6d90531428354d0774c7f2a6cb6366c59fe408c484652b4e956cef955": 9
+        },
+        "equal_native": 9,
+        "same_semantic_payload": true,
+        "result_stable": false
+      },
+      "1_18": {
+        "n": 10,
+        "unique_output_hashes": {
+          "ba379f286471938c47f0d185b643f614b89c2fe11eb168e5e779ce266be22c53": 10
+        },
+        "equal_native": 10,
+        "same_semantic_payload": true,
+        "result_stable": true
+      },
+      "1_64": {
+        "n": 10,
+        "unique_output_hashes": {
+          "8a635b1d2670903d5f636875345744a7f10dce5c9c85d5cad8675d7f637673a6": 10
+        },
+        "equal_native": 10,
+        "same_semantic_payload": true,
+        "result_stable": true
+      }
+    },
+    "wide_prefill": {
+      "0_18": {
+        "n": 10,
+        "unique_output_hashes": {
+          "93939cc8337fd5662d3c308e83c03e121b2d67038045017ba54b4108e6740cce": 10
+        },
+        "equal_native": 10,
+        "same_semantic_payload": true,
+        "result_stable": true
+      },
+      "0_64": {
+        "n": 10,
+        "unique_output_hashes": {
+          "e87ebfb6d90531428354d0774c7f2a6cb6366c59fe408c484652b4e956cef955": 10
+        },
+        "equal_native": 10,
+        "same_semantic_payload": true,
+        "result_stable": true
+      },
+      "1_18": {
+        "n": 10,
+        "unique_output_hashes": {
+          "ba379f286471938c47f0d185b643f614b89c2fe11eb168e5e779ce266be22c53": 10
+        },
+        "equal_native": 10,
+        "same_semantic_payload": true,
+        "result_stable": true
+      },
+      "1_64": {
+        "n": 10,
+        "unique_output_hashes": {
+          "8a635b1d2670903d5f636875345744a7f10dce5c9c85d5cad8675d7f637673a6": 10
+        },
+        "equal_native": 10,
+        "same_semantic_payload": true,
+        "result_stable": true
+      }
+    }
+  },
+  "divergence": {
+    "cell": "0_64",
+    "wide_request_index": 11,
+    "repeat": 0,
+    "first_diff_zero_based": 29,
+    "first_diff_one_based": 30,
+    "native_token": 22,
+    "wide_token": 20,
+    "different_positions_zero_based": [
+      29,
+      30,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
+    "different_positions_count": 33,
+    "common_prefix_tokens": [
+      13435,
+      220,
+      20,
+      15,
+      9961,
+      11,
+      2484,
+      1290,
+      220,
+      16,
+      20,
+      8381,
+      11,
+      4637,
+      220,
+      17,
+      20,
+      9961,
+      151643,
+      151644,
+      412,
+      1290,
+      220,
+      16,
+      20,
+      8381,
+      11,
+      4637,
+      220
+    ],
+    "native_tokens": [
+      13435,
+      220,
+      20,
+      15,
+      9961,
+      11,
+      2484,
+      1290,
+      220,
+      16,
+      20,
+      8381,
+      11,
+      4637,
+      220,
+      17,
+      20,
+      9961,
+      151643,
+      151644,
+      412,
+      1290,
+      220,
+      16,
+      20,
+      8381,
+      11,
+      4637,
+      220,
+      22,
+      20,
+      9961,
+      11,
+      4637,
+      220,
+      17,
+      20,
+      9961,
+      9961,
+      198,
+      412,
+      1290,
+      220,
+      16,
+      20,
+      8381,
+      11,
+      4637,
+      220,
+      17,
+      20,
+      9961,
+      11,
+      2484,
+      1290,
+      220,
+      16,
+      20,
+      8381,
+      151643,
+      151644,
+      198,
+      13435,
+      220
+    ],
+    "wide_tokens": [
+      13435,
+      220,
+      20,
+      15,
+      9961,
+      11,
+      2484,
+      1290,
+      220,
+      16,
+      20,
+      8381,
+      11,
+      4637,
+      220,
+      17,
+      20,
+      9961,
+      151643,
+      151644,
+      412,
+      1290,
+      220,
+      16,
+      20,
+      8381,
+      11,
+      4637,
+      220,
+      20,
+      15,
+      9961,
+      11,
+      2484,
+      1290,
+      220,
+      16,
+      20,
+      8381,
+      16,
+      20,
+      8381,
+      11,
+      4637,
+      220,
+      17,
+      20,
+      9961,
+      11,
+      2484,
+      1290,
+      220,
+      16,
+      20,
+      8381,
+      16,
+      20,
+      8381,
+      11,
+      4637,
+      220,
+      17,
+      20,
+      9961
+    ],
+    "native_sha256": "e87ebfb6d90531428354d0774c7f2a6cb6366c59fe408c484652b4e956cef955",
+    "wide_sha256": "8dfe4b0ec5345f33dd79d6523f17634b17e9a312f2c4ee3681286f59e7022115",
+    "other_measured_repeats_equal_native": 9,
+    "warmup0_64_both_equal_native": true
+  },
+  "stop_token_caution": {
+    "configured_eos_token_id": 151645,
+    "configured_bos_token_id": 151643,
+    "configured_pad_token_id": 151643,
+    "first_151643_index": 18,
+    "configured_eos_present": false,
+    "interpretation": "Divergence follows token151643 at index18. It is endoftext/bos/pad in saved metadata; do not call it actual runtime EOS without checking runtime stop-token construction. Fixed request explicitly ignores EOS and forces64, so all64 remain binding."
+  },
+  "bad_request_execution": {
+    "prefill_rows": 701,
+    "actual_decode_forwards": 64,
+    "execution_modes": {
+      "eager": 1,
+      "replay": 64
+    },
+    "prefill_python_calls": 144,
+    "capture_projections": 144,
+    "unexpected_capture": {}
+  },
+  "atomic_mechanism": {
+    "evidence": [
+      "LMDeploy awq_kernels.py:197 casts each SPLIT_K partial to FP16;206-207 uses tl.atomic_add(...,sem=relaxed,scope=gpu) for split>1.",
+      "Wide launch allocates scales.new_zeros output for split>1; zeroing is part of the captured operation. No evidence here that zero initialization was omitted.",
+      "Wide decode splits are qkv4/o2/gate_up4/down4; original native splits qkv1/o1/gate_up1/down2. All prefill-only outputs match native in this run."
+    ],
+    "hypothesis": "Four independently scheduled FP16 partial atomic additions can arrive in different orders; FP16 addition is non-associative. This can perturb logits and amplify into autoregressive divergence. This is a plausible mechanism, not established causal proof from current logs.",
+    "arithmetic_example": [
+      {
+        "partials": [
+          1.0,
+          0.00048828125,
+          -1.0,
+          0.00048828125
+        ],
+        "fp16_sequential_sum": 0.00048828125
+      },
+      {
+        "partials": [
+          1.0,
+          -1.0,
+          0.00048828125,
+          0.00048828125
+        ],
+        "fp16_sequential_sum": 0.0009765625
+      }
+    ],
+    "split2_caution": "With exactly two finite FP16 partials and an exact-zero initial output, swapping the two addends preserves the rounded sum; split2 still changes grouping versus split1 and is not automatically equivalent to original native output.",
+    "official_source": "https://triton-lang.org/main/python-api/generated/triton.language.atomic_add.html",
+    "future_evidence": "Repeat actual output bytes under eager and CUDA-graph replay, hot and cache-evicted conditions; compare baseline and candidate. Without this, per-launch numerical tolerance does not establish repeatability."
+  },
+  "saved_attempt_shortlist": {
+    "qkv": {
+      "original_split": [
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 3,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.026239999569952488,
+          "relative_l2": 4.375187199912034e-05,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 3,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.027759999968111515,
+          "relative_l2": 4.375187199912034e-05,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.028672000393271446,
+          "relative_l2": 4.375187199912034e-05,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        }
+      ],
+      "split_le_2": [
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.024671999737620354,
+          "relative_l2": 0.0003649323189165443,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 3,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.026239999569952488,
+          "relative_l2": 4.375187199912034e-05,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          "search_hot_p50_ms": 0.026623999699950218,
+          "relative_l2": 0.0003649323189165443,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        }
+      ]
+    },
+    "o": {
+      "original_split": [
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.028672000393271446,
+          "relative_l2": 5.927127494942397e-05,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 3,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.028672000393271446,
+          "relative_l2": 5.927127494942397e-05,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          "search_hot_p50_ms": 0.028672000393271446,
+          "relative_l2": 5.927127494942397e-05,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        }
+      ],
+      "split_le_2": [
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          "search_hot_p50_ms": 0.02252800017595291,
+          "relative_l2": 0.0003431887598708272,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.023552000522613525,
+          "relative_l2": 0.0003431887598708272,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.028672000393271446,
+          "relative_l2": 5.927127494942397e-05,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        }
+      ]
+    },
+    "gate_up": {
+      "original_split": [
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 3,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.0583840012550354,
+          "relative_l2": 4.7895733587211e-05,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.06143999844789505,
+          "relative_l2": 4.7895733587211e-05,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.06348799914121628,
+          "relative_l2": 4.7895733587211e-05,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        }
+      ],
+      "split_le_2": [
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 3,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.0583840012550354,
+          "relative_l2": 4.7895733587211e-05,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.058880001306533813,
+          "relative_l2": 0.00035031494917348027,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 128,
+            "split_k": 1,
+            "num_warps": 8,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.06143999844789505,
+          "relative_l2": 4.7895733587211e-05,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        }
+      ]
+    },
+    "down": {
+      "original_split": [
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.03788800165057182,
+          "relative_l2": 0.0003644198877736926,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.03993599861860275,
+          "relative_l2": 0.0003644198877736926,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          "search_hot_p50_ms": 0.03993599861860275,
+          "relative_l2": 0.0003644198877736926,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        }
+      ],
+      "split_le_2": [
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.03788800165057182,
+          "relative_l2": 0.0003644198877736926,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 2,
+            "group_m": 8
+          },
+          "search_hot_p50_ms": 0.03993599861860275,
+          "relative_l2": 0.0003644198877736926,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        },
+        {
+          "config": {
+            "block_m": 16,
+            "block_n": 64,
+            "split_k": 2,
+            "num_warps": 4,
+            "pipeline_stages": 2,
+            "compiler_stages": 3,
+            "group_m": 4
+          },
+          "search_hot_p50_ms": 0.03993599861860275,
+          "relative_l2": 0.0003644198877736926,
+          "not_cold_confirmed": true,
+          "not_repeat_bytewise_validated": true
+        }
+      ]
+    }
+  },
+  "next_candidate": {
+    "status": "design_checkpoint_only_new_probe_not_implemented",
+    "priority": "Original native SPLIT_K counts1/1/1/2 for qkv/o/gate_up/down; second independent policy split<=2 only if separately validated.",
+    "plan": [
+      "Create a new probe/selector, leaving frozen original wide/GEMV sources and tables untouched.",
+      "Use saved search rows only to rank candidate configs; no selected config becomes valid until new GPU checks.",
+      "Retain previously tested wide prefill701/2815 only after its independent same-weight full-model gate passes; replace only M1 configs in a new table.",
+      "Preselection checks: two input amplitudes, numerical relativeL2<.005, repeated bytewise output stability for native and candidate under both hot and cold CUDA graph replay; require candidate-vs-native bytewise equality by default for original-split policy.",
+      "After selection: validate all selected12 shapes on real layers0/18/35 at magnitudes.1/1; add M1 repeat/native-bytewise checks on each layer; preserve all rejected variants and repeat hashes.",
+      "Only after local gates: new complete four-cell whole-model comparison and exact token equality. Do not excuse failures after special tokens, ignore EOS tails, or drop bad repetitions."
+    ]
+  },
+  "hybrid_config": {
+    "path": "logs/navigation_latency_20261120/hybrid_full4_session_config_v1.json",
+    "sha256": "102f69db3cce6a75d3887f28055344fbb4bb5c4dad4b031c1ffb3fb4edf70478",
+    "eligibility": "Prepared but do not launch hybrid-over-this-failed-wide reference."
+  },
+  "quiet_checkpoint": "Root requested quiet reverse-order native-system confirmation. Save this record and stop all CPU/tool work until root explicitly resumes. No background task/import/compile was started."
+}

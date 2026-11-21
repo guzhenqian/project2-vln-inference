@@ -1,0 +1,175 @@
+{
+  "status": "design_checkpoint_implementation_not_started_paused_for_quiet_GPU_confirmation",
+  "scope": "Independent future CPU visual-feature cache candidate; no frozen primary service/replay/source changed, no GPU/torch import/image decode/weight read performed by this branch",
+  "proposed_new_files": [
+    "checks/navigation_latency_vision_cpu_cache_20261120.py",
+    "checks/navigation_latency_vision_cpu_cache_module_map_20261120.py",
+    "checks/serve_navigation_latency_vision_cache_20261120.py",
+    "checks/run_navigation_latency_vision_cache_replay_20261120.py"
+  ],
+  "policy": {
+    "storage": "Pageable CPU FP16 tensors, synchronous explicit D2H/H2D for first conservative version; transfer costs stay in HTTP",
+    "capacities": [
+      96,
+      200
+    ],
+    "fairness": "FP16 and AWQ same capacity/eviction/reset/transfer policy; off control same new entry but no RGB hashing or feature-copy cost",
+    "cache_key": "Actual decoded RGB bytes SHA, RGB size/mode, complete image_processor.to_dict configuration and effective resize args/mm kwargs, fixed processor code versions, native output grid_thw, complete verified checkpoint SHA and model/vision config identity, target dtype/backend/source identity",
+    "identity_note": "Full checkpoint SHA conservatively binds visual weights; no claim that the separately quantized full checkpoint shares a feature cache with FP16",
+    "preserved": [
+      "all image and language tokens",
+      "original image order and repeated slots",
+      "main image embeddings plus all three DeepStack arrays",
+      "original full language prefill",
+      "native mRoPE",
+      "FP16 KV",
+      "prefix KV caching off"
+    ],
+    "unsupported_initially": [
+      "video t>1",
+      "multi-grid-row per MultiModalTensor",
+      "TP/DP/batch beyond1",
+      "MP executor",
+      "QMAX/wide/hybrid combinations",
+      "concurrent requests",
+      "unregistered reset plan"
+    ]
+  },
+  "safe_RGB_key_source": {
+    "hook": "lmdeploy.vl.model.qwen3.Qwen3VLModel.preprocess, before original method",
+    "steps": [
+      "Call collect_images before original preprocess; afterwards appended preprocess results lack type fields and cannot be traversed as original image content.",
+      "For actual decoded PIL image, use itself if modeRGB else native convertRGB semantics; hash actual RGB.tobytes once and release the bytes buffer. About 8MiB total at nine480x640 images, rather than63MiB FP32processed tensor.",
+      "Bind full image_processor.to_dict(), effective get_processor_args(mm_processor_kwargs), processor class/source versions. Native Qwen2VLImageProcessorFast path performs deterministic resize/rescale/normalize.",
+      "Call unchanged original preprocess; attach generated identity to each returned preprocessing dictionary, matching image order and actual output grid.",
+      "VisionModel.to_pytorch_aux retains additional preprocessing dictionary fields. Qwen2_5_VLInputProcessor (Qwen3 alias) wrapper copies identity into each result MultiModalTensor.meta after original preprocessing.",
+      "MultiModalTensor.to_device preserves non-tensor metadata dictionaries/strings; no GPU values are read to recover the key."
+    ],
+    "guard_requirements": [
+      "CPU output grid shape(1,3),t=1,positive dimensions",
+      "actual pixel_values row count equals t*h*w",
+      "no user-supplied identity trusted",
+      "empty-image preprocess returns tuple and must bypass without expecting PreprocessInputResult"
+    ]
+  },
+  "cache_forward_design": {
+    "hook": "Native Qwen3 prepare wrapper carries ordered image metadata as new private forward kwargs; native forward wrapper intercepts only self.visual.forward",
+    "miss_strategy": "Count preexisting-cache hits separately from duplicate slots in current request. Encode all distinct missing images in one native visual batch, never one forward per missing image.",
+    "layout": [
+      "Raw pixel patch slices, positional embedding slices and both rotary cos/sin slices use native grid raw lengths t*h*w.",
+      "Miss cu_seqlens is rebuilt as cumulative h*w lengths from selected CPU grids WITHOUT leading zero; visual.forward pads its own zero. Do not slice old cumulative offsets.",
+      "Each native result array is split at merged length t*h*w/merge_size^2. All four arrays are stored, never only primary embeddings.",
+      "Restore every original slot in original order, including duplicates; concatenate four complete arrays and return the original visual tuple structure. Native image mask, language and mRoPE stay untouched.",
+      "If every slot is unique and misses, call original full-batch visual with identical input objects, populate CPU entries and return the unchanged native full-batch output to avoid unnecessary assembly."
+    ],
+    "storage_safety": [
+      "CPU entry owns four detached copies, not views into a larger GPU batch.",
+      "Blocking copy completion precedes insertion/read eviction; no speculative async pinned-memory lifetime or CUDA event protocol in initial version.",
+      "Model-instance cache state, single request/uni executor, no shared feature cache across processes or checkpoints.",
+      "RGB/processor hashing and all D2H/H2D costs remain inside the measured HTTP path."
+    ]
+  },
+  "cold_reset_contract": {
+    "control": "New cache_request_plan.json, SHA frozen before startup; independent new runner only. Existing frozen replay remains cache-off and unchanged.",
+    "bindings": [
+      "Native _fix_index for every actual image request",
+      "phase",
+      "episode_id",
+      "episode_start",
+      "expected prompt tokens and image count",
+      "frozen replay request index and manifest SHA"
+    ],
+    "behavior": "Initial cache empty; numeric warmups may populate cache for gate. Before first formal request, and each later episode start, clear actual LRU and write reset receipt bound to exact request index/episode/plan SHA with before/after occupancy and bytes. Episode clear must not be merely a client-side annotation.",
+    "tail": "Final flush records previous formal request receipts; tail excluded from metrics.",
+    "receipt_timing": "Buffer request stats after successful host model forward; flush previous stats at next prefill for both off and on controls, no per-hit tensor comparisons in real requests."
+  },
+  "numeric_gate": {
+    "allowed": "Only explicitly excluded input warmup indices0/1 with saved plan phaseinput_warmup and existing native inputSHA receipt; unknown formal shapes never trigger double computation.",
+    "reference": "Original full-image native visual forward only, not whole language model.",
+    "candidate": "Actual cache assembly with unique miss batch and copies; optionally replay same warmup once as all-hit CPU roundtrip without a new visual encoder call.",
+    "arrays": [
+      "main",
+      "deepstack0",
+      "deepstack1",
+      "deepstack2"
+    ],
+    "checks": [
+      "shape/dtype/device match",
+      "finite",
+      "torch.equal",
+      "uint8-view bitwise equality",
+      "max absolute error",
+      "relative L2",
+      "different reference/candidate storage"
+    ],
+    "failure": "Write failure receipt and stop. Do not silently relax tolerance or retain a speed claim. Any later tolerance candidate requires separate preregistration, all343 same-weight token comparison and subset20quality.",
+    "limitation": "Changing miss-batch size may change GEMM/Conv3d rounding. Mathematical image independence does not prove bitwise equality; gate may reject this candidate."
+  },
+  "real_request_receipts": [
+    "actual cache enabled/capacity/CPU storage",
+    "request index/plan SHA/episode ID/reset generation",
+    "ordered actual key digests and grids",
+    "number of slots vs distinct keys",
+    "pre-request historical hits vs within-request dedup slots",
+    "distinct encoded misses and single miss-forward count",
+    "H2D/D2H feature bytes",
+    "evictions and occupancy bytes/count",
+    "four output tensor metadata",
+    "numeric status=not_performed_for_formal_request; never claim per-hit tensor equality checks"
+  ],
+  "source_evidence": [
+    {
+      "file": "lmdeploy/vl/model/qwen3.py",
+      "lines": "70-91",
+      "evidence": "Collect actual PIL images, convertRGB, deterministic processor call per image, attach output grid."
+    },
+    {
+      "file": "lmdeploy/vl/model/base.py",
+      "lines": "168-185;246-282",
+      "evidence": "Collect_images only gathers existing PIL objects; to_pytorch_aux carries preprocessing dict with added fields."
+    },
+    {
+      "file": "lmdeploy/pytorch/models/qwen2_5_vl.py",
+      "lines": "697-736",
+      "evidence": "InputProcessor creates MultiModalTensor per input dict; returns tuple for empty multimodal input."
+    },
+    {
+      "file": "lmdeploy/pytorch/multimodal/data_type.py",
+      "lines": "29-55",
+      "evidence": "to_device copies tensors and preserves plain metadata values."
+    },
+    {
+      "file": "lmdeploy/pytorch/models/qwen3_vl.py",
+      "lines": "430-447;512-538;584-623;739-779",
+      "evidence": "Original visual output tuple with3DeepStack; visual input/position preparation; original language mRoPE."
+    }
+  ],
+  "source_sha256": {
+    "lmdeploy/pytorch/models/qwen3_vl.py": "377b26921dfe42b7d91c2306a908713741fa461a792863b18da0182435127e25",
+    "lmdeploy/pytorch/models/qwen2_5_vl.py": "b5dff117a94bef52686a883b4581befd2c0dfc429c4e4784a2ddd26ef93fef99",
+    "lmdeploy/vl/model/qwen3.py": "5b0369a27ae133b661309eee58cec1315b3a562d35cd6e4994b21b8d5ed91173",
+    "lmdeploy/vl/model/base.py": "3fdc7a552b83449fa000247ab02ee8b1048f7e700799fdb1da96306e6801d9d1",
+    "lmdeploy/pytorch/multimodal/data_type.py": "5d59a944fed0d9998e519fb3d12a06b9d245149d60228c148a43fd16a185e1ad",
+    "transformers/models/qwen2_vl/image_processing_qwen2_vl_fast.py": "09bfa9b17df7c3f0c6159bc34008ee50f21d2472cd5bae7e5c21ba1ca13a423c",
+    "transformers/image_processing_utils_fast.py": "038a4aa9e57716be46a18822f5f2f977c8a5b9d0e9cc3db63f032cddafd7d1ac"
+  },
+  "cost_bounds_not_predictions": {
+    "parent_reported_9image_vision_ms": 138,
+    "example_70pct_hit_ideal_removed_vision_ms": 96.6,
+    "not_included_in_ideal": [
+      "RGB hash/conversion overhead",
+      "CPU insertion and D2H blocking",
+      "H2D and assembly",
+      "nonlinear miss-batch efficiency",
+      "CPU receipt overhead"
+    ],
+    "memory": "CPU feature payload96≈562.5MiB,200≈1171.875MiB, not GPU-resident; transient hit assembly still uses GPU memory."
+  },
+  "remaining_work": [
+    "Independent kernelagent read-only review; currently redirected by root to wide64 issue",
+    "Implement only new module/new map/new entry/new runner after root resumes CPU work",
+    "AST/stdlib fake LRU/identity/reset/layout tests without torch import",
+    "Root-owned idle GPU warmup bytegate; if failed disable candidate and report concrete errors",
+    "Only then consider full343 cache-off/on matched FP16/AWQ replay with episode cold resets; no speed claim exists now"
+  ]
+}

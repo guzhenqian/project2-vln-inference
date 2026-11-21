@@ -1,0 +1,133 @@
+{
+  "schema": "navigation_expanded_int8_fullmodel_feasibility/v1",
+  "created_utc": "2026-11-20T14:40:56.155Z",
+  "status": "source_only_design_no_adapter_implemented",
+  "prerequisites": [
+    "Current microprobe must complete and expose actual supported layout/shape, strict integer/epilogue correctness, repeat stability, <=2% random projection screening and full-path hot/cold gains. A GEMM-only gain is insufficient.",
+    "Any future shared-buffer or chunk-conversion wrapper needs its own numerical/race/layout microcheck before model execution. Original probe math/source remain frozen.",
+    "Actual fullmodel VRAM with original KV64x64, max_prefill3072, session4096 and batch1 must fit; no other processes or KV capacity are reduced.",
+    "Excluded actual-input diagnostic smokes, repeated fixed4cell latency/output observations and original-policy20 navigation quality are separate requirements. This investigation must not delay current quality20."
+  ],
+  "identity": {
+    "name": "expanded_int8_prefill_original_w4_decode",
+    "meaning": "Same original packed checkpoint but NEW per-channel INT8 weight and per-token INT8 activation arithmetic in selected prefill. Not same-W4 equivalence, not QQQ/QServe reproduction.",
+    "original_checkpoint": "read-only; original packed W4 tensors retained for decode/fallback",
+    "current_probe_sha256": "255dfde2854a873d3065823e073b8a044611810e9134bdf9d8052fbfddc90bb8",
+    "current_kernel_sha256": "7419f76d0203bf4dcc156958258692262711df0be8cf25793aad748644d8cda4"
+  },
+  "feasible_hook": {
+    "entry": "A new opt-in service/module-map and model subclass only; do not edit frozen primary/wide modules.",
+    "backend": "lmdeploy.pytorch.backends.cuda.awq_modules.wq_gemm_forward is looked up by AwqLinearW4A16Impl.forward on every Python forward; same exact wrapper interface can dispatch by registered qweight pointer.",
+    "signature": "(x,qweight,qzeros,scales,w_bit=4,group_size=128,bias=None,out_features=0)",
+    "module_inventory": "Exactly144 canonical fused qkv/o/gate_up/down modules across36 layers; validate pointer uniqueness, original loaded-weight inventory, actual K/N/stride/dtype, selected expanded q8/scales identity.",
+    "return_protocol": "Flatten original leading dimensions to[M,K], retain FP16 input, add original bias once, restore x.shape[:-1]+(out_features,), and unsqueeze0 if the resulting native protocol is2D. Leave all_reduce handling in native Impl.forward.",
+    "routing": "Use StepContext.is_decoding plus registered M bounds, not M alone. All decode/capture calls go to saved original frozen W4 function. Initial fixed trial uses only predeclared supported prefill M; unknown/<=16 M retains explicitly counted native fallback. No silent fallback for mandatory measured M701/2815.",
+    "candidate_scope": "Batch1,tp1,dp1,no microbatch,no concurrent requests,no prefix reuse or chunked prefill. Wider/dynamic scope requires new boundary/activation evidence and per-request routing counts."
+  },
+  "startup": {
+    "observed_order": "Executor.init builds/loads model, updates configs, builds GraphRunner, allocates KV cache, then warms model. ModelAgent.warmup performs synthetic prefill at max_batch_size=1 before decode graph capture.",
+    "preferred_minimal_position": "After the existing first synthetic native forward has verified all W4 modules and installed the original frozen fallback; before decode capture. This is the existing wide adapter's safe position, but KV already exists and must be counted.",
+    "why_not_constructor": "Weights are not loaded in constructor. A load_weights override may see checkpoint shards and precedes model.to(device)/module.update_weights, so mere AWQ inventory completion is not a universal final-device/final-layout barrier.",
+    "conversion": "Expand one projection at a time, store only winning INT8 physical layout + FP32 channel scale, preserve W4. Hash actual expanded logical weights/scales and original packed tensors, log setup time and allocated/reserved/device-free peaks. Discard all temporary dense/reconstructed tensors immediately.",
+    "peak_risk": "Probe dense_dequant uses full-KN int32/FP32 intermediates; prepare_weight uses FP32 abs/max intermediates. Per-projection conversion can peak several full tensors beyond the final3.388GiB storage. Sequential layers alone do not bound this to one FP16 temporary.",
+    "optional_memory_hardening": "Only if actual startup peak requires it: N-column chunks across full K can bound temporaries while preserving per-channel max semantics. Reuse explicit RN div/quantization, materialize contiguous dense chunk, then copy to permanent selected layout. Must independently prove full logical expanded bytes/scales identical to the frozen whole-projection converter; do not silently introduce a different converter.",
+    "fullmodel_controls": "Keep num_gpu_blocks64 and block_size64. Earlier conversion before cache could expose correct free memory but requires a new guarded lifecycle hook; it does not authorize reducing fixed KV."
+  },
+  "graph_and_warmup": {
+    "native_prefill": "CudaGraphMixin.support_cuda_graph returns attn_metadata.is_decoding. CUDAGraphRunner routes prefill directly to model eager. Microprobe graph replay excludes host dispatch gaps that the actual prefill may expose.",
+    "explicit_warmup_required": "Synthetic M1 never exercises _int_mm because M must be>16. Before service readiness, warm actual expanded weights/layouts and all4 projection shape families with fixed representative M17/701/2815 and maximum3072 for future broad scope, using the actual compute stream and scratch views.",
+    "triton_compile": "Frozen _quantize_rows and _scale_output already use runtime M/do_not_specialize; K/BK and N remain constexpr. Warm actual pointer alignment/dtype/stride categories and install a fail-closed cold-JIT guard/cache inventory in any new adapter. No online autotune.",
+    "limits": "Runtime M prevents intended per-length Triton specialization; it does not independently prove every backend/library length has no first-use overhead. torch._int_mm dispatch/cuBLAS lazy state must be warmed and first real-shape observations kept excluded. Only tested shapes are initially eligible.",
+    "decode_evidence": "Require144 original-native projection capture identities and zero INT8 capture calls; count decode replays with the existing outside-graph observer, not Python dispatch counters. Original native graph/source and event safety remain unchanged.",
+    "future_api": "Current micro Pipeline allocates buffers/output per object. A future new shared invocation layer must reuse the frozen arithmetic/JIT functions with caller-owned scratch and fresh FP16 output; it needs renewed execution validation, not144 persistent Pipeline instances."
+  },
+  "shared_scratch": {
+    "scope": "One owner for the single model compute stream/request path; reject different stream/reentrant concurrent dispatch. ModelAgent uses self.stream for model_forward, separate out/cache streams do not directly own this scratch.",
+    "ordering": "Quantization→INT32 GEMM→epilogue enqueued on the same stream. The next projection may reuse Qx/INT32 only after the previous epilogue has consumed them by stream order. No CPU synchronize is needed merely for same-stream ordering; do not insert hidden synchronization into formal timing.",
+    "buffers": "Allocate flat Qx INT8, flat INT32 accumulation and FP32 row_scale at maximum capacity. Use flat prefix slices.view(actualM,K or N) for tight contiguous operands; [:M,:N] from a max-width2D buffer has a larger stride and may violate _int_mm contiguous out requirements.",
+    "fp16_output": "Allocate a distinct FP16[M,N] result for each projection invocation, preserving ordinary tensor lifetime through attention/MLP/residual consumers. Never return shared output storage that the next projection overwrites. Output can remain in flight after Python returns.",
+    "maximum_m": 3072,
+    "qx_bytes": 29884416,
+    "int32_bytes": 239075328,
+    "row_scale_bytes": 12288,
+    "total_scratch_bytes": 268972032,
+    "total_scratch_mib": 256.51171875,
+    "max_single_fp16_output_bytes": 119537664,
+    "max_single_fp16_output_mib": 114,
+    "forbidden": "No144 per-module M2815 workspaces; gate_up INT32 alone36×~209MiB would exceed7GiB. No multi-stream pooling without explicit ownership/events and new tests."
+  },
+  "actual_activation_diagnostics": {
+    "when": "Only predeclared excluded input_warmup indices0/1 with native2-image/9-image input SHA binding; disable all comparison/copy/reduction hooks for formal timing and policy requests.",
+    "preferred_coverage": "All144 actual projection calls at each of the two smokes (288 local comparisons) for inexpensive frozen-W4 versus candidate output error. Additional CPU INT64/quantizer selected-row/column checks at layers0/18/35 x4 projections, using actual runtime inputs and scratch before reuse.",
+    "operation": "At each actual candidate projection, execute candidate once, save its own FP16 output, invoke the saved pure frozen-W4 linear reference on the same X without recursing through dispatch, then compute metrics. Extra reference linears have no attention/KV writes; never call the whole model twice inline on one KV context.",
+    "metrics": "Per-module actual M/K/N/input dtype/stride, original and expanded tensor SHA, actual selected activation bytes/row indices, finite, global relativeL2/maxabs, row-relative-error quantiles, original output norm and activation quantization statistics; include bias consistently in both comparison outputs.",
+    "trajectory_boundary": "These local comparisons see the candidate trajectory's X after earlier candidate layers. They do not prove equality to the original model trajectory or final output quality. Separate fresh native/candidate requests and original-policy20 evaluate downstream effects.",
+    "threshold": "Register actual-activation criteria before running that stage. Do not relabel the random2% micro threshold as model accuracy or relax gates after seeing results. Record parsing, token repeatability and navigation outcomes under a distinct arithmetic protocol.",
+    "timing_exclusion": "All CPU transfers, full-byte SHA, GPU reductions/.item synchronization and any diagnostic peak belong only to excluded warmups; no extra formal forward. Clear per-warmup diagnostic references afterward."
+  },
+  "memory_estimate": {
+    "reported_by_parent": "Completed quiet AWQ inprocess2 whole-device sample peak6442MiB; GPTQ6432MiB; FP1611555MiB. Samples include desktop and occur at1s intervals, not true instantaneous per-process peaks. Child did not reread those GPU sample logs.",
+    "additional_weights_and_scales_mib": 3469.21875,
+    "illustrative_awq_plus_weights_scratch_output_mib": 10281.73046875,
+    "interpretation": "Rough feasibility scenario using6442+3469.219+256.512+114MiB. Components may overlap existing allocations and this omits conversion/allocator/graph/workspace peaks; it is not a measured peak or guaranteed bound. Actual allocated/reserved/device-free peaks decide applicability.",
+    "decision": "If actual startup/steady memory cannot fit on12GiB with original KV and other processes unchanged, report this route unsuitable; do not weaken controls to claim a gain."
+  },
+  "required_receipts": [
+    "New arithmetic identity/source/checkpoint/converter/layout hashes; actual144 expanded weight/scale hashes and per-module resident bytes.",
+    "Setup conversion/stream/weight mapping and allocation peaks; shared workspace capacities/strides/storage pointers; coldcompile guard and actual warm coverage.",
+    "Per-request candidate/native fallback projection counts with actual M/phase, decode native capture coverage and separately observed replay counts.",
+    "Excluded true-input local-error diagnostics and parsed outputs, then independent fixed/fullmodel latency and original-policy20 quality. Micro evidence alone never enables benefit fields."
+  ],
+  "evidence": [
+    {
+      "path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/backends/cuda/awq_modules.py",
+      "sha256": "a8715b0c22df0a36501c56f59f0f4fb53d8fb7b5061cd0b5a7ff2b73244c9da7",
+      "lines": "11-39,47-65"
+    },
+    {
+      "path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/backends/cuda/graph_runner.py",
+      "sha256": "f777a15c13f04f25fe6199c459ae09fa21f337ca406241106ae04fbc3e14b8f9",
+      "lines": "102-136,214-254"
+    },
+    {
+      "path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/models/utils/cudagraph.py",
+      "sha256": "e41a02fd3767da693b724ba670d11a06198fb58bd7ba8d55fd9f51a1dfe134b9",
+      "lines": "48-58"
+    },
+    {
+      "path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/model_agent.py",
+      "sha256": "7844f9e2a6f05dc7b1356860e6f669ca3b57268632066837b37f9f85df404a27",
+      "lines": "229-250,335-337,415-458,1007-1082"
+    },
+    {
+      "path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/engine/executor/base.py",
+      "sha256": "39116aedbd0dd986d4d6154eb30f69567ddacc5fe8c9b68c49d3599c1d760a9e",
+      "lines": "227-232,237-251"
+    },
+    {
+      "path": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy/pytorch/weight_loader/model_weight_loader.py",
+      "sha256": "1e2da01c710aafd21c467f1cd88bd38ed77a13fac49bf165d4e239ff6989d36a",
+      "lines": "187-201"
+    },
+    {
+      "path": "checks/navigation_latency_w4_adapter_20261120.py",
+      "sha256": "5afbe93fa5978f5e4f0f342dbbc837e689356ee903a326936ed53c69393d27e5",
+      "lines": "40-49,79-112"
+    },
+    {
+      "path": "checks/navigation_w4a16_fix_runtime.py",
+      "sha256": "9c06aeae3014c278bea0fd610f4a587f57f1f1ad5be4ec1bb8fe9e12f55ebd0d",
+      "lines": "53-75,157-178"
+    },
+    {
+      "path": "checks/serve_navigation_latency_20261120.py",
+      "sha256": "01c1111d1954d1eec38918f415ce0b81b455f4d8117b9f43b9d602a8e4c88345",
+      "lines": "60-65"
+    },
+    {
+      "path": "checks/navigation_latency_expanded_int8_prefill_20261120.py",
+      "sha256": "7419f76d0203bf4dcc156958258692262711df0be8cf25793aad748644d8cda4",
+      "lines": "16-42,69-89,93-142"
+    }
+  ]
+}

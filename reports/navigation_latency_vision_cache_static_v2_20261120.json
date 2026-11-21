@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "checks": [
+    "four new candidate files parse without imports",
+    "cache module top level imports stdlib only",
+    "duplicate first input encodes one distinct image",
+    "mixed hits batch all distinct misses once",
+    "raw/cos/sin/pos and cumulative lengths preserve variable-grid ordering",
+    "all-hit skips native encoder and restores repeated slots",
+    "all stored feature tensors are CPU owned",
+    "partial-hit masks1/3/4/8 preserve all four feature arrays",
+    "current hits protected during miss insertion",
+    "LRU capacity/bytes/actual clear match",
+    "cache plan clears exactly episode starts after excluded warmups, never on tail",
+    "actual wrapper runs all eligible index1 partial masks with fake comparator",
+    "formal all-hit request performs zero comparisons and zero encoder calls",
+    "numerical failure writes failed receipt and raises before accepting warmup",
+    "numerical repetitions restricted to first two excluded warmups; partial masks only index1",
+    "strict frozen four-feature bytewise helper and fail-closed required"
+  ],
+  "torch_imported": false,
+  "lmdeploy_imported": false,
+  "gpu_executed": false,
+  "images_read": false,
+  "scope": "Tiny stdlib/AST/fake-tensor layout/control checks only; no real numeric or performance evidence",
+  "source_sha256": {
+    "navigation_latency_vision_cpu_cache_20261120.py": "9ee8c5c025ecbfe5e7ba8ee58dedfc2fe07e03b3e6754926f3713cee075a8e17",
+    "navigation_latency_vision_cpu_cache_module_map_20261120.py": "3aea91dac5532bfbf39200bf17a593790d880405ea12d5b18d86488c867b5c85",
+    "serve_navigation_latency_vision_cache_20261120.py": "760ca951a4abba820f49142a6ec5c86c1dc56408fc613ca41113d85356468867",
+    "run_navigation_latency_vision_cache_replay_20261120.py": "593495a9500250ab03997b5f26177479bbecb765bcf7c9a9e5441d7459849944"
+  }
+}

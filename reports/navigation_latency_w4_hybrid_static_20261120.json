@@ -1,0 +1,105 @@
+{
+  "status": "CPU_AST_and_fake_contract_checks_only",
+  "adapter_sha256": "889b878999de0e80fbaae7d43b0f739c45cca70ab9d1233768b4e4addbad4852",
+  "valid_flush_cases": [
+    {
+      "m": 1,
+      "prefill_route_counts": {
+        "gemv_down": 36,
+        "wide": 108
+      },
+      "capture_gemv": 36,
+      "capture_wide": 108
+    },
+    {
+      "m": 701,
+      "prefill_route_counts": {
+        "wide": 144
+      },
+      "capture_gemv": 36,
+      "capture_wide": 108
+    },
+    {
+      "m": 2815,
+      "prefill_route_counts": {
+        "wide": 144
+      },
+      "capture_gemv": 36,
+      "capture_wide": 108
+    },
+    {
+      "m": 713,
+      "prefill_route_counts": {
+        "baseline_fallback": 144
+      },
+      "capture_gemv": 36,
+      "capture_wide": 108
+    },
+    {
+      "m": 1737,
+      "prefill_route_counts": {
+        "baseline_fallback": 144
+      },
+      "capture_gemv": 36,
+      "capture_wide": 108
+    },
+    {
+      "m": 3072,
+      "prefill_route_counts": {
+        "baseline_fallback": 144
+      },
+      "capture_gemv": 36,
+      "capture_wide": 108
+    }
+  ],
+  "rejected_bad_receipts": [
+    "missing_prefill",
+    "extra_call",
+    "wrong_prefill_route",
+    "missing_gemv_capture",
+    "fallback_capture"
+  ],
+  "actual_dispatch_routes_with_fake_tensors": [
+    {
+      "m": 1,
+      "projection": "down",
+      "route": "gemv_down"
+    },
+    {
+      "m": 1,
+      "projection": "o",
+      "route": "wide"
+    },
+    {
+      "m": 701,
+      "projection": "down",
+      "route": "wide"
+    },
+    {
+      "m": 701,
+      "projection": "o",
+      "route": "wide"
+    },
+    {
+      "m": 2815,
+      "projection": "down",
+      "route": "wide"
+    },
+    {
+      "m": 2815,
+      "projection": "o",
+      "route": "wide"
+    },
+    {
+      "m": 713,
+      "projection": "down",
+      "route": "baseline_fallback"
+    },
+    {
+      "m": 713,
+      "projection": "o",
+      "route": "baseline_fallback"
+    }
+  ],
+  "limitation": "No torch/Triton imports, GPU, weights, actual module warmup, capture or service execution. Fakes establish only Python branch/accounting behavior."
+}

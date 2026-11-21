@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "tests": [
+    "metadata_only_never_runtime_eligible",
+    "changed_threshold_rejected",
+    "false_passed_flag_rejected",
+    "missing_tensor_repeat_rejected",
+    "selected_int32_mismatch_rejected",
+    "producer_source_changed_rejected",
+    "optimistic_saved_latency_rejected",
+    "layout_weight_identity_changed_rejected"
+  ],
+  "scope": "Small JSON fixture mutation only; no checkpoint/GPU/large library imports",
+  "auditor_sha256": "2df06ce9fe8a15c93d790b6bdcc71cf42f941b25e2081d17b73a4a55831767a6"
+}

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "scope": "CPU fake dependencies with actual EngineLoop, CounterEvent, InferOutput path",
+  "cuda_initialized": false,
+  "trace_events": 13,
+  "checks": [
+    "outside-loop construction does not raise",
+    "double install is idempotent",
+    "native method signatures retained",
+    "positional and keyword block args bind",
+    "CounterEvent two-clear/two-set wait semantics retained",
+    "actual _make_infer_outputs returns dict of InferOutput",
+    "FINISH dispatch reaches request manager and writes expected trace"
+  ],
+  "model_step_signature": "(self, inputs: lmdeploy.pytorch.model_inputs.ModelInputs, loop_count: int, swap_in_map: Dict = None, swap_out_map: Dict = None, sampling_inputs: lmdeploy.pytorch.engine.logits_process.SamplingInputs = None, stopping_criteria: lmdeploy.pytorch.strategies.base.model_agent.StoppingCriteria = None, return_logits: bool = False, return_routed_experts: bool = False, is_dummy: bool = False, sync_long_context: bool = False, extra_inputs: lmdeploy.pytorch.strategies.base.model_agent.ExtraInputs = None)",
+  "make_outputs_signature": "(self, batched_outputs: 'BatchedOutputs', running: 'SeqList', model_inputs: 'ModelInputs')",
+  "probe_sha256": "c25fe308511142156b69dd7649d21137a19962cf0d8ef6de3a3218ab956cb21c",
+  "source_sha256": {
+    "engine_loop.py": "ed2a1c26751785c9f94a8c12202d82bdb30b96e741f73506e5f1058543d50f41",
+    "model_agent.py": "7844f9e2a6f05dc7b1356860e6f669ca3b57268632066837b37f9f85df404a27"
+  },
+  "limits": [
+    "No model forward or GPU test; no inference timing conclusion."
+  ]
+}

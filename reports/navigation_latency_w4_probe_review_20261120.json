@@ -1,0 +1,1325 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-20T12:49:11.532715+00:00",
+  "status": "projection_probe_passed_full_model_pending",
+  "title": "AWQ W4A16 wider native launch probe: hot/cold evidence review",
+  "review_scope": "仅读取已完成探针的小型 JSON/JSONL 和源代码；未运行 torch/GPU，未读取 checkpoint。权重 tensor SHA 在此仅引用探针 receipt，独立 mmap 核验由正式审计另行完成。",
+  "evidence": {
+    "directory": "logs/navigation_latency_20261120/w4_search_awq_v1",
+    "files": {
+      "protocol.json": {
+        "path": "logs/navigation_latency_20261120/w4_search_awq_v1/protocol.json",
+        "sha256": "c86b4577b3455a2b50bab1233b7f3ef3dd3c99674ab928afe9cd422b4f4f2641"
+      },
+      "result.json": {
+        "path": "logs/navigation_latency_20261120/w4_search_awq_v1/result.json",
+        "sha256": "1d52715a1cd2d4750df81d227cd22504dfee0eb5a5be66f931e063419d0d9988"
+      },
+      "launch_table.json": {
+        "path": "logs/navigation_latency_20261120/w4_search_awq_v1/launch_table.json",
+        "sha256": "4b5cadc277d1d531e47c216e52f2f9fbde7f60d07e851272affae4a5f3a20d9c"
+      },
+      "attempts.jsonl": {
+        "path": "logs/navigation_latency_20261120/w4_search_awq_v1/attempts.jsonl",
+        "sha256": "6ea6fe52dc962f1da620bc9d7087ce3062c83edcf8374b3077ea1b994756bcab"
+      },
+      "baseline_replayed_table.json": {
+        "path": "logs/navigation_latency_20261120/w4_search_awq_v1/baseline_replayed_table.json",
+        "sha256": "fbaff6574ce6be9aeb293f1a09f051e4bd2b14a473a055edc1ca24880d15951b"
+      },
+      "measurements.json": {
+        "path": "logs/navigation_latency_20261120/w4_search_awq_v1/measurements.json",
+        "sha256": "bc2b422a614790ce4ded7a7ab1ad2224a3debcb96fd6013604d055cf56e815cd"
+      },
+      "numerical_validation.json": {
+        "path": "logs/navigation_latency_20261120/w4_search_awq_v1/numerical_validation.json",
+        "sha256": "dad023ebabb7baaa3aeac7c217188003b9add600604e3a3b0791f40f809da975"
+      }
+    },
+    "protocol_sources_sha256": {
+      "navigation_latency_w4_kernels_20261120.py": "9af558753d46b92a7d288ab46b5cd86793d32acf7039fdd4869df10939771337",
+      "probe_navigation_latency_w4_20261120.py": "5b4d68859c246ef7630f63cb7b675cdece881f95a72d46b02f8269462a76ed96",
+      "navigation_w4a16_repair_kernels.py": "09a181c19e618307f681e02a8ee6964c6ad368a0d47e772d7328f297971e9a87",
+      "navigation_w4a16_candidate_kernels.py": "b38189a9beebec838ea56f059d0e5c2693a13d1e67daae907b6266716ae37e38"
+    },
+    "algorithm": "awq",
+    "checkpoint_sha256": "31d1c12dba3cbaace283cccf5be23337555f0383a3c4390e6270d2a9230414db",
+    "baseline_table_sha256": "8ccdafddb1bcef0397198ca9eb7c3c9f1f7d615071ca81cfb514d19a4c642783"
+  },
+  "preserved_experiment": {
+    "device": "NVIDIA GeForce RTX 4070 Ti",
+    "weight_format": "Existing asymmetric group128 W4 weights and zero points",
+    "activation": "FP16",
+    "arithmetic": "Unchanged LMDeploy native W4A16 JIT; launch schedule parameters only",
+    "search_layer": 0,
+    "exact_m": [
+      1,
+      701,
+      2815
+    ],
+    "projections": [
+      "qkv",
+      "o",
+      "gate_up",
+      "down"
+    ],
+    "search_elapsed_seconds": 122.77374836900003,
+    "search_budget_seconds": 900.0,
+    "selection": "每形状从数值通过候选中选 hot 12 次样本 P50 最小者；随后单独作两轮 hot/cold 确认。未按 cold 结果重选。",
+    "confirmation": "每实现/形状 hot 为两轮各40次、cold 为两轮各20次，轮内随机 baseline/candidate 顺序；此记录重新计算确认样本中位数。"
+  },
+  "search_attempts": {
+    "total": 384,
+    "per_shape": 32,
+    "timed_numerically_accepted": 368,
+    "candidate_errors": 16,
+    "numerical_rejections": 0,
+    "error_counts": {
+      "OutOfResources(132608, 101376, 'shared memory')": 8,
+      "OutOfResources(133120, 101376, 'shared memory')": 8
+    },
+    "errors_by_shape": {
+      "qkv/M701": 2,
+      "qkv/M2815": 2,
+      "o/M701": 2,
+      "o/M2815": 2,
+      "gate_up/M701": 2,
+      "gate_up/M2815": 2,
+      "down/M701": 2,
+      "down/M2815": 2
+    },
+    "failed_configs": [
+      {
+        "projection": "qkv",
+        "m": 701,
+        "k": 2560,
+        "n": 6144,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 1,
+          "num_warps": 8,
+          "pipeline_stages": 3,
+          "compiler_stages": 3,
+          "group_m": 8
+        },
+        "error": "OutOfResources(132608, 101376, 'shared memory')"
+      },
+      {
+        "projection": "qkv",
+        "m": 701,
+        "k": 2560,
+        "n": 6144,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 1,
+          "num_warps": 4,
+          "pipeline_stages": 3,
+          "compiler_stages": 2,
+          "group_m": 8
+        },
+        "error": "OutOfResources(133120, 101376, 'shared memory')"
+      },
+      {
+        "projection": "qkv",
+        "m": 2815,
+        "k": 2560,
+        "n": 6144,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 1,
+          "num_warps": 8,
+          "pipeline_stages": 3,
+          "compiler_stages": 3,
+          "group_m": 8
+        },
+        "error": "OutOfResources(132608, 101376, 'shared memory')"
+      },
+      {
+        "projection": "qkv",
+        "m": 2815,
+        "k": 2560,
+        "n": 6144,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 1,
+          "num_warps": 4,
+          "pipeline_stages": 3,
+          "compiler_stages": 2,
+          "group_m": 8
+        },
+        "error": "OutOfResources(133120, 101376, 'shared memory')"
+      },
+      {
+        "projection": "o",
+        "m": 701,
+        "k": 4096,
+        "n": 2560,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 1,
+          "num_warps": 8,
+          "pipeline_stages": 3,
+          "compiler_stages": 3,
+          "group_m": 8
+        },
+        "error": "OutOfResources(132608, 101376, 'shared memory')"
+      },
+      {
+        "projection": "o",
+        "m": 701,
+        "k": 4096,
+        "n": 2560,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 1,
+          "num_warps": 4,
+          "pipeline_stages": 3,
+          "compiler_stages": 2,
+          "group_m": 8
+        },
+        "error": "OutOfResources(133120, 101376, 'shared memory')"
+      },
+      {
+        "projection": "o",
+        "m": 2815,
+        "k": 4096,
+        "n": 2560,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 1,
+          "num_warps": 8,
+          "pipeline_stages": 3,
+          "compiler_stages": 3,
+          "group_m": 8
+        },
+        "error": "OutOfResources(132608, 101376, 'shared memory')"
+      },
+      {
+        "projection": "o",
+        "m": 2815,
+        "k": 4096,
+        "n": 2560,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 1,
+          "num_warps": 4,
+          "pipeline_stages": 3,
+          "compiler_stages": 2,
+          "group_m": 8
+        },
+        "error": "OutOfResources(133120, 101376, 'shared memory')"
+      },
+      {
+        "projection": "gate_up",
+        "m": 701,
+        "k": 2560,
+        "n": 19456,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 1,
+          "num_warps": 8,
+          "pipeline_stages": 3,
+          "compiler_stages": 3,
+          "group_m": 8
+        },
+        "error": "OutOfResources(132608, 101376, 'shared memory')"
+      },
+      {
+        "projection": "gate_up",
+        "m": 701,
+        "k": 2560,
+        "n": 19456,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 1,
+          "num_warps": 4,
+          "pipeline_stages": 3,
+          "compiler_stages": 2,
+          "group_m": 8
+        },
+        "error": "OutOfResources(133120, 101376, 'shared memory')"
+      },
+      {
+        "projection": "gate_up",
+        "m": 2815,
+        "k": 2560,
+        "n": 19456,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 1,
+          "num_warps": 8,
+          "pipeline_stages": 3,
+          "compiler_stages": 3,
+          "group_m": 8
+        },
+        "error": "OutOfResources(132608, 101376, 'shared memory')"
+      },
+      {
+        "projection": "gate_up",
+        "m": 2815,
+        "k": 2560,
+        "n": 19456,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 1,
+          "num_warps": 4,
+          "pipeline_stages": 3,
+          "compiler_stages": 2,
+          "group_m": 8
+        },
+        "error": "OutOfResources(133120, 101376, 'shared memory')"
+      },
+      {
+        "projection": "down",
+        "m": 701,
+        "k": 9728,
+        "n": 2560,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 2,
+          "num_warps": 8,
+          "pipeline_stages": 3,
+          "compiler_stages": 3,
+          "group_m": 8
+        },
+        "error": "OutOfResources(132608, 101376, 'shared memory')"
+      },
+      {
+        "projection": "down",
+        "m": 701,
+        "k": 9728,
+        "n": 2560,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 2,
+          "num_warps": 4,
+          "pipeline_stages": 3,
+          "compiler_stages": 2,
+          "group_m": 8
+        },
+        "error": "OutOfResources(133120, 101376, 'shared memory')"
+      },
+      {
+        "projection": "down",
+        "m": 2815,
+        "k": 9728,
+        "n": 2560,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 2,
+          "num_warps": 8,
+          "pipeline_stages": 3,
+          "compiler_stages": 3,
+          "group_m": 8
+        },
+        "error": "OutOfResources(132608, 101376, 'shared memory')"
+      },
+      {
+        "projection": "down",
+        "m": 2815,
+        "k": 9728,
+        "n": 2560,
+        "config": {
+          "block_m": 128,
+          "block_n": 256,
+          "split_k": 2,
+          "num_warps": 4,
+          "pipeline_stages": 3,
+          "compiler_stages": 2,
+          "group_m": 8
+        },
+        "error": "OutOfResources(133120, 101376, 'shared memory')"
+      }
+    ],
+    "interpretation": "16 项均为 shared-memory resource limit 的候选不可运行；未进入胜者计时或冻结表，不是 16 项静默数值失败。384 次尝试不能描述为 384 个通过候选。"
+  },
+  "numerical_gate": {
+    "cases": 72,
+    "layers": [
+      0,
+      18,
+      35
+    ],
+    "projections": 4,
+    "m": [
+      1,
+      701,
+      2815
+    ],
+    "input_magnitudes": [
+      0.1,
+      1.0
+    ],
+    "relative_l2_threshold": 0.005,
+    "all_passed": true,
+    "worst": {
+      "layer": 0,
+      "projection": "down",
+      "m": 1,
+      "k": 9728,
+      "n": 2560,
+      "input_magnitude": 1.0,
+      "relative_l2": 0.00045837429934181273,
+      "passed": true
+    },
+    "worst_error_percent": 0.04583742993418127,
+    "maximum_by_layer": {
+      "0": 0.00045837429934181273,
+      "18": 0.00045100515126250684,
+      "35": 0.0004472126020118594
+    },
+    "boundary_cases": 36,
+    "boundary_all_passed": true,
+    "boundary_worst_relative_l2": 0.0004915128811262548,
+    "scope": "独立反量化矩阵参考的随机输入投影数值检查，含真实层0/18/35；没有覆盖所有36层真实激活和自回归输出。边界M检查没有把动态M加入服务 wide table。"
+  },
+  "cold_cache_evidence": {
+    "buffer_bytes": 100663296,
+    "flush_count": 960,
+    "full_buffer_checksum": 19327352832,
+    "expected_checksum": 19327352832,
+    "verified": true,
+    "timing_scope": "Eviction kernel precedes begin CUDA event; only operation under test is timed",
+    "interpretation": "每次计时前对96MiB缓冲执行GPU add_，大于本卡48MiB L2；flush 位于 begin CUDA event 之前，最终全buffer checksum与960次操作对应。该控制减少单投影重复驻留缓存的影响，但不复现整模型层间缓存、attention、调度与实际并发。"
+  },
+  "shapes": [
+    {
+      "projection": "qkv",
+      "m": 1,
+      "k": 2560,
+      "n": 6144,
+      "baseline_config": {
+        "block_m": 16,
+        "block_n": 64,
+        "split_k": 1,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "selected_config": {
+        "block_m": 16,
+        "block_n": 128,
+        "split_k": 4,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "configuration_changed": true,
+      "mode": "cuda_graph_replay",
+      "hot": {
+        "baseline_p50_ms": 0.03379200026392937,
+        "candidate_p50_ms": 0.02457600086927414,
+        "reduction_percent": 27.272725268331254,
+        "saved_microseconds": 9.215999394655228,
+        "samples_per_implementation": 80,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.03379200026392937,
+            "candidate_ms": 0.027135999873280525,
+            "reduction_percent": 19.696970699167704
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.03379200026392937,
+            "candidate_ms": 0.024288000538945198,
+            "reduction_percent": 28.124998966483304
+          }
+        ]
+      },
+      "cold": {
+        "baseline_p50_ms": 0.04710400104522705,
+        "candidate_p50_ms": 0.04084799997508526,
+        "reduction_percent": 13.281251977162356,
+        "saved_microseconds": 6.256001070141792,
+        "samples_per_implementation": 40,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.04710400104522705,
+            "candidate_ms": 0.04044799879193306,
+            "reduction_percent": 14.130439252714877
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.04608000069856644,
+            "candidate_ms": 0.04084799997508526,
+            "reduction_percent": 11.354168064593683
+          }
+        ]
+      },
+      "interpretation": "M1 的 hot 与 cold 两类确认均观察到降低；仍是单层单投影候选证据，须整模型验证。"
+    },
+    {
+      "projection": "qkv",
+      "m": 701,
+      "k": 2560,
+      "n": 6144,
+      "baseline_config": {
+        "block_m": 128,
+        "block_n": 64,
+        "split_k": 1,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "selected_config": {
+        "block_m": 64,
+        "block_n": 64,
+        "split_k": 1,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "configuration_changed": true,
+      "mode": "eager",
+      "hot": {
+        "baseline_p50_ms": 0.3420160114765167,
+        "candidate_p50_ms": 0.3123199939727783,
+        "reduction_percent": 8.68263955700137,
+        "saved_microseconds": 29.696017503738403,
+        "samples_per_implementation": 80,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.3420160114765167,
+            "candidate_ms": 0.3123199939727783,
+            "reduction_percent": 8.68263955700137
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.3409920036792755,
+            "candidate_ms": 0.3123199939727783,
+            "reduction_percent": 8.408411164229246
+          }
+        ]
+      },
+      "cold": {
+        "baseline_p50_ms": 0.3461120128631592,
+        "candidate_p50_ms": 0.32256001234054565,
+        "reduction_percent": 6.804733625910053,
+        "saved_microseconds": 23.552000522613525,
+        "samples_per_implementation": 40,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.3461120128631592,
+            "candidate_ms": 0.32204800844192505,
+            "reduction_percent": 6.952663740899457
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.34617601335048676,
+            "candidate_ms": 0.3235839903354645,
+            "reduction_percent": 6.526166500204312
+          }
+        ]
+      },
+      "interpretation": "M701 的 hot 与 cold 均有可见降低；不能按 36 层线性外推整模型。"
+    },
+    {
+      "projection": "qkv",
+      "m": 2815,
+      "k": 2560,
+      "n": 6144,
+      "baseline_config": {
+        "block_m": 128,
+        "block_n": 64,
+        "split_k": 1,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "selected_config": {
+        "block_m": 128,
+        "block_n": 64,
+        "split_k": 1,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 2,
+        "group_m": 8
+      },
+      "configuration_changed": true,
+      "mode": "eager",
+      "hot": {
+        "baseline_p50_ms": 1.1601920127868652,
+        "candidate_p50_ms": 1.1479040384292603,
+        "reduction_percent": 1.059132817859032,
+        "saved_microseconds": 12.28797435760498,
+        "samples_per_implementation": 80,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 1.1632640361785889,
+            "candidate_ms": 1.1458560228347778,
+            "reduction_percent": 1.4964799737983592
+          },
+          {
+            "round": 2,
+            "baseline_ms": 1.1489280462265015,
+            "candidate_ms": 1.1489280462265015,
+            "reduction_percent": 0.0
+          }
+        ]
+      },
+      "cold": {
+        "baseline_p50_ms": 1.154047966003418,
+        "candidate_p50_ms": 1.154047966003418,
+        "reduction_percent": 0.0,
+        "saved_microseconds": 0.0,
+        "samples_per_implementation": 40,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 1.154047966003418,
+            "candidate_ms": 1.154047966003418,
+            "reduction_percent": 0.0
+          },
+          {
+            "round": 2,
+            "baseline_ms": 1.1545599699020386,
+            "candidate_ms": 1.1545599699020386,
+            "reduction_percent": 0.0
+          }
+        ]
+      },
+      "interpretation": "确认结果接近持平，配置变化或 hot 搜索排名不构成有效收益证明。"
+    },
+    {
+      "projection": "o",
+      "m": 1,
+      "k": 4096,
+      "n": 2560,
+      "baseline_config": {
+        "block_m": 16,
+        "block_n": 64,
+        "split_k": 1,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "selected_config": {
+        "block_m": 16,
+        "block_n": 64,
+        "split_k": 2,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 4
+      },
+      "configuration_changed": true,
+      "mode": "cuda_graph_replay",
+      "hot": {
+        "baseline_p50_ms": 0.028672000393271446,
+        "candidate_p50_ms": 0.02252800017595291,
+        "reduction_percent": 21.428571892599336,
+        "saved_microseconds": 6.144000217318535,
+        "samples_per_implementation": 80,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.028672000393271446,
+            "candidate_ms": 0.02252800017595291,
+            "reduction_percent": 21.428571892599336
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.028672000393271446,
+            "candidate_ms": 0.025311999954283237,
+            "reduction_percent": 11.718751370332402
+          }
+        ]
+      },
+      "cold": {
+        "baseline_p50_ms": 0.054255999624729156,
+        "candidate_p50_ms": 0.043007999658584595,
+        "reduction_percent": 20.731347766041107,
+        "saved_microseconds": 11.247999966144562,
+        "samples_per_implementation": 40,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.05427199974656105,
+            "candidate_ms": 0.043007999658584595,
+            "reduction_percent": 20.75471724015513
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.05409599840641022,
+            "candidate_ms": 0.04403200000524521,
+            "reduction_percent": 18.603960916954733
+          }
+        ]
+      },
+      "interpretation": "M1 的 hot 与 cold 两类确认均观察到降低；仍是单层单投影候选证据，须整模型验证。"
+    },
+    {
+      "projection": "o",
+      "m": 701,
+      "k": 4096,
+      "n": 2560,
+      "baseline_config": {
+        "block_m": 128,
+        "block_n": 64,
+        "split_k": 1,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "selected_config": {
+        "block_m": 128,
+        "block_n": 64,
+        "split_k": 1,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 2,
+        "group_m": 8
+      },
+      "configuration_changed": true,
+      "mode": "eager",
+      "hot": {
+        "baseline_p50_ms": 0.2242559939622879,
+        "candidate_p50_ms": 0.2242559939622879,
+        "reduction_percent": 0.0,
+        "saved_microseconds": 0.0,
+        "samples_per_implementation": 80,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.2242559939622879,
+            "candidate_ms": 0.2242559939622879,
+            "reduction_percent": 0.0
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.2242559939622879,
+            "candidate_ms": 0.2242559939622879,
+            "reduction_percent": 0.0
+          }
+        ]
+      },
+      "cold": {
+        "baseline_p50_ms": 0.22991999983787537,
+        "candidate_p50_ms": 0.2303999960422516,
+        "reduction_percent": -0.20876661652518003,
+        "saved_microseconds": -0.4799962043762207,
+        "samples_per_implementation": 40,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.22937600314617157,
+            "candidate_ms": 0.2303999960422516,
+            "reduction_percent": -0.44642546824196216
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.2303999960422516,
+            "candidate_ms": 0.22995200008153915,
+            "reduction_percent": 0.19444269462152164
+          }
+        ]
+      },
+      "interpretation": "确认结果接近持平，配置变化或 hot 搜索排名不构成有效收益证明。"
+    },
+    {
+      "projection": "o",
+      "m": 2815,
+      "k": 4096,
+      "n": 2560,
+      "baseline_config": {
+        "block_m": 128,
+        "block_n": 64,
+        "split_k": 1,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "selected_config": {
+        "block_m": 128,
+        "block_n": 64,
+        "split_k": 1,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 2,
+        "group_m": 8
+      },
+      "configuration_changed": true,
+      "mode": "eager",
+      "hot": {
+        "baseline_p50_ms": 0.769536018371582,
+        "candidate_p50_ms": 0.7659519910812378,
+        "reduction_percent": 0.4657387314928263,
+        "saved_microseconds": 3.5840272903442383,
+        "samples_per_implementation": 80,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.7772160172462463,
+            "candidate_ms": 0.7659519910812378,
+            "reduction_percent": 1.4492786966637805
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.7649279832839966,
+            "candidate_ms": 0.7654719948768616,
+            "reduction_percent": -0.07111932165553281
+          }
+        ]
+      },
+      "cold": {
+        "baseline_p50_ms": 0.7711199820041656,
+        "candidate_p50_ms": 0.7710719704627991,
+        "reduction_percent": 0.006226208954118739,
+        "saved_microseconds": 0.04801154136657715,
+        "samples_per_implementation": 40,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.7712479829788208,
+            "candidate_ms": 0.7710719704627991,
+            "reduction_percent": 0.02282177975259092
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.7710719704627991,
+            "candidate_ms": 0.7710719704627991,
+            "reduction_percent": 0.0
+          }
+        ]
+      },
+      "interpretation": "确认结果接近持平，配置变化或 hot 搜索排名不构成有效收益证明。"
+    },
+    {
+      "projection": "gate_up",
+      "m": 1,
+      "k": 2560,
+      "n": 19456,
+      "baseline_config": {
+        "block_m": 16,
+        "block_n": 128,
+        "split_k": 1,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "selected_config": {
+        "block_m": 16,
+        "block_n": 128,
+        "split_k": 4,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 4
+      },
+      "configuration_changed": true,
+      "mode": "cuda_graph_replay",
+      "hot": {
+        "baseline_p50_ms": 0.06656000018119812,
+        "candidate_p50_ms": 0.05222399905323982,
+        "reduction_percent": 21.538463174475673,
+        "saved_microseconds": 14.336001127958298,
+        "samples_per_implementation": 80,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.06656000018119812,
+            "candidate_ms": 0.05222399905323982,
+            "reduction_percent": 21.538463174475673
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.06571200117468834,
+            "candidate_ms": 0.05222399905323982,
+            "reduction_percent": 20.52593419821762
+          }
+        ]
+      },
+      "cold": {
+        "baseline_p50_ms": 0.1013759970664978,
+        "candidate_p50_ms": 0.09625600278377533,
+        "reduction_percent": 5.050499556975008,
+        "saved_microseconds": 5.119994282722473,
+        "samples_per_implementation": 40,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.1013759970664978,
+            "candidate_ms": 0.09523200243711472,
+            "reduction_percent": 6.060600938260485
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.10188799723982811,
+            "candidate_ms": 0.09625600278377533,
+            "reduction_percent": 5.527632899482715
+          }
+        ]
+      },
+      "interpretation": "M1 的 hot 与 cold 两类确认均观察到降低；仍是单层单投影候选证据，须整模型验证。"
+    },
+    {
+      "projection": "gate_up",
+      "m": 701,
+      "k": 2560,
+      "n": 19456,
+      "baseline_config": {
+        "block_m": 128,
+        "block_n": 64,
+        "split_k": 1,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "selected_config": {
+        "block_m": 64,
+        "block_n": 64,
+        "split_k": 1,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "configuration_changed": true,
+      "mode": "eager",
+      "hot": {
+        "baseline_p50_ms": 1.0321919918060303,
+        "candidate_p50_ms": 0.954367995262146,
+        "reduction_percent": 7.539682264703041,
+        "saved_microseconds": 77.82399654388428,
+        "samples_per_implementation": 80,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 1.0342400074005127,
+            "candidate_ms": 0.954367995262146,
+            "reduction_percent": 7.722773395618221
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.9922559857368469,
+            "candidate_ms": 0.9523199796676636,
+            "reduction_percent": 4.024768471366491
+          }
+        ]
+      },
+      "cold": {
+        "baseline_p50_ms": 0.9943040013313293,
+        "candidate_p50_ms": 0.9256159961223602,
+        "reduction_percent": 6.908149330285196,
+        "saved_microseconds": 68.68800520896912,
+        "samples_per_implementation": 40,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.9943040013313293,
+            "candidate_ms": 0.92467200756073,
+            "reduction_percent": 7.00308896246673
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.9943040013313293,
+            "candidate_ms": 0.9256640076637268,
+            "reduction_percent": 6.90332067211804
+          }
+        ]
+      },
+      "interpretation": "M701 的 hot 与 cold 均有可见降低；不能按 36 层线性外推整模型。"
+    },
+    {
+      "projection": "gate_up",
+      "m": 2815,
+      "k": 2560,
+      "n": 19456,
+      "baseline_config": {
+        "block_m": 128,
+        "block_n": 64,
+        "split_k": 1,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "selected_config": {
+        "block_m": 128,
+        "block_n": 64,
+        "split_k": 1,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "configuration_changed": false,
+      "mode": "eager",
+      "hot": {
+        "baseline_p50_ms": 3.7652480602264404,
+        "candidate_p50_ms": 3.76473605632782,
+        "reduction_percent": 0.01359814520666136,
+        "saved_microseconds": 0.5120038986206055,
+        "samples_per_implementation": 80,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 3.7585920095443726,
+            "candidate_ms": 3.7688320875167847,
+            "reduction_percent": -0.27244452035253275
+          },
+          {
+            "round": 2,
+            "baseline_ms": 3.769856095314026,
+            "candidate_ms": 3.764224052429199,
+            "reduction_percent": 0.1493967605773472
+          }
+        ]
+      },
+      "cold": {
+        "baseline_p50_ms": 3.768320083618164,
+        "candidate_p50_ms": 3.768320083618164,
+        "reduction_percent": 0.0,
+        "saved_microseconds": 0.0,
+        "samples_per_implementation": 40,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 3.765760064125061,
+            "candidate_ms": 3.7678080797195435,
+            "reduction_percent": -0.05438518545015647
+          },
+          {
+            "round": 2,
+            "baseline_ms": 3.768320083618164,
+            "candidate_ms": 3.768320083618164,
+            "reduction_percent": 0.0
+          }
+        ]
+      },
+      "interpretation": "确认结果接近持平，配置变化或 hot 搜索排名不构成有效收益证明。"
+    },
+    {
+      "projection": "down",
+      "m": 1,
+      "k": 9728,
+      "n": 2560,
+      "baseline_config": {
+        "block_m": 16,
+        "block_n": 64,
+        "split_k": 2,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "selected_config": {
+        "block_m": 16,
+        "block_n": 64,
+        "split_k": 4,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "configuration_changed": true,
+      "mode": "cuda_graph_replay",
+      "hot": {
+        "baseline_p50_ms": 0.03993599861860275,
+        "candidate_p50_ms": 0.03481600061058998,
+        "reduction_percent": 12.820508276028942,
+        "saved_microseconds": 5.119998008012772,
+        "samples_per_implementation": 80,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.03993599861860275,
+            "candidate_ms": 0.03481600061058998,
+            "reduction_percent": 12.820508276028942
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.03993599861860275,
+            "candidate_ms": 0.03481600061058998,
+            "reduction_percent": 12.820508276028942
+          }
+        ]
+      },
+      "cold": {
+        "baseline_p50_ms": 0.07569600269198418,
+        "candidate_p50_ms": 0.06656000018119812,
+        "reduction_percent": 12.069332839095226,
+        "saved_microseconds": 9.136002510786057,
+        "samples_per_implementation": 40,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.07620800286531448,
+            "candidate_ms": 0.06656000018119812,
+            "reduction_percent": 12.660091225809545
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.07526400312781334,
+            "candidate_ms": 0.0655359998345375,
+            "reduction_percent": 12.925173906516418
+          }
+        ]
+      },
+      "interpretation": "M1 的 hot 与 cold 两类确认均观察到降低；仍是单层单投影候选证据，须整模型验证。"
+    },
+    {
+      "projection": "down",
+      "m": 701,
+      "k": 9728,
+      "n": 2560,
+      "baseline_config": {
+        "block_m": 128,
+        "block_n": 64,
+        "split_k": 2,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "selected_config": {
+        "block_m": 128,
+        "block_n": 64,
+        "split_k": 2,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 2,
+        "group_m": 8
+      },
+      "configuration_changed": true,
+      "mode": "eager",
+      "hot": {
+        "baseline_p50_ms": 0.5150719881057739,
+        "candidate_p50_ms": 0.5141920149326324,
+        "reduction_percent": 0.17084469617104636,
+        "saved_microseconds": 0.8799731731414795,
+        "samples_per_implementation": 80,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.5150719881057739,
+            "candidate_ms": 0.5141599774360657,
+            "reduction_percent": 0.17706469984171136
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.5150719881057739,
+            "candidate_ms": 0.5141920149326324,
+            "reduction_percent": 0.17084469617104636
+          }
+        ]
+      },
+      "cold": {
+        "baseline_p50_ms": 0.5273600220680237,
+        "candidate_p50_ms": 0.5273600220680237,
+        "reduction_percent": 0.0,
+        "saved_microseconds": 0.0,
+        "samples_per_implementation": 40,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 0.5283839702606201,
+            "candidate_ms": 0.5282879769802094,
+            "reduction_percent": 0.01816733394910397
+          },
+          {
+            "round": 2,
+            "baseline_ms": 0.5262080132961273,
+            "candidate_ms": 0.5263360142707825,
+            "reduction_percent": -0.024325166364036477
+          }
+        ]
+      },
+      "interpretation": "确认结果接近持平，配置变化或 hot 搜索排名不构成有效收益证明。"
+    },
+    {
+      "projection": "down",
+      "m": 2815,
+      "k": 9728,
+      "n": 2560,
+      "baseline_config": {
+        "block_m": 128,
+        "block_n": 64,
+        "split_k": 2,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "selected_config": {
+        "block_m": 128,
+        "block_n": 64,
+        "split_k": 2,
+        "num_warps": 4,
+        "pipeline_stages": 2,
+        "compiler_stages": 3,
+        "group_m": 8
+      },
+      "configuration_changed": false,
+      "mode": "eager",
+      "hot": {
+        "baseline_p50_ms": 1.7986559867858887,
+        "candidate_p50_ms": 1.787392020225525,
+        "reduction_percent": 0.6262435197790017,
+        "saved_microseconds": 11.26396656036377,
+        "samples_per_implementation": 80,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 1.8186240196228027,
+            "candidate_ms": 1.7868800163269043,
+            "reduction_percent": 1.7454956578920822
+          },
+          {
+            "round": 2,
+            "baseline_ms": 1.7920000553131104,
+            "candidate_ms": 1.7889280319213867,
+            "reduction_percent": 0.17142987147882316
+          }
+        ]
+      },
+      "cold": {
+        "baseline_p50_ms": 1.815551996231079,
+        "candidate_p50_ms": 1.8159679770469666,
+        "reduction_percent": -0.022912084960990953,
+        "saved_microseconds": -0.41598081588745117,
+        "samples_per_implementation": 40,
+        "rounds": [
+          {
+            "round": 1,
+            "baseline_ms": 1.8160640001296997,
+            "candidate_ms": 1.815551996231079,
+            "reduction_percent": 0.028193053691061287
+          },
+          {
+            "round": 2,
+            "baseline_ms": 1.815551996231079,
+            "candidate_ms": 1.8164799809455872,
+            "reduction_percent": -0.0511130893763756
+          }
+        ]
+      },
+      "interpretation": "确认结果接近持平，配置变化或 hot 搜索排名不构成有效收益证明。"
+    }
+  ],
+  "configuration_changed_shapes": 10,
+  "four_projection_median_sums": [
+    {
+      "m": 1,
+      "scope": "仅层0四投影各自P50的算术和，用于描述局部结果；不是串联实测，不是整层/全模型/HTTP时延。",
+      "hot": {
+        "baseline_sum_ms": 0.16895999945700169,
+        "candidate_sum_ms": 0.13414400070905685,
+        "reduction_percent": 20.606059931247266,
+        "saved_microseconds": 34.81599874794483
+      },
+      "cold": {
+        "baseline_sum_ms": 0.2784320004284382,
+        "candidate_sum_ms": 0.2466720025986433,
+        "reduction_percent": 11.406734061072033,
+        "saved_microseconds": 31.759997829794884
+      }
+    },
+    {
+      "m": 701,
+      "scope": "仅层0四投影各自P50的算术和，用于描述局部结果；不是串联实测，不是整层/全模型/HTTP时延。",
+      "hot": {
+        "baseline_sum_ms": 2.113535985350609,
+        "candidate_sum_ms": 2.0051359981298447,
+        "reduction_percent": 5.128845118895953,
+        "saved_microseconds": 108.39998722076416
+      },
+      "cold": {
+        "baseline_sum_ms": 2.0976960361003876,
+        "candidate_sum_ms": 2.005936026573181,
+        "reduction_percent": 4.374323445726103,
+        "saved_microseconds": 91.76000952720642
+      }
+    },
+    {
+      "m": 2815,
+      "scope": "仅层0四投影各自P50的算术和，用于描述局部结果；不是串联实测，不是整层/全模型/HTTP时延。",
+      "hot": {
+        "baseline_sum_ms": 7.493632078170776,
+        "candidate_sum_ms": 7.465984106063843,
+        "reduction_percent": 0.3689528898472738,
+        "saved_microseconds": 27.647972106933594
+      },
+      "cold": {
+        "baseline_sum_ms": 7.509040027856827,
+        "candidate_sum_ms": 7.509407997131348,
+        "reduction_percent": -0.004900350419712041,
+        "saved_microseconds": -0.367969274520874
+      }
+    }
+  ],
+  "conclusions": [
+    "12 形状全部完成数值筛选与独立 hot/cold 确认；72 项跨层数值检查通过。结论是候选具备进入完整模型验证的条件。",
+    "M1 的四投影均在 hot/cold 确认中更快，但 cold 相对降幅较 hot 小。只报 hot 会高估重复驻留权重带来的可迁移收益。",
+    "短 prefill M701 的收益集中在 qkv 和 gate_up；o、down 接近持平。支持继续测试短输入收益，不支持所有 prefill 投影都变快。",
+    "长 prefill M2815 四投影 cold 基本持平；hot 的微小差异也不支持有实际长输入 prefill 改善。wide prefill-only 的九图收益不能预设为正。",
+    "选择参数发生变化、搜索名次领先或数值通过都不等于性能改善。应按独立确认中的绝对/相对变化及完整模型复测判断。",
+    "此 probe 没有 HTTP、视觉编码、attention、全部模型权重访问、尾部forward或导航结果；禁止把四投影之和乘36或把单层节省直接折算请求端到端收益。"
+  ],
+  "next_full_model_validation": [
+    {
+      "step": 1,
+      "action": "保留 native frozen baseline，用相同 AWQ checkpoint、fallback table、executor、inprocess/IPC、prefill_interval、HTTP 模式和输入作 native / wide-all / wide-prefill 对照。两种 phase 使用同一份通过的12形状表。",
+      "reason": "隔离内核接入效果，避免把调度/IPC变化混入内核收益。"
+    },
+    {
+      "step": 2,
+      "action": "all 模式逐请求确认 M701/2815 的144投影走 candidate，M1 的144投影在 graph capture 中使用 candidate，实际 decode 是 replay。prefill 模式 M701/2815 走 candidate，M1 capture/replay 明确标 baseline_decode。记录 install SHA、table SHA、phase、路由和 frozen cold-compile guard。",
+      "reason": "不能把 baseline decode 的覆盖算成 wide candidate；不能把图重放时不增长的 Python 计数解释为漏执行。"
+    },
+    {
+      "step": 3,
+      "action": "完成两图/九图 × 18/64 输出 token 的四格，固定输入张量 SHA、自然输出 parser gate，并要求与同权重同引擎 native 的全部重复输出 token 一致。wide gate 不通过则所有相关收益行保持未验证。",
+      "reason": "局部数值检查不足以证明自回归完整模型输出等价。"
+    },
+    {
+      "step": 4,
+      "action": "报告真实 HTTP P50/P95 原始样本、语言/视觉 prefill CUDA 区间、实际 decode 前向数及逐次耗时，继续区分返回后尾部工作；小幅差异用独立反序复测确认。",
+      "reason": "n=10 尾分位数不稳定，单轮配置挑选存在噪声与选择偏差；不把 stage 相加当 HTTP。"
+    },
+    {
+      "step": 5,
+      "action": "分别报告同执行条件 FP16 对 W4 的量化比较、AWQ native 对 wide 的内核比较、各精度最佳已验证服务的整体比较。之后再单独测试无额外 idle 的导航/连续请求。",
+      "reason": "整体服务收益不是纯内核量化收益；固定 idle1s 单请求结果不能代表闭环无idle成本。"
+    },
+    {
+      "step": 6,
+      "action": "正式导航保留 exact-M routing 范围声明，未知 M 使用原冻结 native fallback 并计数审计；若只改这些固定M，不能宣称任意动态长度 prefill 均已优化。",
+      "reason": "当前表不推广到未经测量的动态输入长度。"
+    }
+  ],
+  "prior_reviews_preserved": [
+    "reports/navigation_latency_kernel_review_20261120.json",
+    "reports/navigation_latency_comparison_review_20261120.json"
+  ]
+}

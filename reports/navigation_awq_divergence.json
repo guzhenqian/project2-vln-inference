@@ -1,0 +1,74 @@
+[
+  {
+    "group": "A",
+    "episode_id": "196",
+    "first_action_divergence": {
+      "step": 17,
+      "fp16_action": "TURN_RIGHT",
+      "awq_action": "MOVE_FORWARD",
+      "fp16_call_step": 16,
+      "awq_call_step": 16,
+      "call_images_identical": true,
+      "fp16_raw": "forward 25 cm, turn right 15 degree, forward 25 cm",
+      "awq_raw": "forward 50 cm, turn right 15 degree, forward 25 cm"
+    },
+    "fp16_steps": 58,
+    "awq_steps": 400,
+    "awq_final_distance_m": 6.533145427703857,
+    "awq_minimum_distance_m": 6.151791095733643,
+    "awq_stop_called": false,
+    "awq_failure_category": "route_or_destination_error",
+    "awq_collisions": {
+      "count": 361,
+      "is_collision": true
+    }
+  },
+  {
+    "group": "B",
+    "episode_id": "97",
+    "first_action_divergence": {
+      "step": 20,
+      "fp16_action": "TURN_LEFT",
+      "awq_action": "MOVE_FORWARD",
+      "fp16_call_step": 16,
+      "awq_call_step": 17,
+      "call_images_identical": false,
+      "fp16_raw": "turn left 45 degree, turn left 30 degree, forward 75 cm",
+      "awq_raw": "turn left 45 degree, forward 50 cm, turn left 15 degree"
+    },
+    "fp16_steps": 53,
+    "awq_steps": 75,
+    "awq_final_distance_m": 7.607759475708008,
+    "awq_minimum_distance_m": 3.2644097805023193,
+    "awq_stop_called": true,
+    "awq_failure_category": "route_or_destination_error",
+    "awq_collisions": {
+      "count": 3,
+      "is_collision": false
+    }
+  },
+  {
+    "group": "B",
+    "episode_id": "112",
+    "first_action_divergence": {
+      "step": 4,
+      "fp16_action": "MOVE_FORWARD",
+      "awq_action": "TURN_LEFT",
+      "fp16_call_step": 4,
+      "awq_call_step": 0,
+      "call_images_identical": false,
+      "fp16_raw": "forward 75 cm, turn right 15 degree, forward 25 cm",
+      "awq_raw": "turn left 45 degree, turn left 30 degree, forward 75 cm"
+    },
+    "fp16_steps": 233,
+    "awq_steps": 286,
+    "awq_final_distance_m": 4.3075151443481445,
+    "awq_minimum_distance_m": 2.8958353996276855,
+    "awq_stop_called": true,
+    "awq_failure_category": "passed_near_goal_without_valid_stop",
+    "awq_collisions": {
+      "count": 51,
+      "is_collision": false
+    }
+  }
+]

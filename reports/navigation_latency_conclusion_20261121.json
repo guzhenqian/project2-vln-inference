@@ -1,0 +1,138 @@
+{
+  "status": "closed_at_user_request_after_evidence_review",
+  "closed_utc": "2026-11-21T04:22:16.755520+00:00",
+  "conclusion_zh": "输入多、输出少是当前 W4A16 量化端到端相对收益有限的主要原因；语言 prefill 和未量化的视觉编码成本占据较大部分，而量化明显加速的 decode 次数少。已有结果足以回答问题，停止扩大实验。此结论不等于所有精度、内核和系统优化都无法进一步提速。",
+  "natural_navigation_workload": [
+    {
+      "model": "gptq_w4a16",
+      "requests": 949,
+      "average_prompt_tokens": 2768.5563751317177,
+      "average_completion_tokens": 18.08640674394099,
+      "source": "logs\\navigation_latency_20261120\\navigation_native2_v1\\00_gptq_w4a16_inprocess2\\result.json"
+    },
+    {
+      "model": "awq_w4a16",
+      "requests": 939,
+      "average_prompt_tokens": 2767.709265175719,
+      "average_completion_tokens": 18.26730564430245,
+      "source": "logs\\navigation_latency_20261120\\navigation_native2_v1\\01_awq_w4a16_inprocess2\\result.json"
+    },
+    {
+      "model": "fp16",
+      "requests": 1035,
+      "average_prompt_tokens": 2776.9159420289857,
+      "average_completion_tokens": 18.152657004830917,
+      "source": "logs\\navigation_latency_20261120\\navigation_native2_v1\\02_fp16_inprocess2\\result.json"
+    }
+  ],
+  "fixed_input_protocol": {
+    "gpu": "RTX 4070 Ti 12 GB",
+    "batch_size": 1,
+    "image_count": 9,
+    "prompt_tokens": 2815,
+    "forced_output_tokens": 18,
+    "measured_repeats": 10,
+    "statistic": "p50",
+    "same_system_optimizations_for_all_models": true,
+    "source": "reports/navigation_latency_system_confirmation_reverse_v1_audit_20261120.json"
+  },
+  "fixed_input_9_images_18_output": {
+    "fp16": {
+      "vision_ms": 138.2026062,
+      "language_prefill_ms": 322.1222382,
+      "model_prefill_ms": 461.2500458,
+      "decode_ms_per_actual_forward": 17.84607379,
+      "http_seconds": 0.8804032425
+    },
+    "awq_w4a16": {
+      "vision_ms": 137.8124771,
+      "language_prefill_ms": 348.7892456,
+      "model_prefill_ms": 487.6682281,
+      "decode_ms_per_actual_forward": 8.175723606,
+      "http_seconds": 0.7386954245
+    },
+    "gptq_w4a16": {
+      "vision_ms": 137.9461136,
+      "language_prefill_ms": 349.0483093,
+      "model_prefill_ms": 487.8412781,
+      "decode_ms_per_actual_forward": 8.195767204,
+      "http_seconds": 0.7404965605
+    },
+    "awq_decode_latency_reduction_percent": 54.187550145728714,
+    "awq_http_latency_reduction_percent": 16.09578556271617,
+    "measurement_caveat": "GPU phase events and HTTP measurements have different boundaries; sums of component medians are not an exact critical-path decomposition."
+  },
+  "controlled_output_length_evidence": [
+    {
+      "images": 9,
+      "forced_output_tokens": 18,
+      "fp16_http_p50_seconds": 0.8804032425,
+      "awq_http_p50_seconds": 0.7386954245,
+      "awq_latency_reduction_percent": 16.09578556271617
+    },
+    {
+      "images": 9,
+      "forced_output_tokens": 64,
+      "fp16_http_p50_seconds": 1.8454828875,
+      "awq_http_p50_seconds": 1.262911722,
+      "awq_latency_reduction_percent": 31.567410862811375
+    }
+  ],
+  "matched_history_replay": {
+    "requests": 343,
+    "forced_output_tokens": 18,
+    "source": "reports/navigation_latency_replay_native_oldnew_v1_audit_20261120.json",
+    "fp16_http_p50_seconds": 0.89337857,
+    "awq_http_p50_seconds": 0.747962634,
+    "gptq_http_p50_seconds": 0.74763826,
+    "awq_vs_fp16_p50_reduction_percent": 16.277079043881702,
+    "awq_system_before_seconds": 1.584771176,
+    "awq_system_after_seconds": 0.747962634,
+    "awq_system_p50_reduction_percent": 52.803114712883946,
+    "awq_vs_fp16_total_http_reduction_percent_before": 16.39720615767454,
+    "awq_vs_fp16_total_http_reduction_percent_after": 16.372208185420167,
+    "interpretation": "System optimization improves FP16 and quantized models alike. The roughly 53% AWQ system improvement is not an intrinsic quantization speedup. Relative total-HTTP quantization benefit is essentially unchanged.",
+    "limitations": [
+      "One replay pass per configuration; not a navigation success-rate evaluation.",
+      "Two long historical trajectories account for 284 of 343 requests.",
+      "All 343 same-weight old/new token sequences matched."
+    ]
+  },
+  "quality_validation": {
+    "source": "logs/navigation_latency_20261120/navigation_native2_v1",
+    "episodes_per_model": 20,
+    "runtime_errors_per_model": 0,
+    "same_weight_old_new_initial_inputs_actions_text_and_trajectories_all_equal": true,
+    "successful_episodes": {
+      "gptq": 14,
+      "awq": 13,
+      "fp16": 11
+    },
+    "scope": "This validates the system change on the frozen 20-episode roster; it does not establish population-level statistical equivalence or compare different models on identical navigation paths."
+  },
+  "mechanism": {
+    "weight_only_quantization": "Reduces weight-memory traffic, benefiting batch-1 single-token decode. The current W4A16 path dequantizes weights for FP16 matrix operations.",
+    "prefill": "Processes many input tokens with greater weight reuse and is relatively more compute-bound; memory transfers still occur. Quantization does not guarantee prefill acceleration.",
+    "vision": "The visual encoder remains FP16.",
+    "primary_reference": "https://arxiv.org/html/2211.10438v7",
+    "reference_section": "Appendix A, weight-only versus weight-and-activation quantization"
+  },
+  "closure": {
+    "user_instruction": "Confirm whether long input and short output explain limited latency benefit, and end the current task promptly if confirmed.",
+    "owned_w4_study_stopped": true,
+    "stop_marker": "logs/navigation_latency_20261120/w4_stable_final_v1/user_stop_requested.json",
+    "interrupted_study_completed_sessions": 2,
+    "interrupted_study_is_not_a_complete_comparison": true,
+    "morning_automation_deleted": true,
+    "further_experiments_planned": false,
+    "unvalidated_work": [
+      "Expanded INT8 attention full-model adapters and module probe remain unexecuted drafts.",
+      "Stable W4 full comparison was interrupted at user request and is not accepted as a new final result."
+    ],
+    "preserved_limitations": [
+      "Vision-cache equivalence gate failed; no accepted speedup claim.",
+      "Uniform interval 2 is not faster for every workload; the 2-image/64-output case regressed approximately 3-5% versus the old path.",
+      "The older single-case roughly one-quarter improvement is not established as a same-protocol quantization-only comparison and should not be treated as a guaranteed gain."
+    ]
+  }
+}

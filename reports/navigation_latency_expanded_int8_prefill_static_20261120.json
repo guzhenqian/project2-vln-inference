@@ -1,0 +1,30 @@
+{
+  "status": "static_prepared_no_gpu_execution",
+  "sources_sha256": {
+    "checks/navigation_latency_expanded_int8_prefill_20261120.py": "7419f76d0203bf4dcc156958258692262711df0be8cf25793aad748644d8cda4",
+    "checks/probe_navigation_latency_expanded_int8_prefill_20261120.py": "255dfde2854a873d3065823e073b8a044611810e9134bdf9d8052fbfddc90bb8",
+    "reports/navigation_latency_expanded_int8_prefill_design_20261120.json": "6834a94ccc825c950066ed5c3dbacadf06a1950d5f48f1cd869100853b589fa5"
+  },
+  "checks": [
+    "AST and compile code objects without exec",
+    "--help without torch/Triton/LMDeploy/numpy",
+    "runtime M annotations and do_not_specialize guards",
+    "M17/701/2815 independent padding geometry",
+    "INT32 maximum9728*127*127 below2^31",
+    "packed eight-column shift order and selected-row/column coverage"
+  ],
+  "semantic_boundaries_per_layout": 5,
+  "layout_cases": 144,
+  "logical_cases": 72,
+  "approximation_limit": 0.02,
+  "approximation_scope": "random projection micro screen; no accuracy equivalence claim",
+  "gpu_executed": false,
+  "checkpoint_bytes_read": false,
+  "active_sources_changed": false,
+  "estimated_gpu_minutes": [
+    3,
+    8
+  ],
+  "reserve_minutes": 15,
+  "cli": "python -B -u checks/probe_navigation_latency_expanded_int8_prefill_20261120.py --group awq --baseline-table logs/navigation_repair_20261112/initial_sequence_v1/w4_screens/awq_w4a16/service/repair_execution_audit.json --output logs/navigation_latency_20261120/expanded_int8_prefill_awq_v1"
+}

@@ -1,0 +1,48 @@
+{
+  "status": "design_only_deferred_not_implemented",
+  "root_decision": "Do not add new prefetch/KV/stop risks now; retain measured short-request gains and honestly report long-output regression. No speed benefit claimed for this untested design.",
+  "proposal": "First20 actual decode forwards use block2, later block4; prefill excluded from counter",
+  "source_root": "/home/guzhenqian/.venvs/project2/lib/python3.12/site-packages/lmdeploy",
+  "evidence": [
+    {
+      "file": "pytorch/strategies/ar/engine.py",
+      "lines": "14-20",
+      "sha256": "82877f3d1214734ec71d35e9386c464acac200a1d23cfd725d47e9aee321e261",
+      "finding": "prefill_interval controls both get_prealloc_size and get_num_loops."
+    },
+    {
+      "file": "pytorch/engine/inputs_maker.py",
+      "lines": "256-330;363-400",
+      "sha256": "9105ffc94943531b7d01f1d7c65b90fe5e8753ed77e7c8c14d6fce1b9acf5204",
+      "finding": "Schedule with KV preallocation precedes loop_count selection; _send_next_inputs_impl sends the complete block to executor."
+    },
+    {
+      "file": "pytorch/engine/engine_loop.py",
+      "lines": "293-311",
+      "sha256": "ed2a1c26751785c9f94a8c12202d82bdb30b96e741f73506e5f1058543d50f41",
+      "finding": "Prefetch begins before receiving current block final output; mutating global interval on response token20 can act one block late."
+    }
+  ],
+  "safe_design_conditions": [
+    "Restrict initial scope to one active sequence; maintain per-sequence issued decode-forward budget, not returned token count.",
+    "Atomically decide block length and enough KV preallocation at InputsMaker creation/submission boundary; never mutate a running worker block.",
+    "Count prefill separately; first20 decode forwards means ten2-forward blocks, followed by4-forward blocks.",
+    "Alternative always-prealloc4 plus loop_count2/4 is explicitly a preallocation change and needs its own memory/fairness assessment.",
+    "Reset sequence budget on new request/cancel/stop; prefetched old work must not leak to next request."
+  ],
+  "risks": [
+    "Worker does not break its block immediately on EOS; later4-forward blocks can still delay FINISH delivery.",
+    "CounterEvent changes token arrival batching in streaming; stream/nonstream evidence cannot be pooled.",
+    "Chunk boundary changes need seeded stochastic and natural-EOS equivalence checks even when per-token stopping rules remain unchanged.",
+    "Output length18 usually remains in initial2-forward phase; long64 benefits are only a hypothesis, not a result."
+  ],
+  "required_if_revisited": [
+    "Exact issued/finished block timeline receipt",
+    "19/20/21 actual-decode boundary cases",
+    "Length18/22/64 and natural EOS/stop/cancel",
+    "Same-weight full token equality plus seeded stochastic checks",
+    "KV allocation boundary and fairness checks",
+    "Separate streaming arrival and nonstream request latency contracts"
+  ],
+  "activity": "Source text and stdlib only; no torch/GPU import, no code patch or benchmark."
+}

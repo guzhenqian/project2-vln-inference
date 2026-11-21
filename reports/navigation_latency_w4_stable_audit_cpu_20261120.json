@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "tests": [
+    "complete_72_numeric_24_suites_strict_native_bytewise",
+    "missing_native_bytewise_flag",
+    "incomplete_stability_repeats",
+    "duplicate_stability_case",
+    "numeric_nonfinite",
+    "packed_tensor_sha_differs",
+    "prefill_config_changed",
+    "m1_split4_rejected",
+    "forged_global_hash_counter",
+    "forged_cold_p50",
+    "missing_flush",
+    "extra_flush_without_error",
+    "whole_model_claim_from_probe_rejected",
+    "honest_unstable_candidate_rejected",
+    "repeat_stable_but_native_bytes_differ_rejected",
+    "four_cell_native_gate_success",
+    "same_weight_model_config_difference_blocks_gate",
+    "failed64_gate_blocks_all_cells_and_fp16_claims",
+    "partial_candidate_cannot_pass",
+    "cannot_merge_cells_from_different_native_sessions",
+    "old_wide_cannot_substitute_native_reference",
+    "old_wide_failed64_gate_remains_failed_in_new_copy",
+    "frozen_dependencies_unchanged_and_no_gpu_imports"
+  ],
+  "count": 23,
+  "scope": "Synthetic in-memory stdlib fixtures only; no actual probe/checkpoint/GPU proof"
+}

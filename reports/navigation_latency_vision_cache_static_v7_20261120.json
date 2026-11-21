@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "checks": [
+    "four new candidate files parse without imports",
+    "cache module top level imports stdlib only",
+    "duplicate first input encodes one distinct image",
+    "mixed hits batch all distinct misses once",
+    "raw/cos/sin/pos and cumulative lengths preserve variable-grid ordering",
+    "all-hit skips native encoder and restores repeated slots",
+    "all stored feature tensors are CPU owned",
+    "partial-hit masks1/3/4/8 preserve all four feature arrays",
+    "current hits protected during miss insertion",
+    "LRU capacity/bytes/actual clear match",
+    "cache plan clears exactly episode starts after excluded warmups, never on tail",
+    "smoke plan has only two excluded warmups plus tail; historical payload loading bypassed and claims disabled",
+    "per-array numeric audit accepts all4 exact independent finite arrays",
+    "per-array numeric audit rejects trusted-summary-only byte/finite/storage/error/label corruption",
+    "partial-mask numeric audit recomputes slots and distinct hit/miss counts",
+    "initial numeric execution rejects multiple native visual forwards for one miss batch",
+    "actual wrapper runs all eligible index1 partial masks with fake comparator",
+    "formal all-hit request performs zero comparisons and zero encoder calls",
+    "numerical failure writes failed receipt and raises before accepting warmup",
+    "numerical repetitions restricted to first two excluded warmups; partial masks only index1",
+    "strict frozen four-feature bytewise helper and fail-closed required"
+  ],
+  "torch_imported": false,
+  "lmdeploy_imported": false,
+  "gpu_executed": false,
+  "images_read": false,
+  "scope": "Tiny stdlib/AST/fake-tensor layout/control checks only; no real numeric or performance evidence",
+  "source_sha256": {
+    "navigation_latency_vision_cpu_cache_20261120.py": "1c4f97786aa2ac89c774b600985b501a6cf2f59ede8497c801b618dd1a8bf21f",
+    "navigation_latency_vision_cpu_cache_module_map_20261120.py": "3aea91dac5532bfbf39200bf17a593790d880405ea12d5b18d86488c867b5c85",
+    "serve_navigation_latency_vision_cache_20261120.py": "760ca951a4abba820f49142a6ec5c86c1dc56408fc613ca41113d85356468867",
+    "run_navigation_latency_vision_cache_replay_20261120.py": "b005cd14c9fb0a46e5af8de5526d526a1543e94c9c8e5a4fa30e2c3bd8352b55"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "status": "passed_stdlib_static_fixtures",
+  "checks": [
+    "864 distinct deterministic cases/seeds and144modules x6cases",
+    "13 copied numerical/stability/boundary helper ASTs equal frozen producer",
+    "Prewritten protocol SHA and case plan match source constants",
+    "One whole module may enter mask only with six individually valid cases",
+    "Missing/null cases retain entire module W4",
+    "CPUexact,2percent approximation and full tensor repeat failures retain W4",
+    "Original layer35 failed module remains excluded even if all new fixture cases pass",
+    "Unqualified prior shape full-path timing retains W4",
+    "Changed arithmetic source identity rejects mask evidence",
+    "Duplicate cases and incomplete864 publication rejected"
+  ],
+  "copied_helper_ast_sha256": {
+    "tensor_sha": "d25c335bc22f2897d1f62988c0db243dcb39c6862f033658404c37330cc27a7a",
+    "load": "490124942d6ec4d6dd625ec9a51784311cf07471a6f1980b0624d8ee03cd527e",
+    "unpack": "d6dbadf3686db9261759247e6d9d191f0b616332ae8fc4750f2c3193033d0f8f",
+    "dense_dequant": "49623c1bf7737439871a7cc9284495e7acec37273c288871439e84726013b746",
+    "error": "0ca34a7a248ac9d7c8340975cfa15066bf766e2fd17de1797f18309f887ac25d",
+    "measured_setup": "ef27efd2e42f994700cccf41b9fa89f596fc6f8ba61f40e4b2683fd369729f16",
+    "evict": "9394ce5a51469907066fdf8bb5587140789de6b83e86d295851a98d8cc2d1109",
+    "capture": "5f521f129fe6bfa97fb8d7863c5ca3be9f16cf3f1a10984df4ebb6a597191377",
+    "stability": "5ebff720a69be37510333b214e3cca9d6fce0eb306b6c601a83b4b6e454f48b1",
+    "cpu_dequant_columns": "8b57431c5766a856f4f37b3326ae340bf3ea31824337d20addd3512ef2ae0e7d",
+    "cpu_implementation_check": "31ee4f2dd7d6c59327cc52b00d27fee05bae86f15216c1834ca48cbafd3beb88",
+    "fatal": "8bc2ecd354ba9a16063e98b239c277597d209367164347d99ccb5d4ff2b7804f",
+    "boundary_case": "27b56fc0e09307ddf21f324e5db681aff1bc993295a6a37b73660fb2fc264f76"
+  },
+  "heavy_imports": false,
+  "gpu_executed": false,
+  "checkpoint_or_images_read": false,
+  "source_sha256": {
+    "navigation_latency_expanded_int8_module_contract_20261120.py": "603f69a8a9945050d40055a16624a4b1bb885c475172770a3fd039e5c0018555",
+    "probe_navigation_latency_expanded_int8_modules_20261120.py": "ea7511171199584213bd53fe99cd7e2e84d024ffa63d6652f7dfd83702c3dd2a"
+  },
+  "scope": "Static control/gate fixtures only. No actual module arithmetic, mask eligibility or performance has been tested."
+}

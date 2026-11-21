@@ -1,0 +1,1157 @@
+{
+  "status": "complete",
+  "case_count": 20,
+  "success_count": 11,
+  "sr": 0.55,
+  "spl": 0.44460008779460464,
+  "actual_model_calls": 1035,
+  "completion_tokens": 18788,
+  "prompt_tokens": 2874108,
+  "request_median_s": 0.9219561090012576,
+  "request_p95_s": 0.9629781006984558,
+  "request_total_s": 945.0428980069846,
+  "sampled_whole_card_peak_mib": 11654.0,
+  "error_count": 0,
+  "quality_errors": {},
+  "infrastructure_errors": 0,
+  "warmup_errors": [],
+  "episodes": [
+    {
+      "episode_id": "558",
+      "trajectory_id": "2258",
+      "success": 0,
+      "spl": 0.0,
+      "steps": 400,
+      "actual_model_calls": 156,
+      "errors": 0,
+      "collisions": 141,
+      "terminal_stop_source": "step_limit"
+    },
+    {
+      "episode_id": "1164",
+      "trajectory_id": "4633",
+      "success": 0,
+      "spl": 0.0,
+      "steps": 253,
+      "actual_model_calls": 67,
+      "errors": 0,
+      "collisions": 3,
+      "terminal_stop_source": "model"
+    },
+    {
+      "episode_id": "917",
+      "trajectory_id": "3769",
+      "success": 1,
+      "spl": 0.11839653700613566,
+      "steps": 260,
+      "actual_model_calls": 59,
+      "errors": 0,
+      "collisions": 0,
+      "terminal_stop_source": "model"
+    },
+    {
+      "episode_id": "591",
+      "trajectory_id": "2380",
+      "success": 0,
+      "spl": 0.0,
+      "steps": 207,
+      "actual_model_calls": 46,
+      "errors": 0,
+      "collisions": 2,
+      "terminal_stop_source": "model"
+    },
+    {
+      "episode_id": "1010",
+      "trajectory_id": "4094",
+      "success": 1,
+      "spl": 0.8199585222539068,
+      "steps": 84,
+      "actual_model_calls": 21,
+      "errors": 0,
+      "collisions": 0,
+      "terminal_stop_source": "model"
+    },
+    {
+      "episode_id": "1724",
+      "trajectory_id": "6843",
+      "success": 1,
+      "spl": 0.45415494602652356,
+      "steps": 170,
+      "actual_model_calls": 46,
+      "errors": 0,
+      "collisions": 0,
+      "terminal_stop_source": "model"
+    },
+    {
+      "episode_id": "1022",
+      "trajectory_id": "4152",
+      "success": 1,
+      "spl": 1.0,
+      "steps": 64,
+      "actual_model_calls": 15,
+      "errors": 0,
+      "collisions": 1,
+      "terminal_stop_source": "model"
+    },
+    {
+      "episode_id": "1466",
+      "trajectory_id": "5822",
+      "success": 0,
+      "spl": 0.0,
+      "steps": 400,
+      "actual_model_calls": 107,
+      "errors": 0,
+      "collisions": 10,
+      "terminal_stop_source": "step_limit"
+    },
+    {
+      "episode_id": "720",
+      "trajectory_id": "2905",
+      "success": 1,
+      "spl": 1.0,
+      "steps": 32,
+      "actual_model_calls": 8,
+      "errors": 0,
+      "collisions": 0,
+      "terminal_stop_source": "model"
+    },
+    {
+      "episode_id": "1803",
+      "trajectory_id": "7170",
+      "success": 1,
+      "spl": 0.9902825383680078,
+      "steps": 60,
+      "actual_model_calls": 16,
+      "errors": 0,
+      "collisions": 0,
+      "terminal_stop_source": "model"
+    },
+    {
+      "episode_id": "1381",
+      "trajectory_id": "5455",
+      "success": 0,
+      "spl": 0.0,
+      "steps": 400,
+      "actual_model_calls": 95,
+      "errors": 0,
+      "collisions": 7,
+      "terminal_stop_source": "step_limit"
+    },
+    {
+      "episode_id": "1582",
+      "trajectory_id": "6306",
+      "success": 0,
+      "spl": 0.0,
+      "steps": 400,
+      "actual_model_calls": 123,
+      "errors": 0,
+      "collisions": 22,
+      "terminal_stop_source": "step_limit"
+    },
+    {
+      "episode_id": "1638",
+      "trajectory_id": "6570",
+      "success": 1,
+      "spl": 0.9537103116432725,
+      "steps": 54,
+      "actual_model_calls": 16,
+      "errors": 0,
+      "collisions": 0,
+      "terminal_stop_source": "model"
+    },
+    {
+      "episode_id": "439",
+      "trajectory_id": "1720",
+      "success": 1,
+      "spl": 1.0,
+      "steps": 51,
+      "actual_model_calls": 14,
+      "errors": 0,
+      "collisions": 0,
+      "terminal_stop_source": "model"
+    },
+    {
+      "episode_id": "1262",
+      "trajectory_id": "4951",
+      "success": 1,
+      "spl": 0.555498900594246,
+      "steps": 157,
+      "actual_model_calls": 44,
+      "errors": 0,
+      "collisions": 1,
+      "terminal_stop_source": "model"
+    },
+    {
+      "episode_id": "1378",
+      "trajectory_id": "5434",
+      "success": 1,
+      "spl": 1.0,
+      "steps": 30,
+      "actual_model_calls": 8,
+      "errors": 0,
+      "collisions": 0,
+      "terminal_stop_source": "model"
+    },
+    {
+      "episode_id": "662",
+      "trajectory_id": "2745",
+      "success": 1,
+      "spl": 1.0,
+      "steps": 56,
+      "actual_model_calls": 17,
+      "errors": 0,
+      "collisions": 0,
+      "terminal_stop_source": "model"
+    },
+    {
+      "episode_id": "233",
+      "trajectory_id": "961",
+      "success": 0,
+      "spl": 0.0,
+      "steps": 400,
+      "actual_model_calls": 133,
+      "errors": 0,
+      "collisions": 73,
+      "terminal_stop_source": "step_limit"
+    },
+    {
+      "episode_id": "1593",
+      "trajectory_id": "6339",
+      "success": 0,
+      "spl": 0.0,
+      "steps": 140,
+      "actual_model_calls": 31,
+      "errors": 0,
+      "collisions": 1,
+      "terminal_stop_source": "model"
+    },
+    {
+      "episode_id": "1740",
+      "trajectory_id": "6893",
+      "success": 0,
+      "spl": 0.0,
+      "steps": 44,
+      "actual_model_calls": 13,
+      "errors": 0,
+      "collisions": 1,
+      "terminal_stop_source": "model"
+    }
+  ],
+  "step_files_sha256": {
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_558/steps.jsonl": "4bac27ccf7063aded2449e6f44e9953015bea97e6eb748f1b01b3870bf7ec89d",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_1164/steps.jsonl": "1039d306fef3a7746c59f0f0c06b0d0a61bf12fdabd5160e85c186c807c75c71",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_917/steps.jsonl": "666fdbb1db6dd5ff706d48990903fccead442f642af69782d42fd83da87d3b7f",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_591/steps.jsonl": "038b1ea062f03a305e3a278230ffe9f46ec3d86de92b76667009ce2f696f049e",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_1010/steps.jsonl": "d15b7fccf3999c2c43c36fd3c677c3c5d9ba3055e923a5357ef93f3c6ac5c7fa",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_1724/steps.jsonl": "de7f0a29d84a5755cdb7f1f9a30c92b2e9b9b8c472695bdfd04ca67c09d03ca4",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_1022/steps.jsonl": "b0349d6291b6c415f787c9175a73874685612915ed8aff62b4141b5e8ba393a2",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_1466/steps.jsonl": "c3e5414e7745c60f70577010097ac3ea67d68d71f7c8421b5fba7b99c3b72a9e",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_720/steps.jsonl": "d09fab2aaedd27f07f16790a4b5d747095d16d1de787a0b5ebee3e74b55bcb12",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_1803/steps.jsonl": "aa27e6d738fb69cd045e5fe01040d818ae9d9055574a7e4832ab7e8bea6ac27d",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_1381/steps.jsonl": "473b875df8d93d27ddbfa921456c98c79c2b084db0317b85e5d0663320ca929e",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_1582/steps.jsonl": "bd508f3060661141fdc10c2785d2ed21c89ab506853974dbea91ba0716863045",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_1638/steps.jsonl": "8d91ba30a412e233972401e2f645270e7c0e840c68c9287263cfd6c7dbc3b9cf",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_439/steps.jsonl": "219c5d131cea88fb574cf778ea1f11df4f57ce2936cae0a18b564e13052d79a8",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_1262/steps.jsonl": "9d9ad3821964c94884d014d93f651623e1e2e02c4f48f85f25c8a4ff6f942be5",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_1378/steps.jsonl": "9276b047a4b55fedab08ba384b913ffc986d58ddefe0f18bffd90c58c4b28b4e",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_662/steps.jsonl": "93a09655ca70916327951072c8447480ed64121cd9c230372442510a9af3f33c",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_233/steps.jsonl": "c633e1f6d16444e2f11eb66c313ad43a4c9ccc9f692e0c37664a6509c3187bf7",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_1593/steps.jsonl": "dddae109f113a95d8f772390d73d765c007120eaaba9cc87f66351f9b08436dd",
+    "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/navigation/episode_1740/steps.jsonl": "a1121e938071ec8e9f024bdad6ca26df19af2620fcc1feca04ce42acda33dfd3"
+  },
+  "timing_start": 2,
+  "timing_end_exclusive": 1039,
+  "stage_summary": {
+    "requests": 1035,
+    "prefill_language_p50_ms": 343.3389587402344,
+    "prefill_language_p95_ms": 344.58408508300784,
+    "actual_decode_forwards": 19214,
+    "decode_ms_per_actual_forward": 17.84284018924237,
+    "decode_request_mean_p50_ms": 17.85406885147095,
+    "decode_request_mean_p95_ms": 17.921915668911403
+  },
+  "manifest_sha256": "3f6b6a000b8ef4471be2467e00c69f3e4e5daab9a9d06277335bdc9077184cc7",
+  "scope": "New latency-candidate cohort, not prior repair acceptance",
+  "session": {
+    "group": "fp16",
+    "label": "fp16_inprocess2",
+    "env": {
+      "PROJECT2_LATENCY_EXECUTOR": "uni",
+      "PROJECT2_LATENCY_PREFILL_INTERVAL": "2",
+      "PROJECT2_LATENCY_INPROCESS": "1"
+    },
+    "service_entry": "checks/serve_navigation_latency_20261120.py",
+    "model_name": "navigation-repair-fp16",
+    "historical_navigation": "logs/navigation_repair_20261112/screen_fp16_v1/fp16/navigation"
+  },
+  "fixed_evidence_binding": {
+    "study": "logs/navigation_latency_20261120/system_confirmation_reverse_v1",
+    "fixed_session": "logs/navigation_latency_20261120/system_confirmation_reverse_v1/02_fp16_inprocess2",
+    "fixed_result_sha256": "2a504e09c28a631b39c5b858ecaf2239060c1505383d79f697ed93e19a092855",
+    "engine": {
+      "dtype": "float16",
+      "tp": 1,
+      "dp": 1,
+      "dp_rank": 0,
+      "ep": 1,
+      "session_len": 4096,
+      "max_batch_size": 1,
+      "attn_tp_size": null,
+      "mlp_tp_size": null,
+      "moe_tp_size": null,
+      "cache_max_entry_count": 0.35,
+      "prefill_interval": 2,
+      "block_size": 64,
+      "num_cpu_blocks": 0,
+      "num_gpu_blocks": 64,
+      "adapters": null,
+      "max_prefill_token_num": 3072,
+      "thread_safe": false,
+      "enable_prefix_caching": false,
+      "device_type": "cuda",
+      "eager_mode": false,
+      "custom_module_map": "/mnt/e/000_博士/000_实习与工作/AI infra/项目2/checks/navigation_repair_module_map.py",
+      "download_dir": null,
+      "revision": null,
+      "quant_policy": 0,
+      "distributed_executor_backend": "uni",
+      "empty_init": false,
+      "enable_microbatch": false,
+      "enable_eplb": false,
+      "enable_mp_engine": false,
+      "mp_engine_backend": "mp",
+      "model_format": null,
+      "enable_metrics": false,
+      "hf_overrides": null,
+      "disable_vision_encoder": false,
+      "logprobs_mode": null,
+      "enable_return_routed_experts": false,
+      "enable_transfer_obj_ref": false,
+      "dllm_block_length": null,
+      "dllm_unmasking_strategy": "low_confidence_dynamic",
+      "dllm_denoising_steps": null,
+      "dllm_confidence_threshold": 0.85,
+      "role": 1,
+      "migration_backend": 1
+    },
+    "model_weights_sha256": "b72a10c2b89a78f43c3c8bb05c4495b7d76dee85ec79f7125d9d795302aaa54b",
+    "requested_engine": {
+      "dtype": "float16",
+      "tp": 1,
+      "dp": 1,
+      "dp_rank": 0,
+      "ep": 1,
+      "session_len": 4096,
+      "max_batch_size": 1,
+      "attn_tp_size": null,
+      "mlp_tp_size": null,
+      "moe_tp_size": null,
+      "cache_max_entry_count": 0.35,
+      "prefill_interval": 2,
+      "block_size": 64,
+      "num_cpu_blocks": 0,
+      "num_gpu_blocks": 64,
+      "adapters": null,
+      "max_prefill_token_num": 3072,
+      "thread_safe": false,
+      "enable_prefix_caching": false,
+      "device_type": "cuda",
+      "eager_mode": false,
+      "custom_module_map": "/mnt/e/000_博士/000_实习与工作/AI infra/项目2/checks/navigation_repair_module_map.py",
+      "download_dir": null,
+      "revision": null,
+      "quant_policy": 0,
+      "distributed_executor_backend": "uni",
+      "empty_init": false,
+      "enable_microbatch": false,
+      "enable_eplb": false,
+      "enable_mp_engine": true,
+      "mp_engine_backend": "mp",
+      "model_format": null,
+      "enable_metrics": false,
+      "hf_overrides": null,
+      "disable_vision_encoder": false,
+      "logprobs_mode": null,
+      "enable_return_routed_experts": false,
+      "enable_transfer_obj_ref": false,
+      "dllm_block_length": null,
+      "dllm_unmasking_strategy": "low_confidence_dynamic",
+      "dllm_denoising_steps": null,
+      "dllm_confidence_threshold": 0.85,
+      "role": 1,
+      "migration_backend": 1
+    },
+    "execution_identity": {
+      "executor": "uni",
+      "prefill_interval": 2,
+      "requested_mp_engine": true,
+      "inprocess_requested": true,
+      "linear_ipc_requested": false,
+      "wide_w4_requested": false,
+      "vision_qmax_requested": false,
+      "vision_qmax_validation_enabled": false,
+      "profile_enabled": false,
+      "vision_qmax_status": "disabled",
+      "kernel_implementation": {
+        "backend": "native_frozen"
+      },
+      "inprocess_status": "observed_native_engine_in_http_process",
+      "effective_mp_engine": false,
+      "linear_ipc_status": "disabled"
+    },
+    "frozen_launch_configuration_sha256": null,
+    "wide_evidence": null,
+    "vision_qmax_evidence": null,
+    "actual_input_tensors": {
+      "701": {
+        "input_ids": {
+          "shape": [
+            1,
+            701
+          ],
+          "dtype": "torch.int64",
+          "sha256": "34e296b783323f853154bf09afc2aecc5e8f69daeb2d4e71bc11cb1214c37f86"
+        },
+        "pixel_values": {
+          "shape": [
+            2400,
+            1536
+          ],
+          "dtype": "torch.float32",
+          "sha256": "4b6dc3971ec662309c5e0250b5737a6a7bbcd72f3e42e9083e9d8dd3ef7276af"
+        }
+      },
+      "2815": {
+        "input_ids": {
+          "shape": [
+            1,
+            2815
+          ],
+          "dtype": "torch.int64",
+          "sha256": "c60e2f2166c9f470faf19a8140c124954c91119cbcccb00c37b9e23b68cbe1da"
+        },
+        "pixel_values": {
+          "shape": [
+            10800,
+            1536
+          ],
+          "dtype": "torch.float32",
+          "sha256": "7f631a78da9d9d67793617e11c0b185cda6708b5aaa184dec34a37af1c6b91f1"
+        }
+      }
+    },
+    "source_sha256": {
+      "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+      "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+      "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+      "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+      "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+      "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+      "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+      "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+      "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1",
+      "navigation_w4a16_fix_runtime.py": "9c06aeae3014c278bea0fd610f4a587f57f1f1ad5be4ec1bb8fe9e12f55ebd0d",
+      "navigation_repair_runtime.py": "e3ca4c02732d531f85a3a6306966549d31e8217c056a7d5a8cf3d91f51813ae8",
+      "navigation_repair_module_map.py": "159d3e35eb311d4157a51f2b92f35ddb0b102b0c3b0010a8aa36a9795e8efa7a",
+      "serve_navigation_repair.py": "74b39ef35c8d8cef9852318de4e8bf5bab021a745b15c234447f99d83ca3cc99",
+      "serve_navigation_latency_20261120.py": "01c1111d1954d1eec38918f415ce0b81b455f4d8117b9f43b9d602a8e4c88345",
+      "navigation_latency_inprocess_20261120.py": "52d55d4b7305de9099178fdbb17e39ca9c7f06ee0f662030498342abb300e3c3"
+    },
+    "scope": "Same-source/effective-configuration four-cell nonstream evidence; not a repair100 acceptance receipt"
+  },
+  "passed_stability": true,
+  "trajectory_evidence": {
+    "558": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Go downstairs and stop at the bottom. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "174958a0fde7d7cc75111a61e3d97c99b855b5394b623fb3533144f709f61f9c",
+          "174958a0fde7d7cc75111a61e3d97c99b855b5394b623fb3533144f709f61f9c"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 696
+      },
+      "initial_input_sha256": "c2d43db382eaad594c221f2a30043f3e139ddb382852d96857d56ed751a617df",
+      "action_sequence_sha256": "6bdfde63015829c9093d17d205a1c429fa097c36795db393623d0575b63f55a0",
+      "model_outputs_sha256": "d8f8af887efa5112c16fbb479d52c831fd7a71859767d0aaac9f5df36f3f9d81",
+      "complete_semantic_trajectory_sha256": "80a7977de3bcc509ab02b24879bcfb7ea4b0266d509d847cdbb02a08686ab446",
+      "primitive_actions": 400,
+      "model_requests": 156
+    },
+    "1164": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Go through the doors at the far end of the room and wait in the doorway to the left. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "f9e8c325fe3974b8fcd073a7c14aeac959cfdfde2c7db7efdd092766118ebac6",
+          "f9e8c325fe3974b8fcd073a7c14aeac959cfdfde2c7db7efdd092766118ebac6"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 708
+      },
+      "initial_input_sha256": "cfe8d11a8bb470223dc7bc0484c5780b832e98e3b4d2e7d39662e7438dd7dcc0",
+      "action_sequence_sha256": "d1e1f4f9ddc41a18bdc53a340da67b55207f87af87608d87e7236a0a27ea7552",
+      "model_outputs_sha256": "0cc3d4f995bbefc45a7e81274e4cbc84062fb74bd843b8cfd4ef22be8c7354ac",
+      "complete_semantic_trajectory_sha256": "0928953ff61367422418491d6eb1e79f3548dfd0cb91f994d30cc65ce1c551ef",
+      "primitive_actions": 253,
+      "model_requests": 67
+    },
+    "591": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Walk out of the room and go past the stairs and into the bedroom that is straight ahead, go to the bathroom doorway and wait there. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "47e75510f895be4ee8e5608a8a4b5a3907c9bd3b7b9697266b70304817d5a088",
+          "47e75510f895be4ee8e5608a8a4b5a3907c9bd3b7b9697266b70304817d5a088"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 716
+      },
+      "initial_input_sha256": "90177954021a73ebcbb44f76566aa146f43548f3708a29d71095a7047fb8b64a",
+      "action_sequence_sha256": "6b43e3bd6369b75b773e41d861ecbd48a728f495ba4498aaaeda577a3b02a569",
+      "model_outputs_sha256": "1ad27aea067dff45d24b54bdca3d0200a0db23e75c129407c2b6cc347d1435ff",
+      "complete_semantic_trajectory_sha256": "224e9d289c642991385d2fdb2d95406fba13614eebbb180750a621753260e575",
+      "primitive_actions": 207,
+      "model_requests": 46
+    },
+    "1724": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Walk towards the painting and turn left. Walk forward towards the lamp and make a right. At the painting turn left walk forward. Turn right, enter the exercise room and wait here. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "de6936282e60d256d55c6ae9e3dc1cf82a2b201cb9d46f0de62383d4907aff3e",
+          "de6936282e60d256d55c6ae9e3dc1cf82a2b201cb9d46f0de62383d4907aff3e"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 725
+      },
+      "initial_input_sha256": "d9ed0a6e53412656398a1a073f21ce103c5b8a5bab9c28dad96046ab883ddd40",
+      "action_sequence_sha256": "b263faf506280291d9612852a55c2eea4aa13bc94c115f422baeb8b2a8d6eec7",
+      "model_outputs_sha256": "edeebff8fd27fb932aa50d11ee4ed3cf55f9fdfcb2bf0226ea8f99c21633577d",
+      "complete_semantic_trajectory_sha256": "2bc19f5402783baddabb9ce5b027d6d43c7492f08166e6bc43cb6d6f20691f56",
+      "primitive_actions": 170,
+      "model_requests": 46
+    },
+    "720": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Exit the bathroom and turn right. Continue straight down the hall until you reach the kitchen. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "2af0ec888cece4e4e9df19de4f9cef00087759c2b132c52a21c8c43ed5f2e494",
+          "2af0ec888cece4e4e9df19de4f9cef00087759c2b132c52a21c8c43ed5f2e494"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 706
+      },
+      "initial_input_sha256": "0aafdcd0d410ae2e6c0c398a3efb7466387650009453a7d93bd0815434b2a14a",
+      "action_sequence_sha256": "1b21e648191379dedbe4450aaa78466295fa79e97b3cc89fb32a43b89f9fde57",
+      "model_outputs_sha256": "9feee651c7df145e6a6b715b48a27ed1425132cd6b27d1b9c16fda2efadd686b",
+      "complete_semantic_trajectory_sha256": "50aa73ac5a07cea8efd60a94adf4c79c74e2792d7f19d29c77e7384247b782c3",
+      "primitive_actions": 32,
+      "model_requests": 8
+    },
+    "1582": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Walk around the pews on the right, then go straight. Take a left at the wall. Stop behind the first podium. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "7264e93f3966c7bff89f3aa0f816de06c867f284abe65cff1d911abae30f2fad",
+          "7264e93f3966c7bff89f3aa0f816de06c867f284abe65cff1d911abae30f2fad"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 714
+      },
+      "initial_input_sha256": "68b33ec2639801fd96a742ad4d9390f167bbf205827e580112edb5ae2815ef77",
+      "action_sequence_sha256": "7b478dcddad4b8c8e08705465f8c6a2ab264c4b9780df721bafa9bf4c0b37850",
+      "model_outputs_sha256": "d161b4d283602c0cca0a564d9c627c6cbe02b9e60e9bd8195ba1c62b7467bad5",
+      "complete_semantic_trajectory_sha256": "14e053126e3affddd2b40d1ae9f19f0e81786d38c884a6e2695fe003bc4268f6",
+      "primitive_actions": 400,
+      "model_requests": 123
+    },
+    "1638": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'After you leave the bathroom make a left and then make another left to get to the bedroom. Now walk into the bedroom on the left side and wait just past the door. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "c3b27c2517d3783907d90dbdbf736456cec75b3fb229ef38e763bb774d182cbc",
+          "c3b27c2517d3783907d90dbdbf736456cec75b3fb229ef38e763bb774d182cbc"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 723
+      },
+      "initial_input_sha256": "7526d25ad397426ec122f52a2fb27fbece9350ef93ad3277fb90537c54ac7171",
+      "action_sequence_sha256": "c1713b3c4a5e8d87f5daaf696313f5bd50c3eba1cbcd6e576efe74f41ed97ce1",
+      "model_outputs_sha256": "12d3ea7d57f457c3c81da07726822602facb9d848f8a2877572360c2abd518d5",
+      "complete_semantic_trajectory_sha256": "989bee5b04c28e3931371ef9ff09597030163f1e1add2cba5ff810af91e73487",
+      "primitive_actions": 54,
+      "model_requests": 16
+    },
+    "1378": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Walk forward and make a right toward the massage room, and wait. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "26ae6f6173c49357dc169e6c0d93c895d31d1786883c2f7c4e994ee421d2b9d7",
+          "26ae6f6173c49357dc169e6c0d93c895d31d1786883c2f7c4e994ee421d2b9d7"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 702
+      },
+      "initial_input_sha256": "b1a0fd96f168b74d1fa872aecd2d494b028dddc79916843e54d186cf18e705f4",
+      "action_sequence_sha256": "01afdbf2153ca235fbeb769e44bf72310a6b580c2e095c3e68f60bf7c53bc8e1",
+      "model_outputs_sha256": "c0680f4d3bcebba253d2d77810717f4232d088d70020e8c37d8094c7fd0dd8ed",
+      "complete_semantic_trajectory_sha256": "f5606cc2cb57884576c858b917ca8a28baf43e1beb241094defe3899db53ec15",
+      "primitive_actions": 30,
+      "model_requests": 8
+    },
+    "1803": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Walk through the vaulted hallway right next to you, and turn right, continuing through the opening that's just to the left of the stairs leading upwards. Continue forward, this time going through the door opening to the left of the mirror, stopping next to the bed on your right. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "b796aaf277e1023cb0d372fa9d05c53cb28c8346794c0f8342d869b107ee521c",
+          "b796aaf277e1023cb0d372fa9d05c53cb28c8346794c0f8342d869b107ee521c"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 745
+      },
+      "initial_input_sha256": "b2d5580dcafdfd4f010cbebd0cba547327d8633a3b7e3126fbfbaa87c1f38e9b",
+      "action_sequence_sha256": "e85641e2970846bbe3619ccafbc8d93e8ac1a9fea1ddd2e8ac756be2ee323338",
+      "model_outputs_sha256": "ec75e9b61e0aaa1514bdd28bddac7e448cc6f7db0c8aa20c7247bd429f081ece",
+      "complete_semantic_trajectory_sha256": "21ad37d98446fd336b0e73ff6cca772ec88f20020ad6094b94dce9f5a82012a6",
+      "primitive_actions": 60,
+      "model_requests": 16
+    },
+    "662": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Head to the doorway and into the hall.  Turn right and go down the stairs.  Stop midway on the second flight of stairs. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "5dc690d695197b84b9613bc75c0cd8e5b6889238f2c5f556cb3eb0226e4698a9",
+          "5dc690d695197b84b9613bc75c0cd8e5b6889238f2c5f556cb3eb0226e4698a9"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 716
+      },
+      "initial_input_sha256": "0ecc181a225115b2de14c300da4a80188d5e03a756d1c0b38aaa1845d503abe1",
+      "action_sequence_sha256": "aaca7489e145f37fef8cf60baffdd5badcb7c9e24d1b888a7fe59e65ddab8a0b",
+      "model_outputs_sha256": "75dd06ba7b0f3096525798ddc61262114e06b47fce5d8d6a4019aec0e4ddfd81",
+      "complete_semantic_trajectory_sha256": "4c384b34d792edf456326b5efb3ebe29843af1d1bbcda3ff809d3ac0fdda0911",
+      "primitive_actions": 56,
+      "model_requests": 17
+    },
+    "1022": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Walk towards the kitchen and go through the kitchen into the hallway. Stop in the hallway next to the phone and answering machine. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "3727219107bd6e9bd8a9b59e5de8689c594ed1feef0ab039d0bed5c7174e7d29",
+          "3727219107bd6e9bd8a9b59e5de8689c594ed1feef0ab039d0bed5c7174e7d29"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 713
+      },
+      "initial_input_sha256": "c1fd295079aed5cc374998698d0ee66ed4362bb3d03237ebbbe7466f6a3067a2",
+      "action_sequence_sha256": "822d82a582a09d3a02cd58f7afd214b49a2fd8eba9c77142bd92f86b1632ef32",
+      "model_outputs_sha256": "9defb6b32dd43d060db2314c0fde944740b3f7ae446dbf796d1ad13ed6b4b6ab",
+      "complete_semantic_trajectory_sha256": "6d4d5d04543d6da95d7e65a2f53600e247c31019426b6f44c5560e19f7a4e5d5",
+      "primitive_actions": 64,
+      "model_requests": 15
+    },
+    "233": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Turn right, go through the doorway and head up the stairs. Once you get up the stairs to the landing turn right and head through that doorway. Go into the room ahead of you. There should be a door to your left, and in front of you should be a fireplace with a portrait of a man above it. You are at your destination. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "68c1e1bc6a5c985785d303479576d39aa092b419e9bf2ee1d1e8e4405031d582",
+          "68c1e1bc6a5c985785d303479576d39aa092b419e9bf2ee1d1e8e4405031d582"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 759
+      },
+      "initial_input_sha256": "ab96221dd7cddfea0ed4fb2c0222e849703ed59d42da339de5abfee1ff7fbe5a",
+      "action_sequence_sha256": "5d1be9c887e804794fade452be9c06be4f840f7d61d1e52fe61571e9d907b778",
+      "model_outputs_sha256": "d9186386e3bbfea2ba82faab166c560d3c5c640f4d67eb89353e468d9f7ade51",
+      "complete_semantic_trajectory_sha256": "1bba182994cac5ded1365f491151c9a3d0764a0cd98c65394af3268e3c3051fb",
+      "primitive_actions": 400,
+      "model_requests": 133
+    },
+    "917": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Go straight through the room and wait by the small pool on the floor. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "742a1a6eb5f11cca7fd14b7693ac514232f28a32f72988b0c9402686aea42835",
+          "742a1a6eb5f11cca7fd14b7693ac514232f28a32f72988b0c9402686aea42835"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 703
+      },
+      "initial_input_sha256": "3c2b6d5763e92ba8c2d2c78049495f5e55b6f846a79d241a0d551e408eaeebfb",
+      "action_sequence_sha256": "b4fabeb988057fb137d5118c862ddb935c4981e39d9788cc8133bc92fcaf2b4a",
+      "model_outputs_sha256": "e0b2703fc3d099147e579a831e88f29120adacf286d5387a2d25adcddfa9f3d4",
+      "complete_semantic_trajectory_sha256": "4d1a077116e0510648673bf439c2e546afd507b2a152d93fe8ee3d5399eaabb6",
+      "primitive_actions": 260,
+      "model_requests": 59
+    },
+    "1593": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Walk to the far end of the lobby and wait under the exit sign. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "b1a4f0966384f635c2e6026d5b287ccaf73a12ed558c507e5ac18a3150a17352",
+          "b1a4f0966384f635c2e6026d5b287ccaf73a12ed558c507e5ac18a3150a17352"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 703
+      },
+      "initial_input_sha256": "61ea2067ccd66fd7bb5943375bff2ecee77846c0320d6968ef564a59daea6638",
+      "action_sequence_sha256": "09a722821f7e4c300b98b01f4fc99f4dad25bb183fdf7f1beab798addbacc533",
+      "model_outputs_sha256": "e460f036a2da4c77c22a061f00c0ab6850e5e7869e6d9a7f244dd4f40baae16d",
+      "complete_semantic_trajectory_sha256": "be550b42decc38b346ca316e7e841e00bf49d4270a22292bd587e9d55e08b5c8",
+      "primitive_actions": 140,
+      "model_requests": 31
+    },
+    "1381": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Turn around and walk towards the large clock. Once you reach the clock, turn left and enter the bedroom. Walk straight across the bedroom and into the small door in front of you. Stop once you enter the closet. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "aff79a522f23dee6f7f0816b19d8476a94891e635dbfe08f3acf40f28acbfd35",
+          "aff79a522f23dee6f7f0816b19d8476a94891e635dbfe08f3acf40f28acbfd35"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 732
+      },
+      "initial_input_sha256": "feb0e9f947bb51773cf4a03f6472d26f04912e24b3150e84520f91e2d92118d9",
+      "action_sequence_sha256": "fc8a84884a38ccb8d43edd5771c2a789dfdf19922ac1ff1dec39746a11e92395",
+      "model_outputs_sha256": "30428eab0fdb5e441a8b3802ffef03e1bfeb39ff46e196c02df7d8b031de0e4d",
+      "complete_semantic_trajectory_sha256": "1ef0debe9ac047e3f4b978ca0f8fdcaf5bbfea60ff297db48642cad437594a7c",
+      "primitive_actions": 400,
+      "model_requests": 95
+    },
+    "1466": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Exit the dining room and sitting area on the left. Enter the kitchen and wait by the light switch on the left. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "4169e00ae6ab0fb7042e1ea278afd13a61df49b8b96a805bccfc044f20dc9c00",
+          "4169e00ae6ab0fb7042e1ea278afd13a61df49b8b96a805bccfc044f20dc9c00"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 712
+      },
+      "initial_input_sha256": "0685f84a9bd23265998716bfd6c4aa1a0c975f7aa2b9ea3559bd087ec6f39407",
+      "action_sequence_sha256": "a62ba2505b4e82db5f22535b80ac8f8333f8b9c862c83819b7ee535e513ad6e8",
+      "model_outputs_sha256": "3517efb181c28cf1e88c9944ce0dcb7237611137c144716055f0b5b897de853d",
+      "complete_semantic_trajectory_sha256": "f231d263e366ec025bf9bdc5ab67add21b59445cee6fa3d46602f1a17ce1ac14",
+      "primitive_actions": 400,
+      "model_requests": 107
+    },
+    "439": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Turn around and walk through the door into the hallway. Turn left and go forward and stop next to the bed. Then turn left and go into the bathroom. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "a51429e2c10d8373616be4103f9d32966e4b0cd0474e8cba932afea9d192788d",
+          "a51429e2c10d8373616be4103f9d32966e4b0cd0474e8cba932afea9d192788d"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 720
+      },
+      "initial_input_sha256": "b435d22a9ddff28137c12e0a3f46b46bd95b55424121ec2090b3eaa7dcdbdf2d",
+      "action_sequence_sha256": "9c4dfeaab3d7d68ffb1af74525be32824a06bf1ee7d11e3d9bc17632673d6eb7",
+      "model_outputs_sha256": "faa8e10a2f8501d752b1b9438555f950d54915e30444dc17d1a604331acd11a8",
+      "complete_semantic_trajectory_sha256": "db1606d14387c6223d8bab3a6ba86dffb9694a3179cac2faa049ece22d69ecf4",
+      "primitive_actions": 51,
+      "model_requests": 14
+    },
+    "1010": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Exit the bedroom. Go to the next bedroom on the left. Go to the foot of the bed. Go into the closet across from the blue bed. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "524da941bd6b465d47a5e39d4a01a7c72dc3f738b0053d3e0412d65a0dc3d6e2",
+          "524da941bd6b465d47a5e39d4a01a7c72dc3f738b0053d3e0412d65a0dc3d6e2"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 719
+      },
+      "initial_input_sha256": "0478e132d03d1b35729c098e213dc6a823493d93d2b076fa469e4a9dd0b7b8c4",
+      "action_sequence_sha256": "24b0cbb263fd2417818082e00e2b2eb3f31214fe9d7fac34746552e5bcdf2849",
+      "model_outputs_sha256": "64f4f6e45715be1c252b7536ff9787854a1e9e979d0d8bc930f475678bb55942",
+      "complete_semantic_trajectory_sha256": "8f2d9121d5c2f21a3122905e96d9fa66d6d166680ef76c1a760b9e7d180b1629",
+      "primitive_actions": 84,
+      "model_requests": 21
+    },
+    "1262": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Go between the couch and the island straight down the hallway. Pass through the next room and then turn right. Stop in front of the bathroom door and wait there. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "89cf061f6b6df488848ccbed77fae4a36d89370b72e50664d2a51513aee81dc2",
+          "89cf061f6b6df488848ccbed77fae4a36d89370b72e50664d2a51513aee81dc2"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 721
+      },
+      "initial_input_sha256": "0a88452afb4add5af65a53bfb4bfaf68a306a63d3cdaf396ad328be082208c30",
+      "action_sequence_sha256": "773dafcf371910feefdc4825979f30070c8ab71964057d4d006711e0a832529e",
+      "model_outputs_sha256": "d15fa9d02c72a7abff548c98e97f238eda3789fe1182d20b0e77a76668512b7d",
+      "complete_semantic_trajectory_sha256": "29741350ee530d946c6aaea09c9ff2e3ee92feb0df7470ffbade24ec1e84eea8",
+      "primitive_actions": 157,
+      "model_requests": 44
+    },
+    "1740": {
+      "initial_input": {
+        "request_text": [
+          "Imagine you are a robot programmed for navigation tasks. You have been given a video of historical observations",
+          "and an image of the current observation",
+          " Your assigned task is: 'Turn right down the hallway and enter the last room on the left.  Stop after entering the bedroom. '. Analyze this series of images to decide your next move, which could involve turning left or right by a specific degree or moving forward a certain distance."
+        ],
+        "request_image_sha256": [
+          "d07a96a49c837821561055cbc6232ad9f5c0f387d4ca4b03224b634a4fb9efc4",
+          "d07a96a49c837821561055cbc6232ad9f5c0f387d4ca4b03224b634a4fb9efc4"
+        ],
+        "image_count": 2,
+        "prompt_tokens": 709
+      },
+      "initial_input_sha256": "2b90718fc1df43d29b5c98be74778cb211912da6607c5d8261860f04114cd034",
+      "action_sequence_sha256": "02f3b7e2e410ec9e1aa6bbdd0f674972b62605c0ace4f43266c2e162a43c543f",
+      "model_outputs_sha256": "0d7749c5476b9522cbcc5a5aed246a47db1b9c1de722f12274da6256634a1a52",
+      "complete_semantic_trajectory_sha256": "c674fa19f8e271ddee4dab5e17c5295cb1c3bef00149e487b398bf4d6341b73f",
+      "primitive_actions": 44,
+      "model_requests": 13
+    }
+  },
+  "source_sha256": {
+    "serve_navigation_stage2.py": "cf2f933092dfce6e833425c7cddba9992b81faa86af7cac7e6f7293275afcf72",
+    "navigation_stage2_common.py": "473c7ba7548892eaebd31916d494484238c8c66586e6a22d1d000f26a32474c1",
+    "navigation_stage2_runtime.py": "30fb4aa9392234bb32cd73aa7f6987ea52d70652b8c0c4ff88d3f2e874db00ad",
+    "navigation_stage2_selection.py": "e3f7f2037bab002774c975936d972f25bf8340ed3a51036d4f61fdd4a12dd335",
+    "navigation_stage2_module_map.py": "13f8b97438baa4a1e13d284ba4c3bab94f3d1484dc4c9807003ed0001c7d5bc8",
+    "navigation_dart_kv_layout.py": "1e81a4c8b9e37eb20b73f3fba6d51c41901c2536496f68fa3f928ece61994ec1",
+    "navigation_awq_dart_guard.py": "c9b0387891fb88cd852b05e15d5c3b7704c05aa9e3a76bffdf0da3a297600870",
+    "navigation_awq_dart_profiles.py": "c93179f9559c7ca811d3c351320617e95a5c3a5ebef4c39a3f887463fea65204",
+    "navigation_dart_profiles.py": "8bae999c0bd2ba7587a988bc5bad95fb507a4709e69d77c16ebea544223439e1",
+    "navigation_w4a16_fix_runtime.py": "9c06aeae3014c278bea0fd610f4a587f57f1f1ad5be4ec1bb8fe9e12f55ebd0d",
+    "navigation_repair_runtime.py": "e3ca4c02732d531f85a3a6306966549d31e8217c056a7d5a8cf3d91f51813ae8",
+    "navigation_repair_module_map.py": "159d3e35eb311d4157a51f2b92f35ddb0b102b0c3b0010a8aa36a9795e8efa7a",
+    "serve_navigation_repair.py": "74b39ef35c8d8cef9852318de4e8bf5bab021a745b15c234447f99d83ca3cc99",
+    "serve_navigation_latency_20261120.py": "01c1111d1954d1eec38918f415ce0b81b455f4d8117b9f43b9d602a8e4c88345",
+    "navigation_latency_inprocess_20261120.py": "52d55d4b7305de9099178fdbb17e39ca9c7f06ee0f662030498342abb300e3c3"
+  },
+  "timing_navigation_first_warmup": 2,
+  "execution_contract": {
+    "requested_engine": {
+      "dtype": "float16",
+      "tp": 1,
+      "dp": 1,
+      "dp_rank": 0,
+      "ep": 1,
+      "session_len": 4096,
+      "max_batch_size": 1,
+      "attn_tp_size": null,
+      "mlp_tp_size": null,
+      "moe_tp_size": null,
+      "cache_max_entry_count": 0.35,
+      "prefill_interval": 2,
+      "block_size": 64,
+      "num_cpu_blocks": 0,
+      "num_gpu_blocks": 64,
+      "adapters": null,
+      "max_prefill_token_num": 3072,
+      "thread_safe": false,
+      "enable_prefix_caching": false,
+      "device_type": "cuda",
+      "eager_mode": false,
+      "custom_module_map": "/mnt/e/000_博士/000_实习与工作/AI infra/项目2/checks/navigation_repair_module_map.py",
+      "download_dir": null,
+      "revision": null,
+      "quant_policy": 0,
+      "distributed_executor_backend": "uni",
+      "empty_init": false,
+      "enable_microbatch": false,
+      "enable_eplb": false,
+      "enable_mp_engine": true,
+      "mp_engine_backend": "mp",
+      "model_format": null,
+      "enable_metrics": false,
+      "hf_overrides": null,
+      "disable_vision_encoder": false,
+      "logprobs_mode": null,
+      "enable_return_routed_experts": false,
+      "enable_transfer_obj_ref": false,
+      "dllm_block_length": null,
+      "dllm_unmasking_strategy": "low_confidence_dynamic",
+      "dllm_denoising_steps": null,
+      "dllm_confidence_threshold": 0.85,
+      "role": 1,
+      "migration_backend": 1
+    },
+    "effective_engine": {
+      "dtype": "float16",
+      "tp": 1,
+      "dp": 1,
+      "dp_rank": 0,
+      "ep": 1,
+      "session_len": 4096,
+      "max_batch_size": 1,
+      "attn_tp_size": null,
+      "mlp_tp_size": null,
+      "moe_tp_size": null,
+      "cache_max_entry_count": 0.35,
+      "prefill_interval": 2,
+      "block_size": 64,
+      "num_cpu_blocks": 0,
+      "num_gpu_blocks": 64,
+      "adapters": null,
+      "max_prefill_token_num": 3072,
+      "thread_safe": false,
+      "enable_prefix_caching": false,
+      "device_type": "cuda",
+      "eager_mode": false,
+      "custom_module_map": "/mnt/e/000_博士/000_实习与工作/AI infra/项目2/checks/navigation_repair_module_map.py",
+      "download_dir": null,
+      "revision": null,
+      "quant_policy": 0,
+      "distributed_executor_backend": "uni",
+      "empty_init": false,
+      "enable_microbatch": false,
+      "enable_eplb": false,
+      "enable_mp_engine": false,
+      "mp_engine_backend": "mp",
+      "model_format": null,
+      "enable_metrics": false,
+      "hf_overrides": null,
+      "disable_vision_encoder": false,
+      "logprobs_mode": null,
+      "enable_return_routed_experts": false,
+      "enable_transfer_obj_ref": false,
+      "dllm_block_length": null,
+      "dllm_unmasking_strategy": "low_confidence_dynamic",
+      "dllm_denoising_steps": null,
+      "dllm_confidence_threshold": 0.85,
+      "role": 1,
+      "migration_backend": 1
+    },
+    "execution_identity": {
+      "executor": "uni",
+      "prefill_interval": 2,
+      "requested_mp_engine": true,
+      "inprocess_requested": true,
+      "linear_ipc_requested": false,
+      "wide_w4_requested": false,
+      "vision_qmax_requested": false,
+      "vision_qmax_validation_enabled": false,
+      "profile_enabled": false,
+      "vision_qmax_status": "disabled",
+      "kernel_implementation": {
+        "backend": "native_frozen"
+      },
+      "inprocess_status": "observed_native_engine_in_http_process",
+      "effective_mp_engine": false,
+      "linear_ipc_status": "disabled"
+    },
+    "execution_receipt_sha256": {
+      "logs/navigation_latency_20261120/navigation_native2_v1/02_fp16_inprocess2/service/effective_inprocess_engine.json": "3b9492a4dcaa510b0f33d61301a6cf4c3e0def54cedbc65d5aa9abcf22ede078"
+    },
+    "wide_evidence": null,
+    "vision_qmax_evidence": null
+  },
+  "wide_request_coverage": [],
+  "wide_fallback_scope": "Only actual prefill lengths absent from frozen exact-M table; all decode graph captures retain selected phase route",
+  "timing_navigation_first_actual_request": 4,
+  "quality_equivalence_claim": false,
+  "historical_trajectory_comparison": {
+    "reference": "logs/navigation_repair_20261112/screen_fp16_v1/fp16/navigation",
+    "reference_manifest_sha256": "415604fee5582845ade6d6be661f66e59dc2a14c0a8200e3d256553c83578505",
+    "comparison": {
+      "episodes": {
+        "558": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "1164": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "591": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "1724": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "720": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "1582": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "1638": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "1378": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "1803": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "662": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "1022": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "233": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "917": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "1593": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "1381": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "1466": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "439": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "1010": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "1262": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        },
+        "1740": {
+          "initial_inputs_equal": true,
+          "action_sequences_equal": true,
+          "model_outputs_equal": true,
+          "complete_semantic_trajectory_equal": true
+        }
+      },
+      "all_initial_inputs_equal": true,
+      "all_actions_equal": true,
+      "all_model_outputs_equal": true,
+      "all_semantic_trajectories_equal": true
+    },
+    "scope": "Historical cross-round comparison; not a same-round speed baseline or statistical quality-equivalence proof"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "date_local": "2026-11-20",
+  "status": "methodology_review_of_completed_system_round_and_first_four_feature_sessions",
+  "scope": "只读比较方法复核；没有运行GPU、导入torch、读取完整checkpoint或修改待跑wide代码。所列值是当前开发轮观察，最终结论需选定方案后的独立确认和执行证据审计。",
+  "reviewed_evidence": [
+    "logs/navigation_latency_20261120/system_full_v1/protocol.json",
+    "logs/navigation_latency_20261120/system_full_v1/completed.json",
+    "logs/navigation_latency_20261120/system_full_v1/comparisons.json",
+    "logs/navigation_latency_20261120/feature_screen_v1/protocol.json",
+    "logs/navigation_latency_20261120/feature_screen_v1/completed.json（本复核只使用前四个完成session）",
+    "checks/run_navigation_latency_study_20261120.py"
+  ],
+  "important_findings": [
+    {
+      "priority": "high",
+      "finding": "relative_to_first_fp16 不能作为优化后同条件量化收益",
+      "evidence": "controller的comparisons()把遇到的第一个FP16保留为reference；system_full_v1是fp16_mp。这个字段名称诚实，但不能在最终报告中改称同优化条件的FP16。",
+      "example_9_images_18_tokens": {
+        "fp16_mp_p50_s": 1.8288940395000282,
+        "fp16_uni16_p50_s": 1.269531451500029,
+        "awq_uni16_p50_s": 0.9806463219999841,
+        "old_system_fp16_to_new_system_awq_reduction_approx_percent": 46.4,
+        "same_uni16_fp16_to_awq_reduction_approx_percent": 22.8
+      },
+      "action": "最终另建匹配executor、interval、IPC改动、engine进程模式、图模式和HTTP模式的对照；旧FP16→新量化保留为整套方案改善，不能归为纯量化。"
+    },
+    {
+      "priority": "high",
+      "finding": "feature_screen仅AWQ，尚不能量化该执行路径下相对FP16的收益",
+      "action": "先对候选路径补FP16匹配对照，再比较量化与FP16；不能拿AWQ新路径除以旧FP16路径获得更大的量化百分比。"
+    },
+    {
+      "priority": "high",
+      "finding": "n=10的P95明显受单个高值影响",
+      "example": {
+        "session": "system_full_v1/fp16_mp",
+        "cell": "0_64",
+        "n": 10,
+        "p50_s": 1.4201912990000096,
+        "p95_s": 1.848595056050049,
+        "min_s": 1.4105412119999983,
+        "max_s": 2.1928838780000888
+      },
+      "action": "保留全部样本与原P95，不删除异常后重算好看结果。P95仅称本轮样本描述，不能据此宣称生产尾延迟稳定改善；选定候选后独立复测并展示每轮范围。"
+    },
+    {
+      "priority": "medium",
+      "finding": "短输出uni16把尾部工作纳入响应窗口的可能性影响解释",
+      "evidence": "两图18输出时uni16比mp慢，而64输出接近；同原生shared forward_event门控假设一致，详见kernel_review。",
+      "action": "在相同官方interval下比较，同时报告各精度通过正确性检查后的低延迟路径。不能故意选择较慢的FP16 uni16来扩大W4加速比。"
+    }
+  ],
+  "comparison_questions_to_keep_separate": [
+    {
+      "question": "保持同一服务配置，量化相对FP16节省多少？",
+      "required_matching": ["同输入SHA与token预算", "同executor/interval/IPC方案/engine进程模式", "同CUDA Graph与KV、上下文设置", "同HTTP stream模式与计时边界", "同预热/idle/顺序策略"],
+      "interpretation": "受控的量化部署差异，包括相应量化内核实现；不等同于只改变一个数学位宽的纯算法因果效果。"
+    },
+    {
+      "question": "同一份量化权重，换执行路径节省多少？",
+      "required_matching": ["权重SHA一致", "输入/输出token逐项核对", "生成规则不变", "记录所有改变的系统选项"],
+      "interpretation": "系统执行优化收益。feature_screen中的AWQ比较属于此类。"
+    },
+    {
+      "question": "FP16和量化各自优化到合理低延迟后，还相差多少？",
+      "required_matching": ["两边都参与相同预算的系统选型", "所有候选经过正确性与真实执行检查", "用探索轮选配置，用新的确认轮报告性能"],
+      "interpretation": "实际部署选择的比较，配置允许不同；必须列出每边配置，不能称严格同配置消融。"
+    },
+    {
+      "question": "整个新方案相比原来的FP16服务，最终改善多少？",
+      "required_matching": ["真实工作量一致", "明确同时改变权重与系统路径", "质量与显存同时报告"],
+      "interpretation": "系统+量化联合改善。不得把所有IPC/调度节省归功于量化内核。"
+    }
+  ],
+  "feature_first_four_observations": {
+    "conditions": "相同AWQ权重，nonstream，计时外idle1秒，每格2次预热和10次测量；三格0_18/1_18/1_64",
+    "p50_seconds": [
+      {"label": "awq_mp16", "two_images_18": 0.35357574150000204, "nine_images_18": 1.4969423794999983, "nine_images_64": 1.9937593149999984},
+      {"label": "awq_linear16", "two_images_18": 0.3554513090000029, "nine_images_18": 0.918957535500013, "nine_images_64": 1.396347792499995},
+      {"label": "awq_uni16", "two_images_18": 0.4652871785000059, "nine_images_18": 0.9835408664999932, "nine_images_64": 1.307200762000008},
+      {"label": "awq_uni4", "two_images_18": 0.35897803899999303, "nine_images_18": 0.8587867390000099, "nine_images_64": 1.3309443555000087}
+    ],
+    "limitations": [
+      "linear16、uni16、uni4的优势依赖输入/输出负载，没有一个方案在当前三格中绝对统治。",
+      "本轮省略0_64，不应称四格完整验收。",
+      "短输出32→20实际decode次数与uni4更快方向一致，但不能用次数差×阶段均值直接精确分摊HTTP。",
+      "前三类输出token SHA在同权重配置间一致，是有用回归证据；仍不等于真实导航轨迹与成功率已重新验证。"
+    ]
+  },
+  "sampling_and_drift": {
+    "what_n10_means": "每格10次是同固定输入上的运行重复，不是10个独立导航案例，更不是同100条质量样本。P50/P95说明该负载该轮系统波动。",
+    "p95_definition": "controller使用线性插值：(n-1)*0.95=8.55，即n10时最大和次大样本之间插值，单个最大值贡献很大。",
+    "do_not_pool": [
+      "不能平均不同轮P95或把stream/nonstream混池。",
+      "不能把不同输出长度/输入图数混成一个泛化的量化加速比。",
+      "不能用旧报告P50与新报告P95相减。"
+    ],
+    "observed_cross_round_example": {
+      "cell": "AWQ mp16 nine_images18",
+      "system_full_p50_s": 1.5622277410000152,
+      "feature_screen_p50_s": 1.4969423794999983,
+      "change_approx_percent": -4.2,
+      "interpretation": "同路径不同轮也有数个百分点漂移；1%至数%的候选差异需要复测，不能直接排名。"
+    },
+    "ordering": "system_full为FP16/AWQ/GPTQ mp随后GPTQ/AWQ/FP16 uni；算法顺序反转有帮助，但系统模式仍成组前后出现。feature顺序也固定为mp→linear→uni16→uni4。热状态、CPU背景活动和跨服务初始化仍可能与方案顺序相关。",
+    "confirmation_plan": [
+      "在观察结果后先固定确认候选和配置，不边看正式测量结果边改参数。",
+      "至少加入新一轮FP16与量化的同路径确认；优先采用反向/交错服务顺序或基线前后夹测。",
+      "每轮保留原始重复值、P50/P95、min/max、运行顺序和已有GPU状态记录。",
+      "小差异如果与跨轮波动相当，报告未确认优势；大幅收益也需复核执行与输出而不是单靠百分比。",
+      "若需报告总体摘要，预先固定负载权重或分别报告四格；不得选择表现最好的格子作为普遍结论。"
+    ]
+  },
+  "best_configuration_selection": {
+    "fixed_deployment": "如果最终服务只用一个静态配置，应预先按目标工作负载选择一个配置，再用该配置报告所有格子，包含退化或权衡。",
+    "per_shape_routing": "若准备按图数/输出预算路由不同配置，该策略本身是新方案，必须预先定义并验证；不能事后每格取最小值拼成不存在的统一部署。",
+    "oracle_lower_bound": "每格各自的最优候选可以另列为探索性上限，但明确是事后选择、尚未作为可部署策略验证。",
+    "strong_fp16_reference": "FP16也应拥有相同系统优化机会，包括合理interval和进程路径；最终额外给出对强FP16基线的量化增益。"
+  },
+  "idle_and_navigation_fairness": {
+    "isolated_idle1": "每次开始HTTP计时前等待1秒，能隔离前一请求尾算力和排队影响。可证明孤立请求固定负载性能，不能代表连续导航调用的吞吐或尾等待。",
+    "noidle": "零idle串行请求可揭示前一请求的多余decode和调度尾部如何影响下一请求；应同时报告每请求HTTP与整段N请求总wall时间。总wall不另减去尾工作。",
+    "navigation": "真实导航包含多种输入长度、自然输出、策略动作队列和模拟器间隔。HTTP只计真实模型调用；队列动作零耗时和渲染耗时不应混入HTTP加速比。",
+    "proposed_progression": [
+      "先完成固定四格候选正确性与同轮FP16对照。",
+      "对选定方案补独立零idle或真实节奏固定序列；不把idle1结果与零idle结果合并。",
+      "如进入导航验证，复用冻结独立20案例，并分别报告新真实请求时延、质量、输入长度和输出分布。",
+      "wide当前只测exact M；未经新规则和动态M验证，不应直接声称宽搜索内核适用于全部导航请求。"
+    ],
+    "cross_model_limit": "导航中模型走出的轨迹和后续输入不同，因此闭环分位差表示实际运行效果，不能替代同输入同输出长度的纯性能对照。"
+  },
+  "claim_language": {
+    "supported_after_confirmed": [
+      "在相同输入和输出预算下，优化后的W4服务相对优化后的FP16降低了X% HTTP P50。",
+      "同一份量化权重通过IPC/调度优化降低了Y%请求时延。",
+      "当前固定负载输出保持一致；导航质量验证状态另列。"
+    ],
+    "avoid": [
+      "量化算法单独带来了全部系统加速。",
+      "10次固定请求已证明生产P95稳定降低。",
+      "decode减少的所有尾部前向都等量降低了当前HTTP。",
+      "旧100条成功率自动适用于新执行路径和新wide内核。",
+      "把每格事后最优组合描述成已经实现的统一服务。"
+    ]
+  },
+  "remaining_required_before_final_claim": [
+    "选定路径下的FP16/AWQ/GPTQ匹配或各自最佳配置确认结果",
+    "候选实际执行、输入一致、自然/强制输出、错误数与图重放审计",
+    "四格完整覆盖及选型后的独立重复测量",
+    "如声称导航提升，补对应新路径的自然输出/闭环证据",
+    "wide hot/cold投影结果只作筛选，全模型与强基线比较尚待实测"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "date_local": "2026-11-20",
+  "scope": "Primary-source literature check; not identification of the unspecified historical paper, not a local speed result",
+  "historical_paper_identity": "Not established from available records; do not say these are definitely the previously shown paper.",
+  "awq": {
+    "url": "https://arxiv.org/html/2306.00978v6#S5.SS4",
+    "version": "v6, 2026-04-25",
+    "location": "Section5.4 Settings and Results; Table10",
+    "llm": {
+      "batch": 1,
+      "prompt_tokens": 4,
+      "generated_tokens": 200,
+      "statistic": "median inference latency",
+      "hardware": "RTX4090; Jetson Orin",
+      "speedup_4090_vs_huggingface_fp16": "2.7-3.9x",
+      "includes": "TinyChat system optimizations as well as W4 kernels",
+      "stronger_baseline_example": "Llama2-7B FP16 fusion raises52 to62tokens/s; quantized kernels add3.1x versus that stronger baseline"
+    },
+    "vlm_table10": {
+      "model": "VILA-7B",
+      "hardware": "RTX4090",
+      "fp16_throughput": 58.5,
+      "awq_throughput": 168.1,
+      "ratio": 2.8735042735042735,
+      "limit": "Table10 does not establish a nine-image2815token/18output HTTP workload. Do not silently apply LLM four-text-token setting to this VLM table."
+    }
+  },
+  "marlin": {
+    "url": "https://github.com/IST-DASLab/marlin",
+    "claim": "Near4x FP16xINT4 matmul kernel speed, low/mediumM around16-32",
+    "scope": "Ideal large matrix onA10 plus sums of Transformer linear-layer runtimes; not full multimodal HTTP",
+    "group_size": 128,
+    "bench_source": "https://raw.githubusercontent.com/IST-DASLab/marlin/master/bench.py",
+    "bench_lines": "7-19,32-41,95-116",
+    "baseline": "torch.matmul with preallocated output, one warmup/ten iterations; one synchronization around group of launches",
+    "format_source": "https://raw.githubusercontent.com/IST-DASLab/marlin/master/marlin/__init__.py",
+    "format_lines": "64-80,92-110",
+    "format_limit": "Original Layer is symmetric4bit and lacks per-group runtime zero-point input; it cannot directly consume current asymmetric AWQ-format qzeros without a proven compatible implementation."
+  },
+  "local_comparison_limit": [
+    "Current fixed primary workload is9images/2815inputtokens/18returnedtokens, fullnonstreamHTTP; it includes image handling,vision,prefill and service overhead.",
+    "Local FP16 already uses LMDeploy and nativeCUDA graph; it is not HuggingFace default.",
+    "Use matched local FP16 and numerical/fullmodel/task validation. Literature speedup is a feasibility reference, not a guaranteed local target."
+  ]
+}

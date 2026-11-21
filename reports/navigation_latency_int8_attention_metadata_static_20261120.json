@@ -1,0 +1,13 @@
+{
+  "status": "passed_stdlib_metadata_checks",
+  "checks": [
+    "valid36layer_actual_KV",
+    "shrunken_blocks_rejected",
+    "wrong_dtype_rejected",
+    "alias_rejected",
+    "changed_shape_rejected",
+    "undersized_storage_rejected"
+  ],
+  "auditor_sha256": "4d2d1b005a561f03668ec60b88fcf248d13c901162a7111e43734502868bb64f",
+  "scope": "AST-extracted actual KV metadata validation; no model imports/GPU. Real execution pending."
+}

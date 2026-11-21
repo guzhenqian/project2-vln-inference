@@ -1,0 +1,125 @@
+{
+  "schema": "navigation_expanded_int8_prefill_design/v1",
+  "created_utc": "2026-11-20T14:21:41.639Z",
+  "status": "implementation_prepared_not_gpu_run",
+  "candidate": "expanded_int8_prefill_original_w4_decode",
+  "arithmetic": "round_fp16((uint4_w-uint4_zero)*FP16_group_scale) -> new symmetric per-output-channel INT8 weights; per-token symmetric INT8 activation; whole-K INT32 GEMM; FP32 (integer*row_scale)*channel_scale; FP16 output",
+  "scope": "Independent requantization experiment, not same-weight W4A16 equivalence and not a reproduction of QServe or QQQ. Original checkpoint/package/runtime remain unchanged. Microprobe only; no full-model adapter.",
+  "predeclared_gates": {
+    "implementation": "Selected 4 rows and 8 columns: CPU NumPy int64 dot must equal GPU INT32 exactly. CPU FP32 ordered epilogue and FP16 result bytes must match. CPU packed dequant/weight quantization selected columns and activation quantization selected rows must match actual GPU data. Full INT32 and FP16 output bytes repeat across eager/graph and hot/cold.",
+    "approximation_screen": {
+      "output_relative_l2_max": 0.02,
+      "weight_relative_l2_max": 0.02,
+      "activation_relative_l2_max": 0.02,
+      "finite_required": true,
+      "reference": "Independent FP16-rounded W4 weights with FP32 matmul, TF32 disabled, then FP16 output",
+      "separate_components": [
+        "weight_only",
+        "activation_only",
+        "combined"
+      ],
+      "qualification": "Predeclared random-projection screening threshold only. Not full-model accuracy, actual activation accuracy, token equivalence or navigation quality."
+    },
+    "repeatability": {
+      "repeats_per_condition": 4,
+      "conditions": [
+        "eager_hot",
+        "eager_cold",
+        "graph_hot",
+        "graph_cold"
+      ],
+      "comparison": "Full tensor bytewise GPU equality, outside timed intervals, with first output SHA and per-repeat booleans."
+    },
+    "advance": "All implementation/approximation/stability cases pass for a layout/shape, and full pipeline hot and cold P50 each improve >=3% vs frozen W4A16 and same-W4 dequantized FP16 GEMM. Micro promising shapes never constitute service approval."
+  },
+  "matrix_scope": {
+    "layers": [
+      0,
+      18,
+      35
+    ],
+    "projections": {
+      "qkv": [
+        2560,
+        6144
+      ],
+      "o": [
+        4096,
+        2560
+      ],
+      "gate_up": [
+        2560,
+        19456
+      ],
+      "down": [
+        9728,
+        2560
+      ]
+    },
+    "rows": [
+      17,
+      701,
+      2815
+    ],
+    "amplitudes": [
+      0.1,
+      1
+    ],
+    "logical_cases": 72,
+    "layouts": [
+      "kn_contiguous",
+      "nk_transposed"
+    ],
+    "layout_execution_cases": 144,
+    "main_timing": "layer0 M701/2815 amplitude1; both layouts; M17 correctness boundary only",
+    "padding": "Default none; optional multiple8/16 named separately, included in full-path time and never silently mixed."
+  },
+  "memory": {
+    "additional_int8_weights_all144_bytes": 3633315840,
+    "additional_int8_weights_all144_gib": 3.3837890625,
+    "additional_fp32_channel_scales_bytes": 4423680,
+    "total_additional_weight_scales_gib": 3.387908935546875,
+    "largest_int32_output_m2815_gateup_bytes": 219074560,
+    "largest_fp16_output_m2815_gateup_bytes": 109537280,
+    "largest_single_projection_fp16_dequant_bytes": 99614720,
+    "maximum_int32_absolute_dot": 156902912,
+    "int32_safe": true,
+    "fullmodel_fit": "Not established: measure allocation/reservation peaks, graph pools, KV and startup temporaries. Keep existing num_gpu_blocks64 x block_size64; no reducing KV to manufacture fit. Process one projection at a time; retain exactly one deployed INT8 layout, not both.",
+    "probe": "Measure resident storage bytes and torch allocated/reserved conversion/pipeline peaks independently; isolated micro peak includes validation and is not fullmodel VRAM.",
+    "future_runtime_scratch": "If a future fullmodel is authorized, use one max-size Qx/INT32/row-scale scratch per serial request/stream with safe ordering. Never retain one M2815 INT32 workspace per144 modules (gate_up alone36x209MiB exceeds7GiB). FP16 outputs follow their actual lifetime and must not alias overwritten scratch."
+  },
+  "timing": {
+    "primary": "CUDA graph replay of activation quantization + whole-K _int_mm + FP32 scale/FP16 output. Include explicit padding work if enabled.",
+    "diagnostic": "Quantization, GEMM and epilogue individually; never substitute GEMM-only timing or sum diagnostic pieces for full pipeline.",
+    "cache": "96MiB uint8 add executed before start event for cold. Record flush counter/checksum. Both hot and cold preserved.",
+    "conversion": "Checkpoint load and packed dequant/requant/layout construction excluded from steady-state kernel time but measured separately."
+  },
+  "source_findings": [
+    {
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/aten/src/ATen/native/cuda/Blas.cpp",
+      "lines": "765-809;54-117",
+      "finding": "CUDA _int_mm requires M>16 and positive K,N divisible by8, contiguous INT32 output. M701/2815 need no source-level M padding. Dense row/column strides are forwarded; unusual strides may clone, so explicit layouts only. Source warns about some transposed combinations; actual execution still required."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/aten/src/ATen/cuda/CUDABlas.cpp",
+      "lines": "1479-1562",
+      "finding": "int8_gemm uses cuBLASLt INT8 operands/INT32 compute and output, alpha1/beta0; CUDA branch passes null algorithm and zero workspace. Private API locked to installed2.5.1; no claim this selects fastest hardware kernel."
+    },
+    {
+      "url": "https://arxiv.org/html/2405.04532v2",
+      "section": "III-B/Fig5",
+      "finding": "Supports investigating inner-loop dequantization overhead and moving whole-K scaling to an epilogue. Its QoQ progressive quantization is a different algorithm, not available merely by repacking existing asymmetric group128 W4."
+    },
+    {
+      "url": "https://arxiv.org/abs/2406.09904",
+      "section": "Abstract",
+      "finding": "QQQ identifies the challenge of accelerating both prefill and decode and uses smoothing/Hessian compensation plus W4A8 kernels. Our startup W8 re-quantization does not reproduce those accuracy mechanisms or reported gains."
+    }
+  ],
+  "next_if_promising": "Actual model excluded smokes require real per-layer activation approximation/error and parsed outputs, then original policy20 quality plus matching latency conditions; no exact-W4 token claim. Inspect actual VRAM first, retain original checkpoint and KV64x64.",
+  "implementation_notes": [
+    "Runtime quant/epilogue M uses do_not_specialize and actual bounds; K/N constexpr. No per-exact-M specialization is intended.",
+    "Weight scale division and requantization use explicit Triton tl.div_rn and cvt.rni, matching the strict CPU IEEE FP32/RNE reference; torch only computes exact half-to-float/abs/max.",
+    "Additional semantic boundaries: signed maximum-K dot, zero rows/weights and ties-to-even; default remains no M padding."
+  ]
+}
